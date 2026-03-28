@@ -1,80 +1,127 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Services', href: '/website-audit-services/' },
+  { label: 'Professional', href: '/website-audit-services/professional/' },
+];
+
+const toc = [
+  { label: 'What Makes It Professional', id: 'what-makes-it-professional' },
+  { label: 'DIY Tools vs Expert Review', id: 'diy-tools-vs-expert-review' },
+  { label: "What's Included", id: 'whats-included' },
+  { label: 'How to Choose an Auditor', id: 'how-to-choose-an-auditor' },
+  { label: 'Getting Value From Your Report', id: 'getting-value-from-your-report' },
+  { label: 'Red Flags', id: 'red-flags' },
+  { label: 'Our Approach', id: 'our-approach' },
+];
 ---
 
 <ContentLayout
-  title="Professional Website Audit: What to Expect and How to Choose"
-  description="Learn what a professional website audit includes, how it differs from DIY tools, what to look for in an auditor, and how to get maximum value from the report."
-  breadcrumbs={[
-    { label: 'Website Audit', href: '/website-audit/' },
-    { label: 'Services', href: '/website-audit-services/' },
-    { label: 'Professional Audit', href: '/website-audit-services/professional/' }
-  ]}
-  toc={[
-    { label: 'What Makes an Audit Professional', id: 'what-makes-an-audit-professional' },
-    { label: 'DIY Tools vs Professional Review', id: 'diy-tools-vs-professional-review' },
-    { label: "What's Included", id: 'whats-included' },
-    { label: 'How to Choose an Auditor', id: 'how-to-choose-an-auditor' },
-    { label: 'Getting Value From Your Report', id: 'getting-value-from-your-report' },
-    { label: 'Red Flags to Avoid', id: 'red-flags-to-avoid' },
-    { label: 'Our Approach', id: 'our-approach' }
-  ]}
+  title="Professional Website Audit: What to Expect"
+  description="A professional website audit goes beyond automated tool reports to deliver expert analysis, prioritised recommendations, and a clear action plan tailored to your business goals."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
   publishDate="2026-03-28"
   showLeadForm={true}
 >
+  <p>A professional website audit is the difference between knowing you have problems and understanding exactly which problems matter, why they exist, and what to do about them in what order. Free audit tools and automated reports can identify surface-level issues — broken links, missing meta descriptions, slow page speed — but they cannot tell you which of those issues are actually suppressing your rankings, how they interact with each other, or which fixes will deliver the highest return on your investment.</p>
 
-<h2 id="what-makes-an-audit-professional">What Makes an Audit Professional</h2>
-<p>A professional website audit is distinguished from automated scans and DIY reviews by three qualities: expert interpretation, contextual analysis, and actionable prioritisation. Any tool can generate a list of technical issues. A professional audit explains what those issues mean for your specific business, which ones are actually costing you traffic or revenue, and exactly what to do about them in what order.</p>
-<p>The expertise behind a professional audit comes from experience across hundreds of websites in different industries, familiarity with Google's algorithm history and current direction, and the pattern recognition that only develops through years of diagnosing and fixing real SEO problems. An experienced auditor looks at a 301 redirect chain and immediately recognises the migration that caused it, the link equity being lost, and the three most efficient ways to resolve it — context that no automated tool can provide.</p>
-<p>Professional audits also account for your competitive environment. A tool might flag that your page speed is 3.2 seconds. A professional auditor tells you whether that matters — if every competitor in your space loads in under 2 seconds, it is a critical priority; if the top three competitors are all above 4 seconds, your effort is better spent elsewhere. This contextual prioritisation is the difference between a list of issues and a strategic action plan.</p>
-<p>The output of a professional audit is not a raw data export or an auto-generated PDF. It is a structured report written for human readers, explaining findings in clear language, quantifying the potential impact of each fix, and providing implementation guidance that your development team can act on without further translation. Many auditors also include a walkthrough call to discuss findings and answer questions, ensuring nothing is lost in written communication.</p>
+  <p>Professional audits are conducted by experienced SEO practitioners who combine tool data with strategic analysis, competitive context, and an understanding of how search engines evaluate sites in your specific industry. The output is not a list of errors but a prioritised roadmap that connects every recommendation to a business outcome — more traffic, more leads, more revenue.</p>
 
-<h2 id="diy-tools-vs-professional-review">DIY Tools vs Professional Review</h2>
-<p>DIY audit tools serve an important purpose. Screaming Frog, Ahrefs, SEMrush, and Google Search Console provide data that is essential for any audit, whether professional or self-conducted. The question is not whether these tools are valuable — they are — but whether data alone is sufficient for your situation.</p>
-<p><strong>Where DIY tools excel:</strong> Ongoing monitoring between professional audits. Catching new technical issues quickly. Tracking keyword rankings and backlink changes. Generating crawl data for sites with straightforward architectures. Providing baseline metrics that inform strategic decisions. For SEO-knowledgeable teams managing sites under 500 pages, DIY tools combined with a structured checklist can handle routine quarterly reviews effectively.</p>
-<p><strong>Where DIY tools fall short:</strong> Interpreting conflicting signals (why does a page with good technical scores still underperform?). Evaluating content quality beyond word count and keyword density. Diagnosing complex JavaScript rendering issues. Assessing the risk profile of a backlink portfolio. Understanding the competitive context that determines which issues are truly priorities. Providing the strategic layer that transforms a list of issues into a growth plan.</p>
-<p>The gap between tools and professional review is widest for complex sites — e-commerce platforms with thousands of products, JavaScript-heavy single-page applications, large publishers with content dating back a decade, and sites that have undergone multiple migrations or CMS changes. These sites have layers of technical debt and accumulated decisions that require experienced interpretation to untangle.</p>
-<p>A practical approach for most businesses is to invest in a professional audit annually or before major site changes, then use DIY tools for quarterly monitoring between professional reviews. This balances cost-effectiveness with the depth of expert analysis where it matters most.</p>
+  <p>This page explains what separates a professional audit from a DIY check, what the process involves, how to evaluate providers, and how to extract maximum value from the report you receive.</p>
 
-<h2 id="whats-included">What's Included</h2>
-<p>A comprehensive professional audit typically covers five major areas, each broken into detailed sub-components. Understanding what is included helps you evaluate proposals and ensures you get the depth of analysis your site requires.</p>
-<p><strong>Technical SEO analysis</strong> covers crawlability, indexation, site architecture, URL structure, canonical implementation, hreflang tags (for multilingual sites), XML sitemaps, robots.txt configuration, structured data validation, Core Web Vitals performance, mobile usability, HTTPS security, and server response behaviour. This section identifies the infrastructure issues that prevent search engines from efficiently crawling, understanding, and ranking your content.</p>
-<p><strong>On-page optimisation review</strong> examines title tags, meta descriptions, heading hierarchy, keyword targeting, content depth and quality, internal linking patterns, image optimisation, and URL descriptiveness. Each page is evaluated against its target keyword and the search intent behind that keyword. The review identifies pages that are under-optimised, mis-targeted, or cannibalising each other's rankings.</p>
-<p><strong>Content assessment</strong> evaluates the overall content strategy: topical coverage gaps, content freshness, E-E-A-T signals, duplicate content issues, thin content that dilutes site quality, and opportunities for new content based on keyword research and competitor analysis. This section connects content quality to ranking performance using actual search data.</p>
-<p><strong>Backlink profile analysis</strong> reviews referring domain quantity and quality, anchor text distribution, toxic link identification, link velocity trends, and comparison with competitors. The output includes a disavow recommendation for harmful links and a link building strategy based on the types of links driving rankings in your competitive space.</p>
-<p><strong>Competitive benchmarking</strong> analyses three to five direct search competitors across all the above dimensions. This comparison contextualises your audit findings — a technical issue that all competitors share is less urgent than one where you are the only site affected. The competitive analysis also identifies specific opportunities where competitors are weak and you can gain an advantage.</p>
+  <h2 id="what-makes-it-professional">What Makes It Professional</h2>
 
-<h2 id="how-to-choose-an-auditor">How to Choose an Auditor</h2>
-<p>The quality of a professional audit depends entirely on the expertise of the person conducting it. Choosing the right auditor is as important as deciding to get an audit in the first place.</p>
-<p><strong>Look for demonstrated expertise.</strong> An experienced auditor should be able to show you redacted examples of previous audit reports, case studies showing the impact of implemented recommendations, and evidence of ongoing professional development in SEO. Industry certifications from Google, Ahrefs, or SEMrush demonstrate baseline knowledge, but real-world experience matters more than credentials.</p>
-<p><strong>Ask about their process.</strong> A credible auditor can walk you through their methodology in detail: which tools they use, how they structure their analysis, how they prioritise findings, and how they tailor their approach to different site types and industries. Vague answers about "running our proprietary analysis" should raise concerns — good auditors are transparent about their methods.</p>
-<p><strong>Evaluate their communication.</strong> The best analysis is worthless if you cannot understand the report. Request a sample report and evaluate whether findings are explained clearly, whether recommendations are specific enough to action, and whether the report is structured for both executive overview and detailed technical implementation. An auditor who writes jargon-heavy reports that require an SEO expert to interpret has not completed their job.</p>
-<p><strong>Understand the scope and deliverables.</strong> Before commissioning an audit, clarify exactly what will be covered, how many pages will be reviewed, whether competitive analysis is included, what format the report will take, and whether a walkthrough call is included. Also clarify what is not included — implementation support, ongoing monitoring, and follow-up reviews are typically separate engagements.</p>
-<p><strong>Check for industry experience.</strong> An auditor who has worked with sites in your industry or of similar size and complexity will deliver more relevant insights than one encountering your site type for the first time. E-commerce sites, SaaS platforms, local service businesses, and content publishers each have unique audit considerations that industry experience helps address.</p>
+  <p>The word "professional" in this context means more than simply paying someone to run an audit. A professional audit has characteristics that fundamentally distinguish it from automated reports or checkbox-style reviews.</p>
 
-<h2 id="getting-value-from-your-report">Getting Value From Your Report</h2>
-<p>A professional audit report is a strategic document, not a trophy. Its value is realised only through implementation. Many businesses invest in excellent audits and then fail to act on the findings, wasting both the audit cost and the opportunity cost of continued underperformance.</p>
-<p><strong>Schedule a walkthrough meeting</strong> with the auditor to discuss findings before starting implementation. Use this meeting to clarify any recommendations you do not fully understand, challenge prioritisations that seem misaligned with your business reality, and discuss dependencies between recommendations (some fixes only matter after other prerequisites are in place).</p>
-<p><strong>Create an implementation plan</strong> immediately after the walkthrough. Convert audit recommendations into a project plan with assigned owners, deadlines, and success metrics. Group related tasks into sprints or phases. Set a realistic timeline — trying to fix everything in the first week leads to rushed, incomplete implementation. A twelve-week implementation plan that completes 80% of recommendations is far better than a one-week scramble that only addresses superficial issues.</p>
-<p><strong>Prioritise by revenue impact.</strong> The audit report will rank issues by SEO impact, but you should overlay your own business priorities. A technical fix that improves rankings for your highest-revenue keyword is worth more than a fix that improves rankings for an informational query with no conversion potential. Use your conversion data and revenue attribution to weight the audit's SEO priorities against actual business value.</p>
-<p><strong>Track implementation and results.</strong> Create a tracker linking each recommendation to its implementation status and the metrics it should influence. Monitor those metrics after implementation to verify that fixes produce the expected results. This data validates the audit's value and builds a business case for future audits.</p>
-<p><strong>Share the report with stakeholders.</strong> The executive summary is written for decision-makers who need to understand the strategic implications without technical detail. The detailed sections serve the team members responsible for implementation. Ensure each stakeholder receives the section relevant to their role.</p>
+  <ul>
+    <li><strong>Strategic context</strong> — a professional auditor analyses your site within the context of your business goals, competitive landscape, and target audience. An automated tool treats every site identically. A professional auditor knows that a 0.3 CLS score on a lead generation page costs you more than the same score on a blog post, and prioritises accordingly.</li>
+    <li><strong>Root cause analysis</strong> — tools report symptoms. Professionals diagnose causes. An automated crawl might flag 500 pages with thin content. A professional auditor traces that to a CMS template that strips content during migration, a content strategy that favours quantity over quality, or a team that publishes placeholder pages before content is ready. The fix depends on the cause, and only a human can determine the cause.</li>
+    <li><strong>Competitive intelligence</strong> — professional audits benchmark your performance against actual competitors in your space, not generic best-practice standards. If your competitors all have 2,000-word service pages and you have 200-word pages, that gap matters more than whether you meet some arbitrary word count threshold. Professionals identify what is actually required to rank in your specific market.</li>
+    <li><strong>Prioritised action plan</strong> — the most valuable output of a professional audit is not the list of findings but the prioritisation. Every website has more issues than it has resources to fix simultaneously. A professional auditor ranks recommendations by expected impact and implementation effort, creating a sequenced plan that delivers the fastest improvements first.</li>
+    <li><strong>Interpretation of data</strong> — Search Console data, crawl reports, and analytics dashboards contain vast amounts of information. The skill is in interpreting that data — recognising patterns, identifying anomalies, and connecting data points across different sources to form a coherent picture of what is happening and why.</li>
+  </ul>
 
-<h2 id="red-flags-to-avoid">Red Flags to Avoid</h2>
-<p>The website audit market includes excellent professionals and opportunistic operators. Knowing the red flags helps you avoid wasting money on poor-quality audits that provide no actionable value.</p>
-<p><strong>Guaranteed rankings are a red flag.</strong> No legitimate SEO professional guarantees specific ranking positions. Rankings depend on competitive dynamics, algorithm changes, and implementation quality — none of which the auditor controls. Promises like "We'll get you to page one in 30 days" indicate either dishonesty or a willingness to use manipulative tactics that risk penalties.</p>
-<p><strong>Automated-only reports are overpriced.</strong> If the "professional audit" is simply an export from Screaming Frog, Ahrefs, or SEMrush with no human analysis, interpretation, or prioritisation, you are paying professional prices for a DIY product. You could run the same tools yourself for the cost of the software subscription. A professional audit must include expert interpretation that adds value beyond what tools provide.</p>
-<p><strong>Vague recommendations waste your time.</strong> "Improve your content" and "Build more backlinks" are not actionable recommendations. A professional audit should specify which pages need content improvements, what those improvements should address, which keywords to target, and what format or depth the improved content should achieve. Similarly, backlink recommendations should identify specific link targets, outreach approaches, and linkable asset opportunities.</p>
-<p><strong>No competitive context means half the picture.</strong> An audit that evaluates your site in isolation, without comparing your performance to the sites that actually rank above you, cannot properly prioritise its findings. If every site in your space has the same technical issue, it is not a competitive disadvantage. If you are the only site with the issue, it is urgent. Context requires competitive analysis.</p>
-<p><strong>High-pressure upselling should give you pause.</strong> Some agencies use free or low-cost audits as lead generation tools, deliberately emphasising problems to create urgency for their ongoing SEO services. A genuine professional audit presents findings objectively, explains severity honestly, and lets you decide how to proceed — whether that is hiring them, hiring someone else, or implementing fixes in-house.</p>
+  <h2 id="diy-tools-vs-expert-review">DIY Tools vs Expert Review</h2>
 
-<h2 id="our-approach">Our Approach</h2>
-<p>Our professional website audit is built on a structured methodology refined over hundreds of engagements across diverse industries and site types. Every audit follows the same rigorous process while being adapted to your specific business context and competitive landscape.</p>
-<p>We begin with a discovery call to understand your business goals, target audience, competitive environment, and the specific concerns that prompted the audit. This context shapes our analysis — a lead generation site for a local service business requires different audit emphasis than a national e-commerce platform or a B2B SaaS company.</p>
-<p>The audit itself combines automated crawling and data collection with manual expert analysis. We use industry-standard tools for data gathering but never rely on automated scoring to determine priorities. Every finding is evaluated by an experienced SEO analyst who understands both the technical implications and the business impact.</p>
-<p>Our report is structured for action. The executive summary gives decision-makers a clear overview in under two pages. The detailed findings section provides specific, implementation-ready recommendations for each issue, grouped by priority tier. Every recommendation includes an explanation of why it matters, the estimated impact of fixing it, the effort required, and specific implementation guidance.</p>
-<p>Every audit includes a 60-minute walkthrough call where we discuss findings, answer questions, and help you plan implementation. We want you to fully understand every recommendation and feel confident about the path forward, whether you implement in-house, engage us for implementation support, or work with another provider.</p>
-<p>We also include a 30-day follow-up check-in to review implementation progress, answer questions that have arisen during execution, and adjust priorities based on any changes since the audit was delivered. This ensures the audit delivers lasting value rather than gathering dust after the initial walkthrough.</p>
-<p>To see what our deliverables look like, review our <a href="/website-audit-services/report-example/">sample report</a>. When you are ready to discuss your site's needs, use the contact form on this page to start the conversation.</p>
+  <p>There is nothing wrong with using DIY audit tools — in fact, professionals use the same tools. The difference is in how the data is interpreted, what additional analysis is performed, and what the output looks like.</p>
 
+  <p>Here is an honest comparison of what each approach delivers:</p>
+
+  <ul>
+    <li><strong>DIY tools (Screaming Frog, Ahrefs Site Audit, Semrush)</strong> — excellent at identifying technical issues at scale. They catch broken links, missing tags, duplicate content, crawl errors, and performance problems systematically. Where they fall short is in explaining why issues matter, how they interact, and which ones to fix first. A Screaming Frog crawl might surface 3,000 warnings, but without expertise, you cannot distinguish between the 50 warnings that actually affect your rankings and the 2,950 that are irrelevant.</li>
+    <li><strong>Free online audit tools</strong> — useful for a quick health check but extremely limited in depth. Most score your site on a scale, check basic on-page elements, and highlight a few issues. They are marketing tools designed to generate leads for the companies that offer them. They do not provide competitive analysis, content evaluation, or strategic recommendations.</li>
+    <li><strong>Professional audit</strong> — uses the same crawl tools plus manual analysis, competitive research, content assessment, and strategic thinking. A professional audit takes 20-60 hours depending on site size. That time is spent analysing data, researching competitors, evaluating content quality, and synthesising findings into actionable recommendations. The output is a strategic document, not a technical report.</li>
+  </ul>
+
+  <p>The right approach depends on your situation. If you have in-house SEO expertise and just need crawl data, DIY tools are sufficient. If you need someone to interpret the data, develop a strategy, and provide a roadmap, a professional audit is the better investment. For most businesses without a dedicated SEO team, the professional route saves time and delivers better outcomes because it skips the learning curve of figuring out what the data means.</p>
+
+  <h2 id="whats-included">What's Included</h2>
+
+  <p>A comprehensive professional website audit typically covers six areas, each examined in detail:</p>
+
+  <ul>
+    <li><strong>Technical SEO analysis</strong> — server configuration, crawlability, indexation health, Core Web Vitals, mobile usability, HTTPS implementation, structured data validation, and JavaScript rendering. The auditor crawls your entire site, cross-references with Search Console data, and identifies every technical barrier to ranking.</li>
+    <li><strong>On-page optimisation review</strong> — title tags, meta descriptions, heading structure, URL architecture, internal linking patterns, image optimisation, and canonical tag implementation across every page template on your site. Issues are grouped by template type to enable efficient batch fixes.</li>
+    <li><strong>Content quality assessment</strong> — evaluation of content depth, freshness, originality, E-E-A-T signals, and search intent alignment for your most important pages. Identification of thin content, cannibalised keywords, content gaps relative to competitors, and pages that need refreshing or consolidation.</li>
+    <li><strong>Backlink profile analysis</strong> — referring domain quality and diversity, anchor text distribution, toxic link identification, link velocity trends, and comparison against competitor link profiles. Recommendations for disavow candidates and link-building opportunities.</li>
+    <li><strong>Competitive benchmarking</strong> — detailed comparison of your site against three to five direct organic competitors across technical health, content coverage, authority, and SERP feature presence. Identification of your competitive advantages and the specific gaps holding you back.</li>
+    <li><strong>User experience and conversion review</strong> — assessment of how organic traffic flows through your site, where users drop off, whether conversion paths are clear, and whether the mobile experience meets current standards. This connects SEO performance to business outcomes.</li>
+  </ul>
+
+  <p>The deliverable is typically a 30-80 page report (depending on site size) with an executive summary, detailed findings organised by category, and a prioritised action plan with estimated timelines and expected impact for each recommendation.</p>
+
+  <h2 id="how-to-choose-an-auditor">How to Choose an Auditor</h2>
+
+  <p>The quality of a professional audit depends entirely on the person conducting it. Here is how to evaluate potential audit providers:</p>
+
+  <ul>
+    <li><strong>Ask for a sample report</strong> — any reputable auditor should be willing to share a redacted sample of a previous audit. Review it for depth of analysis, clarity of recommendations, and whether findings include strategic context rather than just technical observations. If the sample reads like an automated report with a logo on it, the auditor is adding minimal value beyond what a tool provides.</li>
+    <li><strong>Check their own SEO</strong> — a competent SEO auditor's own website should demonstrate the practices they recommend. Check their site speed, technical health, content quality, and whether they rank for relevant keywords. An auditor whose own site has fundamental issues is unlikely to identify all of yours.</li>
+    <li><strong>Industry experience</strong> — auditors with experience in your industry understand the specific competitive dynamics, content expectations, and regulatory considerations that affect your site. A legal industry auditor knows about E-E-A-T requirements for YMYL content. An ecommerce auditor understands faceted navigation challenges. General-purpose auditors may miss industry-specific issues.</li>
+    <li><strong>Clear process and timeline</strong> — the auditor should be able to explain their process step by step, tell you which tools they use, how long the audit will take, and what the deliverable will include. Vague promises of "a comprehensive review" without specifics suggest an ad hoc approach rather than a systematic methodology.</li>
+    <li><strong>Post-audit support</strong> — ask whether the auditor provides a walkthrough call to explain findings, offers implementation support, and is available for follow-up questions. An audit report without context is significantly less valuable than one accompanied by expert explanation and ongoing guidance.</li>
+  </ul>
+
+  <h2 id="getting-value-from-your-report">Getting Value From Your Report</h2>
+
+  <p>The audit report is only valuable if it leads to action. Many businesses commission audits, receive impressive-looking documents, and then let them gather dust because the findings feel overwhelming or the recommendations are unclear. Here is how to extract maximum value:</p>
+
+  <ul>
+    <li><strong>Schedule a walkthrough</strong> — do not try to interpret the report alone. Schedule a call with the auditor to walk through the findings, ask questions, and clarify priorities. During this call, agree on the top five actions to take immediately and the timeline for completing them.</li>
+    <li><strong>Create implementation tickets</strong> — convert each recommendation into a specific task with an assignee, deadline, and acceptance criteria. "Fix technical SEO issues" is not actionable. "Update robots.txt to remove the disallow for /resources/ by March 15" is. Break large recommendations into smaller, executable tasks.</li>
+    <li><strong>Start with quick wins</strong> — identify recommendations that require minimal effort but deliver measurable impact. Title tag improvements, meta description additions, and broken link fixes are often quick wins that can be completed within days and produce visible results within weeks.</li>
+    <li><strong>Track progress</strong> — revisit the audit quarterly to assess how many recommendations have been implemented, measure the impact of completed changes, and reprioritise remaining items based on updated data. An audit is a living document that should guide your SEO strategy for six to twelve months.</li>
+    <li><strong>Measure outcomes</strong> — establish baseline metrics before implementing changes (organic traffic, keyword rankings, conversion rates) and measure the same metrics after. This quantifies the ROI of both the audit and the implementation work, which helps justify future SEO investment.</li>
+  </ul>
+
+  <h2 id="red-flags">Red Flags</h2>
+
+  <p>Not all professional audit services deliver genuine value. Watch for these warning signs that suggest you are not getting what you are paying for:</p>
+
+  <ul>
+    <li><strong>Instant delivery</strong> — a thorough audit takes days or weeks to complete. If a provider promises delivery within 24 hours, they are running automated tools and repackaging the output. Real analysis requires time for data collection, manual review, competitive research, and strategic synthesis.</li>
+    <li><strong>Generic recommendations</strong> — if the audit recommendations could apply to any website ("improve page speed," "create more content," "build backlinks"), the auditor has not done site-specific analysis. Every recommendation should reference specific pages, specific issues, and specific actions tailored to your site.</li>
+    <li><strong>No competitive context</strong> — an audit that examines your site in isolation, without benchmarking against competitors, misses half the picture. Your site's issues only matter relative to what it takes to outrank the sites currently ahead of you.</li>
+    <li><strong>Score-focused reporting</strong> — beware of audits that obsess over a single "health score" or "SEO score." These scores are marketing abstractions that do not reflect how Google actually evaluates websites. A useful audit focuses on specific, actionable findings, not a vanity metric.</li>
+    <li><strong>Upsell pressure</strong> — some providers offer cheap or free audits as a sales tool, then pressure you into expensive retainer contracts to implement the findings. A legitimate audit delivers standalone value regardless of whether you hire the same provider for implementation.</li>
+    <li><strong>No methodology transparency</strong> — if the auditor cannot or will not explain their methodology, tools, and analytical process, you cannot evaluate the quality of their work. Transparency about process is a basic professional standard.</li>
+  </ul>
+
+  <h2 id="our-approach">Our Approach</h2>
+
+  <p>Our professional audit process is designed to deliver maximum actionable value while respecting your time and budget. Here is exactly how we work:</p>
+
+  <ul>
+    <li><strong>Discovery call</strong> — we start with a 30-minute call to understand your business goals, competitive landscape, target audience, and any known issues. This context shapes the audit focus and ensures our analysis addresses your actual priorities rather than generic best practices.</li>
+    <li><strong>Data collection</strong> — we request read-only access to Google Search Console and Google Analytics. We run a comprehensive crawl of your site, pull your backlink profile, and collect competitive data for your top five organic competitors. All data is handled under NDA.</li>
+    <li><strong>Analysis</strong> — our team spends five to fifteen days analysing the data depending on site size. We examine every technical, on-page, content, off-page, and UX dimension, cross-referencing findings across data sources to identify root causes and patterns rather than isolated symptoms.</li>
+    <li><strong>Report delivery</strong> — you receive a detailed report with an executive summary, categorised findings, and a prioritised action plan with estimated impact and effort for each recommendation. The report includes specific URLs, screenshots, and data supporting every finding.</li>
+    <li><strong>Walkthrough call</strong> — within a week of delivery, we schedule a 60-minute call to walk through the report, answer questions, and agree on implementation priorities. This call is included in every audit.</li>
+    <li><strong>90-day check-in</strong> — three months after the audit, we schedule a follow-up call to review implementation progress, measure results from completed changes, and adjust priorities based on new data. This ensures the audit continues to deliver value beyond the initial report.</li>
+  </ul>
+
+  <p>A professional website audit is an investment in clarity. It eliminates guesswork about what is working, what is broken, and what to do next. When you know exactly where your site stands and what it takes to improve, every pound you spend on SEO produces a better return because it is directed at the issues that actually matter.</p>
 </ContentLayout>

@@ -1,0 +1,133 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'Law Firms', href: '/seo-website-audit/law-firms/' },
+];
+
+const toc = [
+  { label: 'Legal SEO Landscape', id: 'legal-seo-landscape' },
+  { label: 'Practice Area Pages', id: 'practice-area-pages' },
+  { label: 'Local SEO for Law Firms', id: 'local-seo-for-law-firms' },
+  { label: 'Attorney Profiles', id: 'attorney-profiles' },
+  { label: 'E-E-A-T for Legal Content', id: 'e-e-a-t-for-legal-content' },
+  { label: 'Compliance Considerations', id: 'compliance-considerations' },
+  { label: 'Law Firm Audit Checklist', id: 'law-firm-audit-checklist' },
+];
+---
+
+<ContentLayout
+  title="SEO Audit for Law Firm Websites: Get More Clients"
+  description="A law firm SEO audit identifies the practice area pages, local search signals, attorney profiles, and E-E-A-T factors that determine whether potential clients find your firm online."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>Law firm websites operate in one of the most competitive and highest-value SEO environments. A single personal injury client can be worth tens of thousands in fees. A family law enquiry that converts could mean thousands in billable hours. Yet most law firm websites are poorly optimised — built by web designers who prioritise aesthetics over search performance, with practice area pages that read like legal textbooks rather than content that ranks and converts.</p>
+
+  <p>Legal SEO has its own set of challenges that generic SEO audits fail to address. Google applies heightened scrutiny to legal content under its YMYL (Your Money or Your Life) classification because incorrect legal information can cause real harm to users. This means E-E-A-T signals — experience, expertise, authoritativeness, and trustworthiness — carry more weight for law firm websites than for most other industries. Attorney profiles, credentials, bar admissions, case results, and client testimonials are not just nice to have — they are ranking factors.</p>
+
+  <p>Add the local dimension — most law firms serve a specific geographic area and need to appear in the local pack, Google Maps, and location-specific organic results — and you have a website that needs a specialised audit approach. This guide covers every element that a law firm SEO audit should examine, from practice area page structure to local search optimisation and regulatory compliance.</p>
+
+  <h2 id="legal-seo-landscape">Legal SEO Landscape</h2>
+
+  <p>The legal services market online is dominated by directories, aggregators, and well-funded national firms that spend six or seven figures annually on SEO and paid search. For smaller and mid-size firms, understanding this landscape is essential for setting realistic expectations and identifying the opportunities that remain.</p>
+
+  <p>The search results for most legal queries are structured as follows:</p>
+
+  <ul>
+    <li><strong>Paid ads dominate above the fold</strong> — legal keywords have among the highest cost-per-click in Google Ads, often exceeding $50-100 per click for terms like "personal injury lawyer" or "divorce attorney near me." The top four ad positions push organic results below the fold on mobile, making organic ranking even more competitive because fewer searchers see the organic listings.</li>
+    <li><strong>Local pack for location queries</strong> — searches with geographic intent ("solicitor in [city]," "family lawyer near me") trigger a local pack showing three Google Business Profile listings with reviews, phone numbers, and directions. For local firms, appearing in this pack is often more valuable than ranking first in organic results because it occupies prime real estate above organic listings.</li>
+    <li><strong>Directory dominance in organic</strong> — for broad legal queries, directories like Avvo, FindLaw, Justia, and Lawyers.com frequently outrank individual firm websites. These sites have massive domain authority and thousands of attorney profiles. Your firm is unlikely to outrank them for generic terms, which means your strategy needs to target more specific queries where you can compete.</li>
+    <li><strong>Long-tail opportunity</strong> — while "personal injury lawyer" is impossibly competitive for most firms, longer queries like "what to do after a car accident in [city]" or "how long do I have to file a medical malpractice claim in [state]" are far more achievable and often indicate higher intent. The audit should assess your coverage of these long-tail informational and transactional queries.</li>
+  </ul>
+
+  <p>Your audit needs to evaluate where your firm can realistically compete and whether your current content and technical infrastructure are optimised for those specific opportunities rather than wasting resources on queries you cannot win.</p>
+
+  <h2 id="practice-area-pages">Practice Area Pages</h2>
+
+  <p>Practice area pages are the most important pages on a law firm website from both an SEO and conversion perspective. Each practice area page targets a high-value service keyword ("personal injury solicitor [city]," "employment law firm [region]") and serves as the primary landing page for potential clients researching that legal issue.</p>
+
+  <p>Audit your practice area pages for these elements:</p>
+
+  <ul>
+    <li><strong>Dedicated pages for each service</strong> — every practice area and sub-practice area should have its own page with a unique URL. A firm that handles family law should have separate pages for divorce, child custody, child support, prenuptial agreements, and domestic violence — not a single "Family Law" page that briefly mentions all of these. Each sub-practice area has distinct search queries with distinct intent, and each deserves a dedicated page.</li>
+    <li><strong>Content depth and structure</strong> — practice area pages should be comprehensive guides, not 200-word summaries. Top-ranking practice area pages typically contain 1,500-3,000 words covering what the legal issue involves, the process a client can expect, common questions, relevant laws, and why your firm is qualified to handle it. Structure content with clear headings that address the questions prospective clients are searching for.</li>
+    <li><strong>Geographic targeting</strong> — practice area pages for local firms should reference the specific cities, counties, and regions you serve. "Personal injury solicitor in Manchester" has different search behaviour than "personal injury solicitor in Leeds," and Google needs geographic signals in your content to rank you for location-specific queries. Include references to local courts, jurisdictions, and area-specific legal considerations.</li>
+    <li><strong>Conversion elements</strong> — every practice area page should include a clear call to action for a free consultation, a phone number, and a contact form. These should be visible without scrolling on both desktop and mobile. Include trust signals near the CTA — years of experience, number of cases handled, and notable results.</li>
+    <li><strong>Internal linking</strong> — practice area pages should link to related sub-practice pages, relevant blog posts, case results, and attorney profiles for the lawyers who handle that practice area. This creates a topical cluster that signals expertise to search engines.</li>
+    <li><strong>Schema markup</strong> — implement LegalService schema on practice area pages with your firm name, practice area type, geographic area served, and contact information. This helps Google understand exactly what services you offer and where.</li>
+  </ul>
+
+  <h2 id="local-seo-for-law-firms">Local SEO for Law Firms</h2>
+
+  <p>Most law firms depend on local clients, making local SEO a critical component of the audit. Local search optimisation determines whether your firm appears in the local pack, Google Maps, and location-modified organic results — the places where potential clients with immediate legal needs are looking.</p>
+
+  <ul>
+    <li><strong>Google Business Profile audit</strong> — your GBP listing is the foundation of local SEO. Verify that your firm name, address, phone number, and website URL are accurate and consistent. Select the most specific primary category ("Personal Injury Attorney" rather than just "Lawyer"). Complete every available field — business description, service areas, business hours, attributes, and services. Add photos of your office, team, and any relevant imagery.</li>
+    <li><strong>NAP consistency</strong> — your firm's name, address, and phone number must be identical across every online directory, social profile, and citation source. Even small inconsistencies (abbreviating "Street" to "St." in some places but not others) can confuse Google's local algorithm. Audit your listings on Yell, Thomson Local, Yelp, legal directories, bar association listings, and any other platforms where your firm appears.</li>
+    <li><strong>Review profile</strong> — Google reviews directly influence local pack rankings. Check your total review count, average rating, review velocity (how frequently new reviews appear), and whether you are responding to reviews. A firm with 50 five-star reviews with thoughtful responses outranks a firm with five reviews and no responses. Develop a systematic process for requesting reviews from satisfied clients.</li>
+    <li><strong>Local content</strong> — create content that demonstrates your firm's connection to the local area. Blog posts about local legal developments, changes to local court procedures, community involvement, and area-specific legal guides all reinforce your local relevance. A post about "How the new Manchester County Court procedures affect your personal injury claim" sends strong local signals.</li>
+    <li><strong>Location pages</strong> — if your firm has multiple offices, each needs a dedicated location page with unique content, its own NAP details, embedded Google Map, local schema markup, and content specific to that office's practice areas and attorneys. Do not create thin location pages with only an address — they need substantive content about the legal services available at that location.</li>
+    <li><strong>Legal directory citations</strong> — ensure your firm is listed on all major legal directories (Avvo, FindLaw, Justia, Lawyers.com, Super Lawyers, Martindale-Hubbell) with complete and consistent profiles. These listings serve as both citations for local SEO and potential referral sources.</li>
+  </ul>
+
+  <h2 id="attorney-profiles">Attorney Profiles</h2>
+
+  <p>Individual attorney profile pages are among the most important and most neglected pages on law firm websites. From an SEO perspective, attorney profiles serve multiple purposes: they are E-E-A-T signals that demonstrate expertise, they can rank independently for attorney name searches, and they establish the human expertise behind your firm's content.</p>
+
+  <p>Audit attorney profiles for:</p>
+
+  <ul>
+    <li><strong>Comprehensive credentials</strong> — each attorney page should include bar admissions, education, years of experience, professional associations, awards and recognitions, notable case results (where permitted), speaking engagements, and published articles. These are the E-E-A-T signals that Google uses to evaluate whether your firm has genuine legal expertise.</li>
+    <li><strong>Unique, substantive content</strong> — a profile with just a name, photo, and list of practice areas is thin content. Each attorney page should have a biographical narrative of at least 300-500 words that describes their background, approach to client work, areas of specialisation, and what distinguishes them. Written in third person, these biographies should read as authoritative professional profiles, not marketing copy.</li>
+    <li><strong>Professional headshots</strong> — high-quality, professional photographs with descriptive alt text. The alt text should include the attorney's name and title ("John Smith, Personal Injury Solicitor at [Firm Name]").</li>
+    <li><strong>Schema markup</strong> — implement Person schema on each attorney page with their name, job title, educational background, and affiliation with your firm. This contributes to Knowledge Panel eligibility for individual attorneys and reinforces the connection between the attorney, the firm, and the practice areas they cover.</li>
+    <li><strong>Content attribution</strong> — blog posts and practice area content should be attributed to specific attorneys with links back to their profiles. This creates a web of expertise signals that connects individual attorney credentials to the content they have authored.</li>
+  </ul>
+
+  <h2 id="e-e-a-t-for-legal-content">E-E-A-T for Legal Content</h2>
+
+  <p>Legal content falls under Google's YMYL classification, meaning it is held to the highest E-E-A-T standards. Content that could affect a user's legal rights, financial situation, or safety receives extra scrutiny from Google's quality raters. Your audit needs to evaluate E-E-A-T signals both at the page level and the site level.</p>
+
+  <ul>
+    <li><strong>Author expertise</strong> — every piece of legal content should be attributed to a named attorney with demonstrated expertise in the relevant practice area. A personal injury blog post written by a corporate lawyer, or worse, attributed to "Admin" or "The Firm," fails the expertise test. Link author bylines to comprehensive attorney profiles.</li>
+    <li><strong>Accuracy and currency</strong> — legal content must be accurate and current. Check for references to outdated laws, superseded regulations, or legal processes that have changed. A page about divorce procedures that references a law repealed two years ago undermines trust for the entire site. Include "last reviewed" dates on legal content and establish a review cycle.</li>
+    <li><strong>Citations and references</strong> — link to primary legal sources — legislation, case law, regulatory guidance, and bar association resources. Unsupported legal claims damage credibility. When discussing specific legal provisions, cite the relevant section and provide a link where possible.</li>
+    <li><strong>Disclaimers and transparency</strong> — include appropriate legal disclaimers that the content is for informational purposes and does not constitute legal advice. This is both a regulatory requirement and an E-E-A-T signal — it demonstrates that your firm understands the boundaries between legal information and legal advice.</li>
+    <li><strong>Case results and social proof</strong> — where permitted by your jurisdiction's bar rules, include case results, settlement amounts, and client testimonials. These provide first-hand evidence of your firm's competence and build trust with both users and search engines. Always include appropriate disclaimers that past results do not guarantee future outcomes.</li>
+    <li><strong>About page and firm credentials</strong> — your about page should comprehensively establish your firm's history, values, community involvement, and collective expertise. Include total years of combined experience, number of cases handled, and any firm-level awards or recognitions.</li>
+  </ul>
+
+  <h2 id="compliance-considerations">Compliance Considerations</h2>
+
+  <p>Law firm websites must comply with advertising rules set by the relevant bar association or regulatory body. These rules vary by jurisdiction but generally restrict how firms can advertise their services online. Non-compliance can result in disciplinary action against the firm's attorneys.</p>
+
+  <ul>
+    <li><strong>Advertising rules review</strong> — check that all website content complies with your jurisdiction's rules on lawyer advertising. Common restrictions include prohibitions on guaranteeing outcomes, requirements for specific disclaimers on testimonials, restrictions on using the term "specialist" or "expert" without board certification, and rules about comparative advertising against other firms.</li>
+    <li><strong>Testimonial regulations</strong> — many jurisdictions require specific disclaimers alongside client testimonials. Some prohibit testimonials entirely or require that they include a statement that results may vary. Audit every testimonial on the site for compliance with local rules.</li>
+    <li><strong>Case result disclosures</strong> — if you display case results or settlement amounts, check that you include required disclaimers. Most jurisdictions require a statement that the facts and circumstances of each case differ and past results are not predictive of future outcomes.</li>
+    <li><strong>Privacy and data collection</strong> — contact forms that collect potential client information trigger privacy obligations. Verify that your privacy policy covers how enquiry data is handled, stored, and protected. Ensure forms include consent language appropriate for your jurisdiction's privacy laws.</li>
+    <li><strong>Accessibility compliance</strong> — law firm websites should meet WCAG 2.1 AA accessibility standards. Beyond being best practice, accessibility is increasingly a legal requirement itself, and a law firm with an inaccessible website creates a reputational risk. Check for alt text on images, keyboard navigation, colour contrast ratios, and form label associations.</li>
+  </ul>
+
+  <h2 id="law-firm-audit-checklist">Law Firm Audit Checklist</h2>
+
+  <p>Use this condensed checklist to ensure your law firm SEO audit is comprehensive:</p>
+
+  <ul>
+    <li><strong>Practice area pages:</strong> Dedicated page per sub-practice area, 1,500+ words, geographic references, clear CTAs, internal links to related content, LegalService schema.</li>
+    <li><strong>Local SEO:</strong> GBP profile complete and verified, NAP consistent across all directories, review strategy active, local content published regularly, location pages for each office.</li>
+    <li><strong>Attorney profiles:</strong> Comprehensive credentials, 300+ word biographies, professional photos with alt text, Person schema, linked as authors on relevant content.</li>
+    <li><strong>E-E-A-T:</strong> Named attorney authors on all legal content, citations to primary legal sources, current and accurate information, last-reviewed dates, disclaimers present.</li>
+    <li><strong>Technical:</strong> Mobile-friendly design, fast page load times, HTTPS throughout, XML sitemap accurate, no crawl errors on important pages.</li>
+    <li><strong>Content strategy:</strong> Blog covering long-tail legal questions, FAQ schema on relevant pages, local legal news and developments, content gap analysis against competing firms.</li>
+    <li><strong>Compliance:</strong> Advertising rules satisfied, testimonial disclaimers present, case result disclosures included, privacy policy covers form data, accessibility standards met.</li>
+    <li><strong>Conversion:</strong> Phone number visible on every page, contact forms above the fold on practice area pages, free consultation CTA prominent, live chat or chatbot for immediate engagement.</li>
+  </ul>
+
+  <p>A law firm SEO audit is not a one-time project. Google's algorithm updates regularly recalibrate how YMYL content is evaluated, local search factors shift as Google refines its local algorithm, and bar advertising rules evolve as regulators adapt to digital marketing. Schedule quarterly technical reviews and semi-annual content audits to maintain and improve your firm's search visibility. Every position gained in the local pack or organic results for a practice area keyword represents potential clients who find your firm instead of a competitor.</p>
+</ContentLayout>

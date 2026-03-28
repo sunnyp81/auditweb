@@ -1,86 +1,124 @@
 ---
 import ContentLayout from '../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Competitor Audit', href: '/competitor-website-audit/' },
+];
+
+const toc = [
+  { label: 'Why Audit Competitors', id: 'why-audit-competitors' },
+  { label: 'Choosing Competitors', id: 'choosing-competitors' },
+  { label: 'Technical Comparison', id: 'technical-comparison' },
+  { label: 'Content Gaps', id: 'content-gaps' },
+  { label: 'Backlink Comparison', id: 'backlink-comparison' },
+  { label: 'Keyword Overlap', id: 'keyword-overlap' },
+  { label: 'Action Plan', id: 'action-plan' },
+];
 ---
 
 <ContentLayout
-  title="Competitor Website Audit: Learn What's Working for Your Rivals"
-  description="A competitor audit analyses rival websites to uncover their SEO strategies, content gaps, backlink sources, and technical advantages you can exploit."
-  breadcrumbs={[
-    { label: 'Website Audit', href: '/website-audit/' },
-    { label: 'Competitor Audit', href: '/competitor-website-audit/' }
-  ]}
-  toc={[
-    { label: 'Why Audit Competitors', id: 'why-audit-competitors' },
-    { label: 'Choosing Competitors to Analyse', id: 'choosing-competitors-to-analyse' },
-    { label: 'Technical Comparison', id: 'technical-comparison' },
-    { label: 'Content Gap Analysis', id: 'content-gap-analysis' },
-    { label: 'Backlink Profile Comparison', id: 'backlink-profile-comparison' },
-    { label: 'Keyword Overlap', id: 'keyword-overlap' },
-    { label: 'Design and UX Benchmarking', id: 'design-and-ux-benchmarking' },
-    { label: 'Building Your Action Plan', id: 'building-your-action-plan' }
-  ]}
+  title="Competitor Website Audit: Learn From Your Rivals"
+  description="A competitor website audit reveals the SEO strategies, content advantages, backlink sources, and technical approaches your rivals use to outrank you — and how to close the gap."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
   publishDate="2026-03-28"
 >
+  <p>Your search rankings do not exist in a vacuum. Every position you hold is relative to the other sites competing for the same keywords. Understanding what your competitors do well — and where they are vulnerable — is essential for developing an SEO strategy that can realistically achieve and maintain top rankings. A competitor website audit provides this intelligence.</p>
 
-<h2 id="why-audit-competitors">Why Audit Competitors</h2>
-<p>Your search rankings are not determined in isolation. Every position you hold is contested by competitors who are actively optimising their own sites. Understanding what your competitors are doing — their technical infrastructure, content strategy, link building approach, and user experience — reveals both the standard you need to meet and the opportunities they have missed.</p>
-<p>A competitor audit transforms SEO strategy from guesswork into intelligence-driven planning. Instead of broadly "improving your site," you can target the specific gaps between your performance and the sites that currently outrank you. If the top three results for your primary keyword all have page speeds under two seconds and you are at four seconds, you have a clear technical priority. If they all have comprehensive resource centres with 50+ articles and you have a blog with twelve posts, you know where your content investment needs to go.</p>
-<p>Competitor audits also reveal vulnerabilities you can exploit. Perhaps your top competitor has excellent content but a weak backlink profile. Perhaps they dominate informational keywords but neglect transactional terms. Perhaps their site is technically strong but their content is generic and lacks the depth or originality that Google increasingly rewards. These insights let you focus your resources where they will produce the greatest competitive advantage.</p>
-<p>The intelligence gathered also helps you anticipate competitor moves. If a rival has recently launched a new content hub, ramped up link building, or improved their site speed, you can see the trajectory and respond before they capture your positions. Waiting until you have already lost rankings to investigate why is reactive; competitor auditing is proactive.</p>
+  <p>While auditing your own site reveals what needs fixing, auditing competitors reveals what needs building. It answers questions that internal analysis cannot: Why does this competitor rank above you for your most important keyword? Where are they getting their backlinks? What content topics are they covering that you have not touched? What technical advantages do they have? And critically, where are they weak — where can you overtake them with focused effort?</p>
 
-<h2 id="choosing-competitors-to-analyse">Choosing Competitors to Analyse</h2>
-<p>Your search competitors are not necessarily your business competitors. The sites ranking for your target keywords may include publishers, comparison sites, forums, and businesses from adjacent industries. Your competitor audit should focus on the sites that actually compete for the same search visibility, regardless of whether they compete for the same customers.</p>
-<p>Start by identifying your target keywords — the queries that drive the most valuable traffic to your business. Search each keyword in Google and note which domains appear consistently in the top five positions. The sites that appear most frequently across your keyword set are your primary search competitors. Typically, three to five primary competitors provide enough data for meaningful analysis without creating an unmanageable workload.</p>
-<p>Supplement manual SERP review with tool-based discovery. Ahrefs' "Competing Domains" report and SEMrush's "Organic Research Competitors" identify domains that rank for the largest number of keywords in common with your site. This often surfaces competitors you were not aware of — perhaps a blog, a niche publication, or a new market entrant that is rapidly gaining visibility in your keyword space.</p>
-<p>Include at least one aspirational competitor — a site that significantly outperforms you and represents where you want to be in twelve to eighteen months. Analysing a site that is far ahead reveals the gap you need to close and often provides a roadmap of content, technical, and authority investments you need to make.</p>
-<p>Exclude sites you cannot realistically compete with. If Wikipedia or Amazon rank for a keyword, analysing their backlink profiles is interesting but not actionable — you are not going to replicate their domain authority. Focus on competitors whose success you could plausibly match with focused effort and investment.</p>
+  <p>This guide walks through the complete process of conducting a competitor website audit, from selecting which competitors to analyse through to building an action plan based on your findings.</p>
 
-<h2 id="technical-comparison">Technical Comparison</h2>
-<p>Technical SEO creates the foundation that all other ranking factors build on. Comparing your technical performance against competitors reveals whether you are competing on a level playing field or working with a handicap.</p>
-<p><strong>Page speed and Core Web Vitals</strong> are the most visible technical differentiators. Use Google's PageSpeed Insights or CrUX data to compare your LCP, INP, and CLS scores against each competitor. If your LCP is 3.8 seconds and your main competitor achieves 1.9 seconds, you have a measurable disadvantage. Note which technologies they use to achieve better performance — CDN providers, image formats (WebP, AVIF), JavaScript frameworks, and caching strategies.</p>
-<p><strong>Crawl architecture</strong> affects how efficiently search engines discover and index content. Use Screaming Frog to crawl competitor sites (respecting robots.txt) and analyse their site structure. How deep are their most important pages? How many internal links point to their key landing pages? Do they use breadcrumbs, hub pages, and topic clusters to distribute link equity? Compare their internal linking density and depth to your own.</p>
-<p><strong>Structured data implementation</strong> determines eligibility for rich results. Check whether competitors use FAQ schema, HowTo schema, Product schema, Review schema, or Organisation schema. Rich results can significantly increase click-through rates, so a competitor with rich snippets has a visibility advantage beyond their raw ranking position.</p>
-<p><strong>Mobile optimisation</strong> is worth comparing explicitly. Test competitor sites on mobile devices to evaluate responsive behaviour, tap target sizing, mobile navigation patterns, and mobile page speed. A competitor that provides a superior mobile experience will increasingly win as mobile traffic grows.</p>
-<p><strong>Indexing efficiency</strong> reveals content strategy scale. Using Ahrefs or SEMrush, compare the number of indexed pages across competitors. A site with 500 indexed pages targeting keywords in your space is a different challenge than one with 5,000 pages. More indexed pages suggest a more aggressive content strategy and broader keyword coverage.</p>
+  <h2 id="why-audit-competitors">Why Audit Competitors</h2>
 
-<h2 id="content-gap-analysis">Content Gap Analysis</h2>
-<p>Content gap analysis identifies keywords and topics your competitors rank for that you do not. These gaps represent traffic you are leaving on the table and topics where competitors have established authority that you have not yet challenged.</p>
-<p>Tools like Ahrefs' Content Gap report make this analysis straightforward. Input your domain and two to four competitor domains, and the tool identifies keywords where competitors rank in the top ten but your site does not appear. Filter this list by search volume and keyword difficulty to prioritise the most valuable, achievable opportunities.</p>
-<p>Beyond keyword-level gaps, evaluate content type gaps. Do competitors have resource centres, glossaries, comparison pages, case studies, or interactive tools that you lack? These content formats often target different search intents than standard blog posts or service pages, capturing traffic at different stages of the buyer journey. A competitor with a comprehensive FAQ section may be capturing long-tail question queries that your site ignores entirely.</p>
-<p><strong>Content depth comparison</strong> is equally important. For your shared target keywords, compare the depth and quality of your content against what competitors have published. Word count alone is not a reliable metric, but if competitors consistently produce 2,500-word guides with original data, expert quotes, and custom graphics while your pages are 800-word overviews, the depth gap is a likely ranking factor.</p>
-<p><strong>Content freshness</strong> signals matter for many topics. Check when competitors last updated their key pages. If a competitor's guide was last updated in 2024 and yours was published in 2022 with no updates, Google may perceive their content as more current and reliable. Regular content updates are a competitive strategy you can match with a disciplined refresh schedule.</p>
-<p><strong>Topical authority mapping</strong> reveals how competitors structure their content around core topics. A competitor who has published fifteen articles on different aspects of your target topic has stronger topical signals than a site with two articles. Map their topic clusters and identify where your coverage is thin compared to theirs.</p>
+  <p>A competitor audit serves three strategic purposes that auditing your own site alone cannot achieve:</p>
 
-<h2 id="backlink-profile-comparison">Backlink Profile Comparison</h2>
-<p>Backlinks remain one of the strongest ranking factors. Comparing your link profile against competitors reveals the authority gap and, more importantly, identifies specific link opportunities you can pursue.</p>
-<p>Start with high-level metrics. Compare total referring domains, domain authority or domain rating, the rate of new link acquisition over the past twelve months, and the distribution of link quality (what percentage of links come from high-authority domains). These metrics establish the overall competitive landscape and tell you how much link building investment is needed to compete.</p>
-<p><strong>Link source analysis</strong> reveals where competitors earn their links. Categorise their backlinks by source type: editorial mentions in publications, guest posts on industry blogs, resource page listings, directory citations, sponsored content, and links from their own network of sites. Each source type suggests a different outreach strategy you could replicate.</p>
-<p><strong>Linkable asset identification</strong> examines which competitor pages attract the most backlinks. Often, a small number of pages earn a disproportionate share of a site's total links. These are typically original research, comprehensive guides, free tools, infographics, or data visualisations. Understanding what makes these assets link-worthy informs your own content strategy — you can create similar or better resources that attract the same types of links.</p>
-<p><strong>Common linking domains</strong> are sites that link to multiple competitors but not to you. These domains have demonstrated willingness to link to sites in your space, making them warm outreach targets. A site that already links to three of your competitors is far more likely to link to you than a random outreach prospect.</p>
-<p><strong>Anchor text distribution</strong> reveals how natural or manipulated a competitor's link profile appears. A natural profile has diverse anchor text with branded terms dominating. Heavy use of exact-match keyword anchors suggests aggressive link building that may be vulnerable to penalty risk. If a competitor's rankings depend on a link profile that Google might penalise, their positions may be less stable than they appear.</p>
+  <ul>
+    <li><strong>Calibrates your standards</strong> — your site's SEO health is only meaningful relative to the competition. If your site has 200 referring domains and your top competitor has 2,000, your backlink profile is not "adequate" — it is a major weakness regardless of what any absolute benchmark suggests. If your blog posts average 1,000 words and the top-ranking competitors consistently publish 3,000-word guides, your content is thin relative to what it takes to rank in your market. Competitor analysis sets realistic standards based on your actual competitive environment.</li>
+    <li><strong>Identifies opportunities</strong> — competitors often rank for keywords that you have not targeted, cover topics you have not written about, or earn links from sources you have not approached. These gaps represent concrete opportunities. A competitor ranking for a high-volume keyword with a mediocre page tells you that a well-optimised page from you has a realistic chance of outranking them.</li>
+    <li><strong>Reveals strategies</strong> — by analysing what has changed on competitor sites over time, you can reverse-engineer their SEO strategy. A competitor whose referring domain count jumped by 30% in three months is running an active link-building campaign. A competitor publishing three new pages per week in a specific topic area is building topical authority. Understanding these strategies lets you anticipate their next moves and plan your response.</li>
+    <li><strong>Prevents strategic mistakes</strong> — without competitive intelligence, you might invest heavily in an area where competitors are so far ahead that catching up is impractical. Or you might ignore an area where you could gain ground easily. Competitor analysis informs resource allocation by showing where the effort-to-reward ratio is most favourable.</li>
+  </ul>
 
-<h2 id="keyword-overlap">Keyword Overlap</h2>
-<p>Keyword overlap analysis maps the intersection and divergence between your keyword profile and your competitors'. This analysis reveals where you directly compete, where you have exclusive positioning, and where competitors have unchallenged territory.</p>
-<p>Visualise the keyword landscape using a Venn diagram approach. The overlap — keywords where both you and a competitor rank — represents direct battlegrounds. Your exclusive keywords are positions to defend. Their exclusive keywords are opportunities to attack. The size and value of each segment shapes your strategy.</p>
-<p><strong>Ranking position comparison</strong> for overlapping keywords shows where you are winning and losing. Sort shared keywords by the position gap between your ranking and the competitor's. Keywords where you rank position 8 and they rank position 3 are high-value targets — you are already relevant for these terms, and closing a five-position gap is more achievable than ranking for an entirely new keyword.</p>
-<p><strong>SERP feature competition</strong> adds another dimension. For shared keywords, check who earns featured snippets, People Also Ask boxes, image packs, video carousels, and local results. A competitor who holds the featured snippet for a keyword you rank third for is capturing a disproportionate share of clicks. Understanding the SERP feature landscape helps prioritise content format optimisation alongside traditional ranking improvements.</p>
-<p><strong>Keyword intent alignment</strong> is worth examining for shared terms. If a competitor ranks a blog post for a keyword where you rank a product page, the ranking gap may reflect an intent mismatch rather than a quality or authority gap. Comparing the content types that rank for shared keywords can reveal opportunities to create better-matched content.</p>
-<p>Export the complete keyword overlap data into a spreadsheet for ongoing monitoring. Track position changes monthly to see whether you are gaining or losing ground against each competitor for your highest-value terms.</p>
+  <h2 id="choosing-competitors">Choosing Competitors</h2>
 
-<h2 id="design-and-ux-benchmarking">Design and UX Benchmarking</h2>
-<p>While search engines cannot directly evaluate visual design, they measure user engagement signals that design heavily influences. A competitor with a more professional, usable design will likely enjoy better engagement metrics — lower bounce rates, longer session durations, higher pages per session — which indirectly support stronger rankings.</p>
-<p><strong>First impression comparison</strong> starts with screenshots. Capture the homepage, a key landing page, and a content page from each competitor. Display them side by side and evaluate which communicates professionalism, trustworthiness, and clarity most effectively. If your site looks dated or cluttered compared to competitors, visitors who compare multiple options are likely to favour the more polished experience.</p>
-<p><strong>Navigation and findability</strong> testing compares how easily users can complete common tasks across competitor sites. Time how long it takes to find pricing information, contact details, specific product information, and support resources. If your competitors make these journeys significantly easier, you are losing users to friction that competitors have already solved.</p>
-<p><strong>Mobile experience comparison</strong> is particularly revealing. Test each competitor's site on a mobile device and note the quality of responsive design, load speed, navigation usability, and conversion path clarity. Mobile UX varies dramatically across competitors, and a superior mobile experience is a defensible competitive advantage given how challenging it is to execute well.</p>
-<p><strong>Trust signal inventory</strong> compares how each competitor builds credibility. Count and categorise the trust signals visible on their key pages: testimonials, case studies, client logos, certifications, review ratings, team photos, and security badges. If competitors display more and better trust signals, your conversion rate will suffer by comparison, especially for first-time visitors comparing options.</p>
+  <p>The competitors you audit should be your organic search competitors — the domains that rank for the keywords you want to rank for — not necessarily your business competitors. A small local accountancy firm might identify the big four firms as business competitors, but their organic competitors are more likely to be other local firms, accounting directories, and informational sites that rank for the same long-tail keywords.</p>
 
-<h2 id="building-your-action-plan">Building Your Action Plan</h2>
-<p>The competitor audit produces a wealth of intelligence, but intelligence without action is trivia. The final and most important step is converting findings into a prioritised action plan that your team can execute.</p>
-<p><strong>Categorise findings by effort and impact.</strong> Quick wins are opportunities where you can match or exceed a competitor with minimal effort — implementing structured data they use, claiming directory listings they are on, or creating content for high-value keywords they rank for with thin pages. High-effort, high-impact items include building a comprehensive content hub, launching a link building campaign, or improving site-wide page speed. Low-impact items go into a backlog for future consideration.</p>
-<p><strong>Set specific, measurable targets</strong> for each action item. Instead of "improve page speed," target "reduce LCP to under 2.5 seconds on the top 20 landing pages within 60 days." Instead of "write more content," target "publish 12 articles covering the keyword gaps identified in the content analysis, one per week for the next quarter." Specificity enables accountability and progress tracking.</p>
-<p><strong>Assign timelines and owners.</strong> Each action item should have a responsible person and a deadline. Technical improvements go to your development team. Content gaps go to your writers. Link building targets go to your outreach team. Without clear ownership, action plans become wish lists.</p>
-<p><strong>Schedule quarterly re-assessment.</strong> The competitive landscape shifts constantly. New competitors emerge, existing ones change strategy, and search algorithms evolve. Refresh your competitor audit every quarter to validate that your strategy remains aligned with current competitive reality.</p>
-<p><strong>Monitor progress against competitors, not just absolute metrics.</strong> If your organic traffic grows 15% but your primary competitor grows 30%, you are actually losing ground. Track your rankings for shared keywords relative to competitors, not just your own position changes. This relative performance view keeps your strategy calibrated to the actual competitive challenge.</p>
-<p>Start your competitive analysis with our <a href="/free-website-audit/">free website audit</a> to understand your own baseline, then use our <a href="/website-audit-services/professional/">professional audit</a> for a detailed competitor comparison.</p>
+  <p>Here is how to identify the right competitors to audit:</p>
 
+  <ul>
+    <li><strong>Keyword overlap analysis</strong> — use Ahrefs or Semrush to find domains that rank for the most keywords that overlap with yours. These tools have specific "organic competitors" reports that rank domains by the degree of keyword overlap. The top five to ten domains in this list are your true organic competitors, regardless of whether you have heard of them as businesses.</li>
+    <li><strong>SERP analysis for priority keywords</strong> — take your top ten target keywords and manually check who ranks in the top five for each. The domains that appear most frequently across these keywords are your primary competitors. This approach is more targeted than the overlap analysis because it focuses on the keywords that matter most to your business.</li>
+    <li><strong>Mix domain types</strong> — your competitor set should include a mix of direct business competitors, informational sites, directories, and any niche aggregators that rank for your target keywords. Each type provides different insights. Direct competitors show what it takes to rank with similar content. Informational sites show the content depth Google expects. Directories show the authority threshold for your niche.</li>
+    <li><strong>Select three to five</strong> — auditing more than five competitors produces diminishing returns. The additional data adds complexity without proportional insight. Select three as a minimum: the market leader (who you aspire to match), a peer (who you compete directly against), and an up-and-comer (who is gaining ground in your space).</li>
+    <li><strong>Verify relevance</strong> — before committing to a full audit, verify that each selected competitor actually competes with you for keywords that drive business value. A domain that overlaps on informational keywords but not commercial ones may not be worth analysing in depth.</li>
+  </ul>
+
+  <h2 id="technical-comparison">Technical Comparison</h2>
+
+  <p>Technical comparison reveals whether competitors have infrastructure advantages that contribute to their rankings. While content and links often get more attention, technical superiority can be the tiebreaker when other factors are similar.</p>
+
+  <p>Compare these technical factors across all selected competitors:</p>
+
+  <ul>
+    <li><strong>Core Web Vitals</strong> — use PageSpeed Insights or the Chrome UX Report API to pull real-user CWV data for each competitor's key pages. Compare LCP, INP, and CLS scores. If a competitor consistently passes all three metrics and your site fails, they have a page experience advantage that affects ranking in tiebreaker situations.</li>
+    <li><strong>Site speed</strong> — test equivalent pages across competitors using WebPageTest. Compare Time to First Byte, fully loaded time, and total page weight. A competitor whose product pages load in 1.2 seconds while yours take 3.8 seconds has a measurable advantage in user experience that correlates with better engagement metrics.</li>
+    <li><strong>Mobile experience</strong> — test each competitor's key pages on mobile devices. Compare navigation ease, content readability, tap target sizing, and overall mobile UX. With mobile-first indexing, the mobile experience directly determines how Google evaluates the site.</li>
+    <li><strong>Structured data implementation</strong> — check what schema markup competitors use and whether they earn rich results for shared keywords. A competitor with FAQ rich results, review stars, or How-To markup occupies more SERP real estate and likely earns higher click-through rates.</li>
+    <li><strong>Site architecture</strong> — analyse each competitor's navigation structure, URL hierarchy, and internal linking patterns. A competitor with a flatter architecture and more effective internal linking may have better crawl efficiency and authority distribution.</li>
+    <li><strong>Technology stack</strong> — identify the CMS, hosting provider, CDN, and framework each competitor uses. This reveals their technical capabilities and constraints. A competitor on a modern headless CMS with edge rendering has different capabilities than one on shared hosting with a legacy WordPress installation.</li>
+  </ul>
+
+  <h2 id="content-gaps">Content Gaps</h2>
+
+  <p>Content gap analysis is typically the highest-value component of a competitor audit because it directly identifies new content you should create. A content gap is a keyword or topic that one or more competitors rank for and you do not.</p>
+
+  <ul>
+    <li><strong>Keyword gap report</strong> — use Ahrefs or Semrush to generate a keyword gap analysis between your domain and your selected competitors. This shows every keyword where competitors rank and you do not. Filter the results by search volume (minimum 100 monthly searches), keyword difficulty (realistic for your domain authority), and commercial intent (prioritise keywords that indicate purchase or conversion intent).</li>
+    <li><strong>Topic cluster gaps</strong> — beyond individual keywords, look for entire topic clusters that competitors cover and you do not. If a competitor has 15 pages covering "remote project management" from various angles and you have zero, that is a topic cluster gap — not just a keyword gap. Building a complete cluster is more effective than targeting isolated keywords.</li>
+    <li><strong>Content format gaps</strong> — check what content formats competitors use that you do not. If competitors rank with interactive tools, calculators, or comparison tables and you only publish text articles, the format itself may be a competitive disadvantage. Google increasingly surfaces diverse content types, and matching the format expectations for each query type improves your ranking potential.</li>
+    <li><strong>Content depth comparison</strong> — for keywords where you both rank but they rank higher, compare the depth and quality of your respective content. Pull up both pages side by side and assess: word count, heading structure, visual content, data points, citations, freshness, and user engagement features (tables of contents, jump links, expandable sections). Identify specific elements that their page includes and yours lacks.</li>
+    <li><strong>Update frequency</strong> — check how often competitors update their key content. A competitor that refreshes their top-ranking pages quarterly with new data, updated screenshots, and current examples sends freshness signals that a page last updated two years ago cannot match. Note their update patterns and establish a competitive refresh schedule.</li>
+  </ul>
+
+  <h2 id="backlink-comparison">Backlink Comparison</h2>
+
+  <p>Backlinks remain one of the strongest ranking factors, and the gap between your link profile and your competitors' profiles often explains ranking differences that content and technical factors alone cannot account for.</p>
+
+  <ul>
+    <li><strong>Referring domain comparison</strong> — compare total referring domain counts across all competitors. This provides the baseline authority comparison. If competitors have three to five times your referring domains, content improvements alone are unlikely to close the ranking gap — you need a link-building strategy.</li>
+    <li><strong>Link quality distribution</strong> — not all referring domains are equal. Categorise each competitor's top referring domains by quality (high authority, relevant industry sites, general directories, low-quality/spam). A competitor with 500 high-quality referring domains from relevant industry publications is harder to match than one with 5,000 domains from low-quality directories.</li>
+    <li><strong>Common linking domains</strong> — identify domains that link to multiple competitors but not to you. These domains are demonstrably willing to link to sites in your industry, making them realistic outreach targets. Prioritise those with the highest domain authority and relevance.</li>
+    <li><strong>Link-building strategies</strong> — analyse the types of content that earn competitors their best links. Are they getting links from guest posts, resource pages, data studies, infographics, tools, or press coverage? Understanding their link acquisition method informs your own link-building strategy. If their best links come from data-driven research, that tells you what type of content to invest in.</li>
+    <li><strong>Link velocity comparison</strong> — chart the rate of new referring domain acquisition for each competitor over the past 12 months. A competitor gaining 50 new referring domains per month while you gain five is widening the authority gap. This velocity comparison helps set realistic link-building targets.</li>
+    <li><strong>Anchor text patterns</strong> — review the anchor text distribution of each competitor's backlink profile. Heavily keyword-optimised anchor text may indicate aggressive link building that could be vulnerable to algorithmic penalties. Diverse, natural anchor text indicates organic link acquisition that is more sustainable.</li>
+  </ul>
+
+  <h2 id="keyword-overlap">Keyword Overlap</h2>
+
+  <p>Keyword overlap analysis shows where you and your competitors compete for the same search queries, which pages rank for those queries, and who currently holds the advantage.</p>
+
+  <ul>
+    <li><strong>Shared keyword rankings</strong> — identify all keywords where both you and a competitor rank in the top 50. For each shared keyword, compare your position versus theirs. Keywords where you rank lower than a competitor are direct targets for improvement. Keywords where you rank higher are defensive positions to maintain.</li>
+    <li><strong>Position distribution</strong> — for your shared keywords, create a distribution chart showing how many keywords each domain holds in positions 1-3, 4-10, 11-20, and 21-50. This reveals the overall competitive balance. If a competitor has 200 keywords in positions 1-3 and you have 30, the authority gap is significant. If the numbers are similar but distributed differently by topic, you have parity in different areas.</li>
+    <li><strong>Commercial keyword competition</strong> — filter shared keywords to only those with commercial or transactional intent. These are the keywords that drive revenue, and competitive position on these keywords matters more than on informational queries. Prioritise improvements on commercial keywords where you are close to the competitor's position (within 5-10 positions).</li>
+    <li><strong>SERP feature competition</strong> — for shared keywords, check which competitor appears in featured snippets, People Also Ask, Knowledge Panels, and other SERP features. SERP features capture a disproportionate share of clicks. If a competitor owns the featured snippet for a keyword where you rank second organically, targeting that snippet is higher value than improving from position two to position one in organic results.</li>
+    <li><strong>Trending keywords</strong> — identify keywords where competitors are gaining position rapidly. A competitor moving from position 30 to position 8 over three months is on a trajectory to reach the top three. These trending keywords represent competitive threats — the competitor is actively optimising for them and will soon dominate if you do not respond.</li>
+  </ul>
+
+  <h2 id="action-plan">Action Plan</h2>
+
+  <p>The competitor audit is only valuable if it produces a concrete action plan. Translate your findings into prioritised initiatives using this framework:</p>
+
+  <ul>
+    <li><strong>Quick wins — exploit competitor weaknesses</strong> — identify keywords where competitors rank with thin, outdated, or poorly optimised content. These are opportunities to create superior content that can outrank them relatively quickly. Also identify technical advantages you can implement immediately (better schema markup, faster page speed, improved mobile experience).</li>
+    <li><strong>Content priorities — close the gaps</strong> — from your content gap analysis, create a content calendar that prioritises topics by search volume, commercial intent, and competitive difficulty. Start with topics where competitors rank with beatable content rather than topics where the market leader has a 5,000-word definitive guide backed by hundreds of backlinks.</li>
+    <li><strong>Link-building targets — mirror and exceed</strong> — from your backlink comparison, create a prospecting list of domains that link to competitors but not to you. Categorise these by outreach approach: guest posting opportunities, resource page suggestions, broken link replacements, and data-driven content that could earn editorial links.</li>
+    <li><strong>Technical improvements — match the bar</strong> — from your technical comparison, identify areas where competitors outperform you technically and create development tickets to close those gaps. Prioritise Core Web Vitals and structured data improvements because they directly affect ranking and SERP appearance.</li>
+    <li><strong>Defensive priorities — protect your advantages</strong> — identify areas where you currently outperform competitors and ensure you maintain those advantages. If competitors are gaining ground on a keyword cluster where you lead, proactively refresh and strengthen your content before they overtake you.</li>
+    <li><strong>Monitor and repeat</strong> — competitive landscapes shift constantly. Set up competitor rank tracking for your shared keywords and schedule a competitor audit refresh every six months. Between audits, monitor competitor activity using backlink alerts, content change detection, and keyword position tracking.</li>
+  </ul>
+
+  <p>The most effective competitor audits produce specific, measurable actions rather than general observations. "Competitor A has more backlinks" is an observation. "Build 50 referring domains from industry publications over six months by creating three data-driven research pieces and conducting outreach to the 27 domains that link to Competitor A but not to us" is an action plan. Specificity drives execution, and execution drives results.</p>
 </ContentLayout>

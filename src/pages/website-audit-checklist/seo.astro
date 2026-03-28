@@ -1,132 +1,112 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'SEO', href: '/website-audit-checklist/seo/' },
+];
+
+const toc = [
+  { label: 'On-Page Checks', id: 'on-page-checks' },
+  { label: 'Technical Checks', id: 'technical-checks' },
+  { label: 'Content Checks', id: 'content-checks' },
+  { label: 'Off-Page Checks', id: 'off-page-checks' },
+  { label: 'Local SEO Checks', id: 'local-seo-checks' },
+];
 ---
 
 <ContentLayout
   title="SEO Audit Checklist: 40+ Points to Check"
-  description="A detailed SEO audit checklist covering title tags, meta descriptions, headings, content, internal links, schema, Core Web Vitals, and backlinks."
-  breadcrumbs={[
-    { label: 'Website Audit', href: '/website-audit/' },
-    { label: 'Checklists', href: '/website-audit-checklist/' },
-    { label: 'SEO Checklist', href: '/website-audit-checklist/seo/' }
-  ]}
-  toc={[
-    { label: 'On-Page SEO Checks', id: 'on-page-seo-checks' },
-    { label: 'Technical SEO Checks', id: 'technical-seo-checks' },
-    { label: 'Content Quality Checks', id: 'content-quality-checks' },
-    { label: 'Off-Page SEO Checks', id: 'off-page-seo-checks' },
-    { label: 'Local SEO Checks', id: 'local-seo-checks' },
-    { label: 'How to Use This Checklist', id: 'how-to-use-this-checklist' }
-  ]}
+  description="A comprehensive SEO audit checklist covering on-page, technical, content, off-page, and local SEO checks. Use this 40+ point checklist to audit any website systematically."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
   publishDate="2026-03-28"
 >
+  <p>An SEO audit without a checklist is an audit that misses things. Even experienced SEO professionals who have audited hundreds of sites benefit from working through a structured checklist because the human tendency to focus on familiar issues means less common (but equally damaging) problems get overlooked. A checklist enforces systematic coverage of every factor that affects search performance.</p>
 
-<h2 id="on-page-seo-checks">On-Page SEO Checks</h2>
-<p>On-page SEO covers the elements on each individual page that influence how search engines understand and rank your content. These checks should be applied to every important page on your site, starting with your highest-traffic and highest-value pages.</p>
+  <p>This checklist contains over 40 individual checks organised into five categories: on-page, technical, content, off-page, and local SEO. Each check includes what to look for, which tool to use, and what constitutes a pass or fail. Work through it sequentially for new audits, or use it as a reference to verify specific areas when investigating a ranking problem.</p>
 
-<p><strong>1. Title tags are unique and descriptive.</strong> Every indexable page must have a unique title tag that includes the primary keyword, accurately describes the page content, and stays within 50-60 characters to avoid truncation in search results. Check for duplicate titles across the site — a common issue on large sites where template-generated pages share the same title pattern.</p>
+  <p>The checklist is designed to be tool-agnostic — you can complete it with free tools (Google Search Console, Screaming Frog free version, PageSpeed Insights) or with premium platforms (Ahrefs, Semrush, Sitebulb). The methodology is the same regardless of the tools you use.</p>
 
-<p><strong>2. Meta descriptions are compelling and unique.</strong> Each page should have a unique meta description of 120-155 characters that includes the primary keyword naturally, communicates a clear benefit or value proposition, and includes a subtle call to action. While meta descriptions are not a direct ranking factor, they significantly influence click-through rates from search results.</p>
+  <h2 id="on-page-checks">On-Page Checks</h2>
 
-<p><strong>3. H1 tag is present and singular.</strong> Every page should have exactly one H1 tag that contains the primary keyword and clearly communicates the page topic. The H1 should be the first heading on the page and should differ from the title tag to avoid redundancy while reinforcing the same topical signal.</p>
+  <p>On-page checks evaluate the elements on individual pages that communicate relevance to search engines and influence click-through rates in search results.</p>
 
-<p><strong>4. Heading hierarchy is logical.</strong> Headings should follow a sequential structure: H1 followed by H2s for major sections, H3s for subsections within H2s, and so on. Check for skipped heading levels (H1 jumping directly to H3), multiple H1 tags, and headings used purely for visual styling rather than structural organisation.</p>
+  <ol>
+    <li><strong>Every page has a unique title tag</strong> — export all title tags from your crawl data. Sort alphabetically to identify duplicates. No two pages should share the same title. Duplicates indicate either genuine duplicate content or templating issues where the CMS generates identical titles for different pages. Fix duplicates by writing unique, keyword-targeted titles for each page.</li>
+    <li><strong>Title tags are under 60 characters</strong> — check character counts in your crawl export. Titles exceeding 60 characters risk truncation in search results, potentially cutting off your most important keywords or call to action. Rewrite overlong titles to convey the same message in fewer characters.</li>
+    <li><strong>Primary keyword appears in the title tag</strong> — for each page's target keyword, verify that the keyword appears naturally in the title, ideally within the first 40 characters. Pages targeting keywords that do not appear in their titles are at a fundamental disadvantage.</li>
+    <li><strong>Every page has a unique meta description</strong> — check for missing and duplicate meta descriptions. Write custom descriptions for at least your top 50 pages by organic traffic. Each description should be 120-155 characters, include the target keyword, and contain a compelling reason to click.</li>
+    <li><strong>Each page has exactly one H1 tag</strong> — multiple H1s dilute the topical signal. Missing H1s leave the page without a primary heading for search engines. Verify that the H1 contains or closely matches the target keyword and accurately describes the page content.</li>
+    <li><strong>Heading hierarchy is logical</strong> — headings should follow a sequential order: H1, then H2s, then H3s within H2 sections. Skipping levels (H1 to H3 with no H2) breaks the content structure. Check heading hierarchy across all page templates.</li>
+    <li><strong>Images have descriptive alt text</strong> — every meaningful image should have alt text that describes the image content. Decorative images should have empty alt attributes. Check for missing alt text, generic alt text ("image1.jpg"), and keyword-stuffed alt text that does not describe the actual image.</li>
+    <li><strong>Images are served in modern formats</strong> — check that images use WebP or AVIF where browser support exists. JPEG and PNG files should be compressed to under 200KB for standard images. Large unoptimised images are the most common cause of slow page loads.</li>
+    <li><strong>Internal links use descriptive anchor text</strong> — review a sample of internal links across the site. Anchor text should describe the destination page's topic, not use generic phrases like "click here" or "read more." Descriptive anchors pass topical relevance to the linked page.</li>
+    <li><strong>No broken internal links</strong> — run a crawl and identify all internal links pointing to 4xx or 5xx pages. Fix each broken link by updating the URL to the correct destination or removing the link if the page no longer exists.</li>
+    <li><strong>Canonical tags are correctly implemented</strong> — every indexable page should have a self-referencing canonical tag. Verify that canonical tags point to the correct URL (HTTPS, correct trailing slash convention, no parameter variations). Check for accidental cross-domain canonicals and canonical chains.</li>
+    <li><strong>Open Graph tags are present</strong> — pages likely to be shared on social media should have og:title, og:description, and og:image tags. Check that OG images are the correct dimensions (1200x630 pixels for optimal display) and that OG titles and descriptions are compelling for social sharing.</li>
+  </ol>
 
-<p><strong>5. Primary keyword appears in the first 100 words.</strong> Search engines give additional weight to keywords that appear early in the content. Verify that the primary keyword appears naturally within the opening paragraph of each target page.</p>
+  <h2 id="technical-checks">Technical Checks</h2>
 
-<p><strong>6. Images have descriptive alt text.</strong> Every informational image should have alt text that describes the image content and, where natural, includes relevant keywords. Decorative images should have empty alt attributes (alt="") to indicate they are not informational. Check for missing alt text across the entire site.</p>
+  <p>Technical checks assess the infrastructure that determines whether search engines can access, crawl, render, and index your content.</p>
 
-<p><strong>7. URLs are clean and descriptive.</strong> Page URLs should be short, lowercase, use hyphens between words, include the primary keyword where natural, and avoid unnecessary parameters, session IDs, or category numbers. Check for URLs with excessive depth (more than three directory levels) or dynamic parameters that create duplicate content.</p>
+  <ol start="13">
+    <li><strong>Robots.txt does not block important pages</strong> — review your robots.txt file and verify that no critical pages, sections, CSS files, or JavaScript files are disallowed. Common mistakes include blocking /wp-admin/ resources needed for rendering, blocking staging site rules left on the live site, and blocking entire directories containing important content.</li>
+    <li><strong>XML sitemap is accurate and submitted</strong> — your sitemap should contain every indexable page and no non-indexable pages (noindexed, redirected, 404, or canonicalised URLs). Submit the sitemap in Google Search Console and Bing Webmaster Tools. Verify the sitemap is referenced in your robots.txt file.</li>
+    <li><strong>All pages return 200 status codes</strong> — crawl the site and flag any pages returning 3xx, 4xx, or 5xx status codes. Investigate every non-200 response. Redirects should resolve in a single hop to the final destination. 404 errors on pages with inbound links or historical traffic need redirects.</li>
+    <li><strong>No redirect chains exist</strong> — identify URLs that redirect to another URL that redirects again. Each hop in a chain loses link equity and adds latency. Resolve all chains so that every redirect points directly to the final destination URL.</li>
+    <li><strong>HTTPS is fully implemented</strong> — verify that every page loads via HTTPS, that HTTP requests redirect to HTTPS with a 301, and that no mixed content warnings exist (HTTP resources loaded on HTTPS pages). Check SSL certificate validity and expiration date.</li>
+    <li><strong>Core Web Vitals pass on mobile</strong> — check the Core Web Vitals report in Search Console for field data. Targets: LCP under 2.5 seconds, INP under 200 milliseconds, CLS under 0.1. If field data is unavailable, use Lighthouse lab data as a proxy. Test on the three most important page templates.</li>
+    <li><strong>Mobile usability has no errors</strong> — review the mobile usability report in Search Console. Common failures include text too small to read, clickable elements too close together, and content wider than the screen. Test key pages on an actual mobile device, not just a desktop emulator.</li>
+    <li><strong>Page load time is under three seconds</strong> — test your top landing pages with PageSpeed Insights and WebPageTest. Pages taking more than three seconds to load on mobile have significantly higher bounce rates. Focus on reducing server response time, optimising images, and deferring non-critical JavaScript.</li>
+    <li><strong>Structured data validates without errors</strong> — test a sample of pages using Google's Rich Results Test. Check the Search Console enhancements report for site-wide schema errors. Every page type should use the appropriate schema: Article for blog posts, LocalBusiness for location pages, Product for product pages, FAQPage for FAQ sections.</li>
+    <li><strong>No orphan pages exist</strong> — identify pages in your sitemap or Search Console that receive zero internal links. These orphan pages are effectively invisible to crawlers that navigate via links. Add contextual internal links from related content to connect orphan pages to the rest of the site.</li>
+    <li><strong>Hreflang is correct (if applicable)</strong> — for multilingual or multi-regional sites, verify that hreflang tags are bidirectional (every page that references another also gets referenced back), language codes are correct, x-default is specified, and hreflang URLs match canonical URLs.</li>
+    <li><strong>JavaScript-rendered content is indexable</strong> — if your site uses a JavaScript framework, verify using the URL Inspection tool in Search Console that Google can render all critical content. Compare the rendered HTML to the source HTML. Content that only appears after JavaScript execution may not be indexed reliably.</li>
+  </ol>
 
-<p><strong>8. Internal links use descriptive anchor text.</strong> Internal links should use anchor text that describes the linked page, not generic text like "click here" or "read more." Check that important pages receive sufficient internal links from relevant content pages, and that anchor text variation is natural rather than repetitively exact-match.</p>
+  <h2 id="content-checks">Content Checks</h2>
 
-<p><strong>9. External links point to authoritative sources.</strong> Outbound links to high-quality, relevant sources signal topical expertise and provide value to readers. Check that external links open in new tabs where appropriate, that linked sources are still live and relevant, and that sponsored or affiliate links carry appropriate rel attributes.</p>
+  <p>Content checks evaluate whether your content meets the quality, depth, and relevance standards required to rank and satisfy search intent.</p>
 
-<p><strong>10. Open Graph and Twitter Card tags are present.</strong> Social meta tags ensure your pages display correctly when shared on social platforms. Check that og:title, og:description, og:image, and twitter:card tags are present on all important pages with appropriate, compelling content.</p>
+  <ol start="25">
+    <li><strong>No thin content pages exist</strong> — identify pages with fewer than 300 words of unique body content. These thin pages are unlikely to rank and may drag down your site's overall quality signals. For each thin page, decide whether to expand, consolidate with a related page, or remove and redirect.</li>
+    <li><strong>Content matches search intent</strong> — for your top 20 target keywords, check the current SERP to see what content format Google ranks (guides, lists, tools, videos). If Google ranks how-to guides and your page is a product page, there is an intent mismatch. Align your content format with what the SERP tells you Google expects.</li>
+    <li><strong>No keyword cannibalisation</strong> — export query data from Search Console and identify keywords where multiple pages appear. If two or more pages compete for the same keyword without either ranking well, consolidate them into a single authoritative page and redirect the weaker URLs.</li>
+    <li><strong>Content is fresh and current</strong> — check publication and last-modified dates across your content library. Flag pages in time-sensitive topics that have not been updated in 18 months or more. Content referencing outdated statistics, defunct tools, or superseded practices needs refreshing or removal.</li>
+    <li><strong>E-E-A-T signals are present</strong> — verify that content pages have author bylines linked to author bio pages, that authors have relevant credentials, that claims are supported by citations, and that the overall site has clear about, contact, and editorial policy pages. For YMYL topics, E-E-A-T signals are critical ranking factors.</li>
+    <li><strong>Content covers subtopics comprehensively</strong> — for your top pages, compare your content depth against the top three ranking competitors. Use People Also Ask and related search suggestions to identify subtopics your content should address but currently does not. Comprehensive content that answers all related questions consistently outranks partial coverage.</li>
+    <li><strong>No duplicate content across pages</strong> — check for pages with substantially similar content. Common causes include product variants with identical descriptions, location pages with only the city name changed, and syndicated content without canonical attribution. Consolidate or differentiate duplicate content.</li>
+    <li><strong>Content has clear structure</strong> — every content page should have a clear introduction, logically organised sections with descriptive headings, supporting detail under each section, and a conclusion or summary. Unstructured content that reads as a wall of text performs poorly for both users and search engines.</li>
+  </ol>
 
-<h2 id="technical-seo-checks">Technical SEO Checks</h2>
-<p>Technical SEO ensures search engines can effectively crawl, render, index, and rank your pages. Technical issues often have the highest impact on rankings because they can prevent entire sections of your site from being discovered or properly evaluated.</p>
+  <h2 id="off-page-checks">Off-Page Checks</h2>
 
-<p><strong>11. Robots.txt is correctly configured.</strong> Your robots.txt file should allow access to all content you want indexed, block access to admin pages and private sections, reference your XML sitemap, and not accidentally block CSS or JavaScript files that search engines need to render your pages.</p>
+  <p>Off-page checks assess external signals that influence your site's perceived authority and trustworthiness.</p>
 
-<p><strong>12. XML sitemap is present and accurate.</strong> Your sitemap should list every indexable page, exclude non-indexable pages (noindexed, redirected, or error pages), be submitted to Google Search Console and Bing Webmaster Tools, and update automatically when pages are added or removed. Check that sitemap URLs match canonical URLs exactly.</p>
+  <ol start="33">
+    <li><strong>Backlink profile is healthy</strong> — pull your backlink profile from Ahrefs or Semrush. Check the ratio of referring domains with high domain authority versus low quality. A healthy profile has more links from relevant, authoritative sites than from spam directories, blog comment networks, or unrelated sites.</li>
+    <li><strong>No toxic links require disavow</strong> — identify links from known spam networks, PBNs, link farms, and hacked sites. While Google claims to ignore most low-quality links, concentrations of toxic links can still trigger algorithmic or manual penalties. Document toxic links for potential disavow action.</li>
+    <li><strong>Anchor text distribution is natural</strong> — export anchor text data and check the distribution. A natural profile is dominated by branded anchors (your site name, URL), naked URLs, and generic phrases. If more than 10-15% of anchors are exact-match keywords, the profile may appear manipulated.</li>
+    <li><strong>Link velocity is consistent</strong> — chart the rate of new referring domains over time. Healthy profiles show steady growth. A sudden spike from a link-building campaign followed by a long plateau looks unnatural. Aim for consistent link acquisition through content quality, outreach, and digital PR.</li>
+    <li><strong>Competitor link gap is assessed</strong> — compare your referring domain count and quality against your top three organic competitors. Quantify the gap and identify the types of links competitors have that you lack (editorial mentions, resource page links, directory listings, industry associations). This informs your link-building strategy.</li>
+    <li><strong>Brand mentions are linked</strong> — search for your brand name across the web and identify mentions that do not include a link to your site. Reach out to site owners and request a link be added. Unlinked brand mentions are the lowest-friction link-building opportunity because the site has already demonstrated awareness of your brand.</li>
+  </ol>
 
-<p><strong>13. Canonical tags are correctly implemented.</strong> Every indexable page should have a self-referencing canonical tag. Pages with duplicate or near-duplicate content (such as paginated pages, filtered views, or HTTP/HTTPS variants) should canonicalise to the preferred version. Check for conflicting signals where the canonical tag points to a different URL than the one in the sitemap.</p>
+  <h2 id="local-seo-checks">Local SEO Checks</h2>
 
-<p><strong>14. HTTPS is fully implemented.</strong> All pages should load over HTTPS with no mixed content warnings. HTTP URLs should 301 redirect to HTTPS equivalents. Check that your SSL certificate is valid, not expired, and covers all subdomains in use.</p>
+  <p>Local SEO checks apply to businesses that serve a specific geographic area. Skip this section if your business operates entirely online without a local presence.</p>
 
-<p><strong>15. Page speed meets Core Web Vitals thresholds.</strong> Test your most important pages against Google's thresholds: LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Use both lab data (Lighthouse) and field data (CrUX report in Search Console) to identify pages that fail. Common fixes include image compression, JavaScript deferral, font loading optimisation, and server-side caching.</p>
+  <ol start="39">
+    <li><strong>Google Business Profile is complete and verified</strong> — verify your GBP listing. Check that business name, address, phone number, website URL, business hours, and categories are accurate. Complete all available fields including business description, attributes, services, and photos. Ensure the primary category is the most specific option available.</li>
+    <li><strong>NAP is consistent across the web</strong> — your name, address, and phone number must be identical across every online directory, social profile, and citation source. Use a citation audit tool or manual search to identify inconsistencies. Even small differences (abbreviated street names, old phone numbers, former addresses) confuse local search algorithms.</li>
+    <li><strong>Reviews are active and responded to</strong> — check your review count, average rating, and review velocity on Google and other relevant platforms. Reviews from the past three months carry more weight than older reviews. Respond to every review, positive and negative, with thoughtful replies that mention your business and services naturally.</li>
+    <li><strong>Local schema markup is implemented</strong> — your website should include LocalBusiness schema (or a more specific subtype) with your business name, address, phone number, hours, geographic coordinates, and service area. This markup should appear on your homepage and any location-specific pages.</li>
+    <li><strong>Location pages exist for each service area</strong> — if you serve multiple locations, each should have a dedicated page with unique content about the services available in that area. Location pages should include the address (if a physical office exists), local landmarks or geographic references, area-specific information, and embedded Google Maps.</li>
+    <li><strong>Local content supports geographic relevance</strong> — check for blog posts, case studies, or news content that references your local area. Content about local events, community involvement, area-specific advice, and local industry news all reinforce geographic relevance signals that support local pack visibility.</li>
+  </ol>
 
-<p><strong>16. Mobile usability passes.</strong> All pages should be fully responsive and pass Google's mobile-friendly test. Check for common issues: text too small to read, touch targets too close together, content wider than the viewport, and viewport meta tag missing or misconfigured.</p>
-
-<p><strong>17. No broken internal links (404 errors).</strong> Crawl your site and identify all internal links that return 404 status codes. Fix each by updating the link to the correct URL or implementing a 301 redirect from the broken URL to the most relevant live page.</p>
-
-<p><strong>18. Redirect chains are resolved.</strong> Identify any URLs that redirect through multiple hops before reaching the final destination. Each hop may lose a small percentage of link equity and adds latency. Update redirects to point directly from the original URL to the final destination.</p>
-
-<p><strong>19. Structured data is valid.</strong> Test your schema markup using Google's Rich Results Test. Check for required properties, correct data types, and alignment between structured data and visible page content. Invalid or misleading structured data can result in rich result eligibility loss or manual actions.</p>
-
-<p><strong>20. Hreflang tags are correct (multilingual sites).</strong> If your site serves content in multiple languages or regions, verify that hreflang tags are present on all relevant pages, use correct language and region codes, include reciprocal references between all language versions, and specify an x-default fallback.</p>
-
-<p><strong>21. Server response codes are correct.</strong> Crawl your site and check that live pages return 200, removed pages return 410 (or 301 to a relevant page), and no soft 404s exist (pages that display error content but return a 200 status code). Check server response time — TTFB should be under 600 milliseconds for most pages.</p>
-
-<p><strong>22. JavaScript rendering works for search engines.</strong> If your site relies on client-side JavaScript to render content, verify that Google can see the fully rendered content using the URL Inspection tool in Search Console. Compare the rendered HTML to the initial HTML to identify content that depends on JavaScript execution.</p>
-
-<h2 id="content-quality-checks">Content Quality Checks</h2>
-<p>Content quality is increasingly central to Google's ranking decisions. These checks evaluate whether your content meets the standards required to rank and retain positions in competitive search results.</p>
-
-<p><strong>23. No thin content pages are indexed.</strong> Identify pages with fewer than 300 words of unique content that are currently indexed. These pages should be expanded with substantive content, consolidated into more comprehensive pages, or noindexed if they serve a utility purpose but have no search value.</p>
-
-<p><strong>24. No duplicate content exists.</strong> Check for pages with substantially identical content, including printer-friendly versions, HTTP and HTTPS duplicates, www and non-www duplicates, and parameterised URL variations. Resolve with canonical tags, 301 redirects, or content differentiation.</p>
-
-<p><strong>25. Content matches search intent.</strong> For each target keyword, verify that your page format matches what Google is ranking. If the top results are all comparison guides and your page is a product page, you have an intent mismatch. Check the SERPs for your top 20 keywords and note any format misalignments.</p>
-
-<p><strong>26. Content is comprehensive for its topic.</strong> Compare your content depth against top-ranking competitors. Are there subtopics they cover that you do not? Are there questions users commonly ask (visible in People Also Ask) that your content does not address? Content comprehensiveness is a key quality signal.</p>
-
-<p><strong>27. No keyword cannibalisation.</strong> Check whether multiple pages target the same primary keyword. Use Google Search Console's Performance report filtered by query to identify keywords where multiple URLs appear. Resolve by consolidating content, differentiating keyword targets, or using canonical tags.</p>
-
-<p><strong>28. E-E-A-T signals are present.</strong> Verify that content has clear author attribution, author bios display relevant credentials and experience, sources are cited where factual claims are made, publication and update dates are displayed, and the site includes an about page, contact page, and privacy policy.</p>
-
-<p><strong>29. Content is fresh and updated.</strong> Identify pages with outdated information — old statistics, discontinued products, expired offers, or references to past events as if they are current. Prioritise updates for high-traffic pages where outdated content could erode trust and rankings.</p>
-
-<p><strong>30. No orphan pages exist.</strong> Identify indexed pages that receive no internal links from other pages on your site. These orphan pages are difficult for search engines to discover and signal low importance within your site hierarchy. Either add internal links to them from relevant content or deindex them if they lack value.</p>
-
-<h2 id="off-page-seo-checks">Off-Page SEO Checks</h2>
-<p>Off-page SEO covers factors outside your website that influence rankings, primarily your backlink profile and external brand signals. These checks evaluate your site's authority and reputation from the search engine's perspective.</p>
-
-<p><strong>31. Backlink profile is healthy.</strong> Review your backlink profile for toxic or spammy links that could trigger algorithmic penalties. Check the ratio of follow to nofollow links, anchor text distribution, and referring domain diversity. A profile dominated by links from a single source or with heavily exact-match anchor text warrants investigation.</p>
-
-<p><strong>32. No toxic backlinks remain unaddressed.</strong> Use Ahrefs, SEMrush, or Google Search Console to identify potentially harmful backlinks. Verify each flagged link manually before adding to a disavow file. Submit the disavow file to Google if toxic links represent a significant portion of your profile.</p>
-
-<p><strong>33. Link velocity is natural.</strong> Check whether your link acquisition rate shows any unnatural patterns — sudden spikes of hundreds of links in a short period, or periods of rapid loss. Natural link profiles grow gradually with organic variation. Unusual patterns may indicate spam attacks or algorithmic issues.</p>
-
-<p><strong>34. Referring domain quality is adequate.</strong> Compare your domain authority distribution against competitors. If competitors have significantly more links from high-authority domains (DA 50+), this represents a competitive gap that content marketing and digital PR can address over time.</p>
-
-<p><strong>35. Unlinked brand mentions exist.</strong> Search for mentions of your brand name that do not include a hyperlink. These represent easy outreach opportunities — the site has already mentioned you, and requesting a link is a natural follow-up. Tools like Ahrefs Content Explorer can automate this discovery.</p>
-
-<p><strong>36. Social profiles are linked and active.</strong> Verify that your website links to official social media profiles, social profiles link back to your website, and social sharing metadata is correctly configured on all content pages.</p>
-
-<h2 id="local-seo-checks">Local SEO Checks</h2>
-<p>If your business serves customers in a specific geographic area, local SEO checks are essential for visibility in map results and local search queries.</p>
-
-<p><strong>37. Google Business Profile is claimed and optimised.</strong> Verify that your GBP listing is claimed, that all information (name, address, phone, hours, categories, description) is accurate and complete, that photos are current and high quality, and that you are responding to reviews.</p>
-
-<p><strong>38. NAP consistency across directories.</strong> Your business name, address, and phone number should be identical across your website, Google Business Profile, Bing Places, and all directory listings. Inconsistent NAP information confuses search engines and can suppress local rankings.</p>
-
-<p><strong>39. Local schema markup is present.</strong> Your website should include LocalBusiness schema (or the appropriate subtype) with your address, phone number, opening hours, geographic coordinates, and service area. Verify the schema is valid using Google's Rich Results Test.</p>
-
-<p><strong>40. Location pages are optimised (multi-location businesses).</strong> Each location should have a unique page with location-specific content, embedded map, NAP details, unique description, and local schema markup. Avoid duplicate content across location pages — each should contain genuinely unique information about that specific location.</p>
-
-<p><strong>41. Reviews are actively managed.</strong> Check your review count and average rating on Google, and compare against local competitors. A strategy for soliciting reviews from satisfied customers should be in place. All reviews — positive and negative — should receive thoughtful responses.</p>
-
-<p><strong>42. Local content exists.</strong> Pages targeting location-specific keywords (e.g., "SEO services in Manchester") should contain genuinely local content: references to the area, local case studies, knowledge of local market conditions. Thin pages that differ only in the city name inserted into a template add no value and risk being treated as doorway pages.</p>
-
-<h2 id="how-to-use-this-checklist">How to Use This Checklist</h2>
-<p>This checklist is designed as a working document, not a one-time read. Here is how to get the most value from it.</p>
-<p><strong>Start with the highest-impact items.</strong> Not all checklist items carry equal weight. Technical checks that affect crawling and indexing (items 11-14) should be addressed before on-page optimisation, because no amount of on-page work matters if search engines cannot access your pages. Core Web Vitals (item 15) and content quality (items 23-30) are the next priority tier, followed by off-page and local checks.</p>
-<p><strong>Audit in batches.</strong> Rather than checking all 42 items across every page simultaneously, work through the checklist in focused sessions. Dedicate one session to technical checks (which are typically site-wide), another to on-page checks (which require page-by-page review), and another to content quality assessment. This prevents fatigue and ensures thorough evaluation.</p>
-<p><strong>Document findings as you go.</strong> For each check, record the current status (pass, fail, partial), the specific pages or elements affected, and the fix required. Our <a href="/website-audit-checklist/template/">downloadable audit template</a> provides a structured format for this documentation with scoring columns and priority ratings.</p>
-<p><strong>Prioritise fixes by effort and impact.</strong> After completing the checklist, sort your findings into three categories: quick wins (high impact, low effort), strategic priorities (high impact, high effort), and maintenance items (low impact, variable effort). Execute quick wins first for immediate gains, then plan strategic priorities as projects.</p>
-<p><strong>Schedule regular reviews.</strong> Technical and on-page checks should be reviewed quarterly. Content quality and off-page checks benefit from monthly monitoring. Local SEO checks should be reviewed monthly if local search is a significant traffic source. Use this checklist as your recurring review framework rather than recreating a new process each time.</p>
-<p>For a deeper analysis than a self-serve checklist can provide, consider our <a href="/website-audit-services/professional/">professional audit service</a> which applies expert interpretation to every finding and produces a prioritised action plan tailored to your competitive landscape.</p>
-
+  <p>This checklist provides the foundation for a thorough SEO audit. Work through it systematically, document your findings for each check, and prioritise fixes based on the expected impact on traffic and revenue. Not every check will surface issues — a site that passes all 40+ checks is in excellent SEO health. Most sites, however, will have findings across multiple categories, and the checklist ensures you catch them all rather than focusing only on the areas you happen to check first.</p>
 </ContentLayout>

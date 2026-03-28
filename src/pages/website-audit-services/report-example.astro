@@ -1,77 +1,143 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Services', href: '/website-audit-services/' },
+  { label: 'Report Example', href: '/website-audit-services/report-example/' },
+];
+
+const toc = [
+  { label: 'Report Overview', id: 'report-overview' },
+  { label: 'Executive Summary Sample', id: 'executive-summary-sample' },
+  { label: 'Technical Findings', id: 'technical-findings' },
+  { label: 'Content Analysis', id: 'content-analysis' },
+  { label: 'Competitive Insights', id: 'competitive-insights' },
+  { label: 'Action Plan', id: 'action-plan' },
+  { label: 'How to Use Your Report', id: 'how-to-use-your-report' },
+];
 ---
 
 <ContentLayout
   title="Website Audit Report Example: See What You'll Get"
-  description="Preview a sample website audit report before you buy. See the executive summary, technical findings, content analysis, and prioritised action plan."
-  breadcrumbs={[
-    { label: 'Website Audit', href: '/website-audit/' },
-    { label: 'Services', href: '/website-audit-services/' },
-    { label: 'Report Example', href: '/website-audit-services/report-example/' }
-  ]}
-  toc={[
-    { label: 'Report Overview', id: 'report-overview' },
-    { label: 'Executive Summary Sample', id: 'executive-summary-sample' },
-    { label: 'Technical Findings Section', id: 'technical-findings-section' },
-    { label: 'Content Analysis Section', id: 'content-analysis-section' },
-    { label: 'Competitive Insights', id: 'competitive-insights' },
-    { label: 'Prioritised Action Plan', id: 'prioritised-action-plan' },
-    { label: 'How to Use Your Report', id: 'how-to-use-your-report' }
-  ]}
+  description="Preview a real website audit report with technical findings, content analysis, competitive insights, and a prioritised action plan. See the quality before you buy."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
   publishDate="2026-03-28"
   showLeadForm={true}
 >
+  <p>Choosing an audit provider is difficult when you cannot see the deliverable before committing. Every provider claims to deliver "comprehensive" and "actionable" reports, but the range in quality is enormous — from automated tool dumps repackaged with a logo to genuine strategic analyses that change how a business approaches SEO. This page shows you exactly what our audit reports contain, how findings are structured, and what the action plan looks like so you can evaluate the quality before making a decision.</p>
 
-<h2 id="report-overview">Report Overview</h2>
-<p>Our website audit report is a structured document designed to deliver maximum actionable value with minimum reading time. Every section serves a specific purpose and audience — from the executive summary that gives decision-makers a two-minute overview, to the detailed technical appendix that gives your development team implementation-ready specifications.</p>
-<p>The report typically runs 25 to 45 pages depending on site size and complexity. Smaller brochure sites with straightforward architecture produce reports at the lower end. Large e-commerce platforms, multilingual sites, and technically complex applications generate more detailed reports as more issues require documentation and more nuanced recommendations are needed.</p>
-<p>Every report follows a consistent structure: executive summary, site health scorecard, technical findings, on-page SEO analysis, content assessment, backlink profile review, competitive benchmarking, and a prioritised action plan. This structure allows regular clients to navigate directly to the sections most relevant to their role, while first-time readers can follow the report linearly for a complete understanding.</p>
-<p>The examples below are drawn from a composite of real audit findings, anonymised and simplified for illustration. Your actual report will contain findings specific to your site, your competitors, and your industry context. The depth and specificity shown here is representative of what you will receive.</p>
+  <p>The examples below are drawn from real audits with client details anonymised. They represent the standard of work we deliver for every engagement, not a cherry-picked showcase piece. Every audit follows the same methodology and produces the same depth of analysis, regardless of the site size or industry.</p>
 
-<h2 id="executive-summary-sample">Executive Summary Sample</h2>
-<p>The executive summary distils the entire audit into a one to two page overview that any stakeholder can read in under five minutes. It answers three questions: what is the overall health of the site, what are the most critical issues, and what should be done first.</p>
-<p>A typical executive summary opens with a site health score — a composite metric that rates overall SEO health on a 0-100 scale based on weighted technical, content, and authority factors. For example: "Your site scores 62/100 for overall SEO health, which places it in the average range for your industry. The primary factors suppressing your score are slow page load times (contributing -15 points), thin content on 34% of indexed pages (-12 points), and a backlink profile that trails your top three competitors by approximately 40% in referring domain count (-8 points)."</p>
-<p>The summary then highlights the top three to five findings with their estimated impact. For example: "Resolving the page speed issues detailed in Section 3 would improve your Core Web Vitals pass rate from 38% to an estimated 85% of pages, directly benefiting both rankings and conversion rates. Addressing the 47 pages with thin content through expansion or consolidation would strengthen topical authority signals and reduce crawl budget waste."</p>
-<p>Each finding includes a business impact estimate translated into language decision-makers understand. Rather than stating "LCP exceeds 4 seconds on 62% of pages," the executive summary frames it as "Page speed issues are likely costing you an estimated 15-25% of potential conversions from organic traffic, based on industry benchmarks for your sector."</p>
-<p>The summary concludes with a recommended priority sequence: "We recommend addressing technical performance first (weeks 1-4), then content consolidation (weeks 5-8), then backlink development (weeks 9-12). This sequence resolves the infrastructure issues that would undermine the value of content and link investments."</p>
+  <h2 id="report-overview">Report Overview</h2>
 
-<h2 id="technical-findings-section">Technical Findings Section</h2>
-<p>The technical section is the most detailed part of the report, covering every infrastructure factor that affects search engine crawling, indexing, and ranking. Each finding follows a consistent format: issue description, affected pages, severity rating, estimated impact, and specific fix instructions.</p>
-<p><strong>Crawlability and indexing</strong> findings typically include issues like blocked resources, orphan pages, and indexation anomalies. A sample finding: "Issue: 127 pages are excluded from the XML sitemap but are internally linked and return 200 status codes. Impact: These pages may not be discovered efficiently by search engines, particularly Googlebot's secondary crawlers. Severity: Medium. Fix: Add all indexable 200-status pages to the sitemap. For pages that should not be indexed, add noindex directives and consider removing internal links."</p>
-<p><strong>Core Web Vitals</strong> findings include specific metrics for the site's most important pages, compared against Google's thresholds and competitor benchmarks. The report identifies the specific elements causing failures — which images lack width/height attributes (causing CLS), which JavaScript bundles delay interactivity (INP), and which resources block the critical rendering path (LCP) — with exact file references and recommended optimisations.</p>
-<p><strong>Site architecture</strong> analysis evaluates click depth, internal link distribution, and crawl efficiency. A sample finding: "Your product category pages average 3.2 internal links each, while competitor A averages 12.7 and competitor B averages 9.4. This internal link deficit reduces the PageRank flowing to your most commercially valuable pages. Recommendation: Implement contextual internal links from related blog content to category pages, add category cross-links in sidebar or footer navigation, and create a hub page structure for your primary product categories."</p>
-<p><strong>Structured data</strong> findings document missing, incorrect, or incomplete schema markup with specific JSON-LD code snippets ready for implementation. Each schema recommendation includes the eligible rich result type and an estimate of the click-through rate improvement based on SERP studies.</p>
+  <p>Every audit report follows a consistent structure designed for two audiences: the strategic decision-maker who needs the headlines and priorities, and the implementation team that needs the technical details and specific instructions.</p>
 
-<h2 id="content-analysis-section">Content Analysis Section</h2>
-<p>The content analysis evaluates whether your published content serves both user needs and search engine requirements. It goes beyond simple metrics like word count to assess topical coverage, search intent alignment, and competitive content quality.</p>
-<p><strong>Content inventory</strong> categorises every indexed page by type (product, category, blog, resource, utility), performance tier (high-traffic, moderate, low-traffic, zero-traffic), and quality assessment (comprehensive, adequate, thin, duplicate). This inventory often reveals surprising patterns — many sites have a long tail of thin or duplicate pages that dilute overall site quality signals. A sample finding: "Of 312 indexed blog posts, 89 (29%) have fewer than 300 words and receive zero organic traffic. These thin pages contribute no traffic value while consuming crawl budget and potentially diluting E-E-A-T signals. Recommendation: Consolidate the 89 thin posts into 15-20 comprehensive guides covering the same topics, redirect old URLs, and deindex any remaining stubs."</p>
-<p><strong>Keyword cannibalisation</strong> analysis identifies pages competing for the same search queries. The report shows which keywords have multiple ranking pages, which page Google currently favours, and whether consolidation would improve rankings. Sample finding: "Three separate blog posts target variations of 'best project management tools.' Google alternates between ranking the February 2024 post (position 8-12) and the September 2025 post (position 15-20). Neither achieves a stable top-10 position. Recommendation: Merge all three posts into a single comprehensive guide on the strongest URL, redirect the other two, and update with current tool information and pricing."</p>
-<p><strong>Content gap analysis</strong> compares your topical coverage against competitors, identifying high-value keywords and topics where competitors rank but you have no content. The report presents these gaps as opportunities with search volume, keyword difficulty, and recommended content format for each.</p>
-<p><strong>E-E-A-T assessment</strong> evaluates the trust signals within your content: author attribution, source citations, credentials display, factual accuracy markers, and first-hand experience indicators. The report identifies specific pages where E-E-A-T signals could be strengthened and provides content enhancement recommendations.</p>
+  <p>The report structure is as follows:</p>
 
-<h2 id="competitive-insights">Competitive Insights</h2>
-<p>The competitive analysis section benchmarks your site against three to five direct search competitors across every audit dimension. This context transforms raw findings into strategic intelligence — you are not just learning about your site's issues, you are learning where those issues put you at a competitive disadvantage and where your strengths create opportunity.</p>
-<p><strong>Competitive scorecard</strong> provides a side-by-side comparison across key metrics: domain authority, total indexed pages, page speed scores, total referring domains, estimated organic traffic, and keyword overlap. This scorecard gives you an immediate visual representation of where you stand in the competitive landscape. Sample insight: "You rank for 1,240 keywords, while your top competitor ranks for 4,890. However, your conversion-intent keyword coverage (bottom-of-funnel terms) is only 12% behind theirs, suggesting the gap is primarily in informational content that feeds top-of-funnel awareness."</p>
-<p><strong>Technical comparison</strong> highlights specific technical advantages and disadvantages. If a competitor loads in 1.8 seconds and you load in 3.6 seconds, the report quantifies the likely ranking and conversion impact of that gap and identifies the specific optimisations the competitor has implemented that you have not (CDN, image compression, JavaScript deferral, etc.).</p>
-<p><strong>Content strategy mapping</strong> reveals how competitors structure their content and which content types drive their organic performance. The report identifies their highest-traffic content, their publishing frequency, their topical clustering approach, and the content formats (guides, tools, comparisons, case studies) that earn them the most backlinks and social engagement.</p>
-<p><strong>Backlink opportunity analysis</strong> identifies domains that link to multiple competitors but not to you. These "common linker" domains represent warm outreach prospects — they have already demonstrated willingness to link in your space. The report typically identifies 20 to 50 actionable link prospects with their domain authority, the competitor content they link to, and a suggested outreach angle for each.</p>
+  <ol>
+    <li><strong>Executive summary</strong> — a one-to-two page overview of the site's current SEO health, the most significant findings, and the top three to five priority actions. This section is written for stakeholders who will not read the full report but need to understand the situation and approve resources for fixes.</li>
+    <li><strong>Technical audit</strong> — detailed findings on crawlability, indexation, site speed, Core Web Vitals, mobile usability, security, and structured data. Each finding includes the specific pages affected, the severity of the issue, and the recommended fix with implementation instructions.</li>
+    <li><strong>On-page analysis</strong> — title tags, meta descriptions, heading structure, internal linking, URL architecture, and image optimisation reviewed across every page template on the site.</li>
+    <li><strong>Content evaluation</strong> — quality assessment of key pages, identification of thin and underperforming content, keyword cannibalisation analysis, and content gap identification relative to competitors.</li>
+    <li><strong>Off-page analysis</strong> — backlink profile quality, referring domain diversity, anchor text distribution, toxic link identification, and comparison against competitor link profiles.</li>
+    <li><strong>Competitive benchmarking</strong> — side-by-side comparison of your site against three to five organic competitors across all audit dimensions.</li>
+    <li><strong>Prioritised action plan</strong> — every recommendation ranked by expected impact and implementation effort, organised into immediate, short-term, medium-term, and ongoing categories.</li>
+  </ol>
 
-<h2 id="prioritised-action-plan">Prioritised Action Plan</h2>
-<p>The action plan is the most important section of the report because it transforms analysis into execution. Every finding from the preceding sections feeds into a single prioritised list that tells you exactly what to do, in what order, and what results to expect.</p>
-<p>Actions are categorised into three priority tiers based on a combination of impact (how much ranking or traffic improvement the fix will produce), effort (how many hours or resources are required), and dependency (whether the fix is a prerequisite for other improvements).</p>
-<p><strong>Priority 1 — Critical (implement within 30 days).</strong> These are high-impact issues that are actively suppressing your rankings or creating risk. Typical Priority 1 items include fixing indexation barriers (blocked pages, incorrect canonical tags), resolving Core Web Vitals failures on high-traffic pages, correcting severe keyword cannibalisation, and addressing security vulnerabilities. Each item includes specific implementation steps and estimated time to complete.</p>
-<p><strong>Priority 2 — Important (implement within 60 days).</strong> These are significant optimisation opportunities that will improve rankings and traffic once Priority 1 items are resolved. Typical Priority 2 items include content consolidation and expansion, internal linking restructuring, structured data implementation, and meta tag optimisation across key page templates. These items build on the technical foundation established by Priority 1 fixes.</p>
-<p><strong>Priority 3 — Beneficial (implement within 90 days).</strong> These are improvements that enhance overall site quality and competitive positioning. Typical Priority 3 items include new content creation for identified gaps, backlink outreach campaigns, UX improvements that support conversion rates, and advanced technical optimisations like JavaScript rendering improvements or international SEO refinements.</p>
-<p>Each action item in the plan includes an estimated traffic impact (conservative, moderate, and optimistic scenarios), the team member or skill set required for implementation (developer, content writer, SEO specialist), any dependencies on other action items, and a success metric for verifying the fix was effective. This level of detail allows you to build a project plan directly from the audit report without additional translation or interpretation.</p>
+  <p>The typical report runs 40-70 pages for a medium-size site. Larger sites produce longer reports because there are more pages to analyse and more findings to document. We also provide a condensed presentation deck of 15-20 slides for stakeholder meetings.</p>
 
-<h2 id="how-to-use-your-report">How to Use Your Report</h2>
-<p>A thorough audit report contains a wealth of information, and navigating it effectively ensures you extract maximum value from the investment. Here is how to approach the report for different roles and goals.</p>
-<p><strong>For business owners and decision-makers:</strong> Start with the executive summary and the site health scorecard. These sections tell you the overall picture, the most critical issues, and the recommended investment required to address them. Use this to make budget and priority decisions. You do not need to read the technical detail unless a specific finding requires your input (for example, a recommendation to consolidate product pages that might affect merchandising strategy).</p>
-<p><strong>For marketing managers:</strong> Read the executive summary, then focus on the content analysis, competitive insights, and the action plan. These sections inform your content strategy, help you understand the competitive landscape, and provide a ready-made implementation roadmap. The content gap analysis is particularly valuable for planning your editorial calendar.</p>
-<p><strong>For developers:</strong> Go directly to the technical findings section. Each finding includes specific file references, code examples, and implementation guidance written for a technical audience. The priority ratings help you triage bug fixes alongside feature development. If findings reference specific URLs or code patterns, use these as your task specifications.</p>
-<p><strong>For SEO specialists:</strong> Read the full report. Cross-reference the technical findings with the competitive analysis to understand not just what needs fixing but why it matters relative to competitors. Use the backlink analysis and content gap data to inform your ongoing SEO strategy beyond the specific recommendations in the report.</p>
-<p><strong>For everyone:</strong> Schedule a team meeting within one week of receiving the report to discuss findings, assign ownership of action items, and set implementation timelines. The report's value decays if it sits unread — search engine algorithms continue to evolve, competitors continue to optimise, and today's opportunities become tomorrow's missed chances.</p>
-<p>Our <a href="/website-audit-services/professional/">professional audit</a> includes a walkthrough call where we discuss every section of the report with your team. If you are ready to see what insights your site's data reveals, use the form on this page to get started.</p>
+  <h2 id="executive-summary-sample">Executive Summary Sample</h2>
 
+  <p>Here is how an executive summary reads in practice (details anonymised):</p>
+
+  <blockquote>
+    <p>"The site currently ranks for 2,340 keywords in the top 100, with 187 keywords in the top 10. Organic traffic has declined 23% over the past six months, primarily driven by losses on the blog — which accounts for 68% of total organic traffic.</p>
+    <p>The audit identified three critical issues: (1) a JavaScript rendering problem that prevents Google from indexing content on 34% of product pages, (2) keyword cannibalisation across 18 blog posts that splits authority for your highest-value keywords, and (3) Core Web Vitals failures on mobile that affect 72% of page loads.</p>
+    <p>Resolving these three issues alone is estimated to recover 15-25% of lost traffic within 90 days. The full action plan contains 47 recommendations prioritised by impact. The top ten recommendations address 80% of the identified opportunity."</p>
+  </blockquote>
+
+  <p>The executive summary is deliberately concise. It quantifies the current situation, identifies the headline issues, and provides a realistic estimate of the opportunity. Decision-makers can read it in two minutes and understand what needs to happen and why. The specificity — exact percentages, page counts, keyword numbers — demonstrates that the analysis is data-driven rather than based on general impressions.</p>
+
+  <h2 id="technical-findings">Technical Findings</h2>
+
+  <p>Technical findings in our reports go beyond listing errors. Each finding includes the context needed to understand why it matters and exactly how to fix it. Here is an example of how a technical finding is documented:</p>
+
+  <p><strong>Finding: JavaScript rendering blocks content on product pages</strong></p>
+
+  <ul>
+    <li><strong>Severity:</strong> Critical</li>
+    <li><strong>Pages affected:</strong> 847 product pages (34% of total product inventory)</li>
+    <li><strong>Description:</strong> Product descriptions, pricing, and review content are loaded via client-side JavaScript after the initial page load. Google's URL Inspection tool confirms that these elements are not present in the rendered HTML for the affected page template. The product grid template (template B) correctly implements server-side rendering, but the individual product page template (template A) relies entirely on client-side React rendering for below-the-fold content.</li>
+    <li><strong>Impact:</strong> Google cannot index the product descriptions, pricing, or reviews on these 847 pages. Without this content, the pages are effectively thin content from Google's perspective, limiting their ability to rank for product-specific keywords. This is the primary cause of the 40% decline in product page organic traffic over the past quarter.</li>
+    <li><strong>Recommended fix:</strong> Implement server-side rendering (SSR) for the product page template using Next.js <code>getServerSideProps</code> or switch to static generation with <code>getStaticProps</code> for product content that does not change frequently. The product description, pricing, specifications, and review summary should all be present in the initial HTML response. Client-side hydration can enhance interactivity after the initial render.</li>
+    <li><strong>Estimated effort:</strong> 2-3 days of developer time.</li>
+    <li><strong>Expected impact:</strong> Recovery of indexation for 847 product pages. Based on historical performance of similar pages that are correctly rendered, estimated traffic recovery of 3,000-5,000 organic sessions per month within 60-90 days of implementation.</li>
+  </ul>
+
+  <p>This level of detail enables the development team to understand the problem, verify it independently, and implement the fix without further clarification. Every technical finding in the report follows this same structure — severity, scope, explanation, impact, fix, effort, and expected outcome.</p>
+
+  <h2 id="content-analysis">Content Analysis</h2>
+
+  <p>The content analysis section evaluates the quality and performance of your content library. Here is an example of how we present content findings:</p>
+
+  <p><strong>Finding: Keyword cannibalisation on "project management" cluster</strong></p>
+
+  <ul>
+    <li><strong>Severity:</strong> High</li>
+    <li><strong>Affected pages:</strong> 6 blog posts and 1 product page all targeting variations of "project management software"</li>
+    <li><strong>Description:</strong> Search Console data shows that Google rotates between four different pages from your site for the query "project management software," with none consistently appearing in the top 20. The query generates 18,000 monthly impressions but only 45 clicks (0.25% CTR) because Google cannot determine which page to rank and cycles between candidates, each appearing briefly before being replaced.</li>
+    <li><strong>Current performance:</strong> Average position 34.2 across all fluctuating pages. If consolidated into a single authoritative page, competitive analysis suggests a realistic target of position 8-12, which would yield an estimated 800-1,200 clicks per month based on the keyword's CTR curve.</li>
+    <li><strong>Recommended fix:</strong> Consolidate the six blog posts into a single comprehensive guide. The product page should remain separate with a focus on commercial/transactional intent. Redirect the five retired blog post URLs to the consolidated guide using 301 redirects. Update internal links across the site to point to the consolidated page.</li>
+  </ul>
+
+  <p>The content analysis also includes a full content inventory categorising every page as keep (performing well), refresh (declining or outdated), consolidate (cannibalising or duplicative), or remove (no traffic, no potential). This inventory is delivered as a separate spreadsheet alongside the main report, providing a complete content action plan.</p>
+
+  <p>We also evaluate content quality on a per-page basis for your top 30 organic landing pages, comparing content depth, structure, freshness, and E-E-A-T signals against the current top-ranking competitors for each page's primary keyword. This competitive content comparison reveals exactly what your pages need to do differently to improve or maintain their positions.</p>
+
+  <h2 id="competitive-insights">Competitive Insights</h2>
+
+  <p>The competitive analysis section benchmarks your site against three to five direct organic competitors. We identify competitors based on keyword overlap rather than business rivalry — the sites that actually compete with you in search results, which may differ from the competitors you think about in business strategy meetings.</p>
+
+  <p>The competitive comparison covers:</p>
+
+  <ul>
+    <li><strong>Authority comparison</strong> — referring domain counts, domain rating, and the quality distribution of each competitor's backlink profile. This reveals whether your ranking challenges are primarily an authority problem (competitors have significantly stronger link profiles) or a content/technical problem (authority is comparable but other factors differ).</li>
+    <li><strong>Content coverage gap</strong> — keywords that competitors rank for and you do not. These gaps are filtered by search volume and commercial intent, then categorised by topic to reveal which content areas you are missing entirely. For example, if three competitors rank for dozens of keywords related to "project management for remote teams" and you have no content on this topic, that is a high-value content gap.</li>
+    <li><strong>Technical comparison</strong> — side-by-side Core Web Vitals scores, mobile usability assessment, structured data implementation, and site architecture comparison. This helps quantify whether competitors have technical advantages that contribute to their rankings.</li>
+    <li><strong>SERP feature ownership</strong> — which competitors appear in featured snippets, People Also Ask, Knowledge Panels, and image/video results for your target keywords. SERP features increasingly dominate the results page, and competitors who win them capture disproportionate click share.</li>
+  </ul>
+
+  <p>The competitive section concludes with a gap analysis that quantifies your position relative to the market leader and estimates what it would take — in content, links, and technical improvements — to close the gap. This provides a realistic foundation for strategic planning.</p>
+
+  <h2 id="action-plan">Action Plan</h2>
+
+  <p>The action plan is the most important section of the report. It takes every finding from the audit and organises it into a sequenced, prioritised roadmap. Each recommendation is categorised by timeframe and scored by expected impact and implementation effort.</p>
+
+  <p>The action plan uses four priority tiers:</p>
+
+  <ul>
+    <li><strong>Immediate (fix within two weeks)</strong> — critical issues that are actively costing traffic or revenue. These are typically technical problems that prevent indexation, server errors on high-traffic pages, or security vulnerabilities. In our example audit, the JavaScript rendering issue and a robots.txt misconfiguration blocking the entire resources section fell into this tier.</li>
+    <li><strong>Short-term (complete within one month)</strong> — high-impact improvements that deliver measurable results quickly. Title tag optimisations, meta description rewrites for high-impression pages, broken link fixes, and Core Web Vitals improvements on key templates. These are the quick wins that build momentum.</li>
+    <li><strong>Medium-term (complete within three months)</strong> — content rewrites for underperforming pages, cannibalisation resolution, new content development for identified gaps, and internal linking restructures. These require more effort but produce the largest sustained traffic gains.</li>
+    <li><strong>Ongoing (establish as continuous processes)</strong> — monitoring routines, content refresh schedules, regular technical crawl checks, and link-building activities that maintain and build on the improvements from the first three tiers.</li>
+  </ul>
+
+  <p>Every action item includes the specific pages affected, the exact change required, the team or role responsible (development, content, SEO), and the expected outcome. This level of specificity means the action plan can be converted directly into project management tickets without further interpretation.</p>
+
+  <h2 id="how-to-use-your-report">How to Use Your Report</h2>
+
+  <p>The report is designed to be used actively over six to twelve months, not read once and filed away. Here is how to extract maximum value:</p>
+
+  <ul>
+    <li><strong>Start with the executive summary</strong> — share it with every stakeholder who needs to understand the SEO situation. Use it to secure buy-in and resources for implementation. The summary is written to be compelling without requiring technical knowledge.</li>
+    <li><strong>Convert the action plan into tasks</strong> — each item in the action plan should become a task in your project management system. Assign owners, set deadlines based on the priority tiers, and track completion. The audit's value is zero if the recommendations are not implemented.</li>
+    <li><strong>Brief your development team</strong> — technical findings are written with developers in mind. Share the technical section directly with your development team and schedule a working session to discuss implementation approaches and timeline.</li>
+    <li><strong>Use the content inventory as an editorial calendar</strong> — the content analysis spreadsheet identifies exactly which pages to refresh, which to consolidate, and which new content to create. Map these into your editorial calendar over the next quarter.</li>
+    <li><strong>Measure and iterate</strong> — establish baseline metrics from the report data. After implementing changes, measure the same metrics to quantify improvement. Revisit the action plan monthly to reprioritise based on results and any new data.</li>
+    <li><strong>Schedule a follow-up audit</strong> — a follow-up audit six to twelve months later measures the impact of your implementation, identifies new issues that have emerged, and provides the next set of priorities. Sites that audit regularly maintain their gains and continue improving, while sites that audit once eventually regress.</li>
+  </ul>
+
+  <p>The report you receive is not a grade — it is a map. It shows you where you are, where you need to go, and the fastest route to get there. The businesses that achieve the best results are those that treat the report as a working document, implementing recommendations systematically and measuring outcomes at every stage.</p>
 </ContentLayout>
