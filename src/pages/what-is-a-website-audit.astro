@@ -1,0 +1,154 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'What Is a Website Audit', href: '/what-is-a-website-audit/' },
+];
+
+const toc = [
+  { label: 'Definition and Purpose', id: 'definition-and-purpose' },
+  { label: 'Types of Website Audits', id: 'types-of-website-audits' },
+  { label: 'What Gets Checked', id: 'what-gets-checked' },
+  { label: 'Who Needs a Website Audit', id: 'who-needs-a-website-audit' },
+  { label: 'DIY vs Professional Audits', id: 'diy-vs-professional-audits' },
+  { label: 'How Often to Audit', id: 'how-often-to-audit' },
+  { label: 'Next Steps', id: 'next-steps' },
+];
+---
+
+<ContentLayout
+  title="What Is a Website Audit? Everything You Need to Know"
+  description="A website audit is a comprehensive analysis of your site's performance, SEO, security, and user experience. Learn what's involved, why it matters, and when you need one."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>A <strong>website audit</strong> is a comprehensive examination of everything that affects how your website performs — for search engines, for users, and for your business. It is the diagnostic equivalent of a full medical check-up: a systematic review that identifies problems you cannot see from the outside, quantifies their impact, and prescribes specific fixes in order of priority.</p>
+
+<p>If your website is not generating the traffic, leads, or revenue you expect, an audit will tell you why. If your site appears to be performing well, an audit will reveal the hidden issues that are capping your potential and the opportunities you are leaving on the table.</p>
+
+<p>This guide explains what a website audit involves, the different types of audits, who needs them, and how to decide between doing one yourself or hiring a professional.</p>
+
+<h2 id="definition-and-purpose">Definition and Purpose</h2>
+
+<p>A website audit is a structured, methodical analysis of a website across multiple dimensions: search engine optimisation, technical infrastructure, content quality, user experience, performance, and security. The purpose is to identify every factor that is either helping or hindering the site's ability to achieve its business goals.</p>
+
+<p>The output of an audit is a detailed report documenting every issue found, why it matters, which pages it affects, and what to do about it. Issues are prioritised by their impact on business outcomes — typically traffic, conversions, or revenue — so that the site owner or marketing team can fix the most impactful problems first.</p>
+
+<p>Audits are not one-size-fits-all. A 20-page brochure site for a local plumber has different audit needs than a 100,000-page e-commerce store. A site that relies on organic search needs deeper SEO analysis than a site that drives traffic primarily through paid ads. The scope, depth, and focus of the audit should match the site and its business context.</p>
+
+<p>The fundamental purpose is accountability. Without an audit, website performance is governed by assumptions, guesswork, and whatever the last agency or developer happened to set up. With an audit, every decision is grounded in data, and every issue has a clear path to resolution.</p>
+
+<h2 id="types-of-website-audits">Types of Website Audits</h2>
+
+<p>There are several distinct types of website audit, each focusing on a different aspect of site performance. Most comprehensive audits include elements of all these types, but understanding the distinctions helps you focus on what matters most for your situation.</p>
+
+<p><strong><a href="/seo-website-audit/">SEO Audit</a></strong> — Evaluates everything that affects search engine visibility: keyword targeting, on-page optimisation, content quality, internal linking, backlink profile, and competitive positioning. An SEO audit answers the question "why is my site not ranking as well as it should?" and provides a roadmap for improving organic traffic.</p>
+
+<p><strong><a href="/technical-website-audit/">Technical Audit</a></strong> — Examines the infrastructure layer: server configuration, crawlability, indexation, site architecture, URL structure, redirect chains, canonical tags, structured data, and JavaScript rendering. Technical audits focus on whether search engines can discover, access, and correctly process your pages.</p>
+
+<p><strong><a href="/website-content-audit/">Content Audit</a></strong> — Reviews the quality, relevance, and performance of your published content. It identifies thin content, duplicate content, content gaps, outdated information, and pages that are not matching search intent. Content audits are essential for sites with large content libraries that have accumulated material over years.</p>
+
+<p><strong>Performance Audit</strong> — Measures page load speed, Core Web Vitals (LCP, INP, CLS), server response times, and resource loading efficiency. Performance directly affects both search rankings and user experience. A performance audit pinpoints exactly what is slowing your site down and how to fix it.</p>
+
+<p><strong><a href="/website-security-audit/">Security Audit</a></strong> — Checks SSL/TLS configuration, security headers, software vulnerabilities, exposed sensitive files, and malware. Security issues can result in Google Safe Browsing warnings that devastate traffic, browser security alerts that destroy trust, and data breaches that create legal liability.</p>
+
+<p><strong><a href="/website-accessibility-audit/">Accessibility Audit</a></strong> — Evaluates compliance with WCAG guidelines and ADA requirements. Covers screen reader compatibility, keyboard navigation, colour contrast, form labelling, and alternative text. Accessibility is both a legal requirement in many jurisdictions and a signal of site quality that affects SEO.</p>
+
+<p><strong>UX Audit</strong> — Assesses the user experience: navigation clarity, information architecture, conversion paths, mobile usability, and visual design effectiveness. UX audits focus on whether visitors can accomplish their goals efficiently and pleasantly.</p>
+
+<h2 id="what-gets-checked">What Gets Checked</h2>
+
+<p>A comprehensive website audit typically covers 50 to 100+ individual checkpoints. Here are the major areas and what auditors look for in each.</p>
+
+<p><strong>Crawlability and indexation.</strong> Can search engines find and access all your important pages? This includes checking robots.txt for blocking errors, verifying XML sitemap accuracy, reviewing crawl errors in Search Console, checking for unintended noindex tags, and ensuring canonical tags point to the correct URLs. If Google cannot crawl a page, it cannot rank it — making this the most foundational check in any audit.</p>
+
+<p><strong>On-page SEO elements.</strong> Are your pages optimised for the keywords they should rank for? This covers title tags, meta descriptions, heading hierarchy (H1 through H6), keyword placement, image alt attributes, and internal anchor text. Each element should be unique, descriptive, and aligned with the search intent behind your target queries.</p>
+
+<p><strong>Site architecture and internal linking.</strong> How are your pages organised and connected? Auditors evaluate click depth (how many clicks to reach important pages from the homepage), orphan pages (pages with no internal links), link equity distribution, and whether the site structure reflects a clear topical hierarchy.</p>
+
+<p><strong>Page speed and Core Web Vitals.</strong> How fast do your pages load and how responsive are they to user interaction? This includes Largest Contentful Paint (LCP), Interaction to Next Paint (INP), Cumulative Layout Shift (CLS), Time to First Byte (TTFB), total page weight, and the identification of specific bottlenecks like unoptimised images, render-blocking scripts, and excessive third-party code.</p>
+
+<p><strong>Content quality.</strong> Is your content helpful, accurate, and comprehensive? Auditors evaluate thin pages (those with insufficient content to serve user intent), duplicate content (both within the site and across the web), content freshness, E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness), and content gaps relative to competitors.</p>
+
+<p><strong>Mobile experience.</strong> Does your site work correctly on mobile devices? With Google using mobile-first indexing, the mobile version of your site is the version that determines your rankings. Checks include responsive design verification, touch target sizing, viewport configuration, content parity between mobile and desktop, and mobile-specific speed testing.</p>
+
+<p><strong>Security configuration.</strong> Is your site secure? This covers SSL/TLS certificate validity, HTTPS enforcement, security headers (CSP, HSTS, X-Frame-Options), mixed content, exposed sensitive files, and software update status. Security failures can trigger browser warnings and Google penalties that immediately destroy traffic and trust.</p>
+
+<p><strong>Structured data.</strong> Are you using schema.org markup to help search engines understand your content? Auditors check for the presence and validity of relevant schema types (Organization, Article, FAQ, Product, BreadcrumbList, etc.) and verify that markup matches the visible page content.</p>
+
+<h2 id="who-needs-a-website-audit">Who Needs a Website Audit</h2>
+
+<p>The short answer is every website. The longer answer depends on your specific situation.</p>
+
+<p><strong>Any business that depends on organic search traffic</strong> needs regular audits. If organic search drives 20 percent or more of your traffic or revenue, technical and SEO issues have a direct financial impact. An audit identifies those issues before they compound into significant traffic losses.</p>
+
+<p><strong>Businesses experiencing traffic declines</strong> need an audit urgently. A drop in organic traffic can be caused by technical issues (crawling or indexation problems), algorithm updates (content quality or E-E-A-T reassessments), manual actions (Google penalties), or competitive shifts. An audit diagnoses the cause and provides the fix.</p>
+
+<p><strong>Companies planning a website redesign or migration</strong> need both a pre-migration audit (to document the current state and identify risks) and a post-migration audit (to catch anything that broke during the transition). Migrations without audits are the single most common cause of catastrophic organic traffic loss.</p>
+
+<p><strong>New website owners or marketing hires</strong> who have inherited a site they did not build should audit it as their first action. You need a baseline understanding of the site's technical health, content quality, and competitive position before you can make informed decisions about where to invest resources.</p>
+
+<p><strong>E-commerce businesses</strong> have heightened audit needs because their sites are typically large (thousands of product pages), complex (faceted navigation, variant URLs, seasonal inventory changes), and directly tied to revenue. Product page optimisation, category structure, and checkout performance all require specialised audit attention.</p>
+
+<p><strong>Businesses in competitive markets</strong> where the difference between ranking position 1 and position 5 represents significant revenue should audit quarterly. In these markets, competitors are actively optimising, and any technical or content weakness creates an opening they will exploit.</p>
+
+<h2 id="diy-vs-professional-audits">DIY vs Professional Audits</h2>
+
+<p>Whether to audit your own site or hire a professional depends on your technical knowledge, available time, and the complexity of your site.</p>
+
+<p><strong>DIY audits work well when:</strong></p>
+<ul>
+  <li>Your site is small (under 100 pages)</li>
+  <li>You have a working knowledge of SEO fundamentals</li>
+  <li>You are comfortable using tools like Screaming Frog, Google Search Console, and PageSpeed Insights</li>
+  <li>You have the time to run the analysis (expect 8-20 hours for a thorough audit)</li>
+  <li>You need a general health check rather than a deep strategic analysis</li>
+</ul>
+
+<p>Our <a href="/website-audit-checklist/">72-point audit checklist</a> provides a structured framework for running your own audit, and our guide to <a href="/website-audit-tools/">audit tools</a> helps you choose the right software.</p>
+
+<p><strong>Professional audits are worth the investment when:</strong></p>
+<ul>
+  <li>Your site is large or technically complex (JavaScript rendering, multi-language, faceted navigation)</li>
+  <li>You have experienced a traffic decline and need expert diagnosis</li>
+  <li>You are preparing for a migration and cannot afford to get it wrong</li>
+  <li>You need a competitive analysis alongside the audit</li>
+  <li>You want strategic recommendations, not just a list of issues</li>
+  <li>You need a professional report for stakeholder buy-in</li>
+  <li>Your time is more valuable than the cost of the audit</li>
+</ul>
+
+<p>The main advantage of a professional audit is pattern recognition. An experienced auditor has seen hundreds of sites and can quickly identify root causes, prioritise by real impact, and write recommendations that account for the practical realities of implementation. Tools find issues; experts find solutions.</p>
+
+<p>The main disadvantage is cost. Professional audits range from $297 for a basic review to $10,000+ for enterprise-scale comprehensive audits. For a detailed pricing breakdown, see our <a href="/website-audit-services/cost/">website audit cost guide</a>.</p>
+
+<h2 id="how-often-to-audit">How Often to Audit</h2>
+
+<p>The right audit frequency depends on your site's size, how frequently it changes, and how competitive your market is.</p>
+
+<p><strong>Quarterly</strong> is ideal for sites that depend heavily on organic search, operate in competitive markets, or publish content frequently. Quarterly audits catch issues before they accumulate and ensure that new content and technical changes have not introduced problems.</p>
+
+<p><strong>Biannually</strong> (every six months) works well for most small to mid-size business sites that are relatively stable. This frequency balances thoroughness with practicality.</p>
+
+<p><strong>Annually</strong> is the absolute minimum for any site that cares about search performance. The web moves fast — algorithm updates, browser changes, security vulnerabilities, and competitive shifts all happen constantly. A site that goes more than a year without an audit is almost certainly accumulating issues.</p>
+
+<p><strong>After major changes</strong> — regardless of your regular schedule, always audit after a site redesign, CMS migration, domain change, major content restructure, or significant drop in traffic. These events introduce the highest risk of SEO damage.</p>
+
+<p>Between full audits, use monitoring tools to watch for critical issues. Google Search Console email alerts, Ahrefs or Semrush scheduled site audits, and uptime monitoring catch problems in real time so you do not have to wait for the next scheduled audit.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Now that you understand what a website audit is and why it matters, here is how to take action.</p>
+
+<p><strong>Start with a free scan.</strong> Our <a href="/free-website-audit/">free website audit tool</a> checks your site against 25 key factors in under 60 seconds. It will give you an immediate picture of your site's health and highlight the most critical issues.</p>
+
+<p><strong>Use the checklist for a DIY audit.</strong> If you want to run a thorough audit yourself, our <a href="/website-audit-checklist/">72-point audit checklist</a> provides the structured framework you need. Pair it with the right <a href="/website-audit-tools/">audit tools</a> and you can produce a professional-quality analysis.</p>
+
+<p><strong>Hire a professional for a deep analysis.</strong> If you want expert diagnosis, strategic recommendations, and a prioritised action plan, our <a href="/website-audit-services/">professional audit service</a> starts at $297. Every audit is performed by a senior analyst and includes a walkthrough call to discuss the findings.</p>
+
+<p>Whichever path you choose, the important thing is to start. Every day your site operates with undetected issues is a day you are losing traffic, conversions, and revenue to problems that are fixable. The audit is the first step.</p>
+
+</ContentLayout>

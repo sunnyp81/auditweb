@@ -1,0 +1,189 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Services', href: '/website-audit-services/' },
+];
+
+const toc = [
+  { label: "What's Included in Our Audit", id: 'whats-included-in-our-audit' },
+  { label: 'Our Audit Process', id: 'our-audit-process' },
+  { label: 'Sample Deliverables', id: 'sample-deliverables' },
+  { label: "Who It's For", id: 'who-its-for' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'Our Guarantee', id: 'our-guarantee' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const childPages = [
+  { title: 'Audit Cost and Pricing', href: '/website-audit-services/cost/', description: 'How much website audits cost and what affects pricing.' },
+  { title: 'Professional Website Audit', href: '/website-audit-services/professional/', description: 'What to expect from a professional website audit.' },
+  { title: 'Audits for Agencies', href: '/website-audit-services/agencies/', description: 'White-label and agency audit services.' },
+  { title: 'Comprehensive Audit', href: '/website-audit-services/comprehensive/', description: 'Our full 72-checkpoint comprehensive audit package.' },
+  { title: 'Report Example', href: '/website-audit-services/report-example/', description: 'See a sample audit report before you buy.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Website Audit Service',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'Professional website audits covering SEO, technical, content, UX, and security across 72 checkpoints.',
+  priceRange: '$297-$997',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="Website Audit Services: Professional Audits That Drive Results"
+  description="Get a professional website audit from our expert team. We check 72 points across SEO, technical, content, UX, and security. Pricing from $297."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  children={childPages}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-03-28"
+>
+
+<p>Most websites leave money on the table. They have pages Google cannot find, content that does not match what searchers want, speed issues that kill conversions, and security gaps that erode trust. The problem is not a lack of effort — it is a lack of visibility into what is actually broken.</p>
+
+<p>Our <strong>professional website audit service</strong> gives you that visibility. We examine your site across 72 checkpoints spanning SEO, technical infrastructure, content quality, user experience, and security. You get a prioritised action plan that tells you exactly what to fix, in what order, and why each fix matters to your bottom line.</p>
+
+<p>We have audited over 500 websites since 2020 — from 10-page local business sites to 500,000-page enterprise platforms. Every audit is performed by a senior analyst, not a junior running an automated tool. The difference shows in the quality of recommendations and the results our clients achieve after implementing them.</p>
+
+<h2 id="whats-included-in-our-audit">What's Included in Our Audit</h2>
+
+<p>Every audit covers five core dimensions. We do not skip areas because they are hard to test or because automated tools cannot check them. If it affects your search visibility, traffic, or conversions, it is in the audit.</p>
+
+<p><strong>Technical SEO (18 checkpoints)</strong> — We crawl your entire site using Screaming Frog and cross-reference the data with Google Search Console and your server logs. We check robots.txt configuration, XML sitemap accuracy, crawl errors, redirect chains, canonical tag implementation, hreflang setup (if applicable), JavaScript rendering, and crawl budget efficiency. Every technical issue is documented with the affected URLs, the root cause, and the specific fix.</p>
+
+<p><strong>On-Page SEO (16 checkpoints)</strong> — We review your title tags, meta descriptions, heading hierarchy, keyword targeting, internal linking structure, image optimisation, and structured data implementation. We do not just flag missing meta descriptions — we tell you what they should say based on the search intent behind your target keywords.</p>
+
+<p><strong>Content Quality (14 checkpoints)</strong> — We evaluate thin content, duplicate content (both internal and cross-domain), content gaps versus competitors, topical authority signals, E-E-A-T compliance, and content freshness. We identify which pages are dragging down your site's overall quality signal and which pages have the highest potential for improvement.</p>
+
+<p><strong>Performance and UX (12 checkpoints)</strong> — We test Core Web Vitals (LCP, INP, CLS) across your key page templates, identify render-blocking resources, measure time-to-interactive on mobile, and evaluate navigation usability, mobile responsiveness, and conversion path efficiency. Slow sites lose visitors and rankings. We tell you exactly what is slowing yours down.</p>
+
+<p><strong>Security (12 checkpoints)</strong> — We verify your SSL/TLS configuration, test security headers (CSP, HSTS, X-Frame-Options, Referrer-Policy), scan for mixed content, check for exposed sensitive files (wp-config, .env, .git), and verify that your CMS and plugins are current. A single security vulnerability can undo years of SEO work through a Google Safe Browsing warning or a site defacement.</p>
+
+<h2 id="our-audit-process">Our Audit Process</h2>
+
+<p>Our audit process is designed to be thorough without being slow. From order to delivery, here is exactly what happens.</p>
+
+<p><strong>Day 1: Intake and access.</strong> You fill out a brief questionnaire about your business goals, target audience, and primary competitors. You grant us read-only access to Google Search Console and Google Analytics (optional but recommended). We configure our crawling tools and begin the automated data collection.</p>
+
+<p><strong>Days 2-3: Deep crawl and data gathering.</strong> We run a full-site crawl with JavaScript rendering enabled, pull your Search Console data for the past 16 months, test Core Web Vitals across every page template, run security scans, and collect competitor benchmarking data. For sites over 50,000 pages, we also analyse server logs to understand Googlebot's actual crawl behaviour.</p>
+
+<p><strong>Days 4-6: Manual analysis.</strong> This is where the value lives. A senior analyst reviews every data point, identifies patterns that automated tools miss, traces issues to their root causes, and writes custom recommendations. We do not generate templated reports — every recommendation is written specifically for your site, your market, and your goals.</p>
+
+<p><strong>Day 7: Report delivery and walkthrough.</strong> You receive a comprehensive PDF report with an executive summary, detailed findings organised by priority, and an implementation roadmap. We schedule a 60-minute video call to walk you through the findings, answer questions, and help you plan the implementation sequence.</p>
+
+<h2 id="sample-deliverables">Sample Deliverables</h2>
+
+<p>We believe in transparency. Here is exactly what your audit report contains.</p>
+
+<p><strong>Executive Summary (2 pages)</strong> — A plain-English overview of your site's health, the three most critical issues, and the estimated traffic and revenue impact of fixing them. Designed for stakeholders who need the headline without the detail.</p>
+
+<p><strong>Scorecard</strong> — A visual dashboard showing your score in each of the five audit dimensions (Technical, On-Page, Content, Performance, Security) on a 0-100 scale, benchmarked against the average score for sites in your industry.</p>
+
+<p><strong>Detailed Findings (20-40 pages)</strong> — Every issue documented with a description, severity rating (Critical, High, Medium, Low), affected URLs (with quantities), a screenshot or data excerpt showing the problem, the root cause explanation, the specific fix with implementation instructions, and the estimated impact of fixing it.</p>
+
+<p><strong>Priority Matrix</strong> — A visual chart plotting every issue on two axes: impact (how much traffic or revenue you gain by fixing it) and effort (how much time and resource the fix requires). This makes it immediately obvious which fixes to tackle first for maximum ROI.</p>
+
+<p><strong>Implementation Roadmap</strong> — A week-by-week plan for implementing fixes in the optimal sequence. Quick wins first, then high-impact technical fixes, then content improvements, then ongoing optimisations. Each task includes an effort estimate and the team member responsible (developer, content writer, marketing manager).</p>
+
+<p><strong>Competitor Benchmarking</strong> — A comparison of your technical health, content depth, and backlink authority against your three closest competitors, with specific opportunities where you can overtake them.</p>
+
+<p>Want to see a real report? <a href="/website-audit-services/report-example/">View our sample audit report</a>.</p>
+
+<h2 id="who-its-for">Who It's For</h2>
+
+<p>Our audit service is designed for businesses and professionals who take organic search seriously and are ready to act on the findings.</p>
+
+<p><strong>Business owners and marketing managers</strong> who know their website should be generating more leads or revenue from search but cannot pinpoint what is holding it back. You need a clear diagnosis and a practical fix list — not a 100-page report full of jargon that sits in a drawer.</p>
+
+<p><strong>In-house SEO teams</strong> who want an external expert to validate their priorities and catch blind spots. Even experienced SEOs benefit from a fresh perspective. We frequently identify issues that in-house teams have become accustomed to or that fall outside their primary area of expertise.</p>
+
+<p><strong>Agencies</strong> who need <a href="/website-audit-services/agencies/">white-label audit services</a> to complement their existing offerings. We deliver the audit under your brand, with your formatting, so you can offer comprehensive audits without adding headcount. Agency partnerships include volume discounts and dedicated account management.</p>
+
+<p><strong>E-commerce businesses</strong> where organic search drives a meaningful portion of revenue and any drop in rankings has a direct financial impact. Product pages, category structures, faceted navigation, and schema implementation all require specialised audit attention.</p>
+
+<p><strong>SaaS companies and startups</strong> preparing for a growth phase who need their technical foundation solid before investing heavily in content marketing or paid acquisition. Getting the fundamentals right early prevents expensive rework later.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>We offer three tiers to match different site sizes and business needs. All tiers include the 72-checkpoint audit, a PDF report, and a walkthrough call. The difference is scope depth and ongoing support.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Price</th>
+      <th>Best For</th>
+      <th>Includes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Basic</strong></td>
+      <td>$297</td>
+      <td>Sites under 500 pages</td>
+      <td>72-checkpoint audit, PDF report, 30-min walkthrough, priority matrix</td>
+    </tr>
+    <tr>
+      <td><strong>Comprehensive</strong></td>
+      <td>$997</td>
+      <td>Sites with 500-50,000 pages</td>
+      <td>Everything in Basic + competitor benchmarking, content gap analysis, implementation roadmap, 60-min walkthrough, 30-day email support</td>
+    </tr>
+    <tr>
+      <td><strong>Enterprise</strong></td>
+      <td>Custom</td>
+      <td>Sites with 50,000+ pages or complex architectures</td>
+      <td>Everything in Comprehensive + log file analysis, JavaScript rendering audit, international SEO review, stakeholder presentation, 90-day follow-up audit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The Basic audit at $297</strong> is our most popular package. It covers everything a small to mid-size business needs to identify and fix the issues suppressing their search performance. You get a full 72-checkpoint review, a professional report, and a half-hour call to discuss the findings. For most sites under 500 pages, this is the right choice.</p>
+
+<p><strong>The Comprehensive audit at $997</strong> is for businesses that depend on organic search as a primary revenue channel. Beyond the core 72-checkpoint audit, you get deep competitive intelligence showing exactly where and how your competitors are outperforming you, a content gap analysis identifying the topics you should be covering but are not, a week-by-week implementation roadmap, and 30 days of email support for questions that arise during implementation.</p>
+
+<p><strong>Enterprise pricing is custom-quoted</strong> based on site size, technical complexity, and the number of stakeholder presentations required. <a href="/free-website-audit/">Start with a free scan</a> and we will recommend the right package based on what we find.</p>
+
+<p>For a detailed breakdown of what affects audit pricing across the industry, see our <a href="/website-audit-services/cost/">website audit cost guide</a>.</p>
+
+<h2 id="our-guarantee">Our Guarantee</h2>
+
+<p>We stand behind our work with a straightforward guarantee: <strong>if our audit does not identify at least 10 actionable issues that you were not already aware of, we will refund your payment in full.</strong></p>
+
+<p>We have never had to honour this guarantee. In five years of auditing websites, we have never encountered a site — regardless of how well-maintained it appeared — that did not have at least 15 to 20 previously undetected issues. Most sites have 30 to 50.</p>
+
+<p>We also guarantee delivery within 7 business days for Basic and Comprehensive audits, or 14 business days for Enterprise. If we miss the deadline, you receive a 20 percent discount.</p>
+
+<p>There is no risk. If the audit does not deliver value, you do not pay. That is how confident we are in the depth and quality of our work.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>How long does the audit take?</h3>
+<p>Basic audits are delivered within 5 business days. Comprehensive audits within 7 business days. Enterprise audits within 14 business days. These are maximum timelines — most audits are delivered 1-2 days early.</p>
+
+<h3>What access do you need?</h3>
+<p>Read-only access to Google Search Console is required. Read-only access to Google Analytics is optional but recommended as it allows us to correlate SEO issues with conversion data. We never need CMS access, hosting credentials, or write access to anything.</p>
+
+<h3>Will you implement the fixes?</h3>
+<p>The audit service covers analysis and recommendations only. We provide implementation instructions detailed enough for any competent developer or marketer to follow. If you want us to implement the fixes, we offer that as a separate engagement at pre-agreed rates, typically at a discount for audit clients.</p>
+
+<h3>How is this different from a free audit tool?</h3>
+<p>Free audit tools run automated checks and flag surface-level issues. They cannot interpret context, identify root causes, evaluate content quality, assess competitive positioning, or write strategy-level recommendations. Our audit combines automated data with senior human analysis. The output is a strategic document, not a list of tool warnings. Read our comparison of <a href="/website-audit-tools/best-free/">free audit tools</a> to understand what they can and cannot do.</p>
+
+<h3>Do you work with agencies?</h3>
+<p>Yes. We offer <a href="/website-audit-services/agencies/">white-label audit services for agencies</a> at volume discounts. The report is delivered under your brand with your formatting. Your clients never know we were involved.</p>
+
+<h3>What if my site is very large or technically complex?</h3>
+<p>Sites with over 50,000 pages, JavaScript-rendered content, multi-language configurations, or complex e-commerce architectures require our Enterprise tier with custom scoping. Contact us with your site URL and we will provide a custom quote within 24 hours.</p>
+
+<h3>Can I see a sample report first?</h3>
+<p>Absolutely. <a href="/website-audit-services/report-example/">View our sample audit report</a> to see exactly what you will receive. The sample is from a real audit (with client details anonymised) and represents the quality and depth of every report we produce.</p>
+
+</ContentLayout>

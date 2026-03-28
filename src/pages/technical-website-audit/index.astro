@@ -1,0 +1,218 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Technical Audit', href: '/technical-website-audit/' },
+];
+
+const toc = [
+  { label: 'What Is a Technical Website Audit', id: 'what-is-a-technical-website-audit' },
+  { label: 'Why Technical Audits Are Critical', id: 'why-technical-audits-are-critical' },
+  { label: 'Crawlability and Indexation', id: 'crawlability-and-indexation' },
+  { label: 'Site Architecture and URL Structure', id: 'site-architecture-and-url-structure' },
+  { label: 'Core Web Vitals', id: 'core-web-vitals' },
+  { label: 'Mobile-Friendliness', id: 'mobile-friendliness' },
+  { label: 'HTTPS and Security Headers', id: 'https-and-security-headers' },
+  { label: 'Structured Data and Schema', id: 'structured-data-and-schema' },
+  { label: 'Technical Audit Tools', id: 'technical-audit-tools' },
+];
+
+const childPages = [
+  { title: 'How to Conduct a Technical Audit', href: '/technical-website-audit/how-to/', description: 'Step-by-step guide to performing a technical SEO audit.' },
+  { title: 'Technical Audit Checklist', href: '/technical-website-audit/checklist/', description: '72-point checklist for technical website audits.' },
+  { title: 'Core Web Vitals Audit', href: '/technical-website-audit/core-web-vitals/', description: 'How to audit and improve your Core Web Vitals scores.' },
+  { title: 'Website Speed Audit', href: '/technical-website-audit/speed/', description: 'Complete guide to auditing and improving page load speed.' },
+  { title: 'Mobile Website Audit', href: '/technical-website-audit/mobile/', description: 'Ensure your site works perfectly on mobile devices.' },
+];
+---
+
+<ContentLayout
+  title="Technical Website Audit: The Complete Checklist for 2026"
+  description="Master technical SEO audits with our comprehensive guide. Covers crawlability, indexation, Core Web Vitals, mobile-friendliness, site architecture, and structured data."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  children={childPages}
+  publishDate="2026-03-28"
+>
+
+<p>A <strong>technical website audit</strong> is the most foundational diagnostic you can run on any website. It strips away content, design, and branding to examine the raw infrastructure that determines whether search engines can discover, crawl, render, index, and rank your pages. Without a sound technical foundation, every other SEO investment — content creation, link building, conversion optimisation — operates at a fraction of its potential.</p>
+
+<p>Technical issues are uniquely dangerous because they are invisible to most stakeholders. A broken canonical tag does not show up on the page. A misconfigured robots.txt rule will not trigger any visual error. A crawl budget problem reveals itself only through gradually declining impressions in Search Console, months after the damage began. The only way to catch these problems is through systematic, structured auditing.</p>
+
+<p>This guide covers every major dimension of a technical website audit in 2026, from server-level configurations to client-side rendering behaviour. Whether you are running the audit yourself or evaluating work from an agency, this is the reference you need.</p>
+
+<h2 id="what-is-a-technical-website-audit">What Is a Technical Website Audit</h2>
+
+<p>A technical website audit is a systematic examination of the server-side and client-side factors that affect how search engines interact with your site. It answers a simple but critical question: can search engines access, understand, and efficiently process every page you want ranked?</p>
+
+<p>Unlike a broader <a href="/website-audit/">website audit</a> that also evaluates content quality, user experience, and off-page authority, a technical audit focuses exclusively on infrastructure. It examines how your server responds to requests, how your pages are rendered, how your URLs are structured, and whether the signals you send to search engines (through robots directives, canonical tags, sitemaps, and structured data) are consistent and correct.</p>
+
+<p>The typical technical audit follows four phases:</p>
+
+<ol>
+  <li><strong>Crawl</strong> — A crawler like Screaming Frog or Sitebulb maps every URL on the site, recording status codes, response headers, meta directives, resource loading behaviour, and link relationships.</li>
+  <li><strong>Analyse</strong> — Crawl data is cross-referenced with Google Search Console, Bing Webmaster Tools, server logs, and real-user performance data to identify discrepancies between what you intend and what actually happens.</li>
+  <li><strong>Diagnose</strong> — Each issue is traced to its root cause. A page returning a 404 might be caused by a deleted page, a CMS migration that dropped redirects, or a URL rewrite rule that stopped matching.</li>
+  <li><strong>Prescribe</strong> — Specific, implementable fixes are documented for each issue, prioritised by impact on search visibility and grouped by the team responsible for implementation.</li>
+</ol>
+
+<p>A thorough technical audit on a site with 1,000 to 10,000 pages typically requires 6 to 12 hours of specialist time. Larger sites with complex architectures — faceted navigation, JavaScript rendering frameworks, multi-language configurations — can require 20 hours or more.</p>
+
+<h2 id="why-technical-audits-are-critical">Why Technical Audits Are Critical</h2>
+
+<p>Technical SEO problems have a multiplicative impact. Unlike a content issue that affects a single page, a technical issue can suppress the performance of every page on your site simultaneously. Here are the primary reasons technical audits are non-negotiable for any site that depends on organic search traffic.</p>
+
+<p><strong>Indexation failures mean zero visibility.</strong> If Google cannot crawl or index a page, it cannot rank. It does not matter how good the content is or how many backlinks point to it. We routinely find sites where 20 to 40 percent of published pages are not indexed due to technical barriers — noindex tags left over from staging, canonical loops, crawl budget exhaustion, or JavaScript rendering failures.</p>
+
+<p><strong>Speed affects rankings and conversions.</strong> Core Web Vitals became a ranking factor in 2021 and their influence has grown steadily since. Google has confirmed that page experience signals are used as a tiebreaker between pages of similar relevance. Beyond rankings, every 100 milliseconds of additional load time reduces conversion rates by an average of 7 percent according to Akamai research. A technical audit identifies the specific bottlenecks causing slow performance.</p>
+
+<p><strong>Technical debt compounds over time.</strong> Every CMS update, plugin installation, theme change, and developer deployment introduces potential technical issues. Without regular auditing, these issues accumulate. A site that goes two years without a technical audit typically has 30 to 60 issues, many of which interact with each other to create compounding performance drag.</p>
+
+<p><strong>Algorithm updates punish technical weakness.</strong> Google's broad core updates increasingly weight user experience signals. Sites with clean technical foundations recover faster from algorithm volatility. Sites with poor Core Web Vitals, mobile rendering issues, or indexation problems are disproportionately affected by updates.</p>
+
+<p><strong>Competitive advantage is real.</strong> Most websites have technical issues. The sites that audit and fix them consistently gain a structural advantage over competitors who do not. In competitive niches, the difference between position 3 and position 7 often comes down to technical execution rather than content quality.</p>
+
+<h2 id="crawlability-and-indexation">Crawlability and Indexation</h2>
+
+<p>Crawlability and indexation form the absolute bedrock of technical SEO. If Google cannot crawl a page, it will not index it. If a page is not indexed, it will never appear in search results. Every other optimisation depends on this foundation being solid.</p>
+
+<h3>Robots.txt</h3>
+
+<p>The robots.txt file at your domain root instructs search engine crawlers which areas of your site they may access. Errors here can be catastrophic and immediately affect your entire site.</p>
+
+<ul>
+  <li><strong>Blocking critical resources</strong> — Accidentally disallowing CSS, JavaScript, or image directories prevents Google from rendering your pages correctly. Use the URL Inspection tool in Search Console to verify how Google sees your rendered pages.</li>
+  <li><strong>Overly broad disallow rules</strong> — A <code>Disallow: /</code> directive blocks your entire site from crawling. This happens more often than you would expect, particularly when staging environment configurations are deployed to production.</li>
+  <li><strong>Missing sitemap reference</strong> — Your robots.txt should include a <code>Sitemap:</code> directive pointing to your XML sitemap's absolute URL.</li>
+  <li><strong>Conflicting directives</strong> — Multiple user-agent blocks with overlapping rules create ambiguity. Google follows the most specific matching user-agent block and ignores others.</li>
+</ul>
+
+<h3>XML Sitemaps</h3>
+
+<p>Your XML sitemap communicates to search engines every URL you want indexed. An effective sitemap should include only canonical, indexable, 200-status URLs. It should exclude paginated pages beyond page one, parameter-based duplicates, and any URL blocked by robots.txt or carrying a noindex directive. Accuracy of <code>lastmod</code> dates matters — only update them when page content genuinely changes. Google uses these signals to prioritise crawl scheduling.</p>
+
+<h3>Crawl Errors and Indexation Gaps</h3>
+
+<p>The Page Indexing report in Google Search Console reveals exactly which pages Google has attempted to crawl and why some were not indexed. Key categories to investigate include server errors (5xx), which indicate your server is failing under Googlebot's requests; not found errors (404), which represent deleted or moved pages without redirects; soft 404s, where pages return a 200 status but contain no meaningful content; and the "Crawled — currently not indexed" status, which signals that Google found the page but deemed it too thin, duplicative, or low-quality to include in its index.</p>
+
+<p>Compare your sitemap URL count against the number of indexed pages in Search Console. A significant gap indicates systematic indexation problems that need investigation. For large sites with over 100,000 pages, server log analysis is essential to understand how Googlebot is allocating its crawl budget across your URL space.</p>
+
+<h2 id="site-architecture-and-url-structure">Site Architecture and URL Structure</h2>
+
+<p>How your pages are organised, linked, and addressed through URLs has a direct impact on both search engine crawling efficiency and the distribution of ranking authority across your site.</p>
+
+<h3>Click Depth</h3>
+
+<p>Click depth measures the minimum number of clicks required to reach a page from the homepage. Best practice is to keep all strategically important pages within three clicks of the homepage. Pages buried at depth four or deeper receive less crawl attention and accumulate less internal link equity, which typically correlates with lower rankings. Run a crawl with depth analysis enabled and flag any priority pages that exceed a depth of three.</p>
+
+<h3>Orphan Pages</h3>
+
+<p>Orphan pages exist on your site but have no internal links pointing to them. Search engines can only discover them through the sitemap or external backlinks. Because they receive no internal link equity, orphan pages almost always underperform. To identify them, compare crawl data against sitemap URLs and server log data — any URL that appears in logs or the sitemap but not in the crawl is orphaned and needs internal links added.</p>
+
+<h3>URL Structure Best Practices</h3>
+
+<p>Clean, descriptive, and consistent URLs signal professionalism to both users and search engines. Audit your URLs for excessive length (keep under 75 characters where practical), unnecessary query parameters or session IDs, missing keywords in the slug, inconsistent trailing slash usage, uppercase characters (URLs are case-sensitive — use lowercase consistently), and multiple consecutive hyphens. Every URL should be human-readable and describe what the page contains.</p>
+
+<h3>Internal Linking</h3>
+
+<p>Internal links are among the most powerful and most underused SEO mechanisms. They distribute PageRank across your site, establish topical relationships between pages, and guide crawlers through your content hierarchy. A technical audit should verify that high-priority pages receive proportionally more internal links, that anchor text is descriptive and keyword-relevant, that there are no broken internal links returning 404 or redirect responses, and that the ratio of internal to external links is healthy (aim for at least 3:1).</p>
+
+<h2 id="core-web-vitals">Core Web Vitals</h2>
+
+<p>Core Web Vitals are Google's standardised metrics for measuring real-world user experience. They became a confirmed ranking signal in 2021 and their influence continues to grow. As of 2026, the three metrics are Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS).</p>
+
+<h3>Largest Contentful Paint (LCP)</h3>
+
+<p>LCP measures the time until the largest visible element in the viewport finishes rendering. This is typically a hero image, banner graphic, or large block of text. The passing threshold is 2.5 seconds. Common causes of poor LCP include unoptimised images (fix by converting to WebP or AVIF with responsive <code>srcset</code> attributes), slow server response times (target TTFB under 200ms through caching, CDN, and server optimisation), render-blocking CSS and JavaScript (defer non-critical resources and inline critical CSS), and client-side rendering frameworks that delay content paint until JavaScript executes.</p>
+
+<h3>Interaction to Next Paint (INP)</h3>
+
+<p>INP replaced First Input Delay in March 2024. It measures the latency between any user interaction — click, tap, or keypress — and the next visual update. The passing threshold is 200 milliseconds. Poor INP is typically caused by long-running JavaScript tasks blocking the main thread (break tasks exceeding 50ms using <code>scheduler.yield()</code>), heavy event handlers on scroll and input events, third-party scripts from tag managers, analytics, chat widgets, and ad networks, and excessive DOM size (pages with over 1,500 elements experience measurably slower interactions).</p>
+
+<h3>Cumulative Layout Shift (CLS)</h3>
+
+<p>CLS quantifies unexpected layout movement — when visible elements shift position after their initial render. The passing threshold is 0.1. High CLS is deeply frustrating for users, causing misclicks and a sense of instability. The most common causes are images and videos without explicit <code>width</code> and <code>height</code> attributes, late-loading web fonts that cause text reflow (mitigate with <code>font-display: swap</code> and font preloading), dynamically injected content such as ad slots, cookie consent banners, and notification bars that push page content downward, and lazy-loaded elements above the fold that cause the viewport to repaint.</p>
+
+<h2 id="mobile-friendliness">Mobile-Friendliness</h2>
+
+<p>Google has used mobile-first indexing exclusively since 2023. The mobile version of your site is the version Google evaluates for ranking purposes. A technical audit must verify that the mobile experience is fully functional, fast, and equivalent to desktop in terms of content and structured data.</p>
+
+<h3>Responsive Design Verification</h3>
+
+<p>Test all page templates at the most common mobile viewport widths: 360px, 375px, 390px, and 414px. Verify that no horizontal scrolling occurs at any width, that text is readable without zooming (minimum 16px base font size), that interactive elements have touch targets of at least 48x48 pixels with 8px minimum spacing between them, and that the viewport meta tag is correctly configured with <code>width=device-width, initial-scale=1</code>.</p>
+
+<h3>Mobile Content Parity</h3>
+
+<p>With mobile-first indexing, any content present on desktop but absent on mobile is effectively invisible to Google. Audit for content hidden behind tabs or accordions (Google indexes this but may weight it lower), images or videos missing from the mobile render, structured data present on desktop but absent on mobile pages, and navigation links available on desktop but removed from the mobile menu. Content parity is not optional — it is a ranking requirement.</p>
+
+<h3>Mobile Performance</h3>
+
+<p>Mobile connections are typically slower and higher-latency than desktop. Test your site using Lighthouse's default mobile throttling (simulated slow 4G) and ensure all pages meet Core Web Vitals thresholds under these conditions. Pay particular attention to image payload — a 2MB hero image that loads instantly on desktop broadband can take 4 to 6 seconds on a mobile data connection.</p>
+
+<h2 id="https-and-security-headers">HTTPS and Security Headers</h2>
+
+<p>HTTPS has been a confirmed Google ranking signal since 2014. Beyond its SEO impact, it is essential for user trust, data protection, and compliance with privacy regulations. A technical audit should verify that your security configuration is complete and correctly implemented.</p>
+
+<h3>SSL/TLS Configuration</h3>
+
+<p>Verify that your SSL/TLS certificate is valid, not expired, and covers all subdomains your site uses (www, non-www, and any others). Confirm that TLS 1.2 or 1.3 is in use — TLS 1.0 and 1.1 are deprecated and should be disabled. Check that the certificate chain is complete with no missing intermediate certificates. Test your configuration with Qualys SSL Labs and target an A or A+ grade.</p>
+
+<h3>HTTPS Enforcement</h3>
+
+<p>All HTTP URLs must redirect to their HTTPS equivalents using 301 (permanent) redirects, not 302 (temporary) redirects. Scan for mixed content — any resource (image, script, stylesheet, font, iframe) loaded over HTTP on an HTTPS page triggers browser warnings and erodes trust. Implement the HSTS (HTTP Strict Transport Security) header with a minimum <code>max-age</code> of 31536000 seconds (one year) and consider HSTS preload list inclusion for maximum protection.</p>
+
+<h3>Security Headers</h3>
+
+<p>Modern browsers support several security headers that protect against common attack vectors. Your technical audit should verify the presence and correct configuration of Content-Security-Policy (CSP) to prevent cross-site scripting, X-Content-Type-Options set to <code>nosniff</code> to prevent MIME type sniffing, X-Frame-Options set to <code>DENY</code> or <code>SAMEORIGIN</code> to prevent clickjacking, a Referrer-Policy to control referrer information leakage, and a Permissions-Policy to restrict browser API access. Test your headers with securityheaders.com or Mozilla Observatory.</p>
+
+<h2 id="structured-data-and-schema">Structured Data and Schema</h2>
+
+<p>Structured data using schema.org vocabulary helps search engines understand the meaning of your content beyond what they can infer from the text alone. Correct implementation can earn rich results — enhanced search listings featuring star ratings, pricing, FAQ dropdowns, breadcrumb paths, and other visual enhancements that significantly increase click-through rates.</p>
+
+<h3>Essential Schema Types</h3>
+
+<p>Audit your site for the schema types relevant to your content. Organization schema should appear on your homepage and about page with logo, social profiles, and contact information. BreadcrumbList schema should be present on every page with breadcrumb navigation. Article schema with author, datePublished, and dateModified belongs on blog posts and informational content. FAQ schema should mark up genuine frequently asked questions. Product schema with price, availability, and reviews belongs on product and service pages. WebSite schema with a SearchAction on your homepage enables sitelinks search.</p>
+
+<h3>Validation and Common Errors</h3>
+
+<p>All structured data must be validated using Google's Rich Results Test and the Schema.org Validator. The most frequent errors we encounter in audits are missing required properties (such as an Article without an author), incorrect data types (a string where a number is expected), markup that contradicts the visible page content (which Google treats as spam), nested entities without proper <code>@id</code> references for entity disambiguation, and use of deprecated schema types or properties. Fix validation errors as a high priority — invalid structured data can result in rich result penalties or manual actions.</p>
+
+<h2 id="technical-audit-tools">Technical Audit Tools</h2>
+
+<p>Running an effective technical audit requires the right combination of tools. No single tool covers everything. Here are the tools we rely on for each phase of the audit process.</p>
+
+<h3>Crawling Tools</h3>
+
+<ul>
+  <li><strong>Screaming Frog SEO Spider</strong> — The industry standard desktop crawler. Free for up to 500 URLs, with paid features including JavaScript rendering, custom extraction, and crawl comparison. It is the single most essential tool for any technical audit.</li>
+  <li><strong>Sitebulb</strong> — A visual crawler that excels at identifying architecture issues through interactive charts and diagrams. More accessible than Screaming Frog for less technical users while still providing deep data.</li>
+  <li><strong><a href="/website-audit-tools/ahrefs/">Ahrefs</a> Site Audit</strong> — Cloud-based crawler with scheduled monitoring. Best for ongoing tracking of technical health rather than one-off deep audits.</li>
+</ul>
+
+<h3>Performance Tools</h3>
+
+<ul>
+  <li><strong>Google PageSpeed Insights</strong> — The definitive source for Core Web Vitals data, combining Lighthouse lab data with Chrome User Experience Report field data from real users.</li>
+  <li><strong>WebPageTest</strong> — Advanced testing with waterfall analysis, filmstrip views, and multi-location testing capabilities. Essential for diagnosing complex performance issues.</li>
+  <li><strong>Chrome DevTools Performance Panel</strong> — Detailed flame charts and timing data for pinpointing render-blocking resources and long JavaScript tasks.</li>
+</ul>
+
+<h3>Indexation and Search Console</h3>
+
+<ul>
+  <li><strong>Google Search Console</strong> — The authoritative source for how Google crawls and indexes your site. The Page Indexing report reveals exactly which pages are indexed and the specific reasons others are excluded.</li>
+  <li><strong>Bing Webmaster Tools</strong> — Similar functionality for Bing, which handles 6 to 8 percent of search traffic directly plus syndication partners.</li>
+</ul>
+
+<h3>Security Testing</h3>
+
+<ul>
+  <li><strong>Qualys SSL Labs</strong> — Comprehensive SSL/TLS grading that identifies certificate issues and protocol vulnerabilities.</li>
+  <li><strong>Mozilla Observatory</strong> — Security header testing with letter grades and specific remediation guidance.</li>
+  <li><strong>Sucuri SiteCheck</strong> — Malware scanning, blacklist monitoring, and vulnerability detection.</li>
+</ul>
+
+<p>For a detailed comparison of all available audit tools, including pricing and feature breakdowns, see our <a href="/website-audit-tools/">best website audit tools</a> guide. If you want a professional to handle the technical audit for you, explore our <a href="/website-audit-services/">website audit services</a> starting at $297.</p>
+
+</ContentLayout>

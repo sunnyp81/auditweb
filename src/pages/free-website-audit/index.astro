@@ -1,0 +1,155 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import ScannerTool from '../../components/ScannerTool.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Free Audit', href: '/free-website-audit/' },
+];
+
+const toc = [
+  { label: 'How Our Free Audit Works', id: 'how-our-free-audit-works' },
+  { label: 'What We Check', id: 'what-we-check' },
+  { label: 'How to Read Your Results', id: 'how-to-read-your-results' },
+  { label: 'Limitations of Free Audits', id: 'limitations-of-free-audits' },
+  { label: 'When You Need a Professional Audit', id: 'when-you-need-a-professional-audit' },
+];
+
+const childPages = [
+  { title: 'Free SEO Audit Tool', href: '/free-website-audit/seo/', description: 'Free tool focused on SEO-specific checks.' },
+  { title: 'Free Audit Report', href: '/free-website-audit/report/', description: 'Get a free audit report for your website.' },
+  { title: 'Instant Website Audit', href: '/free-website-audit/instant/', description: 'Get instant results with our automated scanner.' },
+  { title: 'AI Website Audit', href: '/free-website-audit/ai/', description: 'How AI is changing website audits.' },
+];
+---
+
+<ContentLayout
+  title="Free Website Audit: Instant Analysis of Your Site's Health"
+  description="Run a free website audit in 60 seconds. Our scanner checks SSL, meta tags, page speed, mobile-friendliness, and more. Get your score instantly."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  children={childPages}
+  publishDate="2026-03-28"
+>
+
+<p>Want to know how healthy your website is right now? Our <strong>free website audit tool</strong> scans your site in under 60 seconds and reports on the most important technical, SEO, and security factors that affect your search visibility and user experience. No signup required. No credit card. Just enter your URL and get results instantly.</p>
+
+<ScannerTool />
+
+<h2 id="how-our-free-audit-works">How Our Free Audit Works</h2>
+
+<p>Our free audit scanner works by requesting your homepage (and up to 5 linked pages) and analysing the response in real time. Here is what happens when you enter your URL.</p>
+
+<p><strong>Step 1: Initial request.</strong> We fetch your URL and record the response time, status code, redirect behaviour, and response headers. This tells us whether your server is fast, whether HTTPS is properly enforced, and whether your security headers are configured.</p>
+
+<p><strong>Step 2: HTML analysis.</strong> We parse the HTML of each page and check for title tags, meta descriptions, heading hierarchy, canonical tags, Open Graph tags, image alt text, and structured data. These are the on-page signals that determine how search engines interpret your content and how your pages appear in search results.</p>
+
+<p><strong>Step 3: Performance estimation.</strong> We measure the total page weight, count the number of HTTP requests, check for render-blocking resources, and evaluate image optimisation. While this is not a full Lighthouse test (which requires a browser rendering engine), it catches the most common performance issues that affect real users.</p>
+
+<p><strong>Step 4: Security scan.</strong> We verify your SSL certificate validity, check for mixed content warnings, test for the presence of key security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options), and flag any exposed sensitive files at common paths.</p>
+
+<p><strong>Step 5: Score and report.</strong> We calculate an overall health score from 0 to 100 based on the weighted results of all checks, categorise each finding by severity (Critical, Warning, Pass), and present a clear summary you can act on immediately.</p>
+
+<p>The entire process takes 30 to 60 seconds. Your results are displayed instantly on the page — no email required, no waiting for a report to be generated. You can share the results URL with your team or save it as a PDF from your browser.</p>
+
+<h2 id="what-we-check">What We Check</h2>
+
+<p>Our free scanner checks 25 factors across four categories. Each check is weighted by its importance to search visibility and user experience.</p>
+
+<h3>SEO Checks</h3>
+
+<p><strong>Title tag presence and length.</strong> We verify that your page has a title tag and that it falls within the 30-60 character range that displays fully in search results. Missing or truncated titles lose clicks.</p>
+
+<p><strong>Meta description presence and length.</strong> We check that a meta description exists and is between 120-160 characters. While not a ranking factor, descriptions heavily influence click-through rate from search results.</p>
+
+<p><strong>H1 tag presence and uniqueness.</strong> Every page should have exactly one H1 that clearly communicates the page topic. We flag pages with zero, multiple, or empty H1 tags.</p>
+
+<p><strong>Canonical tag.</strong> We verify that a canonical tag is present and points to a valid URL. Missing or incorrect canonicals are one of the most common causes of indexation problems.</p>
+
+<p><strong>Open Graph and Twitter Card tags.</strong> We check for the social sharing metadata that controls how your pages appear when shared on Facebook, Twitter/X, LinkedIn, and other platforms. Missing OG tags mean platforms auto-generate previews that are often unflattering.</p>
+
+<p><strong>Image alt text.</strong> We scan all images on the page and flag those missing alt text. This affects both SEO (Google uses alt text to understand image content) and accessibility (screen readers depend on it).</p>
+
+<p><strong>Robots meta tag.</strong> We verify that your pages are not accidentally blocked from indexing with a noindex directive.</p>
+
+<h3>Performance Checks</h3>
+
+<p><strong>Page load time.</strong> We measure the server response time (TTFB) and total page load time. Target is under 200ms for TTFB and under 3 seconds for full load.</p>
+
+<p><strong>Page weight.</strong> We calculate the total size of the HTML, CSS, JavaScript, images, and other resources. Pages over 3MB are flagged as heavy.</p>
+
+<p><strong>Image optimisation.</strong> We check whether images use modern formats (WebP, AVIF) and whether they appear oversized relative to their display dimensions.</p>
+
+<p><strong>Render-blocking resources.</strong> We identify CSS and JavaScript files that block the initial page render, delaying the time until users see content.</p>
+
+<p><strong>Compression.</strong> We verify that Gzip or Brotli compression is enabled for text-based resources. Uncompressed HTML, CSS, and JS files can be 60-80 percent larger than necessary.</p>
+
+<h3>Security Checks</h3>
+
+<p><strong>SSL certificate validity.</strong> We check that your SSL certificate is valid, not expired, and covers the domain being tested.</p>
+
+<p><strong>HTTPS enforcement.</strong> We test whether HTTP requests are properly redirected to HTTPS with 301 redirects.</p>
+
+<p><strong>HSTS header.</strong> We verify the presence of the HTTP Strict Transport Security header, which prevents downgrade attacks.</p>
+
+<p><strong>Content-Security-Policy.</strong> We check for a CSP header that protects against cross-site scripting attacks.</p>
+
+<p><strong>X-Frame-Options.</strong> We verify protection against clickjacking by checking for X-Frame-Options or the frame-ancestors CSP directive.</p>
+
+<p><strong>Mixed content.</strong> We scan for any HTTP resources loaded on the HTTPS page, which trigger browser security warnings.</p>
+
+<h3>Mobile Checks</h3>
+
+<p><strong>Viewport meta tag.</strong> We verify the presence and correct configuration of the viewport meta tag, which is essential for mobile rendering.</p>
+
+<p><strong>Font size legibility.</strong> We check that the base font size is at least 16px, ensuring readability on mobile devices without zooming.</p>
+
+<p><strong>Tap target sizing.</strong> We flag interactive elements that appear to be smaller than the recommended 48x48 pixel minimum for mobile touch targets.</p>
+
+<h2 id="how-to-read-your-results">How to Read Your Results</h2>
+
+<p>Your audit results are organised into three severity levels to help you prioritise action.</p>
+
+<p><strong>Critical (red).</strong> These issues are actively harming your search visibility or user experience right now. Examples include a missing SSL certificate, a noindex tag on your homepage, or a server response time over 5 seconds. Fix these immediately — they are likely costing you traffic and revenue every day they remain unfixed.</p>
+
+<p><strong>Warning (yellow).</strong> These issues are suboptimal and should be fixed, but they are not causing immediate damage. Examples include missing meta descriptions, images without alt text, or a page weight over 3MB. Address these in your next round of site improvements.</p>
+
+<p><strong>Pass (green).</strong> These checks passed. No action needed. A high number of passes is a good sign, but remember that our free scan covers 25 checks out of the 72 in a <a href="/website-audit-services/">full professional audit</a>.</p>
+
+<p>Your overall score is a weighted average of all checks, with critical issues weighted more heavily than warnings. A score of 80+ indicates a healthy site with room for minor improvements. A score of 50-79 indicates significant issues that are likely suppressing your search performance. A score below 50 indicates fundamental problems that need urgent attention.</p>
+
+<p>The score is a useful benchmark, but the individual findings matter more than the number. A site with a score of 75 and one critical SSL issue is in worse shape than a site with a score of 65 and all warnings. Focus on the critical items first, regardless of the overall score.</p>
+
+<h2 id="limitations-of-free-audits">Limitations of Free Audits</h2>
+
+<p>Our free scanner is a useful first step, but it is important to understand what it cannot do. Being transparent about limitations helps you make an informed decision about whether you need a deeper analysis.</p>
+
+<p><strong>Limited page coverage.</strong> The free scan analyses your homepage and up to 5 linked pages. A full-site crawl — which is essential for catching issues across your entire URL space — requires a <a href="/website-audit-tools/">dedicated crawling tool</a> or a professional audit. A site with 1,000 pages could have hundreds of issues that only appear on interior pages.</p>
+
+<p><strong>No Search Console data.</strong> We cannot access your Google Search Console account, which means we cannot check your actual indexation status, crawl errors, manual actions, or real-world search performance. Search Console data is the most important data source for any SEO audit.</p>
+
+<p><strong>No content quality analysis.</strong> Evaluating content quality — whether your content matches search intent, whether it is comprehensive enough, whether it demonstrates E-E-A-T — requires human expert judgment that cannot be automated. Our scanner checks structural elements (title tags, headings, word count) but not content quality.</p>
+
+<p><strong>No backlink analysis.</strong> Your off-page authority — the quality and quantity of other sites linking to yours — is a major ranking factor that requires access to backlink databases like Ahrefs or Majestic. Our free scan does not include any off-page analysis.</p>
+
+<p><strong>No competitive benchmarking.</strong> Understanding your performance relative to competitors requires analysing multiple sites and comparing data points. Our free scan looks at your site in isolation.</p>
+
+<p><strong>Lab data only.</strong> Our performance measurements are based on a single request from our server. Real-world performance varies by user location, device, network conditions, and time of day. Core Web Vitals assessment uses field data from millions of real users, which our scan cannot replicate.</p>
+
+<h2 id="when-you-need-a-professional-audit">When You Need a Professional Audit</h2>
+
+<p>The free scan is the right starting point for everyone. But certain situations call for a deeper, professional analysis.</p>
+
+<p><strong>Your organic traffic has declined.</strong> If your Search Console data shows a sustained drop in impressions or clicks, you need a comprehensive audit that examines indexation patterns, algorithm update impacts, content quality signals, and potential manual actions. A free scan cannot diagnose traffic declines.</p>
+
+<p><strong>You are preparing for a site migration.</strong> Redesigns, CMS migrations, domain changes, and URL restructures are the highest-risk events in SEO. A pre-migration audit documents your current state so you can verify nothing is lost during the transition. A post-migration audit catches issues that slipped through. Both require professional depth.</p>
+
+<p><strong>Your site has more than 100 pages.</strong> The complexity and potential for hidden issues increases with site size. Sites with hundreds or thousands of pages almost certainly have duplicate content, cannibalisation, crawl depth, and internal linking issues that only a full-site crawl can reveal.</p>
+
+<p><strong>You are investing in SEO.</strong> If you are spending money on content creation, link building, or technical improvements, you need to know that the foundation is solid first. A professional audit ensures you are not investing in a site that has fundamental problems undermining everything you build on top of it.</p>
+
+<p><strong>You want actionable strategy, not just data.</strong> Free tools give you data. Professional audits give you strategy — what to fix, in what order, and why each fix matters to your specific business goals. If you want recommendations tailored to your market, your competitors, and your resources, a <a href="/website-audit-services/">professional audit</a> is the right investment.</p>
+
+<p>Our professional audit service starts at $297 and covers 72 checkpoints across SEO, technical, content, UX, and security. Every audit includes a prioritised action plan and a walkthrough call with a senior analyst. <a href="/website-audit-services/">Learn more about our audit services</a>.</p>
+
+</ContentLayout>

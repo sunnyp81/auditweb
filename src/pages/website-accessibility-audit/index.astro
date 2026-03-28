@@ -1,0 +1,110 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is a Website Accessibility Audit', id: 'what-is' },
+  { label: 'Why Accessibility Matters', id: 'why-matters' },
+  { label: 'WCAG Standards Explained', id: 'wcag' },
+  { label: 'Key Areas to Check', id: 'key-areas' },
+  { label: 'Common Accessibility Issues', id: 'common-issues' },
+  { label: 'Accessibility Audit Tools', id: 'tools' },
+  { label: 'Manual Testing', id: 'manual-testing' },
+  { label: 'Legal Requirements', id: 'legal' },
+];
+
+const children = [
+  { title: 'Accessibility Audit Checklist', href: '/website-accessibility-audit/checklist/', description: 'Complete WCAG 2.1 AA checklist for auditing website accessibility.' },
+  { title: 'Accessibility Audit Cost', href: '/website-accessibility-audit/cost/', description: 'What to budget for manual and automated accessibility audits.' },
+  { title: 'Accessibility Audit Tools', href: '/website-accessibility-audit/tools/', description: 'Best free and paid tools for testing website accessibility.' },
+  { title: 'ADA Website Compliance Audit', href: '/website-accessibility-audit/ada-compliance/', description: 'How to audit your site for ADA compliance and avoid lawsuits.' },
+  { title: 'WCAG Website Audit', href: '/website-accessibility-audit/wcag/', description: 'Detailed guide to auditing against WCAG 2.1 AA success criteria.' },
+];
+---
+
+<ContentLayout
+  title="Website Accessibility Audit: Make Your Site Usable by Everyone"
+  description="A website accessibility audit checks your site against WCAG standards to ensure people with disabilities can use it. Learn what to test, which tools to use, and how to fix common issues."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  ]}
+  toc={toc}
+  children={children}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is a Website Accessibility Audit</h2>
+  <p>A website accessibility audit evaluates how well your site can be used by people with disabilities — including visual, auditory, motor, and cognitive impairments. It tests your site against the Web Content Accessibility Guidelines (WCAG), the internationally recognised standard for web accessibility.</p>
+  <p>The audit examines everything from colour contrast and keyboard navigation to screen reader compatibility and form labelling. The result is a report detailing accessibility barriers and how to remove them.</p>
+
+  <h2 id="why-matters">Why Accessibility Matters</h2>
+  <p>Accessibility isn't just about compliance — it's about reaching more users and building a better website for everyone:</p>
+  <ul>
+    <li><strong>Market size:</strong> Over 1 billion people worldwide live with some form of disability. That's 15% of the global population and a massive audience you're excluding with an inaccessible site.</li>
+    <li><strong>Legal risk:</strong> ADA lawsuits against websites have grown dramatically. In the US alone, over 4,000 web accessibility lawsuits were filed in 2025. The EU's European Accessibility Act requires compliance from 2025.</li>
+    <li><strong>SEO benefits:</strong> Many accessibility best practices directly improve SEO — proper heading structure, image alt text, semantic HTML, fast load times, and mobile-friendliness.</li>
+    <li><strong>Better UX for everyone:</strong> Accessibility improvements like clear navigation, readable fonts, and keyboard support benefit all users, not just those with disabilities.</li>
+    <li><strong>Brand reputation:</strong> Demonstrating commitment to accessibility builds trust and positions your brand as inclusive and responsible.</li>
+  </ul>
+
+  <h2 id="wcag">WCAG Standards Explained</h2>
+  <p>WCAG 2.1 is organised around four principles (POUR):</p>
+  <ul>
+    <li><strong>Perceivable:</strong> Users must be able to perceive the content. This covers text alternatives for images, captions for video, sufficient colour contrast, and content that can be presented in different ways.</li>
+    <li><strong>Operable:</strong> Users must be able to operate the interface. This covers keyboard accessibility, enough time to read content, no seizure-inducing content, and clear navigation.</li>
+    <li><strong>Understandable:</strong> Users must be able to understand the content and interface. This covers readable text, predictable navigation, and help with input errors.</li>
+    <li><strong>Robust:</strong> Content must be robust enough to work with assistive technologies. This covers clean HTML, proper ARIA attributes, and compatibility with screen readers.</li>
+  </ul>
+  <p>There are three conformance levels: A (minimum), AA (standard target for most organisations), and AAA (highest). Most legal requirements and best practices target <strong>WCAG 2.1 Level AA</strong>.</p>
+
+  <h2 id="key-areas">Key Areas to Check</h2>
+  <ul>
+    <li><strong>Colour contrast:</strong> Text must have a contrast ratio of at least 4.5:1 against its background (3:1 for large text). Use tools like WebAIM's Contrast Checker.</li>
+    <li><strong>Keyboard navigation:</strong> Every interactive element (links, buttons, forms, menus) must be operable with keyboard alone. Tab order should be logical.</li>
+    <li><strong>Image alt text:</strong> Every meaningful image needs descriptive alt text. Decorative images should have empty alt attributes (alt="").</li>
+    <li><strong>Form labels:</strong> Every form input must have an associated label element. Error messages must be clear and programmatically associated with the relevant field.</li>
+    <li><strong>Heading structure:</strong> Headings must follow a logical hierarchy (H1 → H2 → H3). Don't skip levels. Use headings for structure, not styling.</li>
+    <li><strong>Link text:</strong> Links must have descriptive text that makes sense out of context. Avoid "click here" or "read more" without context.</li>
+    <li><strong>Video and audio:</strong> Videos need captions. Audio content needs transcripts. Auto-playing media must have controls to pause.</li>
+    <li><strong>Focus indicators:</strong> Keyboard focus must be visible on all interactive elements. Don't remove the browser's default focus outline without providing an alternative.</li>
+  </ul>
+
+  <h2 id="common-issues">Common Accessibility Issues</h2>
+  <p>Based on the WebAIM Million study (annual analysis of the top 1,000,000 homepages), the most common accessibility failures are:</p>
+  <ol>
+    <li><strong>Low contrast text:</strong> Found on 81% of homepages. The most pervasive issue, especially with light grey text on white backgrounds.</li>
+    <li><strong>Missing alt text:</strong> Found on 54% of homepages. Images without alt text are invisible to screen readers.</li>
+    <li><strong>Missing form labels:</strong> Found on 48% of homepages. Unlabelled form fields are unusable for screen reader users.</li>
+    <li><strong>Empty links:</strong> Found on 44% of homepages. Links with no discernible text (often icon-only links without aria-labels).</li>
+    <li><strong>Missing document language:</strong> Found on 18% of homepages. The HTML lang attribute tells screen readers which language to use.</li>
+    <li><strong>Empty buttons:</strong> Found on 28% of homepages. Buttons without text or accessible names.</li>
+  </ol>
+
+  <h2 id="tools">Accessibility Audit Tools</h2>
+  <ul>
+    <li><strong>axe DevTools:</strong> Browser extension that scans pages for WCAG violations. Free version catches most common issues. The industry standard for automated testing.</li>
+    <li><strong>WAVE:</strong> Web-based tool from WebAIM that visually overlays accessibility issues on your page. Excellent for understanding issues in context.</li>
+    <li><strong>Lighthouse:</strong> Built into Chrome DevTools. Includes an accessibility audit that checks against a subset of WCAG criteria. Good starting point.</li>
+    <li><strong>Pa11y:</strong> Open-source command-line tool for automated accessibility testing. Great for CI/CD integration.</li>
+    <li><strong>Colour Contrast Analyser:</strong> Desktop tool for checking colour contrast ratios. Includes an eyedropper for picking colours from any application.</li>
+    <li><strong>Screen readers:</strong> Test with actual screen readers — NVDA (free, Windows), VoiceOver (free, Mac/iOS), TalkBack (free, Android). Automated tools catch only 30-40% of accessibility issues; manual testing is essential.</li>
+  </ul>
+
+  <h2 id="manual-testing">Manual Testing</h2>
+  <p>Automated tools are a starting point, not the finish line. They typically catch only 30-40% of WCAG failures. Manual testing is essential:</p>
+  <ul>
+    <li><strong>Keyboard-only navigation:</strong> Put your mouse away. Can you reach every link, button, and form field using Tab? Can you activate them with Enter or Space? Can you navigate menus?</li>
+    <li><strong>Screen reader testing:</strong> Turn on a screen reader and navigate your site. Does the content make sense when read aloud? Are images described? Are form fields labelled?</li>
+    <li><strong>Zoom testing:</strong> Zoom to 200% and 400%. Does the layout still work? Is content still readable? Does anything overflow or overlap?</li>
+    <li><strong>Motion sensitivity:</strong> Does your site have animations that can't be paused? Check that prefers-reduced-motion is respected.</li>
+  </ul>
+
+  <h2 id="legal">Legal Requirements</h2>
+  <p>Web accessibility is increasingly required by law:</p>
+  <ul>
+    <li><strong>US — ADA:</strong> The Americans with Disabilities Act has been interpreted by courts to apply to websites. WCAG 2.1 AA is the de facto standard. Lawsuits are common and settlements are costly.</li>
+    <li><strong>EU — European Accessibility Act:</strong> Requires websites and mobile apps of private sector businesses to be accessible from June 2025. Applies to e-commerce, banking, transport, and telecommunications.</li>
+    <li><strong>UK — Equality Act 2010:</strong> Requires service providers (including websites) to make reasonable adjustments for disabled users. Public sector websites must meet WCAG 2.1 AA.</li>
+    <li><strong>Canada — AODA:</strong> Ontario's Accessibility for Ontarians with Disabilities Act requires WCAG 2.0 AA compliance for organisations with 50+ employees.</li>
+  </ul>
+  <p>Regardless of legal requirements, making your site accessible is simply the right thing to do — and it makes business sense. Our <a href="/website-audit-services/">professional audit</a> includes an accessibility review as part of the 72-checkpoint assessment.</p>
+</ContentLayout>

@@ -1,0 +1,257 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Website Audit', href: '/seo-website-audit/' },
+];
+
+const toc = [
+  { label: 'What Is an SEO Website Audit', id: 'what-is-an-seo-website-audit' },
+  { label: 'Why You Need One', id: 'why-you-need-one' },
+  { label: 'Key Areas to Check', id: 'key-areas-to-check' },
+  { label: 'On-Page SEO Checks', id: 'on-page-seo-checks' },
+  { label: 'Technical SEO Checks', id: 'technical-seo-checks' },
+  { label: 'Off-Page SEO Checks', id: 'off-page-seo-checks' },
+  { label: 'Tools for SEO Audits', id: 'tools-for-seo-audits' },
+  { label: 'How to Prioritise Fixes', id: 'how-to-prioritise-fixes' },
+];
+
+const childPages = [
+  { title: 'How to Do an SEO Audit', href: '/seo-website-audit/how-to/', description: 'Step-by-step walkthrough of the complete SEO audit process from crawl to action plan.' },
+  { title: 'SEO Audit Report', href: '/seo-website-audit/report/', description: 'What a professional SEO audit report includes and how to interpret the findings.' },
+  { title: 'SEO Audit Template', href: '/seo-website-audit/template/', description: 'Download our free SEO audit template spreadsheet with pre-built checks and scoring.' },
+  { title: 'On-Site SEO Audit', href: '/seo-website-audit/on-site/', description: 'Deep dive into on-page SEO factors: title tags, headings, content, internal links, and schema.' },
+  { title: 'Full SEO Audit', href: '/seo-website-audit/full-audit/', description: 'The complete SEO audit covering every on-page, technical, and off-page ranking factor.' },
+  { title: 'E-commerce SEO Audit', href: '/seo-website-audit/ecommerce/', description: 'SEO audit tailored for online stores: product pages, faceted navigation, and category structure.' },
+  { title: 'WordPress SEO Audit', href: '/seo-website-audit/wordpress/', description: 'WordPress-specific SEO audit covering plugins, themes, database bloat, and CMS configuration.' },
+  { title: 'Rankings Drop Diagnosis', href: '/seo-website-audit/rankings-drop/', description: 'How to diagnose and recover from sudden organic traffic and ranking drops.' },
+  { title: 'How Often to SEO Audit', href: '/seo-website-audit/how-often/', description: 'The right SEO audit frequency for your site based on size, industry, and competition.' },
+];
+---
+
+<ContentLayout
+  title="SEO Website Audit: How to Find & Fix Every Ranking Issue"
+  description="A complete guide to SEO website audits. Learn what to check, which tools to use, and how to prioritise fixes for maximum organic traffic growth."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  children={childPages}
+  publishDate="2026-03-28"
+>
+
+<p>An <strong>SEO website audit</strong> is the single most effective way to understand why your site is not ranking as well as it should. It systematically examines every factor that search engines use to evaluate and rank your pages — from the technical foundations that determine whether Google can crawl your content, to the on-page signals that determine relevance, to the off-page authority signals that determine trust.</p>
+
+<p>Most sites we audit have between 15 and 40 SEO issues that are actively suppressing their organic traffic. Many of these issues are invisible to the naked eye. You cannot see a missing canonical tag, a crawl budget problem, or keyword cannibalisation by browsing your own site. You need a structured audit process to surface them.</p>
+
+<p>This guide walks you through every component of an SEO site audit, the tools you need, and how to prioritise fixes for maximum impact.</p>
+
+<h2 id="what-is-an-seo-website-audit">What Is an SEO Website Audit</h2>
+
+<p>An SEO website audit is a detailed analysis of all the factors that influence your site's search engine visibility. Unlike a general <a href="/website-audit/">website audit</a> that covers UX, security, and accessibility, an SEO audit focuses specifically on the signals that Google, Bing, and other search engines use to rank pages.</p>
+
+<p>The audit produces a comprehensive report that documents every issue found, explains why it matters, and recommends a specific fix. The best SEO audits also estimate the potential traffic impact of each fix, so you can make data-driven decisions about where to invest your resources.</p>
+
+<p>There are three core pillars of an SEO audit:</p>
+
+<ol>
+  <li><strong>On-page SEO</strong> — Everything on the page itself: content quality, keyword targeting, title tags, headings, internal links, images, and structured data</li>
+  <li><strong>Technical SEO</strong> — The infrastructure that determines whether search engines can discover, crawl, render, and index your content correctly</li>
+  <li><strong>Off-page SEO</strong> — External signals of authority and trust, primarily backlinks and brand mentions</li>
+</ol>
+
+<p>A complete SEO audit examines all three pillars. Focusing on just one — which is a common mistake — leaves major opportunities on the table and can lead you to misdiagnose the root cause of ranking problems.</p>
+
+<h2 id="why-you-need-one">Why You Need One</h2>
+
+<p>Organic search remains the largest single traffic channel for most websites, driving 53% of all website traffic according to BrightEdge research. Yet most sites are leaving a significant portion of that traffic on the table due to SEO issues they do not know about.</p>
+
+<h3>You Cannot Fix What You Cannot See</h3>
+
+<p>SEO issues are technical by nature. A missing hreflang tag, a misconfigured canonical, a JavaScript rendering problem, or a crawl trap created by faceted navigation — none of these are visible when you browse your site normally. They only show up in crawl data, log files, and search console reports. An audit is the process of systematically checking all of these data sources.</p>
+
+<h3>Google's Algorithm Changes Constantly</h3>
+
+<p>Google makes thousands of algorithm changes every year, including several major core updates. Each update can shift what matters for rankings. An SEO audit calibrated to current ranking factors ensures your site is aligned with what Google rewards today, not what worked three years ago.</p>
+
+<h3>Competitors Are Not Standing Still</h3>
+
+<p>Your competitors are publishing content, earning backlinks, and improving their technical foundations. Even if your site has not changed, your relative position in search results can decline simply because competitors have improved. An audit benchmarks your site against the current competitive landscape.</p>
+
+<h3>Technical Debt Accumulates</h3>
+
+<p>Every plugin update, CMS migration, content management change, and developer deployment can introduce SEO issues. Redirect chains grow longer. Orphaned pages multiply. Internal link equity gets diluted. Without regular audits, technical debt compounds until it becomes a serious drag on performance.</p>
+
+<h3>The ROI Is Exceptional</h3>
+
+<p>SEO audit fixes often produce outsized returns because you are removing barriers to traffic you should already be getting. We consistently see 30-100% organic traffic increases within 90 days of implementing the top recommendations from a comprehensive SEO audit. For a site generating $10,000/month in organic revenue, even a 30% improvement represents $3,000/month in recurring value.</p>
+
+<h2 id="key-areas-to-check">Key Areas to Check</h2>
+
+<p>Before diving into the specifics of each check, here is an overview of the major areas an SEO audit should cover and why each one matters.</p>
+
+<ul>
+  <li><strong>Crawlability</strong> — If Google cannot crawl your pages, they cannot rank. Check robots.txt, XML sitemaps, crawl errors, and JavaScript rendering.</li>
+  <li><strong>Indexation</strong> — Crawled pages are not automatically indexed. Check for noindex tags, canonical issues, duplicate content, and index coverage in Google Search Console.</li>
+  <li><strong>Site architecture</strong> — How your pages link to each other determines how link equity flows and how easily users and search engines can discover content. Check click depth, orphan pages, and hub-spoke structures.</li>
+  <li><strong>On-page optimisation</strong> — Each page needs a unique, optimised title tag, meta description, heading structure, and content that matches search intent for its target keywords.</li>
+  <li><strong>Content quality</strong> — Google's helpful content system rewards content that demonstrates experience, expertise, authoritativeness, and trustworthiness (E-E-A-T). Thin, duplicated, or unhelpful content can drag down your entire site.</li>
+  <li><strong>Page speed</strong> — Core Web Vitals are a confirmed ranking factor. Slow pages lose rankings and conversions.</li>
+  <li><strong>Mobile experience</strong> — Google uses mobile-first indexing, meaning it evaluates the mobile version of your site for ranking purposes.</li>
+  <li><strong>Backlink profile</strong> — The quantity, quality, relevance, and diversity of your backlinks remain one of the strongest ranking factors.</li>
+</ul>
+
+<h2 id="on-page-seo-checks">On-Page SEO Checks</h2>
+
+<p>On-page SEO is where most quick wins live. These are the factors you have complete control over, and fixes can be implemented immediately.</p>
+
+<h3>Title Tags</h3>
+
+<p>The title tag is the single most impactful on-page element for rankings and click-through rate. Every page should have a unique title tag that includes the primary keyword near the beginning, stays under 60 characters to avoid truncation in search results, and is compelling enough to earn the click.</p>
+
+<p>Common title tag issues we find in audits:</p>
+<ul>
+  <li>Duplicate title tags across multiple pages</li>
+  <li>Title tags that are too long and get truncated</li>
+  <li>Generic titles like "Home" or "Page 1" that waste ranking potential</li>
+  <li>Missing title tags entirely (more common than you would think)</li>
+  <li>Keyword stuffing that triggers spam filters</li>
+</ul>
+
+<h3>Meta Descriptions</h3>
+
+<p>While not a direct ranking factor, meta descriptions significantly affect click-through rate, which does influence rankings. Each page should have a unique description under 155 characters that includes the target keyword naturally, communicates a clear benefit, and includes a call to action.</p>
+
+<h3>Heading Structure</h3>
+
+<p>Your H1 should match the page's primary topic and include the target keyword. H2s should break the content into logical sections that cover sub-topics. H3s and below provide further structure within sections. Common issues include multiple H1 tags, skipped heading levels, and headings that do not align with the content hierarchy.</p>
+
+<h3>Internal Linking</h3>
+
+<p>Internal links are one of the most underused SEO levers. They distribute link equity, establish topical relationships, and help search engines understand your site structure. Audit for orphaned pages that have no internal links pointing to them, pages with excessive links that dilute equity, and missing contextual links between related content.</p>
+
+<h3>Image Optimisation</h3>
+
+<p>Every image should have descriptive alt text that includes relevant keywords naturally, a descriptive file name (not IMG_4532.jpg), proper sizing to avoid layout shifts, and modern format encoding (WebP or AVIF) for optimal file size.</p>
+
+<h3>Structured Data</h3>
+
+<p>Schema markup helps search engines understand your content and can earn rich results in search. Check for proper implementation of relevant schema types: Article, Product, FAQ, HowTo, LocalBusiness, BreadcrumbList, and others. Validate all markup with Google's Rich Results Test.</p>
+
+<h3>Content Quality and Depth</h3>
+
+<p>For each target keyword, compare your content against the top-ranking pages. Your content should be at least as comprehensive as the best result on page one, provide unique value through original data, expert insights, or practical examples, and match the search intent perfectly — informational queries need guides, transactional queries need product pages.</p>
+
+<h3>Keyword Cannibalisation</h3>
+
+<p>Keyword cannibalisation occurs when multiple pages on your site compete for the same keyword. This splits link equity and confuses search engines about which page to rank. Use Search Console to identify queries where multiple URLs appear, then consolidate content or differentiate targeting.</p>
+
+<h2 id="technical-seo-checks">Technical SEO Checks</h2>
+
+<p>Technical SEO issues are often the highest-impact findings in an audit because they can affect hundreds or thousands of pages at once.</p>
+
+<h3>Crawlability</h3>
+
+<p>Start by checking your robots.txt file for any unintended disallow rules. Then review your XML sitemap to ensure it includes all indexable pages and excludes non-indexable ones. Check Google Search Console's Crawl Stats report for any crawl errors, and review server logs if available to see exactly how Googlebot interacts with your site.</p>
+
+<h3>Indexation</h3>
+
+<p>Use the <code>site:</code> operator in Google to get an approximate page count, then compare with the number of pages in your sitemap and the Indexation report in Search Console. Large discrepancies indicate problems. Common indexation issues include accidental noindex tags, canonical tags pointing to the wrong URL, and soft 404 pages that return a 200 status code but have no content.</p>
+
+<h3>Site Speed</h3>
+
+<p>Test your most important pages with PageSpeed Insights and focus on the three Core Web Vitals. LCP should be under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Fix the largest contributors first — typically large unoptimised images, render-blocking scripts, and slow server response times.</p>
+
+<h3>Mobile Usability</h3>
+
+<p>With mobile-first indexing, the mobile version of your site is what Google evaluates. Check for tap targets that are too small (minimum 48x48 pixels), text that requires zooming to read, horizontal scrolling, and interactive elements hidden behind hover states that do not work on touch devices.</p>
+
+<h3>HTTPS and Security</h3>
+
+<p>Every page should load over HTTPS with a valid SSL certificate. Check for mixed content (HTTP resources loaded on HTTPS pages), HTTP-to-HTTPS redirect chains, and certificate expiration dates. Missing HTTPS is both a ranking negative and a trust signal issue.</p>
+
+<h3>Redirect Chains</h3>
+
+<p>Redirect chains occur when URL A redirects to URL B, which redirects to URL C. Each hop adds latency and can lose link equity. Audit for chains longer than one redirect and update internal links and sitemaps to point directly to the final destination URL.</p>
+
+<h3>Duplicate Content</h3>
+
+<p>Duplicate content can arise from URL parameters, www vs non-www versions, HTTP vs HTTPS, trailing slashes, and CMS-generated variations. Ensure canonical tags are correctly implemented on every page, and that only one version of each URL is accessible.</p>
+
+<h2 id="off-page-seo-checks">Off-Page SEO Checks</h2>
+
+<p>Off-page factors — primarily your backlink profile — remain one of the strongest ranking signals. An SEO audit should evaluate the health and quality of your external link profile.</p>
+
+<h3>Backlink Quality</h3>
+
+<p>Not all backlinks are equal. A single link from a high-authority, topically relevant site is worth more than hundreds of links from low-quality directories. Use Ahrefs or Semrush to review your backlink profile and flag any links that are spammy, irrelevant, or from link schemes that could trigger a penalty.</p>
+
+<h3>Anchor Text Distribution</h3>
+
+<p>A natural backlink profile has a diverse mix of anchor text types: branded anchors (your company name), naked URLs, generic phrases ("click here"), and keyword-rich anchors. If more than 10-15% of your anchors are exact-match keywords, it can appear manipulative to Google.</p>
+
+<h3>Referring Domain Diversity</h3>
+
+<p>Rankings correlate more strongly with the number of unique referring domains than with total backlink count. Audit your referring domain profile for diversity across different domain extensions, industries, and geographies. A healthy profile grows steadily over time rather than spiking from a single campaign.</p>
+
+<h3>Lost and Broken Backlinks</h3>
+
+<p>Check for backlinks pointing to pages that return 404 errors. These are wasted opportunities — set up 301 redirects to capture the link equity. Also monitor for recently lost backlinks, which could indicate that referring sites have removed your links or changed their content.</p>
+
+<h3>Competitor Backlink Gap</h3>
+
+<p>Compare your backlink profile against the top three competitors for your primary keywords. Identify domains that link to multiple competitors but not to you — these represent the most realistic link building opportunities because the sites have already demonstrated a willingness to link to content in your space.</p>
+
+<h2 id="tools-for-seo-audits">Tools for SEO Audits</h2>
+
+<p>Running a thorough SEO audit requires several tools, each serving a different purpose.</p>
+
+<h3>Essential Tools (Free)</h3>
+
+<ul>
+  <li><strong>Google Search Console</strong> — The authoritative source for how Google sees your site. Indexation data, query performance, Core Web Vitals, and manual actions.</li>
+  <li><strong>Google PageSpeed Insights</strong> — Core Web Vitals testing with both lab and field data.</li>
+  <li><strong>Screaming Frog SEO Spider (free up to 500 URLs)</strong> — Desktop crawler that captures title tags, meta descriptions, headings, status codes, and internal links.</li>
+  <li><strong>Google Lighthouse</strong> — Built into Chrome DevTools. Audits performance, accessibility, best practices, and SEO.</li>
+</ul>
+
+<h3>Professional Tools (Paid)</h3>
+
+<ul>
+  <li><strong>Ahrefs</strong> — Best all-in-one platform for site audits, keyword research, backlink analysis, and rank tracking. The Site Audit tool crawls your site and categorises issues by severity.</li>
+  <li><strong>Semrush</strong> — Strong alternative to Ahrefs with excellent site audit capabilities, particularly for larger sites.</li>
+  <li><strong>Screaming Frog (paid)</strong> — Removes the 500 URL limit and adds features like custom extraction, Google Analytics integration, and crawl comparison.</li>
+  <li><strong>Sitebulb</strong> — Visual site audit tool that excels at identifying site architecture issues and presenting data in an intuitive way.</li>
+</ul>
+
+<p>For a detailed comparison of all audit tools, see our <a href="/website-audit-tools/">best website audit tools</a> guide.</p>
+
+<h2 id="how-to-prioritise-fixes">How to Prioritise Fixes</h2>
+
+<p>Most SEO audits produce a long list of issues. Trying to fix everything at once is overwhelming and inefficient. Here is how to prioritise for maximum impact.</p>
+
+<h3>The Impact-Effort Matrix</h3>
+
+<p>Score every issue on two dimensions: impact (how much it affects rankings and traffic) and effort (how long it takes to fix). This creates four quadrants:</p>
+
+<ul>
+  <li><strong>Quick wins</strong> (high impact, low effort) — Fix these first. Examples: adding missing title tags, fixing broken internal links, implementing canonical tags.</li>
+  <li><strong>Major projects</strong> (high impact, high effort) — Schedule these for the medium term. Examples: site migration, content overhaul, link building campaign.</li>
+  <li><strong>Fill-ins</strong> (low impact, low effort) — Do these when you have spare capacity. Examples: optimising alt text, fixing minor redirect chains.</li>
+  <li><strong>Deprioritise</strong> (low impact, high effort) — Skip these unless everything else is done. Examples: rebuilding a legacy URL structure with minimal traffic.</li>
+</ul>
+
+<h3>Revenue-First Prioritisation</h3>
+
+<p>For each fix, estimate the potential traffic increase and multiply by your average revenue per visitor. A fix that takes two hours and could increase traffic by 500 visits per month at $2 per visit is worth $1,000/month — that is a clear priority over a fix that takes 20 hours for a potential 50-visit increase.</p>
+
+<h3>Dependency Mapping</h3>
+
+<p>Some fixes are prerequisites for others. For example, fixing crawlability issues should come before optimising on-page content, because there is no point optimising pages that Google cannot find. Map dependencies and execute in the right order.</p>
+
+<h3>Track Progress</h3>
+
+<p>After implementing fixes, re-crawl your site to verify the issues are resolved. Monitor Google Search Console for improvements in indexation and traffic. Run a follow-up audit in 30-60 days to measure the impact and identify any new issues that have emerged.</p>
+
+<p>If you want professional help prioritising and implementing SEO audit fixes, our <a href="/website-audit-services/">audit services</a> include a prioritised action plan with revenue estimates for every recommendation.</p>
+
+</ContentLayout>

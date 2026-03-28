@@ -1,0 +1,185 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'Audit Report', href: '/seo-website-audit/report/' },
+];
+
+const toc = [
+  { label: 'What an SEO Audit Report Is', id: 'what-an-seo-audit-report-is' },
+  { label: 'Executive Summary', id: 'executive-summary' },
+  { label: 'Technical SEO Findings', id: 'technical-seo-findings' },
+  { label: 'On-Page SEO Analysis', id: 'on-page-seo-analysis' },
+  { label: 'Content Quality Assessment', id: 'content-quality-assessment' },
+  { label: 'Backlink Profile Review', id: 'backlink-profile-review' },
+  { label: 'Site Speed and Core Web Vitals', id: 'site-speed-and-core-web-vitals' },
+  { label: 'Competitor Benchmarking', id: 'competitor-benchmarking' },
+  { label: 'Prioritised Action Plan', id: 'prioritised-action-plan' },
+  { label: 'Presenting the Report to Stakeholders', id: 'presenting-the-report-to-stakeholders' },
+];
+---
+
+<ContentLayout
+  title="SEO Site Audit Report: What It Should Include (With Examples)"
+  description="Understand what a professional SEO audit report contains. See real examples of executive summaries, technical findings, and prioritised action plans."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>An SEO audit report is the deliverable that turns hours of analysis into a clear plan of action. Whether you are producing it for a client, your boss, or your own reference, the report needs to communicate what is broken, what is working, and exactly what to do next. A poor report gets filed and forgotten. A great one drives measurable improvements in traffic and revenue.</p>
+
+  <p>This guide covers every section a professional SEO audit report should contain, explains why each section matters, and shows you how to present findings in a way that gets buy-in from stakeholders who may not understand technical SEO.</p>
+
+  <h2 id="what-an-seo-audit-report-is">What an SEO Audit Report Is</h2>
+
+  <p>An SEO audit report is a structured document that presents the findings of a comprehensive website analysis. It covers technical health, on-page optimisation, content quality, backlink profile, site speed, and competitive positioning. The report translates raw data from tools like Screaming Frog, Google Search Console, Ahrefs, and PageSpeed Insights into actionable recommendations.</p>
+
+  <p>The report is not the audit itself. The audit is the process of investigation. The report is the communication layer that makes the audit useful. Think of it as the difference between a medical examination and the written diagnosis your doctor hands you afterwards.</p>
+
+  <p>A typical SEO audit report ranges from 15 to 50 pages depending on site complexity. For small business websites under 100 pages, 15 to 20 pages is sufficient. Enterprise sites may require 50 or more pages plus appendices with raw data exports.</p>
+
+  <h2 id="executive-summary">Executive Summary</h2>
+
+  <p>The executive summary is the most important page of your report. Many stakeholders, particularly C-suite executives and business owners, will read only this section. It needs to communicate three things clearly:</p>
+
+  <ul>
+    <li><strong>Current state</strong> — a high-level health score or grading system. Many agencies use a score out of 100, a letter grade (A through F), or a traffic-light system (red/amber/green) for each audit category.</li>
+    <li><strong>Key findings</strong> — the three to five most impactful issues discovered. Write these in plain language. Instead of "302 redirect chains on canonical URLs," say "Several important pages are redirecting incorrectly, which dilutes their ranking power."</li>
+    <li><strong>Estimated impact</strong> — what fixing these issues could mean in terms of traffic, rankings, or revenue. Be conservative and honest. A statement like "Resolving the indexation issues could recover an estimated 15-25% of lost organic traffic" is more credible than vague promises.</li>
+  </ul>
+
+  <p><strong>Example executive summary opening:</strong> "This audit analysed 2,340 pages across example.com and identified 47 critical issues, 128 high-priority issues, and 312 medium-priority optimisations. The site scores 42/100 for technical SEO health, primarily due to widespread indexation problems and slow page load times. Addressing the top five issues alone could improve organic traffic by an estimated 20-30% within 90 days."</p>
+
+  <p>Keep the executive summary to one page. Use bullet points, bold text, and visual indicators. Avoid jargon entirely. This section sells the rest of the report.</p>
+
+  <h2 id="technical-seo-findings">Technical SEO Findings</h2>
+
+  <p>The technical section covers the infrastructure that search engines interact with when they crawl and index your site. Present findings in order of severity.</p>
+
+  <p><strong>Indexation analysis:</strong> Report how many pages are indexed versus how many should be indexed. Include a breakdown of Google Search Console exclusion reasons. A table format works well here:</p>
+
+  <ul>
+    <li>Total pages crawled: 2,340</li>
+    <li>Pages indexed in Google: 1,876</li>
+    <li>Pages excluded — crawled, not indexed: 287</li>
+    <li>Pages excluded — noindex tag: 94</li>
+    <li>Pages excluded — duplicate content: 83</li>
+  </ul>
+
+  <p><strong>Crawl errors:</strong> List all 4xx and 5xx errors with the affected URLs. Group them by error type. Include the number of internal links pointing to each broken URL so stakeholders understand the scope of the problem.</p>
+
+  <p><strong>Redirect audit:</strong> Document all redirect chains (more than one hop), redirect loops, and redirects pointing to non-200 pages. Show the full redirect path for each chain so developers can fix them in one pass.</p>
+
+  <p><strong>Robots.txt and sitemap:</strong> Note whether the robots.txt file blocks any important resources, whether the XML sitemap is up to date and correctly submitted, and whether there are URLs in the sitemap that return non-200 status codes.</p>
+
+  <p><strong>Canonical tags:</strong> Report on missing canonicals, self-referencing canonical issues, and cases where Google has chosen a different canonical than the one specified. Include the URLs involved so they can be corrected.</p>
+
+  <p><strong>Structured data:</strong> List which schema types are implemented, whether they validate without errors in Google's Rich Results Test, and which pages are missing structured data that could qualify for rich snippets.</p>
+
+  <h2 id="on-page-seo-analysis">On-Page SEO Analysis</h2>
+
+  <p>The on-page section evaluates how well individual pages are optimised for their target keywords. Include these sub-sections:</p>
+
+  <p><strong>Title tag audit:</strong> Report on pages with missing titles, duplicate titles, titles that are too long (over 60 characters) or too short (under 30 characters), and titles that do not include the target keyword. Provide a table with the current title, the target keyword, and your recommended replacement.</p>
+
+  <p><strong>Meta description audit:</strong> Similar to titles. Highlight missing descriptions, duplicates, and descriptions that exceed 155 characters. While meta descriptions are not a direct ranking factor, they heavily influence click-through rate. Include recommended rewrites for the most important pages.</p>
+
+  <p><strong>Heading structure:</strong> Report on pages with missing H1 tags, multiple H1 tags, or headings that skip levels. A proper heading hierarchy helps both users and search engines understand content structure.</p>
+
+  <p><strong>Internal linking:</strong> Identify pages with fewer than three internal links pointing to them (excluding navigation). Highlight orphan pages that receive zero internal links. Recommend specific linking opportunities based on topical relevance.</p>
+
+  <p><strong>Image optimisation:</strong> Report on images missing alt text, images with file sizes over 200KB, and images without explicit width and height attributes (which cause layout shifts). Quantify the total number of images affected.</p>
+
+  <h2 id="content-quality-assessment">Content Quality Assessment</h2>
+
+  <p>The content section evaluates whether the site's pages genuinely serve user intent. This is increasingly important as Google's helpful content system penalises sites with large amounts of low-quality content.</p>
+
+  <p><strong>Thin content pages:</strong> List all pages with fewer than 300 words of body content that are targeting competitive keywords. For each, recommend either expanding the content, consolidating with another page, or removing and redirecting.</p>
+
+  <p><strong>Keyword cannibalisation:</strong> Identify instances where multiple pages compete for the same keyword. Present this as a table showing the keyword, the competing URLs, and their respective average positions. Recommend which URL should be the canonical target.</p>
+
+  <p><strong>Content gaps:</strong> Compare the site's topical coverage against the top three competitors. Identify topics and subtopics that competitors rank for but the site does not cover at all. Present these as content creation opportunities with estimated search volume.</p>
+
+  <p><strong>Content freshness:</strong> Flag pages with outdated information, broken outbound links, or references to past years. For each, indicate the last modified date and recommend specific updates needed.</p>
+
+  <p><strong>E-E-A-T signals:</strong> Assess whether the site demonstrates Experience, Expertise, Authoritativeness, and Trustworthiness. Check for author bios, about pages, contact information, privacy policies, and citations to authoritative sources. Note any gaps.</p>
+
+  <h2 id="backlink-profile-review">Backlink Profile Review</h2>
+
+  <p>The backlink section provides a snapshot of the site's off-page authority. Present the data visually wherever possible, as backlink metrics lend themselves to charts and graphs.</p>
+
+  <p><strong>Profile overview:</strong> Total backlinks, total referring domains, domain rating or authority score, and how these compare to the previous period (if this is a recurring audit). A line chart showing referring domain growth over the past 12 months immediately communicates whether link building efforts are working.</p>
+
+  <p><strong>Anchor text distribution:</strong> A pie chart showing the percentage breakdown of branded, exact-match, partial-match, generic, and URL anchors. Flag any unnatural concentration of exact-match anchors.</p>
+
+  <p><strong>Toxic link assessment:</strong> List domains flagged as potentially toxic by your backlink tool, along with the specific URLs linking to the site. Include a recommendation on whether to disavow. Note that most "toxic" links are simply low-quality and rarely require action unless there is a manual penalty.</p>
+
+  <p><strong>Link opportunities:</strong> Identify high-authority domains that link to competitors but not to this site. Present the top 20 as outreach targets with the specific pages they link to, so the outreach team has concrete angles to work with.</p>
+
+  <h2 id="site-speed-and-core-web-vitals">Site Speed and Core Web Vitals</h2>
+
+  <p>Present Core Web Vitals data from both field data (Chrome User Experience Report) and lab data (PageSpeed Insights). Field data reflects real user experience. Lab data helps diagnose specific performance bottlenecks.</p>
+
+  <p><strong>Key metrics to include:</strong></p>
+
+  <ul>
+    <li><strong>LCP (Largest Contentful Paint)</strong> — target under 2.5 seconds. Report the site-wide score and highlight the slowest pages.</li>
+    <li><strong>INP (Interaction to Next Paint)</strong> — target under 200ms. Report both mobile and desktop scores, as mobile is typically worse.</li>
+    <li><strong>CLS (Cumulative Layout Shift)</strong> — target under 0.1. Identify the specific elements causing shifts (ad units, images, embedded content).</li>
+  </ul>
+
+  <p><strong>Performance diagnostics:</strong> For the worst-performing pages, include a waterfall chart or at minimum a breakdown of what is causing the delay: server response time, render-blocking resources, large images, excessive JavaScript, or third-party scripts.</p>
+
+  <p><strong>Recommendations:</strong> Be specific. Instead of "improve page speed," write "Serve hero images in WebP format at 80% quality to reduce homepage LCP from 4.2s to approximately 2.1s" or "Defer loading of the chat widget JavaScript until after user interaction to reduce TBT by approximately 800ms."</p>
+
+  <h2 id="competitor-benchmarking">Competitor Benchmarking</h2>
+
+  <p>Context matters. A domain authority of 35 means different things depending on whether your competitors sit at 20 or 70. The competitor section provides that context.</p>
+
+  <p><strong>Competitor selection:</strong> Identify three to five competitors based on keyword overlap, not just business category. The sites that rank for your target keywords are your SEO competitors, even if they are not direct business competitors.</p>
+
+  <p><strong>Metrics comparison table:</strong> Present a side-by-side comparison including domain authority, total organic keywords, estimated organic traffic, total referring domains, and average page load time. This immediately shows where the site is ahead and where it is behind.</p>
+
+  <p><strong>Content gap analysis:</strong> Show keywords that competitors rank in the top 10 for but the audited site does not rank for at all. Sort by search volume. This section alone can generate months of content strategy.</p>
+
+  <p><strong>Backlink gap analysis:</strong> Show domains linking to two or more competitors but not the audited site. These represent the most achievable link building targets because the linking sites have already demonstrated willingness to link to similar content.</p>
+
+  <h2 id="prioritised-action-plan">Prioritised Action Plan</h2>
+
+  <p>Every professional SEO audit report ends with a clear action plan. Without it, the report is just a diagnostic document with no practical output.</p>
+
+  <p>Structure your action plan as a table with these columns:</p>
+
+  <ul>
+    <li><strong>Priority</strong> — Critical, High, Medium, or Low</li>
+    <li><strong>Category</strong> — Technical, On-Page, Content, Backlinks, Speed</li>
+    <li><strong>Issue</strong> — brief description of the problem</li>
+    <li><strong>Affected pages</strong> — number or list of URLs</li>
+    <li><strong>Recommended fix</strong> — specific action to take</li>
+    <li><strong>Estimated effort</strong> — hours or complexity rating</li>
+    <li><strong>Expected impact</strong> — what improvement to expect</li>
+    <li><strong>Owner</strong> — who is responsible</li>
+    <li><strong>Deadline</strong> — when it should be completed</li>
+  </ul>
+
+  <p>Sort by priority, then by estimated impact within each priority level. Critical items should have deadlines within one week. High-priority items within two weeks. Medium within 30 days. Low within 60 days.</p>
+
+  <p>Include a timeline or Gantt chart if the report is for a client engagement. This sets expectations for when work will happen and when results should start appearing. SEO changes typically take four to eight weeks to show measurable impact in rankings.</p>
+
+  <h2 id="presenting-the-report-to-stakeholders">Presenting the Report to Stakeholders</h2>
+
+  <p>A report is only useful if people act on it. How you present findings matters as much as the findings themselves.</p>
+
+  <p><strong>For technical teams:</strong> Lead with the raw data. Developers want specific URLs, error codes, and clear fix instructions. They do not need the business context that executives require. Consider providing a separate technical appendix or CSV export they can work from directly.</p>
+
+  <p><strong>For marketing teams:</strong> Focus on content gaps, keyword opportunities, and competitive insights. Frame findings in terms of content to create, pages to update, and topics to prioritise. Link everything back to search volume and estimated traffic gains.</p>
+
+  <p><strong>For executives and business owners:</strong> Lead with the executive summary. Focus on revenue impact, competitive positioning, and risk mitigation. Use visuals: charts, traffic-light scores, and before/after projections. Keep technical jargon to an absolute minimum.</p>
+
+  <p><strong>Delivery format:</strong> PDF is the standard for client reports because it preserves formatting and branding. For internal reports, a shared Google Doc or Notion page works better because it allows comments and collaborative prioritisation. Some agencies deliver reports as interactive dashboards using Looker Studio or custom portals, which allow filtering by priority, category, and page.</p>
+
+  <p>Regardless of format, schedule a walkthrough meeting to present the report in person or via video call. Reports delivered without explanation have significantly lower action rates. Use the meeting to answer questions, adjust priorities based on business constraints, and agree on timelines. End with clear next steps and a follow-up date.</p>
+
+</ContentLayout>

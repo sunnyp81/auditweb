@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You — Your Audit Request Has Been Received"
+  description="We've received your audit request. Our team will review your website and send your report within 24 hours."
+  noindex={true}
+>
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+    <div class="glass rounded-2xl p-10">
+      <div class="text-5xl mb-6">✓</div>
+      <h1 class="text-3xl font-extrabold mb-4">Thank You!</h1>
+      <p class="text-text-muted mb-6">
+        We've received your request. Our team will analyse your website and send your audit report within 24 hours.
+      </p>
+      <p class="text-text-muted mb-8">
+        In the meantime, check out our guides to learn what we'll be looking for:
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/website-audit/" class="px-6 py-3 bg-primary hover:bg-primary-dark text-surface font-semibold rounded-lg transition-colors">
+          Read Our Audit Guide
+        </a>
+        <a href="/website-audit-checklist/" class="px-6 py-3 border border-border hover:border-primary/50 text-text font-semibold rounded-lg transition-colors">
+          View Audit Checklist
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

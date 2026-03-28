@@ -1,0 +1,78 @@
+---
+const auditTypes = [
+  { href: '/seo-website-audit/', label: 'SEO Audit' },
+  { href: '/technical-website-audit/', label: 'Technical Audit' },
+  { href: '/website-content-audit/', label: 'Content Audit' },
+  { href: '/website-security-audit/', label: 'Security Audit' },
+  { href: '/website-accessibility-audit/', label: 'Accessibility Audit' },
+  { href: '/website-ux-audit/', label: 'UX Audit' },
+];
+
+const resources = [
+  { href: '/website-audit/', label: 'Complete Audit Guide' },
+  { href: '/website-audit-checklist/', label: 'Audit Checklists' },
+  { href: '/website-audit-tools/', label: 'Audit Tools' },
+  { href: '/free-website-audit/', label: 'Free Audit Tool' },
+  { href: '/what-is-a-website-audit/', label: 'What Is a Website Audit?' },
+];
+
+const company = [
+  { href: '/website-audit-services/', label: 'Our Services' },
+  { href: '/website-audit-services/cost/', label: 'Pricing' },
+  { href: '/website-audit-services/report-example/', label: 'Sample Report' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="text-xl font-bold gradient-text">AuditWeb</a>
+        <p class="mt-3 text-sm text-text-muted leading-relaxed">
+          Professional website audits that find what's broken and show you exactly how to fix it.
+        </p>
+      </div>
+
+      <!-- Audit Types -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider text-text-dim mb-4">Audit Types</h3>
+        <ul class="space-y-2">
+          {auditTypes.map(link => (
+            <li><a href={link.href} class="text-sm text-text-muted hover:text-primary transition-colors">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider text-text-dim mb-4">Resources</h3>
+        <ul class="space-y-2">
+          {resources.map(link => (
+            <li><a href={link.href} class="text-sm text-text-muted hover:text-primary transition-colors">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider text-text-dim mb-4">Company</h3>
+        <ul class="space-y-2">
+          {company.map(link => (
+            <li><a href={link.href} class="text-sm text-text-muted hover:text-primary transition-colors">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-text-dim">&copy; {year} AuditWeb. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="/privacy/" class="text-sm text-text-dim hover:text-text-muted transition-colors">Privacy</a>
+        <a href="/terms/" class="text-sm text-text-dim hover:text-text-muted transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>

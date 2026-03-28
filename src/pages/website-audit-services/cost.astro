@@ -1,0 +1,230 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Services', href: '/website-audit-services/' },
+  { label: 'Cost and Pricing', href: '/website-audit-services/cost/' },
+];
+
+const toc = [
+  { label: 'Free Audit Options', id: 'free-audit-options' },
+  { label: 'Basic Audits $100-500', id: 'basic-audits-100-500' },
+  { label: 'Comprehensive Audits $500-2000', id: 'comprehensive-audits-500-2000' },
+  { label: 'Enterprise Audits $2000-10000+', id: 'enterprise-audits-2000-10000' },
+  { label: 'What Affects Pricing', id: 'what-affects-pricing' },
+  { label: 'ROI of a Website Audit', id: 'roi-of-a-website-audit' },
+  { label: 'Our Pricing', id: 'our-pricing' },
+];
+---
+
+<ContentLayout
+  title="Website Audit Cost: How Much Should You Pay in 2026?"
+  description="Website audit pricing ranges from free to $10,000+. Learn what affects cost, compare pricing tiers, and find the right audit for your budget."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  showLeadForm={true}
+  publishDate="2026-03-28"
+>
+
+<p><strong>Website audit costs</strong> range from $0 to over $10,000 depending on the scope, depth, and who performs the work. The right amount to spend depends on your site's size, complexity, and how much revenue you stand to gain (or lose) from organic search.</p>
+
+<p>This guide breaks down every pricing tier with specific examples of what you get at each level, the factors that drive costs up or down, and how to calculate whether the investment will pay for itself. We also explain our own pricing so you can make an informed comparison.</p>
+
+<p>Here is the market overview before we dive into details:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tier</th>
+      <th>Price Range</th>
+      <th>Best For</th>
+      <th>What You Get</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Free</td>
+      <td>$0</td>
+      <td>Quick health checks, small sites</td>
+      <td>Automated scan, basic score, surface-level issues</td>
+    </tr>
+    <tr>
+      <td>Basic</td>
+      <td>$100 — $500</td>
+      <td>Small businesses, startups</td>
+      <td>Tool-assisted audit with templated recommendations</td>
+    </tr>
+    <tr>
+      <td>Comprehensive</td>
+      <td>$500 — $2,000</td>
+      <td>Growing businesses, mid-size sites</td>
+      <td>Manual audit with custom report and action plan</td>
+    </tr>
+    <tr>
+      <td>Enterprise</td>
+      <td>$2,000 — $10,000+</td>
+      <td>Large sites, complex architectures</td>
+      <td>Full audit, stakeholder presentation, implementation roadmap, follow-up</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="free-audit-options">Free Audit Options</h2>
+
+<p>Free audit tools are a legitimate starting point, not a gimmick. The best ones provide real data that can surface critical issues before you spend anything.</p>
+
+<p><strong>Our free scanner</strong> at <a href="/free-website-audit/">auditweb.site/free-website-audit</a> checks 25 factors across SEO, performance, security, and mobile usability. It analyses your homepage and up to 5 linked pages in under 60 seconds and produces an instant health score with specific findings. It is a genuine first step, not a bait-and-switch.</p>
+
+<p><strong>Google Search Console</strong> is the most valuable free tool available. It shows your real indexation data, crawl errors, Core Web Vitals, and search performance directly from Google. Every site should have it configured regardless of budget.</p>
+
+<p><strong>Screaming Frog free version</strong> crawls up to 500 URLs and catches broken links, duplicate titles, missing meta descriptions, redirect chains, and dozens of other technical issues. For sites under 500 pages, this is professional-grade data at no cost.</p>
+
+<p><strong>The limitation of free tools</strong> is that they give you data without strategy. They tell you what is wrong but not why it matters for your specific situation, how it compares to your competitors, or what you should fix first. For sites with significant organic traffic or revenue, the gap between "list of issues" and "prioritised action plan" is where real value lies.</p>
+
+<p>For a full breakdown of every free option, see our <a href="/website-audit-tools/best-free/">best free audit tools</a> guide.</p>
+
+<h2 id="basic-audits-100-500">Basic Audits $100-500</h2>
+
+<p>Basic audits in the $100-500 range are typically performed by junior freelancers, small agencies offering productised services, or consultants using a standardised process. At this price point, expect a tool-driven process with limited manual analysis.</p>
+
+<p><strong>What you typically get:</strong></p>
+<ul>
+  <li>An automated crawl using Screaming Frog, Sitebulb, or the provider's proprietary tool</li>
+  <li>A templated report highlighting the most common issues: broken links, missing meta tags, slow pages, mobile errors, and basic security checks</li>
+  <li>Basic keyword analysis showing your top-ranking terms and obvious gaps</li>
+  <li>A prioritised list of fixes, often in spreadsheet format</li>
+  <li>Minimal manual review — the provider may look at your top 5-10 pages but is primarily relying on tool output</li>
+</ul>
+
+<p><strong>What you do not get:</strong></p>
+<ul>
+  <li>Custom strategy tailored to your business goals and competitive landscape</li>
+  <li>Deep competitive analysis with actionable differentiation opportunities</li>
+  <li>Content quality evaluation beyond basic metrics like word count and readability scores</li>
+  <li>Backlink toxicity analysis with manual link-by-link review</li>
+  <li>A walkthrough meeting to discuss findings and answer questions</li>
+  <li>Implementation support or follow-up verification</li>
+</ul>
+
+<p><strong>When this tier makes sense:</strong> You have a small site (under 100 pages), a limited budget, and enough technical knowledge to interpret findings and implement fixes yourself. It works well as a second opinion alongside your own analysis using free tools. It does not make sense if you need strategic guidance or if your site generates meaningful revenue from organic search.</p>
+
+<h2 id="comprehensive-audits-500-2000">Comprehensive Audits $500-2000</h2>
+
+<p>This is the sweet spot for most businesses. Comprehensive audits combine tool-generated data with genuine human expertise. An experienced SEO professional reviews the findings, identifies patterns that tools miss, and provides strategic recommendations specific to your market and competitive landscape.</p>
+
+<p><strong>What you typically get:</strong></p>
+<ul>
+  <li>Full technical audit with manual verification of critical issues and root cause analysis</li>
+  <li>On-page SEO review of your top 20 to 50 landing pages with specific optimisation recommendations</li>
+  <li>Content quality assessment with page-level improvement guidance</li>
+  <li>Backlink profile analysis with competitor comparison and link quality evaluation</li>
+  <li>Core Web Vitals audit with specific performance fix recommendations per page template</li>
+  <li>A professional PDF report with executive summary, visual charts, and prioritised action plan</li>
+  <li>A 30 to 60 minute walkthrough call to discuss findings, answer questions, and plan implementation</li>
+</ul>
+
+<p><strong>What you might not get:</strong></p>
+<ul>
+  <li>Implementation of the recommended fixes (typically a separate engagement)</li>
+  <li>International SEO or multi-language analysis (unless specifically scoped)</li>
+  <li>JavaScript rendering audit for SPA frameworks</li>
+  <li>Server log file analysis for crawl budget optimisation</li>
+  <li>Ongoing monitoring or follow-up audits</li>
+</ul>
+
+<p><strong>When this tier makes sense:</strong> You have a site with 100 to 5,000 pages, organic search is a meaningful traffic or revenue channel, and you want actionable recommendations from someone who has audited hundreds of sites and knows what actually moves the needle. This tier delivers the best value-to-cost ratio for most businesses.</p>
+
+<h2 id="enterprise-audits-2000-10000">Enterprise Audits $2000-10000+</h2>
+
+<p>Enterprise audits are for large, complex websites where organic search represents significant revenue and mistakes have real financial consequences. These engagements are performed by senior consultants or specialist agencies with deep experience in large-scale technical SEO.</p>
+
+<p><strong>What you typically get:</strong></p>
+<ul>
+  <li>Everything in the comprehensive tier, applied across the full site regardless of page count</li>
+  <li>Server log file analysis to understand how Googlebot actually crawls your site (not just how it should)</li>
+  <li>JavaScript rendering audit (critical for React, Angular, Vue, or Next.js sites)</li>
+  <li>International SEO review including hreflang implementation, geotargeting, and content localisation</li>
+  <li>Detailed competitive intelligence with market opportunity sizing and share-of-voice analysis</li>
+  <li>Stakeholder-ready presentations tailored for different audiences (technical team, marketing team, executives)</li>
+  <li>Implementation roadmap with effort estimates, timelines, and resource requirements</li>
+  <li>Follow-up audit (typically at 90 days) to measure progress and verify fixes</li>
+  <li>Direct access to a senior consultant for questions during implementation</li>
+</ul>
+
+<p><strong>When this tier makes sense:</strong> You have a site with 10,000+ pages, complex technical architecture (faceted navigation, JavaScript rendering, multiple CDN configurations), international presence, or significant organic revenue (six figures per month or higher). At this scale, the cost of the audit is trivial compared to the revenue at risk from undetected issues.</p>
+
+<h2 id="what-affects-pricing">What Affects Pricing</h2>
+
+<p>Understanding what drives audit pricing helps you evaluate quotes accurately and avoid overpaying for scope you do not need.</p>
+
+<p><strong>Site size.</strong> A 50-page brochure site takes a fraction of the time to audit compared to an e-commerce site with 50,000 product pages. Most providers price based on the number of indexable URLs, either as fixed tiers or per-page rates. The crawl alone on a 50,000-page site takes significantly longer, and the volume of data to analyse scales proportionally.</p>
+
+<p><strong>Audit scope.</strong> A technical-only audit costs less than a full-spectrum audit covering technical, on-page, content, backlinks, UX, and security. Define the scope upfront to get accurate pricing and avoid paying for areas that are not relevant to your situation.</p>
+
+<p><strong>Audit depth.</strong> An automated crawl with templated recommendations is fast and cheap. A manual review where a senior analyst examines every important page, traces issues to root causes, and writes custom strategic recommendations costs more but delivers proportionally more value.</p>
+
+<p><strong>Technical complexity.</strong> Sites with JavaScript rendering, multi-language configurations, complex faceted navigation, or custom CMS platforms take longer to audit and require specialist knowledge. If your site uses React or Angular for rendering, the auditor needs to verify what Googlebot actually sees versus what the source code contains — a step that many basic audits skip.</p>
+
+<p><strong>Deliverable format.</strong> A spreadsheet of findings costs less than a branded PDF report with executive summary, visual priority matrix, competitor benchmarks, and a walkthrough presentation. The format matters if you need to present findings to stakeholders or justify budget allocation.</p>
+
+<p><strong>Provider experience.</strong> A solo freelancer with three years of experience charges differently from a boutique agency with a decade of enterprise client work. You are paying for pattern recognition, risk assessment, and the confidence that comes from having seen hundreds of sites with similar issues.</p>
+
+<h2 id="roi-of-a-website-audit">ROI of a Website Audit</h2>
+
+<p>The return on a website audit depends entirely on whether you implement the findings. An audit that sits unread has zero ROI. An audit that leads to implemented fixes can deliver extraordinary returns.</p>
+
+<p><strong>Realistic scenario:</strong> A comprehensive audit costs $1,000 and identifies three critical issues: a sitewide canonical error splitting ranking authority, thin content on 15 key landing pages, and a missing XML sitemap causing indexation gaps. Fixing these over 60 days leads to a 25 percent increase in organic traffic. If the site generates $10,000 per month in organic-attributed revenue, that additional $2,500 per month pays back the audit cost in less than two weeks — and the gains compound indefinitely.</p>
+
+<p><strong>Conservative estimate:</strong> Even modest improvements of 10-15 percent in organic traffic will recover the cost of a mid-range audit within one to three months for any site generating meaningful revenue from search.</p>
+
+<p><strong>The hidden ROI:</strong> Audits prevent problems, not just fix them. Catching a misconfigured robots.txt before it deindexes your site, identifying a security vulnerability before it triggers a Safe Browsing warning, or spotting content decay before it drops rankings — these defensive benefits are harder to quantify but equally valuable.</p>
+
+<p><strong>The real question is not "can I afford an audit?" but "can I afford not to?"</strong> Sites that operate for years without an audit accumulate technical debt, content decay, and competitive gaps that become exponentially more expensive to fix the longer they go unaddressed.</p>
+
+<h2 id="our-pricing">Our Pricing</h2>
+
+<p>Our audit service is priced to deliver exceptional value at every tier. Here is exactly what you get.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Price</th>
+      <th>Site Size</th>
+      <th>What's Included</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Basic</strong></td>
+      <td>$297</td>
+      <td>Up to 500 pages</td>
+      <td>72-checkpoint audit, PDF report, priority matrix, 30-min walkthrough call</td>
+    </tr>
+    <tr>
+      <td><strong>Comprehensive</strong></td>
+      <td>$997</td>
+      <td>500 to 50,000 pages</td>
+      <td>Everything in Basic + competitor benchmarking, content gap analysis, implementation roadmap, 60-min walkthrough, 30 days email support</td>
+    </tr>
+    <tr>
+      <td><strong>Enterprise</strong></td>
+      <td>Custom quote</td>
+      <td>50,000+ pages</td>
+      <td>Everything in Comprehensive + log file analysis, JS rendering audit, international SEO, stakeholder presentation, 90-day follow-up audit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Our Basic audit at $297</strong> sits at the top of the budget tier but delivers comprehensive-tier quality. Every checkpoint is manually reviewed by a senior analyst — we do not generate automated reports and call them audits. You get a professional PDF with an executive summary, detailed findings with root cause analysis, and a priority matrix that tells you exactly what to fix first. The 30-minute walkthrough call ensures you understand the findings and can start implementation immediately.</p>
+
+<p><strong>Our Comprehensive audit at $997</strong> is positioned at the lower end of the comprehensive market but includes features that many providers charge $2,000+ for: competitor benchmarking with specific differentiation opportunities, content gap analysis identifying the exact topics you need to cover, a week-by-week implementation roadmap, and 30 days of email support for questions that come up during implementation.</p>
+
+<p><strong>Both tiers include our money-back guarantee:</strong> if we do not identify at least 10 actionable issues you were not already aware of, you pay nothing. We have never had to honour this guarantee — every site has issues waiting to be found.</p>
+
+<p>All audits are delivered within 7 business days (14 for Enterprise). If we miss the deadline, you receive a 20 percent discount.</p>
+
+<p><a href="/website-audit-services/">View our full service details</a> or <a href="/free-website-audit/">run a free scan first</a> to see where your site stands before committing to a paid audit.</p>
+
+</ContentLayout>

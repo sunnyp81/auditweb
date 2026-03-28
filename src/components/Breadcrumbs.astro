@@ -1,0 +1,42 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const allItems = [{ label: 'Home', href: '/' }, ...items];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: allItems.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    item: new URL(item.href, 'https://auditweb.site').href,
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-text-dim">
+    {allItems.map((item, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && <span class="text-text-dim">/</span>}
+        {i < allItems.length - 1 ? (
+          <a href={item.href} class="hover:text-primary transition-colors">{item.label}</a>
+        ) : (
+          <span class="text-text-muted">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

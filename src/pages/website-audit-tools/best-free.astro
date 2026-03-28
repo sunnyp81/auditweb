@@ -1,0 +1,158 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Best Free Tools', href: '/website-audit-tools/best-free/' },
+];
+
+const toc = [
+  { label: 'Google Search Console', id: 'google-search-console' },
+  { label: 'Google Lighthouse', id: 'google-lighthouse' },
+  { label: 'Google PageSpeed Insights', id: 'google-pagespeed-insights' },
+  { label: 'Screaming Frog Free Version', id: 'screaming-frog-free-version' },
+  { label: 'Ahrefs Webmaster Tools', id: 'ahrefs-webmaster-tools' },
+  { label: 'WAVE Accessibility Checker', id: 'wave-accessibility-checker' },
+  { label: 'SSL Labs', id: 'ssl-labs' },
+  { label: 'Security Headers', id: 'security-headers' },
+  { label: 'GTmetrix', id: 'gtmetrix' },
+  { label: 'WebPageTest', id: 'webpagetest' },
+];
+---
+
+<ContentLayout
+  title="Best Free Website Audit Tools: 10 Options That Actually Work"
+  description="Discover the best free website audit tools for SEO, speed, security, and accessibility testing. Includes Google tools, open-source options, and freemium picks."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>You do not need to spend hundreds of pounds per month to audit your website. The best <strong>free website audit tools</strong> can catch critical SEO issues, performance bottlenecks, security vulnerabilities, and accessibility failures without costing anything.</p>
+
+<p>The catch is that free tools each cover a slice of the full picture. No single free tool replaces a comprehensive paid platform like <a href="/website-audit-tools/ahrefs/">Ahrefs</a> or <a href="/website-audit-tools/semrush/">Semrush</a>. But by combining the right free tools, you can build a solid audit workflow that covers the most important checks.</p>
+
+<p>We have tested each tool on this list across dozens of sites. Here is an honest assessment of what each one does well, where it falls short, and who should use it.</p>
+
+<h2 id="google-search-console">Google Search Console</h2>
+
+<p>Google Search Console (GSC) is the single most important free tool for any website owner. It provides data directly from Google about how your site is crawled, indexed, and ranked. No third-party tool can replicate this because the data comes from Google itself.</p>
+
+<p><strong>What it does:</strong> GSC shows which of your pages are indexed and which are excluded (and why), reports crawl errors including 404s, server errors, and redirect issues, displays your real search performance data (clicks, impressions, CTR, average position), identifies Core Web Vitals issues across your entire site using real-user field data, flags mobile usability problems, reports manual actions (Google penalties), and shows which pages have valid structured data and rich results.</p>
+
+<p><strong>Best for:</strong> Understanding how Google sees your site, monitoring indexation health, identifying search performance trends, and diagnosing sudden traffic drops. It is indispensable for any SEO work.</p>
+
+<p><strong>Limitations:</strong> GSC does not crawl your site — it reports on what Google has already crawled. Data is delayed by 1-3 days. It does not check on-page elements like title tag length or heading hierarchy. It does not analyse competitors. The query data is sampled and filtered (you will never see every query that triggered your pages).</p>
+
+<p><strong>Verdict:</strong> Non-negotiable. Every website should have GSC configured and monitored regularly. It is the foundation on which every other audit tool builds.</p>
+
+<h2 id="google-lighthouse">Google Lighthouse</h2>
+
+<p>Lighthouse is an open-source automated testing tool built into Chrome DevTools. It audits individual web pages across four categories: Performance, Accessibility, Best Practices, and SEO. Each category receives a score from 0 to 100 with specific recommendations for improvement.</p>
+
+<p><strong>What it does:</strong> The Performance audit measures LCP, INP potential (through TBT as a proxy), CLS, and other speed metrics, then provides specific recommendations like "reduce unused JavaScript" or "serve images in next-gen formats" with estimated savings in milliseconds or kilobytes. The Accessibility audit checks for WCAG compliance issues including missing alt text, insufficient colour contrast, missing form labels, and ARIA problems. The SEO audit verifies basic on-page elements like title tags, meta descriptions, viewport configuration, and crawlability. The Best Practices audit checks for security issues, modern web standards compliance, and deprecated APIs.</p>
+
+<p><strong>Best for:</strong> Developers and technical SEOs who need to diagnose performance and accessibility issues on individual pages. The recommendations are specific enough to act on immediately.</p>
+
+<p><strong>Limitations:</strong> Lighthouse audits one page at a time — you cannot scan an entire site in a single run. The scores are lab-based (simulated conditions), not field-based (real user data), so they may not match real-world experience. Scores fluctuate between runs due to network and CPU variability. It does not check for SEO issues like keyword targeting, content quality, or backlink profile.</p>
+
+<p><strong>Verdict:</strong> Essential for page-level performance and accessibility diagnosis. Use it alongside PageSpeed Insights (which adds field data) for the complete picture. Not a substitute for a site-wide audit tool.</p>
+
+<h2 id="google-pagespeed-insights">Google PageSpeed Insights</h2>
+
+<p>PageSpeed Insights (PSI) is the web-based version of Lighthouse with one crucial addition: it includes real-user field data from the Chrome User Experience Report (CrUX). This makes it the most authoritative source for understanding your Core Web Vitals performance as Google measures it.</p>
+
+<p><strong>What it does:</strong> PSI runs a Lighthouse audit on the submitted URL and displays the familiar performance, accessibility, best practices, and SEO scores. The key differentiator is the field data section at the top, which shows your LCP, INP, and CLS scores based on real Chrome users who visited your page over the past 28 days. This is the exact data Google uses for its page experience ranking signals. If your page has enough traffic, PSI shows both page-level and origin-level (entire domain) field data.</p>
+
+<p><strong>Best for:</strong> Checking whether your pages pass Core Web Vitals assessment using real-world data, not just lab simulations. Essential before and after any performance optimisation work to verify the impact.</p>
+
+<p><strong>Limitations:</strong> Like Lighthouse, it tests one URL at a time. Field data requires sufficient traffic volume — low-traffic pages may not have CrUX data available. The lab scores can distract from the more important field data. It does not check for SEO issues beyond basic on-page elements.</p>
+
+<p><strong>Verdict:</strong> Use PSI for Core Web Vitals verification and performance diagnosis. Focus on the field data (top of the results) rather than the lab scores. Run it on your most important page templates, not every individual URL.</p>
+
+<h2 id="screaming-frog-free-version">Screaming Frog Free Version</h2>
+
+<p>Screaming Frog SEO Spider is the industry-standard desktop crawler, and the free version crawls up to 500 URLs with most features available. For small to mid-size sites, the free version is remarkably capable.</p>
+
+<p><strong>What it does:</strong> It crawls your site and reports on status codes (200s, 301s, 302s, 404s, 500s), page titles and meta descriptions (with length and duplication detection), heading tags (H1 and H2), canonical tags, meta robots directives, image alt text, response times, word counts, internal and external links, and redirect chains. You can export all data to CSV for further analysis in spreadsheets.</p>
+
+<p><strong>Best for:</strong> Running a comprehensive technical crawl of sites under 500 pages. The data it produces is the backbone of any technical SEO audit — broken links, duplicate titles, missing meta descriptions, redirect issues, and orphan pages all surface immediately.</p>
+
+<p><strong>Limitations:</strong> The 500 URL limit is strict — sites with more pages need the paid version ($259/year). The free version does not include JavaScript rendering, custom extraction, Google API integration, crawl scheduling, or link-level data export. The interface is data-dense and requires SEO knowledge to interpret. It runs on your local machine, so crawl speed depends on your internet connection and CPU.</p>
+
+<p><strong>Verdict:</strong> The best free crawling tool available. If your site is under 500 pages, you get professional-grade crawl data at no cost. The paid version is the best value upgrade in the SEO tool market.</p>
+
+<h2 id="ahrefs-webmaster-tools">Ahrefs Webmaster Tools</h2>
+
+<p>Ahrefs Webmaster Tools (AWT) gives verified site owners free access to a subset of Ahrefs' site audit and backlink data. It is the most generous freemium offer from any major SEO platform.</p>
+
+<p><strong>What it does:</strong> AWT crawls your verified site and reports on over 100 technical and on-page SEO issues, categorised by severity. It provides a site health score that tracks over time, shows your backlink profile (referring domains, anchor text distribution, new and lost links), and identifies your top-performing organic keywords. The audit interface is the same as the paid version — clean, well-organised, with clear explanations for every issue found.</p>
+
+<p><strong>Best for:</strong> Site owners who want cloud-based audit monitoring with backlink data included. The ability to see your backlink profile alongside technical issues gives context that pure crawling tools lack.</p>
+
+<p><strong>Limitations:</strong> You can only audit sites you have verified ownership of (via DNS, HTML file, or meta tag). Crawl frequency is limited compared to paid plans. You cannot audit competitor sites. Some advanced features like content gap analysis, keyword difficulty scoring, and unlimited crawl pages are reserved for paid subscriptions. The backlink index, while comprehensive, may not include the most recent links.</p>
+
+<p><strong>Verdict:</strong> An excellent free option that combines crawl-based audit data with backlink intelligence. If you can only pick one free cloud-based tool alongside Search Console, this is the one.</p>
+
+<h2 id="wave-accessibility-checker">WAVE Accessibility Checker</h2>
+
+<p>WAVE (Web Accessibility Evaluation Tool) by WebAIM is the most widely used free accessibility testing tool. It is available as a web-based tool (wave.webaim.org) and a Chrome/Firefox browser extension.</p>
+
+<p><strong>What it does:</strong> WAVE overlays accessibility findings directly on your page using visual indicators. It identifies errors (missing alt text, empty links, missing form labels, document language not set), alerts (redundant alt text, suspicious link text, small text), structural elements (headings, lists, landmarks), and contrast issues (tested against WCAG AA 4.5:1 ratio for normal text). The visual overlay makes it easy to see exactly where issues occur in the context of your page design.</p>
+
+<p><strong>Best for:</strong> Quick accessibility checks during development or as part of a UX audit. The visual approach makes it accessible to non-technical users who may not understand raw audit data.</p>
+
+<p><strong>Limitations:</strong> Tests one page at a time. Cannot catch all accessibility issues — keyboard navigation, screen reader behaviour, and complex interaction patterns require manual testing. The visual overlay can be overwhelming on pages with many issues. Does not provide implementation code fixes, only descriptions of what is wrong.</p>
+
+<p><strong>Verdict:</strong> The best free tool for surface-level accessibility testing. Use it as a first pass, but supplement with manual testing for comprehensive accessibility compliance. The browser extension is more convenient than the web version for testing multiple pages.</p>
+
+<h2 id="ssl-labs">SSL Labs</h2>
+
+<p>Qualys SSL Labs Server Test is the definitive free tool for evaluating your SSL/TLS configuration. It is used by security professionals worldwide and provides the most detailed certificate analysis available.</p>
+
+<p><strong>What it does:</strong> SSL Labs tests your server's SSL/TLS configuration and assigns a letter grade from A+ to F. It checks certificate validity and chain completeness, protocol support (TLS 1.2, 1.3; flags deprecated TLS 1.0, 1.1), cipher suite configuration and preference order, key exchange strength, known vulnerabilities (BEAST, POODLE, Heartbleed, DROWN, ROBOT), HSTS implementation, and certificate transparency. The detailed report explains every finding with links to further reading.</p>
+
+<p><strong>Best for:</strong> Verifying that your SSL/TLS setup meets security best practices. An A+ grade means your certificate and server configuration are properly hardened. Any grade below B indicates issues that should be fixed.</p>
+
+<p><strong>Limitations:</strong> Only tests SSL/TLS — it does not check other security headers (CSP, X-Frame-Options, etc.) or scan for malware. The test takes 1-2 minutes to complete. It tests the server, not individual pages, so it will not catch mixed content issues on specific URLs.</p>
+
+<p><strong>Verdict:</strong> The gold standard for SSL/TLS testing. Run it whenever you set up or renew a certificate, change hosting providers, or modify server configuration. Pair it with Security Headers (below) for a complete security check.</p>
+
+<h2 id="security-headers">Security Headers</h2>
+
+<p>SecurityHeaders.com (by Scott Helme) scans your website's HTTP response headers and grades your security header implementation from A+ to F. It is the companion tool to SSL Labs — where SSL Labs checks your certificate, Security Headers checks your response headers.</p>
+
+<p><strong>What it does:</strong> It evaluates the presence and configuration of Content-Security-Policy (CSP), X-Content-Type-Options, X-Frame-Options (or CSP frame-ancestors), Strict-Transport-Security (HSTS), Referrer-Policy, and Permissions-Policy. Each header is explained with its purpose and recommended configuration. The tool also flags deprecated headers and provides implementation guidance.</p>
+
+<p><strong>Best for:</strong> Quickly checking whether your server sends the security headers that modern browsers expect. Many sites have SSL configured correctly but miss security headers entirely, leaving them vulnerable to clickjacking, XSS, and other attacks.</p>
+
+<p><strong>Limitations:</strong> Only checks headers — does not scan for vulnerabilities in your application code, CMS, or plugins. Does not check for exposed files or directories. The test hits your homepage only; headers may differ on other paths if your server configuration is inconsistent.</p>
+
+<p><strong>Verdict:</strong> Fast, simple, and immediately actionable. Run it alongside SSL Labs for a complete security baseline. Aim for at least a B grade; A+ requires a well-configured Content-Security-Policy, which can be complex to implement without breaking functionality.</p>
+
+<h2 id="gtmetrix">GTmetrix</h2>
+
+<p>GTmetrix provides a user-friendly performance testing interface that combines Lighthouse data with its own performance metrics. The free tier allows a limited number of tests per day from a single location.</p>
+
+<p><strong>What it does:</strong> GTmetrix loads your page in a real Chrome browser and reports on performance metrics including LCP, TBT, CLS, time to interactive, total blocking time, and total page size. It provides a waterfall chart showing the loading sequence of every resource, a video filmstrip of the page loading process, and historical tracking so you can see performance trends over time. The interface is cleaner and more accessible than raw Lighthouse output.</p>
+
+<p><strong>Best for:</strong> Non-technical users who need to understand page speed without interpreting complex developer tools. The waterfall chart is particularly useful for identifying which specific resources are slowing the page down — large images, slow third-party scripts, or unoptimised CSS.</p>
+
+<p><strong>Limitations:</strong> Free accounts are limited to a small number of daily tests from one server location (Vancouver, Canada by default). Paid plans ($14.50+/month) unlock more locations, scheduled monitoring, and higher test limits. The tool tests one URL at a time. Scores and metrics may differ from PageSpeed Insights because testing conditions (location, connection speed, device) are different.</p>
+
+<p><strong>Verdict:</strong> A more approachable alternative to raw Lighthouse for non-technical stakeholders. The waterfall chart is genuinely useful for diagnosing resource-level bottlenecks. Use it alongside PageSpeed Insights (for authoritative CrUX data) rather than as a replacement.</p>
+
+<h2 id="webpagetest">WebPageTest</h2>
+
+<p>WebPageTest is the most powerful free performance testing tool available. Originally created by AOL and now maintained by Catchpoint, it provides testing capabilities that rival expensive enterprise tools.</p>
+
+<p><strong>What it does:</strong> WebPageTest loads your page from real browsers in 40+ locations worldwide and provides detailed waterfall charts, filmstrip views (frame-by-frame screenshots of the loading process), video comparisons between pages or before/after tests, connection simulation (2G, 3G, 4G, cable), custom scripting for multi-step transactions, and detailed timing breakdowns for every resource request. It also calculates a proprietary "Web Vitals" assessment and provides optimisation checklists.</p>
+
+<p><strong>Best for:</strong> Advanced performance analysis and diagnosis. If PageSpeed Insights tells you that your LCP is slow, WebPageTest tells you exactly why — down to the individual resource request, server negotiation, and rendering step. The multi-location testing is invaluable for sites with global audiences. The video comparison feature is excellent for demonstrating performance improvements to stakeholders.</p>
+
+<p><strong>Limitations:</strong> The interface is functional but not polished. Interpreting waterfall charts requires technical knowledge. Free tests can queue during busy periods, adding wait time. The tool is focused exclusively on performance — it does not check SEO, security, or accessibility. Some advanced features (like scripted transactions and API access) are easier to use with the paid Catchpoint integration.</p>
+
+<p><strong>Verdict:</strong> The deepest free performance analysis tool available. Use it when you need to go beyond what Lighthouse and PageSpeed Insights can tell you — particularly for diagnosing complex loading issues, testing from specific geographic locations, or comparing performance between pages. Not for beginners, but invaluable for developers and technical SEOs.</p>
+
+</ContentLayout>

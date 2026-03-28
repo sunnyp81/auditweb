@@ -1,0 +1,94 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is a Website Security Audit', id: 'what-is' },
+  { label: 'Why Security Audits Matter for SEO', id: 'seo-impact' },
+  { label: 'Key Areas to Check', id: 'key-areas' },
+  { label: 'Common Vulnerabilities', id: 'vulnerabilities' },
+  { label: 'Security Audit Tools', id: 'tools' },
+  { label: 'How Often to Audit', id: 'frequency' },
+  { label: 'Getting Professional Help', id: 'professional' },
+];
+
+const children = [
+  { title: 'Security Audit Checklist', href: '/website-security-audit/checklist/', description: 'Complete checklist for auditing your website security.' },
+  { title: 'Security Audit Tools', href: '/website-security-audit/tools/', description: 'Best tools for scanning and testing website security.' },
+  { title: 'Security Audit Cost', href: '/website-security-audit/cost/', description: 'What to expect to pay for a professional security audit.' },
+  { title: 'Web Application Security Audit', href: '/website-security-audit/web-app/', description: 'How to audit web applications for security vulnerabilities.' },
+  { title: 'GDPR Website Audit', href: '/website-security-audit/gdpr/', description: 'Ensure your website complies with GDPR data protection rules.' },
+];
+---
+
+<ContentLayout
+  title="Website Security Audit: Protect Your Site, Data, and Rankings"
+  description="A website security audit identifies vulnerabilities that put your data, users, and search rankings at risk. Learn what to check and how to fix common security issues."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Security Audit', href: '/website-security-audit/' },
+  ]}
+  toc={toc}
+  children={children}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is a Website Security Audit</h2>
+  <p>A website security audit is a systematic examination of your website's defences against cyber threats. It evaluates your SSL configuration, server settings, software versions, access controls, data handling practices, and vulnerability to common attack vectors like SQL injection, cross-site scripting (XSS), and brute force attacks.</p>
+  <p>The goal is to identify weaknesses before attackers do. A security audit produces a report of vulnerabilities ranked by severity, along with specific remediation steps for each issue.</p>
+
+  <h2 id="seo-impact">Why Security Audits Matter for SEO</h2>
+  <p>Security and SEO are directly connected. Google has used HTTPS as a ranking signal since 2014, and the impact has only grown. But security goes far beyond SSL certificates:</p>
+  <ul>
+    <li><strong>Malware penalties:</strong> If Google detects malware on your site, it will show a "This site may be hacked" warning in search results — devastating for click-through rates and trust.</li>
+    <li><strong>Deindexation:</strong> Severe security issues can lead to pages being removed from Google's index entirely.</li>
+    <li><strong>Spam injection:</strong> Hackers often inject hidden links or pages into compromised sites, diluting your SEO and potentially triggering manual actions.</li>
+    <li><strong>User trust:</strong> Browser warnings about insecure connections cause visitors to leave immediately, increasing bounce rate and reducing engagement signals.</li>
+    <li><strong>Core Web Vitals:</strong> Some security measures like outdated plugins or unpatched software can slow your site, hurting performance scores.</li>
+  </ul>
+
+  <h2 id="key-areas">Key Areas to Check</h2>
+  <p>A comprehensive website security audit covers these areas:</p>
+  <ul>
+    <li><strong>SSL/TLS configuration:</strong> Certificate validity, protocol versions, cipher suites, mixed content issues, HSTS headers.</li>
+    <li><strong>HTTP security headers:</strong> Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.</li>
+    <li><strong>Software versions:</strong> CMS version, plugin versions, server software. Outdated software is the number one attack vector.</li>
+    <li><strong>Authentication:</strong> Password policies, two-factor authentication, admin panel exposure, login attempt limiting.</li>
+    <li><strong>File permissions:</strong> Writable directories, exposed configuration files, directory listing enabled.</li>
+    <li><strong>Input validation:</strong> Protection against SQL injection, XSS, CSRF, and file upload vulnerabilities.</li>
+    <li><strong>Backup strategy:</strong> Regular backups, offsite storage, tested restore procedures.</li>
+    <li><strong>Monitoring:</strong> Uptime monitoring, file integrity monitoring, login activity logs.</li>
+  </ul>
+
+  <h2 id="vulnerabilities">Common Vulnerabilities</h2>
+  <p>Based on our audit experience, these are the most frequent security issues we find:</p>
+  <ol>
+    <li><strong>Outdated WordPress plugins:</strong> Over 50% of WordPress sites we audit have at least one plugin with a known vulnerability. Updating plugins is the single most impactful security action for WordPress sites.</li>
+    <li><strong>Missing security headers:</strong> Most websites lack proper HTTP security headers. Adding Content-Security-Policy and other headers takes minutes but blocks entire categories of attacks.</li>
+    <li><strong>Exposed admin panels:</strong> Default login URLs (like /wp-admin) without IP restriction or rate limiting are invitations for brute force attacks.</li>
+    <li><strong>Mixed content:</strong> Pages served over HTTPS that load resources over HTTP. This triggers browser warnings and undermines your SSL protection.</li>
+    <li><strong>No backup strategy:</strong> Surprisingly common — sites with no automated backups or backups stored on the same server as the site.</li>
+    <li><strong>Weak passwords:</strong> Admin accounts with simple passwords and no two-factor authentication.</li>
+  </ol>
+
+  <h2 id="tools">Security Audit Tools</h2>
+  <ul>
+    <li><strong>SSL Labs (ssllabs.com):</strong> Free, comprehensive SSL/TLS configuration tester. Grades your certificate setup A through F.</li>
+    <li><strong>Security Headers (securityheaders.com):</strong> Free scanner that checks your HTTP security headers and grades your configuration.</li>
+    <li><strong>Sucuri SiteCheck:</strong> Free malware and blocklist scanner. Checks if your site has been flagged by Google, Norton, or other security services.</li>
+    <li><strong>WPScan:</strong> Specifically for WordPress sites. Scans for known plugin and theme vulnerabilities against a comprehensive database.</li>
+    <li><strong>OWASP ZAP:</strong> Open-source web application security scanner. More technical but thorough for finding injection and XSS vulnerabilities.</li>
+    <li><strong>Google Search Console:</strong> Security Issues report shows if Google has detected malware, hacking, or social engineering on your site.</li>
+  </ul>
+
+  <h2 id="frequency">How Often to Audit</h2>
+  <p>Security audit frequency depends on your site's risk profile:</p>
+  <ul>
+    <li><strong>E-commerce sites handling payments:</strong> Monthly automated scans, quarterly manual audits.</li>
+    <li><strong>Sites with user data (forms, accounts):</strong> Quarterly automated scans, annual manual audit.</li>
+    <li><strong>Content-only sites:</strong> Annual audit plus automated monitoring for uptime and malware.</li>
+    <li><strong>After any major change:</strong> Always run a security check after updating your CMS, adding plugins, changing hosting, or launching new features.</li>
+  </ul>
+
+  <h2 id="professional">Getting Professional Help</h2>
+  <p>While basic security checks can be done with free tools, a professional security audit provides deeper analysis — penetration testing, code review, and server configuration assessment that automated tools cannot replicate.</p>
+  <p>Our <a href="/website-audit-services/">comprehensive audit</a> includes a full security assessment as part of the 72-checkpoint review. If you need a standalone security audit, <a href="/website-audit-services/">contact our team</a> for a custom quote.</p>
+</ContentLayout>

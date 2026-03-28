@@ -1,0 +1,62 @@
+---
+const navLinks = [
+  { href: '/website-audit/', label: 'Audit Guide' },
+  { href: '/website-audit-services/', label: 'Services' },
+  { href: '/free-website-audit/', label: 'Free Audit' },
+  { href: '/website-audit-tools/', label: 'Tools' },
+  { href: '/website-audit-checklist/', label: 'Checklists' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 glass-strong">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 text-xl font-bold">
+        <span class="gradient-text">AuditWeb</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-sm text-text-muted hover:text-primary transition-colors">
+            {link.label}
+          </a>
+        ))}
+        <a href="/free-website-audit/" class="px-4 py-2 bg-primary hover:bg-primary-dark text-surface font-semibold text-sm rounded-lg transition-colors">
+          Start Free Audit
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="mobile-toggle" class="md:hidden text-text-muted hover:text-text" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-3">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-text-muted hover:text-primary transition-colors py-1">
+            {link.label}
+          </a>
+        ))}
+        <a href="/free-website-audit/" class="mt-2 px-4 py-2 bg-primary hover:bg-primary-dark text-surface font-semibold text-sm rounded-lg transition-colors text-center">
+          Start Free Audit
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Spacer for fixed nav -->
+<div class="h-16"></div>
+
+<script is:inline>
+  document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>
