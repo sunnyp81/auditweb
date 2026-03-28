@@ -1,0 +1,120 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Free Audit', href: '/free-website-audit/' },
+  { label: 'Online', href: '/free-website-audit/online/' },
+];
+
+const toc = [
+  { label: 'Benefits of Online Tools', id: 'benefits-of-online-tools' },
+  { label: 'How Our Online Audit Works', id: 'how-our-online-audit-works' },
+  { label: 'What Gets Checked', id: 'what-gets-checked' },
+  { label: 'Comparing Online Tools', id: 'comparing-online-tools' },
+  { label: 'Privacy and Security', id: 'privacy-and-security' },
+  { label: 'Getting Started', id: 'getting-started' },
+];
+---
+
+<ContentLayout
+  title="Online Website Audit Tool: No Download Required"
+  description="Run a complete website audit online — no software to install, no account to create. Enter your URL and get SEO, performance, and security results in your browser instantly."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>You should not need to install desktop software, create an account, or hand over your email address just to find out whether your website has problems. An <strong>online website audit tool</strong> runs entirely in your browser. Enter your URL, wait 60 seconds, and get a comprehensive analysis of your site's SEO, performance, security, and accessibility. No downloads. No signups. No friction between you and the information you need.</p>
+
+<p>Desktop audit tools like Screaming Frog and Sitebulb are powerful, but they require installation, configuration, and a learning curve that most website owners do not have time for. They are designed for SEO professionals who run audits daily. If you are a business owner, marketer, or developer who needs a quick health check on a site, an online tool gives you 80% of the insight in 1% of the time.</p>
+
+<p>Our online audit tool was built for this exact use case. It is fast, thorough enough to catch the issues that actually matter, and accessible to anyone with a browser and a URL.</p>
+
+<h2 id="benefits-of-online-tools">Benefits of Online Tools</h2>
+
+<p>Online audit tools have specific advantages over desktop software and paid platforms that make them the right choice for many situations.</p>
+
+<p><strong>Zero setup time.</strong> Desktop tools require downloading an installer, running through a setup wizard, configuring crawl settings, entering your URL, and waiting for the crawl to complete. An online tool skips every step except the URL. You go from "I wonder how my site is doing" to "here are the results" in under two minutes. When a client asks you to check their site during a meeting, an online tool delivers answers while the conversation is still happening.</p>
+
+<p><strong>Platform independence.</strong> Online tools work on any device with a browser — Windows, Mac, Linux, Chromebook, tablet, or phone. Desktop tools typically only run on Windows and Mac, and many are resource-intensive enough to slow down older machines. If you are on the road with only your phone and need to check a site, an online tool is your only option.</p>
+
+<p><strong>Always current.</strong> Desktop software needs updates. Sometimes the update process breaks your configuration or requires a new licence key. Online tools are always running the latest version because they update server-side. When Google introduces a new ranking factor or deprecates a tag, online tools can incorporate the change within days without requiring action from you.</p>
+
+<p><strong>No resource consumption.</strong> A full-site crawl with desktop software can consume significant CPU, memory, and bandwidth on your machine — especially for large sites. An online tool performs all processing server-side. Your computer is free to do other work while the scan runs.</p>
+
+<p><strong>Shareable results.</strong> Online audit results typically have a unique URL that you can share with colleagues, clients, or developers. This is far more convenient than exporting a report from desktop software, saving it as a PDF, and emailing it. Shared result URLs also allow others to see the same interactive report rather than a static document.</p>
+
+<p><strong>Free tier availability.</strong> Most desktop audit tools require a paid licence for any meaningful use. Online tools frequently offer free tiers that are sufficient for basic auditing. Our tool is completely free with no usage limits on the basic scan. This makes it accessible to small businesses, freelancers, and anyone who needs to check a site without committing to a subscription.</p>
+
+<h2 id="how-our-online-audit-works">How Our Online Audit Works</h2>
+
+<p>Our online audit tool is designed to be as simple as possible while still delivering genuinely useful results. Here is the process from start to finish.</p>
+
+<p><strong>Enter your URL.</strong> Type or paste any URL into the scanner input field. You can enter a bare domain (example.com), a full URL with protocol (https://www.example.com), or a specific page URL. If you enter a domain without a protocol, we will automatically try HTTPS first, then fall back to HTTP — this test itself tells us whether your site has SSL properly configured.</p>
+
+<p><strong>Automatic crawl configuration.</strong> Unlike desktop tools that require you to set crawl depth, respect robots.txt rules, configure user agent strings, and define URL inclusion patterns, our online tool handles all configuration automatically. We crawl with a standard browser user agent, respect robots.txt, follow redirects, and select up to 5 representative pages from different sections of your site. There are no settings to configure.</p>
+
+<p><strong>Real-time progress.</strong> As the scan runs, you see a live progress indicator showing which checks are currently being performed. This is not a fake progress bar — it reflects actual scan progress so you know what is happening and how much longer to expect. Most scans complete in 30-60 seconds.</p>
+
+<p><strong>Interactive results.</strong> Your results appear directly on the page as an interactive report. You can expand individual findings to see details, filter by severity (critical/warning/pass), filter by category (SEO/performance/security/accessibility), and sort by different criteria. The report is designed to help you find the information you need quickly rather than forcing you to scroll through everything sequentially.</p>
+
+<p><strong>Export options.</strong> You can save your results as a PDF using your browser's print function, copy the results URL to share with others, or take screenshots of specific sections. There is no proprietary export format to deal with.</p>
+
+<h2 id="what-gets-checked">What Gets Checked</h2>
+
+<p>Our online tool runs 25 checks across four categories. Each check is designed to catch issues that genuinely affect your website's search visibility, user experience, or security posture.</p>
+
+<p><strong>SEO checks (10).</strong> Title tag presence, uniqueness, and length on each crawled page. Meta description presence and optimal length. H1 tag presence and uniqueness. Heading hierarchy (H1 through H6 logical ordering). Canonical tag configuration. Robots meta directives (checking for accidental noindex). Image alt text coverage across all images found. Open Graph and Twitter Card meta tags for social sharing. XML sitemap existence and accessibility. Robots.txt presence and configuration.</p>
+
+<p><strong>Performance checks (6).</strong> Server response time measured as Time to First Byte. Total page weight including all resources. Count of individual HTTP requests per page. Detection of render-blocking CSS and JavaScript. Image format and compression analysis. Text compression verification (gzip or Brotli encoding).</p>
+
+<p><strong>Security checks (5).</strong> SSL certificate validity, chain completeness, and expiry date. Mixed content detection (HTTP resources loaded on HTTPS pages). HTTP Strict Transport Security header presence and configuration. Content-Security-Policy header presence. X-Frame-Options and X-Content-Type-Options header verification.</p>
+
+<p><strong>Accessibility checks (4).</strong> Colour contrast ratio estimation based on text and background colours detected in the page CSS. Image alt text coverage (shared with SEO category). Form input and label association verification. Viewport meta tag presence and mobile-friendly configuration.</p>
+
+<p>Every check produces a clear result: pass (green), warning (amber), or critical (red). Each result includes the affected URL, what was tested, what was found, and a brief explanation of why it matters. You do not need SEO expertise to understand the findings — they are written in plain language with specific, actionable descriptions.</p>
+
+<h2 id="comparing-online-tools">Comparing Online Tools</h2>
+
+<p>Not all online audit tools are created equal. Here is how to evaluate them and understand where our tool fits in the landscape.</p>
+
+<p><strong>Check coverage.</strong> Some online tools check only SEO factors. Others focus on performance. A good general-purpose audit tool covers SEO, performance, security, and accessibility because these areas are interconnected. A site with perfect SEO but broken SSL will still underperform. We cover all four areas because that is what a genuine health check requires.</p>
+
+<p><strong>Depth vs speed.</strong> There is a fundamental trade-off between how many pages a tool crawls and how quickly it returns results. Tools that crawl your entire site provide more thorough analysis but take much longer. Tools that check a single page return results in seconds but miss site-wide issues. Our tool balances this by sampling up to 5 pages from different site sections — enough to catch common patterns without requiring a full crawl.</p>
+
+<p><strong>Data requirements.</strong> Some online tools require you to create an account, verify site ownership, or connect Google Search Console before providing results. These tools can access more data and provide deeper analysis, but the setup barrier defeats the purpose of a quick online check. Our tool requires nothing but a URL because we believe the first audit should be frictionless. Deeper analysis can come later when you have confirmed the value.</p>
+
+<p><strong>Commercial model.</strong> Many "free" online audit tools gate their most useful findings behind a paywall. They show you that 8 issues were found but require a paid subscription to see what those issues actually are. This is frustrating and manipulative. Our free audit shows you every finding in full detail. We offer paid services for deeper analysis, but the free tool delivers complete, ungated results.</p>
+
+<p><strong>Accuracy.</strong> The most important factor is whether the tool's findings are correct. False positives (flagging issues that do not exist) waste your time. False negatives (missing real issues) give you false confidence. We design our checks to minimise both by testing against a diverse sample of real websites and continuously refining our thresholds based on feedback and real-world outcomes.</p>
+
+<h2 id="privacy-and-security">Privacy and Security</h2>
+
+<p>When you use an online audit tool, you are sending your URL to a third-party server. Understanding how your data is handled matters, especially for businesses with sensitive websites.</p>
+
+<p><strong>What we access.</strong> We access only publicly available information — the same HTML, headers, and resources that any visitor to your site would see. We do not attempt to access admin panels, login-protected areas, or any content behind authentication. We do not submit forms, inject code, or modify anything on your site. Our scanner is read-only.</p>
+
+<p><strong>What we store.</strong> We generate your audit results on the fly and display them in your browser. We do not permanently store your audit results, your URL, or any identifying information about you. Scan results are cached temporarily to serve the results page and are purged automatically. We do not build a database of audited sites.</p>
+
+<p><strong>What we do not do.</strong> We do not sell data about which sites have been audited. We do not share your URL with third parties. We do not use your site content for training data. We do not send follow-up emails because we do not have your email address. The audit is completely anonymous from your perspective.</p>
+
+<p><strong>Data transmission.</strong> All communication between your browser and our servers happens over HTTPS with TLS 1.3 encryption. Your URL and results are encrypted in transit. We do not use third-party analytics or tracking scripts on the results page.</p>
+
+<p>If you work in a regulated industry (healthcare, finance, government) and have concerns about any external tool accessing your website, consult your compliance team before running an audit. In most cases, because we only access publicly available information, there is no compliance concern — we see exactly what Google's crawler sees when it visits your site.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Using our online audit tool takes three steps and under two minutes.</p>
+
+<p><strong>Step 1: Enter your URL.</strong> Type or paste your website address into the scanner field on our <a href="/free-website-audit/">free audit page</a>. Any format works — with or without https://, with or without www.</p>
+
+<p><strong>Step 2: Wait for results.</strong> The scan runs for 30-60 seconds. Watch the progress indicator as each category of checks completes. If the scan takes longer than expected, your server response time is likely part of the problem — and that itself is a finding worth acting on.</p>
+
+<p><strong>Step 3: Review and act.</strong> Read your critical findings first. These are the issues causing the most damage right now. For each critical finding, decide whether you can fix it yourself or need to involve a developer. Then move to warnings. Passes confirm what is already working correctly.</p>
+
+<p>If you want to dive deeper into a specific area, explore our specialised audits: <a href="/free-website-audit/seo/">SEO audit</a> for search-specific analysis, <a href="/technical-website-audit/">technical audit</a> for infrastructure and crawlability, or our <a href="/website-audit-services/">professional services</a> for a comprehensive, expert-led review.</p>
+
+<p>The fastest way to improve your website is to start with the information you have. Run your online audit now and take the first step toward a healthier, higher-performing site.</p>
+
+</ContentLayout>

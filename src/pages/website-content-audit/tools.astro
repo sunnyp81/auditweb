@@ -1,0 +1,107 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Content Audit', href: '/website-content-audit/' },
+  { label: 'Tools', href: '/website-content-audit/tools/' },
+];
+
+const toc = [
+  { label: 'Screaming Frog', id: 'screaming-frog' },
+  { label: 'Google Analytics', id: 'google-analytics' },
+  { label: 'Google Search Console', id: 'google-search-console' },
+  { label: 'Semrush Content Audit', id: 'semrush-content-audit' },
+  { label: 'Ahrefs Content Explorer', id: 'ahrefs-content-explorer' },
+  { label: 'Surfer SEO', id: 'surfer-seo' },
+  { label: 'Clearscope', id: 'clearscope' },
+];
+---
+
+<ContentLayout
+  title="Website Content Audit Tools: Best Options for 2026"
+  description="Compare the best website content audit tools for 2026 including Screaming Frog, Google Analytics, Search Console, Semrush, Ahrefs, Surfer SEO, and Clearscope. Free and paid options reviewed."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>The right tools make the difference between a content audit that takes a week and one that takes a day. Manual content auditing — visiting each page, copying metrics into a spreadsheet, and eyeballing quality — does not scale beyond a handful of pages. You need software that can crawl your site, pull performance data, and help you evaluate content quality at scale.</p>
+
+  <p>No single tool does everything a content audit requires. You need a combination of crawling software, analytics platforms, and content optimisation tools working together. The tools below represent the best options available in 2026 across free and paid categories. We use all of them in our own audit workflow and recommend them based on thousands of hours of hands-on experience.</p>
+
+  <h2 id="screaming-frog">Screaming Frog</h2>
+
+  <p>Screaming Frog SEO Spider is the foundation tool for any content audit. It crawls your entire website and extracts structural data that no analytics platform provides: page titles, meta descriptions, H1 tags, word counts, canonical tags, hreflang attributes, internal link counts, response codes, and much more.</p>
+
+  <p>The free version crawls up to 500 URLs, which is sufficient for small business sites. The paid licence at approximately 259 USD per year removes the URL limit and adds advanced features like custom extraction, JavaScript rendering, and API integrations with Google Analytics, Search Console, Ahrefs, and Semrush.</p>
+
+  <p>For content audits specifically, Screaming Frog excels at identifying thin content through word count analysis, finding duplicate and near-duplicate pages through content similarity hashing, flagging missing or duplicated meta descriptions and title tags, and mapping internal link structures to reveal orphan pages. You can also configure custom extraction rules to pull specific elements like publish dates, author names, or schema markup from your pages.</p>
+
+  <p>Export your crawl data as a CSV and use it as the backbone of your content audit spreadsheet. Every other data source you add — analytics, backlinks, manual scores — gets matched against this URL inventory.</p>
+
+  <h2 id="google-analytics">Google Analytics</h2>
+
+  <p>Google Analytics 4 provides the user behaviour data that tells you what happens after someone lands on your content. While search tools tell you how people find your pages, GA4 tells you whether those pages actually deliver value once visited.</p>
+
+  <p>Key GA4 metrics for content auditing include sessions by page, which shows total traffic from all sources, not just organic. Engagement rate replaces the old bounce rate metric and measures the percentage of sessions that were meaningful — lasting more than 10 seconds, triggering a conversion, or involving multiple page views. Average engagement time per page tells you how long people actually spend reading your content. Conversions per page connect content performance to business outcomes.</p>
+
+  <p>Use the Pages and Screens report in GA4 to export page-level data for the past 12 months. Set a comparison period against the previous 12 months to identify content that is declining in performance — a strong signal that the page needs updating.</p>
+
+  <p>GA4's Explorations feature lets you build custom reports that combine dimensions and metrics specifically for audit purposes. Create an exploration with page path, sessions, engagement rate, and conversions to get exactly the data you need in one export. Save the exploration as a template so you can reuse it for future audits without rebuilding from scratch.</p>
+
+  <h2 id="google-search-console">Google Search Console</h2>
+
+  <p>Google Search Console is the only source of truth for how Google sees your content. It shows which queries trigger your pages in search results, how often those pages appear, what percentage of impressions turn into clicks, and where your pages rank on average.</p>
+
+  <p>For a content audit, the Performance report is your primary data source. Filter by page to see individual URL performance. Export the last 12 months of data at the page level to get clicks, impressions, CTR, and average position for every indexed URL. Compare this against your crawl inventory — any URL that appears in your crawl but not in GSC data is either not indexed or receives zero impressions, both of which are red flags.</p>
+
+  <p>The Index Coverage report reveals pages that Google has chosen not to index and the reasons why. Common exclusion reasons include duplicate without canonical, crawled but not indexed, and noindex tag detected. These pages often represent wasted content effort that needs to be fixed or removed.</p>
+
+  <p>The URL Inspection tool lets you check individual pages for indexation status, detected canonical URL, mobile usability, and rich results eligibility. Use it selectively on pages that show unexpected performance in your audit data.</p>
+
+  <p>If you are auditing a large site, use the Search Analytics for Sheets Google Sheets add-on or the GSC API to pull data programmatically. The web interface limits exports to 1,000 rows, which is not enough for sites with thousands of pages.</p>
+
+  <h2 id="semrush-content-audit">Semrush Content Audit</h2>
+
+  <p>Semrush offers a dedicated Content Audit tool that automates much of the manual work involved in a content audit. You connect your Google Analytics and Search Console accounts, select which site sections to audit, and Semrush builds a page-by-page inventory with performance data already attached.</p>
+
+  <p>The tool automatically categorises pages into four groups: rewrite or remove (poor performing content that needs major attention), need to update (content showing declining metrics), quick review (pages with minor issues), and poor content (thin or low-quality pages based on word count and engagement signals). This automated categorisation gives you a useful starting point, though you should always validate the suggestions manually.</p>
+
+  <p>Semrush also tracks content performance over time if you run audits regularly. You can see whether pages you updated in a previous audit cycle improved or declined, creating an accountability loop for your content team.</p>
+
+  <p>The Content Audit tool is available on Semrush's Guru plan and above, starting at approximately 249 USD per month. If you already use Semrush for keyword research and competitor analysis, the content audit feature adds significant value to your subscription. If content auditing is your only need, the price is harder to justify — you can achieve similar results manually using GSC and GA4 data in a spreadsheet.</p>
+
+  <h2 id="ahrefs-content-explorer">Ahrefs Content Explorer</h2>
+
+  <p>Ahrefs Content Explorer is primarily a content research tool, but it doubles as a powerful audit tool when you use it to analyse your own domain. Enter your domain with a site: prefix and Content Explorer returns every indexed page along with organic traffic estimates, referring domain counts, social shares, and word counts.</p>
+
+  <p>What makes Content Explorer particularly useful for content audits is its filtering capability. You can filter by organic traffic to isolate pages with zero estimated traffic. Filter by referring domains to find pages with no backlinks. Filter by published date to surface old content that may need refreshing. Combine filters to find the most problematic pages: zero traffic, zero backlinks, and published more than two years ago. These pages are almost always removal or consolidation candidates.</p>
+
+  <p>Content Explorer also shows traffic trends over time for each page as a small sparkline chart. Pages with declining trend lines are decaying and need attention even if their absolute traffic numbers still look reasonable. Catching decay early — before the page falls off page one — is far easier than trying to recover a page that has dropped to page three.</p>
+
+  <p>Ahrefs plans that include Content Explorer start at the Standard tier, approximately 249 USD per month. Like Semrush, the value proposition is strongest when you already use Ahrefs for other SEO work and the content audit capability is an added benefit.</p>
+
+  <h2 id="surfer-seo">Surfer SEO</h2>
+
+  <p>Surfer SEO shifts the content audit focus from performance metrics to on-page content quality. While the tools above tell you how your content is performing, Surfer tells you why and what to change.</p>
+
+  <p>Surfer's Content Audit feature analyses a specific page against the top-ranking competitors for its target keyword. It evaluates content length, keyword density, heading structure, NLP term usage, image count, and paragraph structure. The output is a Content Score from 0 to 100 and a list of specific recommendations to improve the page.</p>
+
+  <p>The Audit tool shows you exactly which terms and entities the top-ranking pages use that your page is missing. It provides word count targets based on what is actually ranking, not arbitrary benchmarks. It flags structural issues like too few headings, missing image alt text, or paragraphs that are too long.</p>
+
+  <p>Surfer is most valuable for the update and rewrite actions in your content audit. Once you have identified which pages need improvement using performance data from GSC and GA4, use Surfer to diagnose exactly what each page needs to change to compete with the current top results. Pricing starts at approximately 99 USD per month for the Essential plan, which includes 30 Content Editor articles and 20 audit credits per month.</p>
+
+  <h2 id="clearscope">Clearscope</h2>
+
+  <p>Clearscope is a content optimisation platform that serves a similar purpose to Surfer SEO but with a different approach and interface. It analyses top-ranking content for a given keyword and produces a report showing the terms, entities, and topics that high-performing pages include.</p>
+
+  <p>For content audits, Clearscope's Content Inventory feature connects to your CMS and monitors your published content continuously. It grades each page against its target keyword and alerts you when pages start underperforming relative to competitors. This turns content auditing from a periodic manual exercise into an automated ongoing process.</p>
+
+  <p>Clearscope reports use a letter grading system from F to A++. Pages graded C or below typically need significant content improvements to compete. The reports include specific term recommendations with usage counts, readability analysis, and word count comparisons against the competitive set.</p>
+
+  <p>The platform integrates with Google Docs and WordPress, allowing writers to optimise content in real time as they write or edit. This is particularly useful during the execution phase of a content audit when you are updating dozens of pages and need to ensure each rewrite actually improves the content's competitive positioning.</p>
+
+  <p>Clearscope pricing starts at approximately 189 USD per month for the Essentials plan. It is positioned as a premium tool and the pricing reflects that. Teams that produce or audit large volumes of content regularly find the investment worthwhile. For occasional audits, the per-month cost may be harder to justify compared to Surfer's lower entry point.</p>
+
+  <p>The best content audit toolkit combines a crawler (Screaming Frog), free analytics platforms (GA4 and GSC), and one content optimisation tool (Surfer or Clearscope). Start with the free tools and add paid options as your auditing volume and content investment justify the expense. If you want professional help assembling your toolkit or running the audit itself, <a href="/website-audit-services/">explore our content audit services</a>.</p>
+</ContentLayout>

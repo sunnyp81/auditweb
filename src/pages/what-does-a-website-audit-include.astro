@@ -1,0 +1,130 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'What Does an Audit Include', href: '/what-does-a-website-audit-include/' },
+];
+
+const toc = [
+  { label: 'SEO Analysis', id: 'seo-analysis' },
+  { label: 'Technical Review', id: 'technical-review' },
+  { label: 'Content Evaluation', id: 'content-evaluation' },
+  { label: 'UX Assessment', id: 'ux-assessment' },
+  { label: 'Security Check', id: 'security-check' },
+  { label: 'Performance Analysis', id: 'performance-analysis' },
+  { label: 'Deliverables', id: 'deliverables' },
+];
+---
+
+<ContentLayout
+  title="What Does a Website Audit Include? Full Breakdown"
+  description="A complete website audit covers SEO, technical infrastructure, content quality, user experience, security, and performance. Here is exactly what each section includes and why."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>A <strong>website audit</strong> is a comprehensive health check that examines every factor affecting how your site performs — for search engines, for users, and for your business. But the term "website audit" is used loosely across the industry, and the scope can vary enormously between providers. Some "audits" are little more than a one-page checklist. Others are 80-page technical documents that require a specialist to interpret.</p>
+
+<p>This page explains exactly what a thorough website audit includes, broken down into seven areas. Whether you are evaluating audit tools, comparing agency proposals, or planning to conduct an audit yourself, this breakdown gives you a clear standard for what "comprehensive" actually means.</p>
+
+<p>A complete audit examines your site across six analytical dimensions — SEO, technical infrastructure, content quality, user experience, security, and performance — and produces a structured set of deliverables that tell you what is wrong, why it matters, and what to fix first.</p>
+
+<h2 id="seo-analysis">SEO Analysis</h2>
+
+<p>The SEO analysis component examines how well your site communicates with search engines and how effectively it competes for organic visibility. This is typically the largest section of a website audit because it encompasses both on-page and off-page factors.</p>
+
+<p><strong>On-page SEO.</strong> Every indexable page is evaluated for title tag quality (presence, uniqueness, length, keyword relevance), meta description effectiveness, heading hierarchy (proper H1-H6 structure), image optimisation (alt text, file size, format), internal linking patterns, and URL structure. The audit identifies pages where these elements are missing, duplicated, or poorly optimised, and quantifies the impact on search visibility.</p>
+
+<p><strong>Keyword mapping.</strong> A thorough audit evaluates whether your existing pages target appropriate keywords and whether there are gaps in your keyword coverage. This involves comparing your current ranking keywords against search demand data to identify high-value terms where you have no content, pages cannibalising each other by targeting the same keyword, and existing content that targets keywords with negligible search volume.</p>
+
+<p><strong>Indexation status.</strong> The audit checks how many of your pages are actually in Google's index versus how many should be. Using Google Search Console data, the audit identifies pages excluded from the index and the specific reasons — noindex directives, canonical conflicts, crawl errors, thin content, or duplicate content. It also flags pages that are indexed but should not be (admin pages, tag archives, parameter variations) because these waste crawl budget and can dilute your site's quality signals.</p>
+
+<p><strong>Backlink profile.</strong> While not always included in free or basic audits, a comprehensive audit analyses your inbound link profile. This includes total referring domains, the quality distribution of linking sites, anchor text patterns, toxic or spammy links that could trigger penalties, and comparison against competitors' backlink profiles. The backlink section identifies both risks (links that need disavowal) and opportunities (high-value sites that link to competitors but not to you).</p>
+
+<p><strong>Structured data.</strong> The audit validates all Schema.org markup on your site, checking for syntax errors, missing required properties, and opportunities to add structured data that could enable rich results. Pages with FAQ schema, HowTo schema, product schema, or review schema can earn enhanced search result appearances that significantly increase click-through rates.</p>
+
+<h2 id="technical-review">Technical Review</h2>
+
+<p>The technical review examines the infrastructure layer of your website — the server configuration, code quality, and architectural decisions that determine whether search engines can efficiently crawl, render, and index your content.</p>
+
+<p><strong>Crawlability.</strong> The audit examines your robots.txt configuration, XML sitemap health (validity, completeness, proper referencing), crawl depth analysis (how many clicks from the homepage to reach any page), redirect chains and loops, and orphan pages that have no internal links pointing to them. Crawlability issues prevent search engines from discovering your content, making every other optimisation pointless.</p>
+
+<p><strong>Rendering analysis.</strong> For sites that use JavaScript frameworks (React, Vue, Angular, Next.js), the audit compares the initial HTML response with the JavaScript-rendered version to identify content that is invisible to search engine crawlers. This includes checking whether Google's renderer can access and execute all necessary JavaScript files, whether critical content appears in the initial HTML, and whether dynamic content loads quickly enough to be captured during crawling.</p>
+
+<p><strong>Server response.</strong> The audit verifies HTTP response codes across the entire site, identifies slow-responding pages, tests server behaviour under concurrent request load, and checks for proper caching headers. It also evaluates your hosting infrastructure — whether you use a CDN, whether your server is geographically appropriate for your target audience, and whether your hosting plan provides adequate resources for your traffic volume.</p>
+
+<p><strong>URL architecture.</strong> Clean, logical URL structures help both users and search engines understand your site hierarchy. The audit evaluates URL length, use of descriptive path segments, consistency of conventions (trailing slashes, lowercase), handling of parameters, and the overall logical relationship between URL paths and content hierarchy.</p>
+
+<p><strong>Internationalisation.</strong> For multilingual or multi-regional sites, the audit checks hreflang implementation, language-specific URL structures, canonical configuration across language variants, and proper content targeting. Incorrect hreflang implementation is one of the most technically complex and commonly misconfigured aspects of SEO.</p>
+
+<h2 id="content-evaluation">Content Evaluation</h2>
+
+<p>The content evaluation goes beyond checking whether content exists to assessing whether it is effective — whether it satisfies search intent, demonstrates expertise, and serves your business goals.</p>
+
+<p><strong>Content inventory.</strong> The audit catalogues every page on your site, classifying each by content type (product, service, blog, landing page, utility), word count, last update date, and organic traffic. This inventory reveals the overall composition of your site and identifies content that is outdated, thin, duplicate, or performing below its potential.</p>
+
+<p><strong>Search intent alignment.</strong> For your highest-traffic pages and most important target keywords, the audit evaluates whether your content matches the intent behind the search query. A page targeting "best project management software" that only describes one product is misaligned with the comparison intent behind that query. Intent misalignment is one of the most common reasons that well-optimised pages fail to rank.</p>
+
+<p><strong>Content quality signals.</strong> The audit assesses readability (sentence length, vocabulary complexity), topic comprehensiveness (does the content cover the subtopics that top-ranking pages address), E-E-A-T signals (evidence of Experience, Expertise, Authoritativeness, and Trustworthiness), and content freshness (whether information is current and accurate). These qualitative factors increasingly determine rankings in competitive markets.</p>
+
+<p><strong>Thin and duplicate content.</strong> Pages with very little unique content — product pages with only manufacturer descriptions, tag archives that replicate category pages, location pages with identical text and only the city name changed — can trigger quality filters that suppress your entire site. The audit identifies all thin and duplicate content and recommends consolidation, expansion, or removal for each case.</p>
+
+<p><strong>Content gaps.</strong> By analysing your existing content against competitor coverage and search demand data, the audit identifies topics and questions that your target audience is searching for but your site does not address. These gaps represent direct opportunities for new content that can capture additional organic traffic.</p>
+
+<h2 id="ux-assessment">UX Assessment</h2>
+
+<p>User experience directly affects SEO through engagement metrics (bounce rate, time on site, pages per session) and through Google's page experience signals. A website audit evaluates the UX factors most relevant to search performance.</p>
+
+<p><strong>Mobile usability.</strong> With Google's mobile-first indexing, your mobile experience is your primary experience. The audit tests responsive behaviour across device sizes, checks touch target spacing, verifies that text is readable without zooming, and identifies content that is hidden or inaccessible on mobile devices. It also checks for intrusive interstitials (popups, overlays, banners) that violate Google's guidelines and can result in ranking penalties.</p>
+
+<p><strong>Navigation and information architecture.</strong> The audit evaluates whether your site's navigation structure allows users to find any page within 3 clicks, whether menu labels are clear and descriptive, whether breadcrumb navigation is implemented, and whether the relationship between pages is logically communicated through navigation elements. Poor information architecture causes both user confusion and crawlability problems.</p>
+
+<p><strong>Core Web Vitals.</strong> Largest Contentful Paint (loading speed), Cumulative Layout Shift (visual stability), and Interaction to Next Paint (interactivity) are confirmed Google ranking signals. The audit measures these metrics on representative pages using both lab data (controlled tests) and field data (real user measurements from the Chrome User Experience Report), identifies the specific elements causing poor scores, and provides targeted remediation steps.</p>
+
+<p><strong>Conversion path analysis.</strong> For business websites, the audit traces the path from entry page to conversion action (contact form, purchase, signup) and identifies friction points — confusing calls to action, excessive form fields, missing trust signals, or broken conversion elements. While conversion optimisation is a discipline in itself, the audit surfaces the most obvious barriers that are preventing your traffic from becoming revenue.</p>
+
+<h2 id="security-check">Security Check</h2>
+
+<p>Security affects both user trust and search visibility. Google uses HTTPS as a ranking signal and may display warnings for sites with security issues, directly impacting click-through rates from search results.</p>
+
+<p><strong>SSL/TLS configuration.</strong> The audit verifies your certificate's validity, chain of trust, and expiry date. It checks for the correct implementation of HTTP-to-HTTPS redirects, tests for mixed content (HTTP resources loaded on HTTPS pages), and evaluates your TLS version and cipher suite configuration. Weak TLS configurations can expose user data and trigger browser warnings.</p>
+
+<p><strong>Security headers.</strong> The audit checks for critical HTTP security headers: HTTP Strict Transport Security (HSTS) to prevent protocol downgrade attacks, Content-Security-Policy (CSP) to prevent cross-site scripting, X-Frame-Options to prevent clickjacking, X-Content-Type-Options to prevent MIME-type sniffing, and Referrer-Policy to control information leakage. Missing security headers expose your site and your users to preventable attacks.</p>
+
+<p><strong>Vulnerability scanning.</strong> The audit checks for exposed sensitive files (wp-config.php, .env, .git directory, database dumps), outdated CMS versions with known vulnerabilities, visible error messages that expose server information, and open directory listings. These are the low-hanging fruit that automated attack tools scan for, and they should never be accessible on a production website.</p>
+
+<p><strong>Third-party script review.</strong> Many websites load dozens of third-party scripts — analytics, advertising, chat widgets, social media embeds, tracking pixels. Each script is a potential security vulnerability and privacy concern. The audit inventories all third-party scripts, identifies those loading from unknown or untrusted domains, and flags scripts that are excessively large or executing suspicious code.</p>
+
+<h2 id="performance-analysis">Performance Analysis</h2>
+
+<p>Performance affects everything: rankings, user engagement, conversion rates, and server costs. The performance analysis section of a website audit identifies what is slowing your site down and quantifies the impact.</p>
+
+<p><strong>Server performance.</strong> Time to First Byte (TTFB) measures how quickly your server responds to a request. The audit tests TTFB from multiple geographic locations, identifies slow server-side processes (database queries, API calls, server-side rendering), and evaluates your hosting infrastructure's capacity relative to your traffic volume. A target TTFB of under 200ms is achievable for most websites with proper server configuration.</p>
+
+<p><strong>Resource optimisation.</strong> The audit analyses every resource loaded by your pages: CSS files, JavaScript bundles, images, fonts, and third-party scripts. For each resource category, it identifies opportunities for reduction: unused CSS that should be purged, JavaScript that should be deferred or lazy-loaded, images that should be compressed or converted to modern formats, and font files that should be subsetted or preloaded.</p>
+
+<p><strong>Caching strategy.</strong> Proper caching dramatically reduces load times for returning visitors and reduces server load. The audit checks browser caching headers (Cache-Control, ETag, Expires) for all resource types, verifies CDN configuration if applicable, and identifies resources with suboptimal cache lifetimes. Static assets like images and fonts should be cached for at least one year. HTML pages may need shorter cache times depending on how frequently they change.</p>
+
+<p><strong>Rendering performance.</strong> Beyond server response time, the audit examines client-side rendering performance: how quickly the browser can parse and execute your CSS and JavaScript, whether critical rendering path resources are optimised, whether images above the fold are preloaded, and whether layout shifts occur during page load. This analysis requires browser-based testing (Lighthouse or WebPageTest) and reveals issues that server-side analysis alone cannot detect.</p>
+
+<p><strong>Mobile performance.</strong> Mobile devices have less processing power and often slower network connections than desktops. The audit tests performance on simulated mobile hardware and network conditions to identify resources and code patterns that are acceptable on desktop but problematic on mobile. This includes large JavaScript bundles that take seconds to parse on mid-range phones and high-resolution images served to small screens.</p>
+
+<h2 id="deliverables">Deliverables</h2>
+
+<p>A professional website audit produces several deliverables. Understanding what you should receive helps you evaluate audit proposals and hold providers accountable.</p>
+
+<p><strong>Executive summary.</strong> A 1-2 page overview that communicates the key findings and overall health status in business language. This is designed for stakeholders who need to understand the situation and approve investment without reading the full technical report. It should include the overall health score, the top 5 findings by impact, and a clear recommendation on priority investment areas.</p>
+
+<p><strong>Detailed findings report.</strong> The comprehensive technical document that lists every issue found, organised by category and severity. Each finding includes the affected URLs, a clear explanation of the issue, why it matters (impact on traffic, rankings, or user experience), and specific steps to fix it. The best reports include screenshots, code examples, and configuration snippets that developers can implement directly.</p>
+
+<p><strong>Prioritised action plan.</strong> A ranked list of recommended actions ordered by expected impact and implementation effort. Quick wins (high impact, low effort) are listed first. This document serves as a project plan that development and marketing teams can work through systematically.</p>
+
+<p><strong>Benchmark data.</strong> Current measurements for key metrics — organic traffic, indexed page count, Core Web Vitals scores, security header coverage, crawl errors — that serve as a baseline for measuring improvement. Without benchmark data, you cannot demonstrate the ROI of the fixes you implement.</p>
+
+<p><strong>Competitor comparison.</strong> Where relevant, the audit includes a comparison of your technical and content metrics against your top organic competitors. This context helps you understand not just where you are falling short of best practice, but where you are falling short of your specific competitive set.</p>
+
+<p>If an audit provider cannot clearly describe these deliverables before you engage them, that is a red flag. A professional audit is a defined scope of work with specific outputs, not a vague promise to "look at your site". Use this breakdown as your checklist when evaluating providers or when planning a DIY audit using our <a href="/free-website-audit/">free audit tool</a> as a starting point.</p>
+
+</ContentLayout>

@@ -1,0 +1,139 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Security Audit', href: '/website-security-audit/' },
+  { label: 'Checklist', href: '/website-security-audit/checklist/' },
+];
+
+const toc = [
+  { label: 'SSL and HTTPS', id: 'ssl-and-https' },
+  { label: 'Security Headers', id: 'security-headers' },
+  { label: 'Authentication', id: 'authentication' },
+  { label: 'Software Updates', id: 'software-updates' },
+  { label: 'File Permissions', id: 'file-permissions' },
+  { label: 'Input Validation', id: 'input-validation' },
+  { label: 'Backup Strategy', id: 'backup-strategy' },
+  { label: 'Monitoring', id: 'monitoring' },
+];
+---
+
+<ContentLayout
+  title="Website Security Audit Checklist: 30+ Points"
+  description="A comprehensive website security audit checklist covering SSL, security headers, authentication, software updates, file permissions, input validation, backups, and monitoring. Over 30 actionable checks."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>A website security audit is a structured examination of your site's defences against cyberattacks, data breaches, and unauthorised access. The consequences of skipping it are severe: data theft, ransomware, defacement, SEO spam injection, regulatory fines, and permanent loss of customer trust. The average cost of a data breach reached 4.88 million USD globally in 2024 according to IBM, and small to medium businesses are increasingly targeted because attackers know their defences are weaker.</p>
+
+  <p>This checklist covers over 30 security checks organised into eight categories. It is designed to be practical — each item is something you can test and fix without a computer science degree. Some checks require technical skills or server access, but many can be verified using free online tools in minutes. Work through the checklist systematically, document your findings, and prioritise fixes by severity.</p>
+
+  <h2 id="ssl-and-https">SSL and HTTPS</h2>
+
+  <p>SSL certificates encrypt the connection between your server and your visitors' browsers. Without HTTPS, any data transmitted — login credentials, form submissions, payment details — can be intercepted by anyone on the same network. Google has used HTTPS as a ranking signal since 2014, and modern browsers display "Not Secure" warnings on HTTP pages.</p>
+
+  <ul>
+    <li><strong>SSL certificate is installed and valid</strong> — visit your site and check for the padlock icon. Click it to verify the certificate details including expiry date and issuing authority.</li>
+    <li><strong>Certificate is not expired or expiring within 30 days</strong> — expired certificates trigger browser security warnings that will immediately drive visitors away. Set up expiry monitoring with a tool like SSL Labs or UptimeRobot.</li>
+    <li><strong>All pages load over HTTPS</strong> — check that HTTP URLs redirect to HTTPS with a 301. Mixed content warnings occur when a page loads over HTTPS but includes resources (images, scripts, stylesheets) loaded over HTTP.</li>
+    <li><strong>HSTS header is enabled</strong> — HTTP Strict Transport Security tells browsers to always connect via HTTPS, preventing protocol downgrade attacks. The header should include a max-age of at least 31536000 seconds (one year).</li>
+    <li><strong>TLS version is 1.2 or higher</strong> — TLS 1.0 and 1.1 are deprecated and contain known vulnerabilities. Your server should only accept TLS 1.2 and 1.3 connections. Test with SSL Labs Server Test.</li>
+    <li><strong>Weak cipher suites are disabled</strong> — older cipher suites like RC4, DES, and 3DES are vulnerable to attack. Your server configuration should only offer strong ciphers. SSL Labs grades your cipher suite configuration as part of its test.</li>
+  </ul>
+
+  <h2 id="security-headers">Security Headers</h2>
+
+  <p>Security headers are HTTP response headers that instruct browsers to enable specific security features. They are one of the easiest and most impactful security improvements you can make because they require only server configuration changes, no code modifications.</p>
+
+  <ul>
+    <li><strong>Content-Security-Policy (CSP)</strong> — defines which sources of content (scripts, styles, images, fonts) are allowed to load on your pages. A strong CSP prevents cross-site scripting (XSS) attacks by blocking inline scripts and unauthorised external resources. Start with a report-only policy to identify violations before enforcing.</li>
+    <li><strong>X-Content-Type-Options: nosniff</strong> — prevents browsers from MIME-type sniffing, which can turn an innocuous-looking file into an executable script. This header should be present on every response.</li>
+    <li><strong>X-Frame-Options: DENY or SAMEORIGIN</strong> — prevents your site from being embedded in an iframe on another domain, protecting against clickjacking attacks. Use DENY unless you specifically need iframes from your own domain.</li>
+    <li><strong>Referrer-Policy</strong> — controls how much referrer information is sent when users navigate away from your site. Setting strict-origin-when-cross-origin provides useful analytics data without leaking sensitive URL paths to third parties.</li>
+    <li><strong>Permissions-Policy</strong> — restricts which browser features (camera, microphone, geolocation, payment) your site can access. Disable features you do not use to reduce your attack surface.</li>
+  </ul>
+
+  <p>Test your security headers at securityheaders.com. The tool scans your site and grades your header implementation from F to A+. Most sites score a D or lower on their first test because security headers are rarely configured during initial site setup.</p>
+
+  <h2 id="authentication">Authentication</h2>
+
+  <p>Authentication controls who can access your site's admin areas, user accounts, and protected content. Weak authentication is one of the most exploited attack vectors because it requires no technical sophistication — attackers simply guess or steal credentials.</p>
+
+  <ul>
+    <li><strong>Admin URLs are non-default</strong> — WordPress sites using /wp-admin and /wp-login.php are constantly scanned by bots. Change the login URL using a security plugin or server-level redirect to reduce automated attack volume.</li>
+    <li><strong>Strong password policy is enforced</strong> — require passwords of at least 12 characters with a mix of character types. Reject common passwords using a blocklist. Consider implementing passkey support for passwordless authentication.</li>
+    <li><strong>Two-factor authentication is enabled for all admin accounts</strong> — 2FA dramatically reduces the risk of account compromise even if passwords are stolen. Use TOTP-based 2FA (Google Authenticator, Authy) rather than SMS, which is vulnerable to SIM swapping.</li>
+    <li><strong>Failed login attempts are rate-limited</strong> — after five to ten failed attempts, lock the account temporarily or require a CAPTCHA. This prevents brute-force password guessing attacks.</li>
+    <li><strong>Session management is secure</strong> — session cookies should have the Secure, HttpOnly, and SameSite attributes set. Session tokens should expire after a reasonable period of inactivity (30 to 60 minutes for admin sessions).</li>
+    <li><strong>Default credentials are changed</strong> — check that no admin account uses default usernames like "admin" or "administrator." Default credentials are the first thing attackers try.</li>
+  </ul>
+
+  <h2 id="software-updates">Software Updates</h2>
+
+  <p>Unpatched software is the leading cause of website compromises. When a vulnerability is discovered and a patch is released, attackers reverse-engineer the patch to understand the vulnerability and begin scanning the internet for unpatched sites. The window between patch release and active exploitation is often measured in days, not weeks.</p>
+
+  <ul>
+    <li><strong>CMS is running the latest stable version</strong> — whether you use WordPress, Drupal, Joomla, or another CMS, it must be current. Check your CMS dashboard for available updates.</li>
+    <li><strong>All plugins and extensions are updated</strong> — plugins are the most common entry point for WordPress attacks. A single outdated plugin with a known vulnerability can compromise your entire site.</li>
+    <li><strong>Unused plugins and themes are removed</strong> — deactivated plugins can still be exploited if their files are accessible on the server. Delete anything you are not actively using.</li>
+    <li><strong>Server software is current</strong> — PHP, Node.js, Python, Apache, Nginx, and your database server all need regular updates. Check with your hosting provider if you do not manage the server directly.</li>
+    <li><strong>Automatic updates are enabled where appropriate</strong> — WordPress supports auto-updates for minor releases and plugins. Enable them for security patches at minimum. Test major updates on a staging environment first.</li>
+  </ul>
+
+  <h2 id="file-permissions">File Permissions</h2>
+
+  <p>File permissions determine who can read, write, and execute files on your server. Overly permissive settings allow attackers who gain limited access to escalate their privileges, modify files, and install malware.</p>
+
+  <ul>
+    <li><strong>Directories are set to 755</strong> — the owner can read, write, and execute. Group and public can read and execute only. Never use 777, which gives everyone full permissions.</li>
+    <li><strong>Files are set to 644</strong> — the owner can read and write. Group and public can read only. Configuration files containing credentials should be set to 600 (owner read and write only).</li>
+    <li><strong>wp-config.php or equivalent configuration file is protected</strong> — this file contains database credentials and security keys. It should not be accessible via the web. Move it above the web root or block access with server rules.</li>
+    <li><strong>Directory listing is disabled</strong> — without this, visiting a directory URL (like /uploads/) shows a list of every file in it. Disable directory listing in your server configuration.</li>
+    <li><strong>Upload directories do not execute scripts</strong> — attackers often upload malicious PHP or JavaScript files through form uploads or compromised plugins. Configure your server to prevent script execution in upload directories.</li>
+  </ul>
+
+  <h2 id="input-validation">Input Validation</h2>
+
+  <p>Every form field, URL parameter, and data input on your site is a potential attack vector. Input validation ensures that only expected data types and formats are accepted, preventing injection attacks that can compromise your database, execute malicious code, or steal user data.</p>
+
+  <ul>
+    <li><strong>All form inputs are validated server-side</strong> — client-side validation (JavaScript) is easily bypassed. Server-side validation is the real security boundary. Validate data type, length, format, and range for every input.</li>
+    <li><strong>SQL injection is prevented</strong> — use parameterised queries or prepared statements for all database interactions. Never concatenate user input directly into SQL queries. Test with tools like SQLMap.</li>
+    <li><strong>Cross-site scripting (XSS) is prevented</strong> — encode all user-supplied output displayed on pages. Use context-appropriate encoding — HTML encoding for HTML contexts, JavaScript encoding for script contexts, URL encoding for URLs.</li>
+    <li><strong>File uploads are restricted</strong> — if your site accepts file uploads, validate file type by checking the actual file content (magic bytes), not just the extension. Restrict allowed types to only what is needed. Limit file sizes. Store uploads outside the web root.</li>
+    <li><strong>CSRF protection is implemented</strong> — cross-site request forgery tokens should be included in every form that performs a state-changing action (creating, updating, or deleting data). Verify the token on the server before processing the request.</li>
+    <li><strong>URL parameters are sanitised</strong> — any data received through query strings must be validated and sanitised before use. Never trust URL parameters for security decisions.</li>
+  </ul>
+
+  <h2 id="backup-strategy">Backup Strategy</h2>
+
+  <p>Backups are your last line of defence. When everything else fails — when an attacker bypasses your security measures, when a server fails, when someone accidentally deletes the database — backups are what bring your site back. A security audit must verify that backups exist, work, and can be restored.</p>
+
+  <ul>
+    <li><strong>Automated backups run daily</strong> — manual backups are forgotten. Set up automated daily backups of both files and the database.</li>
+    <li><strong>Backups are stored off-site</strong> — backups stored on the same server as your website are destroyed if the server is compromised or fails. Store backups in a separate location: a different server, cloud storage (S3, Google Cloud Storage), or a dedicated backup service.</li>
+    <li><strong>Backup retention covers at least 30 days</strong> — keep daily backups for 30 days and weekly backups for 90 days at minimum. If a compromise goes undetected for a week, you need clean backups from before the breach.</li>
+    <li><strong>Restore process has been tested</strong> — a backup that cannot be restored is not a backup. Test your restore process on a staging environment at least quarterly. Document the exact steps so anyone on the team can perform a restore in an emergency.</li>
+    <li><strong>Database and files are backed up separately</strong> — this allows you to restore one without the other if needed. Database corruption does not always coincide with file system compromise.</li>
+  </ul>
+
+  <h2 id="monitoring">Monitoring</h2>
+
+  <p>Security monitoring detects attacks in progress and compromises that have already occurred. Without monitoring, a breach can go undetected for weeks or months, giving attackers time to steal data, inject spam, and establish persistent access.</p>
+
+  <ul>
+    <li><strong>File integrity monitoring is active</strong> — tools like Sucuri, Wordfence, or OSSEC monitor your files for unauthorised changes. Any unexpected modification to a core file, plugin, or theme triggers an alert.</li>
+    <li><strong>Login attempts are logged</strong> — record all authentication attempts including IP address, timestamp, username, and success or failure. Review logs weekly for patterns like brute-force attacks from specific IPs.</li>
+    <li><strong>Uptime monitoring is in place</strong> — use UptimeRobot, Pingdom, or a similar service to check your site every one to five minutes and alert you immediately when it goes down.</li>
+    <li><strong>Google Search Console is monitored</strong> — GSC alerts you to security issues Google detects, including malware warnings, social engineering, and hacked content. Check the Security and Manual Actions section regularly.</li>
+    <li><strong>Web application firewall (WAF) is active</strong> — a WAF like Cloudflare, Sucuri, or AWS WAF filters malicious traffic before it reaches your server. It blocks common attack patterns including SQL injection, XSS, and DDoS attacks.</li>
+    <li><strong>Error logs are reviewed regularly</strong> — server error logs often contain early signs of attack: unusual 404 patterns (directory scanning), repeated 403 errors (access attempts), or 500 errors caused by exploitation attempts.</li>
+    <li><strong>Blacklist monitoring is set up</strong> — check whether your domain appears on any blacklists (Google Safe Browsing, Norton Safe Web, Spamhaus). Being blacklisted means your site has been flagged as dangerous, which destroys traffic and trust. Catch it early and resolve it fast.</li>
+  </ul>
+
+  <p>Work through this checklist systematically and document your findings in a spreadsheet with columns for the check item, current status (pass, fail, partial), severity (critical, high, medium, low), and planned fix date. Address critical and high-severity items immediately. Schedule medium and low items for the next maintenance window. Then set a calendar reminder to re-run the checklist quarterly.</p>
+
+  <p>If you need help running a security audit or fixing the issues this checklist reveals, <a href="/website-audit-services/">our security audit service</a> covers all 30+ checks and delivers a prioritised remediation plan.</p>
+</ContentLayout>

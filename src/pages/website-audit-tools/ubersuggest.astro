@@ -1,0 +1,112 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Ubersuggest', href: '/website-audit-tools/ubersuggest/' },
+];
+
+const toc = [
+  { label: 'What Is Ubersuggest', id: 'what-is-ubersuggest' },
+  { label: 'Site Audit Features', id: 'site-audit-features' },
+  { label: 'Running an Audit', id: 'running-an-audit' },
+  { label: 'Interpreting Results', id: 'interpreting-results' },
+  { label: 'Ubersuggest vs Alternatives', id: 'ubersuggest-vs-alternatives' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Ubersuggest Site Audit: Affordable SEO Auditing"
+  description="How to use Ubersuggest's site audit feature for technical SEO analysis. Covers the audit process, interpreting results, and how it compares to premium alternatives."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Ubersuggest occupies a unique position in the SEO tool market. Created by Neil Patel and acquired as part of his broader SEO platform, it targets small business owners, bloggers, and marketing beginners who need SEO capabilities without the steep learning curve or price tag of professional-grade tools. The site audit feature reflects this positioning: it is accessible, reasonably capable, and priced well below the competition.</p>
+
+<p>Whether Ubersuggest's audit tool meets your needs depends entirely on what those needs are. For someone running their first website audit on a small business site, it provides genuine value. For a professional SEO managing complex sites, the limitations become apparent quickly. This guide gives you an honest assessment of both sides.</p>
+
+<h2 id="what-is-ubersuggest">What Is Ubersuggest</h2>
+
+<p>Ubersuggest started as a simple keyword suggestion tool and has evolved into a full SEO platform covering keyword research, competitor analysis, content ideas, backlink data, and site auditing. The platform is available as both a web application and a Chrome extension, with free limited access and paid tiers that unlock higher usage limits.</p>
+
+<p>The site audit module was added as Ubersuggest expanded from a keyword tool into a comprehensive SEO platform. It performs a cloud-based crawl of your website, checks for common technical and on-page SEO issues, and presents findings in a visual dashboard designed for users who may not have deep technical knowledge.</p>
+
+<p>The target audience is clear from the interface design. Where <a href="/website-audit-tools/ahrefs/">Ahrefs</a> and <a href="/website-audit-tools/semrush/">Semrush</a> present data densely with the assumption that users understand SEO terminology, Ubersuggest provides explanations, educational context, and simpler visualisations. Every issue comes with a plain-language description of what it means and why it matters. This educational approach is genuinely helpful for beginners but can feel slow for experienced practitioners.</p>
+
+<p>Ubersuggest also offers a lifetime deal that has no equivalent among its competitors. For a one-time payment, you get permanent access to the tool without recurring subscription costs. This pricing model has attracted a large user base of small business owners and side-project operators who are cost-conscious and want a set-and-forget SEO tool.</p>
+
+<h2 id="site-audit-features">Site Audit Features</h2>
+
+<p>The Ubersuggest site audit checks for approximately 130 technical and on-page issues, fewer than the 170+ checked by Ahrefs or the 140+ checked by Semrush, but covering the most impactful categories.</p>
+
+<p><strong>SEO health score:</strong> Like most audit tools, Ubersuggest calculates an overall health score from 0 to 100 based on the ratio of error-free pages to total pages crawled. The score is displayed prominently on the dashboard with a colour-coded indicator (red, yellow, green) that makes it immediately clear whether your site has significant problems.</p>
+
+<p><strong>Critical errors:</strong> The audit identifies pages with HTTP errors (4xx and 5xx status codes), redirect issues (chains, loops, and broken redirects), missing or duplicate title tags, missing meta descriptions, and pages blocked from indexing. These critical issues are surfaced first in the results because they typically have the most direct impact on search performance.</p>
+
+<p><strong>Warnings:</strong> The medium-severity category includes issues like pages with thin content (low word count), images missing alt attributes, pages with slow load times, missing heading tags, and internal links pointing to redirected URLs. These do not cause immediate ranking damage but indicate areas where the site could be improved.</p>
+
+<p><strong>Recommendations:</strong> Lower-severity items include suggestions for improvement such as adding schema markup, implementing Open Graph tags for social sharing, minifying CSS and JavaScript files, and optimising image file sizes. These are opportunities rather than problems.</p>
+
+<p><strong>Page speed analysis:</strong> Ubersuggest includes basic page speed data pulled from Core Web Vitals metrics. It shows Largest Contentful Paint, First Input Delay (now Interaction to Next Paint), and Cumulative Layout Shift for both mobile and desktop. The data comes from Chrome User Experience Report (CrUX) data when available, supplemented by lab tests. This is useful as an overview but lacks the diagnostic detail you would get from <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a> or PageSpeed Insights.</p>
+
+<p><strong>Internal link analysis:</strong> The tool maps your internal link structure and identifies orphaned pages (pages with no internal links pointing to them), pages with excessive outbound internal links, and pages with very low internal link counts. The analysis is basic compared to dedicated tools but provides enough information to spot obvious structural issues.</p>
+
+<h2 id="running-an-audit">Running an Audit</h2>
+
+<p>Running an audit in Ubersuggest is deliberately simple. From the dashboard, enter your domain, select the project, and click the Site Audit option. The tool begins crawling immediately, with no configuration options for crawl speed, scope, or rendering behaviour.</p>
+
+<p>This simplicity is both a strength and a weakness. New users can start an audit within seconds of creating an account, with no risk of misconfiguring settings that could produce misleading results. However, experienced users who need to control the crawl behaviour, such as limiting the crawl to a specific subdirectory, excluding certain URL patterns, or enabling JavaScript rendering, will find the lack of options frustrating.</p>
+
+<p>The crawl typically completes within 10 to 30 minutes for sites under 1,000 pages. Larger sites take proportionally longer. During the crawl, you can see a progress indicator showing how many pages have been checked. Unlike some tools that let you view partial results during the crawl, Ubersuggest requires the crawl to complete before showing any findings.</p>
+
+<p>Once the crawl finishes, results are available on the Site Audit dashboard. The dashboard shows your health score, the number of issues by severity, and a breakdown by category. You can drill into each issue type to see the affected URLs and the specific problem identified.</p>
+
+<p>Ubersuggest supports scheduled audits on paid plans. You can configure the tool to run an audit weekly or monthly and receive an email notification when results are ready. This is useful for tracking progress over time, though the alerting capabilities are basic compared to Semrush or Ahrefs. There are no threshold-based alerts or change-detection notifications. You simply receive a summary email with the latest health score and issue counts.</p>
+
+<h2 id="interpreting-results">Interpreting Results</h2>
+
+<p>The results dashboard is organised around the health score, with issues grouped by severity and type. Here is how to work through the findings effectively.</p>
+
+<p><strong>Start with critical errors.</strong> These are the issues most likely to be actively harming your search visibility. Broken pages (404 errors), server errors (5xx status codes), and redirect problems should be fixed immediately. Ubersuggest lists each affected URL, making it straightforward to compile a fix list for your developer or to address yourself if you manage your own site.</p>
+
+<p><strong>Check for indexing issues.</strong> Look for pages accidentally blocked by robots.txt or meta robots noindex directives. Ubersuggest flags these, and while some may be intentional (you might want to noindex tag pages or author archives), accidental blocks on important content pages are common and damaging.</p>
+
+<p><strong>Review title and meta description issues.</strong> Missing titles, duplicate titles, titles that are too long or too short, and similar problems with meta descriptions are easy to fix and can improve click-through rates from search results. Ubersuggest shows the current title and meta description for each affected URL alongside the specific issue.</p>
+
+<p><strong>Assess page speed findings.</strong> If Ubersuggest reports slow page speeds, note which pages are affected and cross-reference with Google PageSpeed Insights for more detailed diagnostics. Ubersuggest identifies the symptom (slow pages) but does not provide the granular performance waterfall needed to diagnose the cause.</p>
+
+<p><strong>Handle recommendations selectively.</strong> Not every recommendation requires action. Adding schema markup is valuable for eligible pages but not essential for every URL. Open Graph tags matter if social sharing drives traffic to your site but are low priority otherwise. Evaluate each recommendation against your specific goals rather than trying to achieve a perfect score.</p>
+
+<p>One important caveat: Ubersuggest's issue explanations are written for beginners and sometimes oversimplify the nuance. For example, it may flag a page as having thin content based purely on word count, without accounting for the page's purpose. A contact page with 100 words is not thin content. It is appropriately concise for its function. Apply your own judgement rather than treating every finding as a mandatory fix.</p>
+
+<h2 id="ubersuggest-vs-alternatives">Ubersuggest vs Alternatives</h2>
+
+<p>The comparison that matters most depends on your situation and budget.</p>
+
+<p><strong>Ubersuggest vs Ahrefs:</strong> Ahrefs is superior in every technical dimension. It checks more issues, offers JavaScript rendering, provides deeper data exports, and integrates with a vastly larger backlink database. The crawl customisation, historical data, and reporting capabilities are in a different league. However, Ahrefs costs three to five times more than Ubersuggest, and for a small business owner running a basic audit on a simple site, the additional capabilities may not justify the price difference.</p>
+
+<p><strong>Ubersuggest vs Semrush:</strong> Similar to the Ahrefs comparison, Semrush offers more comprehensive auditing with better crawl customisation, more issue types, stronger reporting, and superior alerting. The gap is narrower in terms of usability, as Semrush has also invested in making its interface accessible to less technical users. For anyone who can afford Semrush, it is the better choice for auditing.</p>
+
+<p><strong>Ubersuggest vs free tools:</strong> This is where Ubersuggest makes its strongest case. Compared to Google Search Console (limited to issues Google encounters during its own crawling), <a href="/website-audit-tools/lighthouse/">Lighthouse</a> (single-page analysis only), and free tiers of other tools (heavily restricted), Ubersuggest's paid plans offer more comprehensive coverage at a reasonable price. The lifetime deal in particular provides ongoing value that free tools cannot match.</p>
+
+<p><strong>Ubersuggest vs Screaming Frog:</strong> <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> is free for up to 500 URLs and offers far more technical depth than Ubersuggest. It is the better choice for anyone comfortable with a desktop application and willing to learn a more complex interface. Ubersuggest wins on ease of use and the cloud-based convenience of not needing to run software locally.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Ubersuggest offers three pricing tiers and a distinctive lifetime deal option.</p>
+
+<p><strong>Individual plan:</strong> Approximately $12 per month (billed annually) or a one-time lifetime payment of around $120. This covers one website with limited daily search queries and audit capabilities. Suitable for bloggers and single-site owners.</p>
+
+<p><strong>Business plan:</strong> Approximately $20 per month (billed annually) or roughly $200 lifetime. This covers multiple websites with higher usage limits. Appropriate for small business owners managing a primary site and perhaps a blog or landing page domain.</p>
+
+<p><strong>Enterprise plan:</strong> Approximately $40 per month (billed annually) or about $400 lifetime. This provides the highest usage limits and supports larger sites and more projects. Despite the name, this is not an enterprise tool in the same category as Lumar or even Semrush Business.</p>
+
+<p>The lifetime deal is genuinely unusual in the SEO tool market and represents strong value if you plan to use the tool for more than a year. However, be aware that lifetime deals carry inherent risk: if the business model changes, features may be restricted or the product could be sunset. Neil Patel's marketing business provides a stable foundation, but no lifetime deal is guaranteed forever.</p>
+
+<p>For most users, the question is not whether Ubersuggest is the best audit tool available. It is not. The question is whether it provides sufficient value at its price point for your specific needs. If you run a small site, want a simple audit process, and are working with a limited budget, Ubersuggest delivers meaningful SEO insights at a fraction of what professional tools charge. If you need depth, customisation, or agency-grade features, invest in a professional platform from the start rather than trying to stretch Ubersuggest beyond its intended scope.</p>
+
+</ContentLayout>

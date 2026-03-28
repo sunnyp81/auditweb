@@ -1,0 +1,111 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Security Audit', href: '/website-security-audit/' },
+  { label: 'Cost', href: '/website-security-audit/cost/' },
+];
+
+const toc = [
+  { label: 'Free Security Scans', id: 'free-security-scans' },
+  { label: 'Basic Audits $500-2000', id: 'basic-audits-500-2000' },
+  { label: 'Penetration Testing $5000-25000', id: 'penetration-testing-5000-25000' },
+  { label: 'What Affects Pricing', id: 'what-affects-pricing' },
+  { label: 'ROI of Security Audits', id: 'roi-of-security-audits' },
+  { label: 'Our Pricing', id: 'our-pricing' },
+];
+---
+
+<ContentLayout
+  title="Website Security Audit Cost: What to Budget"
+  description="Understand website security audit pricing from free scans to full penetration testing. Learn what affects cost, how to calculate ROI, and what budget to set for your site's security needs."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>Website security audit costs range from zero for basic automated scans to over 25,000 USD for comprehensive penetration testing of complex web applications. The right budget depends on your site's complexity, the sensitivity of data you handle, your regulatory requirements, and the depth of testing you need. Spending too little leaves vulnerabilities undetected. Spending too much on audit depth you do not need wastes budget that could be invested elsewhere.</p>
+
+  <p>This guide breaks down security audit costs at every level so you can make an informed decision about what to invest. We cover free tools for do-it-yourself scanning, professional audit pricing tiers, the factors that push costs up or down, and how to calculate whether the investment makes financial sense for your business.</p>
+
+  <h2 id="free-security-scans">Free Security Scans</h2>
+
+  <p>Several high-quality security scanning tools are available at no cost. These tools are appropriate as a first step for any website and as ongoing monitoring for sites with lower risk profiles. They catch surface-level vulnerabilities and misconfigurations that represent the majority of real-world attacks on small to medium websites.</p>
+
+  <p>Free tools include SSL Labs for TLS configuration testing, SecurityHeaders.com for HTTP security header analysis, Mozilla Observatory for overall security posture scoring, Sucuri SiteCheck for malware and blacklist scanning, Google Search Console for Google-detected security issues, and OWASP ZAP for open-source vulnerability scanning. Used together, these tools provide a reasonable security baseline assessment.</p>
+
+  <p>The limitation of free tools is depth. They test what is publicly visible from the outside. They cannot authenticate and test behind login pages, analyse server-side code, review access controls and permissions, or test business logic vulnerabilities. They also produce raw technical output that requires security knowledge to interpret and prioritise correctly.</p>
+
+  <p>Free scans are appropriate for personal websites, blogs, small business brochure sites, and sites that do not handle sensitive data. If your site accepts payments, stores personal data, or operates in a regulated industry, free tools are a starting point but not a substitute for professional assessment.</p>
+
+  <p>Even for sites that invest in professional audits, free tools remain valuable as between-audit monitoring. Run them monthly to catch new issues before your next formal audit.</p>
+
+  <h2 id="basic-audits-500-2000">Basic Audits: $500 to $2,000</h2>
+
+  <p>A basic professional security audit uses commercial scanning tools with expert review and interpretation. At this price point, a security professional configures and runs enterprise-grade vulnerability scanners against your site, reviews the raw findings to eliminate false positives, and produces a report with prioritised recommendations and remediation guidance.</p>
+
+  <p>What you typically receive at this level includes an automated vulnerability scan of your external attack surface, an SSL/TLS configuration assessment, security header review and recommendations, WordPress or CMS-specific vulnerability scanning, a report listing all findings by severity (critical, high, medium, low), and remediation guidance for each finding.</p>
+
+  <p>What this level does not include is manual testing. The auditor is primarily running and interpreting automated tools rather than manually probing your application for logic flaws, authentication bypasses, or complex injection vectors. For most standard websites — business sites, blogs, informational sites, simple ecommerce stores using established platforms — automated scanning catches the vast majority of exploitable vulnerabilities.</p>
+
+  <p>Turnaround time for a basic audit is typically three to five business days. Some providers offer expedited delivery at a premium. The report is usually a PDF document with executive summary, detailed findings, and technical remediation steps.</p>
+
+  <p>This price tier is appropriate for small to medium businesses with standard websites built on established CMS platforms, sites that handle some customer data but are not in highly regulated industries, and businesses that need a professional security baseline without the cost of full penetration testing.</p>
+
+  <h2 id="penetration-testing-5000-25000">Penetration Testing: $5,000 to $25,000</h2>
+
+  <p>Penetration testing is the most thorough form of security audit. A certified penetration tester — often holding qualifications like OSCP, CREST, or CEH — manually attempts to exploit your website using the same techniques real attackers would use. This goes far beyond automated scanning into testing business logic, chaining vulnerabilities, and attempting to gain deeper access from initial footholds.</p>
+
+  <p>A full penetration test typically includes reconnaissance and information gathering about your technology stack and attack surface, automated vulnerability scanning as a starting point, manual testing for OWASP Top 10 vulnerabilities with real exploitation attempts, authentication and session management testing, access control testing across different user roles, business logic testing specific to your application's functionality, API security testing if your site uses APIs, and a detailed report with proof-of-concept evidence for each finding.</p>
+
+  <p>The engagement usually takes one to three weeks of active testing depending on scope. The tester provides a comprehensive report that includes an executive summary suitable for non-technical stakeholders, detailed technical findings with evidence, risk ratings aligned with industry standards (CVSS scoring), step-by-step remediation guidance, and often a retest to verify fixes once you have addressed the critical findings.</p>
+
+  <p>At the lower end of this range (5,000 to 10,000 USD), you get a focused assessment of a specific web application or a smaller scope. At the higher end (15,000 to 25,000 USD), the scope expands to cover multiple applications, APIs, mobile interfaces, and potentially internal network testing.</p>
+
+  <p>Penetration testing is appropriate for sites handling sensitive financial or health data, businesses in regulated industries (finance, healthcare, government), ecommerce sites processing significant transaction volumes, custom web applications with complex business logic, and organisations that need to demonstrate security compliance for contracts or certifications. SaaS products and any application where a security breach would have material business impact should budget for annual penetration testing at minimum.</p>
+
+  <h2 id="what-affects-pricing">What Affects Pricing</h2>
+
+  <p>Security audit pricing varies significantly even within the same tier. Understanding the factors that drive costs helps you budget accurately and evaluate quotes from different providers.</p>
+
+  <ul>
+    <li><strong>Site complexity</strong> — a five-page brochure site costs less to audit than a 500-page ecommerce platform with user accounts, payment processing, and a custom admin panel. More pages, more features, and more user roles mean more testing surface.</li>
+    <li><strong>Custom code vs platform</strong> — a standard WordPress site built with well-known plugins is faster to assess than a custom-built web application because the auditor can leverage existing vulnerability databases for known WordPress issues. Custom code requires more manual analysis.</li>
+    <li><strong>Authentication requirements</strong> — if the audit needs to test behind login pages, multiple user roles, or admin functionality, the scope and time increase significantly compared to an external-only scan.</li>
+    <li><strong>API surface</strong> — sites with APIs add testing scope. REST APIs, GraphQL endpoints, and webhook receivers each need their own security assessment.</li>
+    <li><strong>Compliance requirements</strong> — audits performed to meet PCI-DSS, SOC 2, HIPAA, or ISO 27001 requirements often need to follow specific testing methodologies and produce compliance-formatted reports, adding to the cost.</li>
+    <li><strong>Retesting</strong> — some providers include a free retest after you fix critical findings. Others charge separately for retesting. Clarify this before signing the engagement.</li>
+    <li><strong>Auditor qualifications</strong> — testers with CREST, OSCP, or similar certifications command higher rates because these qualifications require demonstrated practical skill, not just theoretical knowledge.</li>
+    <li><strong>Urgency</strong> — expedited timelines typically carry a 25 to 50 percent premium over standard delivery. If you need results in a week rather than a month, expect to pay more.</li>
+  </ul>
+
+  <h2 id="roi-of-security-audits">ROI of Security Audits</h2>
+
+  <p>Calculating the return on investment of a security audit requires comparing the audit cost against the potential cost of a security breach. The maths consistently favours investment in security testing.</p>
+
+  <p>The average cost of a data breach for businesses with fewer than 500 employees was 3.31 million USD in 2024 according to IBM's Cost of a Data Breach Report. Even a small-scale breach involving a defaced website, SEO spam injection, or stolen customer email addresses can cost tens of thousands in incident response, customer notification, reputation damage, and lost revenue.</p>
+
+  <p>Consider these specific cost scenarios that a security audit can prevent:</p>
+
+  <ul>
+    <li><strong>SEO spam injection</strong> — attackers inject hidden links or pages into your site to boost their own rankings. Google detects this and may deindex your site or apply a manual action. Recovery takes weeks to months and costs thousands in lost organic traffic.</li>
+    <li><strong>Ransomware</strong> — attackers encrypt your database and demand payment. If your backups are compromised too (which a security audit would have caught), you face paying the ransom or losing your data entirely.</li>
+    <li><strong>Customer data theft</strong> — a breach involving personal data triggers GDPR notification requirements (72-hour deadline), potential regulatory fines (up to 4 percent of annual turnover), and class-action exposure. A single GDPR fine for a small business can exceed 100,000 EUR.</li>
+    <li><strong>Payment card compromise</strong> — PCI-DSS non-compliance fines start at 5,000 USD per month and can reach 100,000 USD per month for sustained violations. Payment processors may also terminate your account, blocking your ability to accept card payments entirely.</li>
+  </ul>
+
+  <p>Even a basic 1,000 USD security audit that prevents a single SEO spam attack delivers a positive ROI. A 10,000 USD penetration test that prevents a data breach involving customer records delivers an ROI measured in hundreds of percent. Security audits are not a cost — they are insurance with a provably positive expected value.</p>
+
+  <h2 id="our-pricing">Our Pricing</h2>
+
+  <p>We offer security audits at three levels, each designed for a different risk profile and budget:</p>
+
+  <p><strong>Security Scan — from 500 USD:</strong> Automated vulnerability scanning with expert review. Covers your external attack surface, SSL/TLS configuration, security headers, CMS-specific vulnerabilities, and blacklist status. Includes a prioritised findings report with remediation guidance. Turnaround: three to five business days. Best for small business sites and blogs that need a professional security baseline.</p>
+
+  <p><strong>Security Audit — from 2,000 USD:</strong> Comprehensive assessment combining automated scanning with manual review. Covers everything in the Security Scan plus authenticated testing, access control review, input validation testing, and detailed technical remediation steps. Includes a 30-minute walkthrough call to discuss findings. Turnaround: five to ten business days. Best for ecommerce sites, membership sites, and businesses handling customer data.</p>
+
+  <p><strong>Penetration Test — from 5,000 USD:</strong> Full manual penetration testing by a certified security professional. Covers everything in the Security Audit plus manual exploitation testing, business logic assessment, API security testing, and a retest after remediation. Includes an executive summary for stakeholders and a detailed technical report. Turnaround: two to four weeks. Best for custom web applications, SaaS products, and regulated industries.</p>
+
+  <p>All engagements begin with a scoping call to understand your site, your risk profile, and your compliance requirements. We provide a fixed-price quote after scoping so there are no surprises. Request a scoping call using the form on this page or <a href="/free-website-audit/">run a free automated scan</a> to see your initial security posture before committing to a professional engagement.</p>
+</ContentLayout>

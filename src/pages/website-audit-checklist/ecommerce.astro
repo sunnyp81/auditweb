@@ -1,0 +1,121 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'Ecommerce', href: '/website-audit-checklist/ecommerce/' },
+];
+
+const toc = [
+  { label: 'Product Pages', id: 'product-pages' },
+  { label: 'Category Pages', id: 'category-pages' },
+  { label: 'Checkout Flow', id: 'checkout-flow' },
+  { label: 'Site Speed', id: 'site-speed' },
+  { label: 'Schema Markup', id: 'schema-markup' },
+  { label: 'Mobile Commerce', id: 'mobile-commerce' },
+  { label: 'Security', id: 'security' },
+];
+---
+
+<ContentLayout
+  title="Ecommerce Website Audit Checklist"
+  description="A complete ecommerce website audit checklist covering product pages, categories, checkout, speed, schema, mobile commerce, and security. Organised for systematic review."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Ecommerce sites carry technical complexity that standard website audit checklists do not adequately cover. Product catalogues generate thousands of URLs, faceted navigation creates crawl budget challenges, and the direct connection between site performance and revenue means that technical issues translate immediately into lost sales. This checklist addresses the ecommerce-specific elements that a <a href="/website-audit-checklist/">general audit checklist</a> misses.</p>
+
+<p>Work through each section methodically. The checklist is organised by page type and function, reflecting how ecommerce sites are structured. Check every item against your actual site rather than your assumptions about how it works. Many ecommerce issues exist in the gap between what the CMS is supposed to do and what it actually outputs.</p>
+
+<h2 id="product-pages">Product Pages</h2>
+
+<p>Product pages are the revenue-generating core of your site. Every element on these pages affects both search visibility and conversion rate.</p>
+
+<ul>
+  <li><strong>Unique title tags per product.</strong> Check that each product page has a distinct title tag that includes the product name and a relevant modifier (brand, key specification, or category). Templated titles like "[Product Name] | [Brand]" are fine as long as each title is genuinely unique. Duplicate product titles confuse search engines about which page to rank.</li>
+  <li><strong>Unique meta descriptions.</strong> Each product should have a unique meta description that summarises the product and includes a call-to-action element. Auto-generated descriptions that pull the first 160 characters of the product description are acceptable but less effective than deliberately crafted summaries.</li>
+  <li><strong>Unique product descriptions.</strong> Check whether product descriptions are original or copied from manufacturer data sheets. Manufacturer descriptions appear on every retailer's site, creating massive duplicate content. Identify your highest-traffic product pages and prioritise unique descriptions for those first.</li>
+  <li><strong>Image alt text.</strong> Every product image should have descriptive alt text that includes the product name and relevant visual details. Check that alt text is not keyword-stuffed or identical across all images of the same product. Gallery images should describe what each specific image shows (front view, side view, detail of stitching).</li>
+  <li><strong>Image file optimisation.</strong> Check that product images are served in WebP or AVIF format, appropriately sized for their display dimensions, and compressed without visible quality loss. Unoptimised product images are the single most common speed issue on ecommerce sites.</li>
+  <li><strong>Canonical tags.</strong> Verify that each product page has a self-referencing canonical tag and that product variants (colour, size) are canonicalised correctly. If variants have separate URLs, decide whether each should be independently indexable or canonicalised to a primary variant.</li>
+  <li><strong>Out-of-stock handling.</strong> Check what happens when a product goes out of stock. The page should remain accessible (not return a 404), display the out-of-stock status clearly, offer alternatives, and retain its SEO value. Products that are permanently discontinued should redirect to the most relevant category or replacement product.</li>
+  <li><strong>Customer reviews.</strong> Verify that reviews are rendered in the initial HTML (not loaded entirely via JavaScript), marked up with Review schema, and displaying accurate aggregate ratings. Check that your review count is competitive with top-ranking competitors for your key product categories.</li>
+  <li><strong>Internal links to related products.</strong> Check that each product page links to related products, the parent category, and any relevant buying guides or comparison pages. These links should use meaningful anchor text, not just "View Product" or product codes.</li>
+  <li><strong>Breadcrumb navigation.</strong> Verify that breadcrumbs are present, reflect the correct category hierarchy, and are marked up with BreadcrumbList schema. Products that appear in multiple categories should have consistent primary breadcrumb paths.</li>
+</ul>
+
+<h2 id="category-pages">Category Pages</h2>
+
+<p>Category pages often drive more organic traffic than individual product pages because they target broader, higher-volume keywords. They also control how search engines discover and understand your product catalogue.</p>
+
+<ul>
+  <li><strong>Unique category descriptions.</strong> Each category page should have a unique introductory paragraph that describes the category, includes relevant keywords, and helps users understand what products are available. Thin category pages with only product listings and no descriptive content struggle to rank.</li>
+  <li><strong>Faceted navigation handling.</strong> This is the most critical ecommerce-specific check. Examine how your site handles filter URLs. Each filter combination generates a URL. Check whether filtered URLs are canonicalised to the base category, whether they are blocked in robots.txt, whether they use noindex directives, or whether they are freely crawlable. Uncontrolled faceted navigation can generate millions of low-value URLs that waste crawl budget.</li>
+  <li><strong>Pagination implementation.</strong> Check that paginated category pages use proper pagination (rel=next/prev if still implemented, or clear crawlable pagination links). Verify that products on deep pagination pages (page 5+) are still discoverable by search engines through alternative paths like the sitemap or internal links.</li>
+  <li><strong>Sorting parameter handling.</strong> URLs generated by sorting options (sort by price, popularity, newest) create duplicate versions of category pages. Verify that sort parameters are handled with canonical tags pointing to the default sort order.</li>
+  <li><strong>Category hierarchy depth.</strong> Check that no product is more than three clicks from the homepage. Deep hierarchies (home > category > subcategory > sub-subcategory > product) reduce the link equity flowing to individual products and make it harder for search engines to discover and prioritise deep pages.</li>
+  <li><strong>Empty category pages.</strong> Check for categories with zero products, which commonly occur during seasonal stock changes or after product line discontinuation. Empty category pages provide no value to users or search engines and should be noindexed or redirected.</li>
+  <li><strong>Category page load time.</strong> Test category pages with full product grids loaded. Category pages with 40-60 product thumbnails, filter interfaces, and sorting options are often the heaviest pages on ecommerce sites. Measure Core Web Vitals specifically for these templates.</li>
+</ul>
+
+<h2 id="checkout-flow">Checkout Flow</h2>
+
+<p>While not a traditional SEO concern, checkout issues directly affect the revenue that your organic traffic generates.</p>
+
+<ul>
+  <li><strong>Checkout pages are noindexed.</strong> Cart, checkout, payment, and order confirmation pages should all carry noindex directives. Verify this for every step of the checkout process.</li>
+  <li><strong>SSL across the entire checkout.</strong> Every page in the checkout flow must be served over HTTPS with no mixed content warnings. Test this on both desktop and mobile browsers.</li>
+  <li><strong>Guest checkout availability.</strong> Requiring account creation before purchase is the single largest source of checkout abandonment. Verify that guest checkout is available and prominently offered.</li>
+  <li><strong>Form field validation.</strong> Test form validation for address fields, payment details, and contact information. Validation should happen inline (as the user completes each field) rather than after form submission. Error messages should be specific and positioned next to the relevant field.</li>
+  <li><strong>Error state handling.</strong> Test what happens when a card is declined, a session expires, or an item goes out of stock during checkout. Each error should display a clear message and a path to resolution without losing the user's cart contents.</li>
+  <li><strong>Trust signals.</strong> Check for visible security badges, payment method logos, return policy links, and contact information during checkout. Trust signals that are visible during the purchase decision reduce abandonment.</li>
+</ul>
+
+<h2 id="site-speed">Site Speed</h2>
+
+<ul>
+  <li><strong>Core Web Vitals by page type.</strong> Test LCP, INP, and CLS separately for homepage, category pages, product pages, and checkout pages. Each template has different performance characteristics and may require different optimisation approaches.</li>
+  <li><strong>Image lazy loading.</strong> Verify that below-the-fold product images use lazy loading. Above-the-fold hero images and the first row of category product grids should NOT be lazy loaded, as this delays Largest Contentful Paint.</li>
+  <li><strong>Third-party script audit.</strong> List every third-party script loaded on your site: analytics, heatmaps, chat widgets, retargeting pixels, review platforms, and personalisation tools. Measure the individual performance cost of each. Remove or defer scripts that provide insufficient value relative to their performance impact.</li>
+  <li><strong>Caching configuration.</strong> Verify that page caching is active for anonymous users, that browser caching headers are set correctly for static assets, and that CDN caching is functioning for all resource types. Test TTFB from multiple geographic locations if you serve international customers.</li>
+  <li><strong>Search functionality speed.</strong> Test on-site search response time. Product searches should return results within 300 milliseconds. Slow search pushes users to Google instead of your on-site search, losing you the opportunity to direct them to specific products.</li>
+  <li><strong>Mobile performance specifically.</strong> Run Lighthouse audits on a throttled 4G connection for your key page templates. Mobile performance is almost always worse than desktop, and the majority of ecommerce browsing now happens on mobile devices.</li>
+</ul>
+
+<h2 id="schema-markup">Schema Markup</h2>
+
+<ul>
+  <li><strong>Product schema on all product pages.</strong> Validate that Product schema includes name, description, image, SKU, brand, offers (with price, priceCurrency, and availability), and aggregateRating (if reviews exist). Test with Google's Rich Results Test tool.</li>
+  <li><strong>BreadcrumbList schema.</strong> Verify BreadcrumbList schema on category and product pages. The schema should match the visible breadcrumb navigation exactly. Mismatches between visible and structured breadcrumbs can trigger manual review.</li>
+  <li><strong>Organization schema.</strong> Check that site-wide Organization schema includes your legal business name, logo, contact information, and social profiles. This helps Google associate your brand with your website.</li>
+  <li><strong>FAQ schema where applicable.</strong> Product pages or category pages with FAQ sections should implement FAQPage schema to enable rich results. Verify that the schema content matches the visible FAQ content exactly.</li>
+  <li><strong>No deprecated schema.</strong> Check for deprecated schema types or properties that Google no longer supports. Remove any schema that generates warnings in Google's testing tools.</li>
+  <li><strong>No schema errors.</strong> Run every schema type through the Rich Results Test and the Schema Markup Validator. Fix all errors before addressing warnings. Errors prevent rich result eligibility entirely.</li>
+</ul>
+
+<h2 id="mobile-commerce">Mobile Commerce</h2>
+
+<ul>
+  <li><strong>Mobile product image gallery.</strong> Test the product image gallery on mobile devices. Images should be swipeable, zoomable, and load quickly. Gallery controls should not obscure product content or conflict with browser back gestures.</li>
+  <li><strong>Add to cart on mobile.</strong> The add-to-cart button should be easily accessible without scrolling on mobile product pages. Sticky add-to-cart bars that remain visible as users scroll through product details improve mobile conversion rates.</li>
+  <li><strong>Filter interface on mobile.</strong> Test category filters on mobile. Overlay filter panels are generally more usable than inline filters on small screens. Applied filters should be clearly visible and easily removable.</li>
+  <li><strong>Touch target sizing.</strong> All interactive elements (buttons, links, filter options, quantity selectors) should meet the minimum 48x48 pixel touch target size. Small touch targets cause accidental taps and frustrate mobile shoppers.</li>
+  <li><strong>Mobile search experience.</strong> Test on-site search on mobile. The search input should be easily accessible, results should be well-formatted for small screens, and search suggestions should be tappable without precision targeting.</li>
+  <li><strong>Payment method integration.</strong> Check for Apple Pay, Google Pay, and similar mobile-native payment methods. One-tap payment reduces mobile checkout friction significantly and can measurably increase mobile conversion rates.</li>
+</ul>
+
+<h2 id="security">Security</h2>
+
+<ul>
+  <li><strong>SSL certificate validity.</strong> Check that your SSL certificate is current, covers all subdomains in use, and is from a trusted certificate authority. Set a calendar reminder for renewal if your certificate does not auto-renew.</li>
+  <li><strong>PCI compliance.</strong> If you process card payments directly (rather than through a hosted payment page), verify your PCI DSS compliance status. Non-compliance puts customer payment data at risk and carries significant legal liability.</li>
+  <li><strong>Secure headers.</strong> Check for security headers: HSTS (Strict-Transport-Security), Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, and Referrer-Policy. These headers protect against common attack vectors that are particularly damaging for ecommerce sites handling personal and payment data.</li>
+  <li><strong>Admin access security.</strong> Verify that CMS admin panels are protected with strong passwords, two-factor authentication, and IP restriction where feasible. Compromised admin access on an ecommerce site can lead to skimming attacks that steal customer payment information.</li>
+  <li><strong>Data handling and privacy.</strong> Check that your cookie consent mechanism is functional and compliant with applicable regulations (GDPR, CCPA). Verify that your privacy policy accurately describes your data collection and processing practices, including third-party sharing through analytics and advertising pixels.</li>
+  <li><strong>Backup and recovery.</strong> Verify that automated backups run daily and include both the database and file system. Test your recovery process at least once to confirm that backups are actually usable. An ecommerce site that cannot recover from a security incident or technical failure faces existential risk.</li>
+</ul>
+
+</ContentLayout>

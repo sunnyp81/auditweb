@@ -1,0 +1,110 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Woorank', href: '/website-audit-tools/woorank/' },
+];
+
+const toc = [
+  { label: 'What Is Woorank', id: 'what-is-woorank' },
+  { label: 'Audit Features', id: 'audit-features' },
+  { label: 'Marketing Checklist', id: 'marketing-checklist' },
+  { label: 'Keyword Tool', id: 'keyword-tool' },
+  { label: 'Woorank vs Competitors', id: 'woorank-vs-competitors' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Woorank Website Audit: Features and Review"
+  description="Complete review of Woorank's website audit capabilities, marketing checklist, and keyword tool. Honest assessment of strengths, limitations, and who it suits best."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Woorank has been in the SEO tool market since 2011, positioning itself as an accessible website review platform for small businesses and marketing generalists. Unlike the sprawling feature sets of <a href="/website-audit-tools/ahrefs/">Ahrefs</a> or <a href="/website-audit-tools/semrush/">Semrush</a>, Woorank focuses on providing a clear, easy-to-understand website assessment that non-technical users can act on immediately.</p>
+
+<p>The tool generates an instant website review that scores your site across multiple categories including SEO, mobile readiness, usability, social media presence, and technologies used. It is designed to answer the question "what should I fix on my website?" for people who do not have a background in search engine optimisation. This review covers whether that approach delivers genuine value or oversimplifies the complex reality of website health.</p>
+
+<h2 id="what-is-woorank">What Is Woorank</h2>
+
+<p>Woorank is a cloud-based website analysis platform that provides instant reviews and ongoing monitoring. When you enter a URL, Woorank analyses the page and generates a scored report covering technical SEO factors, content quality signals, mobile optimisation, social presence, and security attributes.</p>
+
+<p>The platform offers three core features: the instant website review, a site crawl for deeper technical analysis, and a marketing checklist that guides users through improving their online presence. There is also a keyword tracking module and competitive analysis capabilities, though these are secondary to the audit functionality.</p>
+
+<p>Woorank's distinguishing characteristic is its emphasis on actionable simplicity. Where professional SEO tools present raw data and expect users to derive their own conclusions, Woorank explicitly tells users what is good, what needs improvement, and provides step-by-step guidance for fixing issues. Each finding includes a plain-language explanation, a priority level, and often a link to a help article with implementation instructions.</p>
+
+<p>The tool is used primarily by small business owners, freelance marketers, web designers who offer SEO as an add-on service, and digital marketing students. It is also used by some agencies as a quick-scan tool for initial client assessments before committing to deeper analysis with more comprehensive platforms.</p>
+
+<p>Woorank also provides a browser extension that generates instant reviews for any page you visit. This is useful for quick competitive checks or for reviewing pages during browsing without logging into the full platform. The extension provides a condensed version of the full review with key scores and top-priority issues.</p>
+
+<h2 id="audit-features">Audit Features</h2>
+
+<p>Woorank's audit capabilities operate on two levels: the instant review and the deeper site crawl.</p>
+
+<p><strong>The instant review</strong> analyses a single URL across approximately 70 criteria grouped into categories. The SEO category checks title tags, meta descriptions, headings, keyword consistency, content volume, alt attributes, and in-page link counts. The mobile category evaluates viewport configuration, touch element sizing, font readability, and mobile page speed. The usability category looks at URL structure, favicon presence, 404 error pages, and site language declaration. Technologies detects the CMS, JavaScript libraries, analytics tools, and hosting infrastructure in use.</p>
+
+<p>Each criterion receives a pass, warning, or fail status with a clear explanation. The overall Woorank score (0-100) provides a quick health indicator, though like all composite scores, it should be treated as directional rather than definitive. The scoring weights are not publicly documented, which makes it difficult to know exactly how individual factors contribute to the total.</p>
+
+<p><strong>The site crawl</strong> goes beyond single-page analysis to examine your entire site. It checks for broken links, redirect chains, duplicate content, missing meta tags across all pages, orphaned pages, and crawl depth issues. The crawl results are presented in a dashboard showing issue counts by type and severity, with the ability to drill into affected URLs.</p>
+
+<p>The crawl feature is available on Pro and Premium plans. Crawl limits vary by plan, with the Pro plan supporting sites up to a few thousand pages and the Premium plan handling larger sites. The crawl is cloud-based, so it runs without tying up your local machine.</p>
+
+<p><strong>Structured data analysis</strong> checks whether your pages include schema markup and validates the implementation against schema.org standards. It identifies which schema types are present and flags common implementation errors. While not as thorough as Google's Rich Results Test, it provides a useful overview of your structured data coverage.</p>
+
+<p><strong>Security checks</strong> verify SSL certificate status, check for mixed content issues (HTTP resources loaded on HTTPS pages), and look for basic security headers. The security assessment is surface-level compared to dedicated security audit tools but covers the most common issues that affect both user trust and search rankings.</p>
+
+<h2 id="marketing-checklist">Marketing Checklist</h2>
+
+<p>The marketing checklist is arguably Woorank's most distinctive feature and the one that best serves its target audience. It provides a step-by-step guide to improving your website's overall marketing effectiveness, going beyond pure SEO into broader digital marketing territory.</p>
+
+<p>The checklist is organised into categories: SEO, mobile, usability, technologies, social, and local. Within each category, individual tasks are marked as completed, in progress, or not started based on Woorank's analysis of your site. Completing a task updates the checklist and improves your overall score.</p>
+
+<p>For someone new to website optimisation, this guided approach is genuinely valuable. Rather than being presented with a list of technical issues and expected to prioritise them independently, users receive a structured improvement path. The checklist tells you to fix your title tag before worrying about schema markup, to set up HTTPS before optimising page speed, and to claim your Google Business Profile before building backlinks.</p>
+
+<p>Each checklist item includes an explanation of why it matters, its impact on your website's performance, and practical instructions for completing it. Many items link to Woorank's knowledge base articles that provide detailed how-to guides with screenshots and code examples.</p>
+
+<p>The checklist also helps with accountability and tracking. You can mark items as complete, add notes, and track your progress over time. For freelancers working on client sites, the checklist can serve as a basic project management tool for website improvement work.</p>
+
+<p>The limitation is that the checklist follows a generic best-practice framework rather than adapting to your specific situation. A local restaurant and an international ecommerce site receive fundamentally similar checklists, even though their priorities and opportunities are completely different. For personalised audit recommendations, you need a tool with more sophisticated analysis or, ideally, a human consultant who understands your business context.</p>
+
+<h2 id="keyword-tool">Keyword Tool</h2>
+
+<p>Woorank includes a keyword tracking and research module that integrates with the audit features. The keyword tool is functional but limited compared to dedicated keyword research platforms.</p>
+
+<p><strong>Keyword tracking</strong> lets you monitor your rankings for a set of target keywords across Google search results. You can track rankings by country and see historical position data over time. The tracking updates regularly, and you receive notifications when rankings change significantly. The number of tracked keywords depends on your plan, with Pro plans supporting around 50 keywords and Premium plans supporting more.</p>
+
+<p><strong>Keyword discovery</strong> suggests related keywords based on a seed term. The suggestions include search volume estimates, competition indicators, and related questions. The data quality is reasonable for basic keyword research but lacks the depth of Ahrefs Keywords Explorer or Semrush Keyword Magic Tool. Metrics like keyword difficulty, click-through rate estimates, and SERP feature analysis are either absent or simplified.</p>
+
+<p>The integration between keyword data and the site audit is the most useful aspect. Woorank can show which of your tracked keywords appear in your content and whether your pages are optimised for those terms. This helps identify gaps between the keywords you want to rank for and the terms your content actually targets.</p>
+
+<p>For serious keyword research, Woorank is not sufficient as a standalone tool. It works as a complement to free options like Google Keyword Planner or as a basic tracking solution for small businesses monitoring a handful of important terms. Anyone conducting comprehensive keyword research should use a dedicated platform.</p>
+
+<h2 id="woorank-vs-competitors">Woorank vs Competitors</h2>
+
+<p><strong>Woorank vs Ahrefs:</strong> These tools serve fundamentally different audiences. Ahrefs is a professional SEO platform built for practitioners who understand technical SEO. Woorank is a website improvement guide for non-specialists. Ahrefs provides deeper data, more issue types, better crawling, and richer analysis. Woorank provides clearer guidance, simpler presentation, and a more accessible learning curve. If you know SEO, choose Ahrefs. If you are learning SEO or need something a non-technical team member can use, Woorank has merit.</p>
+
+<p><strong>Woorank vs Ubersuggest:</strong> These tools compete more directly because they target similar audiences. <a href="/website-audit-tools/ubersuggest/">Ubersuggest</a> offers a larger feature set including content ideas, backlink data, and a Chrome extension. Woorank offers a more structured improvement process through its marketing checklist. Ubersuggest's lifetime pricing is more attractive for long-term value. Woorank's guided approach is better for complete beginners. For most users in this category, Ubersuggest offers more capability for less money.</p>
+
+<p><strong>Woorank vs free tools:</strong> Google Search Console, <a href="/website-audit-tools/lighthouse/">Lighthouse</a>, and other <a href="/website-audit-tools/best-free/">free audit tools</a> collectively provide more technical depth than Woorank, but they require users to synthesise findings from multiple sources and interpret results independently. Woorank's value proposition is consolidation and guidance. If you are comfortable using multiple free tools and interpreting technical data, free tools give you more. If you want a single dashboard with clear instructions, Woorank simplifies the process.</p>
+
+<p><strong>Woorank vs Screaming Frog:</strong> <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> is a technical SEO crawler that produces raw crawl data for expert analysis. Woorank is a guided website improvement tool that produces actionable recommendations for non-experts. Comparing them is like comparing a professional camera to a smartphone camera. Screaming Frog gives you complete control and superior output, but Woorank gives you usable results with zero expertise required.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Woorank offers three tiers, with pricing that sits at the lower end of the paid SEO tool market.</p>
+
+<p><strong>Free review:</strong> You can generate a limited instant review for any URL without creating an account. The free review shows a subset of the full analysis, enough to get a sense of your site's major issues but not detailed enough for comprehensive improvement work. This is useful for a quick initial assessment.</p>
+
+<p><strong>Pro plan:</strong> Approximately $80 per month (with discounts for annual billing). This includes full instant reviews, the marketing checklist, site crawling for one project, keyword tracking, and competitor analysis. The Pro plan is the minimum viable option for anyone using Woorank seriously.</p>
+
+<p><strong>Premium plan:</strong> Approximately $200 per month. This adds multiple projects, larger crawl limits, more tracked keywords, white-label PDF reports, and priority support. The Premium plan targets agencies and freelancers managing multiple client sites.</p>
+
+<p>At these price points, Woorank faces stiff competition. Semrush's Pro plan at a similar price offers dramatically more capability. Ahrefs Lite provides professional-grade auditing. Even Ubersuggest's lifetime deal provides comparable features at a fraction of the ongoing cost. Woorank's pricing is justifiable only if the guided, simplified approach provides value that you cannot get from a more powerful tool at the same price.</p>
+
+<p>For small business owners who want a structured website improvement process and do not want to learn professional SEO tools, Woorank delivers a curated experience that saves time and reduces confusion. For anyone with moderate SEO knowledge or the willingness to learn, the market offers better value elsewhere. Consider starting with Woorank's free review to assess whether its approach resonates with your needs before committing to a paid plan.</p>
+
+</ContentLayout>

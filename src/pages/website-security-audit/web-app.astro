@@ -1,0 +1,122 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Security Audit', href: '/website-security-audit/' },
+  { label: 'Web App', href: '/website-security-audit/web-app/' },
+];
+
+const toc = [
+  { label: 'What Is a Web App Audit', id: 'what-is-a-web-app-audit' },
+  { label: 'OWASP Top 10', id: 'owasp-top-10' },
+  { label: 'Injection Attacks', id: 'injection-attacks' },
+  { label: 'Broken Authentication', id: 'broken-authentication' },
+  { label: 'XSS', id: 'xss' },
+  { label: 'Security Misconfiguration', id: 'security-misconfiguration' },
+  { label: 'Testing Methodology', id: 'testing-methodology' },
+];
+---
+
+<ContentLayout
+  title="Web Application Security Audit: OWASP Top 10 Guide"
+  description="Learn how to audit web application security against the OWASP Top 10. Covers injection attacks, broken authentication, XSS, security misconfiguration, and a complete testing methodology."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>Web applications face a fundamentally different threat landscape than static websites. Every form field, API endpoint, URL parameter, and user interaction is a potential attack vector. A web application security audit systematically tests these attack surfaces against known vulnerability categories to find weaknesses before attackers do.</p>
+
+  <p>The OWASP Top 10 is the most widely recognised framework for web application security. Published by the Open Worldwide Application Security Project, it represents the ten most critical security risks facing web applications, compiled from real-world breach data and expert consensus. It is used as a baseline by security auditors, development teams, and regulatory frameworks worldwide.</p>
+
+  <p>This guide explains the OWASP Top 10 categories most relevant to web application audits, shows you what each vulnerability looks like in practice, and provides a testing methodology you can follow to assess your own application.</p>
+
+  <h2 id="what-is-a-web-app-audit">What Is a Web App Audit</h2>
+
+  <p>A web application security audit is a structured assessment of a web application's security controls, code quality, and infrastructure configuration. It differs from a general website security scan in several important ways.</p>
+
+  <p>A website security scan checks external-facing elements: SSL certificates, security headers, CMS vulnerabilities, and blacklist status. It treats the site as a black box and tests from the outside. A web application audit goes deeper. It tests the application's logic, authentication mechanisms, data handling, API security, and inter-component communication. It often includes source code review, authenticated testing across multiple user roles, and manual exploitation attempts.</p>
+
+  <p>Web application audits are essential for any application that handles user data, processes transactions, manages user accounts, or exposes APIs. This includes SaaS products, ecommerce platforms with custom functionality, customer portals, internal business tools exposed to the internet, financial applications, and healthcare platforms. If your application does more than serve static content, it needs a web application audit, not just a surface scan.</p>
+
+  <p>The scope of a web application audit typically covers the application itself (all pages, forms, and features), its APIs (REST, GraphQL, webhooks), the authentication and authorisation system, session management, data storage and transmission, third-party integrations, and the deployment infrastructure. The audit produces a report listing discovered vulnerabilities with severity ratings, evidence, and remediation guidance.</p>
+
+  <h2 id="owasp-top-10">OWASP Top 10</h2>
+
+  <p>The OWASP Top 10 is updated periodically to reflect the evolving threat landscape. The current version organises web application risks into ten categories ranked by prevalence and impact. Understanding these categories is essential for both auditors and developers because they represent the vulnerability patterns that account for the vast majority of real-world web application breaches.</p>
+
+  <p>The ten categories in the current OWASP Top 10 are:</p>
+
+  <ol>
+    <li><strong>Broken Access Control</strong> — users can act outside their intended permissions. This was elevated to the number one position because access control failures are extremely common and often high impact.</li>
+    <li><strong>Cryptographic Failures</strong> — formerly known as Sensitive Data Exposure. Covers failures in cryptography that lead to exposure of sensitive data including passwords, financial records, and personal information.</li>
+    <li><strong>Injection</strong> — user-supplied data is sent to an interpreter without proper validation. Includes SQL injection, NoSQL injection, OS command injection, and LDAP injection.</li>
+    <li><strong>Insecure Design</strong> — a category addressing design-level flaws rather than implementation bugs. No amount of good coding can fix a fundamentally insecure design.</li>
+    <li><strong>Security Misconfiguration</strong> — improper configuration of the application, framework, web server, or cloud services. The most common vulnerability category in automated scans.</li>
+    <li><strong>Vulnerable and Outdated Components</strong> — using components (libraries, frameworks, plugins) with known vulnerabilities.</li>
+    <li><strong>Identification and Authentication Failures</strong> — weaknesses in authentication mechanisms that allow attackers to compromise passwords, session tokens, or identity.</li>
+    <li><strong>Software and Data Integrity Failures</strong> — code and infrastructure that does not protect against integrity violations, including insecure CI/CD pipelines and auto-update mechanisms.</li>
+    <li><strong>Security Logging and Monitoring Failures</strong> — insufficient logging, detection, monitoring, and active response allows breaches to go undetected.</li>
+    <li><strong>Server-Side Request Forgery (SSRF)</strong> — occurs when a web application fetches a remote resource without validating the user-supplied URL, allowing attackers to coerce the application into sending requests to unexpected destinations.</li>
+  </ol>
+
+  <p>A thorough web application audit tests for all ten categories. The sections below dive deeper into the categories most frequently exploited and most commonly found in our audit work.</p>
+
+  <h2 id="injection-attacks">Injection Attacks</h2>
+
+  <p>Injection vulnerabilities occur when an application sends untrusted data to an interpreter — a database engine, an operating system shell, an XML parser, or an LDAP directory — without proper sanitisation. The attacker's input is treated as code rather than data, allowing them to execute commands, read data, modify records, or gain system access.</p>
+
+  <p>SQL injection remains the most common and dangerous injection type. It works by inserting SQL commands into input fields that are concatenated directly into database queries. A login form vulnerable to SQL injection might accept the input <code>' OR '1'='1</code> as a username, which modifies the query logic to return all user records, bypassing authentication entirely.</p>
+
+  <p>Modern SQL injection is more sophisticated than this textbook example. Blind SQL injection techniques extract data one bit at a time through true/false questions in query responses. Time-based blind injection uses database sleep functions to infer information based on response timing. Second-order injection stores malicious input in the database and triggers it when the data is used in a subsequent query.</p>
+
+  <p>To audit for injection vulnerabilities, test every input point in the application: form fields, URL parameters, HTTP headers, cookies, and API request bodies. Use both automated tools like SQLMap and manual testing with crafted payloads. Check that the application uses parameterised queries or prepared statements for all database interactions. Review code for any instance where user input is concatenated into query strings.</p>
+
+  <p>Other injection types to test for include command injection (user input executed as OS commands), LDAP injection (manipulating directory queries), XPath injection (attacking XML data stores), and template injection (executing code through template engines). The prevention principle is the same across all types: never treat user input as executable code, and always use the language or framework's built-in parameterisation features.</p>
+
+  <h2 id="broken-authentication">Broken Authentication</h2>
+
+  <p>Authentication failures allow attackers to compromise user accounts, impersonate legitimate users, and gain unauthorised access to protected functionality. These vulnerabilities are particularly dangerous because they provide a legitimate-looking entry point — once an attacker controls a user account, their malicious activity blends in with normal usage.</p>
+
+  <p>Common authentication vulnerabilities found in web application audits include weak password policies that allow short or common passwords, missing or bypassable multi-factor authentication, session tokens that are predictable or do not expire, credential stuffing vulnerability where the application does not rate-limit login attempts, password reset flows that can be manipulated to reset other users' passwords, and session fixation where an attacker can force a user to authenticate with a session token the attacker already knows.</p>
+
+  <p>Auditing authentication requires testing each of these areas systematically. Attempt to create accounts with weak passwords to verify policy enforcement. Test login rate limiting by sending rapid authentication requests. Analyse session tokens for randomness and entropy. Walk through the password reset flow looking for information disclosure, insecure token generation, or steps that can be skipped. Test whether logging out actually invalidates the session token on the server side.</p>
+
+  <p>Pay special attention to authentication in API endpoints. Web application UIs often have stronger authentication controls than the underlying APIs because developers focus security effort on the visible interface. An API that accepts requests with expired or invalid tokens — or no token at all — is a critical finding regardless of what the front-end enforces.</p>
+
+  <h2 id="xss">XSS</h2>
+
+  <p>Cross-site scripting occurs when an application includes untrusted data in web page output without proper encoding. This allows attackers to inject client-side scripts that execute in other users' browsers. XSS attacks can steal session cookies, redirect users to phishing sites, modify page content, capture keystrokes, and perform actions on behalf of the victim user.</p>
+
+  <p>There are three main types of XSS. Reflected XSS is the most common — the attacker's script is included in a URL parameter and reflected back in the page response. The attack requires the victim to click a crafted link. Stored XSS is more dangerous — the attacker's script is saved in the application's database (through a comment form, profile field, or message) and served to every user who views the affected page. DOM-based XSS occurs when client-side JavaScript processes attacker-controlled data and writes it into the DOM unsafely.</p>
+
+  <p>To audit for XSS, inject test payloads into every input the application accepts and check whether the payload is rendered in the response without encoding. Start with basic payloads like script tags and event handlers, then escalate to bypass techniques if initial payloads are filtered. Test both reflected scenarios (payloads in URL parameters and form submissions) and stored scenarios (payloads saved through user-generated content features).</p>
+
+  <p>Prevention requires context-aware output encoding. HTML contexts need HTML encoding. JavaScript contexts need JavaScript encoding. URL contexts need URL encoding. CSS contexts need CSS encoding. A Content-Security-Policy header provides an additional layer of defence by restricting which scripts the browser is allowed to execute, even if an XSS vulnerability exists in the application code.</p>
+
+  <h2 id="security-misconfiguration">Security Misconfiguration</h2>
+
+  <p>Security misconfiguration is the most common finding in web application audits because it encompasses a broad range of issues across every layer of the application stack. It includes default configurations that were never hardened, unnecessary features that are enabled, overly permissive access controls, missing security headers, verbose error messages that reveal internal details, and outdated software with known vulnerabilities.</p>
+
+  <p>Common misconfigurations found in audits include default admin credentials on application frameworks or infrastructure components, directory listing enabled on the web server exposing file structures, debug mode enabled in production revealing stack traces and internal paths, unnecessary HTTP methods enabled (PUT, DELETE, TRACE), cloud storage buckets configured as publicly accessible, CORS policy set to allow all origins, and database ports exposed to the internet without access restrictions.</p>
+
+  <p>Auditing for misconfigurations involves checking each layer of the stack: the web server, the application framework, the database, the operating system, and any cloud services. Review configuration files against hardening guides. Check for default accounts and credentials. Verify that error handling does not expose sensitive information. Test whether administrative interfaces are exposed to the internet.</p>
+
+  <p>Misconfigurations are often the easiest vulnerabilities to exploit and the easiest to fix. They rarely require code changes — most fixes involve updating a configuration file, disabling an unnecessary feature, or changing a permission setting. This makes them high-priority items in any audit report because the effort-to-impact ratio heavily favours remediation.</p>
+
+  <h2 id="testing-methodology">Testing Methodology</h2>
+
+  <p>A structured testing methodology ensures comprehensive coverage and consistent results across different auditors and engagements. The following methodology draws from OWASP Testing Guide, PTES (Penetration Testing Execution Standard), and our own audit experience.</p>
+
+  <p><strong>Phase 1: Reconnaissance and mapping.</strong> Before testing begins, build a complete picture of the application. Identify all entry points: pages, forms, API endpoints, file upload functions, and administrative interfaces. Map user roles and their intended access levels. Document the technology stack including the web server, application framework, programming language, database, and third-party services. This phase typically takes 10 to 20 percent of the total audit time.</p>
+
+  <p><strong>Phase 2: Automated scanning.</strong> Run automated tools — OWASP ZAP, Burp Suite, or Nikto — against the application to identify known vulnerability patterns. Configure the scanner with valid credentials for each user role to test authenticated functionality. Automated scanning is fast and catches common issues but generates false positives that need manual verification. This phase takes 10 to 15 percent of audit time.</p>
+
+  <p><strong>Phase 3: Manual testing.</strong> This is the core of the audit. Work through each OWASP Top 10 category systematically, testing every relevant input and function. Manual testing catches business logic flaws, complex injection chains, and authentication bypasses that automated scanners miss. Focus on high-risk areas: authentication, authorisation, payment processing, and data export functions. This phase consumes 50 to 60 percent of the total audit time.</p>
+
+  <p><strong>Phase 4: Exploitation and validation.</strong> For each potential vulnerability discovered, attempt controlled exploitation to confirm the finding and assess its real-world impact. Document the steps to reproduce, the evidence (screenshots, request/response logs), and the potential business impact. This phase takes 10 to 15 percent of audit time.</p>
+
+  <p><strong>Phase 5: Reporting and remediation guidance.</strong> Compile findings into a structured report with an executive summary for stakeholders and detailed technical findings for the development team. Each finding should include a description, severity rating (using CVSS or a similar standard), evidence, steps to reproduce, business impact, and specific remediation steps. Prioritise findings by a combination of severity and ease of exploitation. This phase takes 10 to 15 percent of total audit time.</p>
+
+  <p>After remediation, schedule a retest to verify that fixes are effective and have not introduced new issues. Retesting should focus on the specific vulnerabilities that were found, but should also include a quick regression test to catch any side effects of the changes made.</p>
+</ContentLayout>

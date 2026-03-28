@@ -1,0 +1,132 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Services', href: '/website-audit-services/' },
+  { label: 'WordPress', href: '/website-audit-services/wordpress/' },
+];
+
+const toc = [
+  { label: 'Why WordPress Needs Specialist Audits', id: 'why-wordpress-needs-specialist-audits' },
+  { label: 'Plugin Audit', id: 'plugin-audit' },
+  { label: 'Theme Review', id: 'theme-review' },
+  { label: 'Security Check', id: 'security-check' },
+  { label: 'Speed Optimisation', id: 'speed-optimisation' },
+  { label: 'What Is Included', id: 'whats-included' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="WordPress Website Audit Service: CMS-Specific Expertise"
+  description="Specialist WordPress website audit covering plugins, themes, security, performance, and SEO configuration. Identifies WordPress-specific issues that generic audits miss."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+
+<p>WordPress powers over 40% of the web, and that ubiquity creates a paradox. Because WordPress makes it easy to build websites, many sites are built without the technical expertise needed to configure them properly for search performance, security, and speed. The result is millions of WordPress sites running outdated plugins, poorly coded themes, conflicting SEO configurations, and bloated databases that undermine everything the site is trying to achieve.</p>
+
+<p>A generic website audit catches some of these issues. But WordPress has specific patterns of failure that require CMS-specific knowledge to diagnose and fix. Plugin conflicts that generate duplicate content, theme code that blocks crawling, database bloat that destroys page speed, and misconfigured SEO plugins that send contradictory signals to search engines are all common WordPress problems that a platform-agnostic audit tool will either miss entirely or flag without understanding the root cause.</p>
+
+<h2 id="why-wordpress-needs-specialist-audits">Why WordPress Needs Specialist Audits</h2>
+
+<p>WordPress is not a single piece of software. It is a core platform extended by themes and plugins, each developed by different teams with different standards, different update cycles, and different approaches to SEO, security, and performance. A typical WordPress site might run 20 to 40 plugins alongside a theme, creating a complex system where interactions between components cause problems that none of the individual components would cause alone.</p>
+
+<p><strong>Plugin interactions</strong> are the most common source of WordPress-specific SEO issues. Two caching plugins running simultaneously, an SEO plugin conflicting with a schema plugin, a security plugin blocking crawler access, or a page builder adding excessive DOM elements that tank Core Web Vitals scores. These problems are invisible to standard crawlers because the output (the HTML) may look superficially fine while the underlying system is fighting itself.</p>
+
+<p><strong>Theme quality varies enormously.</strong> Premium themes from reputable developers generally follow WordPress coding standards and output clean, crawlable HTML. Free themes, older themes, and themes built primarily for visual impact sometimes generate bloated markup, load unnecessary JavaScript on every page, implement non-standard heading hierarchies, or hardcode elements that conflict with SEO plugin output. A WordPress-specific audit examines the theme code itself, not just the pages it produces.</p>
+
+<p><strong>WordPress default configurations</strong> are not optimised for SEO. The default permalink structure uses query parameters rather than readable URLs. Comments are enabled by default, creating spam management burdens. Attachment pages create thin content. Category and tag archives can generate duplicate content if not configured correctly. A specialist audit checks all of these WordPress-specific settings against SEO best practices.</p>
+
+<p><strong>Database performance</strong> degrades over time in WordPress. Post revisions accumulate, transient options expire but remain in the database, spam comments build up, and plugin uninstalls leave orphaned data tables. A bloated database directly affects page generation time, which affects both user experience and crawl efficiency. Generic speed audits measure the symptom (slow pages) but do not identify the WordPress-specific cause (database bloat).</p>
+
+<h2 id="plugin-audit">Plugin Audit</h2>
+
+<p>The plugin audit examines every active and inactive plugin on your site against several criteria.</p>
+
+<p><strong>Update status.</strong> Outdated plugins are the number one security vulnerability in WordPress. We check each plugin's current version against the latest available version, identify plugins that have not been updated by their developers in over a year (indicating potential abandonment), and flag any plugins with known security vulnerabilities listed in the WPScan vulnerability database.</p>
+
+<p><strong>Performance impact.</strong> Each plugin adds code that WordPress loads and executes. Some plugins add their CSS and JavaScript to every page, even pages where they are not needed. We measure the performance impact of each plugin by testing page speed with plugins selectively disabled, identifying the heaviest offenders. Common culprits include social sharing plugins that load multiple external scripts, slider plugins that include large JavaScript libraries, and analytics plugins that add render-blocking code.</p>
+
+<p><strong>Functional overlap.</strong> Many WordPress sites accumulate plugins over time as different administrators add tools for specific needs without checking whether existing plugins already provide that functionality. We identify plugins that duplicate capabilities, such as multiple caching solutions, multiple security plugins, or multiple SEO tools running simultaneously. Plugin overlap wastes server resources and frequently causes conflicts.</p>
+
+<p><strong>SEO impact.</strong> Certain plugins modify how WordPress generates output in ways that affect SEO. We check for plugins that alter canonical tags, modify robots meta tags, change URL structures, add or remove schema markup, or interfere with sitemap generation. When multiple plugins attempt to control the same SEO elements, the results are unpredictable and often harmful.</p>
+
+<p><strong>Recommendations.</strong> For each plugin, we provide a clear recommendation: keep, update, replace (with a specific alternative), or remove. Replacement recommendations include migration steps to ensure no functionality or data is lost during the transition.</p>
+
+<h2 id="theme-review">Theme Review</h2>
+
+<p>The theme review examines your active theme's code quality, SEO output, and performance characteristics.</p>
+
+<p><strong>HTML output quality.</strong> We examine the HTML generated by your theme for proper heading hierarchy (a single H1, logical H2-H6 structure), semantic HTML5 element usage, clean navigation markup, and absence of unnecessary wrapper divs that inflate DOM size. Themes built with page builders like Elementor, Divi, or WPBakery are particularly prone to DOM bloat, sometimes generating 10 to 20 times more HTML elements than necessary for the visual layout.</p>
+
+<p><strong>Schema markup.</strong> We check whether the theme includes structured data and whether it conflicts with schema added by SEO plugins. Themes that include their own schema implementation alongside Yoast SEO or Rank Math's schema output create duplicate, conflicting structured data that confuses search engines. The audit identifies these conflicts and recommends which source to keep.</p>
+
+<p><strong>Asset loading.</strong> We analyse how the theme loads CSS and JavaScript files: whether they are minified, whether they use conditional loading (loading only on pages where they are needed), whether they are render-blocking, and whether they leverage browser caching headers. Themes that load their entire CSS library on every page, including styles for features not present on that page, waste bandwidth and delay rendering.</p>
+
+<p><strong>Mobile responsiveness.</strong> Beyond simply fitting on a mobile screen, we check whether the theme handles mobile viewports correctly, whether touch targets meet minimum size requirements, whether fonts are legible without zooming, and whether the mobile layout maintains a logical content hierarchy. We also check for mobile-specific performance issues such as unoptimised images, viewport-dependent resource loading, and tap delay issues.</p>
+
+<p><strong>Child theme usage.</strong> We check whether customisations have been made directly to the parent theme (which will be overwritten by updates) or properly implemented in a child theme. This is a common WordPress management issue that affects long-term maintainability and can lead to customisations being lost during routine updates.</p>
+
+<h2 id="security-check">Security Check</h2>
+
+<p>WordPress's popularity makes it the most targeted CMS for attacks. Our security assessment covers the WordPress-specific attack vectors that generic security scanners miss.</p>
+
+<p><strong>Core version and updates.</strong> We verify that WordPress core is running the latest stable version and that automatic security updates are enabled. Sites running outdated core versions are vulnerable to known exploits that automated attack tools actively scan for.</p>
+
+<p><strong>Login security.</strong> We check the login page configuration: whether the default wp-login.php URL is protected or obscured, whether brute force protection is in place, whether two-factor authentication is available and enforced for administrator accounts, and whether the default "admin" username has been changed. We also check for user enumeration vulnerabilities that allow attackers to discover valid usernames.</p>
+
+<p><strong>File permissions.</strong> Incorrect file permissions on WordPress installations allow attackers to modify core files, inject malicious code, or access sensitive configuration data. We check permissions on wp-config.php, the uploads directory, the plugins directory, and .htaccess (or equivalent for Nginx). We also verify that directory browsing is disabled and that sensitive files like wp-config.php backups are not publicly accessible.</p>
+
+<p><strong>Database security.</strong> We check whether the database table prefix has been changed from the default "wp_" (which makes SQL injection attacks easier), whether the database user has minimal necessary privileges, and whether database backups are being created regularly and stored securely.</p>
+
+<p><strong>Known vulnerabilities.</strong> Every active plugin and the theme are checked against the WPScan vulnerability database and other security advisory sources. Any component with a known unpatched vulnerability is flagged as critical, with immediate remediation recommendations.</p>
+
+<h2 id="speed-optimisation">Speed Optimisation</h2>
+
+<p>WordPress speed optimisation requires understanding the specific performance bottleneck points in the WordPress architecture.</p>
+
+<p><strong>Server-side performance.</strong> WordPress generates pages dynamically by querying the database and processing PHP code on each request (unless caching is implemented). We measure Time to First Byte (TTFB) to assess server-side performance and identify whether the bottleneck is hosting quality, database performance, PHP version, or inefficient code execution. We test TTFB with and without caching to understand the uncached baseline.</p>
+
+<p><strong>Caching configuration.</strong> Effective caching is the single most impactful speed improvement for most WordPress sites. We audit your current caching setup across all layers: browser caching headers, page caching (full HTML caching), object caching (database query caching), and CDN caching. We check for common misconfigurations such as caching that excludes logged-in users when it should not, cache invalidation rules that are too aggressive, and CDN configurations that bypass WordPress caching layers.</p>
+
+<p><strong>Image optimisation.</strong> WordPress sites commonly serve unoptimised images because the media library accepts uploads without automatic compression or format conversion. We check for missing WebP/AVIF conversion, images served at larger dimensions than displayed, missing lazy loading attributes, and excessive image requests on initial page load. We also evaluate whether your image optimisation plugin (if present) is configured effectively.</p>
+
+<p><strong>External resource loading.</strong> We catalogue every external HTTP request your pages make: fonts from Google Fonts, scripts from analytics services, widgets from social platforms, and resources from advertising networks. Each external request adds latency and creates a dependency on third-party server performance. We identify which external resources can be self-hosted, which can be deferred, and which can be removed entirely.</p>
+
+<p><strong>Database optimisation.</strong> We analyse your WordPress database for accumulated bloat: post revisions (WordPress stores every saved version of every post by default), expired transients, orphaned metadata, spam and trashed comments, and unused data tables from deactivated plugins. We provide specific database cleanup recommendations with estimated size reduction and performance improvement.</p>
+
+<h2 id="whats-included">What Is Included</h2>
+
+<p>Our WordPress audit service delivers a complete assessment tailored specifically to the WordPress ecosystem.</p>
+
+<p><strong>Full technical SEO audit</strong> covering everything in our standard <a href="/website-audit-checklist/">audit checklist</a>: crawlability, indexation, on-page SEO, content quality, and backlink analysis. This provides the same thoroughness as our <a href="/website-audit-services/comprehensive/">comprehensive audit</a> with the additional WordPress-specific layers.</p>
+
+<p><strong>Plugin audit report</strong> with individual assessments for every active plugin, including update status, performance impact, security status, and keep/replace/remove recommendations.</p>
+
+<p><strong>Theme code review</strong> assessing HTML output quality, asset loading efficiency, mobile responsiveness, schema markup handling, and child theme configuration.</p>
+
+<p><strong>Security assessment</strong> covering WordPress-specific vulnerabilities, login configuration, file permissions, database security, and known vulnerability scanning.</p>
+
+<p><strong>Performance analysis</strong> with WordPress-specific diagnostics for server-side processing, caching configuration, image pipeline, external resource loading, and database health.</p>
+
+<p><strong>Prioritised action plan</strong> that ranks all findings by impact and effort, with WordPress-specific implementation instructions. Recommendations reference the actual plugins, settings, and code changes needed rather than generic advice.</p>
+
+<p><strong>Walkthrough call</strong> to review findings and answer questions. We can include your developer on this call to ensure technical recommendations are clearly understood.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>WordPress audit pricing reflects the additional specialist analysis required beyond a standard website audit.</p>
+
+<p><strong>Standard WordPress audit:</strong> From £1,297. Covers sites with up to 30 active plugins and standard theme configurations. Includes all components listed above with delivery in 10 business days.</p>
+
+<p><strong>Complex WordPress audit:</strong> From £2,497. For sites with 30+ plugins, custom theme development, WooCommerce or multisite configurations, or complex caching and CDN setups. Includes extended analysis of plugin interactions, WooCommerce-specific checks (if applicable), and more detailed security assessment. Delivery in 12-15 business days.</p>
+
+<p><strong>WordPress + migration planning:</strong> From £3,497. Includes the full WordPress audit plus a detailed migration plan for moving to a new host, theme, or CMS. The migration plan covers redirect mapping, content export and import procedures, plugin replacement strategy, and post-migration testing checklist. This is the right option if you are planning a significant change to your WordPress setup.</p>
+
+<p>All pricing includes the complete deliverable package and walkthrough call. Contact us through the form on this page to discuss your specific WordPress site and receive a fixed-price quote.</p>
+
+</ContentLayout>

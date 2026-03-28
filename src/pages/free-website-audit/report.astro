@@ -1,0 +1,118 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Free Audit', href: '/free-website-audit/' },
+  { label: 'Report', href: '/free-website-audit/report/' },
+];
+
+const toc = [
+  { label: "What's in the Report", id: 'whats-in-the-report' },
+  { label: 'Health Score Breakdown', id: 'health-score-breakdown' },
+  { label: 'Issue Categories', id: 'issue-categories' },
+  { label: 'Priority Recommendations', id: 'priority-recommendations' },
+  { label: 'Sample Report', id: 'sample-report' },
+  { label: 'Upgrading to Full Audit', id: 'upgrading-to-full-audit' },
+];
+---
+
+<ContentLayout
+  title="Free Website Audit Report: What You'll Receive"
+  description="Understand exactly what our free website audit report contains. Health scores, issue breakdowns, priority recommendations, and actionable next steps — all explained."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>When you run a <strong>free website audit</strong> with our tool, you receive a structured report that tells you precisely what is working, what is broken, and what to fix first. This is not a vague summary with colour-coded bars and no context. It is a page-by-page diagnostic that shows you the specific issues affecting your site's search visibility, performance, security, and user experience.</p>
+
+<p>Every finding includes an explanation of why it matters and how severe it is. You do not need to be an SEO specialist or web developer to understand the report. It is written in plain language, scored on a clear scale, and organised by priority so you know exactly where to start.</p>
+
+<p>This page explains every section of the report in detail so you know what to expect before you run your first scan.</p>
+
+<h2 id="whats-in-the-report">What's in the Report</h2>
+
+<p>Your free audit report is divided into five main sections. Each section evaluates a different aspect of your website's health and produces its own score. These section scores combine into your overall health score.</p>
+
+<p><strong>Executive summary.</strong> The top of your report shows your overall health score (0-100), the number of pages crawled, and a high-level breakdown of findings by severity: critical issues, warnings, and passes. This section is designed to give you an instant understanding of where you stand. If you only have 30 seconds, the executive summary tells you whether your site is healthy or needs urgent attention.</p>
+
+<p><strong>SEO analysis.</strong> This section covers every on-page SEO factor we check: title tags, meta descriptions, heading structure, canonical tags, image alt text, robots directives, sitemap presence, and internal link structure. Each factor is evaluated per page, so you can see exactly which pages have issues and which are properly optimised.</p>
+
+<p><strong>Performance review.</strong> We measure server response time, page weight, number of HTTP requests, render-blocking resources, and image optimisation. The performance section tells you how fast your site loads and identifies the specific resources that are slowing it down. Since Google uses Core Web Vitals as a ranking signal, performance problems directly affect your search positions.</p>
+
+<p><strong>Security check.</strong> We verify SSL certificate validity, test for mixed content, check security headers (HSTS, Content-Security-Policy, X-Frame-Options, X-Content-Type-Options), and scan for exposed sensitive files. Security issues can result in browser warnings that drive visitors away and, in severe cases, Google may flag your site as dangerous in search results.</p>
+
+<p><strong>Accessibility overview.</strong> We check for basic accessibility factors including colour contrast ratios, form label associations, ARIA landmark usage, and keyboard navigation support. While this is not a comprehensive WCAG audit, it identifies the most impactful accessibility barriers that affect both usability and SEO.</p>
+
+<h2 id="health-score-breakdown">Health Score Breakdown</h2>
+
+<p>Your overall health score is a weighted average of the five section scores. The weighting reflects the relative impact of each area on your website's ability to attract and convert organic traffic.</p>
+
+<p><strong>SEO: 35% of total score.</strong> SEO receives the highest weighting because on-page SEO errors directly prevent your pages from ranking. A site with perfect performance and security but broken SEO fundamentals will still struggle to attract organic traffic. We weight title tags and canonical configuration most heavily within this category because they have the most immediate impact on indexation and click-through rates.</p>
+
+<p><strong>Performance: 25% of total score.</strong> Page speed affects both rankings (through Core Web Vitals) and user experience (through bounce rates). Google has confirmed that page experience signals influence ranking, and our data shows that sites loading in under 2 seconds have significantly lower bounce rates than slower sites. Server response time carries the most weight within this category.</p>
+
+<p><strong>Security: 20% of total score.</strong> SSL and security headers are baseline requirements for any modern website. Chrome displays "Not Secure" warnings for HTTP sites, which destroys user trust. Google has confirmed HTTPS as a ranking signal. Within this category, SSL validity and mixed content carry the highest weights.</p>
+
+<p><strong>Accessibility: 10% of total score.</strong> Accessibility affects both usability and legal compliance. While our free audit covers basic checks rather than full WCAG conformance, the factors we test (colour contrast, alt text, form labels) are the ones with the broadest impact on real users.</p>
+
+<p><strong>Best practices: 10% of total score.</strong> This covers HTML validity, viewport configuration, language attributes, favicon presence, and other standards that affect how browsers and search engines render and interpret your site.</p>
+
+<h2 id="issue-categories">Issue Categories</h2>
+
+<p>Every finding in your report is assigned one of three severity levels. Understanding these categories helps you prioritise your fixes effectively.</p>
+
+<p><strong>Critical (red).</strong> These are issues that are actively harming your site right now. They include broken SSL certificates, noindex tags on important pages, missing title tags, server errors (5xx status codes), and blocked resources in robots.txt that prevent search engines from crawling your content. Critical issues should be fixed immediately — they represent the highest-impact improvements you can make. Most sites have between 2 and 8 critical issues.</p>
+
+<p><strong>Warning (amber).</strong> These are issues that are not causing immediate damage but are reducing your site's potential. They include meta descriptions that are too long or too short, images without alt text, pages with slow load times, missing Open Graph tags, and minor heading hierarchy problems. Warnings should be addressed within the next 30 days. The average site has 10-20 warnings.</p>
+
+<p><strong>Pass (green).</strong> These are checks that your site passed successfully. We include passes in the report so you have a complete picture of your site's health, not just the problems. Passes also serve as a baseline — if a future scan shows a previously passing check has become a warning, you know something changed.</p>
+
+<p>Each finding also includes a brief explanation of what was checked, what was found, and why it matters. For example, rather than simply flagging "Missing meta description on /about/", the report explains that meta descriptions control how your page appears in search results and that pages without them rely on Google to auto-generate a snippet, which is often less compelling than a hand-written description.</p>
+
+<h2 id="priority-recommendations">Priority Recommendations</h2>
+
+<p>The final section of your report is a prioritised action plan. Rather than leaving you with a list of 30 issues and no guidance on where to start, we rank every recommendation by a combination of impact and effort.</p>
+
+<p><strong>Quick wins.</strong> These are high-impact, low-effort fixes that you can implement in under an hour. Common quick wins include adding missing title tags, writing meta descriptions for your most important pages, fixing a broken SSL certificate, and adding a sitemap reference to robots.txt. Quick wins are listed first because they deliver the most improvement per minute of work invested.</p>
+
+<p><strong>Strategic fixes.</strong> These are high-impact improvements that require more time or technical skill. Examples include restructuring your heading hierarchy across the site, implementing a redirect strategy for broken internal links, optimising images across all pages, and adding structured data markup. Strategic fixes typically take a few days and may require a developer's involvement.</p>
+
+<p><strong>Long-term improvements.</strong> These are lower-priority enhancements that improve your site incrementally. Adding ARIA landmarks, implementing a Content-Security-Policy header, or improving colour contrast ratios fall into this category. They matter, but they should not distract you from the critical and strategic fixes.</p>
+
+<p>Each recommendation includes a difficulty rating (Easy, Medium, Hard) and an estimated time to implement. This helps you plan your improvement work whether you are doing it yourself, delegating to a developer, or briefing an agency.</p>
+
+<h2 id="sample-report">Sample Report</h2>
+
+<p>To give you a concrete sense of what the report looks like, here is a summary of a real audit we ran on a small business website with 12 pages.</p>
+
+<p><strong>Overall score: 62/100.</strong> The site had a valid SSL certificate and reasonable performance, but significant SEO gaps were pulling the score down.</p>
+
+<p><strong>Critical issues (3):</strong> The homepage had a duplicate title tag (matching the about page), three product pages had noindex tags left over from a staging environment, and the XML sitemap returned a 404 error. These three issues alone were likely preventing half the site from appearing in Google's index.</p>
+
+<p><strong>Warnings (14):</strong> Seven pages had missing meta descriptions, four images lacked alt text, the site was not using HSTS headers, two pages had H3 headings before any H2, and the page weight on the portfolio page exceeded 4MB due to uncompressed images.</p>
+
+<p><strong>Passes (28):</strong> SSL was valid and properly enforced, all pages returned 200 status codes, canonical tags were present on 9 of 12 pages, server response time was under 150ms, and the site had proper viewport and language configuration.</p>
+
+<p><strong>Top recommendations:</strong> Remove the staging noindex tags (5 minutes, critical impact). Fix the sitemap 404 by regenerating it from the CMS (10 minutes, critical impact). Write unique title tags for all pages (30 minutes, high impact). Add meta descriptions to the seven pages missing them (45 minutes, medium impact). Compress the portfolio images using WebP format (20 minutes, medium impact).</p>
+
+<p>After implementing the critical fixes, this site's score improved to 78 and its indexed page count increased from 6 to 11 within two weeks.</p>
+
+<h2 id="upgrading-to-full-audit">Upgrading to Full Audit</h2>
+
+<p>Our free audit report is a powerful starting point, but it has inherent limitations. It crawls a maximum of 5 pages, performs checks from a single geographic location, and cannot access server logs, analytics data, or Google Search Console metrics. A full professional audit goes significantly deeper.</p>
+
+<p><strong>Full-site crawl.</strong> A professional audit crawls every page on your site — hundreds or thousands of pages — and identifies issues at scale. Problems like widespread thin content, orphan page clusters, and deep internal link structures only become visible with a complete crawl.</p>
+
+<p><strong>Data-driven analysis.</strong> By connecting to Google Search Console, Google Analytics, and server logs, a professional audit can identify pages losing traffic, keywords where you rank on page 2 (striking distance opportunities), and crawl budget waste from pages that search engines visit but users never see.</p>
+
+<p><strong>Competitor benchmarking.</strong> A full audit includes analysis of your top competitors — their content strategies, backlink profiles, and technical configurations — so you can understand what "good" looks like in your specific market and identify gaps and opportunities.</p>
+
+<p><strong>Custom recommendations.</strong> Rather than generic advice, a professional audit provides recommendations tailored to your CMS, hosting environment, business model, and growth goals. The difference between "add structured data" and "implement Product schema on your 47 WooCommerce product pages using the Yoast SEO plugin" is the difference between a free report and a professional audit.</p>
+
+<p>If your free audit reveals critical issues or your score is below 70, a <a href="/website-audit-services/">professional audit</a> will provide the depth and specificity you need to make meaningful improvements. If your score is above 80, you are likely in good shape and can focus on the specific findings from the free report.</p>
+
+<p>Ready to see your report? <a href="/free-website-audit/">Run your free audit now</a> and get your results in 60 seconds.</p>
+
+</ContentLayout>

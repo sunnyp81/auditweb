@@ -1,0 +1,134 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Services', href: '/website-audit-services/' },
+  { label: 'Ecommerce', href: '/website-audit-services/ecommerce/' },
+];
+
+const toc = [
+  { label: 'Ecommerce Audit Challenges', id: 'ecommerce-audit-challenges' },
+  { label: 'Product Page Review', id: 'product-page-review' },
+  { label: 'Checkout Flow', id: 'checkout-flow' },
+  { label: 'Site Speed', id: 'site-speed' },
+  { label: 'Schema and Rich Results', id: 'schema-and-rich-results' },
+  { label: 'What Is Included', id: 'whats-included' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Ecommerce Website Audit Service: Boost Revenue"
+  description="Specialist ecommerce website audit covering product pages, checkout flow, site speed, and structured data. Identifies revenue-blocking issues that generic audits miss."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+
+<p>Ecommerce websites present auditing challenges that no generic audit process can fully address. The combination of large product catalogues, faceted navigation, dynamic pricing, seasonal inventory, and complex user journeys creates a technical landscape where standard SEO recommendations either miss critical issues or suggest changes that are impractical to implement at scale. An ecommerce audit needs to understand both search engine requirements and the commercial realities of running an online store.</p>
+
+<p>Every ecommerce audit we conduct connects technical findings directly to revenue impact. A broken canonical tag on a category page is not just a technical issue. It is a page that drives £X per month in organic revenue that is being diluted by duplicate content signals. This revenue-first framing ensures that the audit recommendations are prioritised by business value, not just technical severity.</p>
+
+<h2 id="ecommerce-audit-challenges">Ecommerce Audit Challenges</h2>
+
+<p>Ecommerce sites face specific technical SEO challenges that arise from the nature of selling products online.</p>
+
+<p><strong>Catalogue scale.</strong> A site with 10,000 products might generate 100,000 or more indexable URLs when you account for product variants, filtered views, paginated category pages, and search result pages. Managing crawl budget across this volume requires deliberate strategy. Without it, Google spends its crawl budget on low-value filtered pages while high-value product and category pages are crawled infrequently.</p>
+
+<p><strong>Faceted navigation.</strong> The filters that help shoppers narrow product listings (by size, colour, price, brand) generate parametrised URLs that can exponentially multiply the number of pages search engines discover. A category with 10 filter types, each with 5 options, could theoretically generate millions of URL combinations. Most of these are duplicate or near-duplicate content that wastes crawl budget and dilutes ranking signals. Correctly handling faceted navigation through a combination of canonical tags, robots directives, and URL parameter configuration is one of the most impactful technical improvements for ecommerce SEO.</p>
+
+<p><strong>Product lifecycle.</strong> Products go in and out of stock, are discontinued, are replaced by newer models, and have seasonal availability. Each status change has SEO implications. A product page that has accumulated rankings and backlinks over years should not simply return a 404 when the product is discontinued. The handling of out-of-stock and discontinued products is a common area where ecommerce sites haemorrhage accumulated SEO value.</p>
+
+<p><strong>Duplicate content at scale.</strong> Product descriptions provided by manufacturers are used across every retailer that sells those products, creating massive duplicate content issues. Syndicated content, product variants that share descriptions, and category pages with thin auto-generated content are all common sources of duplicate and thin content that suppress ecommerce sites in search results.</p>
+
+<p><strong>International and multi-currency.</strong> Ecommerce sites that sell across borders need correct hreflang implementation, proper currency handling, and consistent product availability across locales. Errors in international configuration cause the wrong country version to appear in search results, frustrating users with incorrect pricing and shipping options.</p>
+
+<h2 id="product-page-review">Product Page Review</h2>
+
+<p>Product pages are the revenue-generating core of an ecommerce site. Our audit evaluates product page templates systematically, checking every element that affects both search visibility and conversion.</p>
+
+<p><strong>Title tag optimisation.</strong> We review the template formula used to generate product page titles, checking for keyword inclusion, brand positioning, modifier usage, and length optimisation. Ecommerce title tags need to balance search relevance with click appeal. We analyse your competitors' title patterns and Search Console click-through rate data to recommend specific template improvements.</p>
+
+<p><strong>Product description quality.</strong> We assess a representative sample of product descriptions for uniqueness, depth, keyword coverage, and user value. Pages using manufacturer-supplied descriptions verbatim are flagged, along with specific recommendations for creating unique content at scale. We identify which product categories would benefit most from enhanced descriptions based on search volume and current ranking positions.</p>
+
+<p><strong>Image optimisation.</strong> Product images are critical for both SEO (image search drives significant ecommerce traffic) and conversion. We check image file formats and compression, alt text quality and keyword usage, image sitemap inclusion, structured data image properties, and whether images are optimised for Google Shopping and visual search.</p>
+
+<p><strong>User-generated content.</strong> Customer reviews, questions and answers, and user-submitted photos add unique content to product pages and build trust signals. We audit whether your review implementation is technically sound (not loaded via JavaScript that search engines miss), whether reviews are marked up with Review schema, and whether your review acquisition process is generating sufficient volume. Sites without reviews on product pages are at a significant competitive disadvantage.</p>
+
+<p><strong>Internal linking from products.</strong> Product pages should link to related products, parent categories, and relevant content pages. We check whether these links are present, whether they use meaningful anchor text, and whether the linking patterns create logical relationships that help search engines understand your product taxonomy. Many ecommerce platforms generate related product sections using algorithms that prioritise commercial metrics over SEO value.</p>
+
+<p><strong>Variant handling.</strong> Products with variants (sizes, colours, configurations) need careful URL and canonical strategy. We check whether variants have unique URLs or use a single URL with selectors, whether canonical tags correctly point to the primary variant, and whether variant pages that should be indexed (different enough to rank independently) are being accidentally canonicalised away.</p>
+
+<h2 id="checkout-flow">Checkout Flow</h2>
+
+<p>While checkout optimisation is primarily a conversion concern, several aspects have direct SEO and revenue implications that belong in a comprehensive audit.</p>
+
+<p><strong>Cart and checkout page indexation.</strong> Cart pages, checkout pages, and order confirmation pages should not be indexable. We check for proper noindex directives and robots.txt exclusions on transactional pages. Indexed checkout pages create thin content signals and can confuse search engines about your site's purpose.</p>
+
+<p><strong>Payment and trust signals.</strong> Although not traditional SEO factors, trust signals like SSL certificates, payment security badges, clear return policies, and contact information affect both conversion rates and the overall quality signals that Google evaluates. We assess whether your checkout communicates trustworthiness effectively.</p>
+
+<p><strong>Mobile checkout experience.</strong> With mobile commerce exceeding 60% of ecommerce traffic in most sectors, the mobile checkout flow must be frictionless. We test the entire mobile checkout process for usability issues: form field sizing, keyboard type selection for phone numbers and postcodes, button sizing, progress indicators, and load time at each step. Every friction point in mobile checkout represents lost revenue.</p>
+
+<p><strong>Error handling.</strong> We test how the checkout handles common error scenarios: invalid addresses, declined cards, expired sessions, and out-of-stock items added during checkout. Poor error handling causes cart abandonment and, if error pages are indexable, creates quality issues for search engines.</p>
+
+<p><strong>Cross-sell and upsell implementation.</strong> Product recommendations during checkout (frequently bought together, customers also viewed) should be implemented in a way that does not slow down the checkout process. We check whether recommendation widgets add excessive HTTP requests, load unnecessary JavaScript, or cause layout shifts that frustrate users during the critical purchase decision moment.</p>
+
+<h2 id="site-speed">Site Speed</h2>
+
+<p>Ecommerce sites face unique speed challenges due to the volume of product images, dynamic pricing and inventory lookups, personalisation scripts, and third-party integrations.</p>
+
+<p><strong>Category page performance.</strong> Category pages typically display 20-50 product thumbnails, filter interfaces, sorting options, and pagination. These elements create heavy pages that are often the slowest on ecommerce sites. We measure Core Web Vitals specifically for category page templates, identify the heaviest elements, and recommend specific optimisations. Common fixes include lazy loading below-the-fold product thumbnails, deferring filter JavaScript, and implementing efficient pagination.</p>
+
+<p><strong>Product page performance.</strong> Product pages load hero images, image galleries, pricing data, inventory status, review widgets, recommendation carousels, and social sharing buttons. Each component adds weight and complexity. We decompose the page load into individual resource requests, identify which resources are render-blocking, and recommend a loading priority strategy that gets core content visible quickly while deferring supplementary elements.</p>
+
+<p><strong>Third-party script impact.</strong> Ecommerce sites typically load more third-party scripts than other site types: analytics, heatmaps, live chat, retargeting pixels, affiliate tracking, payment processors, review platforms, and personalisation engines. We measure the individual performance impact of each third-party script and identify which can be deferred, which can be replaced with lighter alternatives, and which are providing insufficient value to justify their performance cost.</p>
+
+<p><strong>Search and filter performance.</strong> On-site search and filter interactions should respond within 200 milliseconds to feel instantaneous. We test search response times and filter application speeds across different devices and connection types, identifying whether performance bottlenecks are server-side (slow database queries) or client-side (heavy JavaScript processing).</p>
+
+<h2 id="schema-and-rich-results">Schema and Rich Results</h2>
+
+<p>Structured data is particularly valuable for ecommerce because it enables rich results that significantly increase click-through rates from search results.</p>
+
+<p><strong>Product schema.</strong> We validate Product schema implementation across your product pages, checking for required and recommended properties: name, description, image, SKU, brand, offers (price, availability, currency), and aggregate rating. Incomplete Product schema still passes validation but misses opportunities for rich result features. We check every property against Google's documentation to maximise rich result eligibility.</p>
+
+<p><strong>Review schema.</strong> If your product pages include customer reviews, Review and AggregateRating schema should be implemented to display star ratings in search results. We verify that review schema accurately reflects actual review data (fabricated or inflated ratings violate Google's guidelines and risk manual actions), that individual reviews include the required properties, and that the aggregate values are calculated correctly.</p>
+
+<p><strong>Breadcrumb schema.</strong> BreadcrumbList schema enables breadcrumb display in search results, which improves click-through rates by showing users the category hierarchy before they click. We check implementation accuracy and ensure breadcrumb schema matches the visible breadcrumb navigation on each page.</p>
+
+<p><strong>FAQ schema.</strong> Product pages with frequently asked questions can benefit from FAQPage schema, which displays expandable questions directly in search results. We identify product categories where FAQ content exists or could be created, and check existing implementations for technical accuracy.</p>
+
+<p><strong>Organization and site-level schema.</strong> We verify that site-wide schema (Organization, WebSite, SearchAction) is implemented correctly, providing search engines with clear entity information about your business and enabling sitelinks search box features.</p>
+
+<h2 id="whats-included">What Is Included</h2>
+
+<p>Our ecommerce audit service covers every aspect described above, delivered as a structured package designed for ecommerce teams.</p>
+
+<p><strong>Full technical SEO audit</strong> using our standard <a href="/website-audit-services/comprehensive/">72-checkpoint methodology</a>, applied with ecommerce-specific focus areas and priorities.</p>
+
+<p><strong>Product page template analysis</strong> covering title tags, descriptions, images, reviews, internal linking, and variant handling across all product page templates.</p>
+
+<p><strong>Category and navigation audit</strong> including faceted navigation handling, category hierarchy, internal link distribution, and crawl budget management recommendations.</p>
+
+<p><strong>Structured data audit</strong> with validation of all implemented schema types and recommendations for missing schema opportunities, including product, review, breadcrumb, FAQ, and organisation markup.</p>
+
+<p><strong>Performance analysis</strong> with ecommerce-specific testing of category pages, product pages, checkout flow, and third-party script impact.</p>
+
+<p><strong>Revenue impact estimates</strong> for each recommendation, calculated from your actual Search Console traffic data and conversion rates where available.</p>
+
+<p><strong>Prioritised action plan</strong> ranking recommendations by estimated revenue impact and implementation effort, with specific technical instructions for your development team.</p>
+
+<p><strong>Walkthrough call</strong> with your marketing and development team to ensure recommendations are clearly understood and implementation questions are answered.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p><strong>Small ecommerce (up to 1,000 products):</strong> From £1,997. Covers Shopify, WooCommerce, and similar platforms with straightforward product catalogues. Delivery in 10-12 business days.</p>
+
+<p><strong>Medium ecommerce (1,000-10,000 products):</strong> From £3,497. Covers more complex catalogues with faceted navigation, multiple product types, and significant category depth. Includes extended faceted navigation analysis and crawl budget assessment. Delivery in 12-15 business days.</p>
+
+<p><strong>Large ecommerce (10,000+ products):</strong> Custom pricing. Enterprise ecommerce sites with complex architectures, international versions, and extensive third-party integrations require scoping before quoting. Contact us for a consultation.</p>
+
+<p>The return on investment for ecommerce audits is typically the most measurable of any audit type because improvements directly correlate with revenue changes. A 15% improvement in organic traffic to product pages translates directly into measurable additional revenue, making the audit cost easy to justify against expected returns.</p>
+
+</ContentLayout>

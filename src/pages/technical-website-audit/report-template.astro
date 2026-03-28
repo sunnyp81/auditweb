@@ -1,0 +1,146 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Technical Audit', href: '/technical-website-audit/' },
+  { label: 'Report Template', href: '/technical-website-audit/report-template/' },
+];
+
+const toc = [
+  { label: 'What the Template Covers', id: 'what-the-template-covers' },
+  { label: 'Executive Summary Section', id: 'executive-summary-section' },
+  { label: 'Crawlability Section', id: 'crawlability-section' },
+  { label: 'Performance Section', id: 'performance-section' },
+  { label: 'Security Section', id: 'security-section' },
+  { label: 'Scoring System', id: 'scoring-system' },
+  { label: 'How to Present', id: 'how-to-present' },
+];
+---
+
+<ContentLayout
+  title="Technical Audit Report Template: Free Download"
+  description="A structured template for presenting technical SEO audit findings. Covers executive summary, crawlability, performance, security, scoring, and client presentation tips."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+
+<p>Running a technical audit is one skill. Presenting the findings in a way that gets buy-in and drives action is a completely different skill. A <strong>technical audit report template</strong> bridges that gap by giving you a structured framework for organising your findings, scoring severity, and communicating recommendations to both technical and non-technical stakeholders.</p>
+
+<p>The template described on this page is the same framework we use for our professional audit reports. It has been refined through hundreds of audits across sites of every size and industry. It works because it does three things that most audit reports fail to do: it leads with business impact rather than technical jargon, it scores every finding on a consistent scale so priorities are unambiguous, and it provides enough implementation detail for developers to act without needing a follow-up conversation.</p>
+
+<p>Whether you are an SEO professional presenting to a client, an in-house marketer building a case for development resources, or a freelancer structuring your first technical audit, this template gives you a proven format that produces clear, actionable reports.</p>
+
+<h2 id="what-the-template-covers">What the Template Covers</h2>
+
+<p>The template is organised into seven sections, each addressing a distinct area of technical SEO. The sections are ordered by their typical importance to stakeholders, not by the order in which you conduct the audit.</p>
+
+<p><strong>Executive summary.</strong> A one-page overview designed for decision-makers who will not read the full report. It communicates the overall health score, the most critical findings, and the recommended investment in plain business language.</p>
+
+<p><strong>Crawlability and indexation.</strong> The most technically dense section, covering everything that affects whether search engines can discover and index your content: robots.txt, sitemaps, canonical configuration, redirect architecture, orphan pages, and crawl budget efficiency.</p>
+
+<p><strong>On-page SEO.</strong> The elements that determine how search engines interpret each page: title tags, meta descriptions, heading hierarchy, image optimisation, structured data, and internal linking patterns.</p>
+
+<p><strong>Performance.</strong> Server response times, page load metrics, Core Web Vitals, resource optimisation, and caching strategy. This section quantifies the speed-related factors that affect both rankings and user experience.</p>
+
+<p><strong>Security.</strong> SSL configuration, security headers, vulnerability exposure, and third-party script risks. Security findings are particularly effective at motivating action because the consequences of inaction are tangible and frightening to non-technical stakeholders.</p>
+
+<p><strong>Mobile experience.</strong> Responsive behaviour, touch target sizing, mobile performance, and mobile-specific issues. With Google's mobile-first indexing, mobile findings are ranking-critical rather than nice-to-have.</p>
+
+<p><strong>Prioritised action plan.</strong> The final section that transforms findings into a project plan. Every recommendation is ranked by impact and effort, assigned to a responsible party (development, marketing, content), and given an estimated timeline.</p>
+
+<p>Each section follows the same internal structure: a brief contextual introduction (why this area matters), detailed findings with supporting evidence, and specific recommendations with implementation guidance. This consistency makes the report easy to navigate and ensures no finding exists without a clear path to resolution.</p>
+
+<h2 id="executive-summary-section">Executive Summary Section</h2>
+
+<p>The executive summary is the most important page of your audit report. For many stakeholders, it is the only page they will read. A poorly written executive summary means your audit gathers dust. A well-written one secures budget and drives action.</p>
+
+<p><strong>Overall health score.</strong> Open with a single number — the site's overall technical health score on a 0-100 scale. This immediately communicates whether the situation is urgent, concerning, or healthy. Below the score, include a one-sentence interpretation: "Your site scores 54/100 on technical health, indicating multiple critical issues that are actively suppressing your organic search visibility."</p>
+
+<p><strong>Key metrics dashboard.</strong> Present 4-6 headline metrics that provide context for the score: total pages crawled, pages with critical issues, average page load time, Core Web Vitals pass rate, indexed vs submitted URL ratio, and security header coverage percentage. These metrics give stakeholders a quantitative sense of the site's health without requiring them to understand technical details.</p>
+
+<p><strong>Top findings.</strong> List the 3-5 most impactful findings in business language. Not "37 pages have missing canonical tags" but "37 pages risk being excluded from Google's index due to missing canonical configuration, potentially affecting 23% of your organic traffic." Each finding should answer two questions: what is wrong, and what is the business consequence of not fixing it.</p>
+
+<p><strong>Recommended investment.</strong> Close the executive summary with a clear recommendation. State the estimated effort required to address the critical and high-priority findings (in hours or days), the expected outcome of completing those fixes (improved indexation, faster load times, restored rankings), and the risk of inaction (continued traffic decline, competitive disadvantage, security exposure). Decision-makers need to understand the cost-benefit trade-off before they commit resources.</p>
+
+<p><strong>What to avoid in the executive summary.</strong> Do not include technical terminology without explanation. Do not list more than 5 findings — the executive summary is for priorities, not completeness. Do not use passive voice or hedge your recommendations. If the site needs urgent work, say so directly. Soft language lets stakeholders defer action.</p>
+
+<h2 id="crawlability-section">Crawlability Section</h2>
+
+<p>Crawlability findings are often the most impactful in a technical audit because they determine whether search engines can access your content at all. A page that cannot be crawled cannot be indexed, cannot rank, and cannot generate traffic. The crawlability section of your report should make this hierarchy clear.</p>
+
+<p><strong>Robots.txt analysis.</strong> Document the current robots.txt configuration, highlighting any directives that block important content. Include the exact directives causing issues and the specific URLs or URL patterns affected. If robots.txt is blocking CSS or JavaScript files that Google needs to render the page, this is a critical finding — Google cannot evaluate content it cannot see. Provide the corrected robots.txt as a code block that developers can implement directly.</p>
+
+<p><strong>XML sitemap audit.</strong> Report on sitemap presence, validity, and accuracy. Key findings include: sitemap not found (critical), sitemap contains URLs that return non-200 status codes (high), sitemap missing significant published pages (high), sitemap not referenced in robots.txt (medium), sitemap contains noindexed URLs (medium). For each finding, include the specific URLs involved and the recommended correction.</p>
+
+<p><strong>Redirect mapping.</strong> Document all redirect chains (A redirects to B redirects to C) and redirect loops. For each chain, show the complete path and the recommended direct redirect. Quantify the impact: "147 internal links point to URLs that redirect, adding an average of 280ms per page transition and diluting link equity through each hop." Include a complete redirect mapping table that developers can implement in a single deployment.</p>
+
+<p><strong>Canonical configuration.</strong> Audit canonical tags across the entire site. Report on: pages with missing canonical tags, pages with canonical tags pointing to non-existent URLs, pages with canonical tags pointing to non-indexable URLs, and conflicting canonical signals (HTML canonical disagrees with HTTP header canonical). Each finding should include the affected URL, the current canonical value, and the correct canonical value.</p>
+
+<p><strong>Orphan pages.</strong> Identify pages that exist on the server but have no internal links pointing to them. These pages are discoverable only through the sitemap (if listed) or through external links. For each orphan page, recommend either adding internal links from relevant pages or removing/redirecting the page if it is no longer needed. Include the pages that should link to each orphan based on topical relevance.</p>
+
+<p><strong>Crawl depth analysis.</strong> Map the click depth of every page on the site — how many clicks from the homepage are required to reach it. Pages beyond 3 clicks from the homepage receive less crawl frequency and less link equity. Identify sections of the site that are buried too deep and recommend navigation or internal linking changes to reduce their depth.</p>
+
+<h2 id="performance-section">Performance Section</h2>
+
+<p>Performance findings resonate with every stakeholder because everyone has experienced a slow website. The performance section should translate technical measurements into user experience language and business impact.</p>
+
+<p><strong>Core Web Vitals.</strong> Report Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP) for representative pages. Use both lab data (Lighthouse) and field data (Chrome UX Report) where available. For each metric, show the current value, the threshold for "good" (LCP under 2.5s, CLS under 0.1, INP under 200ms), and the specific elements causing poor scores. LCP issues usually trace to large hero images, unoptimised web fonts, or slow server response. CLS issues trace to images without dimensions, dynamic content injection, or late-loading advertisements. INP issues trace to heavy JavaScript execution blocking the main thread.</p>
+
+<p><strong>Server response time.</strong> Report TTFB measurements from multiple locations relevant to the site's target audience. If TTFB exceeds 600ms, document the likely causes: slow database queries, no server-side caching, inadequate hosting resources, or no CDN. Provide specific recommendations for the site's hosting environment — not generic advice, but actionable steps like "enable OPcache in PHP configuration" or "implement Redis object caching for WordPress database queries".</p>
+
+<p><strong>Resource audit.</strong> Create a resource inventory showing every CSS file, JavaScript bundle, image, font file, and third-party script loaded on key pages. For each resource, document the file size, whether it is render-blocking, whether it is cached, and whether it is used on the page. Identify the largest resources and calculate the potential savings from optimisation. A table showing "current size vs optimised size vs estimated savings" is compelling because it makes the improvement tangible.</p>
+
+<p><strong>Image optimisation.</strong> Document the current state of image optimisation across the site: formats used (JPEG, PNG, GIF vs WebP, AVIF), average file size, images served without responsive sizing, and images above the fold that lack preload hints. Calculate the total potential savings from converting to modern formats and implementing responsive images. For a typical content site, image optimisation alone can reduce page weight by 40-60%.</p>
+
+<p><strong>Third-party impact.</strong> Isolate the performance impact of third-party scripts. Many sites load analytics, advertising, chat widgets, social embeds, and tracking pixels that collectively add seconds to load time. Document each third-party resource, its size, its load time impact, and whether it is essential to the business. Often, half of a site's third-party scripts can be removed or deferred without affecting business operations.</p>
+
+<h2 id="security-section">Security Section</h2>
+
+<p>Security findings are uniquely motivating because the consequences of ignoring them — data breaches, browser warnings, Google penalties — are concrete and frightening. Present security findings with appropriate urgency.</p>
+
+<p><strong>SSL/TLS assessment.</strong> Report on certificate validity, chain of trust, protocol version (TLS 1.2 minimum, TLS 1.3 preferred), and cipher suite strength. Check for common misconfigurations: certificates that do not cover all subdomains (www vs non-www), expired certificates, certificates issued by untrusted authorities, and mixed content that undermines HTTPS by loading resources over HTTP. Each finding should include the specific misconfiguration and the exact steps to resolve it.</p>
+
+<p><strong>Security header audit.</strong> Test for and report on each critical security header. For HSTS: is it present, does it include subdomains, what is the max-age value (should be at least 1 year). For Content-Security-Policy: is it present, does it effectively restrict resource sources, or is it configured with unsafe-inline and unsafe-eval directives that negate its value. For X-Frame-Options: does it prevent clickjacking. For X-Content-Type-Options: is nosniff set. Provide the exact header values to implement as copy-paste configuration for the site's web server.</p>
+
+<p><strong>Exposed files and directories.</strong> Document any sensitive files accessible at common paths: .env files, .git directories, wp-config.php, database dumps, backup archives, readme files that disclose CMS version. Each exposed file represents a potential attack vector. Rate these as critical and provide specific server configuration rules (Apache .htaccess, Nginx location blocks) to block access.</p>
+
+<p><strong>CMS and plugin security.</strong> For sites running WordPress, Joomla, Drupal, or other CMS platforms, report the current version and any known vulnerabilities in that version. Identify installed plugins or extensions and flag those with known security issues or those that have not been updated in over a year. Outdated CMS components are the single most common entry point for website compromises.</p>
+
+<p><strong>Cookie and privacy compliance.</strong> While not strictly a security issue, cookie configuration has legal implications under GDPR, CCPA, and similar regulations. Document all cookies set by the site, their purposes, their expiry times, and whether a cookie consent mechanism is in place. Flag cookies set before consent is granted, as this is a common compliance failure that can result in significant fines.</p>
+
+<h2 id="scoring-system">Scoring System</h2>
+
+<p>A consistent scoring system transforms a list of findings into a clear prioritisation framework. Here is the scoring model used in our template.</p>
+
+<p><strong>Per-finding severity.</strong> Each finding is scored on a 1-5 scale based on its impact on the site's ability to attract and convert organic traffic. Score 5 (Critical): the issue is actively preventing pages from being indexed or is creating an immediate security risk. Score 4 (High): the issue is significantly reducing organic visibility or user experience. Score 3 (Medium): the issue is limiting performance but not causing immediate harm. Score 2 (Low): the issue represents a best-practice deviation with minor impact. Score 1 (Informational): the finding is worth noting but does not require action.</p>
+
+<p><strong>Category scores.</strong> Each audit category (crawlability, on-page SEO, performance, security, mobile) receives a weighted score from 0-100 based on the number and severity of findings within it. The weighting reflects the relative importance of each finding type within the category. For example, within the crawlability category, a blocked robots.txt carries more weight than a missing sitemap lastmod date because the impact is significantly greater.</p>
+
+<p><strong>Overall health score.</strong> The overall score is a weighted average of category scores. The weights reflect how directly each category affects organic search performance: crawlability and indexation (30%), on-page SEO (25%), performance (20%), security (15%), mobile (10%). These weights can be adjusted based on the site's specific situation — an e-commerce site might weight performance more heavily, while a content site might weight on-page SEO higher.</p>
+
+<p><strong>Effort scoring.</strong> In addition to severity, each recommendation receives an effort estimate: Quick (under 1 hour), Moderate (1-8 hours), or Significant (more than 1 day). The combination of severity and effort creates a natural prioritisation matrix. Quick fixes with high severity scores are addressed first. Significant efforts with low severity scores are deferred or dropped.</p>
+
+<p><strong>Trend scoring.</strong> If you are conducting a repeat audit, include trend indicators showing whether each metric has improved, declined, or remained stable since the last audit. Trend data is powerfully motivating — it shows stakeholders that their investment in previous fixes produced measurable results and that new issues need attention before they worsen.</p>
+
+<h2 id="how-to-present">How to Present</h2>
+
+<p>The way you present your audit findings determines whether they get implemented. A technically perfect report that nobody acts on has produced zero value. Here is how to present findings for maximum impact.</p>
+
+<p><strong>Know your audience.</strong> Technical stakeholders (developers, CTOs) want specific findings, code examples, and implementation details. They want to know exactly what to change, in which file, and how to verify the fix. Business stakeholders (CEOs, marketing directors, clients) want to understand the business impact — traffic at risk, revenue implications, competitive disadvantage. Present the same findings in different language depending on who is in the room.</p>
+
+<p><strong>Lead with impact, not methodology.</strong> Do not start by explaining how you conducted the audit. Start with the most important finding and its business consequence. "Your site has 340 pages blocked from Google's index, representing approximately 35% of your potential organic traffic" gets attention immediately. The methodology section belongs in an appendix for those who want to verify your process.</p>
+
+<p><strong>Use before/after projections.</strong> Whenever possible, estimate the expected improvement from implementing your recommendations. "Fixing the redirect chains affecting 147 internal links is expected to improve average page load time by 280ms and increase crawl efficiency by approximately 15%" gives stakeholders a concrete reason to allocate development resources. Be conservative in your projections — over-promising destroys credibility.</p>
+
+<p><strong>Provide implementation-ready recommendations.</strong> Every recommendation should be specific enough for a developer to implement without needing to ask questions. Not "fix your robots.txt" but "replace the current robots.txt content with the following" followed by the exact file content. Not "add security headers" but "add the following configuration block to your Nginx server block" followed by the exact code. The less interpretation required, the faster fixes get deployed.</p>
+
+<p><strong>Include a timeline.</strong> End every audit presentation with a proposed implementation timeline. Group fixes into sprints: Week 1 (critical issues and quick wins), Weeks 2-3 (high-priority fixes), Month 2 (medium-priority improvements). A timeline transforms a list of problems into a manageable project plan that teams can commit to and track progress against.</p>
+
+<p><strong>Schedule a follow-up.</strong> The audit presentation should end with a commitment to review progress. Schedule a follow-up meeting 4-6 weeks out to review which fixes have been implemented, re-test the resolved findings, and measure the impact on key metrics. Without accountability, audit recommendations drift to the bottom of the backlog indefinitely.</p>
+
+<p>For a starting point, run our <a href="/free-website-audit/">free website audit</a> to generate baseline findings that you can expand into a full report using this template structure. For sites requiring professional-depth analysis, our <a href="/website-audit-services/">audit services</a> deliver complete reports in this format, ready for stakeholder presentation.</p>
+
+</ContentLayout>

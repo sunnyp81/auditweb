@@ -1,0 +1,110 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Free Audit', href: '/free-website-audit/' },
+  { label: 'Instant', href: '/free-website-audit/instant/' },
+];
+
+const toc = [
+  { label: 'How Instant Audits Work', id: 'how-instant-audits-work' },
+  { label: 'What Gets Checked', id: 'what-gets-checked' },
+  { label: 'Speed vs Depth', id: 'speed-vs-depth' },
+  { label: 'Interpreting Results', id: 'interpreting-results' },
+  { label: 'Limitations', id: 'limitations' },
+  { label: 'Next Steps', id: 'next-steps' },
+];
+---
+
+<ContentLayout
+  title="Instant Website Audit: Results in 60 Seconds"
+  description="Get an instant website audit with results in under 60 seconds. No signup, no waiting. Our scanner checks SEO, performance, security, and accessibility in real time."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>You should not have to wait hours or days to find out whether your website has problems. An <strong>instant website audit</strong> gives you a complete health check in under 60 seconds — SEO issues, performance bottlenecks, security gaps, and accessibility problems identified and prioritised while you watch. No email required. No report dripped out over the next week. Results appear on your screen the moment the scan completes.</p>
+
+<p>The appeal of instant audits is obvious: speed. When a client asks "how does my site look?", when your boss questions why traffic dropped, or when you are evaluating a site you are about to purchase, waiting for a comprehensive crawl is not an option. You need answers now, and you need them to be accurate enough to act on.</p>
+
+<p>Our instant audit tool was designed to deliver exactly that — the maximum amount of actionable insight in the minimum amount of time. This page explains how it works, what it checks, and where the boundary lies between what an instant scan can tell you and what requires a deeper investigation.</p>
+
+<h2 id="how-instant-audits-work">How Instant Audits Work</h2>
+
+<p>An instant website audit operates differently from a traditional crawl-based audit. Traditional tools like Screaming Frog or Sitebulb crawl every page on your site, which can take minutes or hours depending on site size. Our instant audit takes a targeted approach that maximises coverage within a strict time budget.</p>
+
+<p><strong>Phase 1: Homepage fetch (2-5 seconds).</strong> We request your homepage and record the full response — status code, redirect chain, response headers, TTFB (Time to First Byte), and total load time. The homepage is the single most important page on any site, and its configuration often reflects site-wide patterns. If your homepage has a missing title tag, the rest of the site probably does too.</p>
+
+<p><strong>Phase 2: Link discovery (3-8 seconds).</strong> From the homepage HTML, we extract all internal links and select up to 5 representative pages to crawl. We prioritise pages from different sections of the site (about, services, blog, contact) rather than clustering on one area. This sampling strategy gives us the broadest possible picture within our time constraint.</p>
+
+<p><strong>Phase 3: Parallel page analysis (10-25 seconds).</strong> We fetch all selected pages simultaneously and run our full check suite on each one. Parallel processing is what makes the 60-second target achievable — rather than checking pages sequentially, we analyse them all at once. Each page goes through the same comprehensive check: HTML parsing, header analysis, performance measurement, security verification, and accessibility testing.</p>
+
+<p><strong>Phase 4: Cross-page analysis (3-5 seconds).</strong> After individual page checks complete, we run cross-page analysis to identify issues that only emerge when comparing pages: duplicate title tags, inconsistent canonical configurations, broken internal links between crawled pages, and common template issues that affect every page.</p>
+
+<p><strong>Phase 5: Scoring and report generation (2-3 seconds).</strong> Finally, we calculate weighted scores for each category and the overall health score, rank all findings by severity and impact, generate the prioritised recommendation list, and render the complete report in your browser.</p>
+
+<p>The entire pipeline completes in 20-60 seconds depending on your server's response speed. If your server is slow to respond, the scan takes longer — which itself is a finding worth noting in the report.</p>
+
+<h2 id="what-gets-checked">What Gets Checked</h2>
+
+<p>Despite the speed, our instant audit checks 25 distinct factors across four categories. Here is what is evaluated on every scan.</p>
+
+<p><strong>SEO (10 checks).</strong> Title tag presence, uniqueness, and length. Meta description presence and length. H1 presence and uniqueness. Heading hierarchy validity. Canonical tag presence and correctness. Robots meta directives. Image alt text coverage. Open Graph tag presence. Structured data detection. XML sitemap existence.</p>
+
+<p><strong>Performance (6 checks).</strong> Server response time (TTFB). Total page weight. Number of HTTP requests. Render-blocking resource count. Image optimisation (format and compression). Text compression (gzip or Brotli).</p>
+
+<p><strong>Security (5 checks).</strong> SSL certificate validity and expiry. Mixed content detection. HSTS header presence. Content-Security-Policy header presence. X-Frame-Options and X-Content-Type-Options headers.</p>
+
+<p><strong>Accessibility (4 checks).</strong> Colour contrast ratio estimation. Image alt text (shared with SEO). Form label associations. Viewport meta tag configuration.</p>
+
+<p>Each check produces one of three results: pass, warning, or critical. The distinction between warning and critical is based on the severity of impact. A missing meta description is a warning because it affects click-through rates but does not prevent indexing. A noindex tag on your homepage is critical because it actively removes your most important page from search results.</p>
+
+<h2 id="speed-vs-depth">Speed vs Depth</h2>
+
+<p>There is an inherent trade-off between speed and thoroughness in website auditing. Understanding this trade-off helps you use instant audit results appropriately.</p>
+
+<p><strong>What instant audits do well.</strong> They excel at catching the most common and most impactful issues — the problems that affect 80% of websites and account for 80% of lost performance. Missing title tags, broken SSL, slow server response, absent sitemaps, noindex directives on important pages — these are binary checks that produce definitive answers on every scan. If your site has these problems, an instant audit will find them.</p>
+
+<p><strong>What instant audits approximate.</strong> Performance metrics from an instant audit are estimates rather than precise measurements. We measure response times from our server location, not from your users' locations. We estimate rendering performance from resource analysis rather than running a full browser-based Lighthouse test. These estimates are directionally accurate — a page we flag as slow is genuinely slow — but the exact numbers may differ from tools that use real browser rendering.</p>
+
+<p><strong>What instant audits cannot do.</strong> An instant audit cannot replace a full-site crawl. With a 5-page sample, we might miss issues that only affect deeper pages — orphan pages with no internal links, pagination errors, faceted navigation problems on e-commerce sites, or content thin enough to trigger a Panda-style quality penalty. We also cannot analyse your backlink profile, assess content quality against search intent, or evaluate your competitive positioning. Those require different tools and different data sources.</p>
+
+<p>Think of an instant audit as a blood pressure check. It gives you critical health information quickly and tells you whether you need to see a specialist. But it is not a full physical examination, and no one should treat it as one.</p>
+
+<h2 id="interpreting-results">Interpreting Results</h2>
+
+<p>When your instant audit completes, you will see three things: an overall health score, a category breakdown, and a detailed findings list. Here is how to read each one effectively.</p>
+
+<p><strong>Overall score.</strong> This is a weighted composite of all category scores. A score above 80 means your site's fundamentals are solid. Between 60-80 means there are issues worth fixing but nothing catastrophic. Below 60 means you have critical problems that are actively harming your search visibility or user experience. Below 40 means something is fundamentally broken — usually SSL, indexability, or server configuration.</p>
+
+<p><strong>Category scores.</strong> Look at which categories are pulling your overall score down. A site might score 90 on security but 45 on SEO — that tells you exactly where to focus. Category scores also help you decide who needs to be involved: SEO issues require a marketer or SEO specialist, performance issues usually need a developer, and security issues might need your hosting provider.</p>
+
+<p><strong>Individual findings.</strong> Each finding includes the check name, result (pass/warning/critical), the affected page URL, and a brief explanation. Read the critical findings first because they represent the highest-impact improvements. For each critical finding, ask yourself: can I fix this today? If yes, do it. The compound effect of fixing three or four critical issues immediately can be significant.</p>
+
+<p>Be wary of treating the score as an absolute measure of quality. A site that scores 95 on our audit might still have terrible content, target the wrong keywords, or lack any backlinks. The audit measures technical health, not strategic effectiveness. A healthy site with poor strategy will underperform. But an unhealthy site will underperform regardless of strategy.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>Transparency about limitations is what separates a trustworthy audit tool from a marketing gimmick. Here is what our instant audit cannot do.</p>
+
+<p><strong>Limited page coverage.</strong> We crawl up to 5 pages per scan. On a 500-page site, that is a 1% sample. While we select pages strategically to maximise coverage of different site sections, there is no guarantee that the specific page with the critical issue is in our sample. If you need every page checked, you need a full-site crawl tool.</p>
+
+<p><strong>No JavaScript rendering.</strong> Our scanner fetches and analyses the HTML response from your server. If your site relies heavily on client-side JavaScript rendering (single-page applications built with React, Vue, or Angular without server-side rendering), the HTML we receive may be largely empty. In these cases, our checks on content elements (headings, text, images) will not reflect what users actually see. We flag this when detected.</p>
+
+<p><strong>Single location testing.</strong> We test from a single server location. If your site uses a CDN and performs differently in different regions, our results reflect one region only. Comprehensive performance testing requires multi-location tools like Google PageSpeed Insights or WebPageTest.</p>
+
+<p><strong>No historical comparison.</strong> An instant audit is a snapshot. It tells you how your site looks right now but cannot tell you whether things are getting better or worse. For trend analysis, you need to run regular audits and compare results over time. Our <a href="/website-audit-services/">professional audit services</a> include ongoing monitoring that tracks changes between scans.</p>
+
+<p><strong>No login-protected content.</strong> We can only audit publicly accessible pages. If you have member areas, admin dashboards, or gated content behind login forms, those pages are excluded from the scan.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Run your <a href="/free-website-audit/">free instant audit</a> now to get your site's health score in under 60 seconds. Once you have your results, work through the critical findings first — these are the changes that will have the most immediate impact on your search visibility and user experience.</p>
+
+<p>If the instant audit reveals widespread issues or your score is below 60, consider a <a href="/free-website-audit/report/">detailed audit report</a> that provides deeper analysis and more specific recommendations. For sites with complex technical requirements or significant traffic, our <a href="/website-audit-services/">professional audit services</a> deliver the comprehensive analysis that instant tools cannot provide.</p>
+
+<p>The most important thing is to act on your results. An audit that sits in a browser tab accomplishing nothing is worse than no audit at all — at least without the audit you had the excuse of not knowing. Now you know. Fix the critical issues today, schedule the warnings for this week, and your site will be measurably healthier by the time Google's next crawl comes around.</p>
+
+</ContentLayout>

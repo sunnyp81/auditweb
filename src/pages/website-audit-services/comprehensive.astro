@@ -1,0 +1,130 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Services', href: '/website-audit-services/' },
+  { label: 'Comprehensive', href: '/website-audit-services/comprehensive/' },
+];
+
+const toc = [
+  { label: 'What Comprehensive Means', id: 'what-comprehensive-means' },
+  { label: 'The 72 Checkpoints', id: 'the-72-checkpoints' },
+  { label: 'What You Get', id: 'what-you-get' },
+  { label: 'Timeline', id: 'timeline' },
+  { label: 'Who It Is For', id: 'who-it-is-for' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'Guarantee', id: 'guarantee' },
+];
+---
+
+<ContentLayout
+  title="Comprehensive Website Audit: Our Full 72-Checkpoint Service"
+  description="A complete website audit covering 72 technical, content, and performance checkpoints. Delivered with prioritised recommendations and a clear action plan for measurable improvements."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+
+<p>Most website audits fall into one of two categories: automated reports that list hundreds of issues without context, or brief consultations that scratch the surface without reaching the root causes. A comprehensive website audit sits in a different category entirely. It combines automated crawling with manual expert analysis to produce a complete picture of your site's health, with clear priorities and actionable recommendations that connect directly to business outcomes.</p>
+
+<p>Our 72-checkpoint audit has been refined over hundreds of client engagements. Every checkpoint exists because it has directly impacted organic traffic, conversion rates, or technical stability for real businesses. Nothing is included for the sake of padding the report. Every finding comes with a clear explanation of impact and a specific recommendation for remediation.</p>
+
+<h2 id="what-comprehensive-means">What Comprehensive Means</h2>
+
+<p>A comprehensive audit examines every layer of your website that affects its performance in search engines and its ability to convert visitors into customers. This goes far beyond the technical SEO checks that most automated tools perform.</p>
+
+<p><strong>Technical infrastructure</strong> covers the foundation: hosting performance, server response times, SSL configuration, DNS setup, CDN effectiveness, and how your server handles different request types including bots, mobile devices, and authenticated users. Problems at this layer affect everything above it, yet many audits skip infrastructure entirely because the tools they rely on cannot test it.</p>
+
+<p><strong>Crawlability and indexation</strong> examines how search engines discover and process your pages. This includes robots.txt directives, XML sitemap accuracy and completeness, canonical tag implementation, pagination handling, and the overall crawl budget efficiency. We check not just whether these elements exist but whether they are working correctly together as a system.</p>
+
+<p><strong>On-page SEO</strong> evaluates each page template for title tag optimisation, meta description effectiveness, heading structure, content depth and relevance, internal linking patterns, image optimisation, and structured data implementation. Rather than checking every individual page (which is what the crawler does), we analyse each unique template type to identify systematic issues that affect entire sections of your site.</p>
+
+<p><strong>Content quality</strong> goes beyond word counts and keyword density. We assess topical coverage against competitor content, evaluate content freshness and accuracy, check for cannibalisation where multiple pages compete for the same queries, and identify content gaps where your site should have pages but does not. This analysis draws on actual search demand data from Google Search Console and keyword research tools.</p>
+
+<p><strong>User experience signals</strong> include Core Web Vitals performance, mobile usability, navigation structure, site search functionality, and conversion path effectiveness. Google has made it clear that user experience metrics influence rankings, and our audit measures the specific metrics that matter.</p>
+
+<p><strong>Off-site factors</strong> complete the picture with backlink profile analysis, toxic link identification, brand mention monitoring, and competitive positioning. While off-site factors are not directly fixable through your website, understanding them provides essential context for prioritising on-site improvements.</p>
+
+<h2 id="the-72-checkpoints">The 72 Checkpoints</h2>
+
+<p>Our 72 checkpoints are organised into eight categories, each containing between seven and twelve individual checks. Here is what each category covers.</p>
+
+<p><strong>Server and hosting (9 checkpoints):</strong> Server response time under load, time to first byte across geographic locations, SSL certificate validity and configuration, HTTP/2 or HTTP/3 support, gzip or Brotli compression, security headers (HSTS, CSP, X-Frame-Options), DNS configuration, CDN effectiveness, and server error handling.</p>
+
+<p><strong>Crawlability (10 checkpoints):</strong> Robots.txt correctness, XML sitemap accuracy, sitemap index structure, canonical tag consistency, hreflang implementation (if applicable), pagination handling, faceted navigation management, orphaned page identification, crawl depth analysis, and internal redirect chain detection.</p>
+
+<p><strong>On-page SEO (11 checkpoints):</strong> Title tag optimisation by template, meta description quality, heading hierarchy, keyword targeting alignment, content-to-code ratio, image alt attributes, internal link distribution, outbound link quality, structured data implementation, Open Graph and social meta tags, and URL structure.</p>
+
+<p><strong>Content quality (8 checkpoints):</strong> Thin content identification, duplicate and near-duplicate detection, content freshness assessment, topical authority coverage, keyword cannibalisation, content gap analysis against competitors, readability and formatting, and E-E-A-T signal presence.</p>
+
+<p><strong>Technical performance (10 checkpoints):</strong> Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift, Total Blocking Time, render-blocking resources, image format and sizing optimisation, JavaScript execution time, CSS delivery efficiency, font loading strategy, and third-party script impact.</p>
+
+<p><strong>Mobile experience (7 checkpoints):</strong> Mobile viewport configuration, touch target sizing, font readability, horizontal scrolling, mobile page speed, mobile-specific content parity, and responsive image delivery.</p>
+
+<p><strong>Security and compliance (8 checkpoints):</strong> HTTPS implementation completeness, mixed content detection, cookie consent compliance, privacy policy presence, security header implementation, known vulnerability scanning, form security, and data handling practices.</p>
+
+<p><strong>Backlink profile (9 checkpoints):</strong> Total backlink volume and trend, referring domain diversity, toxic link identification, anchor text distribution, competitor backlink gap, brand mention analysis, link velocity, disavow file review, and link acquisition opportunity identification.</p>
+
+<h2 id="what-you-get">What You Get</h2>
+
+<p>The audit deliverable is not a raw data dump. It is a structured, prioritised report designed to be useful to both technical and non-technical stakeholders.</p>
+
+<p><strong>Executive summary (2-3 pages):</strong> A plain-language overview of your site's health, the most significant findings, and the expected impact of addressing the top-priority issues. Written for business decision-makers who need to understand the situation without reading the full technical report.</p>
+
+<p><strong>Detailed findings report (20-40 pages):</strong> Each checkpoint is documented with the current status, evidence (screenshots, data, examples), the SEO and business impact, and a specific remediation recommendation. Issues are scored by severity and effort, creating a natural prioritisation matrix. The report uses colour coding and visual indicators to make scanning efficient.</p>
+
+<p><strong>Prioritised action plan:</strong> A separate document listing all recommended actions in priority order, grouped into immediate fixes (this week), short-term improvements (this month), and medium-term projects (this quarter). Each action includes the expected impact, estimated effort, and any dependencies on other actions. This document is designed to be handed directly to your development team or agency.</p>
+
+<p><strong>Technical appendix:</strong> Raw data exports including full crawl data, backlink analysis, keyword cannibalisation matrix, and Core Web Vitals data. This is for technical team members who want to work with the underlying data directly.</p>
+
+<p><strong>30-minute walkthrough call:</strong> After delivering the report, we schedule a video call to walk through the findings, answer questions, and help your team plan implementation. This call ensures that the report translates into action rather than sitting in an inbox.</p>
+
+<h2 id="timeline">Timeline</h2>
+
+<p>A comprehensive audit takes time because it involves both automated analysis and manual expert review. Rushing the process means missing the nuanced issues that automated tools cannot detect.</p>
+
+<p><strong>Days 1-2: Data collection.</strong> We run the technical crawl, pull Search Console and analytics data (with your permission), analyse your backlink profile, and document your current site architecture. This stage is largely automated but requires configuration and validation.</p>
+
+<p><strong>Days 3-5: Analysis.</strong> Our team manually reviews the crawl data, cross-references automated findings with search performance data, analyses content quality across your key page templates, and evaluates your competitive positioning. This is where the human expertise adds the most value, identifying patterns and root causes that tools miss.</p>
+
+<p><strong>Days 6-7: Report compilation.</strong> Findings are documented, prioritised, and compiled into the deliverable documents. We write the executive summary, create the action plan, and prepare the walkthrough presentation.</p>
+
+<p><strong>Day 8-10: Delivery and walkthrough.</strong> You receive the complete audit package and we schedule the walkthrough call at a time that suits your team. Typically the full process from kickoff to delivery takes seven to ten business days.</p>
+
+<p>For urgent situations, we offer an expedited timeline of five business days at a premium. This is possible because we prioritise your audit above other work, but the quality and thoroughness remain identical.</p>
+
+<h2 id="who-it-is-for">Who It Is For</h2>
+
+<p>The comprehensive audit is most valuable in specific situations where the investment delivers clear returns.</p>
+
+<p><strong>Businesses experiencing traffic decline.</strong> If your organic traffic has dropped and you do not know why, the audit identifies the root causes. Often, traffic declines result from multiple compounding issues rather than a single problem, and the comprehensive approach catches the full picture that a focused analysis might miss.</p>
+
+<p><strong>Companies preparing for a site redesign or migration.</strong> Understanding your current site's strengths and weaknesses before making major changes prevents you from accidentally losing what is working while fixing what is not. The audit creates a baseline that your redesign team can reference throughout the project.</p>
+
+<p><strong>Businesses that have never had a professional audit.</strong> If your site was built without SEO expertise or has accumulated technical debt over years of changes, the first comprehensive audit typically uncovers high-impact issues that deliver quick returns. The initial audit often pays for itself within months through the traffic gains from fixing critical issues.</p>
+
+<p><strong>Companies onboarding with a new SEO agency.</strong> If you are starting work with a new agency or consultant, requesting a comprehensive audit upfront ensures they understand your site fully before proposing a strategy. It also sets a measurable baseline against which their future work can be evaluated.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Our comprehensive audit pricing reflects the significant manual analysis involved and scales with site complexity.</p>
+
+<p><strong>Small sites (up to 500 pages):</strong> Starting from £997. This covers most small business websites, professional service sites, and small ecommerce stores with limited product ranges.</p>
+
+<p><strong>Medium sites (500-5,000 pages):</strong> Starting from £1,997. This covers mid-size ecommerce stores, content-heavy business sites, and multi-location service businesses.</p>
+
+<p><strong>Large sites (5,000+ pages):</strong> Custom pricing based on scope. Enterprise sites, large ecommerce catalogues, and complex multi-domain architectures require additional analysis time and are quoted individually after an initial scoping conversation.</p>
+
+<p>All pricing includes the complete deliverable package: executive summary, detailed findings report, prioritised action plan, technical appendix, and walkthrough call. There are no hidden costs or upsells. If we recommend ongoing monitoring or implementation support, those are separate conversations after you have reviewed the audit findings.</p>
+
+<h2 id="guarantee">Guarantee</h2>
+
+<p>We guarantee that our audit will identify at least ten actionable improvements that you were not previously aware of. If the audit does not reveal at least ten findings that are new, specific, and actionable, we will refund the full audit fee. This guarantee exists because, in hundreds of audits, we have never failed to uncover significant issues. Every website has problems that its owners do not know about, and the comprehensive 72-checkpoint process is designed to find them.</p>
+
+<p>We also guarantee that our recommendations are specific and implementable, not vague suggestions. Every recommendation includes the exact what, why, and how. Your development team should be able to act on each recommendation without needing to contact us for clarification, though we are available for questions during the 30 days following delivery.</p>
+
+<p>The audit report remains yours permanently. You are free to share it with your development team, other agencies, or internal stakeholders as needed. We do not gate the findings behind ongoing retainers or require continued engagement to access the data.</p>
+
+</ContentLayout>

@@ -1,0 +1,167 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Security Audit', href: '/website-security-audit/' },
+  { label: 'GDPR', href: '/website-security-audit/gdpr/' },
+];
+
+const toc = [
+  { label: 'GDPR Requirements for Websites', id: 'gdpr-requirements-for-websites' },
+  { label: 'Cookie Consent', id: 'cookie-consent' },
+  { label: 'Privacy Policy', id: 'privacy-policy' },
+  { label: 'Data Collection Audit', id: 'data-collection-audit' },
+  { label: 'User Rights', id: 'user-rights' },
+  { label: 'Third-Party Data Sharing', id: 'third-party-data-sharing' },
+  { label: 'GDPR Audit Checklist', id: 'gdpr-audit-checklist' },
+];
+---
+
+<ContentLayout
+  title="GDPR Website Audit: Ensure Data Protection Compliance"
+  description="Audit your website for GDPR compliance. Covers cookie consent, privacy policies, data collection practices, user rights, third-party data sharing, and a complete GDPR audit checklist."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>The General Data Protection Regulation affects every website that collects data from individuals in the European Economic Area, regardless of where the website operator is based. If your site uses cookies, captures form submissions, tracks visitors with analytics, or processes any personal data from EU residents, GDPR applies to you. The penalties for non-compliance are severe — up to 20 million EUR or 4 percent of annual global turnover, whichever is higher.</p>
+
+  <p>A GDPR website audit systematically reviews how your site collects, processes, stores, and shares personal data, and checks whether those practices comply with GDPR requirements. Unlike a technical security audit that focuses on preventing unauthorised access, a GDPR audit focuses on whether your authorised data practices are lawful, transparent, and proportionate.</p>
+
+  <p>This guide walks through every area your GDPR audit should cover, from cookie consent mechanics to third-party data sharing agreements, with a complete checklist at the end.</p>
+
+  <h2 id="gdpr-requirements-for-websites">GDPR Requirements for Websites</h2>
+
+  <p>GDPR establishes several core principles that apply directly to website operations. Understanding these principles is essential before diving into specific audit checks because they provide the reasoning behind each requirement.</p>
+
+  <p><strong>Lawfulness, fairness, and transparency:</strong> You must have a legal basis for every piece of personal data you collect. The most common legal bases for websites are consent (the user actively agrees) and legitimate interest (you have a valid business reason that does not override the individual's rights). You must be transparent about what data you collect and why.</p>
+
+  <p><strong>Purpose limitation:</strong> Data collected for one purpose cannot be used for another purpose without additional consent. If you collect email addresses for order confirmations, you cannot add them to your marketing list without separate opt-in consent.</p>
+
+  <p><strong>Data minimisation:</strong> Collect only the data you actually need for the stated purpose. If you run a contact form, do you really need the visitor's phone number, company name, and job title, or would name and email suffice? Every unnecessary data field increases your compliance burden and your liability in case of a breach.</p>
+
+  <p><strong>Accuracy:</strong> Personal data must be kept accurate and up to date. Provide mechanisms for users to review and correct their data.</p>
+
+  <p><strong>Storage limitation:</strong> Do not keep personal data longer than necessary for its original purpose. Define and enforce retention periods for every category of personal data you hold.</p>
+
+  <p><strong>Integrity and confidentiality:</strong> Personal data must be processed securely. This is where GDPR overlaps with technical security — encryption, access controls, and breach prevention are GDPR requirements, not just best practices.</p>
+
+  <h2 id="cookie-consent">Cookie Consent</h2>
+
+  <p>Cookie consent is the most visible GDPR-related feature on any website and the area where most sites fail their audit. The requirements are stricter than many site operators realise, and common implementations that look compliant on the surface often violate the regulation.</p>
+
+  <p>The key requirements for GDPR-compliant cookie consent are:</p>
+
+  <ul>
+    <li><strong>Prior consent for non-essential cookies</strong> — analytics cookies, advertising cookies, social media tracking cookies, and any other cookies that are not strictly necessary for the site to function must not be set until the user has actively consented. Many sites set Google Analytics cookies on page load before consent is given. This violates GDPR.</li>
+    <li><strong>Freely given consent</strong> — the user must have a genuine choice. Cookie walls that block access to the site unless cookies are accepted do not constitute free consent in most EU jurisdictions. The user must be able to decline non-essential cookies and still access the content.</li>
+    <li><strong>Informed consent</strong> — the consent request must clearly explain what cookies are used, what they do, and which third parties receive data. Vague statements like "we use cookies to improve your experience" are insufficient.</li>
+    <li><strong>Granular consent</strong> — users should be able to consent to different categories of cookies independently. A single "accept all" button without the option to selectively accept or reject cookie categories does not provide granular consent.</li>
+    <li><strong>Easy withdrawal</strong> — withdrawing consent must be as easy as giving it. If consent is given with one click, it should be revocable with one click. Provide a persistent link in the footer or a floating icon that reopens the consent manager.</li>
+    <li><strong>Documented consent</strong> — you must be able to prove that consent was obtained, when it was obtained, and what was consented to. Your consent management platform should log consent records.</li>
+  </ul>
+
+  <p>Audit your cookie consent by clearing all cookies and visiting your site. Check whether any non-essential cookies are set before you interact with the consent banner. Use browser developer tools to monitor network requests — are analytics or advertising scripts firing before consent is given? Test the reject flow — does clicking "reject" or "necessary only" actually prevent non-essential cookies from being set?</p>
+
+  <h2 id="privacy-policy">Privacy Policy</h2>
+
+  <p>Your privacy policy is the primary document through which you fulfill GDPR's transparency requirements. It must be clear, accessible, and comprehensive. A privacy policy that is hidden behind multiple clicks, written in dense legal language, or missing key information fails the audit.</p>
+
+  <p>A GDPR-compliant privacy policy must include the following elements:</p>
+
+  <ul>
+    <li><strong>Identity and contact details of the data controller</strong> — who is responsible for the data processing. Include your company name, registered address, and a contact method for data protection queries.</li>
+    <li><strong>Data Protection Officer contact</strong> — if you are required to appoint a DPO (organisations processing data at scale or handling special category data), their contact details must be in the privacy policy.</li>
+    <li><strong>What personal data you collect</strong> — list every category of personal data: names, email addresses, IP addresses, cookie identifiers, payment details, location data, and anything else.</li>
+    <li><strong>Legal basis for each processing activity</strong> — for each type of data you collect, state whether you rely on consent, legitimate interest, contractual necessity, or another legal basis. Generic statements are not sufficient.</li>
+    <li><strong>How long you retain data</strong> — state specific retention periods for each data category. "As long as necessary" is not specific enough.</li>
+    <li><strong>Who you share data with</strong> — list categories of recipients and, where practical, name specific third parties. If you use Google Analytics, Mailchimp, Stripe, or any other service that receives user data, it should be mentioned.</li>
+    <li><strong>International transfers</strong> — if data is transferred outside the EEA (to US-based services, for example), explain the legal mechanism used to protect the data (Standard Contractual Clauses, adequacy decision, etc.).</li>
+    <li><strong>User rights</strong> — clearly explain each right (access, rectification, erasure, portability, objection) and how to exercise them.</li>
+    <li><strong>Right to complain</strong> — inform users of their right to lodge a complaint with their national supervisory authority.</li>
+  </ul>
+
+  <p>Review your privacy policy against this list. Most policies we audit are missing at least three or four of these elements. Update the policy and date-stamp it with the revision date.</p>
+
+  <h2 id="data-collection-audit">Data Collection Audit</h2>
+
+  <p>A data collection audit maps every point on your website where personal data is captured, processed, or transmitted. Many site operators are surprised by how many data collection points exist on their site beyond the obvious forms and login pages.</p>
+
+  <p>Walk through your site and document every data collection mechanism:</p>
+
+  <ul>
+    <li><strong>Forms</strong> — contact forms, newsletter signups, account registration, checkout, quote requests, survey forms, comment forms. For each form, note what fields are collected, where the data is stored, and whether consent language is present.</li>
+    <li><strong>Analytics tracking</strong> — Google Analytics, Hotjar, Microsoft Clarity, and similar tools collect IP addresses, device information, browsing behaviour, and sometimes user identifiers. List every analytics tool and what data it captures.</li>
+    <li><strong>Advertising pixels</strong> — Facebook Pixel, Google Ads conversion tracking, LinkedIn Insight Tag, and other advertising scripts track user activity and share data with advertising platforms.</li>
+    <li><strong>Live chat and support widgets</strong> — Intercom, Drift, Zendesk, and similar tools collect visitor information and conversation data.</li>
+    <li><strong>Embedded third-party content</strong> — YouTube videos, Google Maps, social media feeds, and other embeds can set cookies and collect data from your visitors.</li>
+    <li><strong>Server logs</strong> — your web server automatically logs IP addresses, user agents, and request details for every visitor. These logs contain personal data under GDPR.</li>
+    <li><strong>Email marketing integration</strong> — if your forms feed into email marketing platforms, data flows from your site to a third party.</li>
+  </ul>
+
+  <p>For each data collection point, verify that a legal basis exists, that the user is informed (via the privacy policy or point-of-collection notice), that consent is obtained where required, and that the data is transmitted securely (HTTPS, not sent in plain text via email).</p>
+
+  <h2 id="user-rights">User Rights</h2>
+
+  <p>GDPR grants individuals specific rights over their personal data. Your website must facilitate the exercise of these rights. An audit checks whether each right can actually be exercised in practice, not just whether it is mentioned in your privacy policy.</p>
+
+  <ul>
+    <li><strong>Right of access</strong> — users can request a copy of all personal data you hold about them. You must respond within one month. Audit check: is there a clear process for users to submit access requests? Can you actually locate and compile all data held about a specific individual across your systems?</li>
+    <li><strong>Right to rectification</strong> — users can request correction of inaccurate data. Audit check: can users update their own information through account settings? Is there a process for handling rectification requests for data users cannot self-service?</li>
+    <li><strong>Right to erasure (right to be forgotten)</strong> — users can request deletion of their personal data in certain circumstances. Audit check: can you actually delete a user's data from all systems, including backups and third-party platforms? How long does the process take?</li>
+    <li><strong>Right to data portability</strong> — users can request their data in a commonly used, machine-readable format. Audit check: can you export user data as CSV or JSON? Is there a documented process for portability requests?</li>
+    <li><strong>Right to object</strong> — users can object to processing based on legitimate interest, including direct marketing. Audit check: do your marketing emails include unsubscribe links? Can users opt out of profiling or targeted advertising?</li>
+    <li><strong>Right to restrict processing</strong> — users can request that their data be stored but not actively processed in certain situations. Audit check: can your systems flag a record for restricted processing without deleting it?</li>
+  </ul>
+
+  <p>Test each right by submitting a request yourself. Time how long it takes to fulfill. Identify any data stores that would be difficult to search or delete from. These operational gaps are often the most critical findings in a GDPR audit because they represent risks that cannot be fixed with a policy update — they require process and sometimes technical changes.</p>
+
+  <h2 id="third-party-data-sharing">Third-Party Data Sharing</h2>
+
+  <p>Most websites share visitor data with multiple third parties through analytics tools, advertising platforms, payment processors, email services, CDNs, and embedded content. Each data sharing relationship carries GDPR obligations that must be documented and managed.</p>
+
+  <p>For every third party that receives personal data from your website, verify the following:</p>
+
+  <ul>
+    <li><strong>A Data Processing Agreement (DPA) is in place</strong> — GDPR requires a written contract between the data controller (you) and each data processor (the third party). Most major platforms offer standard DPAs — Google, Meta, Stripe, Mailchimp, and others have DPAs available in their account settings. Download and store each one.</li>
+    <li><strong>The third party's privacy practices are adequate</strong> — you are responsible for choosing processors that provide sufficient security guarantees. Review their security certifications, data handling policies, and breach notification procedures.</li>
+    <li><strong>International transfers are lawful</strong> — if data flows to a country outside the EEA without an adequacy decision from the European Commission, additional safeguards are required. For US-based processors, check whether they are certified under the EU-US Data Privacy Framework. If not, Standard Contractual Clauses must be in place.</li>
+    <li><strong>Data sharing is disclosed in your privacy policy</strong> — every third party that receives personal data should be named or categorised in your privacy policy. Users must know who has access to their information.</li>
+  </ul>
+
+  <p>Create an inventory of all third-party data recipients. For each one, document the type of data shared, the purpose of sharing, the legal basis, the DPA status, and the data transfer mechanism for international transfers. This inventory is a required GDPR record of processing activities and is one of the first things a supervisory authority will request during an investigation.</p>
+
+  <h2 id="gdpr-audit-checklist">GDPR Audit Checklist</h2>
+
+  <p>Use this checklist to score your website's GDPR compliance. Rate each item as compliant, partially compliant, or non-compliant. Non-compliant items are your priority fixes.</p>
+
+  <ul>
+    <li>Cookie consent banner appears before any non-essential cookies are set</li>
+    <li>Users can reject non-essential cookies with equal ease as accepting them</li>
+    <li>Cookie categories can be selected individually (granular consent)</li>
+    <li>Consent choices are recorded and can be evidenced</li>
+    <li>Consent can be withdrawn at any time via a persistent link or icon</li>
+    <li>Privacy policy is accessible from every page (typically via footer link)</li>
+    <li>Privacy policy names the data controller with contact details</li>
+    <li>Privacy policy lists all categories of personal data collected</li>
+    <li>Privacy policy states the legal basis for each processing activity</li>
+    <li>Privacy policy includes specific data retention periods</li>
+    <li>Privacy policy identifies third-party data recipients</li>
+    <li>Privacy policy explains international data transfers and safeguards</li>
+    <li>Privacy policy explains all user rights and how to exercise them</li>
+    <li>All forms collecting personal data include appropriate consent mechanisms</li>
+    <li>Marketing email opt-in uses double opt-in (not pre-ticked boxes)</li>
+    <li>A process exists to handle data subject access requests within 30 days</li>
+    <li>User data can be exported in a machine-readable format for portability</li>
+    <li>User data can be fully deleted across all systems for erasure requests</li>
+    <li>Data Processing Agreements are in place with all third-party processors</li>
+    <li>A record of processing activities is maintained and up to date</li>
+    <li>Data breach notification procedures are documented (72-hour reporting)</li>
+    <li>Staff with access to personal data have received data protection training</li>
+  </ul>
+
+  <p>Prioritise non-compliant items by risk exposure. Cookie consent violations and missing privacy policy elements are the most commonly enforced issues across EU jurisdictions. Data subject rights failures and missing DPAs create significant liability in the event of a complaint or breach investigation.</p>
+
+  <p>GDPR compliance is not a one-time project. Revisit this audit whenever you add new features, install new third-party tools, or change your data processing practices. Quarterly reviews of your processing inventory and annual full GDPR audits keep you ahead of regulatory risk. If you need help running a GDPR audit or remediating the findings, <a href="/website-audit-services/">our compliance audit service</a> covers all 22 checkpoints with detailed remediation guidance.</p>
+</ContentLayout>

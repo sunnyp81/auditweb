@@ -1,0 +1,122 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Services', href: '/website-audit-services/' },
+  { label: 'Consultant', href: '/website-audit-services/consultant/' },
+];
+
+const toc = [
+  { label: 'When You Need a Consultant', id: 'when-you-need-a-consultant' },
+  { label: 'What They Do', id: 'what-they-do' },
+  { label: 'Freelancer vs Agency', id: 'freelancer-vs-agency' },
+  { label: 'How to Evaluate', id: 'how-to-evaluate' },
+  { label: 'Red Flags', id: 'red-flags' },
+  { label: 'Cost Range', id: 'cost-range' },
+  { label: 'Working With Us', id: 'working-with-us' },
+];
+---
+
+<ContentLayout
+  title="Website Audit Consultant: When to Hire an Expert"
+  description="When to hire a website audit consultant, what to expect from the engagement, how to evaluate candidates, and how much it costs. Practical guidance for making the right choice."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+
+<p>Running an automated audit tool and interpreting the results yourself works well when you have the technical knowledge to distinguish signal from noise. But there is a point where the complexity of the issues, the stakes of getting it wrong, or simply the time required to do it properly make hiring a specialist the rational choice. A website audit consultant brings experience across hundreds of sites, knows which issues actually move the needle, and delivers a prioritised plan rather than a list of warnings.</p>
+
+<p>The challenge is finding the right consultant. The SEO industry has a low barrier to entry, which means the range of quality is enormous. This guide helps you decide whether you need a consultant, how to find a good one, and how to evaluate the work you receive.</p>
+
+<h2 id="when-you-need-a-consultant">When You Need a Consultant</h2>
+
+<p>Not every website needs a paid consultant for auditing. If your site is small, recently built on a modern platform, and you are comfortable using tools like <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> or <a href="/website-audit-tools/ahrefs/">Ahrefs</a>, you can likely handle your own audits. But several situations make professional help genuinely worthwhile.</p>
+
+<p><strong>Unexplained traffic drops.</strong> When organic traffic declines and you cannot identify the cause from Search Console data and basic tool checks, a consultant can systematically diagnose the problem. Traffic drops often result from multiple compounding factors that are individually subtle but collectively damaging. An experienced consultant knows the diagnostic patterns and can work through possibilities efficiently rather than guessing.</p>
+
+<p><strong>Pre-migration planning.</strong> Site migrations (changing domain, CMS, URL structure, or design) carry substantial risk. The technical requirements for redirect mapping, content preservation, and crawl management are precise, and mistakes can cause permanent traffic loss. A consultant who has managed dozens of migrations knows the common pitfalls and builds safeguards that someone doing it for the first time would miss.</p>
+
+<p><strong>Complex technical architectures.</strong> Sites built on headless CMS platforms, single-page application frameworks, or custom-built systems present unique auditing challenges. Standard audit tools may not crawl them correctly, and the SEO implications of architectural decisions require specialist knowledge. If your development team built something bespoke, you need someone who understands both SEO and software architecture.</p>
+
+<p><strong>After a Google algorithm update.</strong> When a major algorithm update affects your rankings, understanding why requires analysis that goes beyond what automated tools provide. A consultant can assess whether you were hit by a specific component of the update (link quality, content quality, spam signals) and recommend targeted recovery actions rather than generic improvements.</p>
+
+<p><strong>Internal capacity constraints.</strong> Sometimes the issue is simply that your team lacks the time or specific expertise to conduct a thorough audit. Outsourcing the audit to a consultant lets your team focus on implementation while the consultant handles the analysis. This is particularly common in organisations where the marketing team handles SEO alongside many other responsibilities.</p>
+
+<h2 id="what-they-do">What They Do</h2>
+
+<p>A website audit consultant typically follows a structured process that combines automated analysis with manual expert review.</p>
+
+<p><strong>Discovery and scoping.</strong> The engagement starts with understanding your business, your website's history, your goals, and what has prompted the audit. A good consultant asks detailed questions before touching any tools. They want to know about recent site changes, traffic patterns, competitive landscape, and any specific concerns. This context shapes the audit focus and ensures the findings address your actual situation.</p>
+
+<p><strong>Technical crawl and data collection.</strong> The consultant runs one or more crawlers across your site, collects Google Search Console and analytics data, analyses your backlink profile, and gathers any additional data relevant to your specific situation. This stage is similar to what you would do yourself with audit tools, but an experienced consultant configures the crawl settings, cross-references multiple data sources, and identifies anomalies that less experienced users would overlook.</p>
+
+<p><strong>Manual analysis.</strong> This is where the consultant's experience delivers the most value. They review the crawl data in the context of your business situation, examine page templates for systematic issues, evaluate content quality against search intent, and assess your competitive positioning. Manual analysis catches nuanced problems that no automated tool detects: subtle cannibalisation patterns, content that technically passes quality checks but fails to serve user intent, architectural decisions that limit crawl efficiency, and technical configurations that are valid but suboptimal.</p>
+
+<p><strong>Prioritisation and recommendations.</strong> Raw findings are worthless without prioritisation. The consultant determines which issues have the highest impact on your traffic and revenue, which are quickest to fix, and which require significant investment. The output is not a list of everything wrong but a ranked plan of what to fix and in what order, with realistic impact estimates.</p>
+
+<p><strong>Reporting and handoff.</strong> The consultant delivers a report that your team can act on. This includes an executive summary for stakeholders, detailed technical findings for your development team, and a prioritised action plan with clear next steps. Most consultants include a walkthrough session to explain the findings and answer questions.</p>
+
+<h2 id="freelancer-vs-agency">Freelancer vs Agency</h2>
+
+<p>Both freelancers and agencies offer website audit services, and the right choice depends on your needs and budget.</p>
+
+<p><strong>Freelance consultants</strong> typically offer lower rates, more personal attention, and direct access to the person doing the work. You know exactly who is analysing your site, and communication is direct rather than filtered through account managers. The best freelance SEO consultants have deep expertise developed over years of working on diverse sites. The risk is that individual freelancers have limited capacity, may lack coverage during illness or holiday, and sometimes have narrower experience than a team would.</p>
+
+<p><strong>Agencies</strong> offer broader resources, established processes, and team depth. A good agency assigns your audit to a specialist but has quality assurance, peer review, and access to additional expertise when needed. Agencies typically have standardised deliverable formats and established timelines. The risk is higher costs, less personal attention, and the possibility that the senior person who sold you the audit is not the person actually doing the work.</p>
+
+<p>For a one-off website audit, a skilled freelance consultant often provides better value. You get senior expertise at a lower total cost. For ongoing audit relationships or large, complex sites that benefit from team-based analysis, an agency may be more appropriate. Ask specifically who will be doing the analysis work, regardless of whether you engage a freelancer or agency.</p>
+
+<h2 id="how-to-evaluate">How to Evaluate</h2>
+
+<p>Evaluating an SEO consultant's capability before hiring them requires looking beyond their marketing and testimonials.</p>
+
+<p><strong>Ask for a sample audit report.</strong> Any consultant confident in their work can provide an anonymised example of a previous audit. Review it for depth, specificity, and actionability. Does it provide generic advice that could apply to any website, or does it contain specific findings tied to the site's unique situation? Are recommendations vague ("improve page speed") or specific ("defer loading of the HotJar script until after user interaction to reduce Total Blocking Time by approximately 800ms")?</p>
+
+<p><strong>Check their methodology.</strong> Ask what tools they use, what they check manually versus automatically, and how they prioritise findings. A credible consultant can explain their process clearly and justify why each step exists. Be wary of anyone who claims a proprietary or secret methodology. Website auditing is a well-established discipline with known best practices.</p>
+
+<p><strong>Look for T-shaped expertise.</strong> The best audit consultants have deep technical SEO knowledge combined with working understanding of content strategy, user experience, web development, and business metrics. Ask questions that span these areas to gauge the breadth of their expertise. A consultant who understands only the technical layer will miss content and UX issues that may be more impactful than the technical problems.</p>
+
+<p><strong>Verify recent experience.</strong> SEO changes rapidly. Someone who was excellent five years ago but has not kept current with Core Web Vitals, helpful content updates, and AI-driven search changes may provide outdated advice. Ask about recent projects and how their approach has evolved in the past two years.</p>
+
+<p><strong>Request references.</strong> Speaking with previous clients gives you the most honest assessment of what working with the consultant is actually like. Ask references about communication quality, deadline adherence, the usefulness of the deliverables, and whether the recommended actions produced measurable results.</p>
+
+<h2 id="red-flags">Red Flags</h2>
+
+<p>Certain behaviours should make you cautious about engaging a particular consultant.</p>
+
+<p><strong>Guaranteeing specific ranking outcomes.</strong> No one can guarantee rankings because Google's algorithm considers hundreds of factors, many outside any consultant's control. A consultant who guarantees "page one in 90 days" is either being dishonest or planning tactics that risk penalties. Legitimate consultants guarantee thorough analysis and actionable recommendations, not specific ranking positions.</p>
+
+<p><strong>Refusing to explain their process.</strong> Transparency is a fundamental requirement. If a consultant will not tell you what they check, how they prioritise, or what tools they use, that is a warning sign. You are paying for expertise, not mystery.</p>
+
+<p><strong>Delivering tool-generated reports without analysis.</strong> Running <a href="/website-audit-tools/semrush/">Semrush</a> and exporting the PDF is not a professional audit. If the deliverable looks like it came directly from an automated tool with no manual analysis, interpretation, or prioritisation, you have paid for something you could have done yourself for the cost of a tool subscription.</p>
+
+<p><strong>Recommending their own services as the primary solution.</strong> A genuine audit consultant identifies problems and recommends solutions. If every recommendation conveniently requires purchasing additional services from the same consultant, the audit is functioning as a sales tool rather than an honest assessment. Good consultants make recommendations that your existing team can implement independently.</p>
+
+<p><strong>No questions during scoping.</strong> A consultant who agrees to audit your site without asking about your business, goals, competitive landscape, or history is planning to run a generic process. The best audits are shaped by context, and that context comes from thorough scoping conversations before the work begins.</p>
+
+<h2 id="cost-range">Cost Range</h2>
+
+<p>Website audit costs vary widely based on site complexity, consultant experience, and the depth of analysis.</p>
+
+<p><strong>Budget range (£300-£800):</strong> At this level, expect a competent technical audit using standard tools with basic manual review. The deliverable will cover the fundamentals: crawl issues, on-page SEO, page speed, and mobile usability. Suitable for small business sites with straightforward architectures. Often provided by junior consultants or as a standardised package from agencies.</p>
+
+<p><strong>Mid-range (£800-£2,500):</strong> This buys a thorough audit with significant manual analysis, content assessment, competitive context, and detailed recommendations. Expect a senior consultant spending multiple days on your site, producing a comprehensive report with prioritised actions. Appropriate for established businesses with sites that generate meaningful revenue or leads.</p>
+
+<p><strong>Premium range (£2,500-£7,500+):</strong> Enterprise-level audits involving team-based analysis, deep technical investigation, content strategy assessment, and detailed migration planning or recovery diagnostics. These engagements typically include multiple rounds of analysis, stakeholder presentations, and extended support for implementation questions. Appropriate for large ecommerce sites, SaaS platforms, or businesses where organic search drives significant revenue.</p>
+
+<p>The cost should be evaluated against the potential return. If your site generates £10,000 per month in organic traffic and a £2,000 audit identifies issues that, when fixed, increase traffic by 20%, the audit pays for itself within a single month. Calculate the return on investment based on your actual traffic value rather than comparing prices in isolation.</p>
+
+<h2 id="working-with-us">Working With Us</h2>
+
+<p>Our <a href="/website-audit-services/comprehensive/">comprehensive 72-checkpoint audit</a> is delivered by senior consultants who have audited hundreds of sites across diverse industries and technical platforms. Every engagement follows a structured process but is customised to your specific situation, goals, and constraints.</p>
+
+<p>We start with a scoping call to understand your business context before beginning any analysis. The audit combines automated crawling with extensive manual review. Findings are prioritised by business impact, not just technical severity. The deliverable includes an executive summary, detailed findings, a prioritised action plan, and a walkthrough call.</p>
+
+<p>We are transparent about our process, tools, and methodology. We provide specific, actionable recommendations that your team can implement independently. We do not create dependency or require ongoing retainers to access the value of the audit. If you do want implementation support after reviewing the findings, we offer that as a separate service, but it is never a requirement.</p>
+
+<p>To discuss whether an audit is the right investment for your situation, get in touch through the form on this page. We will schedule a brief scoping conversation to understand your needs before providing a fixed-price quote.</p>
+
+</ContentLayout>

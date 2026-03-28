@@ -1,0 +1,127 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'What Is a Technical SEO Audit', href: '/what-is-a-technical-seo-audit/' },
+];
+
+const toc = [
+  { label: 'Definition', id: 'definition' },
+  { label: 'What Gets Checked', id: 'what-gets-checked' },
+  { label: 'Why It Matters', id: 'why-it-matters' },
+  { label: 'How It Differs From Content Audits', id: 'how-it-differs-from-content-audits' },
+  { label: 'When You Need One', id: 'when-you-need-one' },
+  { label: 'DIY vs Professional', id: 'diy-vs-professional' },
+];
+---
+
+<ContentLayout
+  title="What Is a Technical SEO Audit? Complete Explanation"
+  description="A technical SEO audit examines the infrastructure, crawlability, and indexability of your website. Learn what it includes, why it matters, and when you need one."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>A <strong>technical SEO audit</strong> is a systematic examination of your website's infrastructure, server configuration, crawlability, indexability, and code quality — everything that determines whether search engines can effectively discover, access, render, and rank your pages. It is the foundation layer of SEO that must be solid before content strategy, link building, or any other optimisation can deliver results.</p>
+
+<p>Think of it this way: you can write the best content on the internet, but if Google cannot crawl your pages, cannot parse your HTML, or cannot figure out which version of a URL to index, that content will never rank. A technical SEO audit identifies and resolves these invisible barriers between your content and the search engine results page.</p>
+
+<p>Unlike a general website audit that touches on multiple areas (content, design, user experience), a technical audit focuses exclusively on the machine-readable aspects of your site. It answers one fundamental question: can search engines do their job properly on this website?</p>
+
+<h2 id="definition">Definition</h2>
+
+<p>A technical SEO audit is a methodical review of all the technical factors that affect how search engine crawlers interact with your website. It evaluates the signals and configurations that exist in your HTML, HTTP headers, server setup, JavaScript rendering, XML sitemaps, and robots.txt files — the entire technical stack that search engines use to discover, understand, and rank your content.</p>
+
+<p>The scope of a technical audit is distinct from other types of SEO analysis. It does not evaluate the quality of your written content, the strength of your backlink profile, or the effectiveness of your keyword targeting. Those are important, but they belong to content audits, backlink audits, and keyword research respectively. A technical audit is concerned with infrastructure — the pipes and wiring that deliver your content to search engines.</p>
+
+<p>The output of a technical audit is a prioritised list of issues, each with a severity rating, affected URLs, and specific remediation steps. The best technical audits also include an estimate of the ranking impact you can expect from fixing each issue, allowing you to make informed decisions about where to invest your development resources.</p>
+
+<p>Technical SEO audits vary in depth from quick automated scans (like our <a href="/free-website-audit/">free audit tool</a>) to comprehensive manual reviews that take days to complete. The right level of depth depends on your site's complexity, your current organic traffic, and the severity of the symptoms you are experiencing.</p>
+
+<h2 id="what-gets-checked">What Gets Checked</h2>
+
+<p>A thorough technical SEO audit examines your website across eight major areas. Each area represents a different aspect of how search engines interact with your site.</p>
+
+<h3>Crawlability</h3>
+
+<p><strong>Robots.txt configuration.</strong> Your robots.txt file is the first thing search engine crawlers read when they visit your site. An overly restrictive robots.txt can block entire sections from indexing. An overly permissive one can waste crawl budget on low-value pages. A technical audit verifies that your robots.txt correctly allows access to all important content while blocking administrative, duplicate, and low-value paths.</p>
+
+<p><strong>XML sitemaps.</strong> Your sitemap tells search engines which pages exist and which ones you consider most important. A technical audit checks whether your sitemap exists, whether it is referenced in robots.txt, whether all listed URLs return 200 status codes, whether it includes lastmod dates, and whether it excludes pages you do not want indexed. Large sites may need sitemap indexes, and the audit verifies that these are properly structured.</p>
+
+<p><strong>Crawl budget efficiency.</strong> Google allocates a finite crawl budget to each site based on its perceived importance and server capacity. A technical audit identifies factors that waste crawl budget: redirect chains, soft 404 errors, duplicate content accessible through multiple URLs, infinite crawl traps from dynamic parameters, and faceted navigation that generates millions of indexable URL combinations.</p>
+
+<h3>Indexability</h3>
+
+<p><strong>Canonical configuration.</strong> Canonical tags tell search engines which version of a page is the master copy. A technical audit checks for missing canonicals, self-referencing canonicals (which are correct), canonicals pointing to non-existent pages, conflicting canonical signals between HTTP headers and HTML tags, and canonical chains where Page A canonicalises to Page B which canonicalises to Page C.</p>
+
+<p><strong>Robots meta directives.</strong> Beyond robots.txt, individual pages can use meta robots tags or X-Robots-Tag HTTP headers to control indexing. A technical audit identifies pages with noindex directives that should be indexed, nofollow directives that prevent link equity from flowing through internal links, and contradictory directives between different signal sources.</p>
+
+<p><strong>Duplicate content.</strong> Search engines struggle when the same content is accessible at multiple URLs. A technical audit identifies duplicate content caused by www vs non-www access, HTTP vs HTTPS access, trailing slash inconsistencies, URL parameters, session IDs, and print-friendly page versions. Each duplication source requires a specific resolution: redirects, canonical tags, or URL parameter handling.</p>
+
+<h3>Rendering and JavaScript</h3>
+
+<p><strong>Client-side rendering.</strong> Websites that rely on JavaScript to render content create specific challenges for search engines. Google can render JavaScript, but it does so on a delayed schedule (sometimes days after the initial crawl) and with limited resources. A technical audit tests whether your critical content is present in the initial HTML response or requires JavaScript to appear. Pages that depend entirely on client-side rendering risk being indexed as blank pages.</p>
+
+<p><strong>Structured data.</strong> Schema markup helps search engines understand the type and meaning of your content, enabling rich results in search (star ratings, FAQ dropdowns, breadcrumbs, product information). A technical audit validates your structured data syntax, checks for required and recommended properties, and identifies pages where adding schema would improve search result appearance.</p>
+
+<h3>Server and Performance</h3>
+
+<p><strong>Response codes.</strong> Every URL should return an appropriate HTTP status code. A technical audit maps all response codes across your site: 200 (success), 301/302 (redirects), 404 (not found), 410 (permanently removed), and 5xx (server errors). Each non-200 code requires evaluation — some are intentional and correct, others indicate problems.</p>
+
+<p><strong>Page speed.</strong> Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint) are confirmed Google ranking factors. A technical audit measures these metrics across representative pages and identifies the specific resources, code patterns, and server configurations causing poor performance.</p>
+
+<p><strong>HTTPS and security.</strong> SSL/TLS configuration, HTTP-to-HTTPS redirect chains, mixed content, and HSTS headers are all part of a technical audit. Google uses HTTPS as a ranking signal, and browsers display warnings for insecure sites that directly affect user trust and click-through rates.</p>
+
+<h2 id="why-it-matters">Why It Matters</h2>
+
+<p>Technical SEO issues are uniquely dangerous because they are invisible to most stakeholders and their impact is disproportionate to their apparent severity.</p>
+
+<p><strong>Technical issues block everything downstream.</strong> No amount of content optimisation, link building, or conversion rate improvement matters if search engines cannot access, render, and index your pages. A single misconfigured robots.txt directive can negate months of content investment by preventing Google from ever seeing your new pages. Technical SEO is the prerequisite for everything else.</p>
+
+<p><strong>Small errors compound.</strong> A redirect chain that adds 300ms per hop seems trivial. But when 40% of your internal links pass through redirect chains, your effective page speed degrades significantly, your crawl budget is wasted on unnecessary requests, and link equity is diluted through each redirect. Technical debt accumulates silently until it reaches a tipping point that manifests as sudden ranking drops.</p>
+
+<p><strong>Migrations and redesigns create technical debt.</strong> Every time your site undergoes a significant change — new CMS, new design, new URL structure, new hosting — technical SEO issues are introduced. Redirect maps are incomplete. Old canonical configurations persist. New templates introduce heading hierarchy problems. Without a post-migration technical audit, this debt goes undetected and slowly erodes your organic performance.</p>
+
+<p><strong>Algorithm updates expose technical weaknesses.</strong> When Google releases a core algorithm update and your rankings drop, the cause is often technical. Google periodically increases the weight it gives to page experience signals, rendering quality, and crawl efficiency. Sites with existing technical issues that were borderline acceptable suddenly fall below the threshold. A clean technical foundation insulates you from these algorithm shifts.</p>
+
+<h2 id="how-it-differs-from-content-audits">How It Differs From Content Audits</h2>
+
+<p>Technical SEO audits and content audits are complementary but distinct. Understanding the difference ensures you invest in the right type of analysis for your situation.</p>
+
+<p><strong>Technical audits examine the container. Content audits examine what's inside.</strong> A technical audit cares about whether your page returns a 200 status code, has a correct canonical tag, loads in under 3 seconds, and renders properly in Google's headless browser. It does not care whether the text on the page is well-written, targets the right keywords, or satisfies search intent. A content audit evaluates those qualitative factors.</p>
+
+<p><strong>Technical issues have deterministic solutions.</strong> A broken redirect either works or it does not. A canonical tag either points to the right URL or the wrong one. A robots.txt either allows crawling or blocks it. The recommendations from a technical audit are specific and testable: fix this redirect, update this canonical, remove this noindex directive. Content audit recommendations are more subjective: improve the depth of this section, better align with search intent, add more supporting evidence.</p>
+
+<p><strong>Technical audits are tool-driven. Content audits are expert-driven.</strong> The majority of technical audit findings can be identified by automated crawling tools. Content quality assessment requires human judgment (or AI that approximates human judgment). A technical audit without tools is impractical. A content audit without expertise is meaningless.</p>
+
+<p><strong>You need both, but fix technical issues first.</strong> If your site has both technical and content problems, fix the technical issues before investing in content improvements. There is no point in optimising content that Google cannot crawl. Once the technical foundation is solid, content improvements will have their full intended effect.</p>
+
+<h2 id="when-you-need-one">When You Need One</h2>
+
+<p>Certain situations make a technical SEO audit urgent rather than merely advisable.</p>
+
+<p><strong>After a site migration.</strong> If you have moved to a new domain, changed your URL structure, switched CMS platforms, or redesigned your site, a technical audit within the first week is essential. Migrations are the single most common cause of catastrophic organic traffic loss, and the damage becomes harder to reverse the longer it goes undetected.</p>
+
+<p><strong>After a traffic decline.</strong> If your organic traffic has dropped by more than 10% without an obvious cause (seasonality, lost content, Google penalty notification), a technical audit is the first diagnostic step. Traffic drops frequently trace back to technical issues: accidental noindex deployment, canonical misconfiguration, or a server configuration change that increased response times.</p>
+
+<p><strong>Before a major content investment.</strong> If you are planning to produce 50 new pages, launch a content hub, or rebuild your blog, audit the technical foundation first. Publishing content on a site with crawlability problems, broken internal linking, or duplicate content issues means your new content inherits those problems and may never index properly.</p>
+
+<p><strong>When you have a large or complex site.</strong> Sites with more than 1,000 pages, dynamic content generation, multiple subdomains, or JavaScript-heavy architecture should run technical audits quarterly. The larger and more complex your site, the more opportunities there are for technical issues to emerge and the harder they are to detect without systematic analysis.</p>
+
+<p><strong>When rankings are stagnant.</strong> If your content is high quality, your backlink profile is competitive, but your rankings refuse to improve, the bottleneck is almost certainly technical. Something in your site's infrastructure is preventing Google from fully trusting or understanding your pages.</p>
+
+<h2 id="diy-vs-professional">DIY vs Professional</h2>
+
+<p>Whether you should conduct a technical audit yourself or hire a professional depends on your technical knowledge, the complexity of your site, and the stakes involved.</p>
+
+<p><strong>DIY is appropriate when</strong> your site is small (under 100 pages), built on a standard CMS (WordPress, Shopify, Squarespace), and you are comfortable interpreting tool output. Start with our <a href="/free-website-audit/">free audit tool</a> for a quick health check, then use Google Search Console's coverage and performance reports for ongoing monitoring. Free tools like Google PageSpeed Insights, the Rich Results Test, and the URL Inspection tool in Search Console can help you identify and verify specific technical issues.</p>
+
+<p><strong>Professional audits are worth the investment when</strong> your site has more than 500 pages, uses custom development or JavaScript frameworks, generates significant revenue from organic traffic, or has recently undergone a migration. Professional auditors bring experience that tools cannot replicate — they understand which findings are genuinely important versus which are false positives, they can trace symptoms back to root causes, and they provide recommendations that account for your specific CMS, hosting environment, and business context.</p>
+
+<p><strong>The hybrid approach.</strong> Many organisations benefit from running automated scans regularly (monthly) and commissioning professional audits periodically (quarterly or semi-annually). The automated scans catch new issues as they emerge, while the professional audits provide the depth and strategic context that automation cannot deliver. Our <a href="/website-audit-services/">audit services</a> are designed to complement ongoing automated monitoring with expert analysis and prioritised recommendations.</p>
+
+<p>Regardless of which approach you choose, the most important thing is to act on the findings. A technical audit that produces a report which sits in someone's inbox accomplishing nothing has negative value — it consumed time and budget without improving anything. Every audit should result in a prioritised action plan with assigned owners and deadlines.</p>
+
+</ContentLayout>

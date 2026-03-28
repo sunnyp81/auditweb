@@ -1,0 +1,117 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Content Audit', href: '/website-content-audit/' },
+  { label: 'Frequency', href: '/website-content-audit/frequency/' },
+];
+
+const toc = [
+  { label: 'Factors Affecting Frequency', id: 'factors-affecting-frequency' },
+  { label: 'Monthly Checks', id: 'monthly-checks' },
+  { label: 'Quarterly Reviews', id: 'quarterly-reviews' },
+  { label: 'Annual Deep Audit', id: 'annual-deep-audit' },
+  { label: 'Content Decay Detection', id: 'content-decay-detection' },
+  { label: 'Automated Monitoring', id: 'automated-monitoring' },
+];
+---
+
+<ContentLayout
+  title="How Often to Audit Website Content"
+  description="Discover the right content audit frequency for your site. Learn when to run monthly checks, quarterly reviews, and annual deep audits, plus how to detect content decay before it hurts rankings."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>One of the most common questions we hear from marketing teams is how often they should audit their website content. The answer depends on your site size, publishing velocity, industry competitiveness, and available resources. Audit too rarely and content decay goes undetected for months, costing you traffic and conversions. Audit too frequently and you waste time reviewing pages that have not had enough time to generate meaningful data since the last review.</p>
+
+  <p>The practical answer for most businesses involves a layered approach: lightweight monthly checks, structured quarterly reviews, and a comprehensive annual deep audit. Each layer serves a different purpose and catches different types of problems. Together they create a continuous improvement cycle that keeps your content library healthy without consuming your entire team's bandwidth.</p>
+
+  <p>This guide explains each layer in detail, helps you determine the right cadence for your specific situation, and shows you how to automate the monitoring that connects them.</p>
+
+  <h2 id="factors-affecting-frequency">Factors Affecting Frequency</h2>
+
+  <p>Before setting a fixed schedule, understand the variables that should influence your audit frequency. A site that publishes five articles per week in a rapidly changing industry needs more frequent reviews than a 30-page brochure site in a stable market. Here are the key factors:</p>
+
+  <ul>
+    <li><strong>Publishing volume</strong> — the more content you produce, the more frequently you need to review it. Sites publishing daily or multiple times per week should run monthly content health checks. Sites publishing a few times per month can rely more heavily on quarterly reviews.</li>
+    <li><strong>Industry pace</strong> — in technology, finance, healthcare, and legal sectors, information becomes outdated quickly. Regulatory changes, product updates, and market shifts can make content inaccurate within months. Slower-moving industries like manufacturing or agriculture may see content remain relevant for years.</li>
+    <li><strong>Competitive pressure</strong> — if your competitors are actively publishing and updating content in your niche, your content needs to keep pace. Monitor competitor publishing activity. If they are refreshing old content regularly, you need to match or exceed that cadence to maintain rankings.</li>
+    <li><strong>Site size</strong> — large sites with thousands of pages simply cannot audit every page every month. Prioritise by traffic, revenue, and strategic importance. Your top 100 pages might get monthly attention while the long tail gets reviewed quarterly or annually.</li>
+    <li><strong>Resource availability</strong> — be realistic about what your team can execute. An ambitious audit schedule that produces recommendations nobody has time to implement is worse than a modest schedule that leads to actual improvements. Match your audit frequency to your execution capacity.</li>
+    <li><strong>Traffic volatility</strong> — sites that experience significant traffic fluctuations, whether seasonal or algorithm-driven, benefit from more frequent monitoring. If your traffic graph looks like a rollercoaster, monthly checks help you distinguish normal seasonal patterns from actual content problems.</li>
+  </ul>
+
+  <h2 id="monthly-checks">Monthly Checks</h2>
+
+  <p>Monthly content checks are lightweight reviews that take one to three hours. Their purpose is early warning — catching problems before they compound. You are not auditing every page monthly. You are monitoring key indicators and investigating anything that looks abnormal.</p>
+
+  <p>Here is what to check every month:</p>
+
+  <p><strong>Top page performance:</strong> Review your 20 to 50 highest-traffic pages in Google Search Console. Look for any page where clicks or impressions have dropped by more than 20 percent compared to the previous month. A sudden decline could indicate a ranking loss, a technical issue, or a competitor publishing stronger content on the same topic.</p>
+
+  <p><strong>New content performance:</strong> Check how content published in the previous month is performing. Is it getting indexed? Is it starting to rank for target keywords? Are engagement metrics reasonable? New content that shows zero impressions after 30 days may have indexation problems or targeting issues that need immediate attention.</p>
+
+  <p><strong>Broken content:</strong> Run a quick crawl or check your monitoring tool for new 404 errors, broken internal links, or pages returning server errors. Content that worked last month might be broken this month due to CMS updates, URL changes, or accidental deletions.</p>
+
+  <p><strong>Conversion page review:</strong> Look at your most important conversion pages — pricing, contact, signup, demo request — in analytics. Any decline in conversion rate on these pages warrants immediate investigation because the revenue impact is direct.</p>
+
+  <p>Monthly checks should produce a short list of action items, typically five to fifteen. Assign them to team members with deadlines and track completion. The monthly check is not a planning exercise — it is a response exercise. Find problems, fix them, move on.</p>
+
+  <h2 id="quarterly-reviews">Quarterly Reviews</h2>
+
+  <p>Quarterly content reviews are more structured and take one to three days depending on site size. This is where you step back from individual page performance and evaluate your content strategy at the category and topic level.</p>
+
+  <p>A quarterly review should cover the following areas:</p>
+
+  <p><strong>Content category performance:</strong> Group your pages by content type (blog posts, landing pages, product pages, resource pages) and by topic cluster. Compare aggregate performance metrics — total clicks, average engagement rate, conversion rate — across categories. Identify which categories are growing, stable, or declining. If an entire topic cluster is losing traffic, the problem is likely strategic rather than page-level.</p>
+
+  <p><strong>Keyword cannibalisation check:</strong> Export your GSC data and look for keywords where multiple pages on your site rank for the same query. Cannibalisation splits your ranking signals across pages and usually results in both pages ranking lower than a single consolidated page would. Quarterly is a good cadence for this check because cannibalisation patterns take time to emerge and stabilise.</p>
+
+  <p><strong>Content gap analysis:</strong> Compare your topic coverage against competitors. Use Ahrefs Content Gap or Semrush Keyword Gap to find keywords your competitors rank for that you do not. This feeds your content calendar for the next quarter.</p>
+
+  <p><strong>Update queue review:</strong> Review any pages flagged for updates in previous monthly checks or the last quarterly review that have not been executed yet. Reprioritise based on current performance data. Some items may have resolved themselves. Others may have become more urgent.</p>
+
+  <p><strong>Content freshness sweep:</strong> Filter your content inventory for pages not updated in the last 12 months. Review each one to determine whether it still serves its purpose or needs a refresh. Pay particular attention to pages that reference specific years, statistics, tools, or regulations that may have changed.</p>
+
+  <h2 id="annual-deep-audit">Annual Deep Audit</h2>
+
+  <p>The annual deep audit is the comprehensive content audit most people think of when they hear the term. This is a full-scale review of every page on your site with fresh performance data, updated scoring, and new action assignments. It typically takes one to two weeks for a mid-sized site.</p>
+
+  <p>The annual audit follows the full content audit methodology: crawl and inventory, pull 12 months of performance data, score every page, assign actions, and build an execution plan. If you have been running monthly checks and quarterly reviews throughout the year, the annual audit is faster because you already understand your content's performance trends and have addressed many issues along the way.</p>
+
+  <p>The annual audit is also the right time for bigger strategic decisions. Should you prune an entire content category that has underperformed for 12 months? Should you restructure your URL hierarchy and internal linking to better reflect your current topic priorities? Should you consolidate ten thin pages into three comprehensive guides? These decisions require a full-year view of performance data and should not be made based on a single month's metrics.</p>
+
+  <p>Schedule your annual deep audit for the same time each year so it becomes a predictable part of your planning cycle. Many teams run it in January to inform the year's content strategy, or in their quietest business month when team bandwidth is most available. Avoid scheduling it during a period of known volatility such as a site migration, a major Google algorithm update season, or your busiest sales period.</p>
+
+  <h2 id="content-decay-detection">Content Decay Detection</h2>
+
+  <p>Content decay is the gradual decline in a page's search performance over time. It happens because competitors publish fresher and better content, search intent evolves, the information on your page becomes outdated, or Google's ranking criteria shift. Decay is insidious because it happens slowly — a page losing two percent of its traffic per month does not trigger any alarms, but after a year it has lost nearly a quarter of its traffic.</p>
+
+  <p>Detecting decay early is critical because recovering a page that has dropped from position 5 to position 8 is far easier than recovering one that has fallen from position 5 to position 25. Once a page drops off page one, it loses the click-through rate advantages that reinforce its ranking, creating a negative spiral that accelerates the decline.</p>
+
+  <p>To detect content decay systematically, compare three-month rolling averages rather than month-over-month numbers. Monthly data is too noisy — seasonal fluctuations and normal ranking volatility create false signals. A three-month rolling average smooths these out and reveals genuine trends.</p>
+
+  <p>Flag any page where the three-month average of organic clicks has declined by 15 percent or more compared to the previous three-month period. This threshold catches meaningful declines while filtering out normal fluctuation. For your most important pages, you might tighten this threshold to 10 percent.</p>
+
+  <p>When you detect decay, investigate the cause before prescribing a fix. Check whether the page has lost rankings for its primary keyword, whether a new competitor has appeared on page one, whether the search volume for the topic has declined, or whether the page has developed a technical issue. The cause determines the fix: a competitor analysis informs a content upgrade, a technical issue needs a technical fix, and declining search volume may mean the topic is no longer worth investing in.</p>
+
+  <h2 id="automated-monitoring">Automated Monitoring</h2>
+
+  <p>Manual content checks are important but they miss things between review cycles. Automated monitoring fills the gaps by continuously watching your content performance and alerting you when something needs attention.</p>
+
+  <p>Here are the automated monitoring systems worth setting up:</p>
+
+  <ul>
+    <li><strong>Google Search Console email alerts</strong> — GSC sends automatic notifications for critical issues like manual actions, coverage problems, and security issues. Make sure these emails go to a monitored inbox, not a spam folder.</li>
+    <li><strong>Custom GA4 alerts</strong> — set up custom alerts in GA4 for significant traffic drops. Create an alert that triggers when any page's weekly sessions drop by more than 30 percent compared to the previous week. This catches sudden problems like accidental noindex tags, broken pages, or canonical errors.</li>
+    <li><strong>ContentKing or Lumar Monitor</strong> — these tools crawl your site continuously and alert you to changes. They detect content changes, metadata modifications, new 404s, redirect changes, and technical issues in near real-time. If someone accidentally deletes a page or a CMS update breaks your schema markup, you know within hours instead of waiting for your next monthly check.</li>
+    <li><strong>Rank tracking alerts</strong> — tools like Ahrefs, Semrush, or AccuRanker can track your keyword rankings daily and alert you when important keywords drop significantly. Set alerts for your top 50 to 100 keywords to catch ranking declines early.</li>
+    <li><strong>Uptime monitoring</strong> — a basic but essential check. Tools like UptimeRobot or Pingdom verify your site is accessible and alert you immediately when it goes down. Downtime directly causes content performance loss.</li>
+  </ul>
+
+  <p>The goal of automated monitoring is not to replace your manual reviews but to act as a safety net between them. Automation catches acute problems — sudden drops, broken pages, technical failures — while manual reviews catch chronic problems — gradual decay, strategic misalignment, quality drift — that algorithms cannot evaluate as well as a human can.</p>
+
+  <p>Build your monitoring stack gradually. Start with the free options — GSC alerts and GA4 custom alerts — and add paid monitoring tools as your site grows and the cost of missing a problem increases. A site generating significant revenue from organic traffic should invest in continuous monitoring because the cost of a week of undetected downtime or ranking loss far exceeds the monitoring subscription fee.</p>
+</ContentLayout>
