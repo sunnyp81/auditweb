@@ -1,0 +1,129 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'Content Template', href: '/website-audit-checklist/content-template/' },
+];
+
+const toc = [
+  { label: 'What to Track', id: 'what-to-track' },
+  { label: 'Spreadsheet Columns', id: 'spreadsheet-columns' },
+  { label: 'Scoring System', id: 'scoring-system' },
+  { label: 'Action Categories', id: 'action-categories' },
+  { label: 'Using the Template', id: 'using-the-template' },
+];
+---
+
+<ContentLayout
+  title="Website Content Audit Template"
+  description="A practical content audit template with spreadsheet columns, scoring system, and action categories. Everything you need to systematically evaluate and improve your website's content."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>A content audit is the process of cataloguing, evaluating, and making decisions about every piece of content on your website. Unlike a <a href="/technical-website-audit/">technical audit</a> that examines how your site works, a content audit examines what your site says and whether it serves your audience and business goals effectively. The output is a complete inventory of your content with clear decisions about what to keep, improve, merge, or remove.</p>
+
+<p>The template described in this guide has been refined through hundreds of content audits across different industries and site sizes. It is designed to be practical rather than academic. Every column exists because it drives a decision. Every scoring criterion connects to a measurable outcome. The goal is not to create a beautiful spreadsheet but to produce a prioritised action list that improves your content's performance.</p>
+
+<h2 id="what-to-track">What to Track</h2>
+
+<p>A content audit template needs to balance comprehensiveness with usability. Tracking too few data points means decisions lack context. Tracking too many means the audit takes so long that it never gets finished or the spreadsheet becomes too complex to interpret.</p>
+
+<p>The data you track falls into three categories: <strong>identification data</strong> that describes each piece of content, <strong>performance data</strong> that measures how the content is performing, and <strong>quality data</strong> that assesses the content's value and relevance.</p>
+
+<p><strong>Identification data</strong> includes the URL, page title, content type (blog post, product page, landing page, guide, FAQ), publication date, last update date, author, and target keyword. This data helps you sort, filter, and segment your content inventory. Most of it can be extracted automatically from a crawl export and your CMS.</p>
+
+<p><strong>Performance data</strong> comes from Google Search Console and your analytics platform. At minimum, you need organic sessions (or clicks from GSC), impressions, average position for the primary keyword, number of ranking keywords, backlink count, and conversion data (if applicable). Performance data tells you what the content is actually achieving, as opposed to what you hope it achieves.</p>
+
+<p><strong>Quality data</strong> requires manual assessment. This includes content accuracy, topical relevance, depth relative to competitors, alignment with search intent, readability, and whether the content reflects your current brand and expertise. Quality assessment is the most time-consuming part of a content audit but also the most valuable, because automated tools cannot evaluate whether content is genuinely helpful and accurate.</p>
+
+<p>The combination of these three data types enables informed decisions. A page with low traffic but high quality might need better internal linking or promotion rather than rewriting. A page with high traffic but low quality is a priority for improvement before it loses its rankings. A page with low traffic and low quality is a candidate for removal or consolidation.</p>
+
+<h2 id="spreadsheet-columns">Spreadsheet Columns</h2>
+
+<p>Here is the recommended column structure for your content audit spreadsheet. Create this in Google Sheets or Excel so you can sort, filter, and share with your team.</p>
+
+<p><strong>Column A: URL.</strong> The full URL of the page. This is your primary identifier. Keep URLs as plain text, not hyperlinks, so they do not break when you sort or filter the spreadsheet.</p>
+
+<p><strong>Column B: Page Title.</strong> The title tag content. Useful for quickly identifying pages without clicking through to each URL.</p>
+
+<p><strong>Column C: Content Type.</strong> Categorise each page: blog post, guide, landing page, product page, category page, FAQ, about page, or other. Use a standardised set of categories so you can filter by type.</p>
+
+<p><strong>Column D: Primary Keyword.</strong> The main keyword this page targets or should target. If the page does not have a clear keyword target, that is itself a finding worth noting.</p>
+
+<p><strong>Column E: Word Count.</strong> The word count of the main content area, excluding navigation, footers, and sidebars. Extract this from your crawl data. Word count alone does not determine quality, but it indicates content depth relative to the topic.</p>
+
+<p><strong>Column F: Publish Date.</strong> When the content was first published. Use ISO format (YYYY-MM-DD) for consistent sorting.</p>
+
+<p><strong>Column G: Last Updated.</strong> When the content was last meaningfully updated (not just a typo fix). If you cannot determine this from your CMS, leave it blank and note it as a data gap. Content freshness matters for topics where information changes over time.</p>
+
+<p><strong>Column H: Organic Sessions (Last 12 Months).</strong> Total organic sessions from analytics or total clicks from GSC over the past 12 months. Use a 12-month window to account for seasonality. This is your primary performance metric.</p>
+
+<p><strong>Column I: GSC Impressions (Last 12 Months).</strong> Total search impressions from Google Search Console. High impressions with low clicks indicate a CTR problem (poor title tag or meta description). Low impressions indicate a ranking or indexation problem.</p>
+
+<p><strong>Column J: Average Position.</strong> The average ranking position for the primary keyword from GSC. Positions 1-10 are page one, 11-20 are page two. Pages ranking 8-20 (bottom of page one or top of page two) are often the best candidates for improvement because small gains move them into higher-traffic positions.</p>
+
+<p><strong>Column K: Backlinks.</strong> The number of referring domains linking to this page, from Ahrefs, Semrush, or similar. Pages with backlinks have accumulated authority that should not be wasted by removing or redirecting them without good reason.</p>
+
+<p><strong>Column L: Quality Score.</strong> Your manual quality assessment on a 1-5 scale (described in the next section). This is the subjective human evaluation that complements the objective performance data.</p>
+
+<p><strong>Column M: Action.</strong> The decision for this page: Keep (no changes needed), Update (refresh and improve), Merge (combine with another page), Redirect (redirect to a better page), Remove (delete, with 410 response). This is the most important column because it drives your action plan.</p>
+
+<p><strong>Column N: Priority.</strong> High, Medium, or Low priority for the assigned action. Priority should be based on the potential traffic or revenue impact of the action.</p>
+
+<p><strong>Column O: Notes.</strong> Free-text field for specific observations, required changes, merge targets, or other context that does not fit in the structured columns.</p>
+
+<h2 id="scoring-system">Scoring System</h2>
+
+<p>The quality score provides a standardised way to evaluate content that can be applied consistently across team members and content types. Use a 1-5 scale with clear criteria for each level.</p>
+
+<p><strong>Score 1: Remove or replace.</strong> Content is factually inaccurate, severely outdated, completely irrelevant to your current business, or so thin that it provides no value. Examples include placeholder pages never finished, content about discontinued products with no redirect target, and pages with fewer than 100 words that do not serve a specific functional purpose.</p>
+
+<p><strong>Score 2: Major rewrite needed.</strong> Content addresses a relevant topic but fails to serve user intent, lacks depth compared to competing pages, contains significant inaccuracies, or does not reflect current best practices. The topic is worth covering but the current content needs to be substantially rewritten rather than lightly edited.</p>
+
+<p><strong>Score 3: Update needed.</strong> Content is fundamentally sound but needs refreshing. Statistics need updating, some sections need expanding, screenshots or examples need replacing, or the content needs to be reorganised for better readability. The core content is valuable but showing its age.</p>
+
+<p><strong>Score 4: Minor improvements.</strong> Good content that could be slightly improved with updated links, refreshed examples, additional sections addressing new subtopics, or better formatting. These pages are performing and providing value but have room for incremental improvement.</p>
+
+<p><strong>Score 5: Excellent as-is.</strong> Content is comprehensive, accurate, well-formatted, serving user intent effectively, and performing well in search. No changes needed. Monitor for future freshness updates but do not prioritise for immediate work.</p>
+
+<p>When scoring, consider the content relative to what currently ranks in the top five search results for the target keyword. Your content does not need to be perfect in an absolute sense. It needs to be competitive with what Google is currently rewarding with top rankings for your target queries.</p>
+
+<p>Be honest in your scoring. There is a natural tendency to rate your own content generously. If you cannot honestly say your content is the best or among the best results a searcher could find for the target query, it is not a 5. Most sites find that the majority of their content falls in the 2-3 range, which is normal and represents the improvement opportunity that the audit is designed to identify.</p>
+
+<h2 id="action-categories">Action Categories</h2>
+
+<p>Each piece of content should be assigned one of five actions. Clear action definitions prevent ambiguity during implementation.</p>
+
+<p><strong>Keep.</strong> No changes required. The content is performing well, scoring 4-5 on quality, and serving its intended purpose. Keep pages should still be reviewed periodically (every 6-12 months) for freshness but do not require immediate work. Approximately 10-20% of pages typically fall into this category.</p>
+
+<p><strong>Update.</strong> The content has value but needs improvement. This could range from a light refresh (updating statistics, fixing broken links, adding a new section) to a significant rewrite (restructuring the content, expanding thin sections, improving keyword targeting). The URL stays the same. The content gets better. Typically 30-40% of pages need updating.</p>
+
+<p><strong>Merge.</strong> Two or more pages cover overlapping topics and compete with each other for the same keywords (cannibalisation). Merge the best elements of each page into a single comprehensive page on the strongest URL, then redirect the other URLs to it. Merging concentrates the ranking signals from multiple weak pages into one strong page. Typically 10-15% of pages are merge candidates.</p>
+
+<p><strong>Redirect.</strong> The page does not warrant its own existence but has backlinks or residual traffic that should be preserved. Redirect it to the most relevant existing page. This is different from merging because no content from the redirected page is incorporated into the destination. The redirected page simply disappears, with its authority flowing to a related page. Typically 10-20% of pages are redirect candidates.</p>
+
+<p><strong>Remove.</strong> The page has no traffic, no backlinks, no ranking keywords, and no relevance to your current business. Remove it and return a 410 (Gone) status code. Removing genuinely worthless content improves your site's overall quality signals by eliminating dead weight that search engines crawl and evaluate. Typically 15-25% of pages qualify for removal, though this varies widely by site age and content history.</p>
+
+<h2 id="using-the-template">Using the Template</h2>
+
+<p>The template is only useful if you follow a systematic process to populate and act on it.</p>
+
+<p><strong>Step 1: Populate automatically.</strong> Export your crawl data (URL, title, word count) and merge it with GSC data (impressions, clicks, average position) and analytics data (sessions, conversions). Use VLOOKUP or similar functions to combine data sources by URL. This populates columns A through K without any manual work. For most sites, this step takes 30-60 minutes.</p>
+
+<p><strong>Step 2: Score manually.</strong> Work through every page in the spreadsheet, reading the actual content and assigning a quality score. This is the time-intensive step. For a site with 200 pages, expect to spend 4-8 hours on manual scoring. For larger sites, consider scoring a statistically representative sample of each content type rather than every individual page, then applying the template-level findings to similar pages.</p>
+
+<p><strong>Step 3: Assign actions.</strong> Based on the combination of performance data and quality score, assign an action to each page. Pages with high traffic and high quality: Keep. High traffic, low quality: Update urgently. Low traffic, high quality: Update targeting or promote. Low traffic, low quality: Merge, Redirect, or Remove based on topic relevance and backlink presence.</p>
+
+<p><strong>Step 4: Prioritise.</strong> Sort the spreadsheet by action type, then within each action, prioritise by potential impact. High-traffic pages getting Update treatment should be done first. Merges that resolve obvious cannibalisation should be done before merges that consolidate marginal content. Removals can often be done in a single batch at the end.</p>
+
+<p><strong>Step 5: Execute in phases.</strong> Do not try to implement everything at once. Work in monthly sprints: month one handles all high-priority updates and critical merges, month two handles medium-priority updates and redirects, month three handles removals and lower-priority improvements. This phased approach makes the project manageable and lets you measure the impact of changes incrementally.</p>
+
+<p><strong>Step 6: Repeat quarterly.</strong> A content audit is not a one-time exercise. Your content ages, search intent evolves, competitors publish new content, and your business changes. Re-run the template quarterly, updating the performance data and reassessing quality scores. Each subsequent audit is faster than the first because you are reviewing changes since the last audit rather than evaluating everything from scratch.</p>
+
+<p>The template works best when it is treated as a living document rather than a static report. Keep it updated, reference it when planning new content (to avoid creating pages that overlap with existing content), and use it as the central record of your content strategy decisions and their outcomes.</p>
+
+</ContentLayout>

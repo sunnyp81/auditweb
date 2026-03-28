@@ -1,0 +1,135 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  { label: 'Tools', href: '/website-accessibility-audit/tools/' },
+];
+
+const toc = [
+  { label: 'axe DevTools', id: 'axe-devtools' },
+  { label: 'WAVE', id: 'wave' },
+  { label: 'Lighthouse', id: 'lighthouse' },
+  { label: 'Pa11y', id: 'pa11y' },
+  { label: 'Colour Contrast Analyser', id: 'colour-contrast-analyser' },
+  { label: 'Screen Readers', id: 'screen-readers' },
+  { label: 'Keyboard Testing', id: 'keyboard-testing' },
+  { label: 'Automated vs Manual', id: 'automated-vs-manual' },
+];
+---
+
+<ContentLayout
+  title="Website Accessibility Audit Tools: Complete Guide"
+  description="A complete guide to website accessibility audit tools. Covers axe DevTools, WAVE, Lighthouse, Pa11y, colour contrast analysers, screen readers, keyboard testing, and the difference between automated and manual testing."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>Accessibility audit tools range from simple browser extensions that highlight issues on a single page to enterprise platforms that scan thousands of pages and track compliance over time. No single tool is sufficient for a complete accessibility audit. Automated tools catch approximately 30 to 40 percent of WCAG issues — the rest require human judgement, assistive technology testing, and manual evaluation of user experience.</p>
+
+  <p>The tools in this guide cover both sides: automated scanners that efficiently catch programmatic issues, and manual testing tools that help you evaluate the aspects of accessibility that software cannot judge. Used together, they form a comprehensive toolkit for evaluating and maintaining WCAG 2.1 AA compliance.</p>
+
+  <h2 id="axe-devtools">axe DevTools</h2>
+
+  <p>axe DevTools, built by Deque Systems, is the most widely used automated accessibility testing engine in the world. The axe-core library powers dozens of other tools and platforms, making it the de facto standard for programmatic accessibility testing. The browser extension is free for Chrome, Firefox, and Edge, and integrates directly into developer tools.</p>
+
+  <p>To use axe DevTools, open your browser's developer tools, navigate to the axe tab, and click "Scan All of My Page." The scan runs in seconds and produces a list of issues categorised by severity: critical, serious, moderate, and minor. Each issue includes the affected element highlighted on the page, the WCAG success criterion violated, a description of the problem, and a "How to Fix" section with specific remediation steps.</p>
+
+  <p>What makes axe particularly reliable is its commitment to zero false positives. The tool is designed to report only confirmed violations — issues that are definitively accessibility failures. Items that need human review are flagged separately as "needs review" rather than being reported as violations. This approach means you can trust that every reported issue is a real problem that needs fixing.</p>
+
+  <p>For teams that need more than a browser extension, Deque offers axe Monitor (automated site-wide scanning with dashboard reporting), axe Auditor (a workflow tool for manual audit management), and axe integration libraries for unit testing frameworks (Jest, Cypress, Playwright). The paid products start at approximately 6,000 USD per year for axe Monitor.</p>
+
+  <p>The free browser extension is sufficient for developer-level testing during the build process. For audit purposes, it is best used as a first pass on each page to catch automated-detectable issues before moving to manual testing for the rest.</p>
+
+  <h2 id="wave">WAVE</h2>
+
+  <p>WAVE (Web Accessibility Evaluation Tool), developed by WebAIM at Utah State University, takes a different approach to presenting accessibility results. Rather than listing issues in a panel, WAVE injects icons and annotations directly into your page to show exactly where each issue, alert, and structural element exists within the visual layout.</p>
+
+  <p>The tool is available as a free browser extension for Chrome, Firefox, and Edge, and as a web-based tool at wave.webaim.org. Enter any URL and WAVE displays the page with coloured icons overlaid: red icons for errors (definite WCAG violations), yellow icons for alerts (potential issues that need human review), green icons for features (correctly implemented accessibility elements), and blue icons for structural elements (headings, landmarks, ARIA).</p>
+
+  <p>WAVE is particularly useful for visual learners and for communicating accessibility issues to non-technical stakeholders. Seeing red error icons scattered across a page is more immediately impactful than reading a list of technical violations. The visual overlay also makes it easy to understand the spatial context of each issue — you can see that a missing form label is on the newsletter signup in the footer, or that a contrast failure is on the hero text over the background image.</p>
+
+  <p>The Contrast tab in WAVE deserves special mention. It analyses every text element on the page for colour contrast compliance, showing the foreground and background colours, the calculated contrast ratio, and whether the combination passes or fails at normal and large text sizes. This is the fastest way to audit an entire page's colour contrast in one view.</p>
+
+  <p>For site-wide scanning, WebAIM offers WAVE API access starting at approximately 100 USD per year for 1,000 monthly credits, and a standalone WAVE server product for organisations that need to scan internal applications without sending data to an external service.</p>
+
+  <h2 id="lighthouse">Lighthouse</h2>
+
+  <p>Google Lighthouse includes an accessibility audit as one of its five testing categories alongside performance, SEO, best practices, and progressive web app criteria. It is built into Chrome DevTools (Audits tab), available as a command-line tool, and powers the PageSpeed Insights web interface.</p>
+
+  <p>Lighthouse uses the axe-core engine for its accessibility checks, so its findings overlap significantly with axe DevTools. However, Lighthouse presents results differently — as a score from 0 to 100 with individual audit items that pass or fail. The score provides a quick benchmark but should not be mistaken for WCAG compliance. A Lighthouse accessibility score of 100 does not mean your site is accessible — it means your site passes the automated checks that Lighthouse tests, which cover only a subset of WCAG criteria.</p>
+
+  <p>Lighthouse is most valuable in CI/CD pipelines where you want to catch accessibility regressions automatically during deployment. Running Lighthouse in headless Chrome via the command line or through the Lighthouse CI integration lets you set minimum score thresholds that fail the build if accessibility degrades. This prevents new accessibility issues from reaching production.</p>
+
+  <p>For manual audit work, axe DevTools or WAVE provide more detailed information and better issue categorisation than Lighthouse. Use Lighthouse for quick scoring and CI/CD integration. Use dedicated accessibility tools for thorough auditing.</p>
+
+  <h2 id="pa11y">Pa11y</h2>
+
+  <p>Pa11y is an open-source accessibility testing tool designed for automated testing in command-line and CI/CD environments. It runs accessibility tests against any URL and outputs results as JSON, CSV, or human-readable text, making it easy to integrate into build pipelines, monitoring scripts, and reporting dashboards.</p>
+
+  <p>Pa11y supports three testing engines: HTML_CodeSniffer (the default), axe-core, and a custom runner option. You can switch between engines depending on your preference and the specific issues you want to detect. Pa11y also supports authenticated testing by accepting cookies or running login actions before the accessibility scan, which is essential for testing pages behind authentication.</p>
+
+  <p>Pa11y Dashboard provides a web interface for monitoring accessibility across multiple URLs over time. It stores historical test results and displays trend charts showing whether your accessibility is improving or declining. For teams that want continuous accessibility monitoring without paying for a commercial platform, Pa11y Dashboard is a capable free alternative.</p>
+
+  <p>Pa11y CI is purpose-built for continuous integration. It reads a configuration file listing your URLs and threshold settings, runs accessibility tests on each URL, and exits with a non-zero code if any URL exceeds the threshold. This plugs directly into Jenkins, GitHub Actions, GitLab CI, or any other CI system to gate deployments on accessibility criteria.</p>
+
+  <p>The main limitation of Pa11y compared to commercial alternatives is that it requires technical setup and maintenance. It is a developer tool, not a business user tool. If your team is comfortable with command-line tools and CI/CD configuration, Pa11y provides excellent automated accessibility testing at no cost.</p>
+
+  <h2 id="colour-contrast-analyser">Colour Contrast Analyser</h2>
+
+  <p>The Colour Contrast Analyser (CCA), developed by the Paciello Group (now TPGi), is a desktop application for Windows and macOS that checks colour combinations against WCAG 2.1 contrast requirements. It is free, lightweight, and purpose-built for this single task.</p>
+
+  <p>The tool works in two modes. In manual mode, you enter foreground and background colour values (hex, RGB, or HSL) and CCA instantly shows the contrast ratio and whether it passes WCAG AA and AAA levels for both normal and large text. In eyedropper mode, you click anywhere on your screen to sample colours directly from your application, mockup, or design tool. The eyedropper mode is particularly useful for checking designs in progress before they reach code.</p>
+
+  <p>CCA also simulates various forms of colour blindness (protanopia, deuteranopia, tritanopia, and others), showing how your colour combination appears to users with different types of colour vision deficiency. This goes beyond simple contrast ratios to help you understand whether your colour choices are distinguishable for all users.</p>
+
+  <p>For web-based contrast checking, the WebAIM Contrast Checker at webaim.org/resources/contrastchecker is a quick alternative that requires no installation. Enter your colours and it shows pass/fail status instantly. However, it lacks the eyedropper functionality and colour blindness simulation that make CCA more versatile for design workflows.</p>
+
+  <p>Colour contrast failures are one of the most common accessibility issues found in audits. Having CCA or a similar tool in your workflow catches these issues during design and development rather than in an audit, where they are more expensive to fix because they may affect design decisions across the entire site.</p>
+
+  <h2 id="screen-readers">Screen Readers</h2>
+
+  <p>Screen readers are the most important manual testing tool for accessibility audits because they reveal how blind and visually impaired users actually experience your site. No automated tool can replicate this perspective. Screen reader testing catches issues with reading order, link context, form interaction patterns, dynamic content announcements, and whether the overall experience makes sense without visual information.</p>
+
+  <p><strong>NVDA (NonVisual Desktop Access)</strong> — a free, open-source screen reader for Windows. It is the most commonly used screen reader globally and should be your primary testing tool. NVDA reads aloud the content of web pages, announces interactive elements (links, buttons, form fields, headings), and responds to keyboard commands for navigation. Download it from nvaccess.org.</p>
+
+  <p><strong>JAWS (Job Access With Speech)</strong> — a commercial screen reader for Windows with the longest history in the market. JAWS has the largest market share among screen reader users in professional settings, particularly in corporate and government environments. A licence costs approximately 1,000 USD. If your audience includes corporate or government users, testing with JAWS is recommended because its behaviour differs from NVDA in certain edge cases.</p>
+
+  <p><strong>VoiceOver</strong> — Apple's built-in screen reader for macOS, iOS, and iPadOS. It is free and activated through system settings. VoiceOver is the primary screen reader for testing Safari compatibility and mobile accessibility. Since a significant portion of screen reader users access the web on iPhones and iPads, VoiceOver testing is essential for mobile-responsive sites.</p>
+
+  <p>When testing with screen readers, navigate through the page using only keyboard commands. Listen to how the screen reader announces each element. Check that links make sense out of context (screen reader users often navigate by jumping between links). Verify that form fields announce their labels, required status, and error messages. Confirm that dynamic content changes (modals opening, content loading, notifications appearing) are announced without requiring the user to navigate to them.</p>
+
+  <h2 id="keyboard-testing">Keyboard Testing</h2>
+
+  <p>Keyboard testing is the simplest manual accessibility test you can perform and it reveals some of the most impactful issues. Many assistive technology users rely on keyboards or keyboard-like interfaces to navigate websites. If something cannot be done with a keyboard, it cannot be done with many assistive technologies either.</p>
+
+  <p>To perform a keyboard test, put your mouse aside and navigate your site using only these keys:</p>
+
+  <ul>
+    <li><strong>Tab</strong> — move forward to the next focusable element.</li>
+    <li><strong>Shift + Tab</strong> — move backward to the previous focusable element.</li>
+    <li><strong>Enter</strong> — activate links and buttons.</li>
+    <li><strong>Space</strong> — activate buttons, toggle checkboxes, open select dropdowns.</li>
+    <li><strong>Arrow keys</strong> — navigate within components like radio groups, tab panels, menus, and sliders.</li>
+    <li><strong>Escape</strong> — close modals, dropdowns, and overlay components.</li>
+  </ul>
+
+  <p>As you tab through the page, watch for these issues: Can you reach every interactive element? Is the focus indicator visible at all times? Does the focus move in a logical order? Can you open and close modals, dropdowns, and menus? Can you submit forms? Can you navigate away from every component (no keyboard traps)? Can you use all custom widgets like carousels, accordions, and tab panels?</p>
+
+  <p>Keyboard testing takes five to ten minutes per page and requires no special tools or expertise. It should be performed on every new page template and every new interactive component before they go live. Include it in your QA checklist alongside visual and functional testing.</p>
+
+  <h2 id="automated-vs-manual">Automated vs Manual</h2>
+
+  <p>The question is not whether to use automated or manual testing — you need both. The question is how to allocate your effort between them for the most comprehensive coverage.</p>
+
+  <p><strong>What automated tools catch well:</strong> Missing alt text, colour contrast failures, missing form labels, duplicate IDs, incorrect ARIA attributes, missing document language, empty headings, and empty links. These are objective, code-level checks with clear pass-fail criteria.</p>
+
+  <p><strong>What automated tools cannot catch:</strong> Whether alt text is actually descriptive and useful. Whether the tab order makes logical sense. Whether a screen reader experience is coherent. Whether custom widgets have the right keyboard interaction patterns. Whether error messages are helpful. Whether time limits can be extended. Whether content makes sense when CSS is removed. Whether the overall user experience is usable for someone with a disability.</p>
+
+  <p>The most efficient audit workflow is: run automated scans first to find and fix the easy issues. Then perform manual testing to evaluate the issues that require human judgement. Automated scanning might take 30 minutes for a site. Manual testing takes hours or days. But the manual testing catches the 60 to 70 percent of issues that automated tools miss entirely.</p>
+
+  <p>For ongoing maintenance, automated scanning provides continuous monitoring between manual audits. Set up automated scans in your CI/CD pipeline to catch regressions at deployment time. Run manual testing quarterly or whenever significant new functionality is released. This combination ensures both breadth (automated covers every page) and depth (manual covers every criterion).</p>
+
+  <p>If you need help selecting tools or running an accessibility audit, <a href="/website-audit-services/">our accessibility audit service</a> uses the full toolkit described above — automated and manual — to deliver comprehensive WCAG 2.1 AA assessments.</p>
+</ContentLayout>

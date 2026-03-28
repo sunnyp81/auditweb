@@ -1,0 +1,127 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'Accessibility', href: '/website-audit-checklist/accessibility/' },
+];
+
+const toc = [
+  { label: 'Colour and Contrast', id: 'colour-and-contrast' },
+  { label: 'Keyboard Navigation', id: 'keyboard-navigation' },
+  { label: 'Images and Alt Text', id: 'images-and-alt-text' },
+  { label: 'Forms', id: 'forms' },
+  { label: 'Headings', id: 'headings' },
+  { label: 'Links', id: 'links' },
+  { label: 'Media', id: 'media' },
+  { label: 'ARIA', id: 'aria' },
+];
+---
+
+<ContentLayout
+  title="Website Accessibility Audit Checklist"
+  description="A practical accessibility audit checklist covering colour contrast, keyboard navigation, alt text, forms, headings, links, media, and ARIA. Based on WCAG 2.1 AA requirements."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your website. Beyond the ethical imperative, accessibility has direct SEO benefits: many accessibility best practices (proper heading structure, descriptive alt text, semantic HTML) are also ranking factors. And in many jurisdictions, accessibility is a legal requirement. The European Accessibility Act, the Americans with Disabilities Act, and the UK Equality Act all have implications for website operators.</p>
+
+<p>This checklist is based on WCAG 2.1 Level AA, which is the standard most legal frameworks reference and the level most organisations should target. It covers the most common and impactful accessibility issues rather than every possible criterion. Fix everything on this list and you will have addressed the barriers that affect the largest number of users.</p>
+
+<h2 id="colour-and-contrast">Colour and Contrast</h2>
+
+<p>Colour and contrast issues are the most common accessibility failures, affecting users with low vision, colour blindness, and age-related vision changes.</p>
+
+<ul>
+  <li><strong>Text contrast ratio meets 4.5:1 for normal text.</strong> All body text must have a contrast ratio of at least 4.5:1 against its background. Use the WebAIM Contrast Checker or browser developer tools to test. Common failures include light grey text on white backgrounds, placeholder text in form fields, and text overlaid on images without sufficient background overlay.</li>
+  <li><strong>Large text meets 3:1 contrast ratio.</strong> Text that is at least 18pt (24px) or 14pt bold (approximately 19px bold) qualifies as large text and requires a minimum contrast ratio of 3:1. This applies to headings, navigation labels, and button text. While the threshold is lower, many sites still fail this requirement with decorative heading colours.</li>
+  <li><strong>Non-text elements meet 3:1 contrast ratio.</strong> Interactive elements like form field borders, buttons, icons, and focus indicators must have at least 3:1 contrast against adjacent colours. This includes the borders around input fields, the colour of icons that convey meaning, and the visual boundary of clickable elements.</li>
+  <li><strong>Colour is not the sole means of conveying information.</strong> Check that no information is communicated through colour alone. Common violations include form validation that only changes field borders to red without adding text error messages, charts that distinguish data series only by colour, and links that are differentiated from surrounding text only by colour (without underline or other visual distinction).</li>
+  <li><strong>Focus indicators are visible.</strong> When users Tab through your site, the currently focused element must have a visible focus indicator. Many sites remove the default browser focus outline for aesthetic reasons without providing an alternative. Test by pressing Tab repeatedly and verifying that you can always see which element is focused. The focus indicator itself must meet the 3:1 contrast requirement.</li>
+</ul>
+
+<h2 id="keyboard-navigation">Keyboard Navigation</h2>
+
+<p>Keyboard accessibility is essential for users who cannot use a mouse, including people with motor disabilities, blind users navigating with screen readers, and power users who prefer keyboard navigation.</p>
+
+<ul>
+  <li><strong>All interactive elements are reachable by Tab key.</strong> Press Tab repeatedly from the top of the page and verify that every link, button, form field, and interactive control receives focus. Elements that are visible and interactive but not reachable by keyboard are inaccessible to keyboard users. Common failures include custom dropdown menus, modal dialogs, and JavaScript-powered interactive elements that use div or span instead of button or a elements.</li>
+  <li><strong>Tab order follows visual order.</strong> The order in which elements receive focus when pressing Tab should match the visual layout of the page. If focus jumps unexpectedly from the header to the footer, or from the right column to the left, the tab order is incorrect. This usually indicates a mismatch between DOM order and visual presentation caused by CSS positioning or flexbox order properties.</li>
+  <li><strong>Skip navigation link is present.</strong> The first focusable element on each page should be a "Skip to main content" link that bypasses the navigation menu. This lets keyboard users jump directly to the page content without Tabbing through every navigation link on every page visit. The skip link can be visually hidden until focused.</li>
+  <li><strong>No keyboard traps.</strong> Navigate through the entire page using only the keyboard and verify that you can always move past every element. Keyboard traps occur when focus enters an element (commonly modal dialogs, embedded videos, or custom widgets) and cannot exit using Tab, Shift+Tab, or Escape. Every element that captures focus must provide a keyboard mechanism to release it.</li>
+  <li><strong>Modal dialogs are keyboard accessible.</strong> When a modal dialog opens, focus should move to the dialog. Tab should cycle through the dialog's interactive elements without moving behind the modal to the underlying page. Pressing Escape should close the dialog and return focus to the element that triggered it.</li>
+  <li><strong>Dropdown menus work with keyboard.</strong> Navigation dropdown menus should open when the parent item receives focus or is activated with Enter/Space, allow navigation through submenu items with arrow keys, and close when focus leaves the menu or Escape is pressed. Many CSS-only hover menus are completely inaccessible to keyboard users.</li>
+</ul>
+
+<h2 id="images-and-alt-text">Images and Alt Text</h2>
+
+<p>Alt text provides a text alternative for images that screen readers announce to blind users and that displays when images fail to load.</p>
+
+<ul>
+  <li><strong>All informative images have descriptive alt text.</strong> Every image that conveys meaning should have an alt attribute that describes the image's content and function. The alt text should convey the same information a sighted user would get from the image. "Photo of a red leather handbag" is descriptive. "Image" or "photo" or "handbag.jpg" is not.</li>
+  <li><strong>Decorative images have empty alt attributes.</strong> Images that serve no informational purpose (visual separators, background patterns, purely aesthetic photos) should have alt="" (an empty alt attribute). This tells screen readers to skip the image entirely. Do not omit the alt attribute, which causes screen readers to announce the file name.</li>
+  <li><strong>Complex images have extended descriptions.</strong> Charts, graphs, infographics, and diagrams that contain significant information need more than a brief alt text. Provide the full information in a text description near the image or linked from it. The alt text should summarise the image, and the extended description should provide all the detail.</li>
+  <li><strong>Image links have meaningful alt text.</strong> When an image is wrapped in a link, the alt text should describe the link destination, not the image content. An image of a product that links to the product page should have alt text describing the product, not "thumbnail" or "product image".</li>
+  <li><strong>Icon fonts have accessible labels.</strong> If your site uses icon fonts (Font Awesome, Material Icons), verify that each icon has an accessible label. Icons used as interactive elements (a magnifying glass for search, a hamburger icon for the menu) need aria-label attributes. Purely decorative icons should have aria-hidden="true".</li>
+  <li><strong>SVG images are accessible.</strong> SVG images should include a title element and appropriate role and aria attributes. Inline SVGs need role="img" and an aria-label or aria-labelledby pointing to the title element. SVGs used as decoration should have aria-hidden="true".</li>
+</ul>
+
+<h2 id="forms">Forms</h2>
+
+<p>Forms are where accessibility failures have the most direct impact on users because they prevent people from completing tasks like purchases, signups, and enquiries.</p>
+
+<ul>
+  <li><strong>Every form field has a visible label.</strong> Every input, select, and textarea must have an associated label element connected via the for/id attribute pair. Placeholder text is not an acceptable replacement for labels because it disappears when the user starts typing, leaving them unable to verify what the field requires. Labels must remain visible at all times.</li>
+  <li><strong>Required fields are identified.</strong> Required fields should be marked in a way that does not rely solely on colour. Use the word "required", an asterisk with a legend explaining its meaning, or the HTML required attribute (which also enables native browser validation). Screen reader users need programmatic indication of required fields, not just visual markers.</li>
+  <li><strong>Error messages are specific and associated.</strong> When validation fails, error messages must identify which field has the error and describe how to fix it. Error messages should be programmatically associated with the field using aria-describedby or aria-errormessage so screen readers announce the error when the field receives focus. Generic messages like "form error" are insufficient.</li>
+  <li><strong>Form field grouping uses fieldset and legend.</strong> Related form fields (such as a set of radio buttons or a group of address fields) should be wrapped in a fieldset element with a legend that describes the group. This provides screen reader users with context that sighted users get from the visual layout.</li>
+  <li><strong>Autocomplete attributes are present.</strong> Form fields for common data types (name, email, phone, address, credit card) should include the appropriate autocomplete attribute values. This enables browsers and assistive technologies to auto-fill fields accurately, reducing the effort required for users with motor disabilities.</li>
+</ul>
+
+<h2 id="headings">Headings</h2>
+
+<p>Headings provide structural navigation for screen reader users, who rely on heading levels to understand page organisation and jump between sections.</p>
+
+<ul>
+  <li><strong>One H1 per page.</strong> Each page should have exactly one H1 element that describes the page's main topic. Multiple H1 elements confuse the hierarchical structure. Check every page template for duplicate H1s, which commonly appear when logos, widget titles, or sidebar elements use H1 tags.</li>
+  <li><strong>Heading levels do not skip.</strong> The heading hierarchy should progress logically: H1 followed by H2, then H3 under the relevant H2, and so on. Do not skip from H2 to H4. Skipped heading levels create gaps in the document outline that confuse screen reader users navigating by headings. Heading levels should reflect content hierarchy, not visual styling.</li>
+  <li><strong>Headings describe the following content.</strong> Each heading should accurately describe the content that follows it. Generic headings like "More information" or "Details" do not help screen reader users who scan headings to find the section they need. Headings should be specific enough to be useful out of context.</li>
+  <li><strong>No headings used purely for styling.</strong> Do not use heading elements to make text appear large or bold. If text needs to be visually prominent but is not structurally a heading, use CSS classes instead of heading tags. Screen reader users encounter these false headings in their heading navigation and are misled about the page structure.</li>
+</ul>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><strong>Link text is descriptive.</strong> Every link should have text that describes its destination or purpose. "Click here", "Read more", and "Learn more" are meaningless to screen reader users who navigate by listing all links on a page. Instead of "Click here to download our guide", use "Download our SEO audit guide". The link text should make sense when read in isolation.</li>
+  <li><strong>Links are visually distinguishable from surrounding text.</strong> Links within text content must be visually distinct from non-linked text through a combination of colour and another indicator (underline, bold, or icon). Colour alone is insufficient because colour-blind users may not perceive the difference. The most reliable approach is keeping the traditional underline on text links.</li>
+  <li><strong>Links that open new windows are indicated.</strong> If a link opens in a new browser tab or window (target="_blank"), the link text or an adjacent indicator should inform the user. Screen reader users need to know that activating the link will change their context. Add "(opens in new tab)" to the link text or use an aria-label that includes this information.</li>
+  <li><strong>Adjacent links are separated.</strong> When multiple links appear next to each other (such as an image link and a text link to the same destination), they should either be combined into a single link or separated with non-linked content. Adjacent links without separation create confusion because screen readers announce them as separate items pointing to the same destination.</li>
+</ul>
+
+<h2 id="media">Media</h2>
+
+<ul>
+  <li><strong>Videos have captions.</strong> All pre-recorded video content must have synchronised captions that include dialogue, sound effects, and speaker identification. Auto-generated captions (YouTube's automatic captions) are a starting point but typically require editing for accuracy. Captions benefit deaf users, users in noisy environments, and non-native language speakers.</li>
+  <li><strong>Audio content has transcripts.</strong> Podcasts, audio guides, and other audio-only content must have text transcripts that include all spoken content and relevant sound information. Transcripts make audio content accessible to deaf users and also provide indexable text content for search engines.</li>
+  <li><strong>No auto-playing media with sound.</strong> Audio or video that plays automatically with sound is disorienting for screen reader users because it interferes with the screen reader's speech output. If media auto-plays, it must start muted with a clearly accessible control to enable sound. The pause/stop mechanism must be keyboard accessible.</li>
+  <li><strong>Media players are keyboard accessible.</strong> All media player controls (play, pause, volume, progress bar, captions toggle, fullscreen) must be operable with a keyboard. Custom media players frequently fail this requirement because they use custom controls that lack keyboard event handlers.</li>
+  <li><strong>No content that flashes more than three times per second.</strong> Flashing or strobing content can trigger seizures in people with photosensitive epilepsy. This applies to videos, animations, GIFs, and any visual effect that involves rapid changes in brightness or colour. If content flashes, it must be limited to fewer than three flashes per second or fall below the general flash threshold.</li>
+</ul>
+
+<h2 id="aria">ARIA</h2>
+
+<p>ARIA (Accessible Rich Internet Applications) attributes add semantic information to HTML elements for assistive technologies. Used correctly, ARIA improves accessibility. Used incorrectly, it makes things worse.</p>
+
+<ul>
+  <li><strong>No ARIA is better than bad ARIA.</strong> The first rule of ARIA is that if you can use a native HTML element with the semantics and behaviour you need, use it instead of adding ARIA to a generic element. A button element is always better than a div with role="button". Native elements come with built-in keyboard interaction, focus management, and screen reader announcements that ARIA role assignments do not replicate.</li>
+  <li><strong>ARIA roles match element behaviour.</strong> If you use ARIA roles, the element must behave as the role implies. An element with role="button" must respond to Enter and Space key presses, be focusable, and change visual state on activation. A role without matching behaviour misleads assistive technology users.</li>
+  <li><strong>aria-label and aria-labelledby are used correctly.</strong> These attributes provide accessible names for elements. aria-label provides the label directly. aria-labelledby references the ID of another element that serves as the label. Verify that referenced IDs actually exist and that the labelling element contains meaningful text. An aria-label of "" (empty string) or an aria-labelledby pointing to a non-existent ID effectively removes the element's accessible name.</li>
+  <li><strong>Live regions announce dynamic content.</strong> Content that updates dynamically (search results, form validation messages, notification banners) should use aria-live regions to announce changes to screen reader users. Use aria-live="polite" for non-urgent updates and aria-live="assertive" for critical information. Without live regions, screen readers do not announce dynamic content changes.</li>
+  <li><strong>aria-hidden is used appropriately.</strong> Elements with aria-hidden="true" are invisible to screen readers. Verify that aria-hidden is only applied to content that is genuinely decorative or duplicated elsewhere accessibly. Do not apply aria-hidden to visible interactive elements or content that provides unique information. A common error is hiding elements visually with CSS display:none while leaving them accessible to screen readers, or the reverse: making elements visible but hidden from screen readers with aria-hidden.</li>
+  <li><strong>Landmark regions are defined.</strong> Use ARIA landmark roles or HTML5 landmark elements (header/banner, nav/navigation, main, footer/contentinfo, aside/complementary) to define the major regions of each page. Screen reader users navigate by landmarks to jump between page sections. Every page should have at least a main landmark, and navigation should be in a nav element or region with role="navigation".</li>
+</ul>
+
+</ContentLayout>

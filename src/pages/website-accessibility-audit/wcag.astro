@@ -1,0 +1,137 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  { label: 'WCAG', href: '/website-accessibility-audit/wcag/' },
+];
+
+const toc = [
+  { label: 'WCAG Structure Explained', id: 'wcag-structure-explained' },
+  { label: 'Level A Requirements', id: 'level-a-requirements' },
+  { label: 'Level AA Requirements', id: 'level-aa-requirements' },
+  { label: 'Level AAA Optional', id: 'level-aaa-optional' },
+  { label: 'Testing Each Criterion', id: 'testing-each-criterion' },
+  { label: 'Conformance Statement', id: 'conformance-statement' },
+];
+---
+
+<ContentLayout
+  title="WCAG Website Audit: Meeting AA Conformance"
+  description="Understand WCAG 2.1 conformance levels A, AA, and AAA. Learn how to audit your website against each success criterion and produce a formal conformance statement for accessibility compliance."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>The Web Content Accessibility Guidelines are the global technical standard for web accessibility. Published by the World Wide Web Consortium's Web Accessibility Initiative, WCAG provides a framework of testable success criteria that determine whether web content is accessible to people with disabilities. WCAG is referenced by legislation in the European Union, United Kingdom, United States, Canada, Australia, Japan, and dozens of other countries. If you are required to make your website accessible — by law, by contract, or by ethical commitment — WCAG is the standard you need to meet.</p>
+
+  <p>This guide explains how WCAG is structured, what each conformance level requires, and how to audit your website against the standard to produce a meaningful conformance statement. We focus on WCAG 2.1, which is the version most widely referenced by current legislation and regulation, while noting where WCAG 2.2 adds additional requirements.</p>
+
+  <h2 id="wcag-structure-explained">WCAG Structure Explained</h2>
+
+  <p>WCAG is organised into a clear hierarchy. Understanding this structure is essential for navigating the standard and conducting a systematic audit.</p>
+
+  <p><strong>Four principles:</strong> At the highest level, WCAG is built on four principles known by the acronym POUR. Perceivable means users must be able to perceive the information presented. Operable means users must be able to operate the interface. Understandable means users must be able to understand the information and the operation of the interface. Robust means content must be robust enough to be interpreted by a wide range of user agents, including assistive technologies.</p>
+
+  <p><strong>Thirteen guidelines:</strong> Under the four principles sit thirteen guidelines that provide the framework for each area of accessibility. For example, under the Perceivable principle, Guideline 1.1 addresses text alternatives, Guideline 1.2 addresses time-based media, Guideline 1.3 addresses adaptable content, and Guideline 1.4 addresses distinguishable content. Guidelines are not testable themselves — they provide the context for the success criteria beneath them.</p>
+
+  <p><strong>Success criteria:</strong> Each guideline contains specific, testable success criteria. These are the individual requirements your website must meet. Each success criterion is assigned a conformance level: A (minimum), AA (recommended), or AAA (highest). WCAG 2.1 contains 78 success criteria in total — 30 at Level A, 20 at Level AA, and 28 at Level AAA.</p>
+
+  <p><strong>Three conformance levels:</strong> Level A is the minimum level of accessibility. Failing Level A criteria means your site has fundamental barriers that completely prevent some users from accessing content. Level AA is the standard most legislation references and most organisations target. It addresses the most common and serious barriers for the widest range of disabilities. Level AAA is the highest standard and is not typically required as a blanket target because some criteria are difficult to meet for all content types. However, meeting Level AAA criteria where feasible improves accessibility further.</p>
+
+  <p>Conformance at a given level requires meeting all success criteria at that level and all levels below it. AA conformance means meeting all Level A and Level AA criteria — 50 criteria in total for WCAG 2.1.</p>
+
+  <h2 id="level-a-requirements">Level A Requirements</h2>
+
+  <p>Level A criteria address the most basic and fundamental accessibility needs. Failure at this level typically means content is completely inaccessible to one or more disability groups. Every website, regardless of its target conformance level, must meet all Level A criteria.</p>
+
+  <p>The most impactful Level A criteria include:</p>
+
+  <ul>
+    <li><strong>1.1.1 Non-text Content</strong> — all non-text content (images, icons, charts, CAPTCHA) must have a text alternative that serves the same purpose. This is the foundation of accessibility for screen reader users. Informational images need descriptive alt text. Decorative images need empty alt attributes. Complex images like charts need longer descriptions.</li>
+    <li><strong>1.3.1 Info and Relationships</strong> — information, structure, and relationships conveyed through presentation must be programmatically determinable or available in text. Headings must use heading elements (h1-h6), not just bold text. Lists must use list elements. Tables must have header cells. Form fields must have programmatically associated labels.</li>
+    <li><strong>2.1.1 Keyboard</strong> — all functionality must be operable through a keyboard interface without requiring specific timings for individual keystrokes. This is critical because many assistive technologies emulate keyboard input.</li>
+    <li><strong>2.1.2 No Keyboard Trap</strong> — if keyboard focus can be moved to a component, focus can be moved away from that component using only a keyboard. Keyboard traps are one of the most severe accessibility barriers because they physically prevent users from navigating further.</li>
+    <li><strong>4.1.1 Parsing</strong> — in content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and IDs are unique. Note that WCAG 2.2 marks this criterion as always satisfied for HTML, but it remains relevant for WCAG 2.1 audits.</li>
+    <li><strong>4.1.2 Name, Role, Value</strong> — for all user interface components, the name and role must be programmatically determinable, states and properties must be set correctly, and changes to these must be available to user agents including assistive technologies. This is the criterion that governs ARIA implementation on custom widgets.</li>
+  </ul>
+
+  <p>Level A also includes criteria for captions on pre-recorded audio (1.2.1), audio descriptions or media alternatives for video (1.2.3), meaningful page sequence (1.3.2), sensory characteristics not relied upon solely (1.3.3), no use of colour alone (1.4.1), audio control (1.4.2), timing adjustability (2.2.1), pause/stop/hide for moving content (2.2.2), three flashes threshold (2.3.1), bypass blocks / skip navigation (2.4.1), page titles (2.4.2), focus order (2.4.3), link purpose in context (2.4.4), page language (3.1.1), predictable focus behaviour (3.2.1), predictable input behaviour (3.2.2), error identification (3.3.1), and labels or instructions (3.3.2).</p>
+
+  <h2 id="level-aa-requirements">Level AA Requirements</h2>
+
+  <p>Level AA criteria address barriers that significantly affect a broader range of users and situations. This is the conformance level required by most legislation and the target for most organisations. Meeting Level AA means addressing 50 success criteria in total (30 Level A plus 20 Level AA).</p>
+
+  <p>Key Level AA criteria include:</p>
+
+  <ul>
+    <li><strong>1.4.3 Contrast (Minimum)</strong> — text and images of text must have a contrast ratio of at least 4.5:1, with the exception of large text (18pt or 14pt bold and above) which requires 3:1. This is one of the most frequently failed criteria because designers often prioritise aesthetic colour choices over contrast ratios.</li>
+    <li><strong>1.4.4 Resize Text</strong> — text can be resized up to 200 percent without assistive technology and without loss of content or functionality. This primarily tests whether your site handles browser zoom gracefully without text overlapping, getting cut off, or disappearing.</li>
+    <li><strong>1.4.10 Reflow</strong> — content can be presented without horizontal scrolling at a width of 320 CSS pixels (equivalent to 400% zoom on a standard 1280px viewport). This WCAG 2.1 criterion ensures responsive design works for users who need extreme magnification.</li>
+    <li><strong>1.4.11 Non-text Contrast</strong> — user interface components and graphical objects required to understand content must have a contrast ratio of at least 3:1 against adjacent colours. This includes form field borders, icons, chart elements, and focus indicators.</li>
+    <li><strong>2.4.6 Headings and Labels</strong> — headings and labels must describe the topic or purpose of the content they introduce. Headings like "Section 1" and labels like "Field 1" fail this criterion because they do not communicate meaning.</li>
+    <li><strong>2.4.7 Focus Visible</strong> — any keyboard-operable user interface must have a mode of operation where the keyboard focus indicator is visible. Removing the default browser focus outline with CSS (outline: none) without providing a replacement violates this criterion.</li>
+    <li><strong>3.3.3 Error Suggestion</strong> — if an input error is detected and suggestions for correction are known, the suggestions must be provided to the user, unless doing so would jeopardise security or purpose. For example, if a user enters an invalid email format, the error message should explain what a valid format looks like.</li>
+    <li><strong>3.3.4 Error Prevention (Legal, Financial, Data)</strong> — for pages that cause legal commitments, financial transactions, or data modifications, at least one of the following is true: submissions are reversible, data is checked and the user has an opportunity to correct errors, or a mechanism is available for reviewing and confirming before final submission.</li>
+  </ul>
+
+  <p>Other Level AA criteria cover captions for live audio (1.2.4), audio description for pre-recorded video (1.2.5), multiple navigation mechanisms (2.4.5), language of parts (3.1.2), consistent navigation (3.2.3), consistent identification (3.2.4), and WCAG 2.1 additions including orientation independence (1.3.4), input purpose identification for autocomplete (1.3.5), text spacing override support (1.4.12), content on hover or focus accessibility (1.4.13), character key shortcuts (2.1.4), pointer cancellation (2.5.2), label in name for speech input (2.5.3), motion actuation alternatives (2.5.4), and status messages announced by live regions (4.1.3).</p>
+
+  <h2 id="level-aaa-optional">Level AAA Optional</h2>
+
+  <p>Level AAA represents the highest standard of accessibility. It is not typically required as a blanket target because some criteria are extremely difficult to meet for all types of content. For example, criterion 1.4.6 requires a contrast ratio of 7:1 for normal text, which severely limits colour palette options. Criterion 1.2.6 requires sign language interpretation for all pre-recorded audio, which is costly and impractical for most organisations.</p>
+
+  <p>However, many Level AAA criteria are achievable and worth pursuing even if you are targeting AA conformance:</p>
+
+  <ul>
+    <li><strong>2.4.9 Link Purpose (Link Only)</strong> — the purpose of each link can be identified from the link text alone, without needing the surrounding context. This is a stricter version of the Level A criterion (2.4.4) which allows link purpose to be determined from the link plus its surrounding context.</li>
+    <li><strong>3.1.3 Unusual Words</strong> — a mechanism is available to identify specific definitions of words used in an unusual or restricted way, including idioms and jargon. Glossaries and tooltip definitions satisfy this criterion.</li>
+    <li><strong>3.1.5 Reading Level</strong> — when text requires more than a lower secondary education reading level, a supplemental version is available that does not require more than that level. This criterion promotes plain language, which benefits all users.</li>
+    <li><strong>2.2.3 No Timing</strong> — timing is not an essential part of any event or activity, except for real-time events. This is achievable for most website content and improves the experience for users who need more time to process information.</li>
+    <li><strong>1.4.8 Visual Presentation</strong> — for blocks of text, users can select foreground and background colours, width is no more than 80 characters, text is not justified, line spacing is at least 1.5 within paragraphs, and text can be resized up to 200% without horizontal scrolling. These are good typographic practices that benefit readability for everyone.</li>
+  </ul>
+
+  <p>In an audit context, we test and report on Level AAA criteria as advisory findings — improvements that would enhance accessibility beyond the AA baseline but are not counted against conformance. Organisations that serve audiences with higher accessibility needs (government services, healthcare, education) should consider AAA criteria more seriously.</p>
+
+  <h2 id="testing-each-criterion">Testing Each Criterion</h2>
+
+  <p>A WCAG audit involves testing every applicable success criterion on every unique page template and interactive component in your site. Here is a practical approach to structuring the testing process.</p>
+
+  <p><strong>Create a test matrix.</strong> List all WCAG 2.1 AA success criteria in rows (50 criteria for AA conformance). List your page templates and components in columns. Each cell in the matrix will receive a status: Supports, Partially Supports, Does Not Support, or Not Applicable.</p>
+
+  <p><strong>Group criteria by testing method.</strong> Some criteria can be tested with automated tools. Others require keyboard testing. Others require screen reader testing. Others require visual inspection. Group your testing by method to avoid switching contexts constantly. Run all automated tests first, then do all keyboard testing, then all screen reader testing, then all visual checks.</p>
+
+  <p><strong>Automated testing covers:</strong> 1.1.1 (missing alt attributes, not quality), 1.3.1 (heading structure, table headers, form labels), 1.4.3 and 1.4.11 (contrast ratios), 2.4.2 (page titles), 3.1.1 (page language), 4.1.1 (HTML validation), and several others. Approximately 20 of the 50 AA criteria have at least some automated test coverage.</p>
+
+  <p><strong>Keyboard testing covers:</strong> 2.1.1 (keyboard operability), 2.1.2 (no keyboard trap), 2.4.3 (focus order), 2.4.7 (focus visible), 3.2.1 (focus behaviour). Tab through every interactive element on each page template and document any failures.</p>
+
+  <p><strong>Screen reader testing covers:</strong> 1.1.1 (alt text quality), 1.3.1 (semantic structure perception), 4.1.2 (name, role, value), 4.1.3 (status messages), 2.4.4 and 2.4.6 (link purpose and heading/label quality), and others. Navigate with NVDA or VoiceOver and evaluate whether the experience is coherent and complete.</p>
+
+  <p><strong>Visual testing covers:</strong> 1.4.1 (use of colour), 1.4.3 (contrast), 1.4.4 (resize to 200%), 1.4.10 (reflow at 320px), 1.4.12 (text spacing), 2.3.1 (flashing content), and others. These criteria require human eyes to evaluate.</p>
+
+  <p>For each failure found, document the criterion violated, the specific element and page, a description of the problem, the impact on users, and a remediation recommendation. Take screenshots or record video evidence where possible — this documentation is essential for the conformance report and for communicating issues to the development team.</p>
+
+  <h2 id="conformance-statement">Conformance Statement</h2>
+
+  <p>A conformance statement (also called an Accessibility Conformance Report or ACR) is the formal output of a WCAG audit. It documents your site's conformance status against every applicable success criterion and is the document that procurement officers, legal teams, and regulatory bodies review to evaluate your accessibility compliance.</p>
+
+  <p>The standard format for conformance statements is the Voluntary Product Accessibility Template (VPAT), originally created by the US Information Technology Industry Council. The VPAT format is widely recognised and accepted globally. Version 2.5 of the VPAT includes sections for WCAG 2.x, the US Section 508 standard, and the European EN 301 549 standard.</p>
+
+  <p>For each success criterion, the conformance statement includes a conformance level indicator using one of these standardised terms:</p>
+
+  <ul>
+    <li><strong>Supports</strong> — the functionality of the product has at least one method that meets the criterion without known defects or meets with equivalent facilitation.</li>
+    <li><strong>Partially Supports</strong> — some functionality of the product does not meet the criterion.</li>
+    <li><strong>Does Not Support</strong> — the majority of product functionality does not meet the criterion.</li>
+    <li><strong>Not Applicable</strong> — the criterion is not relevant to the product. For example, a site with no video content can mark video-related criteria as not applicable.</li>
+  </ul>
+
+  <p>Each entry also includes a "Remarks and Explanations" column where you describe what works, what does not work, and what your plans are for remediation. This column is where the practical detail lives and where reviewers spend most of their time.</p>
+
+  <p>A good conformance statement is honest. Claiming "Supports" for criteria that are only partially met undermines credibility and creates legal risk. If an auditor tests your site and finds failures where your conformance statement claims full support, it demonstrates either negligence or deception — neither of which helps your legal position.</p>
+
+  <p>Update your conformance statement after every significant remediation effort and after annual re-audits. Publish a summary version on your website's accessibility page so users know the current status. Make the full statement available on request for procurement and compliance purposes.</p>
+
+  <p>Producing a formal conformance statement requires expertise in WCAG interpretation and testing methodology. If you need a professional WCAG audit with a formal ACR deliverable, <a href="/website-audit-services/">our accessibility audit service</a> covers all 50 WCAG 2.1 AA criteria with a full conformance report and remediation roadmap.</p>
+</ContentLayout>

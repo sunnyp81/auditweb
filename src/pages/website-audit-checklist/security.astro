@@ -1,0 +1,123 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'Security', href: '/website-audit-checklist/security/' },
+];
+
+const toc = [
+  { label: 'SSL and HTTPS', id: 'ssl-and-https' },
+  { label: 'Security Headers', id: 'security-headers' },
+  { label: 'Software Updates', id: 'software-updates' },
+  { label: 'Authentication', id: 'authentication' },
+  { label: 'File Permissions', id: 'file-permissions' },
+  { label: 'Backups', id: 'backups' },
+  { label: 'Monitoring', id: 'monitoring' },
+];
+---
+
+<ContentLayout
+  title="Website Security Audit Checklist"
+  description="A practical website security audit checklist covering SSL, security headers, software updates, authentication, file permissions, backups, and monitoring. Protect your site from common threats."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Website security is not just an IT concern. It directly affects your search rankings, user trust, and business continuity. Google explicitly uses HTTPS as a ranking signal, flags insecure sites in Chrome with visible warnings, and can deindex sites that distribute malware. Beyond SEO, a security breach exposes you to data protection fines, customer lawsuits, and reputational damage that takes years to repair.</p>
+
+<p>This checklist covers the security audit items that every website should verify regularly. It is not exhaustive enough for a full penetration test or compliance audit, but it covers the vulnerabilities that account for the vast majority of website compromises. If your site passes every check on this list, you have addressed the most common and most dangerous attack vectors.</p>
+
+<h2 id="ssl-and-https">SSL and HTTPS</h2>
+
+<p>HTTPS encryption is the baseline security requirement for every website. It protects data in transit between your server and your visitors' browsers, preventing interception and modification of the data.</p>
+
+<ul>
+  <li><strong>SSL certificate is valid and current.</strong> Check your certificate's expiry date using your browser's security panel (click the padlock icon) or an online tool like SSL Labs. Expired certificates trigger browser security warnings that block visitors from reaching your site. Set a calendar reminder 30 days before expiry, even if your certificate auto-renews, because auto-renewal can fail silently.</li>
+  <li><strong>All pages are served over HTTPS.</strong> Navigate to several pages across your site using HTTP (not HTTPS) and verify that each one redirects to the HTTPS version. Check the homepage, a deep content page, a category page, and any login or form pages. Some sites have HTTPS on the homepage but serve internal pages over HTTP.</li>
+  <li><strong>No mixed content.</strong> Mixed content occurs when an HTTPS page loads resources (images, scripts, stylesheets) over HTTP. Browsers may block these resources or display warnings. Use the browser developer console (F12 > Console) to check for mixed content warnings. Common culprits are hardcoded image URLs in content, third-party widgets loaded over HTTP, and legacy CSS files referencing HTTP asset paths.</li>
+  <li><strong>HTTP redirects to HTTPS.</strong> Verify that HTTP versions of your URLs return a 301 redirect to the HTTPS version, not a 302. Use a tool like httpstatus.io or curl to check the redirect type. 302 redirects do not consolidate ranking signals to the HTTPS version.</li>
+  <li><strong>HSTS header is set.</strong> The Strict-Transport-Security header tells browsers to always use HTTPS for your domain, even if a user types HTTP or clicks an HTTP link. Check for this header using your browser's developer tools (Network tab > response headers) or SecurityHeaders.com. A good HSTS configuration is: Strict-Transport-Security: max-age=31536000; includeSubDomains.</li>
+  <li><strong>SSL configuration grade.</strong> Test your SSL configuration at ssllabs.com/ssltest. Aim for an A grade. Common issues that lower the grade include support for outdated TLS versions (TLS 1.0 and 1.1 should be disabled), weak cipher suites, and missing certificate chain intermediates.</li>
+</ul>
+
+<h2 id="security-headers">Security Headers</h2>
+
+<p>HTTP security headers instruct browsers on how to handle your site's content, providing protection against common attack types. Test all headers at securityheaders.com.</p>
+
+<ul>
+  <li><strong>Content-Security-Policy (CSP).</strong> CSP tells browsers which sources are allowed to load scripts, styles, images, and other resources. A properly configured CSP prevents cross-site scripting (XSS) attacks by blocking the execution of injected malicious scripts. Start with a report-only mode to identify legitimate resource sources, then enforce the policy. Even a basic CSP is significantly better than none.</li>
+  <li><strong>X-Content-Type-Options: nosniff.</strong> This header prevents browsers from MIME-type sniffing, which can turn non-executable files into executable ones. Set this to "nosniff" on all responses. This is a simple, one-line configuration with no downside.</li>
+  <li><strong>X-Frame-Options.</strong> This header controls whether your pages can be embedded in iframes on other sites. Set to DENY (no framing allowed) or SAMEORIGIN (only your own domain can frame your pages). This prevents clickjacking attacks where attackers overlay your site with invisible elements to trick users into clicking unintended targets.</li>
+  <li><strong>Referrer-Policy.</strong> This header controls how much referrer information is sent when users click links on your site. Set to "strict-origin-when-cross-origin" to share only the origin (domain) with external sites while sharing the full URL with same-origin requests. This prevents URL-embedded sensitive data from leaking to third-party sites.</li>
+  <li><strong>Permissions-Policy.</strong> This header (formerly Feature-Policy) controls which browser features your site can use: camera, microphone, geolocation, payment, and others. Restrict features you do not use. For example: Permissions-Policy: camera=(), microphone=(), geolocation=() disables these features entirely, preventing any injected script from accessing them.</li>
+  <li><strong>X-XSS-Protection.</strong> While largely superseded by CSP in modern browsers, this header provides an additional layer of XSS protection in older browsers. Set to "1; mode=block" to enable XSS filtering and block the page rather than attempting to sanitise the malicious content.</li>
+</ul>
+
+<h2 id="software-updates">Software Updates</h2>
+
+<p>Outdated software is the most exploited attack vector for websites. Automated scanning tools constantly probe websites for known vulnerabilities in specific software versions.</p>
+
+<ul>
+  <li><strong>CMS is running the latest version.</strong> Whether you use WordPress, Drupal, Joomla, Shopify, or a custom system, verify that the core platform is up to date. CMS security patches address known vulnerabilities that are actively exploited. Delaying updates by even a few weeks exposes your site to automated attacks.</li>
+  <li><strong>All plugins and extensions are updated.</strong> Check every installed plugin, module, or extension for available updates. Prioritise updates that address security vulnerabilities (check the changelog for "security" mentions). Remove any plugins you no longer actively use rather than leaving them installed and unupdated.</li>
+  <li><strong>Theme or template is current.</strong> Themes contain code that can be exploited if vulnerabilities are discovered. Keep your active theme updated and remove any inactive themes from the server. Inactive themes can still be targeted if the files are accessible.</li>
+  <li><strong>Server software is current.</strong> If you manage your own server, verify that the operating system, web server (Apache/Nginx), PHP, database server (MySQL/MariaDB/PostgreSQL), and any other server-side software is running supported, patched versions. If you use managed hosting, confirm with your host that they maintain current server software.</li>
+  <li><strong>No known vulnerabilities.</strong> Search vulnerability databases (CVE, WPScan for WordPress, Snyk for JavaScript dependencies) for your specific software versions. Any component with a known, unpatched vulnerability is a critical risk that requires immediate action: update, replace, or mitigate.</li>
+</ul>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>Weak authentication is the most common way attackers gain access to website administration panels.</p>
+
+<ul>
+  <li><strong>Strong password requirements.</strong> All admin accounts should use passwords of at least 16 characters, combining uppercase, lowercase, numbers, and symbols. Ideally, use a password manager to generate and store unique passwords for each account. Check that your CMS enforces minimum password complexity for new accounts.</li>
+  <li><strong>Two-factor authentication is enabled.</strong> Every administrator and editor account should use two-factor authentication (2FA). This typically means a time-based one-time password (TOTP) app like Google Authenticator or Authy. SMS-based 2FA is better than nothing but vulnerable to SIM-swapping attacks. Hardware keys (YubiKey) provide the strongest protection.</li>
+  <li><strong>Login attempt limiting.</strong> Verify that your site limits failed login attempts. After 5-10 failed attempts, the account or IP address should be temporarily locked. This prevents brute force attacks from systematically trying password combinations. Most CMS platforms have plugins or built-in settings for this.</li>
+  <li><strong>Default credentials are changed.</strong> Check that no accounts use default usernames (admin, administrator, root) or default passwords. Automated attack tools try default credentials first. Change any default accounts immediately.</li>
+  <li><strong>Unused accounts are removed.</strong> Review all user accounts and remove any that belong to former employees, contractors, or test accounts. Each active account is a potential entry point. Follow the principle of least privilege: every account should have only the minimum permissions required for its function.</li>
+  <li><strong>Admin panel is not publicly accessible.</strong> If possible, restrict access to admin URLs by IP address, require VPN connection, or place an additional authentication layer (HTTP basic auth) in front of the admin panel. At minimum, ensure the admin panel is not linked from public-facing pages and is not discoverable through directory listing.</li>
+</ul>
+
+<h2 id="file-permissions">File Permissions</h2>
+
+<p>Incorrect file permissions allow attackers to read sensitive files, modify code, or upload malicious files to your server.</p>
+
+<ul>
+  <li><strong>Configuration files are protected.</strong> Your CMS configuration file (wp-config.php for WordPress, settings.php for Drupal, configuration.php for Joomla) contains database credentials and security keys. Verify that this file is not accessible via browser by requesting its URL directly. Set permissions to 400 (read only, owner only) or 440 (read only, owner and group).</li>
+  <li><strong>Directory listing is disabled.</strong> Navigate to a directory URL (like yourdomain.com/images/) and verify that you see a 403 Forbidden or your site's 404 page, not a listing of files in the directory. Directory listing exposes your file structure to attackers and can reveal sensitive files.</li>
+  <li><strong>Upload directory restrictions.</strong> The directory where users can upload files (typically /uploads/ or /media/) should not execute scripts. Configure your server to treat all files in the upload directory as static files, regardless of their extension. This prevents an attacker who uploads a disguised PHP file from executing server-side code.</li>
+  <li><strong>Sensitive files are excluded from web root.</strong> Files like database backups, configuration backups, .git directories, .env files, and deployment scripts should not be accessible from the web. Check for common sensitive file paths: /.git/, /.env, /backup.sql, /wp-config.php.bak. Any of these returning a 200 response is a critical vulnerability.</li>
+  <li><strong>Standard permission scheme.</strong> For most CMS installations, directories should be 755 (owner can read/write/execute, others can read/execute) and files should be 644 (owner can read/write, others can read only). Never use 777 permissions on any file or directory. If an application requires 777 to function, the underlying problem is incorrect ownership, not permission levels.</li>
+</ul>
+
+<h2 id="backups">Backups</h2>
+
+<p>Backups are your last line of defence against both security breaches and operational disasters.</p>
+
+<ul>
+  <li><strong>Automated backups run daily.</strong> Verify that automated backups are configured, running daily, and completing successfully. Check backup logs for errors. A backup system that silently fails provides false confidence. Test that backups are actually being created by checking the most recent backup file date.</li>
+  <li><strong>Backups are stored offsite.</strong> Backups on the same server as your website are destroyed when the server is compromised or fails. Store backups on a separate server, cloud storage (AWS S3, Google Cloud Storage), or a dedicated backup service. At least one copy should be in a different geographic region.</li>
+  <li><strong>Database and files are both backed up.</strong> A complete backup includes both the database (all content, settings, and user data) and the file system (code, uploads, configuration files). Some backup solutions only cover one or the other. Verify that both are included in your backup routine.</li>
+  <li><strong>Backup retention covers 30 days.</strong> Retain at least 30 days of daily backups. Some security compromises are not discovered for weeks, and you may need to restore from a backup that predates the compromise. Monthly backups should be retained for at least 12 months for compliance and disaster recovery purposes.</li>
+  <li><strong>Restore process is tested.</strong> A backup you have never tested is a backup you cannot trust. At least once per quarter, restore a backup to a staging environment and verify that the site functions correctly. Document the restore process so that anyone on your team can perform it, not just the person who configured the backup system.</li>
+  <li><strong>Backups are encrypted.</strong> Backup files contain your entire site, including database credentials, user data, and potentially payment information. Encrypt backup files at rest and in transit. Most cloud backup services support encryption by default, but verify that it is actually enabled.</li>
+</ul>
+
+<h2 id="monitoring">Monitoring</h2>
+
+<p>Security monitoring detects breaches and suspicious activity before they escalate into full compromises.</p>
+
+<ul>
+  <li><strong>Uptime monitoring is active.</strong> Use an external monitoring service (UptimeRobot, Pingdom, or similar) to check your site's availability at regular intervals. Unexpected downtime can indicate a security incident, server compromise, or DDoS attack. Configure alerts to notify you immediately when the site goes down.</li>
+  <li><strong>File integrity monitoring.</strong> A file integrity monitoring tool tracks changes to your site's core files and alerts you when files are modified unexpectedly. This catches malware injection, backdoor installation, and unauthorised code changes. Most CMS security plugins include file integrity monitoring as a standard feature.</li>
+  <li><strong>Login activity logging.</strong> Enable logging of all login attempts (successful and failed) to your admin panel. Review logs weekly for suspicious patterns: login attempts from unfamiliar IP addresses, login attempts at unusual hours, and brute force patterns (many failed attempts followed by a success). Store login logs for at least 90 days.</li>
+  <li><strong>Google Search Console security notifications.</strong> Verify that email notifications are enabled in Google Search Console. Google notifies site owners when it detects malware, hacked content, or social engineering pages on their sites. These notifications are often the first indication of a compromise that is not immediately visible to the site owner.</li>
+  <li><strong>Regular malware scanning.</strong> Schedule automated malware scans using your security plugin or an external service (Sucuri SiteCheck, VirusTotal). Malware scanners check your site's code and output for known malicious patterns, injected scripts, and suspicious redirects. Run scans at least weekly and after any software update or configuration change.</li>
+  <li><strong>DNS monitoring.</strong> Monitor your domain's DNS records for unauthorised changes. DNS hijacking redirects your visitors to attacker-controlled servers without changing any files on your actual server. Use a DNS monitoring service to alert you if your A records, MX records, or NS records change unexpectedly.</li>
+  <li><strong>SSL certificate monitoring.</strong> In addition to tracking your certificate's expiry date, monitor for unauthorised certificates issued for your domain using Certificate Transparency logs. Services like crt.sh or Cert Spotter alert you when new certificates are issued for your domain, which could indicate an attacker preparing a phishing site.</li>
+</ul>
+
+</ContentLayout>

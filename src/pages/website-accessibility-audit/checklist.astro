@@ -1,0 +1,119 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  { label: 'Checklist', href: '/website-accessibility-audit/checklist/' },
+];
+
+const toc = [
+  { label: 'Perceivable Checks', id: 'perceivable-checks' },
+  { label: 'Operable Checks', id: 'operable-checks' },
+  { label: 'Understandable Checks', id: 'understandable-checks' },
+  { label: 'Robust Checks', id: 'robust-checks' },
+  { label: 'Quick Wins', id: 'quick-wins' },
+  { label: 'Priority Fixes', id: 'priority-fixes' },
+];
+---
+
+<ContentLayout
+  title="Website Accessibility Audit Checklist: WCAG 2.1 AA"
+  description="A complete website accessibility audit checklist based on WCAG 2.1 AA. Covers perceivable, operable, understandable, and robust criteria with quick wins and priority fixes for immediate improvement."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your website. The Web Content Accessibility Guidelines (WCAG) 2.1 at the AA conformance level is the internationally recognised standard, referenced by legislation in the EU, UK, US, Canada, Australia, and many other jurisdictions. Meeting WCAG 2.1 AA is not optional for most organisations — it is a legal requirement.</p>
+
+  <p>This checklist organises accessibility checks under WCAG's four foundational principles: perceivable, operable, understandable, and robust. Each principle contains specific success criteria that your website must meet. We have translated the technical WCAG language into practical checks you can perform, with clear pass and fail criteria for each.</p>
+
+  <p>Work through the checklist systematically, testing on real pages rather than templates. Accessibility issues often appear on specific content pages that were not built with the same care as the homepage. Test your most visited pages, your conversion pages, and any page with complex interactive elements.</p>
+
+  <h2 id="perceivable-checks">Perceivable Checks</h2>
+
+  <p>Perceivable means that users must be able to perceive the information being presented. Content cannot be invisible to all of their senses. These checks ensure that content is available through sight, hearing, or touch regardless of which senses a user can or cannot use.</p>
+
+  <ul>
+    <li><strong>All images have alt text</strong> — every informational image must have a descriptive alt attribute that conveys the same information as the image. Decorative images should have an empty alt attribute (alt="") so screen readers skip them. Check that alt text is meaningful, not just the filename repeated.</li>
+    <li><strong>Video has captions</strong> — all pre-recorded video content with audio must have synchronised captions. Auto-generated captions from YouTube are a starting point but must be reviewed and corrected for accuracy. Live video should have real-time captions where feasible.</li>
+    <li><strong>Audio has transcripts</strong> — pre-recorded audio content (podcasts, audio clips) must have a text transcript available. The transcript should include all spoken content plus relevant non-speech sounds.</li>
+    <li><strong>Colour contrast meets minimum ratios</strong> — normal text (under 18pt or 14pt bold) must have a contrast ratio of at least 4.5:1 against its background. Large text (18pt+ or 14pt+ bold) needs at least 3:1. Use the WebAIM Contrast Checker or browser developer tools to test. Pay attention to text over images, gradient backgrounds, and placeholder text in form fields.</li>
+    <li><strong>Information is not conveyed by colour alone</strong> — if you use colour to indicate status (red for errors, green for success), add a secondary indicator such as an icon, text label, or pattern. Users who are colour blind may not distinguish between your colour choices.</li>
+    <li><strong>Text can be resized to 200% without loss of content</strong> — zoom your browser to 200% and verify that all content is still readable, no text is cut off or overlapping, and horizontal scrolling is not required on a standard desktop viewport.</li>
+    <li><strong>Content is readable when CSS is disabled</strong> — the page's reading order should make logical sense when styles are removed. Screen readers process content in DOM order, not visual order.</li>
+    <li><strong>Responsive design works at all zoom levels</strong> — WCAG 2.1 requires content to reflow at up to 400% zoom (equivalent to a 320px CSS viewport width) without horizontal scrolling except for content that requires two-dimensional layout like tables and maps.</li>
+  </ul>
+
+  <h2 id="operable-checks">Operable Checks</h2>
+
+  <p>Operable means that interface components and navigation must be operable by all users. The most critical aspect of operability is keyboard accessibility — everything that can be done with a mouse must also be achievable with a keyboard alone, because many assistive technologies emulate keyboard interaction.</p>
+
+  <ul>
+    <li><strong>All interactive elements are keyboard accessible</strong> — tab through your entire page. Every link, button, form field, dropdown, modal, accordion, tab panel, and custom widget must be reachable and operable using only the keyboard (Tab, Shift+Tab, Enter, Space, Arrow keys, Escape).</li>
+    <li><strong>Focus order is logical</strong> — the tab order should follow the visual reading order of the page (left to right, top to bottom in left-to-right languages). If the focus jumps erratically around the page, the tabindex attributes or DOM order need correcting.</li>
+    <li><strong>Focus is visible</strong> — when an element receives keyboard focus, it must be visually obvious. The default browser focus outline should not be removed with CSS (outline: none) without providing an equally visible replacement. Focus indicators should have a contrast ratio of at least 3:1 against adjacent colours.</li>
+    <li><strong>No keyboard traps exist</strong> — users must be able to navigate away from every interactive element using standard keyboard controls. Modal dialogs are common keyboard trap sources — the focus should be contained within the modal while it is open and returned to the triggering element when it closes.</li>
+    <li><strong>Skip navigation link is present</strong> — the first focusable element on the page should be a "Skip to main content" link that allows keyboard users to bypass the navigation menu on every page load. This link can be visually hidden until it receives focus.</li>
+    <li><strong>No content flashes more than three times per second</strong> — flashing content can trigger seizures in people with photosensitive epilepsy. Avoid animations that flash rapidly. If flashing content exists, it must be below the three-flashes threshold or below the general flash area threshold.</li>
+    <li><strong>Time limits can be extended or disabled</strong> — if any functionality has a time limit (session timeouts, form submission deadlines, auto-advancing carousels), users must be able to turn off, adjust, or extend the time. Session timeouts should warn users at least 20 seconds before expiry and allow extension.</li>
+    <li><strong>Touch targets are at least 44 by 44 CSS pixels</strong> — on touch devices, interactive elements must be large enough to tap accurately. Small links, tiny close buttons, and cramped form controls fail this criterion.</li>
+  </ul>
+
+  <h2 id="understandable-checks">Understandable Checks</h2>
+
+  <p>Understandable means that users must be able to understand the information and how to operate the interface. Content should be readable, the interface should behave predictably, and users should receive help avoiding and correcting errors.</p>
+
+  <ul>
+    <li><strong>Page language is declared</strong> — the HTML element must have a lang attribute with the correct language code (e.g., lang="en" for English). This tells screen readers which language to use for pronunciation. If a page contains passages in a different language, those passages should have their own lang attribute.</li>
+    <li><strong>Navigation is consistent across pages</strong> — the main navigation menu should appear in the same position and order on every page. Footer links, breadcrumbs, and other repeated navigation elements should also be consistent.</li>
+    <li><strong>Form labels are properly associated</strong> — every form field must have a visible label that is programmatically associated using the for and id attributes, or by wrapping the input inside the label element. Placeholder text is not a substitute for labels because it disappears when the user starts typing.</li>
+    <li><strong>Error messages are clear and specific</strong> — when a form validation error occurs, the error message must identify the field with the error and describe what the user needs to do to fix it. "Please fill in required fields" is unhelpful. "Please enter a valid email address in the Email field" is actionable.</li>
+    <li><strong>Error prevention is implemented for important actions</strong> — for actions with legal, financial, or data consequences (purchases, account deletion, contract submissions), provide one of: reversibility (undo), checking (confirmation step), or review (preview before submit).</li>
+    <li><strong>Instructions do not rely solely on sensory characteristics</strong> — do not use instructions like "click the green button" or "see the sidebar on the right." These instructions fail for users who cannot see colour, shape, or spatial position. Use labels or text references instead.</li>
+    <li><strong>Autocomplete attributes are used on form fields</strong> — for fields that collect personal information (name, email, address, phone, credit card), add the appropriate autocomplete attribute. This helps users with cognitive disabilities fill in forms using saved information and helps all users by enabling browser autofill.</li>
+  </ul>
+
+  <h2 id="robust-checks">Robust Checks</h2>
+
+  <p>Robust means that content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies. These checks ensure your HTML is valid and that custom components communicate their role, state, and properties correctly to assistive technology.</p>
+
+  <ul>
+    <li><strong>HTML validates without critical errors</strong> — run your pages through the W3C HTML Validator. Focus on errors that affect accessibility: duplicate IDs (which break label associations and ARIA references), missing closing tags, and invalid nesting of elements.</li>
+    <li><strong>ARIA is used correctly when needed</strong> — ARIA (Accessible Rich Internet Applications) attributes add semantic information to custom widgets. The first rule of ARIA is do not use ARIA if a native HTML element provides the same semantics. When ARIA is needed, verify that roles, states, and properties are applied correctly and updated dynamically as the widget state changes.</li>
+    <li><strong>Custom components have appropriate roles</strong> — if you have built custom dropdowns, tabs, accordions, modals, or other interactive components using divs and JavaScript rather than native HTML, they must have ARIA roles, states, and keyboard interaction patterns that match the expected behaviour. Reference the WAI-ARIA Authoring Practices for correct implementation patterns.</li>
+    <li><strong>Status messages are announced to screen readers</strong> — when content updates dynamically (form submission confirmations, error messages, loading indicators, search results counts), use ARIA live regions (aria-live="polite" or role="status") so screen readers announce the change without the user having to navigate to it.</li>
+    <li><strong>The page works with assistive technology</strong> — test with at least one screen reader (NVDA on Windows is free, VoiceOver on Mac is built-in). Navigate the page using only the screen reader and keyboard. Verify that all content is announced, interactive elements are identifiable, and dynamic changes are communicated.</li>
+  </ul>
+
+  <h2 id="quick-wins">Quick Wins</h2>
+
+  <p>If your site has many accessibility issues, start with these high-impact fixes that are relatively simple to implement:</p>
+
+  <ul>
+    <li><strong>Add missing alt text to images</strong> — this is the single most common WCAG failure. Audit every image tag and add descriptive alt text. Most CMS platforms let you add alt text when uploading images. The fix takes seconds per image and immediately helps screen reader users.</li>
+    <li><strong>Fix colour contrast</strong> — use a contrast checking tool to identify low-contrast text. Adjusting text or background colours to meet the 4.5:1 ratio usually requires only CSS changes. Focus on body text, link text, and form labels first.</li>
+    <li><strong>Add form labels</strong> — ensure every form input has an associated label. This is often a simple HTML fix: add a label element with a for attribute matching the input's id. This helps screen readers, improves usability for all users, and increases click targets on mobile.</li>
+    <li><strong>Add a skip navigation link</strong> — a single HTML link at the top of the page that jumps to the main content area. Hidden by default, visible on keyboard focus. Takes 15 minutes to implement and helps every keyboard user.</li>
+    <li><strong>Declare the page language</strong> — add lang="en" (or your language code) to the html element. A one-line change that affects every page and is required for screen reader pronunciation accuracy.</li>
+    <li><strong>Restore focus outlines</strong> — if your CSS removes the default browser focus indicator, either remove the outline:none rule or replace it with a custom focus style that is equally visible.</li>
+  </ul>
+
+  <h2 id="priority-fixes">Priority Fixes</h2>
+
+  <p>After implementing quick wins, prioritise these more complex fixes based on the impact they have on user experience and the severity of the barrier they create:</p>
+
+  <p><strong>Priority 1 — Keyboard accessibility:</strong> If users cannot operate your site with a keyboard, they are completely blocked. Fix keyboard traps in modals and custom widgets. Ensure all interactive elements are focusable and operable. This often requires JavaScript changes and is the most impactful accessibility improvement you can make after alt text and contrast.</p>
+
+  <p><strong>Priority 2 — Form error handling:</strong> Users who cannot see visual cues need clear, programmatically associated error messages that describe what went wrong and how to fix it. Implement inline error messages linked to their fields with aria-describedby. Add form-level error summaries that list all errors when submission fails. Set focus to the first error field or the error summary so screen reader users are immediately aware of the problem.</p>
+
+  <p><strong>Priority 3 — Video captions and audio transcripts:</strong> If you have video or audio content without captions and transcripts, deaf and hard-of-hearing users cannot access it. This is a clear WCAG failure. Prioritise captioning for your most-viewed videos first and work through the backlog.</p>
+
+  <p><strong>Priority 4 — ARIA implementation on custom components:</strong> Custom dropdowns, tab panels, accordions, and modals that lack proper ARIA roles and states are confusing and potentially unusable for screen reader users. Refer to WAI-ARIA Authoring Practices for correct patterns and rewrite the components to match.</p>
+
+  <p><strong>Priority 5 — Content reflow at 400% zoom:</strong> Test your site at 400% zoom and fix layout issues that cause horizontal scrolling, overlapping text, or hidden content. This typically requires responsive CSS adjustments and may involve redesigning fixed-width components.</p>
+
+  <p>Track your progress by retesting with automated tools (axe DevTools, WAVE, Lighthouse) after each round of fixes. Automated tools catch approximately 30 to 40 percent of WCAG issues. The remaining issues require manual testing with keyboard navigation and screen readers. Schedule manual testing quarterly at minimum, and test every new feature or content type before it goes live.</p>
+
+  <p>If you need help running an accessibility audit or remediating the issues found, <a href="/website-audit-services/">our accessibility audit service</a> covers all WCAG 2.1 AA criteria with prioritised remediation guidance and optional retesting.</p>
+</ContentLayout>

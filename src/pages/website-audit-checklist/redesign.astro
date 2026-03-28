@@ -1,0 +1,106 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Checklists', href: '/website-audit-checklist/' },
+  { label: 'Redesign', href: '/website-audit-checklist/redesign/' },
+];
+
+const toc = [
+  { label: 'Pre-Redesign Baseline', id: 'pre-redesign-baseline' },
+  { label: 'URL Mapping', id: 'url-mapping' },
+  { label: 'Redirect Plan', id: 'redirect-plan' },
+  { label: 'Content Migration', id: 'content-migration' },
+  { label: 'Technical Checks', id: 'technical-checks' },
+  { label: 'Post-Launch Monitoring', id: 'post-launch-monitoring' },
+];
+---
+
+<ContentLayout
+  title="Website Redesign Audit Checklist: SEO Migration Guide"
+  description="Complete checklist for auditing a website before, during, and after a redesign. Covers URL mapping, redirect planning, content migration, and post-launch monitoring to protect organic traffic."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Website redesigns are one of the highest-risk events for organic search performance. A redesign that looks beautiful but ignores SEO migration requirements can destroy years of accumulated rankings, backlinks, and organic traffic in a single deployment. The damage is often invisible for weeks as Google recrawls and reprocesses the changed site, by which point the original configuration is long gone and recovery is far more difficult than prevention would have been.</p>
+
+<p>This checklist guides you through the SEO audit requirements at every stage of a redesign: before work begins, during the build, at launch, and in the critical monitoring period afterward. Skip any section at your own risk. The most common redesign disasters happen not because teams are unaware of SEO requirements but because they skip steps under time pressure.</p>
+
+<h2 id="pre-redesign-baseline">Pre-Redesign Baseline</h2>
+
+<p>Before any redesign work begins, you need a comprehensive record of your current site's SEO assets. This baseline serves two purposes: it protects you during migration by ensuring nothing is accidentally lost, and it provides the benchmark against which you measure post-launch performance.</p>
+
+<ul>
+  <li><strong>Crawl the entire current site.</strong> Use <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> or a similar crawler to create a complete URL inventory. Export every URL with its status code, title tag, meta description, canonical tag, H1, word count, and indexation status. This becomes your master reference for the migration. Store this data securely. You will need it throughout the project.</li>
+  <li><strong>Export Google Search Console data.</strong> Download Performance data (queries and pages) for the last 16 months. Download the Coverage report. Download the Sitemaps report. GSC data has a 16-month retention limit, so if you do not export it before the redesign, you lose the pre-redesign comparison data forever.</li>
+  <li><strong>Export analytics data.</strong> Download organic landing page data including sessions, revenue (if applicable), and conversion data for at least the last 12 months. Identify your top 50 organic landing pages by traffic and your top 50 by revenue. These pages receive the highest priority during migration.</li>
+  <li><strong>Document backlink targets.</strong> Export your backlink profile from Ahrefs, Semrush, or a similar tool. Identify every page that has external backlinks pointing to it. These pages must be redirected correctly because each backlink represents authority that will transfer through the redirect (or be lost if the redirect is missing).</li>
+  <li><strong>Screenshot key pages.</strong> Take full-page screenshots of your top pages in their current state. This provides a visual reference that helps the redesign team understand what currently exists, and it serves as evidence if stakeholders later dispute what the old site contained.</li>
+  <li><strong>Document current technical configuration.</strong> Record your current robots.txt, XML sitemap URLs, canonical tag patterns, hreflang implementation (if applicable), structured data types, and any custom HTTP headers. These settings need to be replicated or improved in the new site, not forgotten.</li>
+  <li><strong>Identify content to cut.</strong> A redesign is an opportunity to remove underperforming content. Review your GSC data and identify pages with zero impressions over the last six months. Decide which pages to migrate, which to merge into other pages, and which to remove entirely. Document these decisions before the redesign begins so the build team knows the full scope.</li>
+</ul>
+
+<h2 id="url-mapping">URL Mapping</h2>
+
+<p>URL mapping is the single most critical SEO element of any redesign. Every existing URL that has traffic, rankings, or backlinks must map to a specific destination on the new site.</p>
+
+<ul>
+  <li><strong>Create a complete URL mapping spreadsheet.</strong> List every current URL alongside its intended destination URL on the new site. Include columns for: current URL, new URL, current traffic (from analytics), current impressions (from GSC), backlink count, redirect type (301 or 410), and status (mapped/unmapped/merged/removed). This spreadsheet is the central reference for the entire migration.</li>
+  <li><strong>Map all high-value pages first.</strong> Start with your top traffic pages and top backlink pages. These are non-negotiable. Every single one must have a clearly defined destination on the new site. If the new site does not have an equivalent page, create one or identify the closest alternative.</li>
+  <li><strong>Handle URL structure changes.</strong> If the new site uses a different URL structure (for example, changing from /blog/post-name/ to /articles/post-name/), map every affected URL. Do not assume that changing one URL pattern applies cleanly to all URLs. Edge cases, manually created pages, and historical URL changes mean that automated pattern matching misses pages.</li>
+  <li><strong>Account for parameter-based URLs.</strong> Check your current site for URLs with query parameters that receive traffic or have backlinks. These are often overlooked in URL mapping because they do not appear in standard crawl exports. Search GSC for URLs containing ? to identify parameter-based pages that need mapping.</li>
+  <li><strong>Verify mapping completeness.</strong> Cross-reference your URL mapping against your baseline crawl. Every URL in the crawl should appear in the mapping spreadsheet. Flag any URLs in the crawl that do not have a mapping entry. These are the pages most likely to be forgotten during migration.</li>
+  <li><strong>Validate destination URLs exist.</strong> Before launch, verify that every destination URL in your mapping actually exists on the new site. Test by requesting each URL and checking for a 200 status code. Redirecting to pages that do not exist (creating redirect-to-404 chains) is a common migration error.</li>
+</ul>
+
+<h2 id="redirect-plan">Redirect Plan</h2>
+
+<ul>
+  <li><strong>Use 301 redirects for all permanent URL changes.</strong> Every URL that changes must have a 301 redirect from the old URL to the new URL. 302 (temporary) redirects do not transfer ranking signals. Implement 301 redirects for every entry in your URL mapping spreadsheet where the URL has changed.</li>
+  <li><strong>Implement redirects at the server level.</strong> Redirects should be configured in your server configuration (Apache .htaccess, Nginx config, or hosting panel redirect manager), not through JavaScript or HTML meta refresh tags. Server-level redirects are processed before the page loads, are correctly interpreted by search engines, and do not affect page load speed.</li>
+  <li><strong>Avoid redirect chains.</strong> If your current site already has redirects in place (old URL > current URL), the migration redirect must point directly from the old URL to the final new URL, not from the current URL to the new URL. Otherwise you create chains (old URL > current URL > new URL) that dilute ranking signals and slow crawling.</li>
+  <li><strong>Test redirects before launch.</strong> On a staging environment or during a maintenance window, test every redirect. Verify that the origin URL returns a 301 status code and that the Location header points to the correct destination. Automated testing using a script or a tool like Screaming Frog's list mode is essential for sites with hundreds or thousands of redirects.</li>
+  <li><strong>Handle removed content with 410 responses.</strong> For pages that are intentionally removed without a replacement, use 410 (Gone) status codes rather than 404 (Not Found). A 410 tells search engines that the removal is intentional and permanent, speeding up the deindexation process. Only use 410 for pages that genuinely have no suitable redirect destination.</li>
+  <li><strong>Plan for redirect maintenance.</strong> Redirects need to remain in place for at least 12 months, ideally permanently. Google takes time to discover, process, and transfer ranking signals through redirects. Removing redirects prematurely causes the ranking transfer to fail. Include redirect maintenance in your post-launch operational plan.</li>
+  <li><strong>Document the redirect implementation.</strong> Record exactly where redirects are configured (which file, which system, which hosting feature) and who has access to modify them. Development teams change, hosting providers change, and future team members need to know where the redirects live to avoid accidentally removing them.</li>
+</ul>
+
+<h2 id="content-migration">Content Migration</h2>
+
+<ul>
+  <li><strong>Preserve all ranking content.</strong> Content that currently ranks and drives traffic should be migrated intact to the new site. Do not rewrite ranking content during a redesign. The redesign and content changes are separate projects that should not happen simultaneously. Change one variable at a time.</li>
+  <li><strong>Verify title tags and meta descriptions transfer.</strong> After migrating content, check that title tags and meta descriptions from the old site are present on the new site. CMS migrations frequently lose meta tag data because the field mappings between systems differ. Compare a sample of 50+ pages against your baseline export.</li>
+  <li><strong>Check heading structure.</strong> New templates may change the heading hierarchy of migrated content. If your old H2s are now H3s because the new template uses H2 for a section title, the content structure has changed in ways that affect SEO. Review heading output for each template type.</li>
+  <li><strong>Verify image migration.</strong> Check that all images transferred correctly, that image file names and alt text are preserved, and that images are not broken. Image URLs often change during migration, which can break embedded images in content if the CMS does not update internal references.</li>
+  <li><strong>Preserve internal links.</strong> Internal links within content must be updated to point to new URLs rather than relying on redirects. While redirected internal links work, they add latency and a redirect hop that could be avoided. Use search-and-replace tools to update internal link URLs in the content database after migration.</li>
+  <li><strong>Check structured data.</strong> If your old site had schema markup, verify that equivalent or improved structured data exists on the new site. Schema implementations are frequently lost during redesigns because they were implemented in the old theme code rather than through a CMS-level plugin.</li>
+</ul>
+
+<h2 id="technical-checks">Technical Checks</h2>
+
+<ul>
+  <li><strong>XML sitemap is updated.</strong> The new site's XML sitemap should contain all new URLs and no old URLs. Submit the updated sitemap in Google Search Console immediately after launch. If your sitemap URL has changed, update the reference in robots.txt.</li>
+  <li><strong>Robots.txt is correct.</strong> Verify that robots.txt on the new site does not block any pages that should be crawled. A common migration error is deploying the staging site's robots.txt (which often blocks all crawlers) to production.</li>
+  <li><strong>Canonical tags are correct.</strong> Check that canonical tags on the new site point to the correct new URLs, not to old URLs or staging URLs. Canonical tags pointing to non-existent or redirected URLs confuse search engines about which version of a page to index.</li>
+  <li><strong>SSL is fully implemented.</strong> Verify HTTPS is active on all pages, that there are no mixed content warnings, and that HTTP URLs redirect to HTTPS. A redesign that changes the URL scheme from HTTP to HTTPS (or vice versa) requires additional redirect configuration.</li>
+  <li><strong>Hreflang tags are updated.</strong> If your site uses hreflang for international targeting, verify that all hreflang tags reference new URLs, that reciprocal tags are in place, and that no hreflang tags point to old or redirected URLs.</li>
+  <li><strong>Google Search Console is reconfigured.</strong> If the domain or URL structure has changed significantly, you may need to add the new domain as a property in Search Console, submit the new sitemap, and use the Change of Address tool if moving to a new domain.</li>
+  <li><strong>Analytics tracking is verified.</strong> Confirm that your analytics tracking code is present and firing correctly on all pages of the new site. Check that goals, ecommerce tracking, and event tracking are configured. A redesign that breaks analytics tracking creates a data gap that is impossible to fill retroactively.</li>
+</ul>
+
+<h2 id="post-launch-monitoring">Post-Launch Monitoring</h2>
+
+<ul>
+  <li><strong>Monitor crawl errors daily.</strong> Check Google Search Console's Coverage report daily for the first two weeks after launch. A spike in 404 errors indicates missed redirects. Fix redirect gaps immediately. The faster you catch and fix redirect errors, the less ranking damage accumulates.</li>
+  <li><strong>Track indexation of new URLs.</strong> Monitor how quickly Google discovers and indexes your new URLs. Use the URL Inspection tool in Search Console to check individual high-priority pages. If important pages are not being indexed within a week, investigate potential crawl blockers.</li>
+  <li><strong>Compare organic traffic weekly.</strong> Compare organic traffic and impressions against your pre-redesign baseline on a weekly basis. Some fluctuation is normal during the first 4-6 weeks as Google recrawls and reprocesses the site. Sustained drops beyond 6 weeks indicate migration problems that need investigation.</li>
+  <li><strong>Check rankings for key terms.</strong> Monitor your rankings for your top 20-30 keywords daily for the first month. Ranking fluctuations are expected during the transition period, but rankings that drop and do not recover within 4-6 weeks suggest a specific issue with those pages that needs diagnosis.</li>
+  <li><strong>Test redirect functionality monthly.</strong> Recheck a sample of redirects monthly for the first six months. Server configuration changes, hosting migrations, and .htaccess modifications can inadvertently break redirects. Periodic testing catches problems before they cause lasting damage.</li>
+  <li><strong>Run a full crawl at 2 weeks and 6 weeks.</strong> Crawl the new site at two weeks and six weeks post-launch, comparing against the baseline crawl. Look for pages that were in the baseline but are not in the new crawl (indicating they were forgotten during migration), new 404 errors, and any technical issues introduced by the new platform.</li>
+  <li><strong>Document lessons learned.</strong> After the monitoring period, document what went well and what went wrong. Every redesign surfaces unexpected issues. Recording these lessons makes the next migration smoother and prevents the same mistakes from being repeated.</li>
+</ul>
+
+</ContentLayout>

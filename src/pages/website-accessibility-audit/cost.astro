@@ -1,0 +1,105 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  { label: 'Cost', href: '/website-accessibility-audit/cost/' },
+];
+
+const toc = [
+  { label: 'Automated Scan Costs', id: 'automated-scan-costs' },
+  { label: 'Manual Audit Costs', id: 'manual-audit-costs' },
+  { label: 'Full WCAG Audit Costs', id: 'full-wcag-audit-costs' },
+  { label: 'Ongoing Monitoring', id: 'ongoing-monitoring' },
+  { label: 'Cost of Non-Compliance', id: 'cost-of-non-compliance' },
+  { label: 'Our Pricing', id: 'our-pricing' },
+];
+---
+
+<ContentLayout
+  title="Website Accessibility Audit Cost: What to Expect"
+  description="Understand website accessibility audit pricing from free automated scans to full WCAG 2.1 AA manual audits. Learn about ongoing monitoring costs, the financial risk of non-compliance, and our audit pricing."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>Website accessibility audit costs vary enormously depending on the depth of assessment, the size of your site, and whether testing is automated, manual, or a combination of both. You can run a free automated scan in seconds or commission a comprehensive manual audit with assistive technology testing for five figures. The right investment depends on your legal exposure, your audience, and how seriously you take inclusive design.</p>
+
+  <p>This guide breaks down accessibility audit costs at every level so you can budget appropriately. We cover what you get at each price point, when automated testing is sufficient, when manual testing is essential, and why the cost of an audit is almost always less than the cost of ignoring accessibility.</p>
+
+  <h2 id="automated-scan-costs">Automated Scan Costs</h2>
+
+  <p>Automated accessibility scans use software to test your pages against WCAG success criteria that can be evaluated programmatically. Tools like axe DevTools, WAVE, and Google Lighthouse check for missing alt text, colour contrast failures, missing form labels, duplicate IDs, incorrect ARIA usage, and similar issues that have clear pass-fail conditions in the HTML.</p>
+
+  <p><strong>Free options:</strong> Browser extensions like axe DevTools (by Deque) and WAVE (by WebAIM) are completely free and test one page at a time. Google Lighthouse runs accessibility audits as part of its performance testing suite and is built into Chrome DevTools. These tools are excellent for developer workflows and catch the most common accessibility issues during the build process.</p>
+
+  <p><strong>Paid automated scanning (100-500 USD per month):</strong> Tools like Siteimprove, Deque's axe Monitor, Pope Tech, and Tenon.io scan your entire site on a scheduled basis and provide dashboard reporting, trend tracking, and issue prioritisation. They are priced based on the number of pages scanned and the scanning frequency. A 500-page site typically falls in the 100 to 250 USD per month range. Enterprise sites with thousands of pages pay more.</p>
+
+  <p>The critical limitation of automated scanning is coverage. Studies consistently show that automated tools can detect only 30 to 40 percent of WCAG 2.1 AA success criteria. Issues like logical focus order, meaningful alt text quality, screen reader compatibility, and whether content makes sense when linearised require human judgement that software cannot replicate. Automated scanning is a valuable first step and ongoing monitoring layer, but it is not a substitute for manual testing.</p>
+
+  <p>If your budget allows only automated scanning, you are better off using the free browser extensions thoroughly on your key pages than paying for a monitoring platform that gives you a false sense of comprehensive coverage. The free tools catch the same issues — the paid tools just scale the scanning across your entire site and track issues over time.</p>
+
+  <h2 id="manual-audit-costs">Manual Audit Costs</h2>
+
+  <p>A manual accessibility audit involves a trained accessibility specialist testing your site using keyboard navigation, screen readers, and other assistive technologies. The specialist works through a representative sample of your pages, testing each WCAG 2.1 AA success criterion and documenting every failure with its location, the criterion violated, the impact on users, and specific remediation guidance.</p>
+
+  <p><strong>Small site manual audit (1,500-5,000 USD):</strong> For sites with 10 to 50 unique page templates, a manual audit typically costs between 1,500 and 5,000 USD. The auditor tests a representative sample of pages covering every content type and template on the site. Common templates (blog post, landing page, product page, form page, search results) each get tested individually. Turnaround is typically two to four weeks.</p>
+
+  <p><strong>Medium site manual audit (5,000-15,000 USD):</strong> Sites with 50 to 200 unique templates, complex interactive components, and multiple user flows require more testing time. This tier includes testing of custom JavaScript widgets, multi-step forms, authentication flows, ecommerce checkout processes, and content management interfaces. The audit may include testing with multiple screen readers (NVDA and JAWS on Windows, VoiceOver on Mac and iOS) to ensure cross-platform compatibility.</p>
+
+  <p><strong>Large site or application audit (15,000-50,000+ USD):</strong> Enterprise web applications with hundreds of unique components, dynamic content, role-based access, and complex interaction patterns require extensive testing. At this level, the audit may span several weeks of active testing, involve multiple accessibility specialists, and include usability testing with actual disabled users. The output is a comprehensive conformance report suitable for regulatory compliance documentation.</p>
+
+  <p>Manual audits are priced by the number of unique templates and components rather than the total number of pages. A 10,000-page blog with one blog post template costs less to audit than a 200-page application with 50 unique interactive screens. The complexity of the interface — modals, drag-and-drop, real-time updates, data tables, maps, charts — drives the price more than page volume.</p>
+
+  <h2 id="full-wcag-audit-costs">Full WCAG Audit Costs</h2>
+
+  <p>A full WCAG 2.1 AA conformance audit combines automated scanning with comprehensive manual testing and produces a formal Voluntary Product Accessibility Template (VPAT) or Accessibility Conformance Report (ACR). This is the level of audit required when your organisation needs to demonstrate compliance for government contracts, regulatory requirements, or legal proceedings.</p>
+
+  <p>Full conformance audits typically cost between 10,000 and 30,000 USD for a standard web application. The process includes automated scanning of all pages, manual testing of every unique template and component, screen reader testing with at least two screen readers, keyboard-only navigation testing, testing at 200% and 400% zoom levels, colour contrast analysis including dynamic states (hover, focus, active), form interaction and error handling testing, and a formal conformance report documenting the status of every applicable WCAG 2.1 AA success criterion.</p>
+
+  <p>The deliverable is a detailed document that maps your site against each of the 50 WCAG 2.1 AA success criteria, with a status for each (supports, partially supports, does not support, not applicable) along with evidence and remarks. This format is what procurement officers, legal teams, and regulatory bodies expect when evaluating accessibility compliance.</p>
+
+  <p>Some organisations also request usability testing with disabled users as part of the audit. This involves recruiting participants who use assistive technologies in their daily lives and observing them as they complete tasks on your site. Usability testing adds 5,000 to 15,000 USD to the audit cost depending on the number of participants and sessions, but it provides insights that no other testing method can match. A WCAG audit tells you whether your site meets the technical standard. Usability testing tells you whether real disabled users can actually accomplish their goals on your site.</p>
+
+  <h2 id="ongoing-monitoring">Ongoing Monitoring</h2>
+
+  <p>Accessibility is not a one-time fix. Every content update, design change, code deployment, and plugin update can introduce new accessibility issues. Ongoing monitoring ensures that accessibility gains from your audit are maintained and that new issues are caught quickly.</p>
+
+  <p><strong>Automated monitoring (100-500 USD per month):</strong> Platforms like Siteimprove, Deque axe Monitor, or Pope Tech scan your site on a regular schedule and alert you to new issues. This catches regressions in the automated-detectable 30 to 40 percent of WCAG criteria. It is cost-effective and low-maintenance.</p>
+
+  <p><strong>Quarterly manual review (2,000-5,000 USD per quarter):</strong> A manual accessibility review every three months catches issues that automated tools miss. The quarterly review typically focuses on new content and features added since the last review rather than retesting the entire site. This is the recommended cadence for organisations with active development cycles.</p>
+
+  <p><strong>Annual re-audit (full audit cost):</strong> A comprehensive re-audit once per year provides a fresh baseline conformance assessment. It verifies that previous issues have been resolved, evaluates any new functionality, and updates the formal conformance report. Annual re-audits are essential for organisations maintaining VPAT documentation for procurement.</p>
+
+  <p>The most cost-effective monitoring strategy combines automated scanning (for continuous coverage of programmatic checks) with quarterly manual reviews (for human-judgement checks on new content) and an annual full re-audit (for formal conformance documentation). This layered approach typically costs between 15,000 and 30,000 USD per year for a mid-sized application, which is a fraction of the legal and reputational cost of a single accessibility lawsuit.</p>
+
+  <h2 id="cost-of-non-compliance">Cost of Non-Compliance</h2>
+
+  <p>Understanding the cost of accessibility audits requires comparing them against the cost of not being accessible. The financial risks of non-compliance have increased dramatically in recent years as legislation has strengthened, enforcement has intensified, and private litigation has surged.</p>
+
+  <p><strong>Legal settlements and judgements:</strong> In the United States, website accessibility lawsuits have increased every year since 2017. Major settlements include Target (6 million USD), Winn-Dixie (initial judgement plus ongoing compliance costs), Dominos (settlement after a Supreme Court petition was denied), and thousands of smaller cases settled for 5,000 to 75,000 USD each. The average cost of defending an ADA website lawsuit is 25,000 to 100,000 USD even when the case settles quickly.</p>
+
+  <p><strong>Regulatory fines:</strong> The European Accessibility Act, which applies from June 2025, requires a wide range of products and services to be accessible, with member states setting their own penalty frameworks. The UK Equality Act carries unlimited compensation for discrimination. Australian fines under the Disability Discrimination Act have reached into the hundreds of thousands. These are not theoretical risks — enforcement actions are becoming routine.</p>
+
+  <p><strong>Lost revenue:</strong> Approximately 16 percent of the global population lives with a significant disability. In the UK alone, the spending power of disabled people and their households is estimated at 274 billion GBP per year (the "Purple Pound"). Inaccessible websites exclude this market segment entirely. Beyond disabled users, accessibility improvements benefit elderly users, users on slow connections, users on mobile devices, and users in challenging environments — a much larger group than the disability statistics alone suggest.</p>
+
+  <p><strong>Reputation damage:</strong> Public accessibility lawsuits and advocacy campaigns create lasting reputational harm. Social media amplifies accessibility failures. Being named in an accessibility complaint signals to customers, partners, and employees that your organisation does not prioritise inclusion.</p>
+
+  <p>A 10,000 USD accessibility audit is inexpensive insurance against a 50,000 USD lawsuit settlement, ongoing legal fees, and the unquantifiable cost of reputational damage. The audit pays for itself even before you factor in the increased revenue from a more usable site.</p>
+
+  <h2 id="our-pricing">Our Pricing</h2>
+
+  <p>We offer accessibility audits at three levels to match different needs and budgets:</p>
+
+  <p><strong>Accessibility Scan — from 500 USD:</strong> Automated scanning of your entire site using enterprise-grade tools, combined with expert review and interpretation of results. Covers all automatically detectable WCAG 2.1 AA issues. Includes a prioritised report with remediation guidance. Turnaround: three to five business days. Best for sites that need a quick baseline assessment and want to fix the most obvious issues first.</p>
+
+  <p><strong>Manual Accessibility Audit — from 3,000 USD:</strong> Comprehensive manual testing by a certified accessibility specialist. Includes keyboard navigation testing, screen reader testing (NVDA and VoiceOver), colour contrast verification, form interaction testing, and dynamic content evaluation. Covers a representative sample of your page templates and interactive components. Includes a detailed report with annotated screenshots and step-by-step remediation instructions. Turnaround: two to three weeks. Best for organisations that need thorough testing beyond what automated tools can detect.</p>
+
+  <p><strong>Full WCAG Conformance Audit — from 10,000 USD:</strong> Complete assessment against all WCAG 2.1 AA success criteria. Includes everything in the Manual Audit plus formal Accessibility Conformance Report (ACR/VPAT), testing with multiple assistive technologies, and a stakeholder presentation of findings. Includes a 60-minute remediation consultation call. Turnaround: three to five weeks. Best for organisations that need compliance documentation for procurement, legal, or regulatory purposes.</p>
+
+  <p>All audit levels include a post-remediation retest at no additional charge within 90 days of the initial report delivery. We also offer ongoing monitoring packages starting at 500 USD per month.</p>
+
+  <p>Every engagement begins with a scoping call to understand your site's complexity, your compliance requirements, and your timeline. We provide a fixed-price quote after scoping. Request a scoping call using the form on this page or <a href="/free-website-audit/">run a free automated scan</a> to see your current accessibility baseline.</p>
+</ContentLayout>

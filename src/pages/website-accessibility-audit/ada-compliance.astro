@@ -1,0 +1,125 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Accessibility Audit', href: '/website-accessibility-audit/' },
+  { label: 'ADA Compliance', href: '/website-accessibility-audit/ada-compliance/' },
+];
+
+const toc = [
+  { label: 'What Is ADA Compliance', id: 'what-is-ada-compliance' },
+  { label: 'Legal Landscape', id: 'legal-landscape' },
+  { label: 'WCAG as the Standard', id: 'wcag-as-the-standard' },
+  { label: 'Common Violations', id: 'common-violations' },
+  { label: 'Audit Process', id: 'audit-process' },
+  { label: 'Remediation Priority', id: 'remediation-priority' },
+  { label: 'Ongoing Compliance', id: 'ongoing-compliance' },
+];
+---
+
+<ContentLayout
+  title="ADA Website Compliance Audit: Avoid Lawsuits"
+  description="Learn how to audit your website for ADA compliance. Covers the legal landscape, WCAG as the technical standard, common violations, the audit process, remediation priorities, and how to maintain ongoing compliance."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>The Americans with Disabilities Act requires businesses to provide equal access to their goods and services for people with disabilities. While the ADA was enacted in 1990 — well before the modern internet — courts have increasingly interpreted it to apply to websites and digital services. The result is a legal landscape where businesses face real litigation risk for inaccessible websites, with lawsuit volumes growing year over year and settlement costs ranging from thousands to millions of dollars.</p>
+
+  <p>An ADA website compliance audit evaluates whether your site meets the accessibility standards that courts and the Department of Justice have recognised as the benchmark for digital ADA compliance. This guide explains what ADA compliance means for websites, the legal risks of non-compliance, and a practical process for auditing and remediating your site to reduce your exposure.</p>
+
+  <h2 id="what-is-ada-compliance">What Is ADA Compliance</h2>
+
+  <p>The ADA is a civil rights law that prohibits discrimination against individuals with disabilities in all areas of public life. Title III of the ADA covers public accommodations — businesses and organisations that serve the public. The legal question that has been debated and increasingly settled over the past decade is whether websites qualify as places of public accommodation.</p>
+
+  <p>The ADA itself does not mention websites or digital accessibility. It was written in an era when "public accommodation" meant physical locations like stores, restaurants, hotels, and offices. However, the Department of Justice has consistently taken the position that the ADA applies to websites of businesses that are public accommodations. In April 2024, the DOJ published a final rule under Title II requiring state and local government websites to conform to WCAG 2.1 AA. While this rule applies directly to government entities, it strongly signals the DOJ's interpretation for Title III (private businesses) as well.</p>
+
+  <p>Courts across multiple federal circuits have agreed. The Eleventh Circuit in Gil v. Winn-Dixie, the Ninth Circuit in Robles v. Dominos Pizza, and numerous district courts have held that websites of businesses with physical locations must be accessible. Some courts have gone further, finding that purely online businesses are also covered regardless of whether they have a physical presence.</p>
+
+  <p>For practical purposes, if your business serves the public in the United States — whether through a physical location, a website, or both — you should treat ADA compliance as applying to your digital presence. The legal risk of not doing so is substantial and increasing.</p>
+
+  <h2 id="legal-landscape">Legal Landscape</h2>
+
+  <p>Website accessibility lawsuits in the United States have grown from a trickle to a flood. According to data tracked by accessibility law firms and advocacy organisations, the number of ADA Title III lawsuits involving websites and mobile apps has exceeded 4,000 per year since 2022, with no signs of slowing. These are not theoretical threats — they are real cases filed against real businesses.</p>
+
+  <p>The plaintiffs in these cases are typically individuals with disabilities (most commonly blind or visually impaired) who encountered barriers on a website and were unable to complete a transaction, access information, or use a service. Many lawsuits are filed by serial plaintiffs and their attorneys who systematically test websites for accessibility failures and file cases against non-compliant businesses. While some critics characterise this as opportunistic litigation, the underlying claims are valid — the websites in question are genuinely inaccessible.</p>
+
+  <p>Settlement costs for ADA website cases typically range from 5,000 to 50,000 USD for small businesses and can reach hundreds of thousands or millions for larger companies. Beyond the settlement payment, defendants face attorney fees (their own and potentially the plaintiff's), the cost of remediating their website, and ongoing monitoring obligations. The Winn-Dixie case, for example, required the company to make its website conform to WCAG 2.0 AA, appoint an accessibility consultant, train staff, and report on compliance for three years.</p>
+
+  <p>Industries most frequently targeted include retail and ecommerce (the largest category), food service and restaurants, hospitality and travel, healthcare, financial services, and entertainment. However, no industry is immune. Any business with a website that serves customers in the US is a potential target.</p>
+
+  <p>The most effective way to reduce your legal risk is to make your website genuinely accessible. Accessibility overlays and widgets that claim to provide one-click ADA compliance have been widely criticised by accessibility experts, disability advocacy organisations, and courts. Multiple lawsuits have been filed against websites that use overlay products, demonstrating that they do not provide adequate legal protection. Genuine compliance requires auditing your site against WCAG standards and fixing the actual issues in your code and content.</p>
+
+  <h2 id="wcag-as-the-standard">WCAG as the Standard</h2>
+
+  <p>The ADA does not specify a technical standard for website accessibility. However, the Web Content Accessibility Guidelines (WCAG) published by the World Wide Web Consortium (W3C) have emerged as the standard that courts, the DOJ, and settlement agreements consistently reference. Specifically, WCAG 2.1 at the AA conformance level is the current benchmark.</p>
+
+  <p>WCAG 2.1 AA includes 50 success criteria organised under four principles: perceivable, operable, understandable, and robust. Each criterion has a testable definition with pass-fail conditions. Meeting all 50 criteria at the AA level means your site conforms to WCAG 2.1 AA, which courts have accepted as demonstrating good faith ADA compliance.</p>
+
+  <p>It is worth noting that WCAG conformance does not guarantee legal immunity. A court could still find an ADA violation if a user with a disability cannot effectively use your site, even if it technically passes WCAG criteria. However, WCAG 2.1 AA conformance is the strongest evidence of compliance available and is the standard specified in every DOJ settlement agreement and consent decree involving digital accessibility.</p>
+
+  <p>WCAG 2.2, published in October 2023, adds nine new success criteria to WCAG 2.1, primarily focused on mobile accessibility, cognitive accessibility, and authentication. While courts and regulations currently reference WCAG 2.1, organisations building toward long-term compliance should consider WCAG 2.2 AA as their target.</p>
+
+  <h2 id="common-violations">Common Violations</h2>
+
+  <p>Certain accessibility failures appear in ADA lawsuits far more frequently than others. Focusing your audit on these high-frequency violations first addresses the issues most likely to trigger legal action.</p>
+
+  <ul>
+    <li><strong>Missing alternative text on images</strong> — the single most cited violation in ADA website lawsuits. When images lack alt text, screen reader users cannot understand what the images convey. Product images without alt text on ecommerce sites are particularly problematic because they prevent blind users from identifying products.</li>
+    <li><strong>Inaccessible forms</strong> — form fields without associated labels, missing error messages, and forms that cannot be completed using a keyboard. Checkout forms and account registration forms are the most legally sensitive because they directly block access to goods and services.</li>
+    <li><strong>Lack of keyboard accessibility</strong> — interactive elements that can only be operated with a mouse. Dropdown menus, modal dialogs, carousels, and custom widgets are common offenders. If a blind user navigating with a screen reader and keyboard cannot access these elements, they cannot use the site.</li>
+    <li><strong>Insufficient colour contrast</strong> — text that does not meet the 4.5:1 contrast ratio against its background. This affects users with low vision, colour blindness, and situational impairments like screen glare.</li>
+    <li><strong>Missing page structure</strong> — pages without proper heading hierarchy, landmark regions, or skip navigation links. These structural elements are how screen reader users navigate and understand page layout. Without them, every page is an undifferentiated wall of content.</li>
+    <li><strong>Inaccessible video content</strong> — videos without captions exclude deaf and hard-of-hearing users. Product demonstration videos and instructional content on ecommerce and service sites are frequently cited.</li>
+    <li><strong>Missing link purpose</strong> — links with text like "click here," "read more," or "learn more" that do not describe their destination when read out of context. Screen reader users often navigate by listing all links on a page, and generic link text is meaningless in that context.</li>
+  </ul>
+
+  <h2 id="audit-process">Audit Process</h2>
+
+  <p>An ADA compliance audit follows a structured process that combines automated testing, manual testing, and assistive technology evaluation. Here is the process we recommend and follow in our own audits.</p>
+
+  <p><strong>Step 1: Define scope.</strong> Identify which pages and features to audit. At minimum, include the homepage, main navigation, all page templates (blog post, product page, landing page, category page), the checkout or conversion flow, account registration and login, contact and inquiry forms, and any interactive features (search, filters, maps, video players). For a complete audit, test every unique template rather than every individual page.</p>
+
+  <p><strong>Step 2: Run automated scans.</strong> Use axe DevTools, WAVE, or Lighthouse on every page in your scope. Document all reported violations. Automated scans catch approximately 30 to 40 percent of WCAG issues but they catch them quickly and consistently. This step typically takes one to two hours.</p>
+
+  <p><strong>Step 3: Perform keyboard testing.</strong> Navigate every page in your scope using only the keyboard. Test Tab, Shift+Tab, Enter, Space, Arrow keys, and Escape on every interactive element. Document any elements that cannot be reached, operated, or escaped. Keyboard testing takes 10 to 20 minutes per page template.</p>
+
+  <p><strong>Step 4: Test with screen readers.</strong> Use NVDA or VoiceOver to navigate each page. Listen to how content is announced. Verify that images are described, form fields are labelled, headings are properly structured, links are meaningful, and dynamic content changes are announced. Screen reader testing takes 20 to 45 minutes per page template depending on complexity.</p>
+
+  <p><strong>Step 5: Check visual criteria.</strong> Test colour contrast on all text elements. Verify that information is not conveyed by colour alone. Test zoom to 200% and 400%. Verify that focus indicators are visible. Check that animations can be paused and that no content flashes more than three times per second.</p>
+
+  <p><strong>Step 6: Document and prioritise.</strong> Compile all findings into a structured report. For each issue, record the affected page and element, the WCAG success criterion violated, the severity (critical, serious, moderate, minor), a description of the user impact, and a specific remediation recommendation. Prioritise by severity and user impact.</p>
+
+  <h2 id="remediation-priority">Remediation Priority</h2>
+
+  <p>Not all accessibility issues carry equal legal or user-impact weight. Prioritise remediation using this framework to address the highest-risk issues first:</p>
+
+  <p><strong>Critical priority (fix immediately):</strong> Issues that completely block access to core functionality. Keyboard traps that prevent navigation. Checkout or registration forms that cannot be completed with a screen reader. Pages where the entire content is inaccessible (missing alt text on the only meaningful content). These issues are the most likely to trigger legal action because they prevent users with disabilities from using your site at all.</p>
+
+  <p><strong>High priority (fix within 30 days):</strong> Issues that significantly impair the user experience without completely blocking it. Missing form labels. Inadequate colour contrast on primary content. Missing skip navigation. Videos without captions. Incorrect heading structure. These issues make your site difficult and frustrating to use for people with disabilities.</p>
+
+  <p><strong>Medium priority (fix within 90 days):</strong> Issues that create inconvenience or confusion. Missing alt text on non-critical images. Redundant link text. Inconsistent navigation. Missing language declarations. These issues degrade the experience but do not block core functionality.</p>
+
+  <p><strong>Low priority (fix in next development cycle):</strong> Issues that represent best practice improvements. Optimising alt text quality. Improving heading hierarchy on secondary pages. Enhancing focus styles beyond minimum requirements. These issues matter for genuine usability but are unlikely to trigger legal action on their own.</p>
+
+  <p>Address critical issues immediately, even with temporary fixes if permanent solutions require development time. A simple fix — like adding alt text to product images or fixing a keyboard trap in your modal — dramatically reduces your legal exposure. Communicate your remediation timeline in an accessibility statement on your site, demonstrating good faith effort toward compliance.</p>
+
+  <h2 id="ongoing-compliance">Ongoing Compliance</h2>
+
+  <p>ADA compliance is not a project with an end date. Every content update, design change, code deployment, and third-party integration can introduce new accessibility barriers. Without ongoing processes, a site that passes an audit today can fail one three months from now.</p>
+
+  <p><strong>Publish an accessibility statement:</strong> Post a page on your site that describes your commitment to accessibility, the standard you are working toward (WCAG 2.1 AA), and how users can report accessibility issues or request accommodations. Include a direct contact method — email address or phone number — that is monitored and responded to. An accessibility statement is not a legal shield, but it demonstrates good faith and provides a channel for users to get help rather than hiring a lawyer.</p>
+
+  <p><strong>Train your team:</strong> Content editors, designers, and developers all contribute to accessibility. Content editors need to know how to write alt text and structure headings. Designers need to understand colour contrast requirements and touch target sizes. Developers need to implement keyboard accessibility, ARIA attributes, and semantic HTML correctly. Provide role-specific training and include accessibility criteria in your QA checklists.</p>
+
+  <p><strong>Integrate testing into development:</strong> Run automated accessibility scans in your CI/CD pipeline to catch regressions before they reach production. Include keyboard and screen reader testing in your QA process for every new feature and template. Add accessibility acceptance criteria to your user stories and ticket definitions.</p>
+
+  <p><strong>Monitor continuously:</strong> Use automated scanning tools to monitor your site on a regular schedule. Set up alerts for new issues. Review third-party widgets and embedded content for accessibility — your site is only as accessible as its least accessible component.</p>
+
+  <p><strong>Audit annually:</strong> Commission a full manual accessibility audit at least once per year, more frequently if your site changes rapidly. The annual audit catches issues that automated monitoring misses and provides an updated compliance baseline.</p>
+
+  <p>The cost of ongoing compliance is modest compared to the cost of a lawsuit. A combination of developer training, automated monitoring, and annual auditing typically costs 10,000 to 25,000 USD per year for a mid-sized site. A single ADA lawsuit costs more than that in legal fees alone, before any settlement or remediation expenses. Proactive compliance is both the ethical choice and the financially rational one.</p>
+
+  <p>If you need help with an ADA compliance audit or building an ongoing accessibility programme, <a href="/website-audit-services/">explore our accessibility audit services</a> or <a href="/free-website-audit/">run a free automated scan</a> to see where you stand today.</p>
+</ContentLayout>
