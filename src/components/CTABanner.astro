@@ -1,10 +1,13 @@
 ---
+import EmailSignup from './EmailSignup.astro';
+
 interface Props {
   headline?: string;
   description?: string;
   buttonText?: string;
   buttonHref?: string;
   variant?: 'primary' | 'accent';
+  showSignup?: boolean;
 }
 
 const {
@@ -13,6 +16,7 @@ const {
   buttonText = 'Start Free Audit',
   buttonHref = '/free-website-audit/',
   variant = 'primary',
+  showSignup = true,
 } = Astro.props;
 
 const gradientClass = variant === 'accent'
@@ -27,4 +31,11 @@ const gradientClass = variant === 'accent'
     {buttonText}
   </a>
   <p class="mt-3 text-xs text-text-dim">No credit card required &bull; Results in 60 seconds</p>
+
+  {showSignup && (
+    <div class="mt-8 pt-6 border-t border-white/10">
+      <p class="text-sm font-medium text-text-muted mb-3">Or get free SEO tips delivered weekly</p>
+      <EmailSignup source="cta-banner" heading="" description="" />
+    </div>
+  )}
 </section>

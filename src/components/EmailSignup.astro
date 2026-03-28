@@ -1,0 +1,44 @@
+---
+interface Props {
+  heading?: string;
+  description?: string;
+  submitText?: string;
+  source?: string;
+}
+
+const {
+  heading = 'Get Free SEO Tips & Audit Insights',
+  description = 'Join 2,000+ marketers getting weekly website optimisation tips straight to their inbox.',
+  submitText = 'Subscribe',
+  source = 'website',
+} = Astro.props;
+---
+
+<form
+  action="https://api.staticforms.xyz/submit"
+  method="post"
+  class="max-w-md mx-auto"
+>
+  <input type="hidden" name="accessKey" value="sf_9e906eb6c00416b9d3354749" />
+  <input type="hidden" name="subject" value={`New Subscriber — AuditWeb (${source})`} />
+  <input type="hidden" name="redirectTo" value="https://auditweb.site/subscribed/" />
+  <input type="hidden" name="$source" value={source} />
+  <input type="text" name="honeypot" style="display:none" />
+
+  <div class="flex gap-2">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@company.com"
+      class="flex-1 px-4 py-2.5 bg-surface border border-border rounded-lg text-text placeholder:text-text-dim focus:outline-none focus:border-primary transition-colors text-sm"
+    />
+    <button
+      type="submit"
+      class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-surface font-semibold text-sm rounded-lg transition-colors whitespace-nowrap"
+    >
+      {submitText}
+    </button>
+  </div>
+  <p class="text-xs text-text-dim mt-2 text-center">Free &bull; No spam &bull; Unsubscribe anytime</p>
+</form>

@@ -1,4 +1,6 @@
 ---
+import EmailSignup from './EmailSignup.astro';
+
 const auditTypes = [
   { href: '/seo-website-audit/', label: 'SEO Audit' },
   { href: '/technical-website-audit/', label: 'Technical Audit' },
@@ -67,7 +69,14 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+    <!-- Email Signup -->
+    <div class="mt-12 pt-8 border-t border-border text-center">
+      <h3 class="font-semibold text-lg mb-2">Free SEO Tips Every Week</h3>
+      <p class="text-sm text-text-muted mb-4 max-w-md mx-auto">Get actionable website audit insights, SEO strategies, and optimisation tips delivered to your inbox.</p>
+      <EmailSignup source="footer" />
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-sm text-text-dim">&copy; {year} AuditWeb. All rights reserved.</p>
       <div class="flex gap-6">
         <a href="/privacy/" class="text-sm text-text-dim hover:text-text-muted transition-colors">Privacy</a>
