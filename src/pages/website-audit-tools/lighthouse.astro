@@ -1,0 +1,181 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Lighthouse', href: '/website-audit-tools/lighthouse/' },
+];
+
+const toc = [
+  { label: 'What Is Google Lighthouse', id: 'what-is-google-lighthouse' },
+  { label: 'How to Run an Audit', id: 'how-to-run-an-audit' },
+  { label: 'Performance Score', id: 'performance-score' },
+  { label: 'Accessibility Score', id: 'accessibility-score' },
+  { label: 'SEO Score', id: 'seo-score' },
+  { label: 'Best Practices Score', id: 'best-practices-score' },
+  { label: 'Lighthouse CI', id: 'lighthouse-ci' },
+  { label: 'Limitations', id: 'limitations' },
+];
+---
+
+<ContentLayout
+  title="Google Lighthouse Audit: How to Use It for Website Analysis"
+  description="Google Lighthouse is a free tool built into Chrome that audits performance, accessibility, SEO, and best practices. Learn how to run and interpret audits."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Google Lighthouse is a free, open-source auditing tool that analyses web pages across four categories: Performance, Accessibility, Best Practices, and SEO. It is built into Chrome DevTools, available as a browser extension, accessible via PageSpeed Insights, and runnable from the command line. For a tool that costs nothing, it provides an extraordinary amount of actionable insight.</p>
+
+<p>Lighthouse is not a site-wide crawler like <a href="/website-audit-tools/ahrefs/">Ahrefs</a> or <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>. It analyses one page at a time. But what it lacks in breadth, it makes up for in depth. The performance analysis alone is more detailed than anything you will find in a traditional SEO audit tool, and the accessibility checks are among the best automated tests available.</p>
+
+<p>This guide covers how to run Lighthouse audits, how to interpret the scores and recommendations, and how to integrate Lighthouse into your development workflow for continuous quality monitoring.</p>
+
+<h2 id="what-is-google-lighthouse">What Is Google Lighthouse</h2>
+
+<p>Lighthouse is an automated auditing tool developed and maintained by the Google Chrome team. It was first released in 2016 and has been continuously updated since. The tool simulates loading a page on a mid-tier mobile device with a throttled network connection, then measures dozens of performance, accessibility, SEO, and best practice metrics.</p>
+
+<p>The results are presented as a report with four category scores (each out of 100) and a detailed breakdown of individual audits within each category. Every audit result includes an explanation of why it matters, the specific elements or resources that triggered the finding, and guidance on how to fix the issue.</p>
+
+<p>Because Lighthouse is built by Google, it has unique authority as a diagnostic tool. The performance metrics it measures (Core Web Vitals, Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint) are the same metrics Google uses as ranking signals. The SEO checks align with Google's own technical requirements for indexing and ranking. This direct connection to Google's standards makes Lighthouse the closest thing to an official Google audit tool.</p>
+
+<p>Lighthouse is fully open source under the Apache 2.0 licence. The source code is available on GitHub, and the auditing logic is transparent. This means you can inspect exactly how each check works, extend the tool with custom audits, and integrate it into your build pipeline.</p>
+
+<h2 id="how-to-run-an-audit">How to Run an Audit</h2>
+
+<p>There are several ways to run a Lighthouse audit, each suited to different use cases.</p>
+
+<p><strong>Chrome DevTools:</strong> The most common method. Open Chrome, navigate to any page, open DevTools (F12 or right-click > Inspect), and click the "Lighthouse" tab. Select the categories you want to audit (Performance, Accessibility, Best Practices, SEO), choose the device type (Mobile or Desktop), and click "Analyze page". The audit takes 30-60 seconds and produces a full report within the DevTools panel.</p>
+
+<p><strong>PageSpeed Insights:</strong> Visit pagespeed.web.dev, enter a URL, and click Analyze. This runs Lighthouse in Google's cloud infrastructure and additionally includes field data from the Chrome User Experience Report (CrUX) where available. The field data shows how real users experience the page, complementing the lab data from the Lighthouse simulation. This is the best option for getting both synthetic and real-world performance data.</p>
+
+<p><strong>Command line:</strong> Install Lighthouse globally via npm (<code>npm install -g lighthouse</code>) and run <code>lighthouse https://example.com</code> from the terminal. This outputs an HTML report file. The command line version is the most configurable, accepting flags for custom throttling, output format (HTML, JSON, CSV), specific audits to run, and authentication headers. It is also the foundation for automated Lighthouse CI pipelines.</p>
+
+<p><strong>Chrome extension:</strong> The Lighthouse browser extension provides a simplified interface for running audits. It is useful for quick checks but offers less configuration than DevTools or the command line.</p>
+
+<p><strong>Web.dev Measure:</strong> Google's web.dev site offers a Measure tool that runs Lighthouse and provides additional context and learning resources alongside the results. This is useful for teams that are new to web performance optimisation.</p>
+
+<p>Regardless of which method you use, the results are comparable. The key variable is the testing environment. Running Lighthouse locally uses your machine's hardware and network connection, which may differ from the standardised conditions used by PageSpeed Insights. For consistent benchmarking, use PageSpeed Insights or the command line with explicit throttling settings.</p>
+
+<h2 id="performance-score">Performance Score</h2>
+
+<p>The Performance score is the most complex and impactful of the four categories. It is a weighted composite of several Core Web Vitals and supporting metrics.</p>
+
+<p><strong>Largest Contentful Paint (LCP):</strong> Measures how long it takes for the largest visible element (usually a hero image or heading block) to render. Google considers LCP under 2.5 seconds as "Good", 2.5-4 seconds as "Needs Improvement", and over 4 seconds as "Poor". LCP is weighted at 25% of the Performance score. Common causes of poor LCP include slow server response times, render-blocking resources, unoptimised images, and client-side rendering delays.</p>
+
+<p><strong>Cumulative Layout Shift (CLS):</strong> Measures the visual stability of the page. Layout shift occurs when visible elements move unexpectedly during page load, typically due to late-loading images, ads, or web fonts. A CLS score under 0.1 is "Good". CLS is weighted at 25% of the Performance score. Fix it by specifying explicit dimensions for images and ads, using font-display: swap for web fonts, and avoiding dynamically injected content above the fold.</p>
+
+<p><strong>Interaction to Next Paint (INP):</strong> Measures the responsiveness of the page to user interactions. INP replaced First Input Delay (FID) as a Core Web Vital in 2024. An INP under 200 milliseconds is "Good". This metric is weighted at 25% of the Performance score. Poor INP is typically caused by heavy JavaScript execution, long main thread tasks, or poorly optimised event handlers.</p>
+
+<p><strong>First Contentful Paint (FCP):</strong> Measures when the first piece of content (text, image, or canvas) renders on screen. Good FCP is under 1.8 seconds. Weighted at 10%.</p>
+
+<p><strong>Speed Index:</strong> Measures how quickly content is visually displayed during page load. It captures the visual progression of the page, not just individual milestones. Good Speed Index is under 3.4 seconds. Weighted at 10%.</p>
+
+<p><strong>Total Blocking Time (TBT):</strong> Measures the total amount of time between FCP and Time to Interactive where the main thread was blocked long enough to prevent input responsiveness. TBT under 200ms is "Good". Weighted at 30%. TBT is a lab metric that correlates strongly with INP.</p>
+
+<p>Below the composite score, Lighthouse provides specific opportunities and diagnostics. Opportunities are actionable recommendations with estimated savings (such as "Serve images in next-gen formats: estimated savings of 450ms"). Diagnostics provide additional information about the page structure and resource loading that may affect performance.</p>
+
+<p>A realistic target for most websites is a Performance score of 90+ on desktop and 70+ on mobile. Mobile scores are typically lower because Lighthouse simulates a mid-tier mobile device with CPU throttling and a slow 4G connection. Do not chase a perfect 100 on mobile unless you have already optimised everything else. Focus on getting Core Web Vitals into the "Good" range.</p>
+
+<h2 id="accessibility-score">Accessibility Score</h2>
+
+<p>The Accessibility score checks your page against a subset of the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA criteria. Lighthouse uses the axe-core accessibility engine to perform these checks, which is the same engine used by dedicated accessibility testing tools.</p>
+
+<p>Key checks include:</p>
+
+<ul>
+  <li><strong>Colour contrast:</strong> Text must have sufficient contrast against its background. WCAG requires a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text. Lighthouse flags every element that fails this requirement.</li>
+  <li><strong>Image alt text:</strong> All informational images must have descriptive alt attributes. Decorative images should have empty alt attributes (<code>alt=""</code>). Lighthouse flags images with missing alt attributes.</li>
+  <li><strong>Form labels:</strong> All form inputs must have associated labels, either through the <code>for</code> attribute, <code>aria-label</code>, or <code>aria-labelledby</code>. Unlabelled inputs are inaccessible to screen reader users.</li>
+  <li><strong>Heading hierarchy:</strong> Headings should follow a logical order (H1 > H2 > H3) without skipping levels. Skipped heading levels make it harder for screen reader users to navigate the page structure.</li>
+  <li><strong>Keyboard navigation:</strong> Interactive elements must be reachable and operable via keyboard. Lighthouse checks for elements with click handlers that are not keyboard accessible, and for pages where focus order does not follow the visual layout.</li>
+  <li><strong>ARIA attributes:</strong> Validates that ARIA roles, states, and properties are used correctly. Incorrect ARIA is worse than no ARIA because it provides misleading information to assistive technology users.</li>
+  <li><strong>Document language:</strong> The HTML element must have a valid <code>lang</code> attribute. This tells screen readers which language to use for pronunciation.</li>
+  <li><strong>Link text:</strong> Links should have descriptive text content. "Click here" or "Read more" without additional context are flagged because they are meaningless to screen reader users who navigate by link lists.</li>
+</ul>
+
+<p>The Accessibility score is easier to achieve a high number on than the Performance score because many checks are binary (pass/fail) and fixes are straightforward. A score of 90+ is a reasonable minimum target for any website. However, a high Lighthouse accessibility score does not mean your site is fully accessible. Lighthouse can only check automated criteria. Manual testing with screen readers, keyboard-only navigation, and real users with disabilities is still necessary for comprehensive accessibility compliance.</p>
+
+<h2 id="seo-score">SEO Score</h2>
+
+<p>The SEO score checks basic technical SEO requirements that Google expects pages to meet. These are not advanced SEO recommendations but rather minimum technical standards for indexability.</p>
+
+<p>Lighthouse checks for:</p>
+
+<ul>
+  <li><strong>Meta viewport tag:</strong> Required for mobile-friendly rendering. Without it, mobile devices will render the page at desktop width.</li>
+  <li><strong>Document title:</strong> Every page must have a title element. Lighthouse flags missing titles.</li>
+  <li><strong>Meta description:</strong> While not a ranking factor, meta descriptions affect click-through rates in search results. Lighthouse flags pages without them.</li>
+  <li><strong>HTTP status code:</strong> The page must return a successful (2xx) status code.</li>
+  <li><strong>Link crawlability:</strong> Links should use standard anchor elements with href attributes. JavaScript-only navigation that does not use proper links prevents search engines from discovering linked pages.</li>
+  <li><strong>Robots.txt validity:</strong> Checks that robots.txt is valid and does not contain syntax errors.</li>
+  <li><strong>Image alt text:</strong> Overlaps with the accessibility check. Images should have alt text for image search discoverability.</li>
+  <li><strong>Hreflang validity:</strong> If hreflang tags are present, validates their implementation.</li>
+  <li><strong>Canonical URL:</strong> Checks that the page has a valid canonical tag.</li>
+  <li><strong>Font legibility:</strong> Text should be large enough to read on mobile devices (minimum 12px).</li>
+  <li><strong>Tap targets:</strong> Interactive elements should be large enough and spaced far enough apart for touch interaction (minimum 48x48 CSS pixels).</li>
+  <li><strong>Structured data:</strong> If structured data is present, validates it against schema.org specifications.</li>
+</ul>
+
+<p>Most well-built websites score 90-100 on the SEO category. If your score is significantly lower, you have fundamental technical issues that need immediate attention. The SEO checks in Lighthouse are intentionally basic. For comprehensive SEO auditing, you need a site-wide crawler like <a href="/website-audit-tools/ahrefs/">Ahrefs</a>, <a href="/website-audit-tools/semrush/">Semrush</a>, or <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> that can analyse patterns across your entire site, not just individual pages.</p>
+
+<h2 id="best-practices-score">Best Practices Score</h2>
+
+<p>The Best Practices category covers web development standards that affect security, user trust, and modern browser compatibility. These checks are less directly related to SEO but contribute to overall site quality and user experience.</p>
+
+<p>Key checks include:</p>
+
+<ul>
+  <li><strong>HTTPS:</strong> The page should be served over HTTPS. Any insecure resources loaded on an HTTPS page (mixed content) are flagged.</li>
+  <li><strong>Browser errors:</strong> JavaScript errors logged in the browser console are flagged. Console errors indicate code problems that may affect functionality.</li>
+  <li><strong>Image aspect ratio:</strong> Images should be displayed at their natural aspect ratio. Stretched or distorted images indicate incorrect width/height attributes or CSS.</li>
+  <li><strong>Deprecated APIs:</strong> Use of deprecated web APIs (like document.write or Application Cache) is flagged. These APIs may be removed in future browser versions.</li>
+  <li><strong>CSP (Content Security Policy):</strong> Checks for the presence and configuration of Content Security Policy headers, which protect against cross-site scripting (XSS) attacks.</li>
+  <li><strong>Permissions Policy:</strong> Validates that the page does not request unnecessary permissions (like geolocation or camera access) without user interaction.</li>
+  <li><strong>Source maps:</strong> Checks whether source maps are available for debugging. While not a user-facing issue, source maps improve the development and debugging experience.</li>
+  <li><strong>Notification on page load:</strong> Flags pages that request notification permissions immediately on load, without user interaction. This is a poor user experience pattern that browsers are increasingly blocking.</li>
+</ul>
+
+<p>A Best Practices score of 95+ is achievable for most modern websites. Common issues that reduce the score include mixed content from third-party scripts, JavaScript console errors from advertising or analytics code, and deprecated API usage in older libraries. Some of these issues come from third-party code that you do not control, making them harder to fix without replacing the offending script.</p>
+
+<h2 id="lighthouse-ci">Lighthouse CI</h2>
+
+<p>Lighthouse CI (LHCI) brings automated Lighthouse auditing into your continuous integration and deployment pipeline. Instead of manually running audits, Lighthouse CI runs automatically on every pull request, code push, or deployment, catching performance and quality regressions before they reach production.</p>
+
+<p>The setup involves installing the Lighthouse CI package (<code>npm install -g @lhci/cli</code>), creating a configuration file that specifies which URLs to audit and what score thresholds to enforce, and adding a CI step to your pipeline (GitHub Actions, GitLab CI, Jenkins, or any CI platform).</p>
+
+<p>A typical Lighthouse CI configuration looks like this:</p>
+
+<ul>
+  <li><strong>Collect:</strong> Define which URLs to audit and how many runs to perform (multiple runs reduce variance). You can audit your production URL, a staging URL, or a locally served build.</li>
+  <li><strong>Assert:</strong> Set minimum score thresholds for each category. For example, require Performance > 80, Accessibility > 90, SEO > 95, and Best Practices > 90. If any threshold is not met, the CI step fails.</li>
+  <li><strong>Upload:</strong> Store results in the Lighthouse CI server or as build artifacts for historical comparison.</li>
+</ul>
+
+<p>The Lighthouse CI server provides a dashboard where you can view audit results over time, compare builds, and identify exactly which commit caused a score regression. This is invaluable for teams where multiple developers contribute to a shared codebase and performance regressions can be introduced by any merge.</p>
+
+<p>For teams using GitHub, Lighthouse CI can post score summaries as comments on pull requests, giving reviewers immediate visibility into the performance impact of proposed changes. This creates a culture of performance awareness where every team member sees and considers the impact of their code changes.</p>
+
+<p>Even without a full CI setup, you can run Lighthouse from a scheduled script (using the command line version) and send the results to a monitoring dashboard. This provides the benefits of regular automated auditing without requiring integration into a CI pipeline.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>Despite being an excellent tool, Lighthouse has important limitations that you should understand to use it effectively.</p>
+
+<p><strong>Single-page analysis only:</strong> Lighthouse audits one page at a time. It does not crawl your entire site. For site-wide auditing, you need a dedicated crawler like <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> or a cloud platform like <a href="/website-audit-tools/ahrefs/">Ahrefs</a>. You can script Lighthouse to run against a list of URLs, but it is not designed for this purpose and the results lack the cross-page analysis (duplicate content, internal linking, orphan pages) that dedicated crawlers provide.</p>
+
+<p><strong>Lab data vs field data:</strong> Lighthouse generates "lab data" by simulating a page load under controlled conditions. This does not perfectly replicate real user experience, which varies based on device, network, location, and user behaviour. Always supplement Lighthouse lab data with field data from the Chrome User Experience Report (available via PageSpeed Insights or the CrUX API).</p>
+
+<p><strong>Score variability:</strong> Lighthouse scores can vary between runs, especially the Performance score. Network conditions, server response time, and background processes on your testing machine all introduce variance. Run Lighthouse multiple times and take the median score. Lighthouse CI handles this automatically when configured with multiple runs.</p>
+
+<p><strong>Limited SEO analysis:</strong> The SEO checks are basic technical requirements, not strategic SEO recommendations. Lighthouse does not analyse keyword targeting, content quality, backlinks, search intent alignment, or any of the factors that determine whether a technically sound page will actually rank. Use Lighthouse for technical foundation checks and dedicated SEO tools for everything else.</p>
+
+<p><strong>Third-party impact:</strong> Many Lighthouse issues, particularly in Performance and Best Practices, are caused by third-party scripts (analytics, advertising, chat widgets, social media embeds). You may not be able to fix these without removing the third-party service. Lighthouse does not distinguish between first-party and third-party issues, which can make your scores appear worse than the quality of your own code warrants.</p>
+
+<p><strong>Mobile-first scoring:</strong> By default, Lighthouse simulates a mid-tier mobile device with significant CPU and network throttling. This means mobile scores are typically 20-40 points lower than desktop scores for the same page. This is intentional and reflects real-world mobile browsing conditions, but it surprises users who expect similar scores across device types.</p>
+
+<p>Despite these limitations, Lighthouse remains essential for any website audit workflow. It is the best free tool for performance and accessibility analysis, its SEO checks catch fundamental technical issues, and its CI integration makes it the foundation of automated quality assurance for modern web development.</p>
+
+</ContentLayout>

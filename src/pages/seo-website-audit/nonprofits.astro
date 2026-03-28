@@ -1,0 +1,92 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Nonprofit SEO Opportunities', id: 'opportunities' },
+  { label: 'Google Ad Grants Audit', id: 'ad-grants' },
+  { label: 'Donation Page Optimisation', id: 'donations' },
+  { label: 'Content Strategy Review', id: 'content' },
+  { label: 'Technical SEO Basics', id: 'technical' },
+  { label: 'Local and Event SEO', id: 'local' },
+  { label: 'Nonprofit Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="Nonprofit Website SEO Audit: Maximise Visibility on a Budget"
+  description="Nonprofits have unique SEO opportunities including Google Ad Grants. Learn how to audit your nonprofit website to increase donations, volunteers, and awareness."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'SEO Audit', href: '/seo-website-audit/' },
+    { label: 'Nonprofits', href: '/seo-website-audit/nonprofits/' },
+  ]}
+  toc={toc}
+  showLeadForm={true}
+  publishDate="2026-03-28"
+>
+  <h2 id="opportunities">Nonprofit SEO Opportunities</h2>
+  <p>Nonprofits have distinct advantages in SEO that most don't fully exploit. You're often the most authoritative source on your cause, you can earn backlinks from government and educational institutions (.gov, .edu domains), and Google provides $10,000/month in free advertising through the Ad Grants programme.</p>
+  <p>A nonprofit SEO audit focuses on leveraging these advantages while addressing the common challenges: limited budgets, volunteer-managed websites, outdated CMS platforms, and content that prioritises storytelling over search intent.</p>
+
+  <h2 id="ad-grants">Google Ad Grants Audit</h2>
+  <p>Google Ad Grants gives eligible nonprofits $10,000/month in free Google Ads. If you're not using it, that's the first thing to fix. If you are using it, audit for compliance and performance:</p>
+  <ul>
+    <li><strong>Eligibility check:</strong> You need valid charity status, a website with substantial content, and a Google for Nonprofits account. If you haven't applied, do it first.</li>
+    <li><strong>Account compliance:</strong> Google Ad Grants has strict rules — 5% minimum CTR, no single-word keywords (with exceptions), no overly generic keywords, and you must maintain a quality score above 2 on all keywords.</li>
+    <li><strong>Landing page quality:</strong> Ad Grant ads must link to pages with substantial, relevant content. Thin pages or pages that are primarily donation forms will violate the policy.</li>
+    <li><strong>Conversion tracking:</strong> Set up conversion tracking for donations, volunteer signups, and email subscriptions. This data is essential for optimising your grant spend.</li>
+    <li><strong>Keyword strategy:</strong> Focus on mission-related keywords with clear search intent. "How to help homeless people in [city]" converts better than generic awareness terms.</li>
+  </ul>
+
+  <h2 id="donations">Donation Page Optimisation</h2>
+  <ul>
+    <li><strong>Donation page speed:</strong> Every second of load time on your donation page costs you donations. Target LCP under 2 seconds. Remove any unnecessary scripts or elements.</li>
+    <li><strong>Mobile donation flow:</strong> Over 50% of nonprofit traffic is mobile. Test the entire donation flow on a phone — from landing page to payment confirmation.</li>
+    <li><strong>Trust signals:</strong> Display security badges, charity registration numbers, and impact statistics near the donation form. Show where donations go with specific examples.</li>
+    <li><strong>SEO for donation pages:</strong> Optimise for "donate to [cause]" keywords. Many nonprofits hide their donation page behind generic URLs with no SEO value.</li>
+    <li><strong>Recurring donation option:</strong> Make monthly giving prominent and easy. Recurring donors have 5-10x higher lifetime value.</li>
+  </ul>
+
+  <h2 id="content">Content Strategy Review</h2>
+  <ul>
+    <li><strong>Search intent alignment:</strong> Nonprofit content often focuses on storytelling (important for donors) but misses search-intent content (important for discoverability). You need both.</li>
+    <li><strong>Resource pages:</strong> Create comprehensive resource pages about your cause area. "Complete guide to [issue] in [location]" pages can rank highly and establish authority.</li>
+    <li><strong>Impact reporting:</strong> Annual reports, impact stories, and financial transparency pages build E-E-A-T and attract backlinks from journalists and researchers.</li>
+    <li><strong>Volunteer and event pages:</strong> Optimise for "[cause] volunteer opportunities [location]" and event-related keywords.</li>
+    <li><strong>Blog audit:</strong> Review existing blog content. Many nonprofits have years of event recaps and announcements that get zero traffic. Redirect or consolidate thin posts; invest in evergreen content.</li>
+  </ul>
+
+  <h2 id="technical">Technical SEO Basics</h2>
+  <p>Nonprofit websites often run on older platforms with technical debt:</p>
+  <ul>
+    <li><strong>Platform assessment:</strong> Is your CMS still supported and secure? Many nonprofits run outdated WordPress versions or legacy platforms. If your platform limits your SEO, migration may be the highest-impact investment.</li>
+    <li><strong>SSL certificate:</strong> Essential for donation pages and trust. If any page is still on HTTP, fix this immediately.</li>
+    <li><strong>Mobile responsiveness:</strong> Test on actual mobile devices. Many nonprofit themes from 5+ years ago aren't truly responsive.</li>
+    <li><strong>Page speed:</strong> Audit for oversized images, unoptimised plugins, and slow hosting. Nonprofits often get donated hosting that may not be performant.</li>
+    <li><strong>XML sitemap and robots.txt:</strong> Basic hygiene that's frequently neglected. Submit your sitemap to GSC and Bing.</li>
+  </ul>
+
+  <h2 id="local">Local and Event SEO</h2>
+  <ul>
+    <li><strong>Google Business Profile:</strong> Claim and optimise your GBP listing if you have a physical location. Include photos, hours, and a description of your mission.</li>
+    <li><strong>Event schema:</strong> If you host events (fundraisers, awareness events, volunteer days), add Event schema to get rich results in search.</li>
+    <li><strong>Local content:</strong> Create location-specific pages if you operate in multiple areas. "[Cause] services in [city]" captures local search intent.</li>
+    <li><strong>Backlink opportunities:</strong> Nonprofits can earn backlinks from local government sites, partner organisations, and community directories. Audit your backlink profile and identify unlinked mentions.</li>
+  </ul>
+
+  <h2 id="checklist">Nonprofit Audit Checklist</h2>
+  <ul>
+    <li><strong>Google Ad Grants</strong> applied for or optimised</li>
+    <li><strong>Donation page loads under 2 seconds</strong> on mobile</li>
+    <li><strong>SSL certificate active</strong> site-wide</li>
+    <li><strong>Mobile donation flow tested</strong> end-to-end</li>
+    <li><strong>Charity registration number</strong> visible on site</li>
+    <li><strong>Impact data and annual reports</strong> published</li>
+    <li><strong>Resource/guide pages</strong> targeting search intent</li>
+    <li><strong>Event schema</strong> on event pages</li>
+    <li><strong>GBP listing claimed</strong> and optimised</li>
+    <li><strong>Blog content audited</strong> — thin posts consolidated</li>
+    <li><strong>Sitemap submitted</strong> to GSC and Bing</li>
+    <li><strong>Author/team bios</strong> with credentials for E-E-A-T</li>
+  </ul>
+</ContentLayout>

@@ -1,0 +1,107 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Why Mobile Audits Matter', id: 'why' },
+  { label: 'Mobile-First Indexing', id: 'mobile-first' },
+  { label: 'Responsive Design Checks', id: 'responsive' },
+  { label: 'Mobile Speed Optimisation', id: 'speed' },
+  { label: 'Touch and Navigation', id: 'touch' },
+  { label: 'Mobile Content Parity', id: 'content-parity' },
+  { label: 'Testing Tools', id: 'tools' },
+  { label: 'Mobile Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="Mobile Website Audit: Ensure Your Site Works Perfectly on Every Device"
+  description="A mobile website audit checks responsive design, touch usability, mobile speed, and content parity. With mobile-first indexing, your mobile experience determines your rankings."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Technical Audit', href: '/technical-website-audit/' },
+    { label: 'Mobile Audit', href: '/technical-website-audit/mobile/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="why">Why Mobile Audits Matter</h2>
+  <p>Over 60% of web traffic now comes from mobile devices. More importantly, Google uses mobile-first indexing for all websites — meaning the mobile version of your site is what Google crawls, indexes, and uses for ranking. If your mobile experience is poor, your desktop rankings suffer too.</p>
+  <p>A mobile audit evaluates your site on the devices your users actually use, under the network conditions they actually experience. What looks and works great on a desktop with fibre broadband may be broken on a phone with a 4G connection.</p>
+
+  <h2 id="mobile-first">Mobile-First Indexing</h2>
+  <p>Since 2023, all websites are crawled and indexed using the mobile version. This means:</p>
+  <ul>
+    <li><strong>Content must be identical:</strong> If content exists on desktop but is hidden, collapsed, or removed on mobile, Google may not see it at all.</li>
+    <li><strong>Structured data must be on mobile:</strong> Schema markup that only appears in the desktop version won't be used by Google.</li>
+    <li><strong>Internal links must work on mobile:</strong> Navigation that relies on hover states or desktop-only menus may prevent Google from discovering linked pages.</li>
+    <li><strong>Images must be present:</strong> Images hidden on mobile via CSS display:none may not be indexed. Use responsive images instead of hiding them.</li>
+  </ul>
+
+  <h2 id="responsive">Responsive Design Checks</h2>
+  <ul>
+    <li><strong>Viewport meta tag:</strong> Every page must include <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>. Without it, mobile browsers render the page at desktop width.</li>
+    <li><strong>No horizontal scrolling:</strong> Content should never overflow the viewport width. Check for fixed-width elements, wide tables, or oversized images that force horizontal scrolling.</li>
+    <li><strong>Readable text without zooming:</strong> Body text should be at least 16px. Users shouldn't need to pinch-zoom to read your content.</li>
+    <li><strong>Flexible layouts:</strong> Use CSS flexbox or grid with relative units (%, rem, vw) instead of fixed pixel widths. Test at every common viewport width: 320px, 375px, 414px, 768px.</li>
+    <li><strong>Images scale correctly:</strong> Images should have max-width: 100% and height: auto to prevent overflow. Use the picture element or srcset for different viewport sizes.</li>
+    <li><strong>Tables are readable:</strong> Data tables often break on mobile. Use responsive table patterns — horizontal scrolling wrappers, stacked layouts, or simplified mobile versions.</li>
+  </ul>
+
+  <h2 id="speed">Mobile Speed Optimisation</h2>
+  <p>Mobile speed is a distinct challenge from desktop speed. Mobile devices have slower CPUs, less RAM, and often use cellular connections with higher latency.</p>
+  <ul>
+    <li><strong>Test on real mobile conditions:</strong> Throttle to 4G speeds (1.6Mbps down, 150ms RTT) when testing. Use Lighthouse's mobile emulation or WebPageTest with a mobile device profile.</li>
+    <li><strong>Reduce JavaScript payload:</strong> Mobile CPUs are 3-5x slower than desktop at parsing and executing JavaScript. Every KB of JS matters more on mobile.</li>
+    <li><strong>Optimise for high-latency connections:</strong> Each HTTP request adds 100-300ms of latency on mobile. Reduce the number of requests and use HTTP/2 multiplexing.</li>
+    <li><strong>Preconnect to critical origins:</strong> Use <code>&lt;link rel="preconnect"&gt;</code> for external domains that serve critical resources (fonts, APIs, CDNs).</li>
+    <li><strong>Target mobile LCP under 2.5s:</strong> Mobile LCP is typically 1-2 seconds slower than desktop. Preload the mobile hero image and minimise server response time.</li>
+  </ul>
+
+  <h2 id="touch">Touch and Navigation</h2>
+  <ul>
+    <li><strong>Tap targets are at least 48x48px:</strong> Buttons, links, and form fields must be large enough to tap accurately with a finger. Google flags tap targets under 48px as a mobile usability issue.</li>
+    <li><strong>Adequate spacing between tap targets:</strong> At least 8px of spacing between clickable elements to prevent accidental taps.</li>
+    <li><strong>No hover-dependent interactions:</strong> Dropdown menus, tooltips, and hover effects don't work on touch screens. Ensure all interactive elements are accessible via tap.</li>
+    <li><strong>Mobile menu is usable:</strong> Hamburger menus should be easy to open and close, menu items should be large enough to tap, and the menu shouldn't cover the entire viewport.</li>
+    <li><strong>Forms are mobile-friendly:</strong> Use appropriate input types (email, tel, number) to trigger the right mobile keyboard. Labels should be above fields, not beside them.</li>
+    <li><strong>No interstitials covering content:</strong> Full-screen pop-ups that block content on mobile trigger Google's intrusive interstitial penalty. Use banners instead of modals.</li>
+  </ul>
+
+  <h2 id="content-parity">Mobile Content Parity</h2>
+  <p>With mobile-first indexing, your mobile site must have the same valuable content as your desktop site:</p>
+  <ul>
+    <li><strong>Same primary content:</strong> Text, images, and videos on desktop should also be on mobile. Content hidden behind "Read more" toggles is generally fine — Google can access accordions and expandable sections.</li>
+    <li><strong>Same headings:</strong> H1-H6 heading structure should be identical on mobile and desktop.</li>
+    <li><strong>Same internal links:</strong> Mobile navigation must link to the same important pages as desktop navigation.</li>
+    <li><strong>Same structured data:</strong> Schema markup should be present on the mobile version of every page.</li>
+    <li><strong>Same alt text on images:</strong> If you serve different images on mobile, they still need descriptive alt text.</li>
+  </ul>
+
+  <h2 id="tools">Testing Tools</h2>
+  <ul>
+    <li><strong>Google's Mobile-Friendly Test:</strong> Quick pass/fail check for individual URLs. Shows rendering issues and specific mobile usability problems.</li>
+    <li><strong>Google Search Console Mobile Usability report:</strong> Shows mobile usability issues across your entire site, grouped by error type.</li>
+    <li><strong>Chrome DevTools Device Mode:</strong> Emulate any mobile device with responsive design mode. Toggle the device toolbar with Ctrl+Shift+M.</li>
+    <li><strong>BrowserStack or LambdaTest:</strong> Test on real devices remotely. Essential for catching issues that emulators miss — especially iOS-specific rendering bugs.</li>
+    <li><strong>PageSpeed Insights (mobile):</strong> Always test the mobile version specifically. Mobile scores are typically 20-40 points lower than desktop due to CPU and network throttling.</li>
+  </ul>
+
+  <h2 id="checklist">Mobile Audit Checklist</h2>
+  <ul>
+    <li><strong>Viewport meta tag present</strong> on all pages</li>
+    <li><strong>No horizontal scrolling</strong> at any viewport width</li>
+    <li><strong>Text readable at 16px+</strong> without zooming</li>
+    <li><strong>Tap targets 48x48px minimum</strong> with adequate spacing</li>
+    <li><strong>Mobile menu functional</strong> and easy to use</li>
+    <li><strong>No hover-dependent interactions</strong></li>
+    <li><strong>Forms use correct input types</strong></li>
+    <li><strong>No intrusive interstitials</strong></li>
+    <li><strong>Content parity</strong> with desktop version</li>
+    <li><strong>Mobile LCP under 2.5 seconds</strong></li>
+    <li><strong>Images responsive</strong> with srcset</li>
+    <li><strong>Third-party scripts deferred</strong> on mobile</li>
+    <li><strong>Structured data present</strong> on mobile version</li>
+  </ul>
+
+  <p>For a complete mobile audit alongside our 72-checkpoint review, see our <a href="/website-audit-services/">professional audit services</a>.</p>
+</ContentLayout>

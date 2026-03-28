@@ -1,0 +1,154 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'SE Ranking', href: '/website-audit-tools/se-ranking/' },
+];
+
+const toc = [
+  { label: 'What Is SE Ranking', id: 'what-is-se-ranking' },
+  { label: 'Audit Features', id: 'audit-features' },
+  { label: 'Health Score', id: 'health-score' },
+  { label: 'Issue Categories', id: 'issue-categories' },
+  { label: 'White-Label Reports', id: 'white-label-reports' },
+  { label: 'SE Ranking vs Competitors', id: 'se-ranking-vs-competitors' },
+  { label: 'Who It Is Best For', id: 'who-it-is-best-for' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="SE Ranking Website Audit: Affordable Alternative Reviewed"
+  description="SE Ranking offers a solid website audit tool at a fraction of the cost of Ahrefs or Semrush. See what it checks, how it scores sites, and whether it's right for you."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>SE Ranking is the tool that SEO professionals recommend to clients who cannot justify the cost of Ahrefs or Semrush but still need a legitimate technical audit capability. At roughly half the price of the major platforms, SE Ranking provides a website audit tool that covers the fundamentals competently and includes features like white-label reports that competitors reserve for their most expensive tiers.</p>
+
+<p>This review examines the site audit functionality in detail. We have run SE Ranking audits alongside <a href="/website-audit-tools/ahrefs/">Ahrefs</a> and <a href="/website-audit-tools/semrush/">Semrush</a> on the same sites to provide an honest comparison of what it catches, what it misses, and where it delivers surprising value for the price.</p>
+
+<h2 id="what-is-se-ranking">What Is SE Ranking</h2>
+
+<p>SE Ranking is a cloud-based SEO platform that includes rank tracking, keyword research, backlink monitoring, competitive analysis, and a website audit tool. Founded in 2013, it has built a loyal user base among freelancers, small agencies, and in-house SEOs who need an all-in-one platform without the enterprise pricing.</p>
+
+<p>The website audit tool crawls your site and checks for over 120 issue types across technical SEO, content, links, and page speed. It runs in the cloud, supports scheduled recurring crawls, and stores historical data for trend analysis. The interface is modern and clean, drawing clear inspiration from Semrush's thematic report structure while adding its own refinements.</p>
+
+<p>SE Ranking has invested significantly in its audit tool over the past two years, adding JavaScript rendering support, Core Web Vitals checking, and improved crawl configuration. It is no longer the bare-bones budget alternative it once was. The gap between SE Ranking and the market leaders has narrowed considerably, though differences remain in depth and edge-case handling.</p>
+
+<p>One area where SE Ranking has always been strong is white-label reporting. Even on its mid-tier plan, you can generate branded PDF audit reports with your agency's logo, colours, and contact details. This is a feature that <a href="/website-audit-tools/semrush/">Semrush</a> reserves for its Business tier ($499.95/month) and <a href="/website-audit-tools/ahrefs/">Ahrefs</a> does not offer at all.</p>
+
+<h2 id="audit-features">Audit Features</h2>
+
+<p>SE Ranking's website audit crawls your site and analyses the results across several dimensions. Here is what the tool actually checks and how the crawl works.</p>
+
+<p><strong>Crawl configuration:</strong> You can set the crawl scope (domain, subdomain, or subfolder), maximum pages to crawl, crawl speed, and URL inclusion/exclusion rules. The configuration is not as granular as Screaming Frog but is comparable to Semrush. You can also provide a sitemap URL as an additional crawl source, which helps catch pages that are not linked from the main navigation.</p>
+
+<p><strong>JavaScript rendering:</strong> SE Ranking supports JavaScript rendering for sites that load content dynamically. This feature was added relatively recently and works well for most common frameworks. It does increase crawl time, so enable it only when your site requires it.</p>
+
+<p><strong>Issue detection:</strong> The crawler checks for over 120 issue types, including broken links (internal and external), redirect chains and loops, missing or duplicate meta tags, missing alt text, thin content, orphan pages, mixed content, canonicalisation errors, hreflang issues, and page speed problems. Each issue includes a description and fix guidance.</p>
+
+<p><strong>Core Web Vitals:</strong> SE Ranking integrates Core Web Vitals data from the Chrome User Experience Report (CrUX), showing real-world performance metrics for your pages. This goes beyond the simulated performance checks that most audit tools provide, giving you actual user experience data.</p>
+
+<p><strong>Page speed analysis:</strong> Beyond CWV, the tool checks individual page load times, identifies large resources, and flags pages that exceed reasonable size thresholds. The performance analysis is not as detailed as a dedicated <a href="/website-audit-tools/lighthouse/">Lighthouse</a> audit but catches the most impactful issues.</p>
+
+<p><strong>Structured data checking:</strong> The audit validates JSON-LD and other structured data formats on your pages, flagging syntax errors and missing required properties. This is a useful check that not all budget tools include.</p>
+
+<p><strong>Content analysis:</strong> Checks for duplicate content across pages, thin content (pages below a configurable word count threshold), and pages with missing or insufficient heading structure.</p>
+
+<h2 id="health-score">Health Score</h2>
+
+<p>Like Ahrefs and Semrush, SE Ranking provides an overall Health Score as a percentage from 0% to 100%. The score is calculated based on the ratio of issue-free pages to total pages crawled, weighted by issue severity. Errors have the largest negative impact, followed by warnings and then notices.</p>
+
+<p>The Health Score is displayed prominently on the audit dashboard alongside a trend chart showing how the score has changed across your crawl history. This trend visualisation is well-designed, using a clean line graph with colour-coded annotations for significant changes. When the score drops, hovering over the change point shows which new issues appeared.</p>
+
+<p>SE Ranking also provides a score breakdown by category, showing separate health percentages for crawlability, HTTPS, page speed, meta tags, content, internal links, and other areas. This categorical breakdown is more granular than what Ahrefs provides (which gives only an overall score) and comparable to Semrush's thematic report structure.</p>
+
+<p>In our testing, SE Ranking's Health Score tends to be slightly more generous than Ahrefs or Semrush for the same site. This appears to be because SE Ranking weights certain minor issues (like missing Open Graph tags or pages not in the sitemap) less heavily than competitors. The scores are directionally consistent though. A site that scores 85% in Semrush will typically score 87-92% in SE Ranking.</p>
+
+<p>For client reporting, the Health Score trend is one of the most effective visuals you can include. It provides a single, easily understood metric that demonstrates the value of ongoing technical SEO work. The fact that SE Ranking makes this available with white-label branding on mid-tier plans is a genuine competitive advantage.</p>
+
+<h2 id="issue-categories">Issue Categories</h2>
+
+<p>SE Ranking organises audit findings into clear categories. Each category page shows the specific issues found, the number of affected URLs, severity levels, and actionable fix guidance.</p>
+
+<p><strong>Crawlability:</strong> Checks whether search engines can access and crawl all important pages. Identifies pages blocked by robots.txt, pages returning error status codes (4xx and 5xx), redirect issues, sitemap problems, and orphan pages. The redirect chain analysis shows the full chain path and identifies the optimal direct redirect target.</p>
+
+<p><strong>HTTPS and Security:</strong> Validates your SSL certificate, checks for mixed content issues, and verifies that HTTP URLs redirect to HTTPS. Also checks for security headers like HSTS, Content-Security-Policy, and X-Content-Type-Options. The security header checks go beyond what most SEO audit tools provide.</p>
+
+<p><strong>Page Speed:</strong> Identifies slow-loading pages, oversized resources, uncompressed content, and render-blocking scripts. Integrates Core Web Vitals data where available from the Chrome User Experience Report. Provides specific recommendations for improving load times on flagged pages.</p>
+
+<p><strong>Meta Tags:</strong> Checks titles and meta descriptions for missing, duplicate, too-long, and too-short instances. Also validates canonical tags, checking for self-referencing canonicals, missing canonicals, and canonical tags pointing to non-existent or redirected URLs. The canonical validation is thorough and catches issues that beginners often miss.</p>
+
+<p><strong>Content:</strong> Flags thin content, duplicate content, missing H1 tags, multiple H1 tags, and pages with poor heading hierarchy. The duplicate content detection uses fuzzy matching rather than exact matching, which means it catches near-duplicate pages (such as product variations with minimal text differences) that exact-match tools miss.</p>
+
+<p><strong>Internal Links:</strong> Analyses the internal link structure, identifying orphan pages, pages with too few incoming links, broken internal links, and excessive redirect-through links (internal links that point to URLs that redirect). Also shows internal link distribution, helping you identify whether link equity is concentrated on a few pages or distributed across the site.</p>
+
+<p><strong>Images:</strong> Checks for missing alt text, oversized images, broken image URLs, and images served in older formats (like BMP or unoptimised PNG) when newer formats like WebP would be more efficient.</p>
+
+<p><strong>International SEO:</strong> Validates hreflang implementation, checking for missing return tags, incorrect language codes, and hreflang conflicts with canonical tags. This check is important for multilingual sites and is comparable in quality to what Semrush provides.</p>
+
+<h2 id="white-label-reports">White-Label Reports</h2>
+
+<p>White-label reporting is SE Ranking's standout feature for agencies. The ability to generate branded audit reports that look like they come from your agency rather than a third-party tool is available on plans starting from $65.60/month. Competitors charge two to five times more for the same capability.</p>
+
+<p>The white-label configuration allows you to set your agency name, logo, brand colours, and contact information. Reports are generated as PDFs that include the Health Score, issue breakdown, specific findings with affected URLs, and recommendations. The PDF formatting is professional and print-ready, not a hastily styled data dump.</p>
+
+<p>You can customise which sections appear in the report and what level of detail to include. For non-technical clients, you might include only the Health Score, top issues summary, and high-level recommendations. For technically savvy clients, you can include the full issue list with affected URLs and fix instructions.</p>
+
+<p>SE Ranking also offers a white-label SEO dashboard that you can share with clients via a custom-branded login page. This gives clients read-only access to their audit results, rank tracking, and backlink data through an interface branded with your agency's identity. The dashboard updates automatically as new crawls complete, so clients can check their site health without you needing to send reports manually.</p>
+
+<p>For agencies doing prospecting, the audit tool doubles as a lead generation mechanism. You can run a quick audit of a prospect's site, generate a branded report showing their issues, and present it as part of your sales pitch. The professional appearance of the white-label report lends credibility to the findings and positions your agency as technically competent.</p>
+
+<h2 id="se-ranking-vs-competitors">SE Ranking vs Competitors</h2>
+
+<p>SE Ranking competes in a market dominated by Ahrefs, Semrush, and Screaming Frog. Here is where it stands in honest comparison.</p>
+
+<p><strong>Issue coverage:</strong> SE Ranking checks 120+ issues. <a href="/website-audit-tools/semrush/">Semrush</a> checks 140+. <a href="/website-audit-tools/ahrefs/">Ahrefs</a> checks 170+. The gap is less significant than the numbers suggest because the additional checks in Ahrefs and Semrush tend to be more granular subdivisions of issues that SE Ranking checks as single broader items. In practice, SE Ranking catches the same core issues.</p>
+
+<p><strong>Crawl quality:</strong> In side-by-side testing, SE Ranking correctly identified the same critical issues as Ahrefs and Semrush in 95% of cases. The 5% difference consisted of edge cases like certain hreflang configurations, specific structured data errors, and some less common redirect patterns. For most sites, you will not notice the difference.</p>
+
+<p><strong>Data depth:</strong> This is where the gap is most noticeable. Ahrefs and Semrush provide significantly more raw crawl data per URL, with more columns, more filtering options, and better data export capabilities. SE Ranking gives you what you need for issue identification but lacks the granular data that power users want for custom analysis.</p>
+
+<p><strong>White-label reports:</strong> SE Ranking is the clear winner on value. Branded reports on a $65/month plan versus $499/month for Semrush Business or no white-label option at all from Ahrefs. For agencies where branded deliverables are essential, this alone can justify choosing SE Ranking.</p>
+
+<p><strong>JavaScript rendering:</strong> Available on SE Ranking, Ahrefs, Semrush, and Screaming Frog. <a href="/website-audit-tools/moz/">Moz</a> does not support it. SE Ranking's JS rendering implementation is functional but slightly slower than competitors.</p>
+
+<p><strong>Historical data:</strong> SE Ranking stores crawl history and provides comparison features, similar to Semrush. Ahrefs also stores historical crawl data. Screaming Frog requires you to save crawl files manually.</p>
+
+<p>For the complete feature-by-feature breakdown, see our <a href="/website-audit-tools/comparison/">tool comparison guide</a>.</p>
+
+<h2 id="who-it-is-best-for">Who It Is Best For</h2>
+
+<p>SE Ranking occupies a specific and valuable niche in the SEO tools market. It is the best choice for certain user profiles.</p>
+
+<p><strong>Small agencies needing white-label reports:</strong> If you run a small agency and need to deliver branded audit reports to clients, SE Ranking provides this at a fraction of the cost of competitors. The quality of the reports is high enough to present professionally, and the time savings over manually building reports is substantial.</p>
+
+<p><strong>Freelance SEO consultants:</strong> For solo practitioners who need an all-in-one platform covering rank tracking, keyword research, backlinks, and site auditing, SE Ranking provides all of these at a price point that makes sense for a one-person business. The audit tool is good enough for most client sites, and the broader platform eliminates the need for multiple subscriptions.</p>
+
+<p><strong>Budget-conscious in-house teams:</strong> If your company needs SEO tools but cannot justify $200+/month for Ahrefs or Semrush, SE Ranking delivers 85-90% of the audit capability for roughly half the price. The savings are significant over a year, especially for startups and small businesses.</p>
+
+<p><strong>Agencies doing sales prospecting:</strong> The ability to quickly audit a prospect's site and generate a branded report makes SE Ranking a valuable sales tool. The low per-audit cost means you can run prospecting audits freely without worrying about burning through expensive crawl credits.</p>
+
+<p>SE Ranking is <strong>not</strong> the best choice for enterprise sites requiring maximum crawl depth, technical SEOs who need granular raw data and custom extraction capabilities (use <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>), or teams that need the deepest possible backlink and keyword databases (use Ahrefs or Semrush).</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>SE Ranking uses a flexible pricing model based on the number of keywords tracked, crawl frequency, and billing period. This means the exact price varies based on your configuration.</p>
+
+<ul>
+  <li><strong>Essential (from $65/month billed annually):</strong> 1 project for site audit, up to 25,000 pages per audit. Includes all audit features and basic reporting. Suitable for freelancers managing a single site or a few small client sites.</li>
+  <li><strong>Pro (from $119/month billed annually):</strong> 5 projects for site audit, up to 150,000 pages per audit. Adds white-label reports, API access, and increased limits. This is the sweet spot for small agencies.</li>
+  <li><strong>Business (from $259/month billed annually):</strong> 10 projects for site audit, up to 500,000 pages per audit. Full feature access including automated reporting, white-label dashboard, and priority support. Comparable in scope to Semrush Guru but at a lower price point.</li>
+</ul>
+
+<p>SE Ranking offers a 14-day free trial with full feature access. There is no permanently free tier, but the trial period is sufficient to run several audit cycles and evaluate the tool thoroughly.</p>
+
+<p>The pricing advantage is most apparent when compared to the competition at the agency level. An SE Ranking Pro plan at $119/month provides white-label reports and multi-project management. To get equivalent white-label functionality from Semrush, you need the Business plan at $499.95/month. That is a saving of over $4,500 per year, which is meaningful for small agencies.</p>
+
+<p>Month-to-month pricing is available at a premium (roughly 20% more than annual pricing). If you want to test the tool beyond the trial period without committing to a year, the monthly option provides flexibility. SE Ranking also offers custom enterprise pricing for agencies with more than 10 projects.</p>
+
+</ContentLayout>

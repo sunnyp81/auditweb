@@ -1,0 +1,75 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+---
+
+<ContentLayout
+  title="What Is an SEO Site Audit? Purpose, Process, and Benefits"
+  description="An SEO site audit analyses your website's search engine optimisation to find issues and opportunities. Learn what it covers and why every site needs one."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'What Is an SEO Audit', href: '/what-is-an-seo-site-audit/' }
+  ]}
+  toc={[
+    { label: 'Definition', id: 'definition' },
+    { label: 'What Gets Checked', id: 'what-gets-checked' },
+    { label: 'Who Needs One', id: 'who-needs-one' },
+    { label: 'Benefits of Regular Audits', id: 'benefits-of-regular-audits' },
+    { label: 'DIY vs Professional', id: 'diy-vs-professional' },
+    { label: 'How Long It Takes', id: 'how-long-it-takes' },
+    { label: 'Next Steps', id: 'next-steps' }
+  ]}
+  publishDate="2026-03-28"
+>
+
+<h2 id="definition">Definition</h2>
+<p>An SEO site audit is a systematic examination of every factor that influences how search engines crawl, index, and rank your website. It evaluates technical infrastructure, on-page optimisation, content quality, backlink health, and user experience to produce a clear picture of where your site stands and what needs fixing.</p>
+<p>Think of it as a full health check for your online presence. A doctor examines blood pressure, heart rate, and cholesterol to assess overall health. An SEO audit examines page speed, crawlability, keyword targeting, and link equity to assess search visibility. The output is a prioritised list of issues ranked by their impact on organic traffic and revenue.</p>
+<p>Unlike a quick scan from an automated tool, a proper SEO site audit interprets data in context. A page loading in 4.2 seconds might be acceptable for a media-heavy portfolio site but catastrophic for an e-commerce category page where every millisecond costs conversions. The audit process accounts for your industry, competition, and business goals.</p>
+<p>The term is sometimes used interchangeably with "website audit," but an SEO site audit focuses specifically on search engine performance rather than broader concerns like brand consistency, legal compliance, or visual design. Those elements may be noted where they affect rankings, but the primary lens is always organic search.</p>
+
+<h2 id="what-gets-checked">What Gets Checked</h2>
+<p>A comprehensive SEO site audit covers five core areas, each containing dozens of individual checkpoints. Understanding these areas helps you appreciate the depth of analysis involved.</p>
+<p><strong>Technical SEO</strong> examines the foundation. This includes crawlability (can search engines access every important page?), indexability (are the right pages being indexed and the wrong ones excluded?), site architecture, XML sitemaps, robots.txt configuration, canonical tags, hreflang implementation for multilingual sites, HTTPS security, and structured data markup. Technical issues are often invisible to visitors but can silently prevent pages from ranking.</p>
+<p><strong>On-page optimisation</strong> reviews how individual pages target keywords. Title tags, meta descriptions, heading hierarchy, keyword placement, internal linking, image alt text, and URL structure all fall under this category. The audit checks whether each page has a clear primary keyword, whether that keyword appears in the right places, and whether the page satisfies search intent.</p>
+<p><strong>Content quality</strong> assesses whether your content deserves to rank. This means evaluating depth, accuracy, freshness, originality, and E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness). Thin content, duplicate content, keyword cannibalisation (multiple pages targeting the same query), and content gaps are all flagged.</p>
+<p><strong>Off-page factors</strong> analyse your backlink profile. The audit identifies the total number of referring domains, the quality distribution of those links, anchor text patterns, toxic or spammy links that could trigger penalties, and opportunities for link reclamation or outreach.</p>
+<p><strong>Core Web Vitals and user experience</strong> measure how visitors experience your site. Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) are Google's specific performance metrics, but the audit also considers mobile usability, navigation clarity, and page layout stability.</p>
+
+<h2 id="who-needs-one">Who Needs One</h2>
+<p>Every website that depends on organic search traffic needs periodic SEO audits. However, certain situations make an audit especially urgent.</p>
+<p><strong>New websites</strong> benefit from a baseline audit within the first three months of launch. Early identification of technical problems prevents months of wasted crawl budget and missed ranking opportunities. Many new sites launch with critical issues like blocked CSS files, missing sitemaps, or incorrect canonical tags that go unnoticed until traffic fails to materialise.</p>
+<p><strong>Established sites experiencing traffic decline</strong> need an audit to diagnose the cause. A drop in organic traffic could stem from algorithm updates, technical regressions introduced during a site update, increased competition, or manual penalties. Without an audit, you are guessing at the cause and likely wasting effort on the wrong fix.</p>
+<p><strong>Businesses preparing for a redesign or migration</strong> should audit before and after the change. The pre-migration audit establishes a benchmark and identifies redirect requirements. The post-migration audit catches broken redirects, lost meta data, and new technical issues introduced during the transition.</p>
+<p><strong>E-commerce sites</strong> with large product catalogues face unique challenges around faceted navigation, duplicate product descriptions, out-of-stock page handling, and category page optimisation. An audit surfaces these issues before they compound.</p>
+<p><strong>Any business investing in content marketing</strong> needs audits to ensure that investment is not undermined by technical barriers. Writing excellent content means nothing if search engines cannot crawl or index it properly.</p>
+
+<h2 id="benefits-of-regular-audits">Benefits of Regular Audits</h2>
+<p>The most obvious benefit is identifying and fixing problems that suppress your rankings. But regular audits deliver value beyond troubleshooting.</p>
+<p><strong>Prevent revenue loss.</strong> Technical issues accumulate silently. A single misconfigured robots.txt directive can deindex an entire subdirectory. A creeping increase in page load time can erode rankings over months. Regular audits catch these problems before they cause measurable revenue damage.</p>
+<p><strong>Prioritise your SEO budget.</strong> Without audit data, SEO decisions are based on intuition or industry generalisations. An audit tells you exactly where to spend time and money for the greatest impact. If your backlink profile is strong but your internal linking is chaotic, you know to focus on site architecture rather than outreach.</p>
+<p><strong>Track progress over time.</strong> Comparing audit results quarter over quarter creates a clear performance trajectory. You can demonstrate ROI to stakeholders, identify recurring issues, and measure whether previous fixes have held.</p>
+<p><strong>Stay ahead of algorithm updates.</strong> Google releases thousands of algorithm changes annually. Sites that maintain strong technical foundations, high-quality content, and natural link profiles are far more resilient to updates. Regular audits ensure your fundamentals stay solid.</p>
+<p><strong>Competitive intelligence.</strong> Many audit processes include a competitive analysis component. Understanding how your technical SEO, content depth, and link profile compare to top-ranking competitors reveals specific opportunities to close the gap.</p>
+
+<h2 id="diy-vs-professional">DIY vs Professional</h2>
+<p>Free and paid tools like Screaming Frog, Ahrefs, SEMrush, and Google Search Console make it possible to run your own audit. For small sites with straightforward architectures, a DIY approach using a structured checklist can be effective, especially for ongoing monitoring between professional reviews.</p>
+<p>However, tools generate data, not insight. A crawl report might flag 2,000 pages with thin content, but deciding which pages to merge, expand, redirect, or delete requires strategic judgement. Similarly, a backlink tool can list every referring domain, but evaluating whether a specific link pattern poses a penalty risk demands experience with Google's guidelines and enforcement patterns.</p>
+<p><strong>DIY works well when</strong> you have SEO knowledge, your site has fewer than 500 pages, you are running routine quarterly checks, and you have a clear checklist to follow. The main tools you need are Screaming Frog (free for up to 500 URLs), Google Search Console, and PageSpeed Insights.</p>
+<p><strong>Professional audits are worth the investment when</strong> your site has complex architecture (e-commerce, multilingual, JavaScript-heavy), you have experienced a significant traffic drop, you are planning a migration or redesign, you lack in-house SEO expertise, or the revenue at stake justifies the cost of expert analysis.</p>
+<p>A professional audit typically costs between £500 and £5,000 depending on site size and complexity. For sites generating meaningful revenue from organic search, this is a modest investment relative to the potential traffic recovery or growth.</p>
+
+<h2 id="how-long-it-takes">How Long It Takes</h2>
+<p>The timeline depends on site size, complexity, and the depth of analysis required.</p>
+<p><strong>Small sites (under 100 pages)</strong> can be audited in one to three days. The crawl completes quickly, the data set is manageable, and the recommendations are typically straightforward.</p>
+<p><strong>Medium sites (100 to 5,000 pages)</strong> generally require one to two weeks. More pages mean more data to analyse, more potential for issues like keyword cannibalisation and orphan pages, and more complex internal linking patterns to evaluate.</p>
+<p><strong>Large sites (5,000+ pages)</strong> can take two to four weeks or longer. Enterprise e-commerce sites, news publishers, and marketplace platforms often have JavaScript rendering challenges, complex faceted navigation, multiple subdomains, and legacy technical debt that require thorough investigation.</p>
+<p>Automated crawls themselves complete in hours, but the real time investment is in analysis, prioritisation, and writing actionable recommendations. A 50-page report that lists every issue but provides no guidance on what to fix first is far less valuable than a focused 15-page report with a clear action plan.</p>
+<p>For ongoing monitoring, set up automated weekly crawls and monthly reporting dashboards. This reduces the need for full audits to once or twice per year, with lighter quarterly reviews in between.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>If you have never audited your site, start with Google Search Console. Review the Coverage report for indexing errors, check Core Web Vitals for performance issues, and examine the Links report for your backlink profile. This free data provides an immediate baseline.</p>
+<p>Next, run a crawl using Screaming Frog or a similar tool. Export the results and work through the issues systematically, starting with anything that blocks crawling or indexing, then moving to on-page optimisation, content quality, and off-page factors.</p>
+<p>For a structured approach, use our <a href="/website-audit-checklist/seo/">SEO audit checklist</a> which covers 40+ checkpoints organised by category. If you would prefer a professional review, our <a href="/website-audit-services/professional/">professional audit service</a> delivers a prioritised action plan tailored to your site and business goals.</p>
+<p>Whichever route you choose, the key is to act on the findings. An audit report gathering dust on a shared drive delivers zero value. Assign owners to each recommendation, set deadlines, and track implementation. The sites that see the greatest SEO gains are not the ones with the best audits — they are the ones that execute on the recommendations fastest.</p>
+
+</ContentLayout>

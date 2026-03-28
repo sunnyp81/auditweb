@@ -1,0 +1,69 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+---
+
+<ContentLayout
+  title="Website Audit vs SEO Audit: What's the Difference?"
+  description="A website audit and an SEO audit overlap but aren't the same thing. Learn what each covers, when you need which, and whether you should get both."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Website Audit vs SEO Audit', href: '/website-audit-vs-seo-audit/' }
+  ]}
+  toc={[
+    { label: 'What Is a Website Audit', id: 'what-is-a-website-audit' },
+    { label: 'What Is an SEO Audit', id: 'what-is-an-seo-audit' },
+    { label: 'Key Differences', id: 'key-differences' },
+    { label: 'Overlap Between Them', id: 'overlap-between-them' },
+    { label: 'Which Do You Need', id: 'which-do-you-need' },
+    { label: 'Getting Both in One Report', id: 'getting-both-in-one-report' }
+  ]}
+  publishDate="2026-03-28"
+>
+
+<h2 id="what-is-a-website-audit">What Is a Website Audit</h2>
+<p>A website audit is a comprehensive evaluation of your entire online presence. It examines every dimension of your site's performance, functionality, and effectiveness — not just search engine visibility. The scope includes technical infrastructure, security posture, user experience, design quality, content effectiveness, accessibility compliance, conversion optimisation, and brand consistency.</p>
+<p>Think of a website audit as a full MOT inspection. The mechanic does not only check whether the car can reach motorway speeds (the equivalent of search rankings). They also inspect brakes, lights, emissions, structural integrity, and safety systems. Similarly, a website audit evaluates everything that affects how well your site serves its purpose, regardless of whether that purpose is attracting organic traffic, converting leads, processing e-commerce transactions, or providing customer support.</p>
+<p>A typical website audit produces findings across multiple categories. It might flag that your SSL certificate is misconfigured (security), that your contact form drops submissions on mobile (functionality), that your colour scheme fails WCAG contrast requirements (accessibility), that your checkout abandonment rate is 78% (conversion), and that your page speed scores are in the bottom quartile for your industry (performance). Each finding relates to a different discipline, and fixing them requires different expertise.</p>
+<p>Website audits are particularly valuable for businesses that view their site as a core business asset rather than a marketing channel. If your website is your product (SaaS), your storefront (e-commerce), or your primary customer touchpoint (service businesses), a full website audit ensures every aspect is functioning optimally.</p>
+
+<h2 id="what-is-an-seo-audit">What Is an SEO Audit</h2>
+<p>An SEO audit is a focused evaluation of the factors that specifically influence your website's visibility in search engine results. It examines technical SEO, on-page optimisation, content quality from a search perspective, backlink profile health, and Core Web Vitals — all through the lens of how they affect organic rankings and traffic.</p>
+<p>The SEO audit asks one fundamental question: why is this site not ranking as well as it could for its target keywords? Every analysis point serves that question. Page speed matters because it is a ranking factor. Content quality matters because Google evaluates E-E-A-T. Internal linking matters because it distributes PageRank and signals topical relevance. Backlinks matter because they remain one of the strongest ranking signals.</p>
+<p>An SEO audit typically begins with a technical crawl to identify indexing barriers, then layers on Search Console data for real-world performance metrics, keyword research data for opportunity analysis, and competitive intelligence to benchmark against top-ranking rivals. The output is a prioritised action plan focused entirely on improving organic search performance.</p>
+<p>Where a website audit might note that your site lacks a chatbot for customer support, an SEO audit would not — unless the chatbot's JavaScript implementation is blocking content from being crawled. Where a website audit examines whether your brand colours are consistent across pages, an SEO audit is indifferent to colour choices unless they affect readability metrics that correlate with engagement signals.</p>
+<p>SEO audits are essential for any business where organic search is a significant traffic source or growth channel. They provide the diagnostic foundation for effective SEO strategy, replacing assumptions with data-driven priorities.</p>
+
+<h2 id="key-differences">Key Differences</h2>
+<p>The distinction between these two audit types comes down to scope, perspective, and intended outcome.</p>
+<p><strong>Scope.</strong> A website audit covers everything: security, accessibility, design, functionality, performance, content, SEO, conversion, and compliance. An SEO audit covers only the subset of factors that directly influence search engine rankings and organic traffic. A website audit is broader; an SEO audit is deeper within its domain.</p>
+<p><strong>Perspective.</strong> A website audit evaluates your site from multiple viewpoints — the end user, the business owner, the developer, and the search engine. An SEO audit primarily evaluates your site from the search engine's perspective, with user experience considered only where it intersects with ranking factors.</p>
+<p><strong>Deliverables.</strong> A website audit produces a multi-disciplinary report that might require action from designers, developers, security specialists, content writers, and marketing strategists. An SEO audit produces a report primarily actioned by SEO specialists, content writers, and developers.</p>
+<p><strong>Competitive analysis.</strong> An SEO audit almost always includes competitive analysis — comparing your keyword rankings, content coverage, and backlink profile against top competitors. A general website audit may include competitive benchmarking for design and UX but rarely goes as deep on search-specific competitor intelligence.</p>
+<p><strong>Tools.</strong> SEO audits rely heavily on specialised tools like Screaming Frog, Ahrefs, SEMrush, Google Search Console, and PageSpeed Insights. Website audits use these plus additional tools for accessibility testing (axe, WAVE), security scanning (Sucuri, Qualys), uptime monitoring, and conversion analytics.</p>
+<p><strong>Frequency.</strong> SEO audits should be conducted quarterly for active sites, with lighter monthly check-ins. Full website audits are typically conducted annually or before major redesigns, with component audits (security, accessibility) run on their own schedules.</p>
+
+<h2 id="overlap-between-them">Overlap Between Them</h2>
+<p>Despite the differences, these audit types share significant common ground. Understanding the overlap helps you avoid paying for redundant analysis.</p>
+<p><strong>Technical performance</strong> is central to both. Page speed, server response time, and Core Web Vitals affect both search rankings and user satisfaction. Whether the auditor frames a slow page as "a ranking impediment" or "a conversion killer," the fix is the same: optimise images, reduce JavaScript, improve server configuration.</p>
+<p><strong>Mobile usability</strong> matters for both audits. Google uses mobile-first indexing, so mobile issues are SEO issues. But mobile usability is equally a UX and conversion concern. A website audit and an SEO audit will both flag a site that is not properly responsive.</p>
+<p><strong>Content quality</strong> is evaluated in both, though through different lenses. An SEO audit assesses content for keyword targeting, search intent alignment, and topical authority. A website audit assesses content for clarity, brand voice, accuracy, and persuasiveness. A page can fail both tests simultaneously if it is poorly written and poorly optimised, or pass one while failing the other.</p>
+<p><strong>Security basics</strong> like HTTPS implementation, mixed content warnings, and security header configuration appear in both audit types. SEO audits flag these because Google uses HTTPS as a ranking signal. Website audits flag them because they represent genuine security vulnerabilities.</p>
+<p><strong>Structured data</strong> is checked in both audits. SEO audits verify schema markup for rich result eligibility. Website audits verify it for accessibility and data integrity.</p>
+<p>The overlap typically accounts for 30-40% of the total findings. This means commissioning both audits separately results in paying for some redundant analysis, which is why combined audits offer better value.</p>
+
+<h2 id="which-do-you-need">Which Do You Need</h2>
+<p>The right choice depends on your current situation, goals, and the specific problems you are trying to solve.</p>
+<p><strong>Choose an SEO audit if</strong> your primary concern is organic traffic. You know your site works well for users who arrive there, but not enough users are arriving. Your rankings have declined, your competitors are outranking you, or you are launching an SEO campaign and need a strategic foundation. An SEO audit gives you the targeted intelligence to improve search performance without spending time and budget on non-search issues.</p>
+<p><strong>Choose a website audit if</strong> you have broader concerns about your site's overall effectiveness. Perhaps you are experiencing high bounce rates and are unsure whether the cause is slow load times, poor design, irrelevant content, or navigation problems. Perhaps you are preparing for a rebrand or redesign and need a complete assessment. Perhaps you have regulatory compliance requirements that demand a security and accessibility review alongside SEO analysis.</p>
+<p><strong>Choose both if</strong> your site is a primary revenue channel and you want maximum insight. E-commerce sites, SaaS platforms, and lead generation websites where organic traffic and conversion rates both directly impact revenue benefit from the combined perspective. The cost premium for a combined audit is typically 30-50% more than an SEO audit alone — significantly less than commissioning both separately.</p>
+<p><strong>Start with an SEO audit if</strong> budget is limited. SEO improvements tend to have the most direct and measurable impact on traffic and revenue, making the ROI easier to justify. You can always layer on UX, security, and accessibility audits later as budget allows.</p>
+<p>For most small to medium businesses, an annual comprehensive website audit combined with quarterly SEO-focused reviews provides the right balance of breadth and depth.</p>
+
+<h2 id="getting-both-in-one-report">Getting Both in One Report</h2>
+<p>The most efficient approach is a unified audit that covers both SEO and broader website health in a single engagement. This eliminates redundant analysis, reduces cost, and produces a single prioritised action plan rather than two separate reports that may conflict in their recommendations.</p>
+<p>A combined audit should include a technical crawl and SEO analysis as its foundation, then extend into security testing, accessibility evaluation, UX assessment, and conversion analysis. The key is that all findings feed into one prioritised list, scored by both search impact and business impact. A security vulnerability might not affect rankings but could cost far more if exploited than a title tag optimisation that lifts a page from position eight to position five.</p>
+<p>When selecting an auditor for a combined engagement, verify they have expertise across all the required disciplines. Many SEO agencies offer "website audits" that are actually SEO audits with a thin layer of UX commentary. Conversely, web development agencies may offer "site audits" that check functionality and design but lack depth on keyword strategy, backlink analysis, and search-specific technical issues like crawl budget management and JavaScript rendering.</p>
+<p>The report structure should separate findings by category (technical, content, SEO, security, UX, accessibility) while providing a unified priority matrix that ranks all issues together. This allows you to route specific sections to the relevant team members while maintaining a single view of overall site health.</p>
+<p>Our <a href="/website-audit-services/professional/">professional audit service</a> combines SEO and website health analysis in one comprehensive report. If you want to see what the output looks like before committing, review our <a href="/website-audit-services/report-example/">sample report</a>. For a self-service approach, our <a href="/website-audit-checklist/">audit checklists</a> cover both SEO-specific and broader website health checkpoints that you can work through at your own pace.</p>
+
+</ContentLayout>

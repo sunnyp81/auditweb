@@ -1,0 +1,159 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'WordPress', href: '/seo-website-audit/wordpress/' },
+];
+
+const toc = [
+  { label: 'WordPress-Specific Audit Concerns', id: 'wordpress-specific-audit-concerns' },
+  { label: 'Plugin Audit', id: 'plugin-audit' },
+  { label: 'Theme Performance', id: 'theme-performance' },
+  { label: 'Database Optimisation', id: 'database-optimisation' },
+  { label: 'WordPress SEO Settings', id: 'wordpress-seo-settings' },
+  { label: 'Security Checks', id: 'security-checks' },
+  { label: 'Hosting and Speed', id: 'hosting-and-speed' },
+  { label: 'WordPress Audit Tools', id: 'wordpress-audit-tools' },
+];
+---
+
+<ContentLayout
+  title="WordPress Website Audit: Complete SEO Checklist"
+  description="Audit your WordPress site for SEO issues. Covers plugin conflicts, theme bloat, database optimisation, security, and WordPress-specific technical SEO."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>WordPress powers over 40% of all websites, which means it also powers over 40% of all poorly optimised websites. The platform's greatest strength — its flexibility through plugins and themes — is simultaneously its biggest SEO liability. Every plugin adds code, every theme makes opinionated decisions about markup, and every update introduces the possibility of something breaking silently. A WordPress-specific SEO audit goes beyond standard technical checks to examine the platform-layer problems that generic audits miss entirely.</p>
+
+  <p>Whether you are running a simple blog, a WooCommerce store, or a complex membership site, the WordPress ecosystem introduces a predictable set of SEO issues that demand dedicated attention. This guide covers every WordPress-specific check you need to include in your audit, from plugin conflicts to database bloat to the hosting decisions that quietly throttle your rankings.</p>
+
+  <h2 id="wordpress-specific-audit-concerns">WordPress-Specific Audit Concerns</h2>
+
+  <p>WordPress generates SEO problems that do not exist on custom-built or static sites. Understanding these platform-specific risks is essential before you begin auditing.</p>
+
+  <p>The first concern is URL structure proliferation. WordPress creates archive pages for authors, dates, categories, tags, and custom taxonomies automatically. A single blog post can be accessible via the post URL, the category archive, the tag archive, the date archive, the author archive, and multiple pagination pages. Without proper configuration, every one of these URLs gets indexed, creating massive duplicate content issues and diluting your crawl budget.</p>
+
+  <p>The second concern is render-blocking resource accumulation. Every active plugin can enqueue its own CSS and JavaScript files on every page of your site, regardless of whether that page actually uses the plugin's functionality. A contact form plugin loading its assets on blog posts, a slider plugin loading on pages without sliders, and an analytics plugin injecting tracking code twice because of a theme conflict — these compound into significant performance degradation.</p>
+
+  <p>The third concern is WordPress's default output. Out of the box, WordPress generates RSS feeds, oEmbed endpoints, REST API discovery links, Windows Live Writer manifest links, shortlink headers, and emoji detection scripts. Most of these serve no SEO purpose and add unnecessary overhead to every page load. A proper WordPress audit identifies and removes everything that does not serve your users or search engines.</p>
+
+  <p>Finally, WordPress's auto-update mechanism means your site's technical SEO can change without you doing anything. A plugin update that modifies heading output, a theme update that changes schema markup, or a core update that alters canonical tag behaviour can all introduce SEO regressions that go undetected for weeks.</p>
+
+  <h2 id="plugin-audit">Plugin Audit</h2>
+
+  <p>The plugin audit is arguably the most important WordPress-specific check. The average WordPress site runs 20-30 plugins. Many sites have far more. Each plugin represents a potential source of performance problems, security vulnerabilities, and SEO conflicts.</p>
+
+  <p>Begin by cataloguing every installed plugin, noting whether it is active or inactive, when it was last updated, and whether it is still maintained by its developer. Then assess each plugin against these criteria:</p>
+
+  <ul>
+    <li><strong>Necessity</strong> — does this plugin serve an active purpose? Many WordPress sites accumulate plugins for features that were tested once and never used, or for problems that were solved years ago. Deactivate and delete anything that is not actively needed. Inactive plugins still pose security risks and clutter the admin interface.</li>
+    <li><strong>Redundancy</strong> — are multiple plugins performing the same function? It is common to find two SEO plugins active simultaneously (Yoast and Rank Math, for instance), two caching plugins conflicting, or multiple analytics plugins all injecting tracking code. Identify overlaps and consolidate to a single solution for each function.</li>
+    <li><strong>Performance impact</strong> — use Query Monitor or the browser's Performance tab to measure each plugin's impact on page load time. Test by deactivating plugins one at a time on a staging environment and measuring the speed difference. Plugins that add more than 200ms to page load time need to be justified by their business value or replaced with lighter alternatives.</li>
+    <li><strong>SEO conflicts</strong> — check for plugins that output their own meta tags, schema markup, or canonical tags that conflict with your SEO plugin. Social sharing plugins, review plugins, and page builder plugins are common offenders. View the page source on several pages and search for duplicate meta descriptions, multiple canonical tags, or conflicting Open Graph tags.</li>
+    <li><strong>Update frequency</strong> — plugins that have not been updated in over 12 months are at higher risk of security vulnerabilities and compatibility issues with current WordPress versions. Check the plugin repository page for each plugin and note its "last updated" date and "tested up to" WordPress version.</li>
+  </ul>
+
+  <p>Document your findings in a spreadsheet with columns for plugin name, status, last updated, performance impact, and recommended action (keep, replace, or remove).</p>
+
+  <h2 id="theme-performance">Theme Performance</h2>
+
+  <p>Your WordPress theme controls more of your SEO than most people realise. It determines your HTML structure, heading hierarchy, schema output, image handling, font loading strategy, and the baseline CSS and JavaScript that loads on every page. A poorly coded theme can undermine every other SEO effort you make.</p>
+
+  <p>Audit your theme by examining these specific areas:</p>
+
+  <ul>
+    <li><strong>Heading hierarchy</strong> — inspect the HTML source of several page types (homepage, blog post, page, archive). Verify that there is exactly one H1 per page and that the heading hierarchy (H1 through H6) is logical and sequential. Many themes use H2 or H3 tags for widget titles in the sidebar, breaking the hierarchy on every page.</li>
+    <li><strong>Render-blocking CSS</strong> — check how many CSS files your theme loads and whether critical CSS is inlined. Page builder themes like Elementor, Divi, and Beaver Builder are notorious for loading massive CSS bundles on every page. Measure the total CSS weight and compare against the 50-100KB target for above-the-fold rendering.</li>
+    <li><strong>JavaScript execution</strong> — profile the theme's JavaScript using Chrome DevTools. Check for long tasks that block the main thread, unnecessary jQuery dependencies, and scripts that execute before they are needed. Many themes still load jQuery even when their functionality could use vanilla JavaScript.</li>
+    <li><strong>Font loading</strong> — check whether fonts are self-hosted or loaded from Google Fonts CDN, whether font-display: swap is set, and how many font files are loaded. Each font weight and style is a separate file. Themes that load six or more font files create noticeable render delays.</li>
+    <li><strong>Mobile responsiveness</strong> — test the theme across multiple viewport sizes. Check for horizontal scrolling, tap targets that are too small or too close together, and content that shifts during loading. Use Google's Mobile-Friendly Test on at least five different page types.</li>
+    <li><strong>Schema output</strong> — some themes output structured data automatically. Check whether this conflicts with schema from your SEO plugin. Having two sets of Article schema or Organisation schema on the same page confuses search engines and can result in rich result eligibility being lost.</li>
+  </ul>
+
+  <p>If your theme audit reveals fundamental problems — broken heading hierarchy, excessive CSS/JS weight, or outdated code patterns — switching to a lightweight theme like GeneratePress, Kadence, or a custom theme may be more efficient than patching the problems individually.</p>
+
+  <h2 id="database-optimisation">Database Optimisation</h2>
+
+  <p>WordPress stores everything in a MySQL database, and over time that database accumulates overhead that directly impacts your site's server response time. Slow database queries mean slow Time to First Byte (TTFB), which affects both user experience and Core Web Vitals.</p>
+
+  <p>Your database audit should check for:</p>
+
+  <ul>
+    <li><strong>Post revisions</strong> — WordPress saves every revision of every post and page by default. A post edited 50 times has 50 revisions stored in the database. On a site with thousands of posts, this can mean hundreds of thousands of unnecessary database rows. Check the wp_posts table size and the number of rows with post_type "revision". Limit revisions to 3-5 in wp-config.php and delete excess revisions using WP-CLI or a database optimisation plugin.</li>
+    <li><strong>Transients</strong> — expired transients (temporary cached data) can accumulate in the wp_options table. These add overhead to every database query on options-heavy pages. Delete expired transients regularly.</li>
+    <li><strong>Autoloaded options</strong> — the wp_options table has an autoload column. Every row set to "yes" is loaded into memory on every single page load. Many plugins set their options to autoload unnecessarily. Query your database for the total size of autoloaded data. If it exceeds 1MB, identify and fix the offending entries.</li>
+    <li><strong>Orphaned metadata</strong> — when posts or comments are deleted, their associated metadata in wp_postmeta and wp_commentmeta often remains. This orphaned data grows over time and slows queries. Run a cleanup to remove metadata for posts that no longer exist.</li>
+    <li><strong>Table overhead</strong> — MySQL tables can develop overhead from frequent inserts and deletes. Running an OPTIMIZE TABLE command on your main WordPress tables (wp_posts, wp_postmeta, wp_options) reclaims this space and can improve query performance.</li>
+  </ul>
+
+  <p>Always back up your database before running any optimisation queries. Test changes on a staging environment first. A database error on a live WordPress site takes the entire site offline instantly.</p>
+
+  <h2 id="wordpress-seo-settings">WordPress SEO Settings</h2>
+
+  <p>WordPress has several built-in settings that affect SEO, and most SEO plugins add many more. A complete audit must verify that both the core WordPress settings and the SEO plugin configuration are correct.</p>
+
+  <p>Start with WordPress core settings:</p>
+
+  <ul>
+    <li><strong>Search engine visibility</strong> — Settings > Reading > "Discourage search engines from indexing this site" must be unchecked on production. This checkbox adds a noindex meta tag to every page. It is frighteningly common to find this checked on live sites that were migrated from staging environments.</li>
+    <li><strong>Permalink structure</strong> — verify that pretty permalinks are enabled and the structure uses the post name. Date-based permalink structures (/2026/03/post-name/) add unnecessary depth and make URLs appear dated. Changing permalink structure on an established site requires careful redirect planning.</li>
+    <li><strong>Category and tag base</strong> — check whether the default /category/ base is appropriate for your URL structure. Some sites remove it for cleaner URLs, while others keep it for clarity. Consistency matters more than the specific choice.</li>
+  </ul>
+
+  <p>Then audit your SEO plugin configuration (Yoast, Rank Math, or equivalent):</p>
+
+  <ul>
+    <li><strong>XML sitemap</strong> — verify the sitemap is generated, accessible, and includes only indexable pages. Check that post types and taxonomies you want indexed are included, and those you do not (tags, author archives, media attachment pages) are excluded.</li>
+    <li><strong>Archive noindex settings</strong> — author archives, date archives, and tag archives should typically be set to noindex unless they contain unique, valuable content. These archives create duplicate content when they simply replicate the blog feed.</li>
+    <li><strong>Breadcrumb settings</strong> — if using SEO plugin breadcrumbs, verify they generate correct BreadcrumbList schema and display on all page types.</li>
+    <li><strong>Open Graph and Twitter Card defaults</strong> — check that default social sharing images and descriptions are set for pages that lack custom entries.</li>
+    <li><strong>Redirect manager</strong> — review any redirects managed by the SEO plugin. Look for redirect chains, loops, and redirects to pages that have themselves been redirected.</li>
+  </ul>
+
+  <h2 id="security-checks">Security Checks</h2>
+
+  <p>Security and SEO are directly connected. A hacked WordPress site gets injected with spam links, pharma content, or malicious redirects that destroy rankings and can result in Google flagging the entire domain as dangerous. Recovering from a hack takes months of SEO work. Prevention through proper security hygiene is a critical part of any WordPress audit.</p>
+
+  <ul>
+    <li><strong>WordPress core version</strong> — is the site running the latest version of WordPress? Outdated core installations are the primary attack vector. Check the version in the dashboard or via the wp-includes/version.php file.</li>
+    <li><strong>Admin security</strong> — check whether the default "admin" username exists, whether two-factor authentication is enabled for administrators, and whether login attempt limiting is in place. Brute force attacks against wp-login.php are constant and automated.</li>
+    <li><strong>File permissions</strong> — wp-config.php should be 440 or 400. The wp-content/uploads directory should be 755 with no PHP execution allowed. .htaccess should be 444. Incorrect permissions allow attackers to upload and execute malicious files.</li>
+    <li><strong>SSL configuration</strong> — verify that HTTPS is enforced site-wide with proper redirects from HTTP. Check for mixed content warnings where some resources load over HTTP on an HTTPS page. Use the site_url and home_url settings to confirm both use https://.</li>
+    <li><strong>Malware scan</strong> — run a security scanner like Wordfence or Sucuri to check for known malware signatures, modified core files, and suspicious code in plugins or themes. Check Google Search Console for any manual actions related to hacked content.</li>
+    <li><strong>XML-RPC</strong> — unless you specifically need XML-RPC for remote publishing or the WordPress mobile app, disable it. XML-RPC is a common vector for brute force attacks and DDoS amplification.</li>
+  </ul>
+
+  <h2 id="hosting-and-speed">Hosting and Speed</h2>
+
+  <p>Your hosting environment sets the performance ceiling for your WordPress site. No amount of plugin optimisation or caching can compensate for an underpowered server or a shared hosting plan that places your site on an overloaded machine.</p>
+
+  <ul>
+    <li><strong>Server response time</strong> — measure TTFB across multiple pages during different times of day. If TTFB consistently exceeds 400ms, your hosting is the bottleneck. Shared hosting plans typically deliver 600-1200ms TTFB, which is unacceptable for SEO-competitive sites.</li>
+    <li><strong>PHP version</strong> — check which PHP version your site runs. PHP 8.1+ offers significant performance improvements over PHP 7.x. Each major PHP version brings measurable speed gains due to engine optimisations.</li>
+    <li><strong>Object caching</strong> — verify whether Redis or Memcached is available and configured. Object caching stores database query results in memory, dramatically reducing response times for dynamic WordPress pages. This is one of the highest-impact speed improvements for WordPress sites with complex queries.</li>
+    <li><strong>Page caching</strong> — check that a page caching solution is active and properly configured. Test by loading a page twice and checking for the cache hit header. Verify that caching is not interfering with dynamic functionality like WooCommerce carts or logged-in user experiences.</li>
+    <li><strong>CDN configuration</strong> — confirm that a CDN (Cloudflare, Fastly, or similar) is active and serving static assets from edge locations. Check that CSS, JavaScript, images, and fonts are all served via the CDN, not directly from the origin server.</li>
+    <li><strong>Image optimisation</strong> — verify that an image optimisation solution is in place, either server-side (ShortPixel, Imagify) or via CDN (Cloudflare Polish). Check that WebP format is served to supporting browsers and that images are properly sized for their display dimensions.</li>
+  </ul>
+
+  <p>If your hosting audit reveals consistent TTFB problems or missing infrastructure (no object cache, no CDN), consider migrating to a managed WordPress host like Cloudways, Kinsta, or WP Engine before investing in other optimisations. The hosting layer affects every page on your site, making it the highest-leverage fix available.</p>
+
+  <h2 id="wordpress-audit-tools">WordPress Audit Tools</h2>
+
+  <p>WordPress has a rich ecosystem of tools specifically designed for auditing and monitoring site health. Combining platform-specific tools with standard SEO tools gives you the most complete picture.</p>
+
+  <ul>
+    <li><strong>Query Monitor</strong> — the essential WordPress debugging plugin. Shows database queries, PHP errors, HTTP API calls, hooks and actions, and script/style dependencies on every page. Install it during your audit and deactivate when finished. It reveals exactly which plugins and theme functions are causing performance issues.</li>
+    <li><strong>WordPress Site Health</strong> — built into WordPress core since version 5.2. Access it at Tools > Site Health. It checks for outdated PHP, missing HTTPS, inactive plugins, and basic security issues. Treat it as a starting point, not a comprehensive audit.</li>
+    <li><strong>WP-CLI</strong> — the command-line interface for WordPress. Allows you to audit database size, list plugins with their update status, search for specific content patterns across posts, and run database optimisation commands without touching the admin interface. Essential for auditing large WordPress sites where the admin panel is slow.</li>
+    <li><strong>Health Check & Troubleshooting</strong> — a plugin from the WordPress.org team that lets you switch themes and disable plugins in a troubleshooting mode visible only to you. Invaluable for isolating the cause of SEO issues without affecting live visitors.</li>
+    <li><strong>Screaming Frog with WordPress configuration</strong> — configure Screaming Frog to crawl your WordPress site with specific attention to archive URLs, feed URLs, and media attachment pages. Set custom extraction rules to pull WordPress-specific metadata from each page.</li>
+    <li><strong>GTmetrix or WebPageTest</strong> — for detailed waterfall analysis showing exactly which WordPress resources are loading, in what order, and how they affect rendering. These tools show you the real-world impact of your theme and plugin choices in a way that lab tools like Lighthouse do not always capture.</li>
+  </ul>
+
+  <p>Schedule WordPress-specific audits quarterly, with security and update checks monthly. The WordPress ecosystem moves fast — new plugin versions, core updates, and PHP releases mean that what was optimised three months ago may need attention today. Build audit checks into your site maintenance workflow rather than treating them as one-off events.</p>
+</ContentLayout>

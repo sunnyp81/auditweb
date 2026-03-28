@@ -1,0 +1,153 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'Rankings Drop', href: '/seo-website-audit/rankings-drop/' },
+];
+
+const toc = [
+  { label: 'Common Causes of Rankings Drops', id: 'common-causes-of-rankings-drops' },
+  { label: 'Algorithm Update Impact', id: 'algorithm-update-impact' },
+  { label: 'Technical Issues That Tank Rankings', id: 'technical-issues-that-tank-rankings' },
+  { label: 'Manual Actions and Penalties', id: 'manual-actions-and-penalties' },
+  { label: 'Content Quality Problems', id: 'content-quality-problems' },
+  { label: 'Competitor Movement', id: 'competitor-movement' },
+  { label: 'Backlink Profile Changes', id: 'backlink-profile-changes' },
+  { label: 'Recovery Action Plan', id: 'recovery-action-plan' },
+];
+---
+
+<ContentLayout
+  title="Website Rankings Drop Audit: Diagnose and Recover Fast"
+  description="Lost rankings? A rankings drop audit identifies the cause — algorithm update, technical issue, penalty, or competitor action — and shows you how to recover."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>Few things in digital marketing create panic like watching your rankings collapse. Pages that held position one for months suddenly drop to page two or disappear entirely. Traffic falls off a cliff. Revenue declines. And the worst part is that without a systematic diagnostic process, you have no idea why it happened or what to do about it.</p>
+
+  <p>A rankings drop audit is a focused investigation that identifies the specific cause of your decline and produces a targeted recovery plan. The cause matters enormously — the correct response to an algorithm update is completely different from the correct response to a technical crawling issue, a manual penalty, or competitor improvement. Misdiagnosing the cause leads to wasted effort on fixes that do not address the actual problem, while your rankings continue to erode.</p>
+
+  <p>This guide walks you through the complete diagnostic process, from confirming the drop is real to identifying the cause to building a recovery plan that addresses the root issue rather than the symptoms.</p>
+
+  <h2 id="common-causes-of-rankings-drops">Common Causes of Rankings Drops</h2>
+
+  <p>Before diving into the audit process, understanding the landscape of possible causes helps you direct your investigation efficiently. Rankings drops generally fall into one of six categories, each with distinct characteristics that aid diagnosis.</p>
+
+  <ul>
+    <li><strong>Algorithm updates</strong> — Google releases core updates several times per year, along with targeted updates focusing on specific areas like product reviews, helpful content, spam, or link quality. Algorithm-related drops typically affect many pages simultaneously and coincide with confirmed or suspected update rollout dates.</li>
+    <li><strong>Technical issues</strong> — server problems, accidental noindex tags, robots.txt changes, broken redirects, or site migration errors can prevent Google from crawling or indexing your pages. Technical drops often happen suddenly and affect the entire site or specific sections uniformly.</li>
+    <li><strong>Manual actions</strong> — Google's spam team can issue manual penalties for violations like unnatural links, thin content, cloaking, or hidden text. These appear explicitly in Search Console and affect either the entire site or specific pages.</li>
+    <li><strong>Content quality degradation</strong> — gradual drops can result from content becoming outdated, competitors publishing better content on the same topics, or content quality signals deteriorating over time as user behaviour changes.</li>
+    <li><strong>Competitor improvement</strong> — sometimes your rankings drop not because you did anything wrong but because competitors did something right. A competitor publishing comprehensive new content, earning high-authority backlinks, or improving their site experience can displace your pages.</li>
+    <li><strong>Backlink changes</strong> — losing high-authority backlinks, receiving a influx of toxic links, or changes in your link profile's composition can affect rankings. This is particularly relevant if a key referring domain removed your links or if a negative SEO attack has targeted your site.</li>
+  </ul>
+
+  <p>The first step in any rankings drop audit is to determine which category your drop falls into. The diagnostic steps that follow are designed to isolate the cause systematically rather than guessing.</p>
+
+  <h2 id="algorithm-update-impact">Algorithm Update Impact</h2>
+
+  <p>Algorithm updates are the most common cause of significant rankings drops. Google confirms major core updates via its Search Status Dashboard and the Google Search Central blog, but smaller updates often roll out without announcement. Your first diagnostic step is to correlate your traffic decline with known update dates.</p>
+
+  <p>Follow this process to assess algorithm update impact:</p>
+
+  <ul>
+    <li><strong>Timeline correlation</strong> — open Google Search Console and set the date range to the last six months. Identify the exact date your traffic began declining. Compare this date against the Search Status Dashboard at status.search.google.com/incidents. If the decline aligns within a few days of a confirmed update, algorithm changes are the likely cause.</li>
+    <li><strong>Scope of impact</strong> — check whether the drop affected your entire site uniformly or specific sections disproportionately. Core updates tend to affect broad sections based on content quality signals. The Helpful Content Update specifically targets sites with large amounts of content written primarily for search engines rather than users. Product review updates target review content specifically.</li>
+    <li><strong>Query-level analysis</strong> — in Search Console, compare performance for your top 50 queries before and after the drop date. If informational queries dropped while commercial queries held, or vice versa, this narrows the type of algorithm change that affected you.</li>
+    <li><strong>Industry comparison</strong> — check whether competitors in your space experienced similar drops. Use tools like Sistrix, SEMrush Sensor, or Algoroo to see whether your industry vertical was broadly impacted. If your entire niche dropped, the algorithm change targeted your topic area. If only your site dropped while competitors held, the algorithm evaluated your site specifically and found it wanting.</li>
+    <li><strong>Historical pattern</strong> — check whether your site has been affected by previous algorithm updates. Sites that were hit by the Helpful Content Update, for example, often see further impact from subsequent core updates. A pattern of algorithm sensitivity indicates persistent quality issues that need addressing at a fundamental level rather than through tactical fixes.</li>
+  </ul>
+
+  <p>If an algorithm update is confirmed as the cause, the recovery path depends on the type of update. Core updates require improving overall content quality and E-E-A-T signals. Helpful content updates require removing or substantially rewriting content created primarily for search engines. Link spam updates require cleaning up unnatural link building practices.</p>
+
+  <h2 id="technical-issues-that-tank-rankings">Technical Issues That Tank Rankings</h2>
+
+  <p>Technical issues can cause sudden, dramatic rankings drops and are often the easiest to fix once identified. The challenge is that technical problems can be invisible — your site looks fine in a browser, but Google's crawler sees something entirely different.</p>
+
+  <p>Run through these technical checks systematically:</p>
+
+  <ul>
+    <li><strong>Robots.txt audit</strong> — check your live robots.txt file for any rules that block Google from crawling important sections of your site. A single misplaced Disallow directive can block entire directories. Compare your current robots.txt against a known good version from the Wayback Machine to identify any recent changes.</li>
+    <li><strong>Noindex tags</strong> — crawl your site and check for noindex meta tags or X-Robots-Tag headers on pages that should be indexed. Accidental noindex deployment is one of the most common technical causes of rankings drops, often introduced during a site update or CMS migration.</li>
+    <li><strong>Canonical tag errors</strong> — verify that canonical tags on your important pages point to the correct URLs. Self-referencing canonicals that point to non-existent pages, canonicals that point to redirecting URLs, or canonical tags added by plugins that conflict with your intended canonicals can all cause indexation problems.</li>
+    <li><strong>Server errors</strong> — check your server logs and Search Console's crawl stats for spikes in 5xx errors. If Google encounters server errors when crawling your pages, it may temporarily or permanently reduce crawl rate and deindex affected pages. Even intermittent server errors during peak crawl periods can cause problems.</li>
+    <li><strong>Site speed degradation</strong> — check Core Web Vitals in Search Console for any deterioration. A new script, a server configuration change, or an increase in page weight can push your pages past the performance thresholds that Google uses as ranking signals. Compare current performance against the period before the drop.</li>
+    <li><strong>HTTPS and security issues</strong> — check for mixed content warnings, expired SSL certificates, or incorrect HTTP-to-HTTPS redirects. Security certificate issues can cause browsers and search engines to flag your site as unsafe, which both drops rankings and destroys user trust.</li>
+    <li><strong>Redirect issues</strong> — if you recently changed URL structures, migrated domains, or reorganised content, check that all redirects are in place and functioning correctly. Missing redirects after a migration are a leading cause of catastrophic rankings drops. Verify with a full site crawl that no important pages return 404 errors.</li>
+  </ul>
+
+  <h2 id="manual-actions-and-penalties">Manual Actions and Penalties</h2>
+
+  <p>Manual actions are penalties applied by Google's human spam review team. Unlike algorithm updates which are automated and applied globally, manual actions are specific to your site and result from identified violations of Google's Webmaster Guidelines. They are the most serious type of rankings issue but also the most clearly defined.</p>
+
+  <p>Check for manual actions by logging into Google Search Console and navigating to Security & Manual Actions > Manual Actions. If a manual action exists, the page will display the specific violation and whether it affects the entire site or specific pages. Common manual actions include:</p>
+
+  <ul>
+    <li><strong>Unnatural links to your site</strong> — someone (possibly a previous SEO agency) built manipulative links pointing to your site. This includes paid links, link exchanges, private blog networks, and mass directory submissions. Recovery requires identifying and disavowing the offending links, then submitting a reconsideration request.</li>
+    <li><strong>Unnatural links from your site</strong> — your site contains paid or manipulative outbound links that pass PageRank. This is common on sites that have sold links or participated in link schemes. Recovery requires removing or nofollowing the offending links.</li>
+    <li><strong>Thin content with little or no added value</strong> — your site has pages that provide no unique value to users. This includes automatically generated content, thin affiliate pages, and scraped content. Recovery requires removing or substantially improving the affected content.</li>
+    <li><strong>Pure spam</strong> — the most severe manual action, applied to sites that use aggressive spam techniques like cloaking, sneaky redirects, or gibberish content. Recovery from pure spam manual actions is extremely difficult and often requires starting with a fresh domain.</li>
+    <li><strong>User-generated spam</strong> — spam content in comment sections, forums, or user profile pages on your site. Recovery requires cleaning up the spam and implementing measures to prevent future spam (comment moderation, CAPTCHA, nofollow on user-generated links).</li>
+  </ul>
+
+  <p>If you find a manual action, the recovery process is well-documented by Google: fix every instance of the violation, document your fixes thoroughly, and submit a reconsideration request through Search Console. Be comprehensive — a reconsideration request that misses even a few violations will be rejected. Google's review team is thorough and expects you to be equally thorough.</p>
+
+  <h2 id="content-quality-problems">Content Quality Problems</h2>
+
+  <p>Content quality issues cause gradual rankings erosion rather than sudden drops. Your content may have been competitive when published but has since been overtaken by better, more current, more comprehensive competitor content. Or your site may have accumulated low-quality content that dilutes your overall domain authority.</p>
+
+  <p>Audit content quality by examining:</p>
+
+  <ul>
+    <li><strong>Content freshness</strong> — review the publication and update dates on your top 50 organic landing pages. Content that has not been updated in over 18 months is at high risk of losing rankings to more recently published or updated competitors. Cross-reference with actual content accuracy — are the facts, statistics, and recommendations still current?</li>
+    <li><strong>Keyword cannibalisation</strong> — check whether multiple pages on your site compete for the same keyword. Search Console's performance report grouped by query will reveal queries where multiple URLs appear. When two pages split a keyword's ranking signals between them, both perform worse than a single consolidated page would.</li>
+    <li><strong>Thin content ratio</strong> — calculate the percentage of your indexed pages that receive zero organic traffic. If more than half of your indexed pages get no search traffic at all, your site may be triggering quality filters that affect even your good content. Consider consolidating, noindexing, or removing pages that provide no search value.</li>
+    <li><strong>AI content detection</strong> — if your site has recently published large volumes of AI-generated content without substantial human editing and expertise, this may be triggering quality filters. Google's Helpful Content system specifically targets content that appears to be created for search engines rather than for genuine user value, regardless of how it was produced.</li>
+    <li><strong>E-E-A-T assessment</strong> — evaluate whether your content demonstrates Experience, Expertise, Authoritativeness, and Trustworthiness. Are author bios present and credible? Do articles cite sources? Is there evidence of first-hand experience? For YMYL topics (health, finance, legal), E-E-A-T signals are particularly critical and their absence can directly cause rankings drops.</li>
+  </ul>
+
+  <h2 id="competitor-movement">Competitor Movement</h2>
+
+  <p>Sometimes your rankings drop not because anything on your site changed, but because competitors improved their sites. This is the most frustrating type of rankings loss because there is nothing to "fix" — you simply need to be better.</p>
+
+  <ul>
+    <li><strong>Identify who displaced you</strong> — for each keyword where you lost rankings, check who now occupies your former position. If the same competitor appears repeatedly, they have likely made a significant SEO investment that pushed them ahead.</li>
+    <li><strong>Analyse competitor changes</strong> — use the Wayback Machine and Ahrefs/Semrush to determine what the competitor changed. Did they publish new content? Did they redesign their page? Did they earn new backlinks? Understanding what moved the needle for them tells you what you need to do to compete.</li>
+    <li><strong>New SERP features</strong> — check whether new SERP features (featured snippets, People Also Ask, AI overviews) have appeared for your target keywords. These features can push organic results further down the page, reducing your effective visibility even if your ranking position has not changed technically.</li>
+    <li><strong>New competitors</strong> — check whether entirely new websites have entered the competitive landscape. In fast-moving industries, new entrants with fresh content and aggressive link building can disrupt established rankings surprisingly quickly.</li>
+  </ul>
+
+  <p>The response to competitor-driven drops is to outcompete: produce better content, earn more authoritative backlinks, improve your user experience, and strengthen the signals that Google uses to determine which page best serves the searcher's intent.</p>
+
+  <h2 id="backlink-profile-changes">Backlink Profile Changes</h2>
+
+  <p>Backlinks remain one of the strongest ranking signals, and changes in your link profile can cause measurable rankings shifts. Both losing valuable links and gaining toxic links can trigger drops.</p>
+
+  <ul>
+    <li><strong>Lost links audit</strong> — use Ahrefs or Semrush to identify backlinks lost in the period leading up to your rankings drop. Filter for high-authority domains (DR 50+) and check whether the linking pages have been removed, the links have been changed to nofollow, or the referring domains have dropped in authority themselves. Losing even a single high-authority backlink from a relevant site can cause a noticeable rankings decline.</li>
+    <li><strong>New toxic links</strong> — check for any influx of low-quality, spammy, or irrelevant backlinks. Negative SEO attacks — where competitors deliberately build toxic links to your site — do occur, though they are less common than feared. Check for sudden spikes in links from foreign-language sites, casino or pharmaceutical domains, or link farms with identical anchor text.</li>
+    <li><strong>Anchor text distribution</strong> — analyse your anchor text profile for over-optimisation. If a disproportionate percentage of your anchor text uses exact-match keywords, this signals manipulative link building to Google's algorithms. A natural anchor text profile includes branded anchors, URL anchors, generic anchors ("click here," "read more"), and a small percentage of keyword-rich anchors.</li>
+    <li><strong>Referring domain trends</strong> — chart your referring domain count over time. A healthy backlink profile shows gradual, steady growth. Sudden spikes or drops in referring domains can both trigger algorithmic scrutiny. If your referring domain count has declined significantly, identify where the losses occurred and whether the affected links can be recovered through outreach.</li>
+  </ul>
+
+  <h2 id="recovery-action-plan">Recovery Action Plan</h2>
+
+  <p>Once you have identified the cause of your rankings drop, the recovery plan must be specific, prioritised, and measurable. Generic advice like "improve your content" is useless without concrete actions and timelines.</p>
+
+  <p>Structure your recovery plan using this framework:</p>
+
+  <ul>
+    <li><strong>Immediate actions (week one)</strong> — fix any technical issues that are preventing crawling or indexing. These include robots.txt errors, accidental noindex tags, broken redirects, and server errors. Technical fixes often produce the fastest recovery because they remove a barrier rather than requiring Google to re-evaluate your content.</li>
+    <li><strong>Short-term actions (weeks two to four)</strong> — address content quality issues on your most important pages. Update outdated content, consolidate cannibalised pages, remove or noindex thin content, and improve E-E-A-T signals. Submit updated pages for re-indexing via Search Console.</li>
+    <li><strong>Medium-term actions (months two to three)</strong> — execute link building and content development strategies. Publish new content targeting gaps identified in competitor analysis. Earn backlinks through digital PR, guest posting, or content promotion. These activities take time to compound but produce lasting improvements.</li>
+    <li><strong>Ongoing monitoring</strong> — set up weekly tracking for your core keyword positions and organic traffic. Create alerts in Search Console for crawl errors and indexation changes. Monitor the Google Search Status Dashboard for upcoming algorithm updates so you can assess impact quickly rather than discovering it weeks later.</li>
+  </ul>
+
+  <p>Set realistic expectations for recovery timelines. Technical fixes can show results within days of Google's next crawl. Content improvements typically take four to eight weeks to reflect in rankings. Algorithm update recovery can take three to six months, and sometimes requires waiting for the next iteration of the update that affected you. Manual action recovery takes as long as Google needs to review your reconsideration request — typically two to four weeks after submission.</p>
+
+  <p>Document everything you do during recovery. Create a log of changes with dates, affected pages, and the specific issue each change addresses. This documentation is invaluable for understanding what worked, for communicating progress to stakeholders, and for your reconsideration request if a manual action is involved.</p>
+</ContentLayout>

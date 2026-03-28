@@ -1,0 +1,152 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Semrush', href: '/website-audit-tools/semrush/' },
+];
+
+const toc = [
+  { label: 'What Is Semrush Site Audit', id: 'what-is-semrush-site-audit' },
+  { label: 'Running Your First Audit', id: 'running-your-first-audit' },
+  { label: 'Site Health Score', id: 'site-health-score' },
+  { label: 'Thematic Reports', id: 'thematic-reports' },
+  { label: 'Top Issues to Fix First', id: 'top-issues-to-fix-first' },
+  { label: 'Comparing Audits Over Time', id: 'comparing-audits-over-time' },
+  { label: 'Semrush vs Ahrefs', id: 'semrush-vs-ahrefs' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Semrush Site Audit: How to Run and Interpret Your Results"
+  description="Master the Semrush Site Audit tool. Learn how to configure crawls, understand the site health score, and prioritise fixes from your audit results."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Semrush Site Audit is one of the most polished technical SEO auditing tools available. It runs over 140 automated checks across crawlability, performance, internal linking, HTTPS implementation, and markup quality. What sets it apart from competitors is how clearly it presents results. Where other tools give you a raw list of issues and leave you to figure out what matters, Semrush organises findings into thematic reports with plain-language explanations.</p>
+
+<p>This guide covers how to set up and run audits, how to interpret the results, and how to use the tool for ongoing site health monitoring. Whether you are an SEO professional managing client sites or a site owner running your first audit, this walkthrough will help you get actionable insights from Semrush.</p>
+
+<h2 id="what-is-semrush-site-audit">What Is Semrush Site Audit</h2>
+
+<p>Semrush Site Audit is a cloud-based crawler that analyses your website for technical SEO issues. It is part of the Semrush platform, which means your audit data sits alongside keyword research, backlink analysis, rank tracking, and competitive intelligence. This integration is one of its strongest features because you can correlate technical issues with traffic and ranking changes without leaving the platform.</p>
+
+<p>The crawler checks for over 140 distinct issue types, grouped into categories like crawlability, HTTPS security, site performance, internal linking, and international SEO. Each issue is classified as an error, warning, or notice, and the tool provides a brief explanation of why the issue matters and how to fix it.</p>
+
+<p>Unlike desktop crawlers such as <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>, Semrush runs entirely in the cloud. You do not need to keep your computer running during a crawl, and results are stored in your account for comparison across crawls. This makes it particularly well-suited for agencies that need to track multiple client sites and share reports without exporting files.</p>
+
+<p>Semrush supports JavaScript rendering, which is essential for sites built with modern front-end frameworks. It also supports authenticated crawling for sites behind login walls, and respects robots.txt directives by default (with the option to override them).</p>
+
+<h2 id="running-your-first-audit">Running Your First Audit</h2>
+
+<p>To start an audit, create a project in Semrush by entering your domain. You do not need to verify ownership to run a crawl, unlike <a href="/website-audit-tools/ahrefs/">Ahrefs</a> which requires verification. This makes Semrush useful for auditing competitor sites or prospective client sites before you have access to their accounts.</p>
+
+<p>The crawl configuration screen presents several important options:</p>
+
+<ul>
+  <li><strong>Crawl scope:</strong> Choose the domain, subdomain, or subfolder to audit. You can also specify the crawl limit by number of pages. Your plan determines the maximum pages per audit (ranging from 100,000 to 1,000,000 depending on tier).</li>
+  <li><strong>Crawl source:</strong> By default, the crawler discovers pages by following links from the homepage. You can also provide a sitemap URL or upload a list of URLs. Using both link discovery and sitemap ensures the most comprehensive audit.</li>
+  <li><strong>Allowed and disallowed URLs:</strong> Use URL patterns to include or exclude specific sections. Useful for skipping staging areas, admin panels, or sections you do not want audited.</li>
+  <li><strong>Crawl with JavaScript rendering:</strong> Enable this for sites that load content dynamically. Be aware this increases crawl time and uses more of your page allowance.</li>
+  <li><strong>Respect robots.txt:</strong> Enabled by default. Toggle this off if you want to audit pages that are blocked by robots.txt (such as checking if blocked pages still have issues).</li>
+  <li><strong>Crawl frequency:</strong> Set automatic recurring crawls on a daily, weekly, or monthly schedule. Weekly is the sweet spot for most active sites.</li>
+  <li><strong>User agent:</strong> Choose between SemrushBot or Googlebot user agents.</li>
+</ul>
+
+<p>Click "Start Site Audit" and the crawl begins immediately. Small sites complete within minutes. Sites with tens of thousands of pages may take an hour or more. Semrush sends an email notification when the crawl finishes, and you can navigate away from the page without interrupting the process.</p>
+
+<h2 id="site-health-score">Site Health Score</h2>
+
+<p>The headline metric is the Site Health Score, displayed as a percentage from 0% to 100%. This score represents the proportion of checks passed relative to checks performed. A page that passes all 140+ checks contributes a perfect score. A page with errors, warnings, or notices reduces the score proportionally, with errors carrying more weight than warnings and warnings more than notices.</p>
+
+<p>What constitutes a "good" score depends on the type and size of the site. A new, well-built site with 50 pages might score 95%+. A large e-commerce site with 50,000 product pages, legacy code, and multiple CMS migrations in its history might sit at 70% and that could be perfectly acceptable. The important thing is the trajectory. A rising score means you are fixing more issues than you are creating. A falling score means new problems are appearing faster than you are resolving old ones.</p>
+
+<p>Semrush shows the Health Score trend as a line graph across your audit history. This graph is one of the most valuable reporting assets for agencies because it visually demonstrates the impact of ongoing technical SEO work to clients. If you are billing monthly for site maintenance, this trend line justifies the retainer.</p>
+
+<p>The score breakdown shows exactly how many errors, warnings, and notices contribute to the overall number. Click into any category to see the specific issue types and affected URLs. Semrush also highlights "Top Issues" at the top of the dashboard, ranking them by the number of affected pages. This is your priority list.</p>
+
+<h2 id="thematic-reports">Thematic Reports</h2>
+
+<p>Semrush organises audit findings into thematic reports, each focused on a specific aspect of technical SEO. This is one of the tool's strongest features because it lets you tackle issues systematically rather than wading through one enormous list.</p>
+
+<p><strong>Crawlability:</strong> Analyses how easily search engine bots can discover and access your pages. Checks for blocked resources in robots.txt, broken pages, redirect issues, sitemap problems, and orphan pages. This report answers the question: "Can Google find and access all of my important pages?"</p>
+
+<p><strong>HTTPS:</strong> Dedicated to security and HTTPS implementation. Checks for mixed content (HTTP resources on HTTPS pages), expired or missing SSL certificates, HTTP pages that should redirect to HTTPS, and HSTS header implementation. Given that HTTPS is a confirmed Google ranking signal, this report deserves attention even if you think your SSL is properly configured.</p>
+
+<p><strong>Site Performance:</strong> Focuses on page speed and resource loading. Identifies slow pages, large page sizes, uncompressed resources, render-blocking JavaScript and CSS, and pages with excessive HTTP requests. While not as detailed as a <a href="/website-audit-tools/lighthouse/">Lighthouse</a> performance audit, it catches the most impactful site-wide performance issues.</p>
+
+<p><strong>Internal Linking:</strong> Maps your internal link structure and identifies problems. Finds pages with too few internal links, pages buried too deep in the site architecture (more than three clicks from the homepage), broken internal links, and pages with excessive outgoing links. This report is particularly valuable because internal linking is one of the most controllable ranking factors.</p>
+
+<p><strong>Markup:</strong> Checks structured data implementation, Open Graph tags, Twitter Cards, and HTML tag issues (title, meta description, H1, canonical). Validates that your structured data follows the correct schema.org syntax. Markup errors can prevent rich snippets from appearing in search results, making this report important for visibility.</p>
+
+<p><strong>International SEO:</strong> If your site uses hreflang tags for multi-language or multi-regional targeting, this report validates the implementation. It checks for missing return tags, incorrect language codes, conflicting canonical and hreflang directives, and incomplete hreflang sets. Hreflang issues are among the most common and most damaging technical SEO problems on international sites.</p>
+
+<h2 id="top-issues-to-fix-first">Top Issues to Fix First</h2>
+
+<p>Not all audit issues deserve equal attention. After running hundreds of Semrush audits, these are the issues that consistently have the greatest impact on rankings and should be fixed first.</p>
+
+<p><strong>Pages returning 5xx status codes:</strong> Server errors mean your pages are completely inaccessible. Google will eventually deindex pages that consistently return 5xx errors. Fix the underlying server issue or remove internal links to pages you intend to decommission.</p>
+
+<p><strong>Redirect chains longer than two hops:</strong> Every redirect in a chain adds latency and dilutes link equity. Google follows up to 10 redirects but does not guarantee passing full link equity through chains. Collapse chains so every redirect goes directly to the final destination.</p>
+
+<p><strong>Pages with noindex that receive internal links:</strong> If you have intentionally noindexed a page, it should not receive internal links because those links send equity to a page that will not appear in search results. Either remove the noindex or remove the internal links.</p>
+
+<p><strong>Duplicate title tags:</strong> When multiple pages share the same title tag, search engines must guess which page is most relevant for the target keyword. This dilutes your ranking potential. Ensure every indexable page has a unique, descriptive title tag.</p>
+
+<p><strong>Orphan pages with organic traffic:</strong> If Semrush finds pages that have no internal links but are receiving organic traffic (cross-reference with the organic traffic data in Semrush), these pages are performing despite being structurally neglected. Adding internal links to them is likely to improve their rankings further.</p>
+
+<p><strong>Mixed content on HTTPS pages:</strong> Loading HTTP resources on HTTPS pages triggers browser security warnings and can cause content to be blocked entirely on strict browser configurations. Fix all HTTP resource references to use HTTPS or protocol-relative URLs.</p>
+
+<p><strong>Broken internal links:</strong> Every broken link is a dead end for both users and search engine crawlers. Fix the link target (redirect or update the URL) or remove the link entirely.</p>
+
+<h2 id="comparing-audits-over-time">Comparing Audits Over Time</h2>
+
+<p>One of Semrush's most useful features for ongoing SEO work is the ability to compare audits across different dates. When you run recurring crawls, the platform stores each snapshot and lets you view the difference between any two crawl dates.</p>
+
+<p>The comparison view shows which issues were fixed, which are new, and which remain unresolved. This is invaluable for:</p>
+
+<ul>
+  <li><strong>Client reporting:</strong> Show exactly how many issues were resolved since the last reporting period. The visual comparison makes progress tangible for non-technical stakeholders.</li>
+  <li><strong>Regression detection:</strong> Catch new issues introduced by site updates, CMS migrations, or developer deployments. If your Health Score drops between crawls, the comparison immediately shows which new issues appeared.</li>
+  <li><strong>Developer accountability:</strong> When working with development teams, share the comparison showing issues that were flagged, assigned, and either fixed or still outstanding. This creates a clear record of technical debt management.</li>
+</ul>
+
+<p>Semrush also sends email alerts when significant changes in your Site Health Score occur between crawls. Configure these alerts in the project settings to stay informed without manually checking the dashboard.</p>
+
+<p>For agencies, the historical comparison data is a powerful retention tool. When a client asks "what have you been doing?", the audit comparison provides concrete evidence of ongoing technical improvements.</p>
+
+<h2 id="semrush-vs-ahrefs">Semrush vs Ahrefs</h2>
+
+<p>Semrush and <a href="/website-audit-tools/ahrefs/">Ahrefs</a> are the two leading cloud-based SEO platforms with built-in site audit tools. Both are excellent, but they have different strengths.</p>
+
+<p><strong>User interface:</strong> Semrush wins on presentation. Its thematic reports, issue explanations, and visual Health Score trend make it easier for beginners and non-technical stakeholders to understand. Ahrefs provides more raw data and is preferred by technical SEOs who want to export and analyse crawl data in spreadsheets.</p>
+
+<p><strong>Issue coverage:</strong> Semrush checks 140+ issues. Ahrefs checks 170+. In practice, both cover all the critical issues. The extra checks in Ahrefs tend to be more granular subdivisions of the same problem categories.</p>
+
+<p><strong>JavaScript rendering:</strong> Both support it. Semrush's implementation is slightly more configurable, allowing you to set specific rendering timeouts.</p>
+
+<p><strong>White-label reporting:</strong> Semrush offers branded PDF reports on Business tier plans. Ahrefs does not currently offer white-label audit reports. For agencies, this is a significant differentiator.</p>
+
+<p><strong>Ecosystem integration:</strong> Both tools benefit from integration with their respective keyword and backlink databases. Semrush has a broader tool suite (including social media management, content marketing, and PPC tools), while Ahrefs is more focused on core SEO functions. Choose based on which platform's broader toolset you need.</p>
+
+<p>For a detailed feature-by-feature breakdown, see our <a href="/website-audit-tools/comparison/">complete tool comparison</a>.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Semrush pricing includes Site Audit in all paid plans:</p>
+
+<ul>
+  <li><strong>Pro ($139.95/month):</strong> 5 projects, 100,000 pages per audit. Designed for freelancers and startups. The page limit is generous enough for most small to medium sites.</li>
+  <li><strong>Guru ($249.95/month):</strong> 15 projects, 300,000 pages per audit. Adds historical data, content marketing toolkit, and integration with Google Data Studio. The historical data feature is essential for tracking audit progress over time.</li>
+  <li><strong>Business ($499.95/month):</strong> 40 projects, 1,000,000 pages per audit. Adds white-label reports, API access, and extended limits across all tools. This is the agency tier.</li>
+</ul>
+
+<p>Semrush offers a 7-day free trial on Pro and Guru plans. There is no permanently free tier with Site Audit access, unlike Ahrefs Webmaster Tools. However, Semrush does allow you to run a limited free audit (up to 100 pages) without subscribing, which can be useful for quick checks or demonstrating the tool to potential clients.</p>
+
+<p>For agencies comparing costs, Semrush is more expensive than <a href="/website-audit-tools/ahrefs/">Ahrefs</a> at the entry level ($139.95 vs $99/month) but the Guru plan's historical data and content tools offer significant additional value. <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> at £199/year is dramatically cheaper but lacks the cloud-based collaboration, scheduling, and ecosystem integration. Most agencies use a combination: Semrush or Ahrefs for cloud-based monitoring and Screaming Frog for deep custom crawls.</p>
+
+</ContentLayout>

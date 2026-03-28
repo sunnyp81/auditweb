@@ -1,0 +1,87 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+---
+
+<ContentLayout
+  title="Website UX Audit: Improve Usability and Conversions"
+  description="A UX audit evaluates your website's user experience — navigation, layout, forms, and user flows — to identify friction points that hurt conversions."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'UX Audit', href: '/website-ux-audit/' }
+  ]}
+  toc={[
+    { label: 'What Is a UX Audit', id: 'what-is-a-ux-audit' },
+    { label: 'Why UX Matters for Revenue', id: 'why-ux-matters-for-revenue' },
+    { label: 'Key Areas to Evaluate', id: 'key-areas-to-evaluate' },
+    { label: 'Navigation and Information Architecture', id: 'navigation-and-information-architecture' },
+    { label: 'Forms and Conversion Paths', id: 'forms-and-conversion-paths' },
+    { label: 'Mobile UX', id: 'mobile-ux' },
+    { label: 'UX Audit Tools', id: 'ux-audit-tools' },
+    { label: 'Action Plan', id: 'action-plan' }
+  ]}
+  publishDate="2026-03-28"
+>
+
+<h2 id="what-is-a-ux-audit">What Is a UX Audit</h2>
+<p>A UX audit is a structured evaluation of how users interact with your website. It examines every touchpoint — from the first page load to the final conversion action — to identify friction points, confusion, and missed opportunities that prevent visitors from achieving their goals and yours.</p>
+<p>Unlike aesthetic opinions about whether a site "looks nice," a UX audit applies established usability principles and real behavioural data to assess effectiveness. It combines heuristic evaluation (expert review against usability standards), analytics analysis (what users actually do), and user testing insights (why they do it) into a comprehensive picture of your site's usability.</p>
+<p>The audit examines both micro and macro interactions. Micro-level issues include button labels that do not communicate what happens next, form fields that lack validation feedback, and tap targets that are too small on mobile devices. Macro-level issues include navigation structures that do not match user mental models, content hierarchies that bury important information, and conversion funnels with unnecessary steps.</p>
+<p>A UX audit does not redesign your site. It diagnoses problems and prescribes specific fixes, many of which can be implemented without visual redesign. Moving a call-to-action above the fold, simplifying a form from twelve fields to five, or adding breadcrumb navigation are UX improvements that often require only minor development effort but produce measurable conversion gains.</p>
+
+<h2 id="why-ux-matters-for-revenue">Why UX Matters for Revenue</h2>
+<p>Every point of friction on your website has a measurable cost. When a visitor cannot find the pricing page, they leave. When a checkout form is confusing, they abandon the cart. When a landing page fails to communicate value within seconds, they bounce. Each of these moments represents lost revenue that compounds daily.</p>
+<p>Research from the Baymard Institute shows that the average e-commerce cart abandonment rate is approximately 70%. Their analysis identifies UX issues as the primary cause: forced account creation, complicated checkout processes, lack of trust signals, and poor error handling. Fixing these issues can recover a significant portion of that lost revenue without spending more on traffic acquisition.</p>
+<p>The relationship between UX and SEO is also tightening. Google's Core Web Vitals — Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift — are direct measures of user experience that influence search rankings. A poor UX does not just lose conversions; it suppresses the organic traffic that feeds your conversion funnel.</p>
+<p>For service businesses, UX friction on lead generation forms is particularly costly. If your contact form has a completion rate of 15% when the industry benchmark is 25%, you are losing 40% of potential leads. On a site receiving 500 form visits per month, that gap represents 50 lost leads — potentially tens of thousands in lost revenue depending on your average deal size.</p>
+<p>Investing in UX improvements typically delivers the highest ROI of any website change because it multiplies the value of your existing traffic. You do not need more visitors; you need more of your current visitors to convert.</p>
+
+<h2 id="key-areas-to-evaluate">Key Areas to Evaluate</h2>
+<p>A thorough UX audit covers six primary areas, each containing multiple evaluation criteria. Understanding these areas helps set expectations for the scope and depth of a proper review.</p>
+<p><strong>First impressions and page load.</strong> Users form an opinion about your site within 50 milliseconds of the first page load. The audit evaluates whether your above-the-fold content immediately communicates who you are, what you offer, and what the visitor should do next. It also measures perceived performance — not just actual load time but how quickly the page feels usable.</p>
+<p><strong>Navigation and findability.</strong> Can users find what they need? This covers primary navigation menus, footer links, search functionality, breadcrumbs, category structures, and internal linking patterns. The audit tests whether the information architecture matches how users think about your content, not how your organisation thinks about it.</p>
+<p><strong>Content readability and scannability.</strong> Users do not read web pages — they scan them. The audit evaluates heading hierarchy, paragraph length, use of bullet points and visual breaks, font size and line height, contrast ratios, and whether key information is visually prominent or buried in body text.</p>
+<p><strong>Interactive elements.</strong> Every button, form, dropdown, tab, accordion, and modal is a potential friction point. The audit tests whether interactive elements behave as expected, provide adequate feedback, handle errors gracefully, and are accessible to keyboard and screen reader users.</p>
+<p><strong>Conversion paths.</strong> The audit maps every route from landing to conversion and evaluates each step. Are there unnecessary pages in the funnel? Do users receive adequate reassurance at decision points? Are calls to action clear, compelling, and visible? Is the final conversion step (purchase, form submission, sign-up) as frictionless as possible?</p>
+<p><strong>Trust and credibility.</strong> Users need to trust your site before they will convert. The audit checks for social proof (testimonials, reviews, case studies), authority signals (certifications, media mentions, client logos), transparency (clear pricing, visible contact information, privacy policy), and professional presentation (no typos, broken images, or outdated content).</p>
+
+<h2 id="navigation-and-information-architecture">Navigation and Information Architecture</h2>
+<p>Navigation problems are among the most damaging UX issues because they affect every visitor on every visit. If users cannot find what they are looking for, nothing else on your site matters — not your compelling copy, not your competitive pricing, not your beautiful design.</p>
+<p>The audit evaluates your primary navigation against several criteria. Menu items should use language that matches user expectations, not internal jargon. A "Solutions" dropdown that contains product categories is less clear than a "Products" label. The number of top-level items should typically stay below seven to avoid cognitive overload. Dropdown menus should be accessible via keyboard and not disappear when the cursor moves between the trigger and the menu content.</p>
+<p>Information architecture refers to how your content is organised into categories, subcategories, and hierarchies. The audit tests whether this structure matches user mental models through techniques like tree testing (asking users to find specific information using only your navigation labels) and card sorting (asking users to group your content into categories that make sense to them).</p>
+<p>Search functionality is critical for sites with large content inventories. The audit evaluates whether your on-site search returns relevant results, handles typos and synonyms, provides useful autocomplete suggestions, and displays results in a scannable format. A search function that returns irrelevant results is worse than no search function at all because it destroys user confidence.</p>
+<p>Breadcrumb navigation helps users understand where they are within your site hierarchy and provides easy navigation to parent pages. The audit checks whether breadcrumbs are present on all relevant pages, accurately reflect the page hierarchy, and use structured data for SEO benefit.</p>
+
+<h2 id="forms-and-conversion-paths">Forms and Conversion Paths</h2>
+<p>Forms are where money changes hands, leads are captured, and accounts are created. They are also where the highest-value visitors are most likely to abandon. A UX audit pays particular attention to form design because small improvements here produce disproportionate revenue gains.</p>
+<p>The audit evaluates form length first. Every field you add reduces completion rates. Ask only for information you genuinely need at this stage. A lead capture form that asks for company size, industry, budget, and timeline before the user has even spoken to a human is asking for commitment before building trust. Name, email, and a brief message is often sufficient for the initial touchpoint.</p>
+<p>Field labels must be clear and positioned correctly. Labels above the field (rather than inside as placeholder text) are more accessible and prevent the common problem of users forgetting what a field is for once they start typing. Required fields should be marked explicitly, and optional fields should be labelled as optional rather than relying on asterisks that many users do not understand.</p>
+<p>Error handling is frequently poor. The audit tests whether errors are displayed inline next to the relevant field (not in a banner at the top of the page), whether error messages explain what went wrong and how to fix it, and whether the form preserves entered data when an error occurs. Users who fill out a ten-field form and then lose all their input due to a validation error will not try again.</p>
+<p>Multi-step forms should display progress indicators so users know how many steps remain. Each step should feel achievable rather than overwhelming. The most sensitive information (payment details, personal identifiers) should be requested last, after the user has already invested effort in completing earlier steps.</p>
+<p>For e-commerce checkout, the audit evaluates guest checkout availability, payment method variety, shipping cost transparency, order summary visibility, and post-purchase confirmation. Each element contributes to or detracts from conversion rates.</p>
+
+<h2 id="mobile-ux">Mobile UX</h2>
+<p>Mobile traffic exceeds desktop on most websites, yet mobile conversion rates consistently lag behind. This gap represents the largest UX opportunity for most businesses, and a dedicated mobile UX evaluation is essential.</p>
+<p>The audit tests your site on actual mobile devices, not just browser emulators. Emulators cannot replicate the experience of using a phone in sunlight with one hand while walking. They miss issues like touch targets that are technically 44x44 pixels but positioned so close together that fat-finger taps hit the wrong element, or content that is technically visible but requires precise scrolling to reach.</p>
+<p>Thumb-zone analysis evaluates whether primary actions are positioned where users can easily reach them with their thumb. On modern large-screen phones, the top corners and far edges of the screen are difficult to reach with one-handed use. Critical buttons and navigation elements should be positioned in the natural thumb arc — the centre and bottom third of the screen.</p>
+<p>Mobile-specific UX issues flagged in audits include horizontal scrolling caused by elements that exceed viewport width, fixed-position elements that consume excessive screen real estate on small screens, pop-ups and modals that are difficult to dismiss on mobile, images and videos that do not scale properly, and text input fields that trigger the wrong keyboard type (showing a standard keyboard for email or phone number fields).</p>
+<p>Performance has an amplified impact on mobile. Users on mobile connections are less tolerant of slow loads, and mobile devices have less processing power for rendering complex JavaScript. The audit evaluates mobile-specific performance metrics and identifies assets and scripts that disproportionately affect mobile load times.</p>
+
+<h2 id="ux-audit-tools">UX Audit Tools</h2>
+<p>Effective UX audits combine automated tools with human evaluation. No tool can fully replace expert judgement, but the right tools provide the quantitative data that supports qualitative assessment.</p>
+<p><strong>Google Analytics (GA4)</strong> provides behavioural data: which pages have high bounce rates, where users drop out of conversion funnels, which devices and browsers your audience uses, and how users flow through your site. This data identifies where problems exist before you diagnose what the problems are.</p>
+<p><strong>Hotjar or Microsoft Clarity</strong> provide heatmaps showing where users click, scroll, and hover, plus session recordings that let you watch individual user journeys. This qualitative data reveals why users behave as they do. You might discover that users repeatedly click a non-clickable element (indicating a design affordance problem) or that they scroll past your call-to-action without noticing it.</p>
+<p><strong>Google PageSpeed Insights and Lighthouse</strong> measure Core Web Vitals and provide performance recommendations. These tools bridge UX and technical auditing, quantifying user experience issues like slow load times and layout instability.</p>
+<p><strong>axe DevTools and WAVE</strong> automate accessibility testing, flagging missing alt text, insufficient contrast ratios, missing form labels, and other WCAG violations. Accessibility is a UX issue — every barrier you remove expands your potential audience.</p>
+<p><strong>Optimal Workshop</strong> provides tree testing and card sorting tools for evaluating information architecture. These are particularly valuable when your audit reveals navigation problems that require structural changes rather than cosmetic fixes.</p>
+<p><strong>Browser DevTools</strong> allow real-time inspection of responsive behaviour, network performance, and rendering issues across different viewport sizes.</p>
+
+<h2 id="action-plan">Action Plan</h2>
+<p>A UX audit without an action plan is an academic exercise. The value comes from implementing fixes, and implementation requires prioritisation because you cannot fix everything at once.</p>
+<p>Prioritise using an impact-effort matrix. High-impact, low-effort fixes come first: these are quick wins like adjusting button colours for better visibility, adding missing form labels, fixing broken links, and improving above-the-fold content. These changes can often be deployed within days and produce immediate measurable improvements.</p>
+<p>Medium-effort fixes include navigation restructuring, form redesign, mobile layout optimisation, and adding trust signals to key pages. These require design and development resources but typically complete within two to four weeks.</p>
+<p>High-effort fixes like full information architecture overhauls, site-wide design system implementation, or comprehensive accessibility remediation are long-term projects that should be planned as phased initiatives with measurable milestones.</p>
+<p>For every fix, define a success metric before implementation. If you are simplifying a form, measure the completion rate before and after. If you are redesigning navigation, measure task completion rates and time-to-find metrics. If you are improving mobile UX, track mobile conversion rates. Without measurement, you cannot verify that your fixes actually worked or quantify the return on your UX investment.</p>
+<p>Schedule a follow-up audit six months after implementing major changes. UX is not a one-time project — user expectations evolve, new devices emerge, and site changes can introduce new friction points. Ongoing UX evaluation, whether through formal audits or continuous analytics monitoring, ensures your site keeps improving rather than regressing.</p>
+<p>Ready to start? Our <a href="/free-website-audit/">free website audit</a> includes a UX overview, or explore our <a href="/website-audit-services/professional/">professional audit</a> for an in-depth usability evaluation.</p>
+
+</ContentLayout>

@@ -1,0 +1,155 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'Ecommerce', href: '/seo-website-audit/ecommerce/' },
+];
+
+const toc = [
+  { label: 'Why Ecommerce Sites Need Special Audits', id: 'why-ecommerce-sites-need-special-audits' },
+  { label: 'Product Page SEO Checks', id: 'product-page-seo-checks' },
+  { label: 'Category Page Optimisation', id: 'category-page-optimisation' },
+  { label: 'Faceted Navigation Issues', id: 'faceted-navigation-issues' },
+  { label: 'Schema for Products', id: 'schema-for-products' },
+  { label: 'Site Speed for Stores', id: 'site-speed-for-stores' },
+  { label: 'Internal Linking for Ecommerce', id: 'internal-linking-for-ecommerce' },
+  { label: 'Common Ecommerce SEO Mistakes', id: 'common-ecommerce-seo-mistakes' },
+];
+---
+
+<ContentLayout
+  title="SEO Audit for Ecommerce Sites: Find What's Costing You Sales"
+  description="Ecommerce SEO audits uncover product page issues, faceted navigation problems, and technical debt that hurt your store's organic traffic and revenue."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>Ecommerce websites carry complexity that most other site types never encounter. Thousands of product pages, dynamic filtering systems, seasonal inventory changes, and platform-imposed URL structures create an environment where SEO problems compound quickly and quietly eat into revenue. A standard SEO audit checklist will catch surface issues, but ecommerce stores need a specialised approach that accounts for how search engines crawl, index, and rank product-driven sites.</p>
+
+  <p>The stakes are higher too. Every ranking you lose on a product page translates directly to lost sales. A category page dropping from position three to position eight on a high-volume keyword can cost thousands per month. This guide covers the specific checks your ecommerce SEO audit needs to include, from product page optimisation to the faceted navigation problems that silently drain your crawl budget.</p>
+
+  <h2 id="why-ecommerce-sites-need-special-audits">Why Ecommerce Sites Need Special Audits</h2>
+
+  <p>A typical content website might have a few hundred pages. An ecommerce store with even a modest catalogue can have tens of thousands of indexable URLs once you factor in product variants, colour options, size variations, filtered views, and paginated category pages. This scale introduces problems that simply do not exist on smaller sites.</p>
+
+  <p>Crawl budget becomes a genuine constraint. Google allocates a finite number of pages it will crawl on your domain in any given period. If thousands of low-value filtered URLs are consuming that budget, your most important product and category pages may not get crawled frequently enough to maintain their rankings. On a 500-page blog, crawl budget is irrelevant. On a 50,000-page ecommerce store, it determines which products Google even knows about.</p>
+
+  <p>Duplicate content is endemic to ecommerce. The same product appearing under multiple categories, URL parameters creating infinite URL variations, and syndicated manufacturer descriptions shared across hundreds of retailers all create duplicate content at a scale that triggers quality filters. An ecommerce audit must systematically identify and resolve these duplications.</p>
+
+  <p>Inventory changes add another layer. Products go out of stock, seasonal ranges rotate, and discontinued items leave behind 404 errors or redirect chains. Without a process for handling these lifecycle events, your site accumulates technical debt that degrades overall SEO performance. A proper ecommerce audit establishes not just what to fix now, but what processes to implement for ongoing inventory management.</p>
+
+  <h2 id="product-page-seo-checks">Product Page SEO Checks</h2>
+
+  <p>Product pages are the revenue-generating core of your ecommerce site, yet they are often the most neglected from an SEO perspective. Many stores rely entirely on manufacturer-supplied descriptions, resulting in thin, duplicated content that offers Google no reason to rank their page over any other retailer selling the same item.</p>
+
+  <p>Start your product page audit by checking these elements on a representative sample of at least 50 product pages across different categories:</p>
+
+  <ul>
+    <li><strong>Unique product descriptions</strong> — every product page should have original copy that goes beyond the manufacturer specification. Include use cases, comparisons to similar products, and answers to common buyer questions. Pages with fewer than 300 words of unique content are at high risk of being filtered as thin content.</li>
+    <li><strong>Title tag structure</strong> — product titles should follow a consistent template that includes the product name, key attribute (size, colour, model number), and brand. Avoid stuffing category keywords into product titles. A good pattern: "[Product Name] - [Key Feature] | [Brand] | [Store Name]".</li>
+    <li><strong>Image optimisation</strong> — check that every product has multiple images with descriptive alt text. Audit image file sizes and ensure WebP or AVIF formats are served. Product images are frequently the heaviest assets on ecommerce pages and the primary cause of slow load times.</li>
+    <li><strong>Canonical tags</strong> — verify that every product page has a self-referencing canonical pointing to the clean URL without parameters. If the same product is accessible via multiple URLs (different categories, tracking parameters), all variants must canonical to a single version.</li>
+    <li><strong>Out-of-stock handling</strong> — check what happens when a product goes out of stock. The page should remain live with a clear status indicator, not return a 404. If the product is permanently discontinued, implement a 301 redirect to the most relevant alternative or parent category.</li>
+  </ul>
+
+  <p>Review the ratio of product pages that receive organic traffic versus those that receive none. On most ecommerce sites, fewer than 20% of product pages drive any search traffic at all. Identifying patterns in the pages that do rank — better descriptions, more reviews, stronger internal links — gives you a template for improving the rest.</p>
+
+  <h2 id="category-page-optimisation">Category Page Optimisation</h2>
+
+  <p>Category pages are often the highest-value landing pages on an ecommerce site. They target broader, higher-volume keywords like "men's running shoes" or "wireless headphones under 100" and serve as the primary gateway for users entering from search. Despite this, many stores treat category pages as nothing more than a grid of product thumbnails with no unique content.</p>
+
+  <p>Your category page audit should assess the following:</p>
+
+  <ul>
+    <li><strong>Above-the-fold content</strong> — there should be a brief introductory paragraph (50-100 words) above the product grid that establishes relevance for the target keyword without pushing products below the fold. This content must be visible on both desktop and mobile without expanding a "read more" toggle that users never click.</li>
+    <li><strong>Below-the-grid content</strong> — a more comprehensive content block (300-500 words) below the product listings provides additional context, buying guides, and internal links to subcategories. This is where you answer the informational queries that share intent with the category keyword.</li>
+    <li><strong>Pagination implementation</strong> — check whether paginated category pages use proper next/prev linking or infinite scroll with progressive enhancement. Every paginated page should be crawlable. If using load-more buttons or infinite scroll, verify that all products are accessible to crawlers via the HTML source.</li>
+    <li><strong>H1 and heading structure</strong> — each category page should have a single H1 that matches the target keyword. Subcategories and sorting options should not create competing headings.</li>
+    <li><strong>Breadcrumb navigation</strong> — verify that breadcrumbs reflect the site's category hierarchy and include structured data markup. Breadcrumbs are critical for ecommerce because they establish the relationship between products, subcategories, and parent categories in a way that search engines can parse.</li>
+  </ul>
+
+  <p>Sort categories by organic traffic and identify which high-volume categories are underperforming relative to their keyword potential. These are your quick wins — adding unique content and fixing structural issues on established category pages often yields ranking improvements within weeks.</p>
+
+  <h2 id="faceted-navigation-issues">Faceted Navigation Issues</h2>
+
+  <p>Faceted navigation — the filtering system that lets shoppers narrow results by price, colour, size, brand, rating, and other attributes — is the single most common source of SEO problems on ecommerce sites. Every filter combination can potentially generate a unique URL, and on a site with hundreds of products and dozens of filter options, this creates millions of possible URL combinations.</p>
+
+  <p>The core problem is index bloat. If Google discovers and indexes thousands of filtered URLs like <code>/shoes?colour=red&size=10&brand=nike&sort=price-low</code>, your crawl budget gets consumed by low-value pages while your important category and product pages receive less frequent crawling.</p>
+
+  <p>Audit your faceted navigation by checking these specific issues:</p>
+
+  <ul>
+    <li><strong>Parameter handling in Google Search Console</strong> — review which URL parameters Google is aware of and how they are being treated. Common parameters like sort order, items per page, and display mode should be set to "no URLs" in parameter handling.</li>
+    <li><strong>Noindex vs canonical vs robots.txt</strong> — determine which strategy your site uses for filtered pages. Best practice is to allow crawling but add noindex to non-valuable combinations, while canonical tags point filtered views back to the parent category. Blocking via robots.txt prevents Google from following the canonical directive.</li>
+    <li><strong>Internal links to filtered URLs</strong> — check whether your site's navigation, footer, or sitemap links to filtered URLs. These links signal to Google that filtered pages are important, contradicting any noindex or canonical directives.</li>
+    <li><strong>Valuable filter combinations</strong> — not all filtered URLs are worthless. "Red running shoes" or "wireless headphones under 50" may have genuine search volume. Identify which filter combinations match real search queries and treat those as indexable landing pages with unique content, while noindexing the rest.</li>
+  </ul>
+
+  <p>Run a crawl of your site and count the total number of unique URLs discovered. If your crawler finds significantly more URLs than the number of products plus categories, faceted navigation is likely creating URL bloat. Compare this against the number of pages Google has indexed in Search Console for a clear picture of the problem's severity.</p>
+
+  <h2 id="schema-for-products">Schema for Products</h2>
+
+  <p>Structured data markup is not optional for ecommerce. Product schema directly controls whether your listings appear with rich results in Google — showing price, availability, review ratings, and images directly in the search results. Pages without product schema are at a measurable disadvantage in click-through rate compared to competitors whose listings show star ratings and prices.</p>
+
+  <p>Your schema audit should verify the following across a sample of product pages:</p>
+
+  <ul>
+    <li><strong>Product schema completeness</strong> — every product page should include at minimum: name, description, image, sku, brand, offers (with price, priceCurrency, availability, and url). Missing fields reduce your eligibility for rich results.</li>
+    <li><strong>Review and AggregateRating markup</strong> — if your products have reviews, the rating data must be marked up correctly. Google has strict policies against self-serving review markup, so verify that ratings reflect genuine customer reviews displayed on the page.</li>
+    <li><strong>Offer validity</strong> — check that price and availability values in your schema match what is displayed on the page. Mismatches between schema data and visible content can result in manual actions or loss of rich results.</li>
+    <li><strong>BreadcrumbList schema</strong> — confirm that breadcrumb structured data matches the visible breadcrumb navigation and accurately reflects the category hierarchy.</li>
+    <li><strong>FAQ schema on product pages</strong> — if your product pages include a questions and answers section, mark it up with FAQPage schema. This can earn additional SERP real estate with expandable FAQ results.</li>
+  </ul>
+
+  <p>Use Google's Rich Results Test to validate schema on a sample of pages. Then check Search Console's enhancements report for any schema errors or warnings across the entire site. Common issues include missing required fields, invalid enum values for availability, and prices formatted without a currency code.</p>
+
+  <h2 id="site-speed-for-stores">Site Speed for Stores</h2>
+
+  <p>Ecommerce sites face unique speed challenges. Heavy product imagery, third-party review widgets, payment gateway scripts, live chat tools, recommendation engines, and retargeting pixels create a payload that dwarfs a typical content site. Core Web Vitals failures are more common on ecommerce sites than almost any other category, and the revenue impact is direct — Google's own research shows that a one-second delay in mobile load time can reduce conversion rates by up to 20%.</p>
+
+  <p>Focus your speed audit on these ecommerce-specific areas:</p>
+
+  <ul>
+    <li><strong>Product image delivery</strong> — are images served in modern formats (WebP/AVIF) with responsive sizing via srcset? Many platforms still serve full-resolution PNGs or JPEGs regardless of viewport. Implement lazy loading for below-the-fold images but ensure the primary product image loads eagerly.</li>
+    <li><strong>Third-party script impact</strong> — catalogue every third-party script on your product and category pages. Common offenders include live chat widgets, social proof popups, retargeting pixels, and A/B testing tools. Measure the Total Blocking Time contribution of each and defer or remove those that are not essential for the initial page load.</li>
+    <li><strong>Server response time</strong> — ecommerce platforms often have slow Time to First Byte (TTFB) due to database queries for product data, inventory checks, and personalisation logic. Check TTFB across product pages, category pages, and the homepage. If TTFB exceeds 600ms consistently, investigate server-side caching, CDN configuration, or database optimisation.</li>
+    <li><strong>Cumulative Layout Shift</strong> — product pages are particularly vulnerable to CLS from images without defined dimensions, dynamically injected price elements, and review widgets that load after the initial paint. Audit CLS on mobile across your top 20 landing pages.</li>
+  </ul>
+
+  <p>Prioritise speed improvements on your highest-traffic templates. Fixing the product page template benefits every product. Fixing the category page template benefits every category. This template-level approach is far more efficient than page-by-page optimisation.</p>
+
+  <h2 id="internal-linking-for-ecommerce">Internal Linking for Ecommerce</h2>
+
+  <p>Internal linking on ecommerce sites serves a structural purpose beyond what content sites require. The link architecture must distribute authority from the homepage and high-authority pages down through categories, subcategories, and individual products in a way that reflects both the site hierarchy and the commercial value of each page.</p>
+
+  <p>Audit your internal linking with these checks:</p>
+
+  <ul>
+    <li><strong>Click depth analysis</strong> — how many clicks does it take to reach your deepest products from the homepage? Products buried more than four clicks deep receive significantly less crawl attention and pass less PageRank. Flatten your architecture by adding cross-links from related categories and implementing "popular products" or "bestsellers" sections on category pages.</li>
+    <li><strong>Related product links</strong> — check that product pages link to genuinely related products, not just random items from the same category. "Customers also bought" and "frequently bought together" sections serve both UX and SEO purposes by creating contextual internal links between topically related products.</li>
+    <li><strong>Orphan product pages</strong> — run a crawl and identify products that receive zero internal links. These pages are effectively invisible to search engines. Common causes include products removed from categories but still live, seasonal products not linked from current navigation, and products only accessible via site search.</li>
+    <li><strong>Category cross-linking</strong> — related categories should link to each other contextually. If you sell running shoes and running socks, those category pages should reference each other. This creates topical clusters that reinforce your authority across related product groups.</li>
+    <li><strong>Breadcrumb link equity</strong> — breadcrumbs pass link equity up the hierarchy from product pages to categories. Verify that every product page includes breadcrumb links and that the hierarchy is logical and consistent.</li>
+  </ul>
+
+  <p>Visualise your internal link graph using tools like Screaming Frog or Sitebulb. Look for clusters of pages with minimal connections to the rest of the site — these isolated sections represent missed opportunities for both users and search engines.</p>
+
+  <h2 id="common-ecommerce-seo-mistakes">Common Ecommerce SEO Mistakes</h2>
+
+  <p>After auditing hundreds of ecommerce sites, certain mistakes appear with predictable regularity. Knowing what to look for saves time and ensures your audit catches the issues that matter most.</p>
+
+  <ul>
+    <li><strong>Manufacturer descriptions used verbatim</strong> — this is the single most common ecommerce SEO mistake. If you sell products from brands that supply descriptions, and you use those descriptions unchanged, you are competing against every other retailer using the same text. Google will index one version and filter the rest. Write original descriptions for at least your top 20% of products by revenue.</li>
+    <li><strong>Blocking CSS and JavaScript in robots.txt</strong> — some older ecommerce platforms block rendering resources by default. Google needs to render your pages to understand their content. Verify that no critical CSS or JS files are disallowed.</li>
+    <li><strong>Session IDs in URLs</strong> — appending session identifiers to URLs creates infinite unique URLs for the same content. This should have been solved years ago, but legacy platforms still do it. Check your crawl data for URL parameters that look like session tokens.</li>
+    <li><strong>No HTTPS on checkout pages</strong> — while most stores have migrated to full HTTPS, some still have mixed content issues where checkout or account pages load insecure resources. This triggers browser warnings that destroy trust and conversions.</li>
+    <li><strong>Ignoring internal site search data</strong> — your site search logs tell you exactly what products customers are looking for and cannot find. Cross-reference top search queries against your product catalogue to identify gaps in inventory, navigation, or content.</li>
+    <li><strong>Thin category pages with no content</strong> — a page that contains nothing but a product grid and a heading is thin content by definition. Add buying guides, comparison information, and answers to common questions on every category page.</li>
+    <li><strong>Incorrect hreflang on international stores</strong> — multi-currency or multi-language stores frequently have hreflang implementation errors. Missing return tags, incorrect language codes, and conflicting canonical signals create confusion about which version of a page Google should show in each market.</li>
+  </ul>
+
+  <p>An ecommerce SEO audit is not a one-time exercise. Product catalogues change, platforms update, and competitors evolve. Schedule a comprehensive audit quarterly, with monthly checks on crawl health, indexation trends, and Core Web Vitals to catch problems before they compound into revenue losses.</p>
+</ContentLayout>

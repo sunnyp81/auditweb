@@ -1,0 +1,91 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Why Dental SEO Audits Matter', id: 'why' },
+  { label: 'Local SEO for Dentists', id: 'local' },
+  { label: 'Service Page Optimisation', id: 'services' },
+  { label: 'Patient Trust Signals', id: 'trust' },
+  { label: 'Technical Quick Wins', id: 'technical' },
+  { label: 'Content Opportunities', id: 'content' },
+  { label: 'Dental SEO Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="Dental Website SEO Audit: Attract More Patients Online"
+  description="A dental SEO audit focuses on local search visibility, Google Business Profile, patient reviews, and service page optimisation to fill your appointment book."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'SEO Audit', href: '/seo-website-audit/' },
+    { label: 'Dental', href: '/seo-website-audit/dental/' },
+  ]}
+  toc={toc}
+  showLeadForm={true}
+  publishDate="2026-03-28"
+>
+  <h2 id="why">Why Dental SEO Audits Matter</h2>
+  <p>Dental practices compete in one of the most locally competitive SEO niches. "Dentist near me" gets millions of searches monthly, and the practices that appear in Google's map pack capture the vast majority of new patient enquiries. A dental SEO audit identifies why you're not in that top 3 — and what to fix.</p>
+  <p>Most dental websites share the same problems: generic template content written by the web design agency, no local optimisation beyond a basic Google listing, and service pages that describe procedures without addressing patient concerns.</p>
+
+  <h2 id="local">Local SEO for Dentists</h2>
+  <ul>
+    <li><strong>Google Business Profile:</strong> This is your single most important local ranking factor. Fully complete every section: all dental services offered, business hours (including emergency hours), photos of your practice interior and team, and a compelling description mentioning your location and specialties.</li>
+    <li><strong>Review volume and recency:</strong> Practices in the map pack typically have 50+ Google reviews with a 4.5+ rating. If you're below this, implement a systematic review request process — ask every patient after their appointment.</li>
+    <li><strong>Review responses:</strong> Respond to every review within 48 hours, positive and negative. Google confirms that responding to reviews improves local ranking.</li>
+    <li><strong>NAP consistency:</strong> Your practice name, address, and phone number must be identical on your website, GBP, Healthgrades, Yelp, Zocdoc, and all dental directory listings.</li>
+    <li><strong>Local citations:</strong> Ensure you're listed on Healthgrades, Vitals, 1-800-Dentist, Dental Plans, and local business directories. Each consistent citation strengthens your local authority.</li>
+    <li><strong>Dental schema:</strong> Implement Dentist schema (a subtype of MedicalBusiness) with your specialties, accepted insurance, languages spoken, and opening hours.</li>
+  </ul>
+
+  <h2 id="services">Service Page Optimisation</h2>
+  <ul>
+    <li><strong>Individual service pages:</strong> Create separate pages for each major service: teeth whitening, dental implants, veneers, root canal, invisalign, emergency dentistry, etc. Don't lump all services onto one page.</li>
+    <li><strong>Patient-focused content:</strong> Instead of clinical procedure descriptions, address what patients actually search for: "Does teeth whitening hurt?", "How long do dental implants last?", "How much do veneers cost in [city]?"</li>
+    <li><strong>Before/after galleries:</strong> Visual proof of results is powerful for cosmetic dentistry pages. Include proper consent and context for all patient photos.</li>
+    <li><strong>Location in titles:</strong> Include your city or area in service page title tags: "Dental Implants in [City] | [Practice Name]"</li>
+    <li><strong>Call-to-action placement:</strong> Every service page should have a prominent "Book Appointment" button above the fold and a phone number visible on mobile.</li>
+    <li><strong>FAQ sections:</strong> Add 5-8 FAQs to each service page addressing cost, duration, pain, recovery, and insurance coverage. Implement FAQ schema for rich results.</li>
+  </ul>
+
+  <h2 id="trust">Patient Trust Signals</h2>
+  <ul>
+    <li><strong>Team photos and bios:</strong> Patients want to see who will be treating them. Include professional photos and detailed bios for every dentist, hygienist, and team member.</li>
+    <li><strong>Credentials display:</strong> List qualifications, certifications, professional memberships (ADA, BDA, specialist boards), and years of experience prominently.</li>
+    <li><strong>Patient testimonials:</strong> Display reviews on your website (with permission). Video testimonials are particularly effective for dental practices.</li>
+    <li><strong>Office photos and virtual tours:</strong> High-quality photos of your waiting room, treatment rooms, and equipment reduce patient anxiety about visiting.</li>
+    <li><strong>Insurance and pricing transparency:</strong> List accepted insurance plans. For common procedures, provide price ranges or free consultation offers. Pricing transparency is a trust builder and ranking factor.</li>
+  </ul>
+
+  <h2 id="technical">Technical Quick Wins</h2>
+  <ul>
+    <li><strong>Mobile click-to-call:</strong> Your phone number must be a clickable tel: link on mobile. Test it — many dental websites display phone numbers as images or non-clickable text.</li>
+    <li><strong>Page speed:</strong> Dental websites are often built on heavy WordPress themes with large image sliders. Target LCP under 2.5 seconds. Optimise images and remove unnecessary plugins.</li>
+    <li><strong>Online booking integration:</strong> If you use an online scheduling system, ensure it's fast and mobile-friendly. A booking widget that takes 5 seconds to load loses patients.</li>
+    <li><strong>SSL certificate:</strong> Required for patient trust and SEO. If your site still has HTTP pages, fix immediately.</li>
+  </ul>
+
+  <h2 id="content">Content Opportunities</h2>
+  <ul>
+    <li><strong>Condition pages:</strong> Create pages for common conditions: gum disease, tooth decay, TMJ, sleep apnoea, wisdom teeth. These attract patients actively seeking help.</li>
+    <li><strong>Insurance guide:</strong> "Does [Insurance] cover dental implants?" is a high-intent search. Create pages for major insurance providers you accept.</li>
+    <li><strong>Area pages:</strong> If you serve multiple neighbourhoods or suburbs, create location pages: "Dentist in [Neighbourhood] | [Practice Name]"</li>
+    <li><strong>Emergency dentistry:</strong> "Emergency dentist near me" is high-intent, high-value. Create a dedicated emergency page with clear instructions and after-hours contact details.</li>
+  </ul>
+
+  <h2 id="checklist">Dental SEO Checklist</h2>
+  <ul>
+    <li><strong>GBP 100% complete</strong> with all services, photos, and hours</li>
+    <li><strong>50+ Google reviews</strong> with 4.5+ rating</li>
+    <li><strong>Review responses</strong> within 48 hours</li>
+    <li><strong>NAP consistent</strong> across all directories</li>
+    <li><strong>Individual service pages</strong> for each major treatment</li>
+    <li><strong>Location in title tags</strong></li>
+    <li><strong>FAQ schema</strong> on service pages</li>
+    <li><strong>Dentist schema</strong> with specialties and insurance</li>
+    <li><strong>Team bios with photos</strong> and credentials</li>
+    <li><strong>Click-to-call working</strong> on mobile</li>
+    <li><strong>Online booking fast</strong> and mobile-friendly</li>
+    <li><strong>Emergency dentistry page</strong> with after-hours info</li>
+  </ul>
+</ContentLayout>

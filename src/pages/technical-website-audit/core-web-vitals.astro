@@ -1,0 +1,139 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Are Core Web Vitals', id: 'what-are' },
+  { label: 'LCP: Largest Contentful Paint', id: 'lcp' },
+  { label: 'INP: Interaction to Next Paint', id: 'inp' },
+  { label: 'CLS: Cumulative Layout Shift', id: 'cls' },
+  { label: 'How to Measure Core Web Vitals', id: 'measure' },
+  { label: 'Field Data vs Lab Data', id: 'field-vs-lab' },
+  { label: 'How CWV Affects Rankings', id: 'rankings' },
+  { label: 'Action Plan', id: 'action-plan' },
+];
+---
+
+<ContentLayout
+  title="Core Web Vitals Audit: Measure and Improve LCP, INP, and CLS"
+  description="Core Web Vitals are Google's page experience signals. Learn how to audit LCP, INP, and CLS, interpret your scores, and implement fixes that improve rankings."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Technical Audit', href: '/technical-website-audit/' },
+    { label: 'Core Web Vitals', href: '/technical-website-audit/core-web-vitals/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-are">What Are Core Web Vitals</h2>
+  <p>Core Web Vitals (CWV) are a set of three metrics that Google uses to measure real-world user experience on web pages. They became a ranking signal in 2021 and have grown in importance with each algorithm update. The three metrics measure loading speed, interactivity, and visual stability — the three pillars of a good page experience.</p>
+  <p>Google measures CWV using real user data collected from Chrome users who have opted into usage statistics reporting (this is called "field data" or CrUX data). If your site doesn't pass CWV thresholds in field data, you're at a ranking disadvantage compared to competitors who do.</p>
+
+  <h2 id="lcp">LCP: Largest Contentful Paint</h2>
+  <p>LCP measures how long it takes for the largest visible element to render on screen. This is usually a hero image, a large text block, or a video poster frame. It represents when the user perceives the page as "loaded."</p>
+  <p><strong>Thresholds:</strong></p>
+  <ul>
+    <li><strong>Good:</strong> Under 2.5 seconds</li>
+    <li><strong>Needs Improvement:</strong> 2.5–4.0 seconds</li>
+    <li><strong>Poor:</strong> Over 4.0 seconds</li>
+  </ul>
+  <p><strong>Common causes of poor LCP:</strong></p>
+  <ul>
+    <li><strong>Slow server response (TTFB):</strong> If your server takes 2 seconds to respond, LCP can't possibly be under 2.5s. Upgrade hosting, enable caching, or use a CDN.</li>
+    <li><strong>Unoptimised hero images:</strong> A 3MB JPEG hero image will tank LCP. Convert to WebP/AVIF, serve responsive sizes with srcset, and preload the hero image.</li>
+    <li><strong>Render-blocking resources:</strong> Large CSS files or synchronous JavaScript in the head delay rendering. Inline critical CSS and defer non-critical resources.</li>
+    <li><strong>Client-side rendering:</strong> If your LCP element is rendered by JavaScript (React, Vue), the browser has to download, parse, and execute JS before showing content. Use server-side rendering or static generation.</li>
+    <li><strong>Web font loading:</strong> If the LCP element is text styled with a web font, it won't render until the font loads. Use font-display: swap and preload your primary font.</li>
+  </ul>
+  <p><strong>How to fix LCP:</strong></p>
+  <ol>
+    <li>Identify your LCP element using Chrome DevTools Performance panel or PageSpeed Insights</li>
+    <li>If it's an image: preload it, optimise format/size, use fetchpriority="high"</li>
+    <li>If it's text: preload the web font, use font-display: swap</li>
+    <li>Reduce server response time to under 600ms</li>
+    <li>Remove or defer render-blocking CSS and JavaScript</li>
+  </ol>
+
+  <h2 id="inp">INP: Interaction to Next Paint</h2>
+  <p>INP replaced First Input Delay (FID) in March 2024. It measures the responsiveness of your page to user interactions — clicks, taps, and keyboard input. Unlike FID which only measured the first interaction, INP measures all interactions throughout the page lifecycle and reports the worst one (with some statistical smoothing).</p>
+  <p><strong>Thresholds:</strong></p>
+  <ul>
+    <li><strong>Good:</strong> Under 200 milliseconds</li>
+    <li><strong>Needs Improvement:</strong> 200–500 milliseconds</li>
+    <li><strong>Poor:</strong> Over 500 milliseconds</li>
+  </ul>
+  <p><strong>Common causes of poor INP:</strong></p>
+  <ul>
+    <li><strong>Long JavaScript tasks:</strong> Any JS task over 50ms blocks the main thread and delays response to user input. Break long tasks into smaller chunks using requestIdleCallback or setTimeout.</li>
+    <li><strong>Third-party scripts:</strong> Analytics, chat widgets, ad scripts, and social embeds often run heavy JavaScript. Audit your third-party scripts and remove or defer non-essential ones.</li>
+    <li><strong>Excessive DOM size:</strong> Pages with thousands of DOM elements are slow to update. Keep DOM size under 1,500 elements where possible.</li>
+    <li><strong>Expensive event handlers:</strong> Click handlers that trigger complex calculations, large DOM updates, or synchronous API calls block responsiveness.</li>
+  </ul>
+  <p><strong>How to fix INP:</strong></p>
+  <ol>
+    <li>Use Chrome DevTools Performance panel to identify long tasks during interactions</li>
+    <li>Break JavaScript into smaller chunks using yield-to-main patterns</li>
+    <li>Defer non-critical third-party scripts with async or defer attributes</li>
+    <li>Use web workers for CPU-intensive operations</li>
+    <li>Reduce DOM size and complexity</li>
+  </ol>
+
+  <h2 id="cls">CLS: Cumulative Layout Shift</h2>
+  <p>CLS measures visual stability — how much the page layout shifts unexpectedly while content loads. Nothing frustrates users more than clicking a button just as the page shifts and hitting something else instead.</p>
+  <p><strong>Thresholds:</strong></p>
+  <ul>
+    <li><strong>Good:</strong> Under 0.1</li>
+    <li><strong>Needs Improvement:</strong> 0.1–0.25</li>
+    <li><strong>Poor:</strong> Over 0.25</li>
+  </ul>
+  <p><strong>Common causes of poor CLS:</strong></p>
+  <ul>
+    <li><strong>Images without dimensions:</strong> If width and height aren't set on img elements, the browser can't reserve space before the image loads.</li>
+    <li><strong>Ads and embeds without reserved space:</strong> Ad slots that inject content after page load push everything below them down the page.</li>
+    <li><strong>Web fonts causing FOIT/FOUT:</strong> When a web font loads and replaces a fallback font with different metrics, text reflows and causes shifts.</li>
+    <li><strong>Dynamically injected content:</strong> Banners, cookie notices, or notification bars that push content down after initial render.</li>
+  </ul>
+  <p><strong>How to fix CLS:</strong></p>
+  <ol>
+    <li>Add explicit width and height attributes to all images and video elements</li>
+    <li>Reserve space for ads and embeds using min-height or aspect-ratio CSS</li>
+    <li>Use font-display: optional or size-adjust to minimise font swap shifts</li>
+    <li>Never inject content above existing content unless in response to a user interaction</li>
+    <li>Use CSS contain: layout on dynamic content areas</li>
+  </ol>
+
+  <h2 id="measure">How to Measure Core Web Vitals</h2>
+  <ul>
+    <li><strong>Google Search Console:</strong> The Core Web Vitals report shows which URLs pass or fail based on real user data. This is the authoritative source for ranking impact.</li>
+    <li><strong>PageSpeed Insights:</strong> Shows both field data (CrUX) and lab data (Lighthouse) for any URL. Field data is what matters for rankings.</li>
+    <li><strong>Chrome DevTools:</strong> Performance panel shows detailed timing data including LCP, CLS, and long tasks. Essential for debugging specific issues.</li>
+    <li><strong>Web Vitals Extension:</strong> Chrome extension that shows real-time CWV scores as you browse your site. Quick way to spot pages with problems.</li>
+    <li><strong>CrUX Dashboard:</strong> Google's free Looker Studio dashboard showing CWV trends over time for your domain.</li>
+  </ul>
+
+  <h2 id="field-vs-lab">Field Data vs Lab Data</h2>
+  <p>This distinction is critical and often misunderstood:</p>
+  <p><strong>Field data</strong> (CrUX / Real User Monitoring) is collected from actual Chrome users visiting your site. This is what Google uses for ranking. It reflects real devices, real network conditions, and real user behaviour. You need enough traffic (typically thousands of monthly visits) to accumulate field data.</p>
+  <p><strong>Lab data</strong> (Lighthouse, PageSpeed Insights lab section) is simulated on a controlled device with throttled CPU and network. It's reproducible and useful for debugging, but it doesn't directly affect rankings. Lab scores can differ significantly from field data.</p>
+  <p>If your lab scores are great but field data fails, the problem is likely that real users on slow devices or poor connections have a worse experience than the lab simulation predicts. Focus on optimising for the 75th percentile of real users, not just lab conditions.</p>
+
+  <h2 id="rankings">How CWV Affects Rankings</h2>
+  <p>Core Web Vitals are a confirmed ranking factor, but they're a tiebreaker rather than a dominant signal. Google has stated that content relevance and quality still outweigh page experience signals. However:</p>
+  <ul>
+    <li>In competitive queries where multiple pages have similar content quality, CWV can determine who ranks higher</li>
+    <li>Failing CWV can prevent you from appearing in certain SERP features like Top Stories</li>
+    <li>The impact compounds — poor CWV also increases bounce rate and reduces dwell time, which are behavioural signals that may indirectly affect rankings</li>
+    <li>Google evaluates CWV at the page level, but groups pages by similar type (product pages, blog posts, etc.) for reporting</li>
+  </ul>
+
+  <h2 id="action-plan">Action Plan</h2>
+  <ol>
+    <li><strong>Check GSC first:</strong> Open the Core Web Vitals report to see which URLs fail and which metric is the problem</li>
+    <li><strong>Run PageSpeed Insights on failing URLs:</strong> Look at the field data section first, then use lab data diagnostics to identify specific issues</li>
+    <li><strong>Fix LCP first:</strong> It's usually the easiest to improve and has the most visible impact. Image optimisation and preloading solve most LCP issues.</li>
+    <li><strong>Address CLS next:</strong> Adding image dimensions and reserving ad space are quick wins that immediately reduce layout shift.</li>
+    <li><strong>Tackle INP last:</strong> It's the hardest to fix because it requires JavaScript optimisation. Start by auditing and removing unnecessary third-party scripts.</li>
+    <li><strong>Monitor field data over 28 days:</strong> CrUX data updates on a rolling 28-day window. After making fixes, wait at least 28 days before evaluating impact in field data.</li>
+  </ol>
+
+  <p>For a comprehensive audit that includes Core Web Vitals analysis along with 60+ other technical checks, see our <a href="/website-audit-services/">professional audit services</a>.</p>
+</ContentLayout>

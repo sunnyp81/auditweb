@@ -1,0 +1,145 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Moz', href: '/website-audit-tools/moz/' },
+];
+
+const toc = [
+  { label: 'What Is Moz Site Audit', id: 'what-is-moz-site-audit' },
+  { label: 'Setting Up a Campaign', id: 'setting-up-a-campaign' },
+  { label: 'Crawl Results', id: 'crawl-results' },
+  { label: 'Issue Categories', id: 'issue-categories' },
+  { label: 'Domain Authority Integration', id: 'domain-authority-integration' },
+  { label: 'Moz vs Other Tools', id: 'moz-vs-other-tools' },
+  { label: 'Who It Is Best For', id: 'who-it-is-best-for' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Moz Site Audit: Features, Setup, and Review"
+  description="An honest review of Moz Pro's site audit capabilities. Covers crawl setup, issue detection, Domain Authority integration, and how it compares to competitors."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Moz Pro includes a site crawl feature that performs technical SEO audits as part of its broader SEO platform. While Moz is best known for Domain Authority and its keyword research tools, the site audit functionality is a capable if somewhat underrated component of the platform. It checks for common technical issues, tracks your site health over time, and presents results in a format that is accessible to SEO beginners.</p>
+
+<p>This review covers what the Moz site audit actually does well, where it falls short compared to <a href="/website-audit-tools/ahrefs/">Ahrefs</a> and <a href="/website-audit-tools/semrush/">Semrush</a>, and who should consider it as part of their SEO workflow.</p>
+
+<h2 id="what-is-moz-site-audit">What Is Moz Site Audit</h2>
+
+<p>Moz's site audit functionality is called "Site Crawl" within the Moz Pro platform. It is a cloud-based crawler that scans your website for technical SEO issues on a scheduled basis, typically weekly. The crawler checks for over 60 issue types across categories including crawl errors, redirect issues, metadata problems, content issues, and link health.</p>
+
+<p>The tool is tightly integrated with Moz's other features. When you create a campaign in Moz Pro, the site crawl runs alongside rank tracking, link analysis, and on-page optimisation recommendations. This integration means you can see how technical issues correlate with ranking changes and link metrics within the same interface.</p>
+
+<p>Moz positions itself as the most beginner-friendly SEO platform, and this philosophy extends to the site audit. Issue descriptions use plain language, severity levels are clearly communicated, and the interface avoids overwhelming users with too much data at once. This is both a strength and a limitation, depending on your experience level.</p>
+
+<p>The crawler supports standard HTML crawling and can follow redirects, detect canonicals, and check robots.txt compliance. It does not currently offer JavaScript rendering, which is a notable gap for sites built with modern front-end frameworks. If your site relies on JavaScript to load content, Moz's crawler will not see that content.</p>
+
+<h2 id="setting-up-a-campaign">Setting Up a Campaign</h2>
+
+<p>To run a site audit in Moz Pro, you create a campaign. Navigate to the Moz Pro dashboard, click "Create Campaign", and enter your domain. Unlike some competitors, Moz does not require domain verification to start a crawl. You can audit any publicly accessible website.</p>
+
+<p>Campaign setup is straightforward. Enter the root domain or subdomain you want to audit, set your target search engine (Google by default), select your target location for rank tracking, and add your target keywords. The site crawl configuration is relatively limited compared to <a href="/website-audit-tools/ahrefs/">Ahrefs</a> or <a href="/website-audit-tools/semrush/">Semrush</a>. You can set the crawl scope (domain or subdomain) and configure the maximum number of pages to crawl, but there are fewer granular options for URL exclusion, crawl speed, or authentication.</p>
+
+<p>Once the campaign is created, the first crawl runs automatically. Subsequent crawls run weekly by default. You cannot currently change the crawl frequency to daily or monthly, which is a limitation for users who need more frequent monitoring on rapidly changing sites or less frequent crawls to conserve resources.</p>
+
+<p>The crawl limit depends on your plan tier. The Standard plan allows up to 300,000 pages per week across all campaigns. The Medium plan allows 2,000,000 pages per week. For most small to medium sites, these limits are more than sufficient, but large enterprise sites may find them restrictive.</p>
+
+<h2 id="crawl-results">Crawl Results</h2>
+
+<p>After the crawl completes, the Site Crawl dashboard shows a summary of findings. The top-level view displays the total number of pages crawled, how many issues were found, and a severity breakdown into critical, warning, and informational categories.</p>
+
+<p>Moz uses a "Crawl Score" similar to the Health Score in Ahrefs and Semrush, though it is less prominently featured. The score reflects the percentage of pages without critical or high-severity issues. Over time, this score is plotted on a trend chart that shows your site's crawl health trajectory across weekly crawls.</p>
+
+<p>Each issue type is listed with the number of affected pages, a severity rating, and a description of what the issue means and why it matters. Clicking into any issue type shows the list of affected URLs. You can export these lists to CSV for sharing with development teams or including in client reports.</p>
+
+<p>The interface is clean and uncluttered. Where tools like <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> present dense tables with dozens of columns, Moz shows focused views with only the most relevant data for each issue type. This makes it easier for beginners to understand their audit results, though experienced SEOs may find the limited data density frustrating.</p>
+
+<p>Moz also flags "Top Issues" at the top of the crawl results, ranked by severity and number of affected pages. This prioritisation helps users focus on the most impactful fixes first, which is particularly useful for non-technical site owners who might otherwise be overwhelmed by a long list of issues.</p>
+
+<h2 id="issue-categories">Issue Categories</h2>
+
+<p>Moz's site crawl checks for issues across several categories. While the total number of checks (60+) is lower than <a href="/website-audit-tools/ahrefs/">Ahrefs</a> (170+) or <a href="/website-audit-tools/semrush/">Semrush</a> (140+), it covers the most common and impactful technical SEO issues.</p>
+
+<p><strong>Crawl issues:</strong> Detects pages returning 4xx and 5xx status codes, redirect chains and loops, pages blocked by robots.txt, and URL errors. These are the most fundamental technical issues that prevent search engines from properly accessing and indexing your content.</p>
+
+<p><strong>Redirect issues:</strong> Identifies 301 and 302 redirects, redirect chains (multiple hops), redirect loops, and temporary redirects that should be permanent. The redirect chain detection is thorough and shows the full chain path for each URL.</p>
+
+<p><strong>Metadata issues:</strong> Checks page titles and meta descriptions for missing tags, duplicate tags, tags that are too long or too short, and titles that do not match H1 headings. Also checks for missing or duplicate canonical tags and conflicting directives.</p>
+
+<p><strong>Content issues:</strong> Flags pages with thin content (low word count), duplicate content across pages, and pages with missing or inadequate heading structure. The thin content threshold is configurable.</p>
+
+<p><strong>Link issues:</strong> Identifies broken internal and external links, pages with no internal links (orphans), and pages with excessive outgoing links. Internal linking analysis helps you ensure link equity flows to your most important pages.</p>
+
+<p><strong>Image issues:</strong> Checks for missing alt text, oversized images, and broken image URLs. The missing alt text check is both an SEO and accessibility issue.</p>
+
+<p><strong>HTTPS issues:</strong> Detects mixed content, insecure pages, and HTTP URLs that should redirect to HTTPS. Given the importance of HTTPS as a ranking signal, these issues deserve attention even on sites that appear to be fully migrated.</p>
+
+<h2 id="domain-authority-integration">Domain Authority Integration</h2>
+
+<p>One of Moz's unique advantages is the integration of Domain Authority (DA) and Page Authority (PA) data with site audit results. While DA is Moz's proprietary metric (not used by Google), it provides a useful relative measure of a domain's link strength compared to competitors.</p>
+
+<p>Within the Moz Pro dashboard, you can see your Domain Authority alongside your crawl results, giving you a holistic view of your site's SEO standing. The Link Explorer tool, which runs alongside the site crawl campaign, shows your backlink profile, referring domains, and link quality metrics.</p>
+
+<p>This integration is valuable for context. A site with a DA of 15 and 50 technical issues faces a very different strategic situation than a site with a DA of 65 and the same 50 issues. The high-DA site likely has enough authority to rank despite some technical problems, while the low-DA site needs both technical fixes and link building to compete.</p>
+
+<p>Moz also provides Page Authority scores for individual URLs, which can be overlaid with crawl data. Pages with high PA that have technical issues (like broken canonical tags or incorrect redirects) represent the highest-priority fixes because those pages carry the most link equity.</p>
+
+<p>It is worth noting that Domain Authority is a Moz metric, not a Google metric. Google does not use DA in its ranking algorithm. However, DA correlates reasonably well with ranking performance because it is based on link data, and links are a confirmed Google ranking factor. Use DA as a relative benchmark, not as an absolute measure of SEO health.</p>
+
+<h2 id="moz-vs-other-tools">Moz vs Other Tools</h2>
+
+<p>Moz's site audit is a solid tool, but it lags behind the leading competitors in several important areas. Here is an honest comparison.</p>
+
+<p><strong>Issue coverage:</strong> Moz checks for 60+ issues. <a href="/website-audit-tools/semrush/">Semrush</a> checks 140+. <a href="/website-audit-tools/ahrefs/">Ahrefs</a> checks 170+. <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> does not use predefined issue checks but provides raw data for virtually unlimited custom analysis. Moz covers the basics well but misses more nuanced issues that the other tools catch.</p>
+
+<p><strong>JavaScript rendering:</strong> Moz does not support JavaScript rendering. Ahrefs, Semrush, and Screaming Frog all do. This is a significant gap for auditing modern websites built with React, Angular, Vue, or Next.js. If your site loads content via JavaScript, Moz will not see it.</p>
+
+<p><strong>Configuration options:</strong> Moz offers limited crawl configuration compared to competitors. You cannot set custom crawl speed, use authentication, apply URL rewriting rules, or use custom user agents. This limits its usefulness for complex crawling scenarios.</p>
+
+<p><strong>Data export and API:</strong> Moz provides CSV exports and API access, but the crawl data available through the API is less comprehensive than what Ahrefs or Semrush offer. Screaming Frog's export capabilities are unmatched for raw data access.</p>
+
+<p><strong>User experience:</strong> This is where Moz genuinely excels. The interface is the most intuitive of any SEO platform. Issue descriptions are clearer, the learning curve is gentler, and the dashboard is less overwhelming. For non-technical users or SEO beginners, this matters more than having 170 issue checks when you do not understand what 100 of them mean.</p>
+
+<p><strong>Unique strengths:</strong> Domain Authority integration, MozBar browser extension for on-the-fly page analysis, and the Moz community and educational resources. Moz has invested heavily in education, and the platform is designed to teach users about SEO as they use it.</p>
+
+<p>For a feature-by-feature comparison, see our <a href="/website-audit-tools/comparison/">complete tool comparison guide</a>.</p>
+
+<h2 id="who-it-is-best-for">Who It Is Best For</h2>
+
+<p>Moz Pro's site audit is best suited for specific user profiles where its strengths align with user needs and its limitations do not matter.</p>
+
+<p><strong>SEO beginners:</strong> If you are learning SEO and want a tool that explains what issues mean and why they matter, Moz is the best starting point. The plain-language descriptions and uncluttered interface make it easier to learn from your audit results rather than being overwhelmed by them.</p>
+
+<p><strong>Small business owners:</strong> Site owners who manage their own SEO and do not have deep technical knowledge will find Moz's approach more accessible than the data-heavy interfaces of Ahrefs or Screaming Frog. The weekly automated crawls and email alerts keep you informed without requiring constant attention.</p>
+
+<p><strong>Content-focused SEOs:</strong> If your primary SEO strategy revolves around content and link building rather than deep technical optimisation, Moz's crawl checks are comprehensive enough to catch the issues that matter most, while the broader platform supports your content and link workflows.</p>
+
+<p><strong>Teams already using Moz:</strong> If your organisation uses Moz Pro for rank tracking and keyword research, the integrated site crawl provides adequate technical auditing without adding another tool subscription.</p>
+
+<p>Moz is <strong>not</strong> the best choice for technical SEO specialists, large enterprise sites, agencies needing white-label reports, or sites with JavaScript-rendered content. For these use cases, <a href="/website-audit-tools/ahrefs/">Ahrefs</a>, <a href="/website-audit-tools/semrush/">Semrush</a>, or <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> are better options.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Moz Pro pricing includes the site crawl feature on all plans:</p>
+
+<ul>
+  <li><strong>Starter ($49/month):</strong> 1 campaign, limited crawl pages. Very basic, suitable for a single small site. This plan is significantly cheaper than Ahrefs or Semrush entry tiers, making it an affordable option for individual site owners.</li>
+  <li><strong>Standard ($99/month):</strong> 3 campaigns, 300,000 pages crawled per week. Adequate for freelancers or small businesses managing a few sites. Priced identically to Ahrefs Lite, though with fewer crawl features.</li>
+  <li><strong>Medium ($179/month):</strong> 10 campaigns, 2,000,000 pages crawled per week. Suitable for growing agencies or in-house teams managing multiple properties.</li>
+  <li><strong>Large ($299/month):</strong> 25 campaigns, 4,000,000 pages crawled per week. Designed for larger agencies or enterprise teams.</li>
+</ul>
+
+<p>Moz offers a 30-day free trial, which is the longest trial period among the major SEO platforms. This gives you enough time to run multiple crawl cycles and properly evaluate the tool before committing.</p>
+
+<p>A free Moz account gives you access to limited features including 10 free queries per month in Keyword Explorer and Link Explorer, but does not include site crawl functionality. For free auditing, consider <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a> or the free version of <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> instead.</p>
+
+<p>The value proposition depends on whether you use Moz's other features. If you only need a site audit tool, Moz is overpriced compared to Screaming Frog (£199/year for unlimited crawling). If you use Moz for rank tracking, keyword research, and link analysis alongside the site crawl, the combined value is reasonable, though Ahrefs and Semrush offer more comprehensive audit features at similar price points.</p>
+
+</ContentLayout>

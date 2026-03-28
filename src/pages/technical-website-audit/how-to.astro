@@ -1,0 +1,153 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Gather Your Tools', id: 'tools' },
+  { label: 'Crawl Your Website', id: 'crawl' },
+  { label: 'Check Crawlability and Indexation', id: 'crawlability' },
+  { label: 'Audit Site Architecture', id: 'architecture' },
+  { label: 'Test Core Web Vitals', id: 'cwv' },
+  { label: 'Check Mobile-Friendliness', id: 'mobile' },
+  { label: 'Review Security Configuration', id: 'security' },
+  { label: 'Validate Structured Data', id: 'structured-data' },
+  { label: 'Compile Your Report', id: 'report' },
+];
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Conduct a Technical SEO Site Audit',
+  description: 'Step-by-step guide to performing a comprehensive technical SEO audit of your website.',
+  step: [
+    { '@type': 'HowToStep', name: 'Gather Your Tools', text: 'Set up Screaming Frog, Google Search Console, PageSpeed Insights, and SSL Labs.' },
+    { '@type': 'HowToStep', name: 'Crawl Your Website', text: 'Run a full site crawl with Screaming Frog to generate a complete inventory of URLs and their status.' },
+    { '@type': 'HowToStep', name: 'Check Crawlability and Indexation', text: 'Review robots.txt, XML sitemap, and GSC coverage report for crawl and index issues.' },
+    { '@type': 'HowToStep', name: 'Audit Site Architecture', text: 'Check click depth, URL structure, internal linking, redirect chains, and broken links.' },
+    { '@type': 'HowToStep', name: 'Test Core Web Vitals', text: 'Check LCP, INP, and CLS scores using GSC and PageSpeed Insights.' },
+    { '@type': 'HowToStep', name: 'Check Mobile-Friendliness', text: 'Test responsive design, tap targets, viewport configuration, and content parity.' },
+    { '@type': 'HowToStep', name: 'Review Security Configuration', text: 'Check SSL certificate, HTTPS enforcement, security headers, and mixed content.' },
+    { '@type': 'HowToStep', name: 'Validate Structured Data', text: 'Test schema markup with Google Rich Results Test for errors and warnings.' },
+    { '@type': 'HowToStep', name: 'Compile Your Report', text: 'Document all findings, prioritise by severity and impact, and create an action plan.' },
+  ],
+};
+---
+
+<ContentLayout
+  title="How to Conduct a Technical SEO Site Audit: Step-by-Step"
+  description="Learn how to perform a comprehensive technical SEO audit from start to finish. Covers crawling, indexation, site architecture, Core Web Vitals, security, and structured data."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Technical Audit', href: '/technical-website-audit/' },
+    { label: 'How To', href: '/technical-website-audit/how-to/' },
+  ]}
+  toc={toc}
+  schema={howToSchema}
+  publishDate="2026-03-28"
+>
+  <p>A technical SEO audit examines the infrastructure of your website — the parts that search engines interact with beneath the surface of your content. While content and links drive rankings, technical issues can prevent search engines from even finding your pages. Here's how to conduct a thorough technical audit.</p>
+
+  <h2 id="tools">Step 1: Gather Your Tools</h2>
+  <p>Before you start, set up these essential tools:</p>
+  <ul>
+    <li><strong>Screaming Frog SEO Spider</strong> (free up to 500 URLs, £199/yr for unlimited) — your primary crawling tool</li>
+    <li><strong>Google Search Console</strong> (free) — real-world crawl data, indexation status, and Core Web Vitals</li>
+    <li><strong>Google PageSpeed Insights</strong> (free) — speed metrics and optimisation recommendations</li>
+    <li><strong>SSL Labs</strong> (free) — SSL/TLS configuration testing</li>
+    <li><strong>Security Headers</strong> (free) — HTTP security header analysis</li>
+    <li><strong>Google Rich Results Test</strong> (free) — structured data validation</li>
+  </ul>
+  <p>If you have access to <a href="/website-audit-tools/ahrefs/">Ahrefs</a> or <a href="/website-audit-tools/semrush/">Semrush</a>, their site audit tools automate many of these checks and provide additional insights.</p>
+
+  <h2 id="crawl">Step 2: Crawl Your Website</h2>
+  <p>Open Screaming Frog and enter your domain. Before starting the crawl, configure these settings:</p>
+  <ul>
+    <li><strong>Crawl speed:</strong> Start with 5 URLs/second to avoid overloading your server. Increase if your server handles it well.</li>
+    <li><strong>Respect robots.txt:</strong> Enable this to see what search engines see. Then do a second crawl ignoring robots.txt to find accidentally blocked content.</li>
+    <li><strong>JavaScript rendering:</strong> If your site uses client-side rendering, enable JavaScript rendering in Configuration → Spider → Rendering.</li>
+    <li><strong>Connect GA and GSC:</strong> In Configuration → API Access, connect your Google accounts to pull traffic and indexation data directly into the crawl.</li>
+  </ul>
+  <p>Wait for the crawl to complete. For a 1,000-page site, this typically takes 5-15 minutes. Export the results to a spreadsheet for reference.</p>
+
+  <h2 id="crawlability">Step 3: Check Crawlability and Indexation</h2>
+  <p><strong>Robots.txt review:</strong></p>
+  <ul>
+    <li>Visit yoursite.com/robots.txt and read every Disallow rule</li>
+    <li>Verify no important pages or directories are blocked</li>
+    <li>Check that CSS and JS files are not blocked (Googlebot needs these to render pages)</li>
+    <li>Verify the Sitemap directive points to your correct sitemap URL</li>
+  </ul>
+  <p><strong>XML sitemap check:</strong></p>
+  <ul>
+    <li>Visit your sitemap URL and verify it loads as valid XML</li>
+    <li>Cross-reference sitemap URLs against your crawl — every sitemap URL should return 200</li>
+    <li>Check for non-canonical URLs in the sitemap (redirecting URLs, noindexed pages)</li>
+    <li>Verify the sitemap is submitted in both GSC and Bing Webmaster Tools</li>
+  </ul>
+  <p><strong>Indexation status:</strong></p>
+  <ul>
+    <li>In GSC, check the Pages report (Indexing → Pages) for the total number of indexed pages</li>
+    <li>Review the "Not indexed" reasons — focus on "Crawled - currently not indexed" and "Discovered - currently not indexed"</li>
+    <li>Run a site:yoursite.com search and compare the result count to your expected page count</li>
+    <li>Check for duplicate content by searching for unique paragraphs from your pages in quotes</li>
+  </ul>
+
+  <h2 id="architecture">Step 4: Audit Site Architecture</h2>
+  <p>Good site architecture helps both users and search engines find content efficiently:</p>
+  <ul>
+    <li><strong>Click depth:</strong> In Screaming Frog, go to Site Structure → Crawl Depth. Important pages should be within 3 clicks of the homepage. Pages at depth 5+ are hard for search engines to discover.</li>
+    <li><strong>Internal linking:</strong> Check the Inlinks report for key pages. High-value pages should have the most internal links. Look for orphan pages with zero internal links.</li>
+    <li><strong>Redirect chains:</strong> Filter for redirects in the Response Codes tab. Any chain longer than 2 hops should be fixed to point directly to the final destination.</li>
+    <li><strong>Broken links:</strong> Filter for 404 responses in Inlinks. Fix or redirect all broken internal links.</li>
+    <li><strong>URL structure:</strong> Review URLs for consistency — lowercase, hyphens between words, no special characters, logical hierarchy, reasonable length.</li>
+  </ul>
+
+  <h2 id="cwv">Step 5: Test Core Web Vitals</h2>
+  <p>Check GSC's Core Web Vitals report for site-wide issues, then test specific pages with PageSpeed Insights:</p>
+  <ul>
+    <li><strong>LCP (target: under 2.5s):</strong> If failing, check for unoptimised hero images, slow server response, or render-blocking resources.</li>
+    <li><strong>INP (target: under 200ms):</strong> If failing, check for heavy JavaScript, especially third-party scripts that block the main thread.</li>
+    <li><strong>CLS (target: under 0.1):</strong> If failing, check for images without dimensions, late-loading ads, or web fonts causing text reflow.</li>
+  </ul>
+  <p>See our <a href="/technical-website-audit/core-web-vitals/">Core Web Vitals audit guide</a> for detailed fix instructions.</p>
+
+  <h2 id="mobile">Step 6: Check Mobile-Friendliness</h2>
+  <ul>
+    <li>Review GSC's Mobile Usability report for site-wide issues</li>
+    <li>Test key pages with Chrome DevTools device emulation at 375px width</li>
+    <li>Verify the viewport meta tag is present on all pages</li>
+    <li>Check tap target sizing (48px minimum) and spacing</li>
+    <li>Verify content parity between mobile and desktop versions</li>
+    <li>Test forms with mobile keyboard types (email, tel, number inputs)</li>
+  </ul>
+  <p>See our <a href="/technical-website-audit/mobile/">mobile audit guide</a> for the complete checklist.</p>
+
+  <h2 id="security">Step 7: Review Security Configuration</h2>
+  <ul>
+    <li><strong>SSL Labs test:</strong> Run your domain through ssllabs.com/ssltest. Target an A or A+ grade. Fix any issues with certificate chain, protocol versions, or cipher suites.</li>
+    <li><strong>HTTPS enforcement:</strong> Verify all HTTP URLs redirect to HTTPS with 301 redirects. Check for mixed content using Chrome DevTools Console.</li>
+    <li><strong>Security headers:</strong> Test at securityheaders.com. Implement Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Strict-Transport-Security headers.</li>
+    <li><strong>GSC Security Issues:</strong> Check for any security warnings or manual actions related to hacking or malware.</li>
+  </ul>
+
+  <h2 id="structured-data">Step 8: Validate Structured Data</h2>
+  <ul>
+    <li>Crawl your site with Screaming Frog's Structured Data tab enabled to see schema across all pages</li>
+    <li>Test key pages with Google's Rich Results Test for errors and warnings</li>
+    <li>Verify BreadcrumbList schema matches visible breadcrumbs</li>
+    <li>Check Organization schema on the homepage</li>
+    <li>Verify Article, Product, Service, or FAQ schema on relevant page types</li>
+    <li>Ensure no misleading or spammy schema (review schema for self-reviews, etc.)</li>
+  </ul>
+
+  <h2 id="report">Step 9: Compile Your Report</h2>
+  <p>Organise your findings into a prioritised report:</p>
+  <ol>
+    <li><strong>Critical issues (fix immediately):</strong> Noindexed important pages, blocked crawling, broken redirects, security vulnerabilities, failing Core Web Vitals</li>
+    <li><strong>High priority (fix this week):</strong> Broken internal links, missing meta tags, duplicate content, redirect chains, missing schema</li>
+    <li><strong>Medium priority (fix this month):</strong> Suboptimal URL structure, missing alt text, slow pages, non-critical missing headers</li>
+    <li><strong>Low priority (fix when possible):</strong> Minor speed improvements, cosmetic URL inconsistencies, optional schema additions</li>
+  </ol>
+  <p>For each issue, document: what the issue is, which pages are affected, how to fix it, and the expected impact. This makes the report actionable for whoever implements the fixes.</p>
+
+  <p>Want this done for you? Our <a href="/website-audit-services/">professional audit</a> covers all these steps and more, delivered as a prioritised report with specific fix instructions.</p>
+</ContentLayout>

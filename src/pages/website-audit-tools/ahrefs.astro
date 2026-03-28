@@ -1,0 +1,161 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Ahrefs', href: '/website-audit-tools/ahrefs/' },
+];
+
+const toc = [
+  { label: 'What Is Ahrefs Site Audit', id: 'what-is-ahrefs-site-audit' },
+  { label: 'Setting Up Your First Crawl', id: 'setting-up-your-first-crawl' },
+  { label: 'Understanding the Dashboard', id: 'understanding-the-dashboard' },
+  { label: 'Key Reports Explained', id: 'key-reports-explained' },
+  { label: 'Common Issues It Finds', id: 'common-issues-it-finds' },
+  { label: 'Advanced Settings', id: 'advanced-settings' },
+  { label: 'Ahrefs vs Alternatives', id: 'ahrefs-vs-alternatives' },
+  { label: 'Pricing', id: 'pricing' },
+];
+---
+
+<ContentLayout
+  title="Ahrefs Site Audit: Complete Guide to Using It Effectively"
+  description="Learn how to use Ahrefs Site Audit to find and fix technical SEO issues. Covers setup, crawl settings, reports, and interpreting results."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Ahrefs Site Audit is one of the most capable technical SEO crawlers built into a broader SEO platform. Unlike standalone crawlers such as <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>, it runs entirely in the cloud, stores historical crawl data, and presents issues in a way that makes prioritisation straightforward even for teams without deep technical SEO experience.</p>
+
+<p>Having used Ahrefs Site Audit across hundreds of projects ranging from five-page local business sites to enterprise domains with millions of URLs, this guide covers everything you need to know to get meaningful results from the tool. Not just which buttons to press, but how to interpret what it tells you and what to fix first.</p>
+
+<h2 id="what-is-ahrefs-site-audit">What Is Ahrefs Site Audit</h2>
+
+<p>Ahrefs Site Audit is a cloud-based website crawler that scans your site for over 170 predefined technical and on-page SEO issues. It is part of the broader Ahrefs platform, which means audit findings can be cross-referenced with backlink data, keyword rankings, and organic traffic estimates without switching tools.</p>
+
+<p>The crawler works by following links from your specified start URL, much like Googlebot would. It fetches each page, parses the HTML (and optionally renders JavaScript), then checks for a comprehensive list of issues grouped by category. Results are stored in your Ahrefs dashboard, where you can track changes over time.</p>
+
+<p>The key differentiator from competitors like <a href="/website-audit-tools/semrush/">Semrush</a> is the depth of crawl data available. Ahrefs provides raw crawl data alongside the issue reports, so you can export full URL lists with status codes, canonical tags, word counts, and dozens of other data points. This makes it useful both as an automated issue checker and as a data source for custom analysis.</p>
+
+<p>Ahrefs also offers a free version called Ahrefs Webmaster Tools, which gives verified site owners access to Site Audit with limited crawl credits. It is one of the better free options available for small site owners who want a proper technical audit without committing to a paid subscription.</p>
+
+<h2 id="setting-up-your-first-crawl">Setting Up Your First Crawl</h2>
+
+<p>To run your first audit, you need to add your site as a project in Ahrefs. Navigate to Site Audit from the main menu, click "New project", and enter your domain. Ahrefs will ask you to verify ownership through DNS, HTML file upload, or by connecting Google Search Console. Verification is required to crawl your site.</p>
+
+<p>Once verified, you configure the crawl settings. The key decisions at this stage are:</p>
+
+<ul>
+  <li><strong>Crawl scope:</strong> Choose whether to crawl the entire domain, a specific subdomain, or a subfolder. For most sites, crawling the entire domain is correct. If you have a large site with distinct sections (such as a blog on a subdomain), you may want to audit them separately.</li>
+  <li><strong>Crawl speed:</strong> Ahrefs lets you set the maximum number of pages per second. For small to medium sites, leave this at the default. For large or resource-constrained servers, reduce the speed to avoid overloading your hosting. A crawl rate of 2-3 pages per second is safe for most shared hosting environments.</li>
+  <li><strong>JavaScript rendering:</strong> Enable this if your site relies on client-side rendering (React, Vue, Angular, or heavy JavaScript content loading). JavaScript rendering uses more crawl credits and takes longer, but without it, Ahrefs will only see the initial HTML response, missing dynamically loaded content.</li>
+  <li><strong>Crawl limit:</strong> Set a maximum number of pages if your site is very large and you want to stay within your plan's crawl credit allowance.</li>
+  <li><strong>User agent:</strong> Choose between Ahrefs' own bot user agent or a Googlebot user agent. Using Googlebot can be useful if your server returns different content based on the user agent, but be aware this may trigger different caching behaviour.</li>
+</ul>
+
+<p>After configuring these settings, start the crawl. Small sites (under 1,000 pages) typically complete within minutes. Larger sites can take several hours. Ahrefs sends an email notification when the crawl finishes.</p>
+
+<p>Set up a recurring crawl schedule from the project settings. Weekly crawls are ideal for active sites where content and code change frequently. Monthly is sufficient for smaller sites with infrequent changes. Scheduled crawls let you track your Health Score and issue counts over time, which is essential for demonstrating progress to clients or stakeholders.</p>
+
+<h2 id="understanding-the-dashboard">Understanding the Dashboard</h2>
+
+<p>The Site Audit dashboard opens with the Health Score, a number from 0 to 100 that represents the overall technical health of your site. This score is calculated as the ratio of issue-free URLs to total URLs crawled, weighted by issue severity. A score above 80 is generally considered good, but the absolute number matters less than the trend. Watch for drops between crawls, which indicate new problems.</p>
+
+<p>Below the Health Score, you see the issue distribution chart showing how many errors, warnings, and notices were found. Ahrefs uses a three-tier severity system:</p>
+
+<ul>
+  <li><strong>Errors (red):</strong> Critical issues that are likely harming your SEO right now. These include broken pages (4xx/5xx status codes), missing or duplicate title tags, noindex on pages that should be indexed, and redirect chains. Fix these first.</li>
+  <li><strong>Warnings (yellow):</strong> Issues that may be affecting performance or could become errors if left unaddressed. Examples include slow pages, missing meta descriptions, images without alt text, and pages with thin content. Address these after clearing errors.</li>
+  <li><strong>Notices (blue):</strong> Informational flags that may or may not require action. These include things like pages blocked by robots.txt, external links with nofollow, or pages not in your sitemap. Review these but do not treat them as urgent.</li>
+</ul>
+
+<p>The dashboard also shows a crawl overview with total pages crawled, HTTP status code distribution, and a visual breakdown of page types. The "Crawled pages" section shows how many pages were HTML, how many were redirects, and how many returned error codes. This gives you an immediate sense of your site's crawl health.</p>
+
+<h2 id="key-reports-explained">Key Reports Explained</h2>
+
+<p>Ahrefs Site Audit organises findings into several thematic reports. Understanding what each report covers helps you navigate the tool efficiently.</p>
+
+<p><strong>All Issues:</strong> This is the master list of every issue found, sorted by severity and frequency. Each issue type shows the number of affected URLs and can be expanded to see the full list. This is your primary working view. Start here, sort by errors, and work through them in order of impact.</p>
+
+<p><strong>Internal Pages:</strong> A full dataset of every internal URL crawled, with columns for status code, title, meta description, word count, incoming internal links, outgoing links, canonical URL, indexability, and more. You can filter, sort, and export this data. This report is invaluable for finding patterns that the automated issue checks might miss.</p>
+
+<p><strong>Links:</strong> Covers both internal and external link analysis. Shows broken links (404s), redirected links (301/302), orphan pages (pages with no incoming internal links), and link distribution. The orphan pages check is particularly useful because pages without internal links are effectively invisible to search engines.</p>
+
+<p><strong>Performance:</strong> Focuses on page speed metrics. Shows load time, page size, and the number of requests for each URL. While not as detailed as a <a href="/website-audit-tools/lighthouse/">Lighthouse</a> audit, it highlights the slowest pages and the most common performance bottlenecks across your site.</p>
+
+<p><strong>HTML Tags:</strong> Analyses title tags, meta descriptions, H1 tags, and Open Graph tags across the site. Identifies duplicates, missing tags, tags that are too long or too short, and pages with multiple H1 elements. This report catches the most common on-page SEO issues.</p>
+
+<p><strong>Social Tags:</strong> Checks for Open Graph and Twitter Card meta tags. Missing social tags mean your pages will not display properly when shared on social media platforms, which can reduce click-through rates from social sharing.</p>
+
+<p><strong>Content Quality:</strong> Flags pages with thin content (low word count), duplicate content, and pages with a high text-to-HTML ratio. The thin content check is configurable, so you can set your own minimum word count threshold based on your content strategy.</p>
+
+<p><strong>Localisation:</strong> Checks hreflang implementation for multilingual or multi-regional sites. Hreflang is notoriously difficult to implement correctly, and this report catches common mistakes like missing return tags, incorrect language codes, and self-referencing issues.</p>
+
+<p><strong>Incoming Links:</strong> Shows the internal link profile for each page, helping you identify pages that receive too few or too many internal links. A flat internal link distribution often means your most important pages are not receiving enough link equity.</p>
+
+<h2 id="common-issues-it-finds">Common Issues It Finds</h2>
+
+<p>After auditing hundreds of sites with Ahrefs, certain issues appear repeatedly. Understanding these common findings helps you anticipate what your audit will uncover.</p>
+
+<p><strong>Broken internal links (404 errors):</strong> The most universally common issue. Pages get deleted or URLs change without redirects, leaving broken links scattered throughout the site. Ahrefs shows you both the broken page and the pages linking to it, making fixes straightforward.</p>
+
+<p><strong>Redirect chains and loops:</strong> When one redirect points to another redirect, you have a chain. Three or more hops in a chain waste crawl budget and dilute link equity. Redirect loops (A redirects to B, B redirects to A) are even worse, creating pages that can never load.</p>
+
+<p><strong>Missing or duplicate title tags:</strong> Pages without title tags lose a critical ranking signal. Duplicate title tags across multiple pages create ambiguity for search engines about which page to rank for a given query. Both are surprisingly common on larger sites.</p>
+
+<p><strong>Orphan pages:</strong> Pages that exist but have no internal links pointing to them. Search engines can only find these pages through the sitemap or external links, making them less likely to be crawled and indexed. Common causes include old blog posts that fell out of category archives, or landing pages created for paid campaigns.</p>
+
+<p><strong>Missing alt text on images:</strong> An accessibility issue that also affects image search visibility. Ahrefs flags every image without alt text, along with images that have empty alt attributes.</p>
+
+<p><strong>Slow loading pages:</strong> Pages that take more than three seconds to load are flagged. Ahrefs identifies the specific pages and shows their load time, size, and request count so you can diagnose whether the issue is large images, too many scripts, or server response time.</p>
+
+<p><strong>Mixed content warnings:</strong> Pages served over HTTPS that load resources (images, scripts, stylesheets) over HTTP. This triggers browser security warnings and can prevent the page from being fully secure in the eyes of both users and search engines.</p>
+
+<h2 id="advanced-settings">Advanced Settings</h2>
+
+<p>Beyond the basic crawl configuration, Ahrefs offers several advanced settings that can significantly improve the quality of your audit results.</p>
+
+<p><strong>URL rewrite rules:</strong> If your site uses URL parameters for tracking, sorting, or filtering, you can create rules to strip these parameters from URLs before crawling. This prevents the crawler from treating the same page with different parameters as separate URLs, which would inflate your page count and create false duplicate content issues.</p>
+
+<p><strong>Crawl source:</strong> By default, Ahrefs discovers URLs by following links from your start URL. You can also upload a URL list or use your sitemap as the crawl source. Using both link following and sitemap as sources gives you the most complete picture, as it catches pages that exist in your sitemap but have no internal links (and vice versa).</p>
+
+<p><strong>Exclusion rules:</strong> Exclude specific URL patterns from the crawl using regex or prefix matching. Useful for excluding admin areas, staging environments behind the same domain, or sections of the site you do not want to audit (such as a forum or user-generated content area).</p>
+
+<p><strong>Custom robots.txt:</strong> Override your live robots.txt with custom directives for the audit crawl. This is useful if your robots.txt blocks certain sections that you want to audit, or if you want to test the impact of robots.txt changes before deploying them.</p>
+
+<p><strong>HTTP authentication:</strong> If your site (or a staging version of it) is behind HTTP authentication, you can provide credentials so the crawler can access it. This is essential for auditing staging environments before launch.</p>
+
+<p><strong>Crawl budget management:</strong> On paid plans, you have a monthly crawl credit allowance. Large sites with frequent crawl schedules can consume credits quickly. Monitor your usage in the account settings and adjust crawl frequency or scope if you are running low.</p>
+
+<h2 id="ahrefs-vs-alternatives">Ahrefs vs Alternatives</h2>
+
+<p>Ahrefs Site Audit competes directly with <a href="/website-audit-tools/semrush/">Semrush Site Audit</a> and <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>. Each has distinct strengths.</p>
+
+<p>Compared to Semrush, Ahrefs provides more granular raw crawl data and better data export capabilities. Semrush has a slight edge in user interface clarity and its thematic reports are easier for beginners to understand. Both tools check for a similar range of issues (170+ for Ahrefs, 140+ for Semrush), and both integrate with their respective keyword and backlink databases.</p>
+
+<p>Compared to Screaming Frog, the key difference is deployment model. Screaming Frog runs locally on your machine, giving you unlimited control over crawl settings and custom extraction. Ahrefs runs in the cloud, which means no software installation, automatic scheduling, and historical data storage. Screaming Frog is more powerful for custom audits and large-scale data extraction, while Ahrefs is better for ongoing monitoring and team collaboration.</p>
+
+<p>For agencies managing multiple client sites, Ahrefs offers a clean multi-project interface and the ability to share reports via links. Screaming Frog requires manual report generation and file sharing. Semrush offers similar cloud-based project management to Ahrefs, with the addition of white-label PDF reports on higher-tier plans.</p>
+
+<p>If you already subscribe to Ahrefs for backlink analysis and keyword research, using its Site Audit is a no-brainer since you are already paying for it. If you need the most flexible and powerful desktop crawler, <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> is the better choice. For a detailed side-by-side breakdown, see our <a href="/website-audit-tools/comparison/">tool comparison guide</a>.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Ahrefs pricing is structured in four tiers, all of which include access to Site Audit:</p>
+
+<ul>
+  <li><strong>Lite ($99/month):</strong> 5 projects, 10,000 crawl credits per month. Sufficient for freelancers or small agencies managing a handful of sites. The crawl credit limit means you can audit sites with up to 10,000 pages monthly, or run smaller audits more frequently.</li>
+  <li><strong>Standard ($199/month):</strong> 20 projects, 500,000 crawl credits. The most popular tier for growing agencies. The substantial crawl credit increase supports larger sites and more frequent auditing schedules.</li>
+  <li><strong>Advanced ($399/month):</strong> 50 projects, 1.25 million crawl credits. Designed for agencies managing large client rosters or enterprise sites with hundreds of thousands of pages.</li>
+  <li><strong>Enterprise ($999/month):</strong> 100 projects, 5 million crawl credits. For large agencies or in-house teams at enterprise organisations with massive sites.</li>
+</ul>
+
+<p>Ahrefs Webmaster Tools remains available as a free option for verified site owners. You get access to Site Audit for your own sites with 5,000 crawl credits per month. The data is slightly less comprehensive than paid plans, but it is more than enough for small site owners who want to monitor their technical health.</p>
+
+<p>All paid plans include a 7-day trial period. Crawl credits reset monthly and do not roll over. If you run out of credits mid-month, crawls are paused until the next billing cycle. Consider your total page count across all projects when choosing a plan to ensure your credits can support your desired crawl frequency.</p>
+
+<p>Compared to <a href="/website-audit-tools/semrush/">Semrush</a> (starting at $129.95/month) and <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> (£199/year for the paid version), Ahrefs sits at the higher end for entry-level pricing. However, you are getting a complete SEO toolkit, not just an audit tool. If you would otherwise subscribe to separate tools for backlink analysis, rank tracking, and site auditing, Ahrefs can consolidate those costs.</p>
+
+</ContentLayout>

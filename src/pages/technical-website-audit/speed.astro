@@ -1,0 +1,126 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Why Speed Matters', id: 'why-speed' },
+  { label: 'Key Speed Metrics', id: 'metrics' },
+  { label: 'How to Test Your Speed', id: 'testing' },
+  { label: 'Server-Side Optimisation', id: 'server' },
+  { label: 'Image Optimisation', id: 'images' },
+  { label: 'Code Optimisation', id: 'code' },
+  { label: 'Caching Strategy', id: 'caching' },
+  { label: 'CDN Setup', id: 'cdn' },
+  { label: 'Speed Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="Website Speed Audit: Diagnose and Fix Slow Page Load Times"
+  description="A website speed audit identifies what's slowing your site down and provides specific fixes. Covers server response, images, code, caching, and CDN optimisation."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Technical Audit', href: '/technical-website-audit/' },
+    { label: 'Speed Audit', href: '/technical-website-audit/speed/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="why-speed">Why Speed Matters</h2>
+  <p>Page speed directly impacts three things that determine your website's success: search rankings, user experience, and conversions. Google has used speed as a ranking factor since 2010 for desktop and 2018 for mobile. But the business impact goes beyond SEO.</p>
+  <p>Research consistently shows that every additional second of load time reduces conversions by 7-12%. Amazon famously found that a 100ms increase in load time cost them 1% in sales. For smaller businesses, the impact is proportionally similar — slow sites lose money.</p>
+  <ul>
+    <li><strong>53% of mobile users</strong> abandon sites that take longer than 3 seconds to load</li>
+    <li><strong>A 1-second improvement</strong> in load time can increase conversions by 27% on mobile</li>
+    <li><strong>Slow sites rank lower</strong> — Google's Page Experience update made Core Web Vitals (which include speed metrics) a ranking factor</li>
+    <li><strong>Bounce rate increases 32%</strong> when page load goes from 1 to 3 seconds</li>
+  </ul>
+
+  <h2 id="metrics">Key Speed Metrics</h2>
+  <p>Understanding which metrics matter is the first step in a speed audit:</p>
+  <ul>
+    <li><strong>Time to First Byte (TTFB):</strong> How long the server takes to respond. Target: under 600ms. This is the foundation — if TTFB is slow, everything else will be slow too.</li>
+    <li><strong>First Contentful Paint (FCP):</strong> When the first text or image appears. Target: under 1.8 seconds. A slow FCP means users see a blank screen for too long.</li>
+    <li><strong>Largest Contentful Paint (LCP):</strong> When the main content is visible. Target: under 2.5 seconds. This is a Core Web Vital and ranking factor.</li>
+    <li><strong>Total Blocking Time (TBT):</strong> How much time the main thread is blocked by JavaScript. Target: under 200ms. High TBT means the page feels unresponsive.</li>
+    <li><strong>Speed Index:</strong> How quickly content is visually populated. Target: under 3.4 seconds. Measures the perceived loading experience.</li>
+    <li><strong>Total Page Size:</strong> The total weight of all resources. Target: under 2MB for most pages. Larger pages take longer to download, especially on mobile.</li>
+    <li><strong>Number of Requests:</strong> Total HTTP requests. Target: under 50. Each request has overhead; reducing requests improves speed.</li>
+  </ul>
+
+  <h2 id="testing">How to Test Your Speed</h2>
+  <ul>
+    <li><strong>Google PageSpeed Insights:</strong> Shows both field data (real users) and lab data (simulated). Field data matters for rankings; lab data helps identify specific issues. Test both mobile and desktop.</li>
+    <li><strong>GTmetrix:</strong> Provides detailed waterfall charts showing exactly what loads, when, and how long each resource takes. The waterfall is your primary debugging tool for speed issues.</li>
+    <li><strong>WebPageTest:</strong> The most detailed speed testing tool. Test from multiple locations, on different connection speeds, and see filmstrip comparisons of how the page loads over time.</li>
+    <li><strong>Chrome DevTools Network tab:</strong> Real-time view of every resource your page loads. Sort by size or time to identify the worst offenders.</li>
+    <li><strong>Lighthouse:</strong> Built into Chrome DevTools. Run an audit to get a performance score and specific recommendations.</li>
+  </ul>
+  <p>Always test on mobile with throttled connections. Desktop on fast Wi-Fi hides real-world performance problems that mobile users on 4G experience.</p>
+
+  <h2 id="server">Server-Side Optimisation</h2>
+  <p>Server performance sets the floor for your page speed. No amount of front-end optimisation can compensate for a slow server.</p>
+  <ul>
+    <li><strong>Upgrade hosting if needed:</strong> Cheap shared hosting often has slow TTFB (1-3 seconds). Moving to a quality managed host or VPS can cut TTFB to under 200ms.</li>
+    <li><strong>Enable server-side caching:</strong> Page caching stores the generated HTML so the server doesn't rebuild it for every request. For WordPress, use WP Super Cache or W3 Total Cache. For Node.js apps, use Redis.</li>
+    <li><strong>Enable Gzip or Brotli compression:</strong> Compresses text-based resources (HTML, CSS, JS) by 60-80%. Most modern servers support Brotli, which compresses better than Gzip.</li>
+    <li><strong>Optimise database queries:</strong> Slow database queries are a common cause of high TTFB. Add indexes to frequently queried columns, reduce the number of queries per page, and use query caching.</li>
+    <li><strong>Use HTTP/2 or HTTP/3:</strong> Modern HTTP protocols allow multiplexing (multiple requests over one connection), header compression, and server push. Most modern hosts support HTTP/2 by default.</li>
+  </ul>
+
+  <h2 id="images">Image Optimisation</h2>
+  <p>Images are typically 50-70% of a page's total weight. Optimising images is usually the single biggest speed win.</p>
+  <ul>
+    <li><strong>Use modern formats:</strong> WebP offers 25-35% smaller files than JPEG at equivalent quality. AVIF is even better (20% smaller than WebP) but has slightly less browser support. Use the picture element with fallbacks.</li>
+    <li><strong>Serve responsive images:</strong> Use srcset and sizes attributes to serve different image sizes based on the user's viewport. A 2000px hero image shouldn't load on a 375px mobile screen.</li>
+    <li><strong>Lazy load below-fold images:</strong> Add loading="lazy" to images that aren't visible on initial page load. This defers their download until the user scrolls near them.</li>
+    <li><strong>Preload hero images:</strong> The LCP image should be preloaded with <code>&lt;link rel="preload" as="image"&gt;</code> to start downloading before the browser discovers it in the HTML.</li>
+    <li><strong>Set explicit dimensions:</strong> Always include width and height attributes to prevent layout shifts (CLS) while images load.</li>
+    <li><strong>Compress aggressively:</strong> Most images can be compressed to 60-80% quality with no visible difference. Use tools like Sharp, ImageOptim, or Squoosh.</li>
+  </ul>
+
+  <h2 id="code">Code Optimisation</h2>
+  <ul>
+    <li><strong>Minify CSS and JavaScript:</strong> Remove whitespace, comments, and unnecessary characters. Most build tools (Webpack, Vite, esbuild) do this automatically.</li>
+    <li><strong>Remove unused CSS:</strong> Most sites load CSS for components that aren't on the current page. Use PurgeCSS or the Coverage tab in Chrome DevTools to identify and remove unused CSS.</li>
+    <li><strong>Defer non-critical JavaScript:</strong> Add async or defer to script tags that aren't needed for initial render. Move analytics, chat widgets, and social scripts to defer.</li>
+    <li><strong>Code-split JavaScript:</strong> Instead of one large bundle, split JS into smaller chunks that load on demand. Modern bundlers support this with dynamic imports.</li>
+    <li><strong>Inline critical CSS:</strong> Extract the CSS needed for above-the-fold content and inline it in the HTML head. This eliminates a render-blocking request.</li>
+    <li><strong>Audit third-party scripts:</strong> Each third-party script (analytics, ads, chat, social) adds weight and execution time. Audit which are essential and remove or defer the rest.</li>
+  </ul>
+
+  <h2 id="caching">Caching Strategy</h2>
+  <ul>
+    <li><strong>Set Cache-Control headers:</strong> Static assets (images, CSS, JS) should have long cache lifetimes (max-age=31536000 with immutable). Use content hashing in filenames for cache busting.</li>
+    <li><strong>Cache HTML pages appropriately:</strong> Dynamic pages might use short cache times (max-age=300) with stale-while-revalidate. Static pages can be cached longer.</li>
+    <li><strong>Use service workers for offline caching:</strong> Progressive Web Apps can cache critical resources so the site loads instantly on repeat visits, even offline.</li>
+    <li><strong>Implement stale-while-revalidate:</strong> This strategy serves cached content immediately while fetching a fresh version in the background. It combines speed with freshness.</li>
+  </ul>
+
+  <h2 id="cdn">CDN Setup</h2>
+  <p>A CDN (Content Delivery Network) serves your content from edge servers geographically close to your users, reducing latency. For a site with global traffic, a CDN can cut load times by 50% or more.</p>
+  <ul>
+    <li><strong>Cloudflare:</strong> Free tier available. Excellent for most sites. Provides CDN, DDoS protection, and performance features like auto-minification and image optimisation.</li>
+    <li><strong>AWS CloudFront:</strong> Pay-per-use. Best for sites already on AWS infrastructure. Highly configurable.</li>
+    <li><strong>Fastly:</strong> Premium CDN with instant purging and edge computing. Used by major sites like GitHub and The New York Times.</li>
+  </ul>
+
+  <h2 id="checklist">Speed Audit Checklist</h2>
+  <ul>
+    <li><strong>TTFB under 600ms</strong> on target markets</li>
+    <li><strong>LCP under 2.5s</strong> on mobile</li>
+    <li><strong>Total page size under 2MB</strong></li>
+    <li><strong>Under 50 HTTP requests</strong> per page</li>
+    <li><strong>All images in WebP/AVIF</strong> with responsive srcset</li>
+    <li><strong>Below-fold images lazy loaded</strong></li>
+    <li><strong>Hero image preloaded</strong></li>
+    <li><strong>CSS and JS minified</strong></li>
+    <li><strong>Non-critical JS deferred</strong></li>
+    <li><strong>Gzip/Brotli compression enabled</strong></li>
+    <li><strong>Browser caching configured</strong></li>
+    <li><strong>CDN active</strong> for static assets</li>
+    <li><strong>No render-blocking resources</strong> above the fold</li>
+    <li><strong>Third-party scripts audited</strong> and non-essential removed</li>
+  </ul>
+
+  <p>Need help improving your site speed? Our <a href="/website-audit-services/">professional audit</a> includes a detailed speed analysis with specific, prioritised recommendations for your site.</p>
+</ContentLayout>

@@ -1,0 +1,138 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'B2B', href: '/seo-website-audit/b2b/' },
+];
+
+const toc = [
+  { label: 'Why B2B Audits Are Different', id: 'why-b2b-audits-are-different' },
+  { label: 'Lead Generation Page Audit', id: 'lead-generation-page-audit' },
+  { label: 'Content Strategy Review', id: 'content-strategy-review' },
+  { label: 'Technical Foundation', id: 'technical-foundation' },
+  { label: 'Conversion Path Analysis', id: 'conversion-path-analysis' },
+  { label: 'Competitive Positioning', id: 'competitive-positioning' },
+  { label: 'B2B Schema and Structured Data', id: 'b2b-schema-and-structured-data' },
+  { label: 'Measuring Audit ROI', id: 'measuring-audit-roi' },
+];
+---
+
+<ContentLayout
+  title="B2B Website Audit: Fix What's Blocking Your Pipeline"
+  description="B2B websites face unique SEO challenges — long sales cycles, complex buyer journeys, and thin content. Learn what to audit to drive more qualified leads."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>B2B websites operate under fundamentally different conditions than B2C or ecommerce sites, yet most SEO audits treat them identically. The buyer journey is longer, involving multiple stakeholders and decision stages that can span weeks or months. The search volume for B2B keywords is typically lower but far more valuable — a single conversion might be worth thousands or tens of thousands of pounds. And the content requirements are different, demanding depth, expertise, and trust signals that consumer-focused sites rarely need.</p>
+
+  <p>A B2B website audit must account for these differences. It is not enough to check technical health and keyword placement. You need to evaluate whether your site supports the complete buyer journey from initial research through evaluation to purchase decision, whether your content demonstrates the expertise that B2B buyers require, and whether your conversion paths are designed for how business purchasing actually works — with multiple stakeholders, long consideration periods, and high-stakes decision-making.</p>
+
+  <h2 id="why-b2b-audits-are-different">Why B2B Audits Are Different</h2>
+
+  <p>The differences between B2B and B2C purchasing behaviour create unique SEO challenges that a standard audit framework does not address. Understanding these differences is essential for auditing effectively.</p>
+
+  <p>B2B search queries tend to be more specific, more technical, and lower in volume than B2C queries. A consumer searches "best laptop" (hundreds of thousands of monthly searches). A B2B buyer searches "enterprise endpoint management software comparison" (perhaps a few hundred monthly searches, but each representing a potential six-figure deal). This means your keyword strategy, content depth, and traffic expectations must be calibrated differently.</p>
+
+  <p>The buying committee is another critical difference. In B2C, one person searches, finds, and buys. In B2B, one person might research solutions, another evaluates vendors, a third approves the budget, and a fourth signs the contract. Your website needs content that serves each of these stakeholders — technical specifications for the evaluator, ROI projections for the budget approver, case studies for the researcher, and clear pricing or contact paths for the decision-maker.</p>
+
+  <p>Trust signals carry more weight in B2B. A consumer might buy from an unfamiliar brand if the product looks right and the price is competitive. A business purchasing a five-year software contract needs evidence of stability, expertise, customer success, and industry credibility before they will even request a demo. Your audit must evaluate whether your site provides these trust signals or whether it presents a thin, brochure-like facade that fails to build the confidence B2B buyers need.</p>
+
+  <p>Finally, B2B conversion is not a transaction — it is the beginning of a relationship. The goal of most B2B websites is not an immediate sale but a qualified lead: a demo request, a consultation booking, a content download that enters someone into a nurture sequence. Your audit must evaluate the quality and accessibility of these conversion paths, not just whether a contact form exists somewhere on the site.</p>
+
+  <h2 id="lead-generation-page-audit">Lead Generation Page Audit</h2>
+
+  <p>Your lead generation pages — service pages, solution pages, landing pages — are where B2B SEO either converts into pipeline or fails. These pages must simultaneously rank for commercial keywords, communicate your value proposition, and persuade visitors to take the next step. Most B2B sites fail at one or more of these requirements.</p>
+
+  <p>Audit each lead generation page against these criteria:</p>
+
+  <ul>
+    <li><strong>Keyword targeting</strong> — verify that each lead generation page targets a specific commercial keyword cluster. Many B2B sites have generic service pages that target broad terms without addressing the specific queries their ideal customers use. Map each page to its target keywords using Search Console data and check whether the page actually ranks for its intended terms.</li>
+    <li><strong>Content depth</strong> — B2B lead generation pages need significantly more content than B2C equivalents. A 300-word service page that lists features and includes a contact button is not competitive against a 2,000-word page that explains the problem, presents the solution, demonstrates expertise through detail, addresses common objections, and provides evidence through case studies and data.</li>
+    <li><strong>Social proof placement</strong> — check where and how social proof appears on lead generation pages. Client logos, testimonials, case study excerpts, and industry certifications should be visible without scrolling. B2B buyers are actively looking for evidence that companies like theirs have succeeded with your solution.</li>
+    <li><strong>Call-to-action clarity</strong> — evaluate the primary CTA on each lead generation page. Is it clear what happens when the visitor clicks? "Get Started" is vague. "Book a 30-Minute Strategy Call" is specific and sets expectations. Check that CTAs are visible above the fold and repeated naturally throughout longer pages.</li>
+    <li><strong>Form length and fields</strong> — audit every form on lead generation pages. B2B forms need to collect enough information to qualify leads (company name, company size, budget range) without creating so much friction that visitors abandon the form. Forms with more than seven fields see significant drop-off. Test whether reducing fields improves submission rates.</li>
+  </ul>
+
+  <h2 id="content-strategy-review">Content Strategy Review</h2>
+
+  <p>B2B content strategy must serve the entire buyer journey — from awareness through consideration to decision. Many B2B sites have blog content that drives traffic but never converts, because it targets top-of-funnel informational queries without creating a path to commercial pages. Others have commercial pages that do not rank because there is no supporting content establishing topical authority.</p>
+
+  <p>Audit your content strategy across these dimensions:</p>
+
+  <ul>
+    <li><strong>Funnel stage coverage</strong> — map every content page to a buyer journey stage. Awareness content (what is X, how does X work) should link to consideration content (X vs Y, best practices for X) which should link to decision content (your solution for X, case studies, pricing). Identify gaps where an entire stage is missing or underserved.</li>
+    <li><strong>Topical authority</strong> — assess whether your content covers your core topics comprehensively. If you sell marketing automation software, you should have content covering email marketing, lead scoring, campaign management, CRM integration, marketing analytics, and every other subtopic that a potential buyer might research. Thin topical coverage signals to Google that you are not an authority in your space.</li>
+    <li><strong>Content quality signals</strong> — B2B content must demonstrate genuine expertise. Check for original research, proprietary data, expert commentary, detailed technical explanations, and real-world examples. Generic content that could have been written by anyone (or any AI) without industry experience will not earn links, will not build trust, and will not rank against competitors who invest in genuine thought leadership.</li>
+    <li><strong>Content freshness</strong> — review the publication and update dates on your most important content pages. B2B buyers check dates. Content published three years ago with no updates signals neglect. Establish a refresh schedule for evergreen content and publish new material regularly to maintain relevance.</li>
+    <li><strong>Gated vs ungated balance</strong> — too much gated content restricts search engine access and frustrates users. Too little gated content means you collect no leads from informational traffic. Audit the balance and ensure that gated content offers genuine value beyond what is freely available on the page.</li>
+  </ul>
+
+  <h2 id="technical-foundation">Technical Foundation</h2>
+
+  <p>B2B websites often have technical SEO issues that stem from their specific technology choices and organisational constraints. Enterprise CMS platforms, marketing automation integrations, complex staging and deployment workflows, and IT security policies all create technical challenges that smaller sites do not face.</p>
+
+  <ul>
+    <li><strong>Crawlability and indexation</strong> — B2B sites frequently have robots.txt rules or noindex tags that block important content from search engines. This often happens when IT teams lock down the site without understanding SEO implications, or when staging configurations leak into production. Audit your robots.txt and check Search Console's indexation report for pages that should be indexed but are not.</li>
+    <li><strong>Site architecture depth</strong> — B2B sites tend to have deep navigation hierarchies that bury important content. If a key service page requires four or more clicks from the homepage to reach, it is too deep. Flatten your architecture so that every lead generation page is accessible within two to three clicks.</li>
+    <li><strong>Page speed on enterprise platforms</strong> — many B2B sites run on heavy CMS platforms like Adobe Experience Manager, Sitecore, or HubSpot. These platforms often have performance overhead that requires specific optimisation. Measure Core Web Vitals across all page templates and identify platform-specific bottlenecks.</li>
+    <li><strong>Redirect management</strong> — B2B sites go through frequent redesigns, URL restructuring, and content reorganisation. Each change introduces redirects, and over time, redirect chains accumulate. Audit your redirect rules for chains longer than one hop, loops, and redirects to non-existent pages.</li>
+    <li><strong>International and multi-language</strong> — B2B companies operating across markets often have hreflang implementation issues, duplicate content across regional domains, and inconsistent URL structures for different markets. If your site targets multiple countries or languages, verify that hreflang tags are correctly implemented with return tags on every page.</li>
+  </ul>
+
+  <h2 id="conversion-path-analysis">Conversion Path Analysis</h2>
+
+  <p>The conversion path on a B2B website is the sequence of interactions a visitor takes from their first page view to submitting a lead form or requesting a demo. Unlike ecommerce where the path is linear (browse, add to cart, checkout), B2B conversion paths are complex, multi-session, and non-linear. Visitors may read three blog posts, leave, return a week later to read a case study, leave again, and finally submit a form on their third visit.</p>
+
+  <p>Audit your conversion paths by analysing:</p>
+
+  <ul>
+    <li><strong>Entry page to conversion page flow</strong> — use Google Analytics to trace the most common paths from organic landing pages to conversion pages. Identify bottlenecks where visitors drop off and pages with high exit rates that interrupt the journey. If visitors consistently land on your blog and never reach your service pages, you have a content-to-conversion linking problem.</li>
+    <li><strong>CTA placement and density</strong> — map every CTA across your site. Are there calls to action on every page? Do blog posts include relevant CTAs that link to related service pages? Are there secondary CTAs (newsletter signup, resource download) for visitors not ready to convert? Many B2B sites have CTAs only on service pages, missing the opportunity to capture leads from their highest-traffic content.</li>
+    <li><strong>Form analytics</strong> — if you use form analytics tools, check completion rates, field abandonment, and time to submit. Identify which fields cause the most friction. If you do not have form analytics, implement them before your next audit — form optimisation is one of the highest-leverage improvements for B2B lead generation.</li>
+    <li><strong>Multi-touch attribution</strong> — B2B buying cycles mean that the first touch (often an organic search visit to a blog post) and the converting touch (often a direct visit to a service page) may be separated by weeks. Ensure your analytics tracks the full journey so you can attribute conversions accurately to the content and channels that initiated them.</li>
+    <li><strong>Mobile conversion experience</strong> — test every conversion path on mobile. B2B buyers increasingly research on mobile devices, even if they convert on desktop. If your lead forms are difficult to complete on mobile or your service pages are poorly formatted on small screens, you are losing potential leads at the research stage.</li>
+  </ul>
+
+  <h2 id="competitive-positioning">Competitive Positioning</h2>
+
+  <p>B2B markets are often dominated by a small number of well-established players with significant SEO authority. Understanding your competitive landscape is essential for setting realistic expectations and identifying opportunities where you can compete effectively.</p>
+
+  <ul>
+    <li><strong>SERP ownership analysis</strong> — for your top 20 target keywords, catalogue who ranks on page one. Note which are direct competitors, which are review or comparison sites, and which are informational resources. If your target SERPs are dominated by comparison sites (G2, Capterra, TrustRadius), your strategy may need to include optimising your presence on those platforms alongside your organic efforts.</li>
+    <li><strong>Content gap analysis</strong> — use Ahrefs or Semrush to identify keywords your competitors rank for that you do not. Filter for commercial intent keywords to find the gaps that represent the biggest revenue opportunity. These gaps often reveal entire topic areas you have not covered.</li>
+    <li><strong>Backlink gap analysis</strong> — compare your backlink profile against competitors. Identify high-authority domains that link to competitors but not to you. These represent link building opportunities through better content, outreach, or digital PR.</li>
+    <li><strong>Feature comparison positioning</strong> — check whether competitors have published comparison pages ("Your Solution vs Our Solution"). If they have, you need equivalent content that presents your positioning. If they have not, publishing comparison content first gives you an advantage in searches where buyers are evaluating alternatives.</li>
+  </ul>
+
+  <h2 id="b2b-schema-and-structured-data">B2B Schema and Structured Data</h2>
+
+  <p>B2B websites have specific structured data opportunities that support both search visibility and entity recognition. Your schema audit should verify implementation of these types:</p>
+
+  <ul>
+    <li><strong>Organisation schema</strong> — your homepage should include complete Organisation schema with name, url, logo, contactPoint, sameAs (linking to social profiles), address, and description. This establishes your business entity in Google's knowledge graph.</li>
+    <li><strong>Service schema</strong> — each service or solution page should use Service schema describing what you offer, who it serves, and how it is delivered. Include serviceType, provider, areaServed, and description.</li>
+    <li><strong>FAQ schema</strong> — if your service or product pages include frequently asked questions sections, mark them up with FAQPage schema. These can earn expanded SERP real estate that pushes competitors further down the page.</li>
+    <li><strong>Article schema for blog content</strong> — ensure that blog posts and thought leadership content use proper Article or BlogPosting schema with author information, publication date, and publisher details. Author markup is increasingly important for E-E-A-T signals.</li>
+    <li><strong>BreadcrumbList schema</strong> — verify that breadcrumb navigation is marked up as structured data on every page. This helps Google understand your site hierarchy and can display breadcrumb trails in search results instead of raw URLs.</li>
+    <li><strong>Event schema</strong> — if you host webinars, conferences, or training events, mark them up with Event schema. This can earn dedicated event rich results in Google.</li>
+    <li><strong>SoftwareApplication schema</strong> — if you sell software, use SoftwareApplication schema with applicationCategory, operatingSystem, offers, and aggregateRating where applicable.</li>
+  </ul>
+
+  <h2 id="measuring-audit-roi">Measuring Audit ROI</h2>
+
+  <p>A B2B SEO audit is only valuable if you can measure the business impact of the changes it recommends. Unlike ecommerce where revenue attribution is straightforward, B2B requires a more sophisticated measurement framework that accounts for long sales cycles and multi-touch buyer journeys.</p>
+
+  <ul>
+    <li><strong>Baseline your metrics before implementing changes</strong> — record your current organic traffic, keyword rankings for target terms, lead form submission rates, and pipeline value from organic leads. Without a clear baseline, you cannot measure improvement.</li>
+    <li><strong>Track leading indicators weekly</strong> — organic traffic, keyword positions, indexed page count, and crawl errors are leading indicators that respond to changes within days or weeks. Monitor these to confirm that your technical and on-page fixes are taking effect.</li>
+    <li><strong>Track lagging indicators monthly</strong> — lead volume, lead quality (MQL and SQL rates), pipeline value, and revenue from organic leads are lagging indicators that reflect the cumulative impact of your SEO improvements over time. In B2B, expect a three to six month lag between implementing changes and seeing revenue impact.</li>
+    <li><strong>Calculate cost per lead by channel</strong> — compare the cost per organic lead (audit cost plus implementation time) against paid search cost per lead for the same keywords. This comparison almost always favours SEO once the initial improvements are in place, because organic leads continue flowing without incremental spend.</li>
+    <li><strong>Report in business terms</strong> — stakeholders in B2B organisations do not care about keyword rankings or organic sessions. They care about pipeline and revenue. Frame your audit results in terms of "pages fixed that now generate X leads per month worth Y in pipeline value" rather than "improved rankings for 47 keywords."</li>
+  </ul>
+
+  <p>Set a six-month review date when you complete your audit. At that point, compare your baseline metrics against current performance to quantify the ROI of every change implemented. This data justifies ongoing SEO investment and informs the scope of your next audit cycle.</p>
+</ContentLayout>

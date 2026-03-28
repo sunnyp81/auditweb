@@ -1,0 +1,103 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'Why Healthcare SEO Is Different', id: 'why-different' },
+  { label: 'E-E-A-T for Medical Content', id: 'eeat' },
+  { label: 'YMYL Compliance', id: 'ymyl' },
+  { label: 'Local SEO for Practices', id: 'local' },
+  { label: 'Technical Healthcare SEO', id: 'technical' },
+  { label: 'Content Quality Standards', id: 'content' },
+  { label: 'Compliance and Privacy', id: 'compliance' },
+  { label: 'Healthcare Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="SEO Audit for Healthcare Websites: YMYL, E-E-A-T, and Medical SEO"
+  description="Healthcare websites face the highest SEO scrutiny from Google. Learn how to audit medical content for E-E-A-T compliance, YMYL standards, and HIPAA considerations."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'SEO Audit', href: '/seo-website-audit/' },
+    { label: 'Healthcare', href: '/seo-website-audit/healthcare/' },
+  ]}
+  toc={toc}
+  showLeadForm={true}
+  publishDate="2026-03-28"
+>
+  <h2 id="why-different">Why Healthcare SEO Is Different</h2>
+  <p>Healthcare websites fall into Google's "Your Money or Your Life" (YMYL) category — pages that could impact a person's health, safety, or financial stability. Google applies significantly higher quality standards to these pages, meaning tactics that work for other industries can actively harm healthcare sites.</p>
+  <p>A healthcare SEO audit must evaluate not just technical and on-page factors, but also content accuracy, author credentials, source citations, and compliance with medical advertising regulations.</p>
+
+  <h2 id="eeat">E-E-A-T for Medical Content</h2>
+  <p>E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is critical for healthcare content:</p>
+  <ul>
+    <li><strong>Author credentials:</strong> Every medical content page should have a visible author byline from a qualified healthcare professional (MD, DO, RN, etc.). The author should have a detailed bio page listing their credentials, experience, and affiliations.</li>
+    <li><strong>Medical review:</strong> Content should be medically reviewed by a licensed practitioner. Display "Medically reviewed by [Name], [Credentials]" prominently with the review date.</li>
+    <li><strong>Author schema:</strong> Implement Person schema for authors with their medical credentials, affiliated organisations, and links to their professional profiles (hospital website, medical board listings).</li>
+    <li><strong>Source citations:</strong> Medical claims must cite peer-reviewed sources, medical journals, or official health organisations (NHS, NIH, WHO, Mayo Clinic). Link to the actual studies, not just mention them.</li>
+    <li><strong>Organisation authority:</strong> Your about page should detail the practice's history, accreditations, awards, and professional memberships. Implement Organization schema with relevant credentials.</li>
+  </ul>
+
+  <h2 id="ymyl">YMYL Compliance</h2>
+  <p>Google's Quality Rater Guidelines specifically mention health pages as YMYL. What this means practically:</p>
+  <ul>
+    <li><strong>Accuracy is non-negotiable:</strong> Outdated or inaccurate medical information won't just hurt rankings — it can harm patients. Audit every medical claim for current accuracy.</li>
+    <li><strong>No misleading claims:</strong> Avoid unsubstantiated claims about treatments, cures, or outcomes. Language should be measured and evidence-based.</li>
+    <li><strong>Clear purpose:</strong> Each page should have a clear, helpful purpose. Pages that exist only for SEO without genuine value to patients will be filtered out.</li>
+    <li><strong>Content freshness:</strong> Medical content must be regularly reviewed and updated. Display last-reviewed dates on all clinical content. Content older than 2 years without review is a red flag.</li>
+    <li><strong>Disclaimers:</strong> Include appropriate medical disclaimers — content is for informational purposes, not a substitute for professional medical advice.</li>
+  </ul>
+
+  <h2 id="local">Local SEO for Practices</h2>
+  <p>Most healthcare businesses serve local patients. Local SEO audit checks:</p>
+  <ul>
+    <li><strong>Google Business Profile:</strong> Verify and fully optimise your GBP listing. Include all services, hours, accepted insurance, photos of the facility, and respond to all reviews.</li>
+    <li><strong>NAP consistency:</strong> Your practice name, address, and phone number must be identical across your website, GBP, Healthgrades, Vitals, ZocDoc, and all directory listings.</li>
+    <li><strong>Local landing pages:</strong> If you serve multiple locations, create dedicated pages for each with unique content about the specific location, staff, and services offered there.</li>
+    <li><strong>Review strategy:</strong> Patient reviews are critical for local healthcare SEO. Audit your review profiles on Google, Healthgrades, and Yelp. Implement a compliant review solicitation process.</li>
+    <li><strong>LocalBusiness schema:</strong> Implement MedicalBusiness or Physician schema with opening hours, address, accepted insurance, and medical specialties.</li>
+  </ul>
+
+  <h2 id="technical">Technical Healthcare SEO</h2>
+  <ul>
+    <li><strong>Page speed:</strong> Healthcare searchers are often anxious and impatient. A slow-loading appointment page directly costs you patients. Target LCP under 2 seconds.</li>
+    <li><strong>Mobile optimisation:</strong> Many patients search for healthcare on mobile, often in urgent situations. Test appointment booking, contact forms, and click-to-call on mobile devices.</li>
+    <li><strong>Site architecture:</strong> Organise by service line (cardiology, dermatology, etc.) with condition pages nested under each. This builds topical authority for each specialty.</li>
+    <li><strong>Appointment booking:</strong> If you offer online scheduling, ensure the booking system is fast, mobile-friendly, and doesn't require excessive personal information upfront.</li>
+    <li><strong>Accessibility:</strong> Healthcare websites have a strong ethical and legal obligation to be accessible. Audit against WCAG 2.1 AA — patients with disabilities need to access your services.</li>
+  </ul>
+
+  <h2 id="content">Content Quality Standards</h2>
+  <ul>
+    <li><strong>Condition pages:</strong> Each condition your practice treats should have a comprehensive page covering symptoms, causes, diagnosis, treatment options, and when to seek care. Aim for 1,500+ words of expert-written content.</li>
+    <li><strong>Service pages:</strong> Detail what each service involves, who it's for, what to expect, recovery information, and insurance/cost information.</li>
+    <li><strong>Provider profiles:</strong> Detailed bios for each doctor/provider with education, board certifications, specialties, years of experience, and a professional photo.</li>
+    <li><strong>Patient education:</strong> Blog content should answer real patient questions. Use Google's "People Also Ask" and patient forum research to identify questions.</li>
+    <li><strong>Reading level:</strong> Medical content should be written at an 8th-grade reading level for patient-facing pages. Use clear language, define medical terms, and avoid unnecessary jargon.</li>
+  </ul>
+
+  <h2 id="compliance">Compliance and Privacy</h2>
+  <ul>
+    <li><strong>HIPAA considerations:</strong> If your website collects patient information (appointment requests, contact forms, patient portals), ensure HIPAA-compliant data handling. Use encrypted forms and BAA-covered hosting.</li>
+    <li><strong>Advertising regulations:</strong> Medical advertising is regulated. Avoid guarantees of outcomes, misleading before/after photos without proper context, or claims that exceed your evidence base.</li>
+    <li><strong>Cookie consent:</strong> If you use analytics or advertising cookies, implement proper consent mechanisms that comply with GDPR and state privacy laws.</li>
+    <li><strong>ADA compliance:</strong> Healthcare websites are frequent targets of ADA accessibility lawsuits. An accessibility audit is not optional for healthcare.</li>
+  </ul>
+
+  <h2 id="checklist">Healthcare Audit Checklist</h2>
+  <ul>
+    <li><strong>Author bylines with credentials</strong> on all medical content</li>
+    <li><strong>Medical review badges</strong> with reviewer name and date</li>
+    <li><strong>Source citations</strong> for all medical claims</li>
+    <li><strong>Content reviewed within last 2 years</strong></li>
+    <li><strong>Person schema</strong> for all providers</li>
+    <li><strong>MedicalBusiness schema</strong> on location pages</li>
+    <li><strong>GBP fully optimised</strong> with all services and photos</li>
+    <li><strong>NAP consistent</strong> across all directories</li>
+    <li><strong>Mobile appointment booking works</strong></li>
+    <li><strong>WCAG 2.1 AA accessible</strong></li>
+    <li><strong>HIPAA-compliant forms</strong> if collecting patient data</li>
+    <li><strong>Medical disclaimers present</strong></li>
+  </ul>
+</ContentLayout>

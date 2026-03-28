@@ -1,0 +1,175 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Screaming Frog', href: '/website-audit-tools/screaming-frog/' },
+];
+
+const toc = [
+  { label: 'What Is Screaming Frog', id: 'what-is-screaming-frog' },
+  { label: 'Free vs Paid Version', id: 'free-vs-paid-version' },
+  { label: 'Running Your First Crawl', id: 'running-your-first-crawl' },
+  { label: 'Key Tabs Explained', id: 'key-tabs-explained' },
+  { label: 'Custom Extraction', id: 'custom-extraction' },
+  { label: 'Integration With GA and GSC', id: 'integration-with-ga-and-gsc' },
+  { label: 'Advanced Configuration', id: 'advanced-configuration' },
+  { label: 'Best Use Cases', id: 'best-use-cases' },
+];
+---
+
+<ContentLayout
+  title="Screaming Frog SEO Spider: The Ultimate Site Audit Crawler"
+  description="Screaming Frog is the industry-standard website crawler. Learn how to use it for technical audits, content analysis, and finding SEO issues at scale."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Screaming Frog SEO Spider is a desktop application that crawls websites and extracts key SEO data for analysis. It has been the industry-standard technical SEO crawler since its release in 2010, and for good reason. No other tool gives you the same level of control over how a crawl runs, what data is collected, and how results are exported.</p>
+
+<p>While cloud-based tools like <a href="/website-audit-tools/ahrefs/">Ahrefs</a> and <a href="/website-audit-tools/semrush/">Semrush</a> have caught up in many areas, Screaming Frog remains the preferred choice for technical SEOs who need to crawl sites on their own terms. It runs locally on your machine, stores data in memory (or on disk for very large crawls), and provides an interface that prioritises data density over visual polish.</p>
+
+<p>This guide covers everything from running your first crawl to advanced techniques like custom extraction, Google Analytics integration, and JavaScript rendering configuration.</p>
+
+<h2 id="what-is-screaming-frog">What Is Screaming Frog</h2>
+
+<p>Screaming Frog SEO Spider is a Java-based desktop application available for Windows, macOS, and Linux. It works by sending HTTP requests to URLs on a target website, parsing the responses, and organising the extracted data into a tabbed interface. You can think of it as a specialised web browser that visits every page on your site and records everything it finds.</p>
+
+<p>The tool crawls in two modes: Spider mode (which discovers URLs by following links from a start URL, like a search engine would) and List mode (which crawls a predefined list of URLs you provide). Spider mode is used for comprehensive audits. List mode is used for checking specific pages, validating URLs from a sitemap, or auditing a subset of a larger site.</p>
+
+<p>Unlike cloud-based crawlers, Screaming Frog runs on your local hardware. This has several implications. Your crawl speed is limited by your internet connection and the target server's response time, not by a third-party service's infrastructure. Your data stays on your machine, which matters for sensitive or confidential sites. And your machine's RAM determines how many URLs you can crawl before needing to switch to database storage mode.</p>
+
+<p>The application stores crawl data in RAM by default, which makes it extremely fast for small to medium sites. For sites with more than 500,000 URLs, you can switch to database storage mode, which uses your hard drive instead of RAM. This trades some speed for the ability to crawl millions of pages without running out of memory.</p>
+
+<h2 id="free-vs-paid-version">Free vs Paid Version</h2>
+
+<p>Screaming Frog offers a free version that is genuinely useful, not just a marketing exercise. The free version can crawl up to 500 URLs per crawl, which is enough for auditing small business websites, personal sites, or specific sections of larger sites.</p>
+
+<p>The free version includes all the core crawling functionality: it extracts page titles, meta descriptions, headings, status codes, redirects, canonical tags, and more. It does not include saving crawls, custom extraction, JavaScript rendering, Google Analytics/Search Console integration, scheduled crawling, or XML sitemap generation.</p>
+
+<p>The paid version costs £199 per year (approximately $250 USD). This is a one-time annual payment, not a monthly subscription. For the price of roughly two months of Ahrefs or Semrush, you get unlimited crawling for an entire year. The paid version unlocks:</p>
+
+<ul>
+  <li><strong>Unlimited URL crawling:</strong> No 500 URL cap. Crawl sites with millions of pages.</li>
+  <li><strong>Save and re-open crawls:</strong> Store crawl data for later analysis without re-crawling.</li>
+  <li><strong>JavaScript rendering:</strong> Uses an embedded Chromium browser to render pages before extracting data. Essential for JavaScript-heavy sites.</li>
+  <li><strong>Custom extraction:</strong> Extract any data from pages using XPath, CSS selectors, or regex. This is one of the most powerful features for advanced audits.</li>
+  <li><strong>Google Analytics integration:</strong> Pull GA data (sessions, bounce rate, conversions) directly into your crawl results.</li>
+  <li><strong>Google Search Console integration:</strong> Import GSC data (impressions, clicks, CTR, average position) per URL.</li>
+  <li><strong>Scheduled crawling:</strong> Set up automated crawls that run at specified intervals.</li>
+  <li><strong>Crawl comparison:</strong> Compare two crawls to identify changes between them.</li>
+  <li><strong>XML sitemap generation:</strong> Create XML sitemaps from your crawl data with configurable priorities and change frequencies.</li>
+  <li><strong>Structured data validation:</strong> Extract and validate JSON-LD, Microdata, and RDFa structured data.</li>
+  <li><strong>AMP validation:</strong> Check AMP pages for compliance issues.</li>
+  <li><strong>Spelling and grammar checking:</strong> Built-in content quality checks.</li>
+</ul>
+
+<p>For any professional SEO work, the paid version is essential. At £199/year, it is the best value tool in the SEO industry. Even if you also subscribe to a cloud platform, Screaming Frog fills gaps that cloud crawlers cannot.</p>
+
+<h2 id="running-your-first-crawl">Running Your First Crawl</h2>
+
+<p>Download and install Screaming Frog from screamingfrog.co.uk. The installation is straightforward on all platforms. Launch the application, and you will see a URL bar at the top of the interface and a tabbed data view below.</p>
+
+<p>To start a crawl, enter your website URL in the URL bar and press Enter (or click Start). The crawler will begin fetching pages from your start URL, following internal links to discover additional pages. You will see the URL count incrementing in real time as pages are discovered and crawled.</p>
+
+<p>Before starting, check a few key settings under Configuration in the menu bar:</p>
+
+<p><strong>Spider settings:</strong> Under Configuration > Spider, you can control which resources the crawler follows. By default, it crawls HTML pages, images, CSS, JavaScript, Flash, and other resources. For a basic SEO audit, you may want to uncheck images, CSS, JavaScript, and Flash to speed up the crawl and focus on HTML pages. However, keeping images checked allows you to audit alt text, and keeping JavaScript checked enables rendering analysis.</p>
+
+<p><strong>Crawl speed:</strong> Under Configuration > Speed, set the maximum number of concurrent threads (default is 5) and the maximum URL requests per second. Reduce these values if you are crawling a site on shared hosting or if the server starts returning errors during the crawl. Two threads at one request per second is a safe starting point for sensitive servers.</p>
+
+<p><strong>Robots.txt:</strong> By default, Screaming Frog respects robots.txt. You can change this under Configuration > Robots.txt. Options include ignoring robots.txt entirely (useful for auditing blocked pages) or using a custom robots.txt file.</p>
+
+<p>Once the crawl completes, the interface shows a summary of all discovered URLs across multiple tabs. The right-hand pane shows detailed information for the currently selected URL, including its inlinks, outlinks, response headers, and rendered page preview.</p>
+
+<h2 id="key-tabs-explained">Key Tabs Explained</h2>
+
+<p>Screaming Frog organises crawl data into tabs along the top of the interface. Each tab focuses on a different aspect of the crawled data.</p>
+
+<p><strong>Internal:</strong> Lists all internal URLs discovered during the crawl. Each URL shows its status code, indexability status, title, meta description, H1, H2, word count, size, response time, and dozens of other data points. You can filter this tab by HTML pages, JavaScript files, CSS files, images, PDFs, and other content types. The HTML filter on the Internal tab is your primary working view for most audits.</p>
+
+<p><strong>External:</strong> Lists all external URLs found in links on your site. Shows the status code for each external URL, which reveals broken external links (404s) and redirected external links (301/302). Regularly checking external link health prevents your site from linking to dead or moved pages.</p>
+
+<p><strong>Protocol:</strong> Shows URLs grouped by protocol (HTTP vs HTTPS). After migrating to HTTPS, this tab quickly identifies any remaining HTTP URLs that need updating.</p>
+
+<p><strong>Response Codes:</strong> Groups URLs by HTTP status code. Filter by 2xx (successful), 3xx (redirects), 4xx (client errors), or 5xx (server errors). This tab gives you an immediate overview of your site's response code distribution. A healthy site should have the vast majority of URLs returning 200.</p>
+
+<p><strong>Page Titles:</strong> Lists every page title found during the crawl. Filter by missing titles, duplicate titles, titles over 60 characters, or titles under 30 characters. Shows the pixel width of each title, which is more accurate than character count for determining whether a title will be truncated in search results.</p>
+
+<p><strong>Meta Description:</strong> Same structure as Page Titles but for meta descriptions. Filter by missing, duplicate, over 155 characters, or under 70 characters.</p>
+
+<p><strong>H1:</strong> Lists all H1 tags found on each page. Flags pages with missing H1s, multiple H1s, or duplicate H1s across the site.</p>
+
+<p><strong>H2:</strong> Same structure for H2 headings. Useful for content structure analysis at scale.</p>
+
+<p><strong>Images:</strong> Lists all images discovered during the crawl. Shows which images have missing alt text, oversized file sizes, or broken URLs. For sites with thousands of images, this tab is essential for accessibility and performance auditing.</p>
+
+<p><strong>Directives:</strong> Shows indexing directives for each page, including canonical tags, meta robots tags, X-Robots-Tag headers, and rel="next"/"prev" pagination. Filters let you find pages with conflicting directives (such as a canonical tag pointing to a noindexed page), which are among the most damaging technical SEO issues.</p>
+
+<h2 id="custom-extraction">Custom Extraction</h2>
+
+<p>Custom extraction is the feature that elevates Screaming Frog from a good crawler to an indispensable one. It lets you extract any data from crawled pages using XPath, CSS selectors, or regular expressions.</p>
+
+<p>Access it under Configuration > Custom > Extraction. You can define up to 100 extraction rules, each targeting a specific piece of data. Common use cases include:</p>
+
+<ul>
+  <li><strong>Extracting structured data:</strong> Pull specific JSON-LD properties (like product prices, review counts, or author names) from pages to verify structured data implementation at scale.</li>
+  <li><strong>Checking for tracking codes:</strong> Verify that Google Analytics, Tag Manager, Facebook Pixel, or other tracking scripts are present on every page. Extract the specific container ID to confirm the correct property is installed.</li>
+  <li><strong>Content auditing:</strong> Extract specific content elements like publication dates, author names, category labels, or breadcrumb text to audit content organisation across the site.</li>
+  <li><strong>Ad and affiliate compliance:</strong> Extract rel="sponsored" or rel="nofollow" attributes from outbound links to verify affiliate link compliance.</li>
+  <li><strong>CMS version detection:</strong> Extract generator meta tags or specific HTML patterns to identify CMS versions across a portfolio of sites.</li>
+</ul>
+
+<p>For example, to extract the Google Analytics tracking ID from every page, you would create an XPath extraction rule targeting <code>//script[contains(text(),'GA_MEASUREMENT_ID')]</code> or a regex rule matching <code>G-[A-Z0-9]+</code> in the page source. The extracted values appear as additional columns in the Internal tab, which you can then filter and export.</p>
+
+<p>Custom extraction transforms Screaming Frog from a standard SEO crawler into a general-purpose web scraping tool. Any data visible in the page source can be extracted, tabulated, and analysed.</p>
+
+<h2 id="integration-with-ga-and-gsc">Integration With GA and GSC</h2>
+
+<p>The paid version of Screaming Frog integrates directly with Google Analytics (both Universal Analytics and GA4) and Google Search Console. This integration pulls performance data into your crawl results, linking technical issues to real traffic and ranking data.</p>
+
+<p><strong>Google Analytics integration:</strong> Connect your GA account under Configuration > API Access > Google Analytics. The crawler will match each URL with its corresponding GA data, showing metrics like sessions, users, bounce rate, pages per session, goal completions, and revenue. This lets you prioritise fixes based on traffic impact. A broken page with 10,000 monthly sessions is far more urgent than one with 10.</p>
+
+<p><strong>Google Search Console integration:</strong> Connect GSC under Configuration > API Access > Google Search Console. This imports impressions, clicks, CTR, and average position for each URL. Combined with crawl data, you can identify high-impression pages with technical issues (meaning you are losing clicks due to fixable problems), or pages ranking on page two that might break through to page one with technical improvements.</p>
+
+<p>The integration data appears as additional columns in the Internal tab. You can sort, filter, and export this combined dataset. For example, filtering the Internal tab to show only pages with 4xx status codes that have more than 100 monthly sessions from GA immediately identifies the most impactful broken pages to fix.</p>
+
+<p>Setting up the API connections requires authenticating with your Google account and selecting the appropriate GA property and GSC property. Screaming Frog stores the authentication tokens locally, so you only need to authenticate once per Google account.</p>
+
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+
+<p>Beyond the basics, Screaming Frog offers extensive configuration options for advanced crawling scenarios.</p>
+
+<p><strong>JavaScript rendering:</strong> Enable under Configuration > Spider > Rendering. Uses an embedded Chromium browser to render pages, executing JavaScript before extracting data. This is essential for sites built with React, Angular, Vue, or any framework that loads content dynamically. You can configure the rendering timeout, window size, and whether to capture rendered screenshots. Be aware that JavaScript rendering significantly increases crawl time and memory usage.</p>
+
+<p><strong>URL rewriting:</strong> Under Configuration > URL Rewriting, create rules to strip or modify URL parameters before crawling. This prevents the crawler from treating parameterised variations of the same page as separate URLs. Common patterns to strip include UTM parameters, session IDs, sort/filter parameters, and pagination parameters.</p>
+
+<p><strong>Include/Exclude patterns:</strong> Under Configuration > Include/Exclude, specify URL patterns to control which parts of the site are crawled. Exclude patterns are processed before include patterns. Use these to focus the crawl on specific sections or to avoid crawling resource-intensive areas like search results pages or infinite scroll endpoints.</p>
+
+<p><strong>Custom HTTP headers:</strong> Under Configuration > HTTP Header, add custom headers to crawl requests. Useful for sites that require specific headers for authentication, content negotiation, or A/B test variant targeting.</p>
+
+<p><strong>Authentication:</strong> Screaming Frog supports forms-based authentication, Windows authentication (NTLM), and standard HTTP authentication. Under Configuration > Authentication, enter credentials to crawl sites behind login walls. For forms-based auth, you need to specify the login form URL, username field, password field, and credentials.</p>
+
+<p><strong>Database storage:</strong> Under Configuration > System > Storage Mode, switch from RAM storage to database storage for crawling very large sites. Database mode uses SQLite on disk, allowing crawls of millions of URLs without running out of memory. The trade-off is reduced speed and larger disk usage.</p>
+
+<h2 id="best-use-cases">Best Use Cases</h2>
+
+<p>While cloud-based tools like <a href="/website-audit-tools/ahrefs/">Ahrefs</a> and <a href="/website-audit-tools/semrush/">Semrush</a> handle routine monitoring well, Screaming Frog excels in specific scenarios that justify its place in every SEO professional's toolkit.</p>
+
+<p><strong>Pre-migration audits:</strong> Before a site migration (domain change, CMS change, URL restructure), crawl the existing site thoroughly with Screaming Frog. Export the complete URL list with titles, meta descriptions, status codes, and canonical tags. This becomes your baseline for building redirect maps and validating the migration post-launch.</p>
+
+<p><strong>Post-migration validation:</strong> After migration, crawl the new site and use the crawl comparison feature to identify differences. List mode is particularly useful here: load your pre-migration URL list and check which URLs return 200, which redirect correctly, and which return errors.</p>
+
+<p><strong>Large-scale content audits:</strong> Combine crawl data with GA and GSC integration to create a comprehensive content inventory. Export to a spreadsheet with URL, title, word count, publication date (via custom extraction), sessions, and average position. This dataset powers content pruning, consolidation, and refresh decisions.</p>
+
+<p><strong>Competitive analysis:</strong> Crawl competitor sites to understand their site structure, internal linking patterns, content length, and technical setup. Extract specific data points using custom extraction to compare their implementation against yours.</p>
+
+<p><strong>Structured data auditing:</strong> The built-in structured data extraction and validation catches errors that cloud tools often miss. It validates JSON-LD, Microdata, and RDFa, showing the parsed output and flagging syntax errors, missing required fields, and schema.org compliance issues.</p>
+
+<p><strong>Bulk redirect chain resolution:</strong> Crawl a site, filter the Response Codes tab for 3xx redirects, and export the redirect chains. Screaming Frog shows the full chain for each redirect, making it straightforward to build a list of direct redirects that collapse the chains.</p>
+
+<p>For a comparison of how Screaming Frog stacks up against cloud-based alternatives across all these use cases, see our <a href="/website-audit-tools/comparison/">complete tool comparison</a>.</p>
+
+</ContentLayout>
