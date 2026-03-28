@@ -1,0 +1,128 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'SaaS', href: '/seo-website-audit/saas/' },
+];
+
+const toc = [
+  { label: 'SaaS SEO Challenges', id: 'saas-seo-challenges' },
+  { label: 'Product Page Optimisation', id: 'product-page-optimisation' },
+  { label: 'Feature and Use Case Pages', id: 'feature-and-use-case-pages' },
+  { label: 'Technical Infrastructure', id: 'technical-infrastructure' },
+  { label: 'Content Marketing Audit', id: 'content-marketing-audit' },
+  { label: 'Conversion Path Analysis', id: 'conversion-path-analysis' },
+  { label: 'SaaS Audit Checklist', id: 'saas-audit-checklist' },
+];
+---
+
+<ContentLayout
+  title="SEO Audit for SaaS Websites: Growth-Focused Analysis"
+  description="SaaS SEO audits focus on product page visibility, feature page optimisation, content-led growth, and conversion paths that turn organic traffic into trial signups and demo requests."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+  showLeadForm={true}
+>
+  <p>SaaS websites operate under a different set of SEO constraints than content sites, ecommerce stores, or local businesses. The buying cycle is longer, the decision-makers are more sophisticated, and the competition for high-intent keywords is intense because every competitor is investing heavily in content marketing and paid search. An SEO audit for a SaaS company needs to account for these realities and focus on the specific levers that drive growth — product visibility, content-led acquisition, and conversion optimisation from organic landing pages.</p>
+
+  <p>Most SaaS companies have websites built on JavaScript frameworks like React, Next.js, or Vue, which introduces technical SEO challenges that traditional WordPress or HTML sites do not face. They also tend to accumulate large content libraries through blog-driven growth strategies, creating content management and cannibalisation issues that worsen over time without regular auditing. And because SaaS products are complex, the information architecture of the website — how features, use cases, integrations, and pricing are structured — has an outsized impact on search visibility.</p>
+
+  <p>This guide covers the specific audit areas that matter most for SaaS websites, from product page optimisation to the technical infrastructure challenges unique to modern web applications.</p>
+
+  <h2 id="saas-seo-challenges">SaaS SEO Challenges</h2>
+
+  <p>Before diving into the audit checklist, it is worth understanding the specific challenges that make SaaS SEO different from other verticals. These challenges determine where the audit should focus its deepest analysis.</p>
+
+  <ul>
+    <li><strong>JavaScript rendering</strong> — SaaS marketing sites are frequently built with React, Next.js, Gatsby, or similar frameworks. While server-side rendering (SSR) and static site generation (SSG) have solved most rendering issues, many SaaS sites still rely on client-side rendering for portions of their content. If Googlebot cannot render your pricing page, feature descriptions, or customer testimonials, those elements do not exist from a ranking perspective. The audit must verify that all critical content is present in the server-rendered HTML, not just the client-side DOM.</li>
+    <li><strong>Complex information architecture</strong> — SaaS products typically have multiple features, use cases, integrations, and audience segments. Mapping these to a clear URL structure that search engines can parse requires careful architecture. Many SaaS sites end up with overlapping pages — a feature page, a use case page, and a blog post all targeting the same keyword — because different teams created content without coordinating.</li>
+    <li><strong>Long sales cycles</strong> — SaaS purchases involve research, comparison, trial periods, and often multiple stakeholders. The content strategy must serve users at every stage of the funnel, from awareness ("what is project management software") through consideration ("Asana vs Monday.com") to decision ("Asana pricing" and "Asana enterprise demo"). The audit evaluates whether your content covers all funnel stages for your target keywords.</li>
+    <li><strong>Comparison and alternative queries</strong> — SaaS buyers actively search for comparisons ("your product vs competitor") and alternatives ("competitor alternatives"). These queries have high purchase intent but are often neglected in SaaS content strategies. The audit checks whether you own these queries or are ceding them to competitors and review sites.</li>
+    <li><strong>Content bloat from years of blog publishing</strong> — many SaaS companies have published hundreds or thousands of blog posts over the years as part of content-led growth strategies. Over time, this content becomes outdated, cannibalises itself, and drags down overall site quality. The audit identifies which content to keep, refresh, consolidate, or remove.</li>
+  </ul>
+
+  <h2 id="product-page-optimisation">Product Page Optimisation</h2>
+
+  <p>Product pages on SaaS sites serve a dual purpose: they need to convert visitors into trial users or demo requests, and they need to rank for the product-category keywords that prospective customers search. These two objectives can conflict — conversion-optimised pages often lack the content depth that rankings require, while SEO-heavy pages can bury the call to action under walls of text.</p>
+
+  <p>Your audit should evaluate these product page elements:</p>
+
+  <ul>
+    <li><strong>Homepage keyword targeting</strong> — the homepage typically targets the broadest product-category keyword ("project management software," "CRM platform," "email marketing tool"). Check that the H1, title tag, and above-the-fold content clearly establish what the product is. Many SaaS homepages use clever taglines that sound good in marketing meetings but communicate nothing to search engines.</li>
+    <li><strong>Product description depth</strong> — beyond the hero section, your homepage and main product pages need substantive content that demonstrates what the product does, who it is for, and how it differs from alternatives. A homepage with nothing but a headline, a hero image, and a signup button ranks for almost nothing. Check that product pages have at least 500-800 words of descriptive content, including how-it-works sections, benefit explanations, and social proof.</li>
+    <li><strong>Pricing page SEO</strong> — "[product] pricing" is one of the highest-intent queries for any SaaS product. Your pricing page should have a clear title tag targeting this keyword, schema markup for the pricing structure, and enough content to satisfy the query without hiding the actual prices behind a "contact sales" gate. Check whether your pricing page ranks for your branded pricing keyword.</li>
+    <li><strong>Demo and trial pages</strong> — these high-conversion pages often have thin content that limits their organic visibility. Audit whether your trial signup and demo request pages have enough content and proper title tags to rank for "[product] free trial" and "[product] demo" queries.</li>
+    <li><strong>Social proof integration</strong> — customer logos, testimonial quotes, case study links, and review platform ratings should be visible on product pages and, critically, present in the server-rendered HTML so search engines can parse them as E-E-A-T signals.</li>
+  </ul>
+
+  <h2 id="feature-and-use-case-pages">Feature and Use Case Pages</h2>
+
+  <p>Feature pages and use case pages are the SEO workhorses of a SaaS website. Each feature page targets a specific capability keyword ("[product] Gantt chart," "automated email sequences"), while use case pages target audience or scenario keywords ("project management for marketing teams," "CRM for real estate agents"). Together, they form the middle of your search funnel.</p>
+
+  <p>Audit feature and use case pages for:</p>
+
+  <ul>
+    <li><strong>Coverage completeness</strong> — list every major feature and every primary use case for your product. Check whether each has a dedicated page with a unique URL, title tag, and substantive content. Many SaaS sites mention features on the homepage but never create dedicated pages that can rank independently. A feature without its own page cannot rank for feature-specific queries.</li>
+    <li><strong>Content depth versus competitors</strong> — pull the top-ranking pages for each feature keyword and compare content depth. If competitors have 1,500-word feature pages with screenshots, videos, and use case examples while your feature page has a 200-word description and a screenshot, the content gap explains the ranking gap.</li>
+    <li><strong>Internal linking between features</strong> — feature pages should link to related features, relevant use case pages, and supporting blog content. This creates topical clusters that reinforce your authority. Check that each feature page has at least three to five contextual internal links to related pages.</li>
+    <li><strong>Use case page differentiation</strong> — use case pages for different audiences or scenarios must contain genuinely different content. A page about "project management for marketing teams" should address marketing-specific workflows, challenges, and examples — not recycle the same generic product description with a different heading. Audit a sample of use case pages for genuine content differentiation.</li>
+    <li><strong>Screenshots and visual content</strong> — feature pages without product screenshots are missing a critical element that both users and search engines expect. Check that images have descriptive alt text that includes the feature name and that screenshots are current (showing the latest UI, not a version from two years ago).</li>
+  </ul>
+
+  <h2 id="technical-infrastructure">Technical Infrastructure</h2>
+
+  <p>SaaS website technical audits need to go deeper than standard technical SEO checks because of the frameworks and architectures commonly used. In addition to the standard crawlability, indexation, and speed checks, focus on these SaaS-specific technical areas:</p>
+
+  <ul>
+    <li><strong>Rendering verification</strong> — use Google's URL Inspection tool to render a sample of pages and compare the rendered HTML to the source HTML. If your pricing table, feature descriptions, or customer testimonials only appear after JavaScript execution, verify that Google is successfully rendering them. Check the "Page resources" section for any blocked JavaScript files that could prevent rendering.</li>
+    <li><strong>Single-page application (SPA) routing</strong> — if your marketing site uses client-side routing, verify that every URL returns the correct content when accessed directly (not just via navigation from another page). SPAs that serve a blank shell on direct URL access and then load content via JavaScript can fail to render in search engines.</li>
+    <li><strong>Subdomain versus subdirectory structure</strong> — many SaaS companies host their blog on a subdomain (blog.product.com) or their documentation on another (docs.product.com). From an SEO perspective, subdirectories (product.com/blog/, product.com/docs/) consolidate authority on a single domain. If subdomains are already in use, check that they are verified separately in Search Console and that cross-subdomain linking is implemented effectively.</li>
+    <li><strong>Application versus marketing site separation</strong> — the logged-in application (app.product.com) should be completely separated from the marketing site. Check that application URLs are not being indexed, that login pages are not consuming crawl budget, and that there are no accidental leaks of authenticated content into the public index.</li>
+    <li><strong>CDN and caching</strong> — SaaS marketing sites should serve static pages from a CDN with aggressive caching. Check response headers for caching directives, verify CDN configuration across all page types, and test load times from multiple geographic locations if you serve an international market.</li>
+    <li><strong>Core Web Vitals impact of interactive elements</strong> — SaaS marketing pages often include interactive demos, animated feature showcases, and embedded video. These elements can degrade Interaction to Next Paint and Cumulative Layout Shift if not implemented carefully. Audit CWV scores specifically on pages with heavy interactive content.</li>
+  </ul>
+
+  <h2 id="content-marketing-audit">Content Marketing Audit</h2>
+
+  <p>Content marketing drives the majority of organic traffic for most SaaS companies, and the blog is typically the largest section of the site. Years of content production create specific problems that the audit must address.</p>
+
+  <ul>
+    <li><strong>Content inventory and categorisation</strong> — export every blog post and categorise by topic cluster, funnel stage (awareness, consideration, decision), and current performance (traffic, rankings, conversions). This inventory reveals which topics you have covered thoroughly, which have gaps, and where cannibalisation exists.</li>
+    <li><strong>Content decay identification</strong> — identify blog posts that have lost more than 30% of their peak traffic over the past six months. These decaying pages need freshness updates — new data, current examples, updated screenshots, and revised recommendations. Content decay is the single biggest ongoing threat to SaaS content marketing ROI.</li>
+    <li><strong>Cannibalisation resolution</strong> — SaaS blogs frequently publish multiple posts targeting the same keyword over the years. "10 Best Project Management Tools (2023)" and "Top Project Management Software for 2025" compete for the same query. Identify all cannibalisation instances and resolve by consolidating into a single definitive page, redirecting the weaker version.</li>
+    <li><strong>Topic cluster structure</strong> — check whether your content is organised into topic clusters with a pillar page linked to supporting cluster content. Disorganised content that lacks internal structure performs worse than clustered content because search engines cannot establish your topical authority. Map existing content to clusters and identify pillars that need creation.</li>
+    <li><strong>Conversion elements on blog content</strong> — every blog post should include relevant calls to action that guide readers toward product trial, demo, or deeper content engagement. Check for posts with no CTAs, posts with generic CTAs unrelated to the post topic, and posts where the only conversion opportunity is buried at the bottom of the page.</li>
+    <li><strong>Author authority</strong> — blog posts should have author bylines linked to author pages that establish the writer's expertise. Generic "Team" or "Admin" bylines provide no E-E-A-T signals. Check that named authors have credential-rich bio pages and that the authors are real people with verifiable expertise.</li>
+  </ul>
+
+  <h2 id="conversion-path-analysis">Conversion Path Analysis</h2>
+
+  <p>Driving organic traffic to a SaaS website is only valuable if that traffic converts. The conversion path analysis evaluates how effectively your site turns organic visitors into leads and trial users.</p>
+
+  <ul>
+    <li><strong>Landing page to conversion mapping</strong> — for your top 20 organic landing pages, trace the path to conversion. How many clicks does it take to reach a signup, demo request, or pricing page? Are there clear CTAs on every page that guide users forward? Pages that rank well but have no path to conversion waste organic traffic.</li>
+    <li><strong>Form and signup optimisation</strong> — audit your trial signup and demo request forms. Count the number of fields, check for unnecessary friction (required company size, phone number, industry dropdown), and verify that forms work on mobile. Reducing form fields from ten to four can double conversion rates.</li>
+    <li><strong>Intent-based CTA matching</strong> — informational blog posts should not push a "buy now" CTA — they should offer a relevant content upgrade, free tool, or newsletter signup that matches the user's current awareness stage. Check that CTAs match the intent of the content they appear on.</li>
+    <li><strong>Social proof placement</strong> — customer logos, testimonials, and case study links should appear on high-traffic landing pages, not just the homepage. Check whether your top organic pages include trust signals that support the conversion decision.</li>
+    <li><strong>Exit intent and engagement</strong> — while not directly an SEO factor, engagement metrics influence rankings over time. Pages with high bounce rates and low time on page may benefit from improved content, better design, or more relevant internal links that keep users on site.</li>
+  </ul>
+
+  <h2 id="saas-audit-checklist">SaaS Audit Checklist</h2>
+
+  <p>Use this condensed checklist to ensure your SaaS SEO audit covers every critical area:</p>
+
+  <ul>
+    <li><strong>Technical:</strong> Rendering verification on all page templates, SPA routing check, subdomain/subdirectory assessment, application content separation, CDN caching validation, CWV on interactive pages.</li>
+    <li><strong>Product pages:</strong> Homepage keyword targeting, product description depth, pricing page optimisation, trial/demo page content, social proof in rendered HTML.</li>
+    <li><strong>Feature pages:</strong> Complete feature coverage, content depth versus competitors, internal cross-linking, visual content with alt text, differentiated use case content.</li>
+    <li><strong>Content marketing:</strong> Full content inventory, decay identification, cannibalisation resolution, topic cluster mapping, CTA relevance, author authority signals.</li>
+    <li><strong>Conversion paths:</strong> Landing page to signup mapping, form friction audit, intent-matched CTAs, social proof on organic landing pages.</li>
+    <li><strong>Comparison content:</strong> "[Product] vs [Competitor]" pages created for top five competitors, "[Competitor] alternatives" pages, comparison hub page linking all versus pages.</li>
+    <li><strong>Off-page:</strong> Backlink profile health, competitor authority gap, review site presence (G2, Capterra, TrustRadius), branded search sentiment.</li>
+  </ul>
+
+  <p>A SaaS SEO audit is most valuable when it connects every finding to a growth metric — trial signups, demo requests, or pipeline revenue. Technical fixes that improve indexation lead to more pages ranking. Content improvements that boost rankings lead to more traffic. Conversion optimisation that reduces friction leads to more signups. The audit should quantify these connections wherever possible so that engineering, content, and product teams can prioritise SEO work against other demands on their time.</p>
+</ContentLayout>
