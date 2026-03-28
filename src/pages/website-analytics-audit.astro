@@ -1,0 +1,89 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is an Analytics Audit', id: 'what-is' },
+  { label: 'GA4 Configuration Check', id: 'ga4' },
+  { label: 'Tracking Accuracy', id: 'accuracy' },
+  { label: 'Goal and Conversion Setup', id: 'conversions' },
+  { label: 'Event Tracking Review', id: 'events' },
+  { label: 'Data Quality Issues', id: 'quality' },
+  { label: 'Analytics Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="Website Analytics Audit: Ensure Your Data Is Accurate and Complete"
+  description="An analytics audit verifies that your tracking is correctly configured, data is accurate, and you're measuring what matters. Covers GA4, GTM, conversions, and data quality."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Analytics Audit', href: '/website-analytics-audit/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is an Analytics Audit</h2>
+  <p>An analytics audit reviews your website's tracking implementation to ensure data accuracy and completeness. Bad data leads to bad decisions. If your analytics tracking is misconfigured — missing pages, double-counting sessions, or not tracking conversions — every decision you make based on that data is flawed.</p>
+  <p>Most websites have at least one significant analytics configuration issue. The most common: missing tracking on key pages, inflated pageviews from duplicate tags, incorrectly configured goals, and broken cross-domain tracking.</p>
+
+  <h2 id="ga4">GA4 Configuration Check</h2>
+  <ul>
+    <li><strong>Tracking code on all pages:</strong> Use Google Tag Assistant to verify the GA4 tag fires on every page. Missing tracking on checkout, thank-you, or landing pages creates data blind spots.</li>
+    <li><strong>No duplicate tags:</strong> Multiple GA4 tags on the same page double-count everything. Check for duplicate installations from your CMS, theme, plugin, and GTM simultaneously firing GA4.</li>
+    <li><strong>Enhanced measurement:</strong> GA4's enhanced measurement should be configured correctly — page views, scrolls, outbound clicks, site search, file downloads, and video engagement. Review which are enabled and whether they're relevant.</li>
+    <li><strong>Data streams:</strong> Verify your web data stream is correctly configured with the right website URL. If you have staging or development environments, ensure they're excluded or in separate properties.</li>
+    <li><strong>Internal traffic filters:</strong> Create IP-based filters to exclude your team's traffic. Your visits inflate metrics and skew behaviour data.</li>
+    <li><strong>Data retention:</strong> GA4 defaults to 2-month data retention for user-level data. Extend to 14 months if you need year-over-year comparison at the user level.</li>
+  </ul>
+
+  <h2 id="accuracy">Tracking Accuracy</h2>
+  <ul>
+    <li><strong>Cross-domain tracking:</strong> If users move between domains during conversion (e.g., shop.yoursite.com to checkout.yoursite.com), cross-domain tracking must be configured to maintain the session. Without it, each domain creates a new session, breaking attribution.</li>
+    <li><strong>UTM parameter usage:</strong> Audit your UTM tagging practices. Are campaigns consistently tagged? Are parameters formatted correctly? Inconsistent UTM parameters create fragmented source/medium data.</li>
+    <li><strong>Referral exclusion:</strong> Payment gateways (PayPal, Stripe checkout) often create referral sessions in the middle of a transaction. Add them to your referral exclusion list.</li>
+    <li><strong>Consent mode impact:</strong> With cookie consent requirements, a significant portion of users may decline tracking. Check what percentage of users opt out and how it affects your data accuracy. Implement Google Consent Mode for modelled conversions.</li>
+    <li><strong>Compare with other data sources:</strong> Cross-reference GA4 data with server logs, payment processor data, and ad platform data. Large discrepancies indicate tracking problems.</li>
+  </ul>
+
+  <h2 id="conversions">Goal and Conversion Setup</h2>
+  <ul>
+    <li><strong>Key conversions defined:</strong> Every business has 3-5 key actions that matter. Are all of them tracked as conversions in GA4? Common: form submissions, purchases, phone calls, email clicks, downloads.</li>
+    <li><strong>Conversion values assigned:</strong> Where possible, assign monetary values to conversions. For e-commerce, actual transaction values. For leads, estimated value based on close rate and average deal size.</li>
+    <li><strong>Micro-conversions tracked:</strong> Beyond primary conversions, track micro-conversions that indicate engagement: newsletter signups, pricing page views, demo video plays, content downloads.</li>
+    <li><strong>Thank-you page triggers:</strong> If you track form submissions via thank-you page views, verify the thank-you page only loads after actual submission — not from direct URL access or browser back button.</li>
+  </ul>
+
+  <h2 id="events">Event Tracking Review</h2>
+  <ul>
+    <li><strong>Custom events implemented:</strong> Beyond GA4's enhanced measurement, audit custom events for button clicks, form interactions, scroll milestones, and feature usage.</li>
+    <li><strong>Event naming convention:</strong> GA4 event names should follow a consistent pattern (snake_case, descriptive names). Inconsistent naming makes analysis impossible.</li>
+    <li><strong>Event parameters:</strong> Verify that custom events send relevant parameters (button_text, form_name, download_file, etc.) so you can segment and analyse effectively.</li>
+    <li><strong>GTM container audit:</strong> If using Google Tag Manager, review all tags, triggers, and variables. Remove inactive tags, verify trigger conditions, and check for conflicts between tags.</li>
+  </ul>
+
+  <h2 id="quality">Data Quality Issues</h2>
+  <ul>
+    <li><strong>Bot traffic:</strong> GA4 filters known bots automatically, but some slip through. Check for suspicious traffic patterns — unusually high bounce rates, zero engagement time, or traffic spikes from unexpected geos.</li>
+    <li><strong>Self-referrals:</strong> If your own domain appears as a traffic source, something is breaking sessions. Usually caused by missing tracking on subdomain pages or cross-domain configuration issues.</li>
+    <li><strong>Not set / direct traffic inflation:</strong> High (direct) / (none) traffic often indicates broken UTM tagging, missing campaign parameters, or HTTPS-to-HTTP referral loss.</li>
+    <li><strong>Sampling issues:</strong> In GA4, reports on large datasets may be sampled. Check the sampling indicator when running date ranges over 60 days. Use BigQuery export for unsampled data if needed.</li>
+  </ul>
+
+  <h2 id="checklist">Analytics Audit Checklist</h2>
+  <ul>
+    <li><strong>GA4 tag fires on every page</strong></li>
+    <li><strong>No duplicate tracking tags</strong></li>
+    <li><strong>Enhanced measurement configured</strong></li>
+    <li><strong>Internal traffic filtered</strong></li>
+    <li><strong>Data retention set to 14 months</strong></li>
+    <li><strong>Cross-domain tracking working</strong> (if applicable)</li>
+    <li><strong>Referral exclusions set</strong> for payment gateways</li>
+    <li><strong>All key conversions tracked</strong> with values</li>
+    <li><strong>UTM parameters consistent</strong></li>
+    <li><strong>Custom events implemented</strong> with proper naming</li>
+    <li><strong>GTM container clean</strong> with no orphaned tags</li>
+    <li><strong>Consent mode configured</strong></li>
+    <li><strong>Bot traffic excluded</strong></li>
+    <li><strong>Data matches other sources</strong> (±10%)</li>
+  </ul>
+</ContentLayout>

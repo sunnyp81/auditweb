@@ -1,0 +1,79 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is a Cookie Audit', id: 'what-is' },
+  { label: 'Why Cookie Compliance Matters', id: 'why' },
+  { label: 'Types of Cookies', id: 'types' },
+  { label: 'How to Audit Your Cookies', id: 'how-to' },
+  { label: 'GDPR Cookie Requirements', id: 'gdpr' },
+  { label: 'Cookie Consent Implementation', id: 'consent' },
+  { label: 'Cookie Audit Tools', id: 'tools' },
+];
+---
+
+<ContentLayout
+  title="Website Cookie Audit: Ensure GDPR and Privacy Compliance"
+  description="A cookie audit inventories every cookie your website sets, categorises them by purpose, and ensures your consent mechanism complies with GDPR, CCPA, and ePrivacy regulations."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Cookie Audit', href: '/website-cookie-audit/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is a Cookie Audit</h2>
+  <p>A cookie audit is a systematic inventory of every cookie and tracking technology your website uses. It documents what each cookie does, who sets it, how long it lasts, and whether it requires user consent. The audit ensures your website complies with privacy regulations like GDPR, CCPA, and the ePrivacy Directive.</p>
+  <p>Most website owners have no idea how many cookies their site sets. Third-party tools, analytics platforms, advertising pixels, chat widgets, and social media embeds all drop cookies — often without your knowledge. A cookie audit brings transparency to this hidden tracking.</p>
+
+  <h2 id="why">Why Cookie Compliance Matters</h2>
+  <ul>
+    <li><strong>Legal fines:</strong> GDPR fines for cookie violations have reached millions of euros. French regulators fined Google €150M and Facebook €60M for cookie consent failures. Smaller businesses face proportional penalties.</li>
+    <li><strong>User trust:</strong> Privacy-conscious users check cookie policies. A transparent, compliant approach builds trust. Dismissive or deceptive cookie practices damage your brand.</li>
+    <li><strong>Browser changes:</strong> Safari and Firefox already block third-party cookies by default. Chrome is depreciating third-party cookies. Your tracking strategy needs to adapt.</li>
+    <li><strong>Legal exposure:</strong> Privacy lawsuits from individuals and advocacy groups are increasing. Non-compliant cookie practices create unnecessary legal risk.</li>
+  </ul>
+
+  <h2 id="types">Types of Cookies</h2>
+  <ul>
+    <li><strong>Strictly necessary:</strong> Essential for the website to function — session cookies, authentication, shopping cart, security tokens. These don't require consent under GDPR.</li>
+    <li><strong>Functional:</strong> Remember user preferences like language, region, or display settings. Generally considered low-risk but technically require consent.</li>
+    <li><strong>Analytics:</strong> Track user behaviour for site improvement — Google Analytics, Hotjar, Mixpanel. Require consent in most jurisdictions.</li>
+    <li><strong>Marketing/advertising:</strong> Track users across websites for targeted advertising — Facebook Pixel, Google Ads, retargeting cookies. Always require explicit consent.</li>
+  </ul>
+
+  <h2 id="how-to">How to Audit Your Cookies</h2>
+  <ol>
+    <li><strong>Scan your website:</strong> Use a cookie scanning tool (Cookiebot, CookieYes, or browser DevTools) to detect all cookies set on every page of your site.</li>
+    <li><strong>Document each cookie:</strong> For every cookie found, record: name, provider, purpose, type (first-party or third-party), duration, and category (necessary, functional, analytics, marketing).</li>
+    <li><strong>Identify unknowns:</strong> Some cookies come from third-party scripts you didn't intentionally add. Investigate every unknown cookie and determine if it's still needed.</li>
+    <li><strong>Check third-party scripts:</strong> Review every embedded script, widget, and plugin. Each one may set cookies or use other tracking technologies (localStorage, fingerprinting).</li>
+    <li><strong>Update your cookie policy:</strong> Your cookie policy must list every cookie with its purpose and duration. Vague descriptions like "we use cookies to improve your experience" are insufficient.</li>
+    <li><strong>Test your consent mechanism:</strong> Verify that non-essential cookies are only set AFTER the user gives consent. Test by rejecting cookies and checking that analytics and marketing scripts don't fire.</li>
+  </ol>
+
+  <h2 id="gdpr">GDPR Cookie Requirements</h2>
+  <ul>
+    <li><strong>Prior consent:</strong> Non-essential cookies must not be set until the user explicitly consents. Pre-ticked boxes or "by continuing to browse you accept" banners are not valid consent.</li>
+    <li><strong>Granular choice:</strong> Users must be able to accept or reject cookies by category. An all-or-nothing approach doesn't satisfy GDPR requirements.</li>
+    <li><strong>Easy withdrawal:</strong> Users must be able to change their cookie preferences at any time, as easily as they gave consent.</li>
+    <li><strong>No cookie walls:</strong> You generally cannot deny access to your website if users reject non-essential cookies (with some exceptions for paid content).</li>
+    <li><strong>Consent records:</strong> You must be able to demonstrate that consent was given — store consent records including timestamp, version of the policy, and choices made.</li>
+  </ul>
+
+  <h2 id="consent">Cookie Consent Implementation</h2>
+  <ul>
+    <li><strong>Consent Management Platform (CMP):</strong> Use a dedicated CMP like Cookiebot, OneTrust, CookieYes, or Osano. These handle scanning, categorisation, consent collection, and blocking automatically.</li>
+    <li><strong>Script blocking:</strong> Non-essential scripts must be blocked until consent. Most CMPs do this by changing script types to text/plain until the user consents, then rewriting them to text/javascript.</li>
+    <li><strong>Google Consent Mode:</strong> If you use Google Analytics or Google Ads, implement Consent Mode v2. This allows Google to model conversions even when users decline cookies.</li>
+    <li><strong>Server-side tracking:</strong> For analytics accuracy, consider server-side tracking through Google Tag Manager server-side or similar solutions. This reduces dependence on client-side cookies.</li>
+  </ul>
+
+  <h2 id="tools">Cookie Audit Tools</h2>
+  <ul>
+    <li><strong>Cookiebot:</strong> Scans your entire site monthly, categorises cookies, generates a compliant consent banner and cookie policy. Free for small sites (under 100 pages).</li>
+    <li><strong>CookieYes:</strong> Similar to Cookiebot with a free tier. Good for WordPress sites with a dedicated plugin.</li>
+    <li><strong>Chrome DevTools:</strong> Application → Cookies shows all cookies for the current page. Network tab shows which requests set cookies. Free and always available.</li>
+    <li><strong>BuiltWith:</strong> Shows what technologies a website uses, including tracking and analytics tools. Useful for identifying what might be setting cookies.</li>
+  </ul>
+</ContentLayout>

@@ -1,0 +1,102 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is a CRO Audit', id: 'what-is' },
+  { label: 'CRO vs UX Audit', id: 'vs-ux' },
+  { label: 'Analytics Deep Dive', id: 'analytics' },
+  { label: 'Landing Page Analysis', id: 'landing-pages' },
+  { label: 'Conversion Funnel Review', id: 'funnel' },
+  { label: 'Trust and Credibility Signals', id: 'trust' },
+  { label: 'A/B Testing Strategy', id: 'testing' },
+  { label: 'CRO Audit Checklist', id: 'checklist' },
+];
+---
+
+<ContentLayout
+  title="CRO Website Audit: Turn More Visitors Into Customers"
+  description="A CRO (conversion rate optimisation) audit analyses your website's ability to convert visitors into leads and customers. Find conversion killers and quick wins."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'CRO Audit', href: '/cro-website-audit/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is a CRO Audit</h2>
+  <p>A CRO (Conversion Rate Optimisation) audit systematically evaluates your website's ability to convert visitors into desired outcomes — purchases, sign-ups, enquiries, or downloads. While most audits focus on getting traffic to your site, a CRO audit focuses on what happens after they arrive.</p>
+  <p>The maths is simple: doubling your conversion rate has the same revenue impact as doubling your traffic — but it's typically faster and cheaper to achieve. A 1% increase in conversion rate on a site doing £100K/month in revenue is an extra £1,000/month without spending a penny more on marketing.</p>
+
+  <h2 id="vs-ux">CRO vs UX Audit</h2>
+  <p>CRO and UX audits overlap but have different priorities:</p>
+  <ul>
+    <li><strong>CRO audit:</strong> Revenue-focused. Analyses conversion funnels, landing pages, CTAs, and checkout flows specifically to increase conversion rates. Decisions are driven by data (analytics, heatmaps, A/B tests).</li>
+    <li><strong>UX audit:</strong> Experience-focused. Evaluates the overall quality of user interaction including navigation, accessibility, design consistency, and emotional response.</li>
+  </ul>
+  <p>A CRO audit always starts with data. Before suggesting changes, you need to know where users drop off, which pages have the worst conversion rates, and what traffic sources convert best.</p>
+
+  <h2 id="analytics">Analytics Deep Dive</h2>
+  <p>Before looking at the website itself, analyse your data:</p>
+  <ul>
+    <li><strong>Conversion rate by page:</strong> Which pages have the highest and lowest conversion rates? Pages with high traffic but low conversions are your biggest opportunities.</li>
+    <li><strong>Funnel drop-off points:</strong> Set up funnel visualisation in GA4 to see where users abandon the conversion process. A 70% drop-off between "Add to Cart" and "Checkout" tells you exactly where to focus.</li>
+    <li><strong>Device segmentation:</strong> Compare mobile vs desktop conversion rates. If mobile converts at 1% and desktop at 4%, your mobile experience has serious problems.</li>
+    <li><strong>Traffic source quality:</strong> Some traffic sources convert better than others. Organic search typically converts 2-3x better than social. If a traffic source has high volume but zero conversions, stop investing in it.</li>
+    <li><strong>Bounce rate by landing page:</strong> Pages with bounce rates above 80% are failing to engage visitors. Either the traffic is wrong (targeting issue) or the page is wrong (content/design issue).</li>
+    <li><strong>Exit pages:</strong> Where do converting users leave? Where do non-converting users leave? The difference reveals which pages are helping vs hurting conversion.</li>
+  </ul>
+
+  <h2 id="landing-pages">Landing Page Analysis</h2>
+  <ul>
+    <li><strong>Above-the-fold content:</strong> Does the visitor immediately understand what you offer and why they should care? The headline, subheadline, and hero section must communicate your value proposition in under 5 seconds.</li>
+    <li><strong>Headline clarity:</strong> Your headline should pass the "grunt test" — if a caveman saw it, would they understand what you offer, how it helps, and what to do next?</li>
+    <li><strong>CTA visibility:</strong> Your primary call-to-action should be visually prominent, above the fold, and use action-oriented language ("Get Your Free Audit" not "Submit").</li>
+    <li><strong>Visual hierarchy:</strong> Do users' eyes flow naturally from headline to key benefits to CTA? Use heatmaps to verify attention patterns match your intended hierarchy.</li>
+    <li><strong>Page length:</strong> Long pages aren't inherently bad — but every section must earn its place. If scroll depth data shows users stop reading at 40% of the page, your bottom content needs to be moved up or removed.</li>
+    <li><strong>Social proof placement:</strong> Testimonials, logos, review scores, and case studies should appear near the CTA, where users are making their decision.</li>
+  </ul>
+
+  <h2 id="funnel">Conversion Funnel Review</h2>
+  <ul>
+    <li><strong>Number of steps:</strong> Every step in your conversion funnel loses users. Count the clicks from landing page to conversion. Can any steps be eliminated or combined?</li>
+    <li><strong>Form length:</strong> Each additional form field reduces conversions by approximately 4%. Ask yourself: do you really need the phone number? The company name? The job title?</li>
+    <li><strong>Guest checkout:</strong> For e-commerce, forcing account creation before purchase can reduce conversions by 35%. Always offer guest checkout.</li>
+    <li><strong>Progress indicators:</strong> Multi-step processes should show progress. Users are more likely to complete a "Step 2 of 3" form than an open-ended one.</li>
+    <li><strong>Cart abandonment:</strong> If your cart abandonment rate is above 70%, audit the checkout flow for surprises (unexpected shipping costs are the #1 abandonment cause), complexity, trust concerns, and technical issues.</li>
+    <li><strong>Payment options:</strong> Offer multiple payment methods. In 2026, not accepting Apple Pay, Google Pay, or buy-now-pay-later options is leaving money on the table.</li>
+  </ul>
+
+  <h2 id="trust">Trust and Credibility Signals</h2>
+  <ul>
+    <li><strong>Social proof:</strong> Testimonials with names and photos convert better than anonymous quotes. Case studies with specific numbers are most persuasive.</li>
+    <li><strong>Trust badges:</strong> Security badges, payment provider logos, and industry certifications reduce purchase anxiety. Place them near the CTA and checkout.</li>
+    <li><strong>Guarantees:</strong> Money-back guarantees, free trial periods, and "no credit card required" messaging lower the perceived risk of converting.</li>
+    <li><strong>Contact information:</strong> Visible phone numbers, physical addresses, and live chat options signal legitimacy. Sites without contact details feel untrustworthy.</li>
+    <li><strong>Professional design:</strong> Users judge credibility based on design quality within 50 milliseconds. An outdated or amateurish design undermines everything else on the page.</li>
+  </ul>
+
+  <h2 id="testing">A/B Testing Strategy</h2>
+  <p>A CRO audit identifies problems; A/B testing validates solutions:</p>
+  <ul>
+    <li><strong>Prioritise tests by impact:</strong> Use the PIE framework — Potential (how much room for improvement), Importance (how valuable is the page), and Ease (how easy is the test to implement).</li>
+    <li><strong>Test one variable at a time:</strong> Changing the headline, CTA, and layout simultaneously means you won't know which change drove the result.</li>
+    <li><strong>Run tests to statistical significance:</strong> Don't call a winner after 2 days. Most tests need 2-4 weeks and at least 1,000 conversions per variation to be reliable.</li>
+    <li><strong>Document everything:</strong> Record every test hypothesis, what you changed, the result, and what you learned. Build a testing knowledge base over time.</li>
+  </ul>
+
+  <h2 id="checklist">CRO Audit Checklist</h2>
+  <ul>
+    <li><strong>Conversion rate tracked</strong> for all key actions</li>
+    <li><strong>Funnel visualisation set up</strong> in analytics</li>
+    <li><strong>Mobile vs desktop conversion rates</strong> compared</li>
+    <li><strong>Top exit pages identified</strong></li>
+    <li><strong>Value proposition clear</strong> above the fold</li>
+    <li><strong>Primary CTA visible</strong> and action-oriented</li>
+    <li><strong>Form fields minimised</strong></li>
+    <li><strong>Social proof near CTAs</strong></li>
+    <li><strong>Trust badges at checkout</strong></li>
+    <li><strong>Guest checkout available</strong></li>
+    <li><strong>No surprise costs</strong> in checkout flow</li>
+    <li><strong>A/B testing plan</strong> for top 3 opportunities</li>
+  </ul>
+</ContentLayout>

@@ -1,0 +1,325 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Audit Tools', href: '/website-audit-tools/' },
+  { label: 'Comparison', href: '/website-audit-tools/comparison/' },
+];
+
+const toc = [
+  { label: 'Comparison Criteria', id: 'comparison-criteria' },
+  { label: 'Feature Comparison Table', id: 'feature-comparison-table' },
+  { label: 'Pricing Comparison', id: 'pricing-comparison' },
+  { label: 'Best for Small Sites', id: 'best-for-small-sites' },
+  { label: 'Best for Agencies', id: 'best-for-agencies' },
+  { label: 'Best for Enterprise', id: 'best-for-enterprise' },
+  { label: 'Our Pick', id: 'our-pick' },
+];
+---
+
+<ContentLayout
+  title="Website Audit Tool Comparison: Ahrefs vs Semrush vs Screaming Frog"
+  description="Side-by-side comparison of the top website audit tools. Compare features, pricing, crawl limits, and find the best fit for your needs."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Choosing the right website audit tool depends on your specific needs, budget, and technical expertise. After testing every major audit tool across hundreds of sites, we have built this comparison to cut through the marketing and show you what each tool actually delivers.</p>
+
+<p>This comparison covers the six most widely used audit tools: <a href="/website-audit-tools/ahrefs/">Ahrefs</a>, <a href="/website-audit-tools/semrush/">Semrush</a>, <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>, <a href="/website-audit-tools/moz/">Moz</a>, <a href="/website-audit-tools/se-ranking/">SE Ranking</a>, and <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a>. Each excels in different scenarios, and the right choice for you may not be the most expensive or feature-rich option.</p>
+
+<h2 id="comparison-criteria">Comparison Criteria</h2>
+
+<p>We evaluated each tool across the criteria that matter most for practical website auditing. Here is what we compared and why each criterion matters.</p>
+
+<p><strong>Issue coverage:</strong> The number and depth of technical SEO checks the tool performs. More is not always better since a tool that checks 170 things but presents results poorly is less useful than one that checks 120 things with clear prioritisation. We assessed both the quantity and the quality of issue detection.</p>
+
+<p><strong>Crawl configuration:</strong> How much control you have over how the crawl runs. This includes crawl speed, URL inclusion/exclusion, JavaScript rendering, authentication, user agent selection, and robots.txt handling. Greater configuration flexibility means the tool can handle more complex crawling scenarios.</p>
+
+<p><strong>Data export and API:</strong> The ability to export raw crawl data and access it programmatically. Technical SEOs often need to combine crawl data with data from other sources (analytics, rank tracking, CRM) for custom analysis. Tools with limited export options restrict this.</p>
+
+<p><strong>Historical tracking:</strong> Whether the tool stores crawl results over time and provides comparison features. This is essential for ongoing monitoring and client reporting. Without historical data, every audit exists in isolation and you cannot demonstrate progress.</p>
+
+<p><strong>Reporting:</strong> The quality, format, and customisability of reports. This includes white-label options for agencies, PDF export, and automated report scheduling.</p>
+
+<p><strong>Ecosystem:</strong> What else the tool does beyond site auditing. Tools that are part of broader SEO platforms (like Ahrefs, Semrush, and Moz) offer the convenience of cross-referencing audit data with keywords, backlinks, and traffic data without switching tools.</p>
+
+<p><strong>Price-to-value ratio:</strong> What you get relative to what you pay. An expensive tool that provides comprehensive features may be better value than a cheap tool that requires supplementary subscriptions to fill gaps.</p>
+
+<h2 id="feature-comparison-table">Feature Comparison Table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Ahrefs</th>
+      <th>Semrush</th>
+      <th>Screaming Frog</th>
+      <th>Moz</th>
+      <th>SE Ranking</th>
+      <th>Lighthouse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Deployment</strong></td>
+      <td>Cloud</td>
+      <td>Cloud</td>
+      <td>Desktop</td>
+      <td>Cloud</td>
+      <td>Cloud</td>
+      <td>Browser / CLI</td>
+    </tr>
+    <tr>
+      <td><strong>Issue checks</strong></td>
+      <td>170+</td>
+      <td>140+</td>
+      <td>Custom (unlimited)</td>
+      <td>60+</td>
+      <td>120+</td>
+      <td>~50 per page</td>
+    </tr>
+    <tr>
+      <td><strong>JS rendering</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes (Chromium)</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes (native)</td>
+    </tr>
+    <tr>
+      <td><strong>Crawl scope</strong></td>
+      <td>Site-wide</td>
+      <td>Site-wide</td>
+      <td>Site-wide</td>
+      <td>Site-wide</td>
+      <td>Site-wide</td>
+      <td>Single page</td>
+    </tr>
+    <tr>
+      <td><strong>Scheduled crawls</strong></td>
+      <td>Yes</td>
+      <td>Yes (daily/weekly/monthly)</td>
+      <td>Yes (paid)</td>
+      <td>Weekly only</td>
+      <td>Yes</td>
+      <td>Via CI only</td>
+    </tr>
+    <tr>
+      <td><strong>Custom extraction</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes (XPath, CSS, regex)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>GA/GSC integration</strong></td>
+      <td>GSC only</td>
+      <td>GSC + GA</td>
+      <td>GSC + GA</td>
+      <td>GSC</td>
+      <td>GSC + GA</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Historical data</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Manual (save files)</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Via LHCI server</td>
+    </tr>
+    <tr>
+      <td><strong>White-label reports</strong></td>
+      <td>No</td>
+      <td>Business tier only</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes (Pro tier)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Crawl comparison</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes (paid)</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Via LHCI</td>
+    </tr>
+    <tr>
+      <td><strong>Authentication support</strong></td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes (forms, HTTP, NTLM)</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Via CLI flags</td>
+    </tr>
+    <tr>
+      <td><strong>Structured data validation</strong></td>
+      <td>Basic</td>
+      <td>Yes</td>
+      <td>Yes (comprehensive)</td>
+      <td>Basic</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Core Web Vitals</strong></td>
+      <td>Basic</td>
+      <td>Basic</td>
+      <td>Via integration</td>
+      <td>No</td>
+      <td>Yes (CrUX data)</td>
+      <td>Yes (native)</td>
+    </tr>
+    <tr>
+      <td><strong>Accessibility checks</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>Limited</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes (comprehensive)</td>
+    </tr>
+    <tr>
+      <td><strong>API access</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>CLI only</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes (npm, CLI)</td>
+    </tr>
+    <tr>
+      <td><strong>Free tier</strong></td>
+      <td>Webmaster Tools</td>
+      <td>100 pages</td>
+      <td>500 URLs</td>
+      <td>No audit</td>
+      <td>14-day trial</td>
+      <td>Fully free</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pricing-comparison">Pricing Comparison</h2>
+
+<p>Price is often the deciding factor, so here is a clear breakdown of what each tool costs for its audit functionality.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Entry Price</th>
+      <th>Agency Price</th>
+      <th>Billing</th>
+      <th>Free Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ahrefs</strong></td>
+      <td>$99/mo</td>
+      <td>$399/mo</td>
+      <td>Monthly</td>
+      <td>Webmaster Tools (verified sites)</td>
+    </tr>
+    <tr>
+      <td><strong>Semrush</strong></td>
+      <td>$139.95/mo</td>
+      <td>$499.95/mo</td>
+      <td>Monthly</td>
+      <td>100-page audit</td>
+    </tr>
+    <tr>
+      <td><strong>Screaming Frog</strong></td>
+      <td>£199/yr</td>
+      <td>£199/yr (same)</td>
+      <td>Annual</td>
+      <td>500 URL limit</td>
+    </tr>
+    <tr>
+      <td><strong>Moz</strong></td>
+      <td>$49/mo</td>
+      <td>$299/mo</td>
+      <td>Monthly</td>
+      <td>No audit in free tier</td>
+    </tr>
+    <tr>
+      <td><strong>SE Ranking</strong></td>
+      <td>$65/mo</td>
+      <td>$259/mo</td>
+      <td>Annual (monthly available)</td>
+      <td>14-day trial</td>
+    </tr>
+    <tr>
+      <td><strong>Lighthouse</strong></td>
+      <td>Free</td>
+      <td>Free</td>
+      <td>N/A</td>
+      <td>Fully free</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The most important consideration is that Screaming Frog and Lighthouse are fundamentally different products from the cloud platforms. Screaming Frog is a standalone crawler at £199/year. Lighthouse is free but single-page only. The cloud platforms (Ahrefs, Semrush, Moz, SE Ranking) bundle the audit tool with keyword research, backlink analysis, and rank tracking. If you need those additional features, the cloud platform pricing makes more sense. If you only need an audit tool, Screaming Frog plus Lighthouse provides the best coverage at the lowest cost.</p>
+
+<p>Annual billing typically saves 15-20% compared to monthly billing on the cloud platforms. If you commit to using a tool long-term, annual billing reduces the effective cost significantly.</p>
+
+<h2 id="best-for-small-sites">Best for Small Sites</h2>
+
+<p>Small sites (under 1,000 pages) operated by individuals or small businesses have different needs than agencies or enterprises. Budget is usually tight, technical expertise may be limited, and the site does not have the complexity that demands advanced crawl configuration.</p>
+
+<p><strong>Best free option: Google Lighthouse + Screaming Frog Free.</strong> Use <a href="/website-audit-tools/lighthouse/">Lighthouse</a> for per-page performance and accessibility checks. Use the free version of <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> (500 URL limit) for site-wide crawling. Together, they cover technical SEO, performance, and accessibility at zero cost. Add Google Search Console (also free) for indexing data, and you have a complete audit stack.</p>
+
+<p><strong>Best paid option: Ahrefs Webmaster Tools or Moz Starter.</strong> Ahrefs Webmaster Tools is free for verified site owners and provides cloud-based auditing with historical tracking. If you want a paid all-in-one platform, <a href="/website-audit-tools/moz/">Moz</a> Starter at $49/month is the cheapest entry point, though the audit features are more basic than competitors.</p>
+
+<p>For small sites, the complexity of tools like Semrush Business or advanced Screaming Frog configurations is unnecessary. Stick with simpler tools that cover the fundamentals and invest the saved budget into content or link building, which will have more impact on rankings.</p>
+
+<h2 id="best-for-agencies">Best for Agencies</h2>
+
+<p>Agencies need multi-site management, client reporting, white-label capabilities, and the ability to demonstrate ROI. The audit tool is not just a diagnostic instrument but also a sales and retention tool.</p>
+
+<p><strong>Best budget option: <a href="/website-audit-tools/se-ranking/">SE Ranking</a> Pro ($119/month).</strong> White-label reports, 5 projects, branded client dashboards, and a solid audit engine that catches all critical issues. For small agencies managing 3-5 client sites, this is the best value available. The white-label dashboard alone saves hours of manual reporting per month.</p>
+
+<p><strong>Best mid-range option: <a href="/website-audit-tools/semrush/">Semrush</a> Guru ($249.95/month).</strong> Excellent audit reports, historical comparison data, thematic reports that clients can understand, and integration with the broader Semrush ecosystem. Does not include white-label reports (that requires Business tier at $499.95/month), but the standard reports are professional enough for most client presentations.</p>
+
+<p><strong>Best premium option: Semrush Business ($499.95/month) + <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> (£199/year).</strong> Semrush Business provides white-label reports, API access, and generous crawl limits for the cloud-based monitoring workflow. Screaming Frog handles deep custom crawls, pre-migration audits, and technical investigations that require granular data access. This combination covers every agency use case.</p>
+
+<p>Many successful agencies use a two-tool approach: a cloud platform for ongoing monitoring and automated reporting, plus Screaming Frog for deep-dive technical audits. The cloud platform handles the routine work efficiently, while Screaming Frog provides the depth needed for complex technical projects.</p>
+
+<h2 id="best-for-enterprise">Best for Enterprise</h2>
+
+<p>Enterprise sites (100,000+ pages) have unique requirements: massive crawl capacity, integration with development workflows, team collaboration, and compliance with corporate security and procurement standards.</p>
+
+<p><strong>Best for crawl capacity: <a href="/website-audit-tools/ahrefs/">Ahrefs</a> Advanced or Enterprise.</strong> With up to 5 million crawl credits per month on the Enterprise plan, Ahrefs can handle the largest sites with frequent crawl schedules. The raw data export capabilities support integration with enterprise data warehouses and custom reporting pipelines.</p>
+
+<p><strong>Best for development integration: <a href="/website-audit-tools/lighthouse/">Lighthouse CI</a> + <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>.</strong> Enterprise development teams benefit from Lighthouse CI integrated into their CI/CD pipeline, catching performance and quality regressions before deployment. Screaming Frog handles the site-wide audits that Lighthouse cannot, with its database storage mode supporting crawls of millions of pages.</p>
+
+<p><strong>Best for team collaboration: <a href="/website-audit-tools/semrush/">Semrush</a> Business.</strong> Multiple user seats, project sharing, API access for custom dashboards, and the broadest ecosystem of integrated tools. Enterprise teams often need to share audit findings across SEO, development, content, and UX teams, and Semrush's interface makes this accessible to non-technical stakeholders.</p>
+
+<p>Enterprise organisations typically use multiple tools rather than relying on a single platform. A common enterprise stack includes Semrush or Ahrefs for cloud monitoring, Screaming Frog for deep technical crawls, Lighthouse CI for development pipeline quality gates, and custom scripts or platforms for proprietary checks specific to their site architecture.</p>
+
+<h2 id="our-pick">Our Pick</h2>
+
+<p>There is no single "best" tool because the right choice depends entirely on your situation. But here are our specific recommendations for the most common scenarios.</p>
+
+<p><strong>If you can only choose one tool:</strong> <a href="/website-audit-tools/semrush/">Semrush</a>. It provides the most balanced combination of audit depth, user interface quality, reporting features, and ecosystem integration. It is not the cheapest, not the most technically deep, and not the best at any single thing. But it is consistently good across every criterion, which makes it the safest choice for users who need one platform to handle everything.</p>
+
+<p><strong>If you are on a tight budget:</strong> <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a> paid (£199/year) plus <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a> (free). This combination gives you the most powerful desktop crawler in the industry plus the best free performance and accessibility auditor. Total annual cost: £199. You give up cloud-based scheduling and automated reporting, but the audit depth is unmatched at this price.</p>
+
+<p><strong>If you run an agency:</strong> <a href="/website-audit-tools/se-ranking/">SE Ranking</a> Pro for white-label client reporting plus Screaming Frog for technical deep dives. Total cost: roughly $1,600/year. This gives you branded reports, multi-project management, and the technical depth to handle complex audits.</p>
+
+<p><strong>If you are a technical SEO specialist:</strong> Screaming Frog is non-negotiable. Pair it with either Ahrefs or Semrush depending on which platform's backlink and keyword data you prefer. The desktop crawler gives you the flexibility and data access that no cloud tool matches, while the cloud platform provides the ecosystem context.</p>
+
+<p><strong>If you only need performance auditing:</strong> <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a>. It is free, it is built by Google, and it provides deeper performance and accessibility analysis than any paid tool. Set up Lighthouse CI for automated monitoring and you have an enterprise-grade performance quality gate at zero cost.</p>
+
+</ContentLayout>

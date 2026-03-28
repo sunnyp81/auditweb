@@ -1,0 +1,127 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'How Often', href: '/seo-website-audit/how-often/' },
+];
+
+const toc = [
+  { label: 'Factors That Determine Audit Frequency', id: 'factors-that-determine-audit-frequency' },
+  { label: 'Recommended Schedules by Site Type', id: 'recommended-schedules-by-site-type' },
+  { label: 'What to Check Monthly', id: 'what-to-check-monthly' },
+  { label: 'Quarterly Deep Dives', id: 'quarterly-deep-dives' },
+  { label: 'Annual Comprehensive Audits', id: 'annual-comprehensive-audits' },
+  { label: 'Triggered Audits', id: 'triggered-audits' },
+  { label: 'Setting Up Automated Monitoring', id: 'setting-up-automated-monitoring' },
+];
+---
+
+<ContentLayout
+  title="How Often Should You Audit Your Website for SEO?"
+  description="The right SEO audit frequency depends on your site size, industry, and how often you publish. Learn the ideal cadence and what to check between full audits."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>One of the most common questions after completing an SEO audit is "when should we do this again?" The answer is not a single number because the right audit frequency depends on your specific situation — how large your site is, how competitive your market is, how frequently you publish new content, and how stable your technical infrastructure is. Auditing too infrequently means problems compound undetected. Auditing too frequently wastes resources on checks that will show the same results as last time.</p>
+
+  <p>The solution is a tiered approach: different checks at different intervals, with automated monitoring filling the gaps between manual reviews. This guide breaks down exactly what to check and when, tailored to different site types and business contexts, so you can build an audit schedule that catches problems early without consuming your entire team's bandwidth.</p>
+
+  <h2 id="factors-that-determine-audit-frequency">Factors That Determine Audit Frequency</h2>
+
+  <p>Before setting a schedule, assess these factors that influence how quickly SEO issues can develop on your site:</p>
+
+  <ul>
+    <li><strong>Site size and complexity</strong> — a 50-page brochure site changes slowly and can be audited less frequently. A 50,000-page ecommerce store with daily inventory changes, faceted navigation, and multiple content contributors needs much more frequent monitoring. The more URLs you have, the more surface area exists for problems to emerge.</li>
+    <li><strong>Publishing frequency</strong> — sites that publish new content daily introduce new potential issues with every page. Title tag errors, missing schema, broken internal links, and thin content can accumulate rapidly. High-frequency publishers need correspondingly high-frequency quality checks.</li>
+    <li><strong>Technical change rate</strong> — sites that undergo frequent development work (new features, platform updates, redesigns, plugin installations) introduce technical risks with every deployment. Each change can affect crawling, indexing, page speed, or structured data. If your development team deploys weekly, your technical monitoring needs to match that cadence.</li>
+    <li><strong>Competitive intensity</strong> — in highly competitive markets where ranking positions shift frequently, you need to monitor more often to detect and respond to competitive movements. If your top keywords are contested by well-resourced competitors who are actively investing in SEO, quarterly audits may not be frequent enough to keep pace.</li>
+    <li><strong>Revenue dependence on organic search</strong> — the higher your revenue dependence on organic traffic, the more you should invest in monitoring frequency. A business that generates 60% of its leads from search cannot afford to let a technical issue go undetected for three months. The cost of delayed detection far exceeds the cost of more frequent auditing.</li>
+    <li><strong>Industry volatility</strong> — some industries experience more frequent algorithm impact than others. YMYL sectors (health, finance, legal) are subject to stricter quality evaluation and see more ranking volatility around core updates. Sites in volatile industries benefit from tighter monitoring cycles.</li>
+  </ul>
+
+  <h2 id="recommended-schedules-by-site-type">Recommended Schedules by Site Type</h2>
+
+  <p>Based on the factors above, here are recommended audit schedules for common site types. These are starting points — adjust based on your specific circumstances.</p>
+
+  <ul>
+    <li><strong>Small business websites (under 100 pages)</strong> — full audit every six months, monthly monitoring of core metrics. These sites change slowly and rarely introduce new technical issues unless they undergo a redesign. The main risks are content becoming outdated and external link profile changes.</li>
+    <li><strong>Medium business websites (100-1,000 pages)</strong> — full audit quarterly, monthly technical and content checks. These sites typically have enough content and complexity that issues can develop between audits, but not so much that continuous monitoring is essential.</li>
+    <li><strong>Ecommerce sites (any size)</strong> — full audit quarterly, monthly technical checks, weekly crawl monitoring. Ecommerce sites face unique challenges from inventory changes, seasonal content, and faceted navigation. Product page issues can affect revenue immediately.</li>
+    <li><strong>Large content sites and publishers (1,000+ pages)</strong> — full audit quarterly, bi-weekly technical checks, weekly content quality monitoring. High publishing volume means new issues are introduced constantly. Automated monitoring is essential for catching problems between manual reviews.</li>
+    <li><strong>SaaS and B2B sites</strong> — full audit quarterly, monthly content and conversion path review. These sites change less frequently than publishers or ecommerce stores, but the high value per conversion means that even small ranking drops have significant revenue impact.</li>
+    <li><strong>Enterprise sites (10,000+ pages)</strong> — full audit quarterly with rolling section-by-section deep dives monthly. Enterprise sites are too large to audit comprehensively in a single session. Instead, rotate through sections (technical infrastructure one month, content quality the next, backlink profile the third) with continuous automated monitoring.</li>
+  </ul>
+
+  <h2 id="what-to-check-monthly">What to Check Monthly</h2>
+
+  <p>Monthly checks are your early warning system. They are designed to catch problems before they compound into significant ranking losses. A monthly review should take one to two hours for small sites and half a day for large sites.</p>
+
+  <ul>
+    <li><strong>Google Search Console coverage report</strong> — check for any new errors in the page indexing report. Look for spikes in "Crawled - currently not indexed," "Discovered - currently not indexed," and any new errors in valid pages. New errors here indicate a technical problem that needs immediate attention.</li>
+    <li><strong>Core Web Vitals trends</strong> — review the CWV report for any URLs that have moved from "good" to "needs improvement" or "poor." Speed regressions are often caused by new scripts, larger images, or server configuration changes that happened during the month.</li>
+    <li><strong>Organic traffic trends</strong> — compare this month's organic traffic to the same month last year and to the previous month. Seasonal variation is normal, but a decline that does not match seasonal patterns warrants investigation.</li>
+    <li><strong>Top page performance</strong> — check your 20 highest-traffic pages for any ranking or click-through rate changes. These pages represent a disproportionate share of your organic value, so even small declines are worth investigating.</li>
+    <li><strong>New crawl errors</strong> — check for new 404 errors, server errors, and redirect issues. Fix broken links and redirect errors before they affect user experience and link equity.</li>
+    <li><strong>Security issues</strong> — review Search Console's security section and run a quick malware scan. Hacked sites often show no visible symptoms for weeks while spam content accumulates in the index.</li>
+  </ul>
+
+  <h2 id="quarterly-deep-dives">Quarterly Deep Dives</h2>
+
+  <p>Quarterly audits go deeper than monthly checks, examining areas that change more slowly but are equally important for long-term SEO health. Plan for one to two full days for a quarterly audit.</p>
+
+  <ul>
+    <li><strong>Full site crawl analysis</strong> — run a complete site crawl and compare against the previous quarter's crawl data. Look for changes in total URL count, average page depth, internal link distribution, and crawl error rates. A crawl comparison reveals structural changes that monthly spot-checks might miss.</li>
+    <li><strong>Content quality review</strong> — assess your lowest-performing content pages. Identify pages with declining traffic, high bounce rates, or low time on page. Decide whether to update, consolidate, or remove underperforming content. Check for keyword cannibalisation that may have developed as you published new content.</li>
+    <li><strong>Backlink profile review</strong> — export your backlink data and compare against the previous quarter. Identify links gained and lost, changes in referring domain authority, and any shifts in anchor text distribution. New toxic links should be disavowed; lost high-authority links should be investigated for recovery opportunities.</li>
+    <li><strong>Competitor benchmarking</strong> — check competitor ranking positions, content output, and backlink growth since the last quarter. Identify any significant moves by competitors that may require a strategic response.</li>
+    <li><strong>Schema and structured data validation</strong> — run your pages through Google's Rich Results Test and check for new errors in Search Console's enhancements reports. Schema issues can develop silently through CMS updates or plugin changes.</li>
+    <li><strong>Conversion rate analysis</strong> — review organic landing page conversion rates. SEO success is not just traffic — it is traffic that converts. Declining conversion rates on pages with stable traffic suggest content or UX issues that need addressing.</li>
+  </ul>
+
+  <h2 id="annual-comprehensive-audits">Annual Comprehensive Audits</h2>
+
+  <p>An annual comprehensive audit is the most thorough review your site will receive. It covers everything from the monthly and quarterly checks plus strategic areas that only need annual review. Plan for three to five days depending on site size.</p>
+
+  <ul>
+    <li><strong>Complete technical infrastructure review</strong> — audit hosting performance, CDN configuration, SSL certificates, DNS settings, and server-side rendering. These foundational elements rarely change but can develop issues over time as traffic patterns shift and hosting contracts age.</li>
+    <li><strong>Information architecture assessment</strong> — evaluate whether your site's navigation, category structure, and internal linking hierarchy still reflect how users search for and use your content. As your content library grows, the original architecture may no longer be optimal. This is the time to plan structural changes for the coming year.</li>
+    <li><strong>Content inventory and audit</strong> — catalogue every page on your site and classify each by traffic, conversion contribution, content quality, and strategic relevance. This exercise often reveals hundreds of pages that should be consolidated, updated, or removed. An annual content audit prevents the slow accumulation of low-quality pages that dilutes your overall domain authority.</li>
+    <li><strong>SEO strategy alignment</strong> — review your keyword targets, content strategy, and competitive positioning against your business goals. Markets evolve, search behaviour changes, and what was strategically important last year may not be this year. The annual audit is your opportunity to realign SEO efforts with current business priorities.</li>
+    <li><strong>Technology stack evaluation</strong> — assess whether your CMS, plugins, hosting platform, and SEO tools still serve your needs. Technology in the SEO ecosystem evolves rapidly, and tools that were best-in-class two years ago may have been surpassed by better alternatives.</li>
+    <li><strong>Accessibility and compliance review</strong> — check your site against current web accessibility guidelines (WCAG 2.1 AA) and any industry-specific compliance requirements. Accessibility issues affect both SEO (through user experience signals) and legal exposure.</li>
+  </ul>
+
+  <h2 id="triggered-audits">Triggered Audits</h2>
+
+  <p>Beyond scheduled audits, certain events should trigger an immediate, focused audit regardless of where you are in your regular schedule. These triggers indicate that something has changed that could affect your SEO performance:</p>
+
+  <ul>
+    <li><strong>Google algorithm update</strong> — when Google confirms a core update or targeted update, audit your rankings and traffic within the first week of rollout. Do not wait for your next scheduled audit — algorithm impacts need immediate assessment so you can begin recovery if affected.</li>
+    <li><strong>Site migration or redesign</strong> — any change to your URL structure, domain, CMS platform, or site design requires a pre-launch audit (to establish a baseline and verify redirect plans) and a post-launch audit (to catch any issues that escaped testing).</li>
+    <li><strong>Significant traffic change</strong> — a sudden traffic increase or decrease of more than 20% that is not explained by seasonality or known factors warrants immediate investigation. Set up alerts in Google Analytics to notify you automatically.</li>
+    <li><strong>Platform or CMS update</strong> — major version updates to your CMS (WordPress core, Shopify theme changes, etc.) can alter HTML output, URL structures, or default SEO settings. Run a targeted technical audit after any significant platform update.</li>
+    <li><strong>New competitor entry</strong> — when a well-funded competitor enters your market and begins publishing content targeting your keywords, audit your competitive positioning and identify where you need to defend or strengthen your rankings.</li>
+    <li><strong>Manual action notification</strong> — if you receive a manual action in Search Console, drop everything and conduct a focused audit on the specific violation identified. Manual action recovery is time-sensitive.</li>
+    <li><strong>Security breach</strong> — any indication of hacking or malware requires an immediate audit of your site's indexed pages, backlink profile, and server logs to assess the extent of damage and begin cleanup.</li>
+  </ul>
+
+  <h2 id="setting-up-automated-monitoring">Setting Up Automated Monitoring</h2>
+
+  <p>The gap between manual audits is where automated monitoring earns its value. Proper monitoring catches problems in hours or days rather than waiting until your next scheduled review. Here is what to automate:</p>
+
+  <ul>
+    <li><strong>Uptime monitoring</strong> — use a service like UptimeRobot, Pingdom, or Better Uptime to check your site's availability every five minutes. Server downtime affects both user access and search engine crawling. Set up alerts via email and SMS so you know immediately when your site goes down.</li>
+    <li><strong>Rank tracking</strong> — track your top 50-100 keywords daily using a rank tracking tool (Ahrefs, Semrush, AccuRanker). Configure alerts for drops greater than five positions so you can investigate promptly. Daily tracking also gives you the data resolution to correlate ranking changes with specific events.</li>
+    <li><strong>Crawl monitoring</strong> — schedule automated crawls weekly using tools like ContentKing, Lumar, or Little Warden. These tools detect changes in indexability, status codes, canonical tags, and schema between scheduled crawls. They catch issues that arise from content updates or development deployments.</li>
+    <li><strong>Core Web Vitals monitoring</strong> — use tools like DebugBear or SpeedCurve to track real user performance metrics continuously. Lab tools like Lighthouse give you snapshots, but real user monitoring captures the actual experience your visitors and Google's ranking systems evaluate.</li>
+    <li><strong>Backlink monitoring</strong> — set up alerts in Ahrefs or Semrush for new and lost backlinks. Immediate notification of lost links gives you the opportunity to reach out to the linking site and attempt recovery before the ranking impact materialises.</li>
+    <li><strong>Google Search Console alerts</strong> — enable email notifications in Search Console for manual actions, security issues, and new crawl errors. These native alerts are free and provide first-party data directly from Google.</li>
+  </ul>
+
+  <p>The combination of scheduled audits and automated monitoring creates a comprehensive quality assurance system for your SEO. Monthly checks handle the routine review. Quarterly deep dives catch slower-developing issues. Annual audits address strategic alignment. Automated monitoring fills every gap in between. And triggered audits respond to events as they occur.</p>
+
+  <p>Start with what you can sustain consistently. A monthly check that actually happens every month is more valuable than a weekly review that gets skipped half the time. Build the habit at a manageable frequency, then increase the cadence as you develop efficient processes and automate the routine elements.</p>
+</ContentLayout>

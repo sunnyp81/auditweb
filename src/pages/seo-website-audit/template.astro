@@ -1,0 +1,200 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit', href: '/seo-website-audit/' },
+  { label: 'Template', href: '/seo-website-audit/template/' },
+];
+
+const toc = [
+  { label: 'What the Template Covers', id: 'what-the-template-covers' },
+  { label: 'How to Use the Template', id: 'how-to-use-the-template' },
+  { label: 'Technical SEO Section', id: 'technical-seo-section' },
+  { label: 'On-Page SEO Section', id: 'on-page-seo-section' },
+  { label: 'Content Quality Section', id: 'content-quality-section' },
+  { label: 'Off-Page SEO Section', id: 'off-page-seo-section' },
+  { label: 'Scoring System', id: 'scoring-system' },
+  { label: 'Customising the Template', id: 'customising-the-template' },
+];
+---
+
+<ContentLayout
+  title="SEO Website Audit Template: Free Download"
+  description="Download our free SEO audit template spreadsheet. Covers 72 checkpoints across technical, on-page, content, and off-page SEO with scoring columns."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>Running an SEO audit without a structured template is like performing a vehicle inspection from memory. You will catch the obvious issues but miss the subtle problems that compound over time. A good audit template ensures consistency — every check gets performed, every finding gets documented, and nothing falls through the cracks because you forgot to look.</p>
+
+  <p>This template has been refined through hundreds of real audits across sites of every size and type. It covers 72 specific checkpoints organised into four sections: technical SEO, on-page SEO, content quality, and off-page SEO. Each checkpoint includes a pass/fail field, a severity rating, and space for notes and recommended actions. The result is not just a list of issues but a prioritised action plan you can hand to a developer, content team, or client and have them start fixing things immediately.</p>
+
+  <h2 id="what-the-template-covers">What the Template Covers</h2>
+
+  <p>The template is divided into four major sections, each containing between 15 and 22 individual checkpoints. Here is an overview of what each section examines and why it matters.</p>
+
+  <p><strong>Technical SEO (22 checkpoints)</strong> covers everything related to how search engines discover, crawl, render, and index your website. This includes crawlability, indexation directives, site speed, mobile usability, security, and structured data. Technical issues are the most critical because they can prevent search engines from accessing your content entirely, making all other SEO efforts pointless.</p>
+
+  <p><strong>On-Page SEO (18 checkpoints)</strong> examines the elements on each page that communicate relevance and quality to search engines. This includes title tags, meta descriptions, heading structure, keyword usage, internal linking, image optimisation, and URL structure. On-page issues are the most common type of SEO problem and often the easiest to fix.</p>
+
+  <p><strong>Content Quality (17 checkpoints)</strong> evaluates the substance of your content — its depth, originality, accuracy, freshness, and alignment with search intent. This section catches thin content, duplicate content, keyword cannibalisation, topical gaps, and E-E-A-T deficiencies. Content quality issues are the hardest to fix but often have the largest long-term impact.</p>
+
+  <p><strong>Off-Page SEO (15 checkpoints)</strong> assesses your site's external authority signals — backlink profile quality, anchor text distribution, referring domain diversity, social signals, and brand mentions. Off-page issues take the longest to address because they require earning external signals that you do not directly control.</p>
+
+  <h2 id="how-to-use-the-template">How to Use the Template</h2>
+
+  <p>The template works best when you follow a systematic process rather than jumping between sections. Here is the recommended workflow:</p>
+
+  <ul>
+    <li><strong>Step 1: Gather your data</strong> — before opening the template, collect the data you need. Run a full site crawl (Screaming Frog, Sitebulb, or similar), export your Search Console data for the last 16 months, pull your backlink profile from Ahrefs or Semrush, and run PageSpeed Insights on your top templates. Having all data ready before you start prevents context-switching during the audit.</li>
+    <li><strong>Step 2: Work through each section in order</strong> — start with technical SEO because technical issues can invalidate findings in other sections. For example, if a page is not indexed, checking its title tag optimisation is irrelevant. Technical issues need to be identified first so you can assess on-page and content issues in the proper context.</li>
+    <li><strong>Step 3: Score each checkpoint</strong> — for every checkpoint, mark it as Pass, Fail, or Partial. If it fails, assign a severity rating (Critical, High, Medium, Low) based on the scoring criteria included in the template. Add notes describing the specific issue and the affected URLs.</li>
+    <li><strong>Step 4: Document recommendations</strong> — for every failed checkpoint, write a specific recommendation. "Fix title tags" is not a recommendation. "Rewrite title tags on the 23 product pages that exceed 60 characters, using the format [Product Name] | [Key Feature] | [Brand]" is a recommendation that someone can act on without further clarification.</li>
+    <li><strong>Step 5: Prioritise and assign</strong> — use the severity ratings and impact estimates to create a prioritised action list. Group actions by who needs to execute them (developer, content team, SEO specialist, marketing manager) so each person receives a focused task list rather than the entire audit document.</li>
+  </ul>
+
+  <h2 id="technical-seo-section">Technical SEO Section</h2>
+
+  <p>The technical SEO section contains 22 checkpoints that assess whether search engines can effectively discover, crawl, render, and index your website. Here are the specific checks included:</p>
+
+  <ul>
+    <li><strong>Robots.txt validation</strong> — file exists, is accessible, does not block critical resources, and includes a sitemap reference.</li>
+    <li><strong>XML sitemap health</strong> — sitemap exists, is properly formatted, contains only indexable URLs, returns 200 status codes for all listed URLs, and is submitted to Search Console.</li>
+    <li><strong>Indexation status</strong> — compare indexed pages in Search Console against expected page count. Investigate any significant gap.</li>
+    <li><strong>Crawl budget efficiency</strong> — check for URL bloat from parameters, faceted navigation, or duplicate URLs that waste crawl budget.</li>
+    <li><strong>HTTPS implementation</strong> — all pages served over HTTPS, HTTP redirects to HTTPS, no mixed content warnings, valid SSL certificate.</li>
+    <li><strong>Mobile usability</strong> — responsive design, no horizontal scrolling, adequate tap target sizes, readable font sizes without zooming.</li>
+    <li><strong>Core Web Vitals</strong> — LCP under 2.5 seconds, FID/INP under 200ms, CLS under 0.1 for at least 75% of page loads.</li>
+    <li><strong>Page speed</strong> — server response time (TTFB), render-blocking resources, image optimisation, JavaScript execution time, total page weight.</li>
+    <li><strong>Canonical tags</strong> — every indexable page has a self-referencing canonical. No canonical tags pointing to non-existent or redirected URLs.</li>
+    <li><strong>Redirect health</strong> — no redirect chains longer than one hop, no redirect loops, all 301/302 redirects resolve to live pages.</li>
+    <li><strong>404 error audit</strong> — identify broken internal links and external links pointing to 404 pages. Implement redirects or fix links.</li>
+    <li><strong>Hreflang implementation</strong> — for multi-language sites: correct language and region codes, return tags present, no conflicts with canonical tags.</li>
+    <li><strong>Structured data validation</strong> — schema markup present, valid JSON-LD format, no errors in Rich Results Test, correct use of schema types.</li>
+    <li><strong>JavaScript rendering</strong> — critical content visible in rendered HTML, not dependent on client-side JavaScript that search engines may not execute.</li>
+    <li><strong>Pagination handling</strong> — paginated pages are crawlable, use proper linking between pages, and handle canonical tags correctly.</li>
+    <li><strong>Duplicate content</strong> — no duplicate pages from URL variations (trailing slashes, www/non-www, HTTP/HTTPS, parameters).</li>
+    <li><strong>Server error monitoring</strong> — no 5xx errors in crawl data or Search Console. Server logs checked for intermittent errors during crawl periods.</li>
+    <li><strong>DNS configuration</strong> — proper DNS records, reasonable TTL values, CDN configuration if applicable.</li>
+    <li><strong>Log file analysis</strong> — Googlebot crawl frequency and patterns reviewed. Important pages crawled regularly. Crawl budget not wasted on low-value URLs.</li>
+    <li><strong>Image SEO technical</strong> — images use modern formats (WebP/AVIF), responsive sizes via srcset, lazy loading for below-fold images, defined width and height attributes.</li>
+    <li><strong>Security headers</strong> — Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, and Strict-Transport-Security headers configured correctly.</li>
+    <li><strong>Orphan pages</strong> — all important pages receive at least one internal link. No indexable pages isolated from the site's link graph.</li>
+  </ul>
+
+  <h2 id="on-page-seo-section">On-Page SEO Section</h2>
+
+  <p>The on-page section contains 18 checkpoints examining how effectively individual pages communicate their topic and relevance to search engines:</p>
+
+  <ul>
+    <li><strong>Title tag presence and uniqueness</strong> — every page has a unique title tag. No duplicate titles across the site.</li>
+    <li><strong>Title tag length and format</strong> — titles between 50-60 characters, primary keyword near the beginning, brand name at the end if included.</li>
+    <li><strong>Meta description presence</strong> — every important page has a unique meta description. Descriptions between 120-155 characters with a clear value proposition.</li>
+    <li><strong>H1 tag usage</strong> — exactly one H1 per page, containing the primary keyword, matching the page's topic precisely.</li>
+    <li><strong>Heading hierarchy</strong> — headings follow logical order (H1 > H2 > H3). No skipped levels. Headings describe section content accurately.</li>
+    <li><strong>Keyword placement</strong> — primary keyword appears in the H1, first paragraph, at least one H2, and naturally throughout the content. No stuffing.</li>
+    <li><strong>Internal link count and relevance</strong> — each page links to at least 3-5 relevant internal pages. Anchor text is descriptive and varied.</li>
+    <li><strong>Image alt text</strong> — all content images have descriptive alt text. Decorative images use empty alt attributes. No keyword-stuffed alt text.</li>
+    <li><strong>URL structure</strong> — URLs are short, descriptive, use hyphens, contain the primary keyword, and follow a consistent pattern.</li>
+    <li><strong>Open Graph and Twitter Card tags</strong> — social meta tags present with appropriate titles, descriptions, and images for sharing.</li>
+    <li><strong>Content length adequacy</strong> — content length is appropriate for the topic and competitive landscape. No pages significantly shorter than ranking competitors.</li>
+    <li><strong>Outbound link quality</strong> — external links point to authoritative, relevant resources. No broken outbound links. No links to low-quality or irrelevant sites.</li>
+    <li><strong>Table of contents</strong> — long-form pages include a linked table of contents for both user navigation and potential jump-link rich results.</li>
+    <li><strong>Multimedia usage</strong> — pages include relevant images, videos, or interactive elements that support the content and improve engagement signals.</li>
+    <li><strong>CTA presence</strong> — every page has a clear call to action appropriate to its position in the user journey.</li>
+    <li><strong>Breadcrumb navigation</strong> — breadcrumbs present on all pages below the homepage, reflecting the site hierarchy accurately.</li>
+    <li><strong>Anchor text diversity</strong> — internal link anchor text across the site uses varied, natural phrases rather than repeating exact-match keywords.</li>
+    <li><strong>Semantic HTML</strong> — content uses appropriate HTML5 semantic elements (article, section, nav, aside) to provide structural meaning.</li>
+  </ul>
+
+  <h2 id="content-quality-section">Content Quality Section</h2>
+
+  <p>The content quality section contains 17 checkpoints assessing the substance, originality, and value of your content:</p>
+
+  <ul>
+    <li><strong>Search intent alignment</strong> — each page matches the dominant search intent for its target keyword (informational, navigational, commercial, transactional).</li>
+    <li><strong>Content originality</strong> — content is original and not duplicated from other sources. Run spot checks through Copyscape or similar plagiarism detection tools.</li>
+    <li><strong>Thin content identification</strong> — identify pages with fewer than 300 words of unique content that are not inherently short-form (contact pages, category descriptions).</li>
+    <li><strong>Keyword cannibalisation</strong> — no two pages target the same primary keyword. Use Search Console to identify queries where multiple URLs compete.</li>
+    <li><strong>Content freshness</strong> — publication and update dates are visible. Key content pages have been reviewed within the last 12 months.</li>
+    <li><strong>Topical coverage completeness</strong> — your site covers all major subtopics within your core topic areas. No significant gaps that competitors cover.</li>
+    <li><strong>E-E-A-T signals</strong> — author bios, credentials, and expertise are displayed. Content cites credible sources. First-hand experience is demonstrated where relevant.</li>
+    <li><strong>Factual accuracy</strong> — statistics, claims, and recommendations are current and verifiable. Outdated information is flagged for updating.</li>
+    <li><strong>Readability</strong> — content is written at an appropriate reading level for the target audience. Sentences and paragraphs are manageable lengths.</li>
+    <li><strong>User engagement signals</strong> — check bounce rate, time on page, and scroll depth in analytics. Pages with high bounce rates and low time on page may indicate content quality issues.</li>
+    <li><strong>Content formatting</strong> — effective use of subheadings, bullet points, numbered lists, tables, and visual breaks to improve scannability.</li>
+    <li><strong>Duplicate content across site</strong> — no substantial content blocks repeated across multiple pages (boilerplate text, repeated introductions).</li>
+    <li><strong>Content depth vs competition</strong> — compare content depth on your top 20 pages against the top-ranking competitors for the same keywords.</li>
+    <li><strong>Featured snippet optimisation</strong> — content structured to match featured snippet formats (paragraphs, lists, tables) for keywords where snippets appear.</li>
+    <li><strong>Content gap analysis</strong> — identify keywords where competitors rank but you have no content. Prioritise gaps by search volume and commercial value.</li>
+    <li><strong>Media quality</strong> — images are original or properly licensed. No generic stock photos that undermine credibility. Images are relevant to the content.</li>
+    <li><strong>Conversion content</strong> — bottom-of-funnel pages (pricing, comparison, demo request) exist and are optimised for commercial keywords.</li>
+  </ul>
+
+  <h2 id="off-page-seo-section">Off-Page SEO Section</h2>
+
+  <p>The off-page section contains 15 checkpoints evaluating external authority signals:</p>
+
+  <ul>
+    <li><strong>Total backlink count and quality distribution</strong> — catalogue total backlinks and referring domains, categorised by authority level (high, medium, low).</li>
+    <li><strong>Referring domain diversity</strong> — backlinks come from a diverse range of domains, not concentrated in a few sources.</li>
+    <li><strong>Anchor text distribution</strong> — natural mix of branded, URL, generic, and keyword-rich anchors. No over-optimisation of exact-match anchors.</li>
+    <li><strong>Toxic link identification</strong> — identify and disavow links from spam domains, PBNs, link farms, or unrelated foreign-language sites.</li>
+    <li><strong>Link velocity trends</strong> — backlink growth is steady and natural. No suspicious spikes that indicate manipulative link building.</li>
+    <li><strong>Competitor backlink comparison</strong> — compare your link profile metrics against top competitors. Identify the gap you need to close.</li>
+    <li><strong>Link building opportunities</strong> — identify unlinked brand mentions, broken link targets, and resource page opportunities for outreach.</li>
+    <li><strong>Social profile presence</strong> — active social profiles on relevant platforms, linked from the website, with consistent branding.</li>
+    <li><strong>Brand mention monitoring</strong> — track unlinked brand mentions across the web. Outreach to convert mentions into backlinks.</li>
+    <li><strong>Local citation consistency</strong> — for local businesses: NAP data consistent across all directory listings.</li>
+    <li><strong>Review profile health</strong> — review quantity, quality, recency, and response rates across Google and industry platforms.</li>
+    <li><strong>Domain authority trends</strong> — track domain authority (or domain rating) over time. Identify periods of growth or decline and correlate with link building activity.</li>
+    <li><strong>Spam score assessment</strong> — check your domain's spam score in Moz or similar tools. High spam scores indicate toxic elements in your link profile.</li>
+    <li><strong>Lost links recovery</strong> — identify recently lost high-authority backlinks and assess whether outreach could recover them.</li>
+    <li><strong>Digital PR opportunities</strong> — assess whether your business has assets (data, research, expert commentary) that could earn media coverage and editorial links.</li>
+  </ul>
+
+  <h2 id="scoring-system">Scoring System</h2>
+
+  <p>The template uses a weighted scoring system that produces an overall SEO health score between 0 and 100. This score provides a snapshot of your site's SEO health and serves as a benchmark for measuring improvement over time.</p>
+
+  <p>Each checkpoint is scored as follows:</p>
+
+  <ul>
+    <li><strong>Pass (full points)</strong> — the checkpoint meets best practice standards. No action required.</li>
+    <li><strong>Partial (half points)</strong> — the checkpoint partially meets standards. Some improvement needed but no critical issue.</li>
+    <li><strong>Fail (zero points)</strong> — the checkpoint does not meet standards. Action required, severity determines priority.</li>
+  </ul>
+
+  <p>Section weights reflect relative importance:</p>
+
+  <ul>
+    <li><strong>Technical SEO: 30%</strong> — weighted highest because technical issues can block everything else from working.</li>
+    <li><strong>On-Page SEO: 25%</strong> — the most directly controllable ranking factors on your site.</li>
+    <li><strong>Content Quality: 25%</strong> — content is increasingly the primary differentiator in competitive SERPs.</li>
+    <li><strong>Off-Page SEO: 20%</strong> — important but less directly controllable. External authority signals take time to build.</li>
+  </ul>
+
+  <p>Severity ratings determine the priority of fixes within each section:</p>
+
+  <ul>
+    <li><strong>Critical</strong> — fix immediately. These issues actively prevent search engines from crawling or indexing your content, or create security risks.</li>
+    <li><strong>High</strong> — fix within two weeks. These issues significantly impact ranking potential or user experience.</li>
+    <li><strong>Medium</strong> — fix within one month. These issues affect optimisation but do not prevent indexing or cause immediate harm.</li>
+    <li><strong>Low</strong> — fix within the quarter. These are best practice improvements that provide incremental gains.</li>
+  </ul>
+
+  <h2 id="customising-the-template">Customising the Template</h2>
+
+  <p>While the 72-checkpoint template works for most websites, certain site types benefit from customisation. Here is how to adapt the template for specific use cases:</p>
+
+  <ul>
+    <li><strong>Ecommerce sites</strong> — add checkpoints for product schema completeness, faceted navigation handling, out-of-stock page management, and category page content. Remove or de-prioritise checkpoints related to blog content if the site does not have a blog.</li>
+    <li><strong>Local businesses</strong> — add checkpoints for Google Business Profile completeness, NAP consistency across directories, local schema markup, and review generation processes. Increase the weight of the off-page section to reflect the importance of citations and reviews in local search.</li>
+    <li><strong>SaaS and B2B</strong> — add checkpoints for lead generation page optimisation, conversion path analysis, gated content strategy, and competitor feature comparison pages. Include checks for demo request form usability and middle-of-funnel content coverage.</li>
+    <li><strong>Publishers and content sites</strong> — add checkpoints for content freshness cadence, author page optimisation, news sitemap implementation, AMP status (if applicable), and content syndication management. Increase the weight of the content quality section.</li>
+    <li><strong>International sites</strong> — expand the technical section with detailed hreflang checkpoints, regional domain strategy assessment, localised content quality checks, and international server infrastructure evaluation.</li>
+  </ul>
+
+  <p>The template should evolve with your needs. After each audit cycle, review whether any checkpoints consistently pass and can be reduced to monitoring-only status, and whether any new issues have emerged that warrant adding a checkpoint. A living template that adapts to your site's specific challenges is more valuable than a static one that checks the same things regardless of relevance.</p>
+</ContentLayout>

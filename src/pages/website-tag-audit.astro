@@ -1,0 +1,73 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const toc = [
+  { label: 'What Is a Tag Audit', id: 'what-is' },
+  { label: 'Why Tags Get Out of Control', id: 'why' },
+  { label: 'Common Tag Problems', id: 'problems' },
+  { label: 'How to Audit Your Tags', id: 'how-to' },
+  { label: 'Tag Management Best Practices', id: 'best-practices' },
+  { label: 'Tag Audit Tools', id: 'tools' },
+];
+---
+
+<ContentLayout
+  title="Website Tag Audit: Clean Up Tracking Scripts and Improve Performance"
+  description="A website tag audit inventories all tracking scripts, pixels, and tags on your site. Find redundant tags, fix conflicts, and improve page speed by removing tag bloat."
+  breadcrumbs={[
+    { label: 'Website Audit', href: '/website-audit/' },
+    { label: 'Tag Audit', href: '/website-tag-audit/' },
+  ]}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <h2 id="what-is">What Is a Tag Audit</h2>
+  <p>A website tag audit reviews every tracking script, marketing pixel, and analytics tag installed on your website. Over time, websites accumulate tags from marketing experiments, agency changes, tool trials, and forgotten integrations. Each tag adds JavaScript that slows your site and may collect user data without your knowledge.</p>
+  <p>A typical enterprise website has 20-40 tags. Many have duplicate or orphaned tags that serve no purpose but still fire on every page load, degrading performance and creating data quality issues.</p>
+
+  <h2 id="why">Why Tags Get Out of Control</h2>
+  <ul>
+    <li><strong>Agency turnover:</strong> Each new marketing agency installs their preferred tracking tools without removing the previous agency's tags.</li>
+    <li><strong>Tool trials:</strong> Someone trialled a heatmap tool in 2023 and never removed the script. It still fires on every page.</li>
+    <li><strong>Duplicate implementations:</strong> GA4 installed via GTM and also hardcoded in the theme. Both fire, double-counting every page view.</li>
+    <li><strong>No governance:</strong> Without a tag management policy, anyone with CMS access can add scripts. Tags accumulate like barnacles.</li>
+    <li><strong>Pixel requirements:</strong> Every advertising platform wants its pixel installed — Facebook, Google Ads, LinkedIn, TikTok, Bing. Each adds weight and tracking.</li>
+  </ul>
+
+  <h2 id="problems">Common Tag Problems</h2>
+  <ul>
+    <li><strong>Performance impact:</strong> Tags are JavaScript — they consume CPU, make network requests, and block rendering. A site with 30 marketing tags can lose 2-3 seconds of load time from tags alone.</li>
+    <li><strong>Data duplication:</strong> Multiple analytics implementations counting the same events create inflated metrics and unreliable data.</li>
+    <li><strong>Privacy violations:</strong> Tags that set cookies or collect user data without consent violate GDPR and similar regulations. You're responsible even if a third-party tag does the collecting.</li>
+    <li><strong>Security risks:</strong> Third-party scripts have access to your page's DOM. A compromised tag vendor could inject malicious code on your site (supply chain attacks).</li>
+    <li><strong>Conflicting scripts:</strong> Multiple tags manipulating the same page elements can cause JavaScript errors, broken functionality, or unexpected behaviour.</li>
+  </ul>
+
+  <h2 id="how-to">How to Audit Your Tags</h2>
+  <ol>
+    <li><strong>Inventory all tags:</strong> Use Chrome DevTools Network tab, the Tag Assistant extension, or BuiltWith to identify every script loading on your site. Document each one.</li>
+    <li><strong>Check your GTM container:</strong> If you use Google Tag Manager, export the container and review every tag, trigger, and variable. Note which tags are active, paused, or broken.</li>
+    <li><strong>Check hardcoded scripts:</strong> Search your page source for script tags added directly to the HTML (outside GTM). These are often forgotten duplicates.</li>
+    <li><strong>Categorise each tag:</strong> For every tag, document: what it does, who owns it, whether it's still needed, whether it handles consent, and its performance impact.</li>
+    <li><strong>Remove unnecessary tags:</strong> Delete tags for tools you no longer use, duplicate implementations, and experimental scripts that were never cleaned up.</li>
+    <li><strong>Consolidate into GTM:</strong> Move all remaining tags into Google Tag Manager (or your preferred TMS) for centralised management and consent integration.</li>
+  </ol>
+
+  <h2 id="best-practices">Tag Management Best Practices</h2>
+  <ul>
+    <li><strong>Use a Tag Management System:</strong> GTM, Tealium, or Segment. Never hardcode marketing tags in your site's HTML. A TMS provides version control, consent integration, and easy removal.</li>
+    <li><strong>Tag governance policy:</strong> Document who can add tags, what approval is needed, and how tags are reviewed. Quarterly tag reviews prevent accumulation.</li>
+    <li><strong>Consent integration:</strong> All non-essential tags should respect cookie consent. In GTM, use consent mode triggers to block tags until the user consents.</li>
+    <li><strong>Performance budgets:</strong> Set a maximum number of tags or total JavaScript size for marketing scripts. When you want to add a new tag, something else has to go.</li>
+    <li><strong>Server-side tagging:</strong> Move high-impact tags (analytics, conversion tracking) to server-side GTM. This reduces client-side JavaScript, improves speed, and gives you more control over data collection.</li>
+  </ul>
+
+  <h2 id="tools">Tag Audit Tools</h2>
+  <ul>
+    <li><strong>Google Tag Assistant:</strong> Chrome extension that shows all Google tags on the page and reports issues. Essential for auditing GA4, GTM, and Google Ads tags.</li>
+    <li><strong>BuiltWith:</strong> Shows all technologies detected on a website, including analytics, advertising, and marketing tools. Useful for a quick technology inventory.</li>
+    <li><strong>ObservePoint:</strong> Enterprise tag auditing platform that scans your entire site for tag issues, duplicates, and privacy violations.</li>
+    <li><strong>Chrome DevTools Network tab:</strong> Filter by JS to see every script loading on the page. Sort by size to identify the heaviest tags.</li>
+    <li><strong>Screaming Frog:</strong> Custom extraction can identify specific scripts across all pages, showing which tags appear where.</li>
+  </ul>
+</ContentLayout>
