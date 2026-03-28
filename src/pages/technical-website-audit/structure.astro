@@ -1,0 +1,137 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Technical Audit', href: '/technical-website-audit/' },
+  { label: 'Structure', href: '/technical-website-audit/structure/' },
+];
+
+const toc = [
+  { label: 'What Is Site Structure', id: 'what-is-site-structure' },
+  { label: 'URL Hierarchy', id: 'url-hierarchy' },
+  { label: 'Internal Link Architecture', id: 'internal-link-architecture' },
+  { label: 'Navigation Patterns', id: 'navigation-patterns' },
+  { label: 'Breadcrumbs', id: 'breadcrumbs' },
+  { label: 'Silo Structure', id: 'silo-structure' },
+  { label: 'Flat vs Deep', id: 'flat-vs-deep' },
+];
+---
+
+<ContentLayout
+  title="Website Structure Audit: Optimise Your Architecture"
+  description="How to audit and optimise your website's structure for SEO. Covers URL hierarchy, internal linking, navigation patterns, breadcrumbs, silo structures, and the flat vs deep architecture debate."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Website structure is the organisational framework that determines how pages relate to each other, how users navigate between them, and how search engines discover and understand your content. A well-structured site helps search engines crawl efficiently, distributes ranking authority to the pages that need it, and creates logical pathways that match how users think about your topic space. A poorly structured site buries important pages, dilutes authority across unnecessary hierarchy levels, and confuses both users and crawlers about which pages matter most.</p>
+
+<p>Structure is one of the most impactful and least attended-to aspects of SEO. It is set early in a site's life and rarely revisited, even as the content grows from tens to thousands of pages. This audit guide examines every structural element and provides a framework for evaluating whether your architecture serves or undermines your SEO goals.</p>
+
+<h2 id="what-is-site-structure">What Is Site Structure</h2>
+
+<p>Site structure encompasses several interconnected systems that together define how your website is organised.</p>
+
+<p><strong>URL structure</strong> is the addressing system: how your URLs are formatted and what hierarchy they imply. The URL path /products/shoes/running-shoes/ communicates a three-level hierarchy that search engines and users interpret as a categorisation signal.</p>
+
+<p><strong>Internal link structure</strong> is the connection system: how pages link to each other and how link equity flows through the site. Internal links are the primary mechanism through which search engines discover pages and assess their relative importance. A page with 50 internal links pointing to it is signalled as more important than a page with 2.</p>
+
+<p><strong>Navigation structure</strong> is the user-facing organisation: menus, breadcrumbs, footer links, and sidebar links that provide explicit pathways through the content. Navigation serves both usability (helping users find content) and SEO (providing crawlable links and distributing authority).</p>
+
+<p><strong>Topical structure</strong> is the content organisation: how pages are grouped by topic, how topics relate to each other, and how the site demonstrates topical authority through comprehensive coverage. Search engines evaluate whether your site covers a topic thoroughly enough to be authoritative, and this evaluation is influenced by how topically related content is organised and interconnected.</p>
+
+<p>An effective structure audit examines all four systems together because they must work in coordination. URLs that imply one hierarchy while navigation suggests another, or internal links that connect unrelated topics while leaving related pages isolated, send contradictory signals that confuse search engines and users alike.</p>
+
+<h2 id="url-hierarchy">URL Hierarchy</h2>
+
+<p>Your URL structure communicates categorisation to search engines and sets user expectations about where they are within your site.</p>
+
+<p><strong>Audit your URL patterns.</strong> Crawl your site and export all URLs. Group them by URL path pattern (first directory, second directory, etc.) to see your implicit hierarchy. Check for consistency: are similar pages at similar hierarchy depths? Are there orphaned URL patterns that do not fit the overall structure? Inconsistent URL patterns often indicate pages that were added ad hoc without structural planning.</p>
+
+<p><strong>Check hierarchy depth.</strong> Count the number of directory levels in your URLs. Most content should be accessible within three levels of the domain root (domain.com/level1/level2/page/). Deeper URLs receive less crawl priority and less link equity from the homepage. If important content lives at four or more directory levels deep, consider restructuring to bring it closer to the root.</p>
+
+<p><strong>Evaluate URL readability.</strong> URLs should be human-readable, using descriptive words separated by hyphens. Check for URLs containing IDs, parameters, session tokens, or encoded characters that add no semantic value. A URL like /products/12847?color=red&size=m is less effective than /products/running-shoes/red-mesh-trainer/. Readable URLs earn higher click-through rates from search results and provide keyword signals to search engines.</p>
+
+<p><strong>Check for URL conflicts.</strong> Identify cases where similar content exists at different URL patterns. A common example is having both /blog/seo-tips/ and /resources/seo-tips/ with overlapping content. These conflicts create internal competition and split ranking signals between pages that should be consolidated.</p>
+
+<p><strong>Trailing slash consistency.</strong> Check whether your URLs consistently use trailing slashes (/page/) or consistently omit them (/page). Inconsistency creates duplicate content: /about/ and /about are technically different URLs. Your server should redirect one version to the other with a 301 redirect. Pick a convention and enforce it site-wide.</p>
+
+<p><strong>Parameter handling.</strong> URLs with query parameters (?sort=price&filter=red) should be evaluated for indexation control. Sorting and filtering parameters that create duplicate views of the same content should be handled through canonical tags pointing to the parameter-free URL, robots.txt exclusions, or Google Search Console parameter settings.</p>
+
+<h2 id="internal-link-architecture">Internal Link Architecture</h2>
+
+<p>Internal links are the most powerful structural SEO lever you control. They determine which pages search engines discover, how often they are crawled, and how much authority each page accumulates.</p>
+
+<p><strong>Link distribution analysis.</strong> Crawl your site and examine the distribution of internal links. Export the number of internal links pointing to each page. Plot this distribution. On most sites, the homepage and top-level category pages receive disproportionately many links while deep content pages receive very few. If your most important revenue or traffic pages have fewer internal links than your privacy policy, the distribution needs rebalancing.</p>
+
+<p><strong>Orphaned page identification.</strong> Orphaned pages have no internal links pointing to them. They can only be found through the sitemap or direct URL access, meaning search engines may never discover or rarely recrawl them. Use your crawler's orphan page report (Screaming Frog and Sitebulb both identify orphans) to find these pages. Either add internal links to them from relevant pages or remove them if they are no longer needed.</p>
+
+<p><strong>Crawl depth assessment.</strong> Crawl depth is the number of clicks required to reach a page from the homepage. Pages at crawl depth 1 (directly linked from the homepage) receive the most crawl frequency and link equity. Pages at depth 4+ may be crawled infrequently and accumulate minimal authority. Check that your highest-value pages are within 3 clicks of the homepage. If important pages are deeper, add shortcut links from higher-level pages.</p>
+
+<p><strong>Contextual link evaluation.</strong> Internal links within the body content of a page (contextual links) carry more weight than links in navigation, footers, or sidebars. Check whether your content pages include contextual links to related pages. Many sites rely entirely on navigation-based internal linking without adding in-content links that signal topical relationships between specific pages.</p>
+
+<p><strong>Anchor text analysis.</strong> The anchor text of internal links provides keyword signals to the destination page. Check that internal links use descriptive, varied anchor text that includes relevant keywords naturally. Generic anchor text ("click here", "read more", "learn more") wastes an opportunity to provide keyword context. At the same time, avoid forcing exact-match keyword anchor text into every link, which looks manipulative.</p>
+
+<p><strong>Link equity flow modelling.</strong> Conceptually, each page distributes its authority across all the links it contains. A page with 100 links distributes less authority per link than a page with 10 links. Check whether your important pages link to an excessive number of less important pages (diluting authority) or whether low-value pages receive links from high-authority pages that could be better spent on commercially important content.</p>
+
+<h2 id="navigation-patterns">Navigation Patterns</h2>
+
+<p>Navigation is the visible manifestation of your site structure. It serves users who need to find content and provides crawlable links that search engines follow to discover pages.</p>
+
+<p><strong>Primary navigation audit.</strong> Review your main navigation menu for logical organisation, appropriate depth, and manageable scope. Navigation should surface your most important content categories without overwhelming users with too many options. Cognitive psychology research suggests that main navigation menus work best with 5-7 top-level items. Mega menus with dozens of links can be effective for large sites but require careful organisation to avoid cognitive overload.</p>
+
+<p><strong>Footer navigation.</strong> Footer links provide secondary navigation to important pages that may not appear in the main menu: legal pages, contact information, popular content, and category overviews. Check that footer links are crawlable (not loaded via JavaScript after scroll) and that they complement rather than duplicate the main navigation. Footer links carry less weight than main navigation links but still provide crawl paths and distribute some authority.</p>
+
+<p><strong>Sidebar navigation.</strong> On content-heavy sites, sidebar navigation provides section-specific links that help users explore related content. Check whether sidebar links are contextually relevant to the current section or generic across the entire site. Section-specific sidebars that show related articles within the current topic are more useful than site-wide sidebars that show the same links on every page.</p>
+
+<p><strong>Mobile navigation.</strong> Mobile navigation patterns (hamburger menus, tab bars, slide-out panels) must provide the same link coverage as desktop navigation. Check that all links present in the desktop navigation are also accessible in the mobile navigation. Some responsive designs hide secondary navigation elements on mobile, reducing the crawlable link structure for mobile Googlebot.</p>
+
+<p><strong>JavaScript-dependent navigation.</strong> Navigation menus that rely on JavaScript to display (such as hover-triggered dropdowns built entirely with JavaScript) risk being invisible to crawlers that do not execute JavaScript or that execute it imperfectly. Check that your navigation is present in the initial HTML, not injected by JavaScript. CSS-based dropdowns that use :hover pseudo-classes are accessible without JavaScript.</p>
+
+<h2 id="breadcrumbs">Breadcrumbs</h2>
+
+<p>Breadcrumbs provide a trail showing the current page's position within the site hierarchy. They serve navigation (letting users jump to parent pages), SEO (providing internal links with contextual anchor text and enabling breadcrumb rich results in search), and user orientation (confirming where the current page fits in the overall structure).</p>
+
+<p><strong>Presence check.</strong> Verify that breadcrumbs are present on every page below the homepage level. Pages without breadcrumbs lose the structural context, navigational shortcut, and internal link equity that breadcrumbs provide. The only page that should not have breadcrumbs is the homepage itself.</p>
+
+<p><strong>Accuracy check.</strong> Navigate through several pages in each section and verify that the breadcrumb trail accurately reflects the page's position in the hierarchy. Common errors include breadcrumbs that show a generic path (Home > Page Title) rather than the actual category path, breadcrumbs that show incorrect parent pages, and breadcrumbs that are hard-coded rather than dynamically generated from the actual page hierarchy.</p>
+
+<p><strong>Schema markup.</strong> Breadcrumbs should be marked up with BreadcrumbList schema to enable breadcrumb display in Google search results. Verify the schema implementation using Google's Rich Results Test. Check that every page in the breadcrumb trail has a corresponding schema item with name and item (URL) properties. The schema should match the visible breadcrumb text and URLs exactly.</p>
+
+<p><strong>Linking functionality.</strong> Every item in the breadcrumb trail (except the current page) should be a clickable link to the corresponding parent page. Check that these links work correctly and lead to the expected pages. Breadcrumb items that are text-only (not linked) fail to provide the internal linking benefit that makes breadcrumbs valuable for SEO.</p>
+
+<p><strong>Multi-category handling.</strong> Pages that logically belong to multiple categories (a product that fits in both "Running Shoes" and "Sale") need a consistent primary breadcrumb path. Check that the breadcrumb always shows the same path for a given page, regardless of how the user arrived at it. Inconsistent breadcrumbs confuse both users and search engines about the page's primary categorisation.</p>
+
+<h2 id="silo-structure">Silo Structure</h2>
+
+<p>Silo structure (also called topic clustering or hub-and-spoke architecture) organises content into thematic groups with a central hub page linking to related supporting pages. The concept is that pages within a silo reinforce each other's topical authority through focused internal linking.</p>
+
+<p><strong>Topic cluster identification.</strong> Map your existing content into topical groups. Each group should have a comprehensive hub page (targeting a broad, high-volume keyword) supported by multiple detail pages (targeting specific, long-tail variations). If your content does not naturally form clusters, your content strategy may lack the topical depth needed to demonstrate authority.</p>
+
+<p><strong>Hub page audit.</strong> Hub pages should link to every supporting page within their topic cluster. Check that hub pages include contextual links to all relevant detail pages, not just the most recent ones. Hub pages also need sufficient content depth to rank for the broad topic keyword. A hub page that is merely a list of links to other pages provides less value than one that provides a comprehensive overview with links to detailed subtopics.</p>
+
+<p><strong>Supporting page audit.</strong> Each supporting page should link back to its hub page and cross-link to other relevant pages within the same silo. Check that these links exist and use appropriate anchor text. Supporting pages that link extensively to pages outside their silo but not to pages within it undermine the silo's topical reinforcement.</p>
+
+<p><strong>Cross-silo linking.</strong> While internal linking within silos should be dense, linking between related silos adds value when the connection is genuinely relevant. A page about "running shoe reviews" (in the product silo) should link to "how to choose running shoes" (in the guide silo) because the topics are directly related. Do not artificially restrict cross-silo links when they serve the user.</p>
+
+<p><strong>Content gap identification.</strong> Within each silo, identify subtopics that should have dedicated pages but do not. Content gaps weaken the silo's topical coverage and leave potential search traffic on the table. Use keyword research tools to find subtopic queries related to each hub page that your site does not currently address.</p>
+
+<h2 id="flat-vs-deep">Flat vs Deep</h2>
+
+<p>The flat versus deep architecture debate concerns how many hierarchy levels your site should have. Flat structures put most pages close to the homepage. Deep structures create multiple levels of nested categories.</p>
+
+<p><strong>Flat architecture benefits.</strong> In a flat structure, most pages are within 1-2 clicks of the homepage. This ensures maximum crawl frequency and link equity distribution. Every page benefits from being close to the homepage's authority. Flat structures work well for small to medium sites (under 1,000 pages) where the content can be logically organised without deep hierarchy.</p>
+
+<p><strong>Deep architecture benefits.</strong> Deep structures create clear categorisation through nested levels (Category > Subcategory > Sub-subcategory > Page). This works well for large sites with diverse content that needs explicit organisation. Ecommerce sites with thousands of products across many categories naturally require depth. Deep structures also help users understand where they are within a large content library.</p>
+
+<p><strong>The practical middle ground.</strong> Most sites benefit from a structure that is as flat as possible without sacrificing logical organisation. The rule of thumb is that important pages should be within 3 clicks of the homepage. If your architecture requires 4+ levels to organise your content logically, ensure that important deep pages receive compensating internal links from higher-level pages to maintain adequate crawl frequency and link equity.</p>
+
+<p><strong>Audit your actual depth.</strong> Crawl your site and check the crawl depth distribution. If more than 20% of your indexable pages are at depth 4+, your structure may be too deep. Check whether those deep pages are actually important (high-value content that needs ranking support) or appropriately deep (archive pages, very specific long-tail content that does not need priority crawling).</p>
+
+<p><strong>Restructuring considerations.</strong> Changing your site's structure is a significant undertaking that requires URL changes (with redirects), navigation updates, and internal link adjustments. Do not restructure casually. Restructure when there is clear evidence that the current structure is causing problems: important pages not being indexed, thin category pages diluting authority, or content that logically belongs together being structurally separated. Document the expected benefits, plan the implementation carefully (see our <a href="/website-audit-checklist/redesign/">redesign checklist</a>), and monitor the results closely.</p>
+
+<p><strong>Scaling structure over time.</strong> The structure that worked when your site had 50 pages may not work at 500 or 5,000 pages. Plan for growth by establishing structural patterns (consistent URL formats, category templates, internal linking standards) that scale. Sites that grow without structural planning accumulate organisational debt that becomes progressively more expensive to fix. Regular structural audits (quarterly for fast-growing sites, annually for stable sites) catch structural issues before they compound.</p>
+
+</ContentLayout>

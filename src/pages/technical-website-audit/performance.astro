@@ -1,0 +1,125 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Technical Audit', href: '/technical-website-audit/' },
+  { label: 'Performance', href: '/technical-website-audit/performance/' },
+];
+
+const toc = [
+  { label: 'Performance vs Speed', id: 'performance-vs-speed' },
+  { label: 'Server Performance', id: 'server-performance' },
+  { label: 'Database Optimisation', id: 'database-optimisation' },
+  { label: 'Caching Layers', id: 'caching-layers' },
+  { label: 'Third-Party Impact', id: 'third-party-impact' },
+  { label: 'Performance Budgets', id: 'performance-budgets' },
+  { label: 'Monitoring', id: 'monitoring' },
+];
+---
+
+<ContentLayout
+  title="Website Performance Audit: Beyond Page Speed"
+  description="A comprehensive guide to website performance auditing that goes beyond simple page speed scores. Covers server performance, database optimisation, caching, third-party impact, and performance budgets."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Most website performance audits begin and end with a Google PageSpeed Insights score. While that score provides a useful snapshot, it barely scratches the surface of what determines your site's actual performance. Real performance auditing examines every layer of the stack: server hardware, database efficiency, caching configuration, application code, asset delivery, and the cascading impact of third-party resources. Understanding and optimising each layer is what separates sites that feel fast from sites that merely pass a lighthouse test.</p>
+
+<p>This guide covers the performance audit process from the server up, explaining what to measure at each layer, what the measurements mean, and what to do when they indicate problems. The focus is on practical diagnostics and actionable fixes, not theoretical performance engineering.</p>
+
+<h2 id="performance-vs-speed">Performance vs Speed</h2>
+
+<p>Page speed and website performance are related but distinct concepts. Page speed, as measured by tools like <a href="/website-audit-tools/lighthouse/">Google Lighthouse</a> and PageSpeed Insights, focuses on client-side rendering metrics: how quickly content becomes visible and interactive in the user's browser. These metrics (Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift) are important because they directly affect user experience and are Google ranking factors.</p>
+
+<p>Website performance encompasses everything that contributes to how the site behaves under real-world conditions. This includes server response time under varying loads, database query efficiency, cache hit rates, CDN effectiveness, API response times, background process efficiency, and the site's behaviour during traffic spikes. A site can have perfect Lighthouse scores while being fundamentally fragile because the server collapses under moderate load or the database locks up during peak hours.</p>
+
+<p>A thorough performance audit evaluates both dimensions. Client-side rendering performance determines the experience for individual page visits. Server-side and infrastructure performance determines whether that experience is consistent across all visitors, all pages, and all traffic levels. Optimising only the client side is like putting a sports body kit on a car with a failing engine. It looks fast while standing still.</p>
+
+<p>The distinction matters for prioritisation. If your Time to First Byte (TTFB) is 2 seconds, no amount of image optimisation or JavaScript deferral will make your site feel fast. The server needs to respond before the browser can even begin rendering. Fix server-side performance first, then optimise client-side delivery.</p>
+
+<h2 id="server-performance">Server Performance</h2>
+
+<p>Server performance determines the baseline speed of every page on your site. It is measured primarily through Time to First Byte (TTFB): the time between the browser sending a request and receiving the first byte of the response.</p>
+
+<p><strong>What good looks like:</strong> TTFB under 200ms for cached pages and under 600ms for dynamically generated pages indicates healthy server performance. TTFB consistently above 1 second suggests a server-side bottleneck that needs investigation. Google considers TTFB under 800ms acceptable, but competitive sites typically achieve much better.</p>
+
+<p><strong>Measuring TTFB:</strong> Use WebPageTest (which shows TTFB in the waterfall chart), your browser's developer tools (Network tab), or a dedicated monitoring service like Pingdom or UptimeRobot. Measure from multiple geographic locations if you serve an international audience. Measure at different times of day to identify patterns related to traffic volume.</p>
+
+<p><strong>Common server bottlenecks:</strong> Shared hosting where your site competes for CPU and memory with hundreds of other sites. Insufficient PHP worker processes causing requests to queue during traffic spikes. Slow disk I/O affecting file reads and database operations. Misconfigured web server settings that prevent efficient connection handling. Each bottleneck requires a different solution, from upgrading hosting to tuning server configuration.</p>
+
+<p><strong>Load testing:</strong> Your site's server performance under normal traffic does not predict its behaviour under elevated load. Use a load testing tool (k6, Locust, Apache JMeter) to simulate concurrent users at levels exceeding your typical peak traffic. Record TTFB, error rates, and response times as load increases. The point where performance degrades identifies your capacity ceiling and indicates whether you need to scale before your next traffic spike.</p>
+
+<p><strong>PHP version and configuration (for PHP-based sites):</strong> Each major PHP version brings significant performance improvements. PHP 8.2 is approximately 3 times faster than PHP 7.0 for typical WordPress workloads. Check your PHP version and upgrade if possible. Also check OPcache configuration: OPcache stores precompiled PHP scripts in memory, eliminating the overhead of parsing and compiling on every request. It should be enabled with sufficient memory allocation for your entire codebase.</p>
+
+<h2 id="database-optimisation">Database Optimisation</h2>
+
+<p>Most dynamic websites generate pages by querying a database. Database performance directly determines how quickly pages can be built and served.</p>
+
+<p><strong>Slow query identification:</strong> Enable slow query logging on your database server (MySQL, PostgreSQL, or whatever your site uses) and set the threshold to 1 second. Monitor the log for queries that consistently exceed this threshold. Slow queries usually indicate missing indexes, inefficient JOIN operations, or queries that scan entire tables when they should use indexed lookups. Fix slow queries and you often fix TTFB problems at their source.</p>
+
+<p><strong>Index analysis:</strong> Database indexes make queries faster by allowing the database to find records without scanning every row. Use EXPLAIN on your slowest queries to see whether they use indexes effectively. Missing indexes on frequently queried columns (particularly in WHERE, JOIN, and ORDER BY clauses) are the most common database performance problem and often the easiest to fix.</p>
+
+<p><strong>Query count per page:</strong> Monitor how many database queries each page request generates. CMS-based sites, particularly WordPress with many plugins, can generate 50-200+ queries per page request. Each query adds latency. Reduce query counts by eliminating redundant queries (plugins querying for the same data separately), implementing object caching (storing query results in memory), and disabling unnecessary features that generate background queries.</p>
+
+<p><strong>Connection pooling:</strong> Each database connection has overhead. If your application opens and closes database connections for every query, connection management itself becomes a bottleneck under load. Connection pooling maintains a pool of reusable connections, eliminating the overhead of establishing new connections. Most modern application frameworks support connection pooling, but it often needs to be explicitly configured.</p>
+
+<p><strong>Database server resources:</strong> Check your database server's memory allocation, particularly the InnoDB buffer pool size for MySQL. The buffer pool should be large enough to hold your most frequently accessed data in memory. If the buffer pool is too small, the database constantly reads from disk, which is orders of magnitude slower. A buffer pool sized to 70-80% of available RAM on a dedicated database server is a common recommendation.</p>
+
+<h2 id="caching-layers">Caching Layers</h2>
+
+<p>Caching stores the result of expensive operations (page generation, database queries, API calls) so that subsequent requests can be served from the stored result rather than repeating the operation. Effective caching can reduce server load by 90% or more and transform TTFB from seconds to milliseconds.</p>
+
+<p><strong>Page caching:</strong> Full-page caching stores the complete HTML output of a page and serves it to subsequent visitors without executing any application code. This is the highest-impact caching layer. For anonymous visitors (the majority on most sites), every page view should be served from cache. Verify page caching by checking response headers for cache indicators (X-Cache: HIT, X-WP-Super-Cache, or similar) and by comparing TTFB between first and subsequent requests.</p>
+
+<p><strong>Object caching:</strong> Object caching stores the results of individual database queries or API calls in memory (typically Redis or Memcached). This benefits pages that cannot be fully page-cached, such as pages for logged-in users or pages with personalised content. Object caching reduces database load even when page caching is not applicable.</p>
+
+<p><strong>Browser caching:</strong> Browser caching stores static assets (CSS, JavaScript, images, fonts) in the visitor's browser so they are not re-downloaded on subsequent page views. Check that your server sends appropriate Cache-Control headers with long max-age values for static assets. Use file name versioning (style.v2.css or style.abc123.css) to enable aggressive caching while ensuring visitors get updated files when you deploy changes.</p>
+
+<p><strong>CDN caching:</strong> A Content Delivery Network caches your content on edge servers distributed globally, serving each visitor from the nearest location. CDN caching reduces latency by minimising the physical distance data travels. Check that your CDN is correctly configured by verifying that assets are served from CDN URLs, that cache hit rates are above 90% for static assets, and that the CDN's cache TTL settings match your content update frequency.</p>
+
+<p><strong>Cache invalidation:</strong> Caching introduces a cache management responsibility. When content changes, the cached version must be invalidated so visitors see the updated content. Check that your caching system correctly purges pages when content is updated. Common problems include caches that never expire (showing stale content) and caches that invalidate too aggressively (negating the performance benefit). Well-configured caching should invalidate only the specific pages affected by a change, not the entire cache.</p>
+
+<h2 id="third-party-impact">Third-Party Impact</h2>
+
+<p>Third-party resources are scripts, styles, fonts, and other files loaded from external domains. They are among the most significant and least controlled performance factors on most websites.</p>
+
+<p><strong>Catalogue all third-party resources.</strong> Use your browser's Network tab or a tool like WebPageTest to list every resource loaded from a domain other than your own. Common third-party resources include Google Analytics, Google Tag Manager, Facebook Pixel, live chat widgets (Intercom, Drift, Zendesk), A/B testing tools (Optimizely, VWO), heatmap tools (Hotjar, Crazy Egg), advertising scripts, social sharing buttons, and embedded content (YouTube, Google Maps).</p>
+
+<p><strong>Measure individual impact.</strong> Each third-party resource adds DNS lookup time, connection time, and transfer time. Some also execute significant JavaScript that blocks rendering or competes for the main thread. Use Chrome DevTools Performance tab to identify which third-party scripts consume the most execution time. Block individual third-party domains (using Chrome DevTools Request Blocking) and measure the speed improvement to quantify each one's impact.</p>
+
+<p><strong>Evaluate necessity.</strong> For each third-party resource, ask: is this providing sufficient value to justify its performance cost? A chat widget that receives two enquiries per month but adds 400ms to every page load is likely not worth the trade-off. Be ruthless in this evaluation. Marketing and analytics tools accumulate over time as different team members add them, and nobody takes responsibility for removing the ones that are no longer actively used.</p>
+
+<p><strong>Optimisation strategies for necessary third parties.</strong> Load non-essential scripts after the page has rendered (using defer or async attributes, or dynamically loading after user interaction). Self-host resources where possible (Google Fonts, for example, can be downloaded and served from your own domain, eliminating the external DNS lookup and connection). Use resource hints (preconnect, dns-prefetch) for critical third-party domains to reduce connection time.</p>
+
+<p><strong>Tag Manager discipline.</strong> Google Tag Manager makes it easy to add scripts without developer involvement, which means scripts accumulate without performance review. Audit your Tag Manager container quarterly. Remove unused tags, verify that triggers are specific (loading tags only on pages where they are needed rather than all pages), and check that tag firing order does not create rendering bottlenecks.</p>
+
+<h2 id="performance-budgets">Performance Budgets</h2>
+
+<p>A performance budget sets maximum acceptable values for performance metrics, preventing gradual degradation as features and content are added over time.</p>
+
+<p><strong>What to budget:</strong> Set budgets for metrics that directly affect user experience and can be measured automatically. Common performance budget metrics include: total page weight (target under 1.5MB), number of HTTP requests (target under 50), Largest Contentful Paint (target under 2.5 seconds), Time to Interactive (target under 3.5 seconds), and TTFB (target under 600ms). Set budgets based on your current performance or competitive benchmarks, whichever is more ambitious.</p>
+
+<p><strong>Enforcement mechanisms:</strong> A budget without enforcement is just a wish. Integrate performance budget checks into your deployment pipeline using tools like Lighthouse CI, SpeedCurve, or bundlewatch. When a deployment exceeds a budget threshold, block the deployment or flag it for review. Automated enforcement prevents the "just one more script" creep that gradually degrades performance.</p>
+
+<p><strong>Per-page-type budgets:</strong> Different page types have different performance characteristics and requirements. Your homepage might load a hero video that your blog posts do not. Product pages might load image carousels that your about page does not. Set separate budgets for each major page template rather than applying a single budget across the entire site.</p>
+
+<p><strong>Accountability:</strong> Assign performance budget ownership to a specific person or team. When a budget is exceeded, someone needs to investigate why and determine whether the budget should be adjusted or the change should be reverted. Without clear ownership, budgets become advisory guidelines that are routinely ignored.</p>
+
+<h2 id="monitoring">Monitoring</h2>
+
+<p>Performance is not a one-time fix. It requires ongoing monitoring to detect degradation and maintain standards.</p>
+
+<p><strong>Real User Monitoring (RUM):</strong> RUM collects performance data from actual visitors using real devices on real networks. This gives you the truest picture of your site's performance because it captures the diversity of devices, connection speeds, and geographic locations your real audience experiences. Google provides free RUM data through the Chrome User Experience Report (CrUX), accessible via PageSpeed Insights or the CrUX API. For more detailed RUM, consider tools like SpeedCurve, Datadog, or New Relic.</p>
+
+<p><strong>Synthetic monitoring:</strong> Synthetic monitoring runs automated performance tests from controlled environments at regular intervals. Unlike RUM, which depends on real visitor volume, synthetic monitoring provides consistent, comparable measurements on a fixed schedule. Use WebPageTest's API or Lighthouse CI to run daily tests of your key page templates. Synthetic monitoring catches regressions quickly and provides the controlled conditions needed for accurate before/after comparisons when you make changes.</p>
+
+<p><strong>Core Web Vitals tracking:</strong> Monitor your Core Web Vitals (LCP, INP, CLS) through Google Search Console's Core Web Vitals report. This report shows the percentage of your URLs that meet Google's Good, Needs Improvement, and Poor thresholds based on real user data. Track the trend monthly. Deterioration in CWV correlates with ranking impact and should trigger investigation.</p>
+
+<p><strong>Alert configuration:</strong> Set up alerts for performance metric thresholds that indicate genuine problems. A TTFB spike above 2 seconds, a LCP regression above 4 seconds, or a significant drop in cache hit rate all warrant immediate investigation. Avoid alerting on minor fluctuations that are within normal variation. The goal is to be notified about meaningful degradation, not to receive daily noise.</p>
+
+<p><strong>Regular performance reviews:</strong> Schedule a monthly performance review where you examine monitoring data, identify trends, assess the impact of recent changes, and plan upcoming optimisation work. Performance optimisation is an ongoing process, not a project with a completion date. Sites that maintain excellent performance over years do so because they treat performance as a continuous concern rather than an occasional initiative.</p>
+
+</ContentLayout>
