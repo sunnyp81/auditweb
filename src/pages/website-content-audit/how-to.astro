@@ -1,0 +1,143 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Content Audit', href: '/website-content-audit/' },
+  { label: 'How To', href: '/website-content-audit/how-to/' },
+];
+
+const toc = [
+  { label: 'Gather Your Tools', id: 'gather-your-tools' },
+  { label: 'Crawl and Inventory', id: 'crawl-and-inventory' },
+  { label: 'Pull Performance Data', id: 'pull-performance-data' },
+  { label: 'Score Each Page', id: 'score-each-page' },
+  { label: 'Assign Actions', id: 'assign-actions' },
+  { label: 'Execute and Monitor', id: 'execute-and-monitor' },
+];
+---
+
+<ContentLayout
+  title="How to Do a Website Content Audit: Step-by-Step"
+  description="Learn the complete process for auditing your website content. This step-by-step guide covers inventory, performance analysis, scoring, and action planning to improve every page on your site."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>A website content audit is a systematic review of every piece of content on your site. The goal is simple: find out what is working, what is underperforming, and what should be removed or rewritten. Without a content audit, you are making editorial decisions based on guesswork rather than evidence.</p>
+
+  <p>Most sites accumulate content over years without ever stepping back to evaluate the whole picture. Blog posts from 2019 sit alongside landing pages from last month, and nobody knows which pages actually drive traffic, leads, or revenue. A content audit fixes that blind spot. It gives you a complete inventory tied to real performance data so you can make confident decisions about what to keep, update, consolidate, or delete.</p>
+
+  <p>This guide walks you through the entire process from start to finish. Whether you manage a 50-page business site or a 5,000-page content hub, the methodology scales. Plan to spend between four hours and two full days depending on site size.</p>
+
+  <h2 id="gather-your-tools">Step 1: Gather Your Tools</h2>
+
+  <p>Before you start pulling data, you need the right tools configured and ready. Trying to run a content audit without proper tooling means you will miss pages, misread performance, and waste hours on manual work that software handles in seconds.</p>
+
+  <p>Here is the essential toolkit for a thorough content audit:</p>
+
+  <ul>
+    <li><strong>Google Search Console</strong> — provides impression counts, click data, average position, and click-through rates for every indexed page. This is your primary source of organic search performance data and it is free.</li>
+    <li><strong>Google Analytics 4</strong> — shows sessions, engagement rate, conversions, and user behaviour metrics. You need this to understand what visitors do after they land on a page.</li>
+    <li><strong>A site crawler</strong> — Screaming Frog, Sitebulb, or ContentKing. Crawlers discover every URL on your site including pages you may have forgotten about. They also extract metadata, word counts, heading structures, and internal link counts.</li>
+    <li><strong>A spreadsheet tool</strong> — Google Sheets or Excel. You will combine data from multiple sources into a single master document. Every page gets a row, and every metric gets a column.</li>
+    <li><strong>Ahrefs or Semrush</strong> — for backlink data, keyword rankings, and competitive benchmarking. These tools show you which pages have earned external authority and which are ranking for valuable terms.</li>
+  </ul>
+
+  <p>Set up API connections or export schedules before you begin the audit. If you are using Google Sheets, install the Search Analytics for Sheets add-on to pull GSC data directly. The less manual copying you do, the fewer errors creep into your dataset.</p>
+
+  <h2 id="crawl-and-inventory">Step 2: Crawl and Inventory</h2>
+
+  <p>Run a full crawl of your website to build a complete URL inventory. Configure your crawler to follow internal links from the homepage and also import your XML sitemap URLs so you capture pages that may be orphaned from the internal link structure.</p>
+
+  <p>For each URL, your crawl should capture the following data points:</p>
+
+  <ul>
+    <li><strong>URL and page title</strong> — the basic identifier for every piece of content.</li>
+    <li><strong>HTTP status code</strong> — live pages return 200. Watch for 301 redirects, 404 errors, and soft 404s that return a 200 status but display an error page.</li>
+    <li><strong>Word count</strong> — a rough measure of content depth. Pages under 300 words are often thin content candidates.</li>
+    <li><strong>Meta description</strong> — check whether every page has a unique, compelling meta description or if they are missing and duplicated.</li>
+    <li><strong>Heading structure</strong> — does the page have a single H1 and a logical hierarchy of H2s and H3s?</li>
+    <li><strong>Internal links in and out</strong> — pages with zero internal links pointing to them are orphaned and nearly invisible to search engines and users.</li>
+    <li><strong>Publish date and last modified date</strong> — essential for identifying stale content that needs refreshing.</li>
+  </ul>
+
+  <p>Export this crawl data into your master spreadsheet. Each row represents one URL. Sort by content type or directory to group similar pages together. A typical content audit spreadsheet has 20 to 40 columns by the time you finish adding performance data in the next step.</p>
+
+  <h2 id="pull-performance-data">Step 3: Pull Performance Data</h2>
+
+  <p>With your inventory built, you now layer in performance data from analytics and search platforms. This transforms your spreadsheet from a simple URL list into a decision-making tool.</p>
+
+  <p>From Google Search Console, pull the following for each URL over the last 12 months:</p>
+
+  <ul>
+    <li><strong>Total clicks</strong> — how much organic traffic the page actually receives.</li>
+    <li><strong>Total impressions</strong> — how often the page appears in search results, even if nobody clicks.</li>
+    <li><strong>Average CTR</strong> — clicks divided by impressions. A low CTR on a high-impression page signals a title tag or meta description problem.</li>
+    <li><strong>Average position</strong> — where the page ranks on average across all its queries.</li>
+  </ul>
+
+  <p>From Google Analytics 4, add these metrics per page:</p>
+
+  <ul>
+    <li><strong>Sessions</strong> — total visits from all traffic sources, not just organic.</li>
+    <li><strong>Engagement rate</strong> — the percentage of sessions that lasted more than 10 seconds, had a conversion event, or had two or more page views.</li>
+    <li><strong>Conversions</strong> — goal completions, form submissions, purchases, or whatever your site defines as a conversion.</li>
+    <li><strong>Revenue</strong> — if applicable, the monetary value each page contributes.</li>
+  </ul>
+
+  <p>From Ahrefs or Semrush, add backlink counts and referring domain counts for each URL. Pages with strong backlink profiles deserve special attention because removing or redirecting them without care wastes link equity you have spent years building.</p>
+
+  <p>Use VLOOKUP or INDEX-MATCH to merge these datasets by URL. Clean up URL formatting first — trailing slashes, HTTP vs HTTPS, and www vs non-www variants will cause mismatches if you do not standardise them.</p>
+
+  <h2 id="score-each-page">Step 4: Score Each Page</h2>
+
+  <p>Now you have a spreadsheet with every page and its performance data. The next step is scoring each page so you can quickly see which pages are strong, which need work, and which should be removed.</p>
+
+  <p>Create a scoring system based on your business goals. Here is a proven framework that works for most sites:</p>
+
+  <ul>
+    <li><strong>Traffic score (0-3)</strong> — 0 for zero sessions in 12 months, 1 for 1-100 sessions, 2 for 101-1000, 3 for 1000+. Adjust thresholds to your site's scale.</li>
+    <li><strong>Engagement score (0-3)</strong> — based on engagement rate. 0 for under 30%, 1 for 30-50%, 2 for 50-70%, 3 for above 70%.</li>
+    <li><strong>Conversion score (0-3)</strong> — 0 for no conversions, 1-3 based on conversion volume relative to your site average.</li>
+    <li><strong>SEO score (0-3)</strong> — based on average organic position and impression volume. Pages ranking on page one with high impressions score highest.</li>
+    <li><strong>Backlink score (0-3)</strong> — 0 for no referring domains, 1 for 1-5, 2 for 6-20, 3 for 21+.</li>
+  </ul>
+
+  <p>Sum the scores for a composite score out of 15. Pages scoring 12-15 are your top performers — protect them. Pages scoring 7-11 are mid-tier candidates for optimisation. Pages scoring 0-6 need serious attention: either a full rewrite, consolidation with a stronger page, or removal.</p>
+
+  <p>Add a conditional formatting colour scale to the composite score column. Green for high scores, yellow for mid-range, red for low scores. This gives you an instant visual overview of your content health when you scroll through the spreadsheet.</p>
+
+  <h2 id="assign-actions">Step 5: Assign Actions</h2>
+
+  <p>Every page in your audit needs a clear action. Ambiguity at this stage means nothing gets done. Create an Action column and assign one of these labels to each URL:</p>
+
+  <ul>
+    <li><strong>Keep</strong> — the page performs well and needs no changes. Monitor it but do not touch it.</li>
+    <li><strong>Update</strong> — the page has potential but needs a content refresh. This might mean updating statistics, adding new sections, improving the title tag, or enhancing internal linking.</li>
+    <li><strong>Consolidate</strong> — the page covers a topic that overlaps with another page. Merge the best content from both pages into one stronger piece and redirect the weaker URL.</li>
+    <li><strong>Rewrite</strong> — the page targets a valuable keyword but the content quality is poor. Start from scratch with a new outline and better research.</li>
+    <li><strong>Remove</strong> — the page has no traffic, no backlinks, no conversions, and targets no valuable keyword. Delete it and set up a 410 or redirect to the nearest relevant page.</li>
+    <li><strong>Create</strong> — this is not an existing page but a gap you identified. During the audit you may notice topics your competitors cover that you do not. Log these as new content opportunities.</li>
+  </ul>
+
+  <p>Add a Priority column (high, medium, low) and an Owner column if you work with a team. High priority goes to pages with the best ratio of potential gain to effort required. A page sitting at position 11 with high impressions is a quick win — a small content update could push it to page one and unlock significant traffic.</p>
+
+  <p>Sort the spreadsheet by action type and priority so you have a clear execution queue. Your update and consolidate actions should outnumber your remove actions on a healthy site. If most of your content scores poorly, that signals a systemic content quality problem rather than individual page issues.</p>
+
+  <h2 id="execute-and-monitor">Step 6: Execute and Monitor</h2>
+
+  <p>An audit that sits in a spreadsheet and never gets executed is worthless. The execution phase is where the actual value is created.</p>
+
+  <p>Start with your high-priority updates. These are pages that already have some organic traction and need refinement rather than a complete overhaul. Common update tasks include refreshing outdated statistics, adding new sections to improve topical depth, rewriting title tags and meta descriptions for better CTR, and fixing broken internal and external links.</p>
+
+  <p>For consolidation projects, choose the URL with the strongest backlink profile and organic performance as the survivor. Redirect the weaker URL to it with a 301 redirect. Move any unique content or keywords from the weaker page into the survivor before you redirect.</p>
+
+  <p>For content removals, check one more time that the page has zero backlinks and zero meaningful traffic. If it does have backlinks, redirect rather than delete. Set up 301 redirects to the most relevant remaining page on your site. If nothing is relevant, redirect to the parent category page.</p>
+
+  <p>Set up a monitoring cadence after execution. Check GSC data weekly for the first month after making changes to see how Google responds. Expect some fluctuation in the first two to four weeks as Google recrawls and re-evaluates updated pages.</p>
+
+  <p>Schedule your next content audit in six months for fast-moving sites or 12 months for stable ones. Add a calendar reminder now so you do not forget. Each subsequent audit is faster because you already have the framework and spreadsheet structure in place — you just need to refresh the data and reassess.</p>
+
+  <p>The best content teams treat the content audit as an ongoing discipline rather than a one-off project. They maintain a living audit spreadsheet that gets updated monthly with fresh performance data, making the formal audit a quick review rather than a ground-up rebuild every time.</p>
+</ContentLayout>

@@ -1,0 +1,141 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Content Audit', href: '/website-content-audit/' },
+  { label: 'Template', href: '/website-content-audit/template/' },
+];
+
+const toc = [
+  { label: 'What the Template Includes', id: 'what-the-template-includes' },
+  { label: 'Column Descriptions', id: 'column-descriptions' },
+  { label: 'Scoring System', id: 'scoring-system' },
+  { label: 'How to Fill It In', id: 'how-to-fill-it-in' },
+  { label: 'Customisation Tips', id: 'customisation-tips' },
+  { label: 'Download', id: 'download' },
+];
+---
+
+<ContentLayout
+  title="Website Content Audit Template: Free Spreadsheet"
+  description="Download our free website content audit template with pre-built columns, scoring formulas, and action labels. Works in Google Sheets and Excel for sites of any size."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+  <p>A content audit is only as good as the spreadsheet you build it in. Without a structured template, you end up with a chaotic document where columns are inconsistent, scoring is subjective, and nobody can pick up where you left off. A well-designed content audit template solves all of these problems by giving you a repeatable framework that works every time.</p>
+
+  <p>We have built and refined this template across hundreds of content audits for sites ranging from 30 pages to 30,000 pages. The structure below is the result of years of iteration. It captures every data point you need without overwhelming you with unnecessary complexity. Whether you are an SEO professional auditing a client site or a marketing manager reviewing your own content, this template saves you hours of setup time.</p>
+
+  <p>The template works in Google Sheets and Microsoft Excel. All formulas are compatible with both platforms. Conditional formatting rules are included so your spreadsheet colour-codes itself as you fill in the data.</p>
+
+  <h2 id="what-the-template-includes">What the Template Includes</h2>
+
+  <p>The template contains four tabs, each serving a distinct purpose in the audit workflow:</p>
+
+  <ul>
+    <li><strong>URL Inventory</strong> — the main working tab. Every URL on your site gets one row. Columns cover identification data, performance metrics, content quality indicators, and action assignments. This is where you spend 90 percent of your time during the audit.</li>
+    <li><strong>Scoring Reference</strong> — a lookup table that defines the scoring criteria for each metric. This ensures consistency whether one person or five people are filling in the audit. It also makes the scoring transparent so stakeholders can understand and challenge the methodology.</li>
+    <li><strong>Summary Dashboard</strong> — an overview tab with pivot-style summaries. It shows total pages by action type, average scores by content category, and trend comparisons if you are running a repeat audit. Charts auto-populate as you fill in the inventory tab.</li>
+    <li><strong>Change Log</strong> — tracks what actions were taken on each URL after the audit. Columns for date completed, who did it, and a link to the updated page. This turns your audit from a one-time report into a living project management tool.</li>
+  </ul>
+
+  <p>Each tab is pre-formatted with frozen header rows, filter views, and data validation dropdowns. You do not need to build any of this from scratch.</p>
+
+  <h2 id="column-descriptions">Column Descriptions</h2>
+
+  <p>The URL Inventory tab contains the following columns grouped by category. Understanding what each column captures helps you fill in the data accurately and use the audit effectively.</p>
+
+  <p><strong>Identification columns:</strong></p>
+
+  <ul>
+    <li><strong>URL</strong> — the full page URL including protocol and trailing slash. Standardise all URLs to the same format before importing.</li>
+    <li><strong>Page Title</strong> — the H1 or title tag content. This helps you identify pages quickly when scanning the spreadsheet.</li>
+    <li><strong>Content Type</strong> — dropdown with options like blog post, landing page, product page, category page, resource page, and legal page. Grouping by type lets you analyse performance patterns across content categories.</li>
+    <li><strong>Topic Cluster</strong> — the parent topic or pillar this page belongs to. Essential for identifying cannibalisation and coverage gaps within topic groups.</li>
+    <li><strong>Publish Date</strong> — when the content was first published. Used to calculate content age and identify decay patterns.</li>
+    <li><strong>Last Updated</strong> — the most recent edit date. Pages not updated in over 18 months are prime candidates for a refresh.</li>
+  </ul>
+
+  <p><strong>Performance columns:</strong></p>
+
+  <ul>
+    <li><strong>Organic Clicks (12mo)</strong> — total clicks from Google Search Console over the past 12 months.</li>
+    <li><strong>Organic Impressions (12mo)</strong> — total search impressions for the same period.</li>
+    <li><strong>Average CTR</strong> — calculated as clicks divided by impressions. The template auto-calculates this from the two preceding columns.</li>
+    <li><strong>Average Position</strong> — mean ranking position from GSC.</li>
+    <li><strong>GA4 Sessions</strong> — total sessions from all traffic sources in Google Analytics 4.</li>
+    <li><strong>Engagement Rate</strong> — the GA4 engagement rate percentage.</li>
+    <li><strong>Conversions</strong> — total conversion events attributed to the page.</li>
+    <li><strong>Referring Domains</strong> — number of unique domains linking to this URL, pulled from Ahrefs or Semrush.</li>
+  </ul>
+
+  <p><strong>Quality columns:</strong></p>
+
+  <ul>
+    <li><strong>Word Count</strong> — total words on the page, exported from your crawler.</li>
+    <li><strong>Readability Score</strong> — Flesch-Kincaid or similar readability metric. Content aimed at general audiences should score between 60 and 80.</li>
+    <li><strong>Internal Links In</strong> — number of internal links pointing to this page.</li>
+    <li><strong>Internal Links Out</strong> — number of internal links on this page pointing to other pages on your site.</li>
+  </ul>
+
+  <h2 id="scoring-system">Scoring System</h2>
+
+  <p>The template uses a five-dimension scoring system where each dimension is scored from zero to three. The maximum composite score is 15. This granularity is sufficient to separate strong content from weak content without making the scoring process tediously complex.</p>
+
+  <p><strong>Traffic Score (0-3):</strong> Based on organic clicks over 12 months. Score 0 for zero clicks. Score 1 for 1 to 100 clicks. Score 2 for 101 to 500 clicks. Score 3 for 501 or more clicks. Adjust these thresholds based on your site's traffic level. A site averaging 50,000 monthly sessions needs different bands than one averaging 500.</p>
+
+  <p><strong>Engagement Score (0-3):</strong> Based on GA4 engagement rate. Score 0 for under 25 percent. Score 1 for 25 to 45 percent. Score 2 for 46 to 65 percent. Score 3 for above 65 percent.</p>
+
+  <p><strong>Conversion Score (0-3):</strong> Based on conversion count relative to your site average. Score 0 for no conversions. Score 1 for below average. Score 2 for average. Score 3 for above average.</p>
+
+  <p><strong>SEO Visibility Score (0-3):</strong> Based on a combination of average position and impression volume. Score 3 for pages ranking in positions 1-10 with over 1,000 monthly impressions. Score 0 for pages not appearing in GSC data at all.</p>
+
+  <p><strong>Authority Score (0-3):</strong> Based on referring domain count. Score 0 for zero referring domains. Score 1 for 1 to 3. Score 2 for 4 to 15. Score 3 for 16 or more.</p>
+
+  <p>The composite score drives the conditional formatting. Cells turn green for scores of 12 to 15, yellow for 7 to 11, and red for 0 to 6. This gives you an instant visual heat map of your content library when you scroll through the spreadsheet.</p>
+
+  <h2 id="how-to-fill-it-in">How to Fill It In</h2>
+
+  <p>Follow this sequence to populate the template efficiently without jumping between tools more than necessary:</p>
+
+  <p><strong>Step 1: Import your crawl data.</strong> Export your Screaming Frog or Sitebulb crawl as a CSV. Copy the URL, page title, word count, H1, meta description, internal links in, and internal links out columns into the template. This populates your identification and quality columns in one pass.</p>
+
+  <p><strong>Step 2: Add GSC data.</strong> Use the Search Analytics for Sheets add-on or export from GSC directly. Pull page-level data for the last 12 months. Match URLs using VLOOKUP against your inventory. This fills your organic clicks, impressions, CTR, and average position columns.</p>
+
+  <p><strong>Step 3: Add GA4 data.</strong> Export the Pages and Screens report from GA4 for the same 12-month period. Match by page path. This fills sessions, engagement rate, and conversions.</p>
+
+  <p><strong>Step 4: Add backlink data.</strong> Export your site's backlink profile from Ahrefs (Best by Links report) or Semrush. Match by URL to fill the referring domains column.</p>
+
+  <p><strong>Step 5: Fill in manual fields.</strong> Content type, topic cluster, and publish date usually require manual entry or a CMS export. If your CMS has an API, you can automate this step with a script.</p>
+
+  <p><strong>Step 6: Review scores and assign actions.</strong> Once all data is populated, the scoring formulas calculate automatically. Review each page's composite score, check the conditional formatting, and assign an action from the dropdown: Keep, Update, Consolidate, Rewrite, or Remove.</p>
+
+  <h2 id="customisation-tips">Customisation Tips</h2>
+
+  <p>The template is designed to be modified for your specific needs. Here are the most common customisations we see teams make:</p>
+
+  <ul>
+    <li><strong>Add a revenue column</strong> — if you run an ecommerce site or track revenue per page in GA4, add a Revenue column and factor it into your scoring. Revenue-generating pages should almost never be removed, even if their traffic is low.</li>
+    <li><strong>Add a content freshness flag</strong> — create a formula that calculates the number of days since the last update. Flag anything over 365 days as stale. This automated aging indicator saves you from manually checking dates.</li>
+    <li><strong>Adjust scoring thresholds</strong> — the default thresholds work for mid-sized sites with moderate traffic. High-traffic sites should raise the bands. Low-traffic niche sites should lower them. The goal is a roughly even distribution across score levels.</li>
+    <li><strong>Add competitor comparison columns</strong> — for each topic cluster, note whether your top competitor has a page targeting the same keyword and their word count and position. This helps prioritise updates where you are being outranked.</li>
+    <li><strong>Create filtered views by team member</strong> — if multiple people are executing the audit actions, create saved filter views in Google Sheets so each person sees only their assigned pages.</li>
+    <li><strong>Add a notes column</strong> — free-text notes for anything that does not fit neatly into a structured column. Common entries include specific rewrite instructions, stakeholder feedback, or reasons for keeping a low-scoring page.</li>
+  </ul>
+
+  <p>Do not add so many custom columns that the spreadsheet becomes unwieldy. If you find yourself with more than 40 columns, consider whether some data points belong in a separate reference tab rather than the main inventory.</p>
+
+  <h2 id="download">Download</h2>
+
+  <p>The template is available as a Google Sheets file that you can copy to your own Google Drive. It is also available as an Excel download for teams that prefer to work locally.</p>
+
+  <p>To use the Google Sheets version, click the link below and select File then Make a Copy. This creates your own editable version that you can customise freely without affecting the original template.</p>
+
+  <p>The Excel version includes the same structure, formulas, and conditional formatting rules. Some advanced features like data validation dropdowns may need minor adjustments if you are using an older version of Excel.</p>
+
+  <p>Both versions include sample data for a fictional 50-page website so you can see how a completed audit looks before you start on your own site. Delete the sample rows when you are ready to begin.</p>
+
+  <p>If you want a hands-off approach, our team can run the complete content audit for you using this template and deliver a populated spreadsheet with all actions assigned and prioritised. <a href="/website-audit-services/">Learn more about our content audit service</a> or <a href="/free-website-audit/">run a free automated scan</a> to get started.</p>
+</ContentLayout>

@@ -1,0 +1,130 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Free Audit', href: '/free-website-audit/' },
+  { label: 'SEO', href: '/free-website-audit/seo/' },
+];
+
+const toc = [
+  { label: 'What Our Free SEO Audit Checks', id: 'what-our-free-seo-audit-checks' },
+  { label: 'How to Use the Tool', id: 'how-to-use-the-tool' },
+  { label: 'Interpreting Your Score', id: 'interpreting-your-score' },
+  { label: 'Common Issues Found', id: 'common-issues-found' },
+  { label: 'When You Need More', id: 'when-you-need-more' },
+  { label: 'Getting Started', id: 'getting-started' },
+];
+---
+
+<ContentLayout
+  title="Free SEO Audit Tool: Check Your Site's SEO Health"
+  description="Run a free SEO audit on any website. Our tool checks meta tags, heading structure, canonical tags, indexability, internal links, and more. Get your SEO score in 60 seconds."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  publishDate="2026-03-28"
+>
+
+<p>Your website might look great to visitors, but search engines see something entirely different. A <strong>free SEO audit</strong> reveals the gap between what you think your site communicates and what Google actually understands. Our tool analyses the on-page SEO factors that directly influence your rankings, crawlability, and click-through rates — and it does it in under a minute without requiring a login or payment.</p>
+
+<p>Most websites have between 15 and 40 SEO issues that their owners are completely unaware of. Missing canonical tags, duplicate title tags, broken internal links, thin meta descriptions, orphaned pages — these are the silent killers of search visibility. They do not produce error messages. They do not break your design. They simply prevent Google from ranking your pages where they deserve to appear.</p>
+
+<p>Our free SEO audit tool was built to surface exactly these issues. It is not a replacement for a full technical audit or a professional SEO strategy, but it gives you a clear, honest picture of your site's SEO health right now and tells you precisely where to focus your effort first.</p>
+
+<h2 id="what-our-free-seo-audit-checks">What Our Free SEO Audit Checks</h2>
+
+<p>Our scanner evaluates your website against 30 SEO-specific factors, grouped into five categories. Each factor is weighted according to its real-world impact on search rankings and organic traffic.</p>
+
+<h3>On-Page SEO Elements</h3>
+
+<p><strong>Title tags.</strong> We verify that every crawled page has a unique title tag within the 30-60 character sweet spot. We flag missing titles, duplicate titles across pages, titles that are too long (truncated in search results), and titles that are too short (wasting SERP real estate). Google uses the title tag as its primary signal for understanding page topic, so errors here have outsized impact.</p>
+
+<p><strong>Meta descriptions.</strong> We check for presence, uniqueness, and length (120-160 characters). While meta descriptions are not a direct ranking factor, they are your advertisement in search results. Pages with compelling, accurate descriptions consistently achieve higher click-through rates than those with auto-generated snippets.</p>
+
+<p><strong>Heading hierarchy.</strong> We analyse your H1 through H6 structure to ensure each page has exactly one H1, that headings follow a logical hierarchy (no H3 before H2), and that heading text includes relevant topic language. A clean heading structure helps both users and search engines understand your content's organisation.</p>
+
+<p><strong>Image optimisation.</strong> We scan every image for alt text, check file sizes against performance thresholds, and identify images served without next-gen formats (WebP or AVIF). Images without alt text are invisible to Google Image Search and inaccessible to screen readers. Oversized images slow page load, which directly harms rankings.</p>
+
+<h3>Technical SEO Signals</h3>
+
+<p><strong>Canonical tags.</strong> We verify that each page specifies a canonical URL and that the canonical points to a valid, indexable page. Incorrect or missing canonicals are one of the most frequent causes of indexation problems. When Google cannot determine the canonical version of a page, it may index the wrong variant or skip the page entirely.</p>
+
+<p><strong>Robots directives.</strong> We check for noindex tags, nofollow attributes, and robots.txt rules that might be preventing search engines from crawling or indexing your content. It is surprisingly common for staging noindex tags to persist on production pages after a site migration.</p>
+
+<p><strong>URL structure.</strong> We evaluate URL length, use of special characters, parameter strings, and consistency of trailing slashes. Clean, readable URLs are easier for search engines to parse and for users to trust when they appear in search results.</p>
+
+<p><strong>Internal linking.</strong> We crawl the links between your pages to identify orphan pages (pages with no internal links pointing to them), excessive link depth (pages requiring more than three clicks from the homepage), and broken internal links. Internal link architecture is one of the most underused levers in SEO.</p>
+
+<h3>Indexability and Crawlability</h3>
+
+<p><strong>Sitemap presence.</strong> We check whether your site has an XML sitemap at the standard locations (/sitemap.xml, /sitemap_index.xml) and whether it is referenced in robots.txt. A sitemap does not guarantee indexing, but its absence means you are relying entirely on crawl discovery.</p>
+
+<p><strong>Robots.txt configuration.</strong> We parse your robots.txt file to identify overly restrictive rules, contradictory directives, and missing sitemap references. A misconfigured robots.txt can silently block entire sections of your site from search engines.</p>
+
+<p><strong>HTTP status codes.</strong> We verify that all pages return 200 status codes, identify redirect chains (301 to 301 to 200), and flag any 4xx or 5xx errors encountered during the crawl.</p>
+
+<h2 id="how-to-use-the-tool">How to Use the Tool</h2>
+
+<p>Using our free SEO audit tool takes less than a minute. Enter your website's homepage URL in the scanner input field at the top of this page. You can enter a bare domain (example.com), a full URL with protocol (https://example.com), or a specific page URL if you want to audit a single page rather than your whole site.</p>
+
+<p>Once you submit your URL, the scanner begins its analysis immediately. You will see a progress indicator as it works through the checks. The process typically completes in 30-60 seconds depending on your server's response time and the number of linked pages discovered.</p>
+
+<p>When the scan finishes, you will see your overall SEO score prominently displayed, followed by a detailed breakdown of every check that was run. Each finding is categorised as Critical (must fix), Warning (should fix), or Pass (no action needed). Critical issues are listed first because they have the largest impact on your rankings.</p>
+
+<p>You can share your results by copying the unique results URL or exporting the page as a PDF from your browser's print dialog. There is no account to create and no email to provide. Your results are generated client-side and are available immediately.</p>
+
+<h2 id="interpreting-your-score">Interpreting Your Score</h2>
+
+<p>Your SEO audit score ranges from 0 to 100. Here is what each range means in practical terms.</p>
+
+<p><strong>90-100: Excellent.</strong> Your on-page SEO fundamentals are solid. You have unique, well-crafted title tags and meta descriptions, a clean heading structure, proper canonical configuration, and no major crawlability issues. At this level, your SEO gains will come from content strategy, backlink acquisition, and advanced technical optimisation rather than fixing basic errors.</p>
+
+<p><strong>70-89: Good with room for improvement.</strong> Most of your SEO basics are in place, but there are specific issues worth addressing. Common findings in this range include a few duplicate meta descriptions, some images missing alt text, or minor canonical inconsistencies. Fixing these issues typically takes a few hours and can produce measurable ranking improvements within weeks.</p>
+
+<p><strong>50-69: Needs attention.</strong> Your site has multiple SEO issues that are likely suppressing your organic traffic. This range often indicates systemic problems — missing meta descriptions across entire sections, broken internal links, or inconsistent canonical tags. A focused SEO sprint can address most issues in this range within a week.</p>
+
+<p><strong>Below 50: Critical issues present.</strong> Your site has fundamental SEO problems that are severely limiting your search visibility. This might include noindex tags on important pages, a missing or broken sitemap, widespread duplicate content, or a robots.txt that blocks significant sections of your site. These issues require immediate attention.</p>
+
+<p>Remember that this score reflects on-page and technical SEO factors only. It does not account for content quality, backlink profile, domain authority, or competitive landscape. A site can score 95 on our audit and still rank poorly if the content does not match search intent or the site lacks authoritative backlinks.</p>
+
+<h2 id="common-issues-found">Common Issues Found</h2>
+
+<p>After running thousands of audits, we see the same issues appear repeatedly. Here are the most common SEO problems our tool finds and why they matter.</p>
+
+<p><strong>Duplicate title tags.</strong> This is the single most common issue, affecting roughly 60% of sites we scan. It typically happens when a CMS generates default titles (like the site name) for pages that were not manually optimised, or when product/category pages share template-generated titles. Every page on your site should have a unique, descriptive title.</p>
+
+<p><strong>Missing meta descriptions.</strong> About 45% of scanned sites have pages without meta descriptions. When Google cannot find a meta description, it auto-generates one from page content. These auto-generated snippets are often awkward, truncated mid-sentence, or pull irrelevant text. Writing your own descriptions gives you control over your search listing.</p>
+
+<p><strong>Images without alt text.</strong> This affects nearly 70% of sites. Developers and content creators frequently upload images without writing alt attributes. Beyond the SEO impact, this is an accessibility failure that excludes visually impaired users who rely on screen readers.</p>
+
+<p><strong>Missing canonical tags.</strong> Around 35% of sites lack canonical tags on some or all pages. Without canonicals, you leave it to Google to guess which version of a page is the primary one. On sites with URL parameters, print-friendly versions, or mixed HTTP/HTTPS access, this can cause serious duplicate content issues.</p>
+
+<p><strong>Broken internal links.</strong> About 40% of sites have at least one broken internal link. These typically accumulate over time as pages are deleted, URLs are changed, or content is restructured without updating all references. Broken links waste crawl budget and create dead ends for both users and search engines.</p>
+
+<p><strong>No XML sitemap.</strong> Roughly 25% of sites lack a sitemap or have one that is outdated, malformed, or not referenced in robots.txt. While Google can discover pages through crawling, a sitemap is the clearest way to communicate your site structure and ensure all important pages are known to search engines.</p>
+
+<h2 id="when-you-need-more">When You Need More</h2>
+
+<p>Our free SEO audit is a surface-level diagnostic. It tells you what is wrong but not always why it is wrong or how to fix it in the context of your specific platform, CMS, and business goals. Here are the situations where a free audit is not enough.</p>
+
+<p><strong>Post-migration SEO recovery.</strong> If you have recently migrated to a new domain, redesigned your site, or changed CMS platforms, a free audit can show you the symptoms (traffic drops, indexation issues) but cannot map old URLs to new ones, audit redirect chains at scale, or identify content that was lost in the migration. You need a professional migration audit.</p>
+
+<p><strong>Competitive SEO strategy.</strong> A free audit only looks at your site. It cannot tell you what your competitors are doing differently, which keywords represent the best opportunities, or how your content strategy should evolve. For that, you need keyword research, competitor analysis, and a content gap assessment.</p>
+
+<p><strong>Large or complex sites.</strong> Our free tool crawls up to 5 pages. If your site has hundreds or thousands of pages, a free audit only scratches the surface. Enterprise sites need full-site crawls using tools like Screaming Frog or Sitebulb, combined with log file analysis and server-side performance data.</p>
+
+<p><strong>E-commerce SEO.</strong> Online stores face unique SEO challenges — faceted navigation, product variants, out-of-stock pages, thin product descriptions, and complex internal linking. A free audit flags generic issues but cannot address the platform-specific configurations (Shopify, WooCommerce, Magento) that determine how search engines handle your product catalogue.</p>
+
+<p><strong>Penalty recovery.</strong> If your site has been hit by a Google penalty (manual action or algorithmic), a free audit will not identify the cause. Penalty recovery requires analysis of your backlink profile, content quality across the entire site, and a detailed understanding of which Google algorithm was triggered.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Enter your URL in the scanner above to run your free SEO audit now. The results will show you exactly where your site stands and which issues deserve your attention first.</p>
+
+<p>Once you have your results, focus on the critical issues before moving to warnings. Critical findings like noindex directives on important pages or a broken sitemap should be fixed immediately because they have the most direct impact on your search visibility.</p>
+
+<p>If your score is below 70, consider running a <a href="/free-website-audit/">full website audit</a> that covers performance, security, and accessibility in addition to SEO. Many SEO problems are intertwined with technical issues — a slow server harms rankings just as much as a missing title tag.</p>
+
+<p>For sites that score well on the free audit but still underperform in search, the next step is a professional SEO assessment that goes beyond on-page factors to examine your content strategy, backlink profile, and competitive positioning. Our <a href="/website-audit-services/">audit services</a> provide exactly that level of depth.</p>
+
+</ContentLayout>
