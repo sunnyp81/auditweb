@@ -8,156 +8,143 @@ const breadcrumbs = [
 ];
 
 const toc = [
-  { label: 'What Makes It Full', id: 'what-makes-it-full' },
-  { label: 'Technical Foundation', id: 'technical-foundation' },
-  { label: 'On-Page Analysis', id: 'on-page-analysis' },
-  { label: 'Content Evaluation', id: 'content-evaluation' },
-  { label: 'Off-Page Review', id: 'off-page-review' },
-  { label: 'UX and Conversion', id: 'ux-and-conversion' },
-  { label: 'Competitive Benchmarking', id: 'competitive-benchmarking' },
-  { label: 'Putting It Together', id: 'putting-it-together' },
+  { label: 'What Makes an Audit Full', id: 'what-makes-an-audit-full' },
+  { label: 'Phase 1 Technical Foundation', id: 'phase-1-technical-foundation' },
+  { label: 'Phase 2 On-Page Analysis', id: 'phase-2-on-page-analysis' },
+  { label: 'Phase 3 Content Evaluation', id: 'phase-3-content-evaluation' },
+  { label: 'Phase 4 Off-Page Review', id: 'phase-4-off-page-review' },
+  { label: 'Phase 5 UX and Conversion', id: 'phase-5-ux-and-conversion' },
+  { label: 'Phase 6 Competitive Benchmarking', id: 'phase-6-competitive-benchmarking' },
+  { label: 'Putting It All Together', id: 'putting-it-all-together' },
 ];
 ---
 
 <ContentLayout
-  title="Full Website SEO Audit: Complete Step-by-Step Process"
-  description="A full SEO audit covers technical infrastructure, on-page optimisation, content quality, backlink profile, user experience, and competitive positioning in one comprehensive review."
+  title="Full Website SEO Audit: Step-by-Step Process"
+  description="A full website SEO audit covers everything — technical, on-page, content, off-page, UX, and competitive analysis. Here's the complete process from start to finish."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  showLeadForm={true}
 >
-  <p>A full website SEO audit is the most thorough analysis you can perform on a website's search performance. It goes beyond checking a handful of technical issues or reviewing a few pages of content. A complete audit examines every layer of your site — from server configuration and crawlability through to content quality, backlink health, user experience, and how you measure up against competitors in your space.</p>
+  <p>A full website SEO audit is the most comprehensive diagnostic you can run on a website. Unlike targeted audits that focus on a single area — technical health, content quality, or backlink profile — a full audit examines every dimension of SEO performance from crawl infrastructure to competitive positioning. It is the equivalent of a full medical examination versus testing a single symptom: you discover not just the obvious problems but the underlying conditions that create them and the connections between issues that partial audits miss entirely.</p>
 
-  <p>Most sites have never had a genuine full audit. They have had partial checks — a crawl report from Screaming Frog, a content review of their top ten pages, or a quick look at their backlink profile. These partial audits miss the interdependencies between different SEO components. A technical issue like slow server response time affects your content rankings. A weak backlink profile undermines the authority of your strongest content. Poor user experience drives up bounce rates that erode the ranking signals from every other optimisation you have made. Only a full audit reveals how these layers interact and where the real bottlenecks lie.</p>
+  <p>The process described here takes between two and five days depending on site size and complexity. It is structured in six sequential phases, where each phase builds on the findings of the previous one. This order matters because technical issues found in Phase 1 affect the context of findings in every subsequent phase. A page cannot rank well if Google cannot crawl it, so verifying crawlability before evaluating content quality prevents you from wasting time optimising pages that search engines cannot access.</p>
 
-  <p>This guide provides the complete step-by-step process for conducting a full SEO audit, covering every component in the order that maximises efficiency and ensures nothing gets missed.</p>
+  <h2 id="what-makes-an-audit-full">What Makes an Audit Full</h2>
 
-  <h2 id="what-makes-it-full">What Makes It Full</h2>
+  <p>The difference between a full audit and a partial audit is not just scope — it is the synthesis of findings across all areas. Individual audits identify problems within their domain. A full audit identifies the relationships between problems across domains, which is where the most impactful insights emerge.</p>
 
-  <p>A full SEO audit differs from a partial audit in both scope and depth. Partial audits typically focus on a single dimension — technical health, content quality, or backlink profile — and deliver findings within that narrow frame. A full audit covers all dimensions simultaneously and, critically, analyses how they interact.</p>
+  <p>For example, a technical audit might find that 30% of your pages load slowly. A content audit might find that your blog posts have high bounce rates. A full audit connects these findings: the slow-loading blog posts are causing bounces, which send negative engagement signals to Google, which lowers rankings, which reduces traffic to your highest-converting content. The fix is not just "speed up pages" or "improve content" — it is a coordinated effort that addresses both the technical cause and the content impact.</p>
 
-  <p>The six pillars of a complete SEO audit are:</p>
-
-  <ol>
-    <li><strong>Technical infrastructure</strong> — server performance, crawlability, indexation, site architecture, and Core Web Vitals.</li>
-    <li><strong>On-page optimisation</strong> — title tags, meta descriptions, headings, URL structure, internal linking, schema markup, and image optimisation.</li>
-    <li><strong>Content evaluation</strong> — quality assessment, topical coverage, freshness, E-E-A-T signals, and content gap analysis.</li>
-    <li><strong>Off-page signals</strong> — backlink profile quality, referring domain diversity, anchor text distribution, toxic link identification, and link velocity.</li>
-    <li><strong>User experience and conversion</strong> — page speed perception, mobile usability, navigation clarity, conversion paths, and engagement metrics.</li>
-    <li><strong>Competitive benchmarking</strong> — keyword overlap, content advantages, authority comparison, and feature gap analysis against your direct competitors.</li>
-  </ol>
-
-  <p>A full audit typically takes between 20 and 60 hours for an experienced SEO professional, depending on site size and complexity. A 50-page service business site sits at the lower end. A 50,000-page ecommerce store requires the upper end. Attempting to rush through a full audit in a few hours guarantees that significant issues will be missed.</p>
-
-  <p>The output should be a prioritised action plan, not just a list of problems. Every finding needs a severity rating, an estimated impact on traffic or revenue, and a clear description of the fix required. Without prioritisation, teams waste effort fixing minor issues while critical problems persist.</p>
-
-  <h2 id="technical-foundation">Technical Foundation</h2>
-
-  <p>Technical SEO forms the foundation of your entire search presence. If search engines cannot efficiently crawl, render, and index your pages, no amount of content quality or backlink building will compensate. Start your full audit here because technical issues can invalidate findings in other areas — there is no point auditing content quality on pages that Google has not indexed.</p>
-
-  <p>Run a comprehensive crawl of your site using Screaming Frog, Sitebulb, or a comparable crawler. Configure the crawl to respect your robots.txt but also run a secondary crawl that ignores it, so you can identify any important pages accidentally blocked. Your crawl should capture:</p>
+  <p>A full audit covers six dimensions:</p>
 
   <ul>
-    <li><strong>HTTP status codes</strong> — catalogue every 3xx redirect, 4xx client error, and 5xx server error. Redirect chains longer than two hops should be resolved. 404 errors on pages with inbound links or historical traffic need redirects to relevant alternatives. Recurring 5xx errors indicate server instability that affects crawl reliability.</li>
-    <li><strong>Indexation status</strong> — cross-reference your crawl with Google Search Console's index coverage report. Identify pages that should be indexed but are not, and pages that are indexed but should not be. Common culprits include noindex tags left from staging environments, canonical tags pointing to wrong pages, and thin content pages that Google has chosen to exclude.</li>
-    <li><strong>Crawl budget efficiency</strong> — for sites with more than 10,000 pages, analyse the crawl stats in Search Console to understand how Google allocates crawl resources. If Google is spending most of its crawl budget on low-value pages (parameter URLs, tag archives, pagination), your important content receives less frequent crawling.</li>
-    <li><strong>Robots.txt and XML sitemaps</strong> — verify that your robots.txt does not block critical resources (CSS, JavaScript, images) and that your XML sitemap is accurate, contains only indexable pages, and is referenced in robots.txt. A sitemap that includes noindexed pages, redirected URLs, or 404s sends conflicting signals.</li>
-    <li><strong>HTTPS implementation</strong> — check for mixed content warnings, HTTP pages that should redirect to HTTPS, and certificate validity. Verify that canonical tags, sitemap URLs, and internal links all use HTTPS versions.</li>
-    <li><strong>Core Web Vitals</strong> — review field data from Chrome User Experience Report (CrUX) in Search Console and lab data from Lighthouse or PageSpeed Insights. Focus on Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift across your primary page templates.</li>
-    <li><strong>Rendering</strong> — if your site uses JavaScript frameworks, check that Google can render your content. Use the URL Inspection tool in Search Console to compare the rendered HTML against your source code. Content that depends on client-side rendering may not be visible to Googlebot.</li>
+    <li><strong>Technical foundation</strong> — crawlability, indexation, site architecture, server performance, security, and structured data.</li>
+    <li><strong>On-page analysis</strong> — title tags, meta descriptions, headings, keyword targeting, internal linking, and image optimisation.</li>
+    <li><strong>Content evaluation</strong> — content quality, depth, freshness, search intent alignment, E-E-A-T signals, and topical coverage.</li>
+    <li><strong>Off-page review</strong> — backlink profile quality, referring domain diversity, anchor text distribution, and link building opportunities.</li>
+    <li><strong>UX and conversion</strong> — page experience, Core Web Vitals, mobile usability, conversion paths, and user engagement metrics.</li>
+    <li><strong>Competitive benchmarking</strong> — competitor content analysis, backlink comparison, SERP feature competition, and market positioning.</li>
   </ul>
 
-  <p>Document every technical finding with the specific URLs affected, the severity of the issue, and the recommended fix. Group findings by template where possible — a technical issue on your blog post template affects every blog post and is therefore higher priority than an issue on a single page.</p>
+  <p>Each dimension informs the others. Technical problems affect content performance. Content gaps create competitive vulnerabilities. UX issues reduce conversion rates regardless of traffic volume. A full audit brings all of this into a single, coherent picture.</p>
 
-  <h2 id="on-page-analysis">On-Page Analysis</h2>
+  <h2 id="phase-1-technical-foundation">Phase 1: Technical Foundation</h2>
 
-  <p>With the technical foundation assessed, move to on-page elements. These are the factors you control directly on each page that tell search engines what the content is about and how it should be ranked. A full audit examines on-page elements across the entire site, not just a sample.</p>
+  <p>The technical foundation audit determines whether search engines can discover, crawl, render, and index your website effectively. This phase comes first because technical barriers can make everything else irrelevant — the best content in the world cannot rank if Google cannot find it.</p>
 
-  <p>Export the following data from your crawl and analyse it at scale:</p>
+  <p>Begin by gathering your data. Run a full site crawl using Screaming Frog, Sitebulb, or Lumar. Export Google Search Console indexation data for the last 16 months. Pull server logs if available. Then work through these areas:</p>
 
   <ul>
-    <li><strong>Title tags</strong> — identify duplicates, missing titles, titles exceeding 60 characters, and titles that do not include target keywords. Cross-reference with Search Console to see which titles Google is rewriting and why.</li>
-    <li><strong>Meta descriptions</strong> — flag missing descriptions, duplicates, and descriptions outside the 120-155 character range. Prioritise writing descriptions for pages with the highest impression counts in Search Console.</li>
-    <li><strong>Heading structure</strong> — check for pages with missing H1s, multiple H1s, or broken heading hierarchy. Verify that H1s align with target keywords and that H2s cover the expected subtopics for each page's primary query.</li>
-    <li><strong>Internal link distribution</strong> — map the internal link graph to identify orphan pages, pages with excessive links (over 100), and important pages with too few internal links. Check that anchor text is descriptive and keyword-relevant rather than generic.</li>
-    <li><strong>Schema markup</strong> — validate structured data across all page types. Ensure each page uses the appropriate schema type and that all required properties are present and accurate.</li>
-    <li><strong>URL structure</strong> — review for consistency, readability, and excessive depth. Flag URLs with parameters, session IDs, uppercase characters, or underscores.</li>
+    <li><strong>Crawlability</strong> — review your robots.txt for unintended blocks. Check that your XML sitemap is valid, submitted, and contains only indexable URLs. Compare the number of URLs in your sitemap against the number Google has indexed. Large discrepancies indicate crawling or indexing barriers. Examine crawl stats in Search Console for any spikes in crawl errors or drops in pages crawled per day.</li>
+    <li><strong>Indexation health</strong> — review the Search Console page indexing report for each reason pages are not indexed. "Crawled - currently not indexed" indicates quality concerns. "Discovered - currently not indexed" suggests crawl budget limitations. "Excluded by noindex tag" may be intentional or accidental. Verify every exclusion reason against your intended indexation strategy.</li>
+    <li><strong>Site architecture</strong> — map your site's hierarchy from the crawl data. Check the average click depth to your most important pages. Identify any sections that are isolated from the main site structure. Verify that your navigation hierarchy is logical and that every important page is reachable within three clicks from the homepage.</li>
+    <li><strong>Server performance</strong> — measure Time to First Byte (TTFB) across multiple page types and at different times of day. Check for server error rates in your crawl data. Verify that your CDN is configured correctly and serving static assets from edge locations. If TTFB exceeds 400ms consistently, server-side optimisation or hosting changes may be needed.</li>
+    <li><strong>Security</strong> — confirm full HTTPS implementation with no mixed content. Check SSL certificate validity and expiration. Verify that security headers (HSTS, CSP, X-Frame-Options) are properly configured. Scan for malware or injected content that could trigger search engine warnings.</li>
+    <li><strong>Redirect audit</strong> — identify all redirect chains (more than one hop), redirect loops, and redirects to non-200 pages. Each redirect chain adds latency and loses a small amount of link equity. Clean up chains so every redirect resolves in a single hop to its final destination.</li>
+    <li><strong>Structured data validation</strong> — verify that every page type has appropriate schema markup, that the markup validates without errors, and that no conflicting schema exists from multiple sources (CMS, plugins, theme).</li>
   </ul>
 
-  <p>The on-page analysis often reveals patterns rather than isolated issues. If every blog post is missing a meta description, the fix is a CMS template change, not 200 individual edits. Identifying these patterns is one of the key advantages of auditing at site-wide scale.</p>
+  <h2 id="phase-2-on-page-analysis">Phase 2: On-Page Analysis</h2>
 
-  <h2 id="content-evaluation">Content Evaluation</h2>
-
-  <p>Content evaluation determines whether your pages deserve to rank. Google's helpful content system assesses whether content provides genuine value to users, demonstrates real expertise, and satisfies the intent behind search queries. A full audit evaluates content across every section of your site.</p>
-
-  <p>Start by categorising your content inventory:</p>
+  <p>With the technical foundation verified, Phase 2 examines how effectively individual pages communicate their topic and relevance to search engines. Export your crawl data's on-page elements and analyse them systematically.</p>
 
   <ul>
-    <li><strong>High-performing content</strong> — pages that rank in the top 10 and drive consistent traffic. These need minor optimisation to maintain or improve positions. Check for content freshness, completeness relative to competitors, and internal linking opportunities.</li>
-    <li><strong>Underperforming content</strong> — pages ranking in positions 11-30 that have keyword potential but are not breaking through. These are your highest-ROI rewrite candidates. Analyse what top-ranking competitors cover that you do not, and expand your content to close those gaps.</li>
-    <li><strong>Thin content</strong> — pages with fewer than 300 words of unique content, pages that rank for nothing, and pages with zero traffic over the past 12 months. These pages drag down your site's overall quality signals. Decide for each whether to expand, consolidate with a stronger page, or remove entirely.</li>
-    <li><strong>Cannibalisation</strong> — multiple pages competing for the same keyword split your authority and confuse search engines about which page to rank. Identify keyword overlap using Search Console query data and resolve by consolidating content, differentiating intent, or implementing canonical tags.</li>
+    <li><strong>Title tag audit</strong> — check every page for missing, duplicate, too-long, or too-short title tags. Verify that primary keywords appear near the beginning of the title. Cross-reference title tags against Search Console click-through rate data to identify pages with strong positions but low CTR — these are prime candidates for title tag rewrites that could increase traffic without improving rankings.</li>
+    <li><strong>Meta description audit</strong> — identify pages with missing, duplicate, or poorly written meta descriptions. While not a direct ranking factor, meta descriptions affect CTR significantly. Prioritise writing custom descriptions for your top 50 traffic pages.</li>
+    <li><strong>Heading structure review</strong> — verify that every page has exactly one H1, that heading hierarchy is logical (no skipped levels), and that headings are descriptive rather than generic. Check whether sidebar or footer widgets inject heading tags that break the content hierarchy.</li>
+    <li><strong>Keyword mapping</strong> — create or update your keyword-to-page map. Every target keyword should be assigned to exactly one page. Identify keyword cannibalisation where multiple pages compete for the same term. Identify keyword gaps where you have no page targeting a valuable term. This map becomes the foundation for content recommendations in Phase 3.</li>
+    <li><strong>Internal linking analysis</strong> — export internal link data and identify orphan pages (zero inbound internal links), pages with excessive internal links (over 100), and important pages with insufficient links. Map internal link equity flow to ensure your most commercially valuable pages receive the most internal link authority.</li>
+    <li><strong>Image audit</strong> — check for missing alt text, oversized images, non-modern formats, missing dimension attributes, and images that are not lazy-loaded. Calculate the total image weight per page template and identify which pages would benefit most from image optimisation.</li>
   </ul>
 
-  <p>Assess E-E-A-T signals across your content. Does each article have an author byline with credentials? Are claims supported by citations to authoritative sources? Does the content demonstrate first-hand experience with the topic? For YMYL (Your Money or Your Life) topics, these signals are especially critical and their absence can suppress rankings across the entire domain.</p>
+  <h2 id="phase-3-content-evaluation">Phase 3: Content Evaluation</h2>
 
-  <p>Check content freshness by exporting last-modified dates. Pages in fast-changing industries that have not been updated in over a year are at risk of being outranked by fresher competitors. Create a content refresh schedule as part of your audit deliverables.</p>
-
-  <h2 id="off-page-review">Off-Page Review</h2>
-
-  <p>Off-page analysis examines the external signals that influence your site's authority and trustworthiness. The backlink profile is the primary focus, but off-page also includes brand mentions, social signals, and your site's reputation across the web.</p>
-
-  <p>Pull your complete backlink profile from Ahrefs, Semrush, or Moz and analyse:</p>
+  <p>Phase 3 is where you assess whether your content deserves to rank. Technical health and on-page optimisation create the conditions for ranking, but content quality determines whether Google's algorithms judge your pages worthy of prominent positions.</p>
 
   <ul>
-    <li><strong>Referring domain count and quality</strong> — the total number of unique domains linking to your site is a primary authority indicator. More important than count is quality. Assess the domain authority, relevance, and traffic of your top referring domains. A hundred links from real, relevant websites outweigh ten thousand links from spam directories.</li>
-    <li><strong>Anchor text distribution</strong> — a natural backlink profile has diverse anchor text. If more than 10% of your anchors are exact-match keywords, it signals manipulation. Over-optimised anchor text is one of the most common triggers for algorithmic penalties.</li>
-    <li><strong>Toxic links</strong> — identify links from known spam networks, PBNs (private blog networks), link farms, and unrelated foreign-language sites. While Google claims to ignore low-quality links rather than penalise them, concentrations of toxic links can still trigger manual actions. Document any links that warrant inclusion in a disavow file.</li>
-    <li><strong>Link velocity</strong> — chart the rate of new referring domains over time. A healthy profile shows steady growth. Sudden spikes followed by plateaus suggest link-building campaigns that stopped. Consistent link acquisition signals a site that naturally attracts links through quality content.</li>
-    <li><strong>Competitor comparison</strong> — benchmark your link profile against the top three competitors for your primary keywords. If they have three times your referring domains, content improvements alone are unlikely to close the ranking gap. Identify where competitors earn their best links and whether similar opportunities exist for your site.</li>
+    <li><strong>Content inventory</strong> — catalogue every content page on your site and classify each by type (service page, blog post, resource, landing page), target keyword, publication date, last update date, and organic traffic. This inventory reveals the composition of your content library and highlights pages that need attention.</li>
+    <li><strong>Thin content identification</strong> — flag pages with fewer than 300 words of unique content that are not inherently short-form (contact pages, thank-you pages). Thin content dilutes your site's overall quality signal. Decide whether each thin page should be expanded, merged with another page, or removed from the index.</li>
+    <li><strong>Search intent analysis</strong> — for your top 30 target keywords, check whether your content matches the dominant intent in the SERP. If Google shows how-to guides and your page is a sales pitch, there is an intent mismatch that no amount of optimisation will overcome. Document mismatches and plan content that aligns with what Google has determined users want.</li>
+    <li><strong>E-E-A-T assessment</strong> — evaluate your content for signals of Experience, Expertise, Authoritativeness, and Trustworthiness. Check for author bylines and bios with credible credentials. Verify that content cites sources and references data. Assess whether the content demonstrates first-hand experience with the topic. For YMYL topics, these signals are critical ranking factors.</li>
+    <li><strong>Content freshness audit</strong> — identify your 50 highest-traffic pages and check when each was last meaningfully updated. Content published more than 18 months ago without updates is at risk of being overtaken by fresher competitor content. Create a refresh schedule prioritised by traffic value and content age.</li>
+    <li><strong>Topical coverage mapping</strong> — map your content against the complete topic landscape for your industry. Identify subtopics that competitors cover but you do not. These gaps represent opportunities to expand your topical authority and capture additional search traffic. Build a content roadmap to fill the highest-value gaps over the next quarter.</li>
   </ul>
 
-  <h2 id="ux-and-conversion">UX and Conversion</h2>
+  <h2 id="phase-4-off-page-review">Phase 4: Off-Page Review</h2>
 
-  <p>SEO does not exist in isolation from user experience. Google measures how users interact with your site through engagement metrics, and sites that provide poor experiences see those signals reflected in their rankings. A full audit must assess whether the traffic you earn from search actually converts into business outcomes.</p>
-
-  <p>Evaluate these UX factors:</p>
+  <p>Phase 4 examines the external signals that influence your site's authority and trustworthiness. Backlinks remain one of the strongest ranking signals, and your link profile tells Google how the rest of the web perceives your content.</p>
 
   <ul>
-    <li><strong>Mobile experience</strong> — with mobile-first indexing, Google evaluates your site based on the mobile version. Test key pages on actual mobile devices, not just browser emulators. Check for tap targets that are too close together, text that requires zooming, horizontal scrolling, and interstitials that block content.</li>
-    <li><strong>Page speed perception</strong> — beyond Core Web Vitals scores, assess how fast pages feel to users. A page with a good LCP score but a long Total Blocking Time feels sluggish because users cannot interact with it. Test interactive elements like menus, forms, and filters for responsiveness.</li>
-    <li><strong>Navigation clarity</strong> — can users find what they need within two to three clicks? Review your main navigation, footer links, and breadcrumb implementation. Confusing navigation increases pogo-sticking, where users return to search results to find a better page, which sends negative engagement signals to Google.</li>
-    <li><strong>Conversion paths</strong> — trace the journey from organic landing page to conversion action (purchase, form submission, phone call). Identify friction points where users drop off. A blog post that ranks well but has no clear next step wastes organic traffic. Every page should guide visitors toward a conversion action appropriate to their intent.</li>
-    <li><strong>Engagement metrics</strong> — review Google Analytics data for bounce rate, time on page, pages per session, and scroll depth across organic traffic segments. Pages with high bounce rates and low time on page may be failing to satisfy search intent, which affects their ability to maintain rankings over time.</li>
+    <li><strong>Backlink profile overview</strong> — export your complete backlink data from Ahrefs, Semrush, or Moz. Document total backlinks, total referring domains, domain rating/authority, and the distribution of link quality (high, medium, low authority). This baseline is essential for comparison against competitors and for measuring future link building impact.</li>
+    <li><strong>Toxic link identification</strong> — filter your backlink profile for potentially toxic links: links from spam domains, links from irrelevant foreign-language sites, links from known link networks, and links with manipulative anchor text. While Google claims to ignore most toxic links automatically, a significant volume of toxic links can still trigger algorithmic suppression. Compile a disavow file for clearly toxic links.</li>
+    <li><strong>Anchor text analysis</strong> — chart your anchor text distribution by type: branded anchors, URL anchors, generic anchors ("click here"), partial match keyword anchors, and exact match keyword anchors. A natural profile is dominated by branded and generic anchors with a small percentage of keyword-rich anchors. An over-optimised profile with a high percentage of exact-match anchors signals manipulative link building.</li>
+    <li><strong>Referring domain quality</strong> — assess the quality distribution of your referring domains. A profile dominated by low-authority domains provides less ranking benefit than a profile with fewer but higher-authority referring domains. Identify your highest-authority referring domains and verify that those links are still active.</li>
+    <li><strong>Lost link audit</strong> — identify high-authority backlinks lost in the last six months. For each lost link, determine the cause (page removed, link removed, site went offline) and assess whether outreach could recover the link. Lost links from authoritative sites represent the highest-priority recovery opportunities.</li>
+    <li><strong>Link building opportunity identification</strong> — identify unlinked brand mentions (sites that mention your brand without linking), broken link targets (authoritative pages with broken outbound links you could replace), and resource pages in your niche that list competitors but not you. These opportunities form the basis of a proactive link building strategy.</li>
   </ul>
 
-  <h2 id="competitive-benchmarking">Competitive Benchmarking</h2>
+  <h2 id="phase-5-ux-and-conversion">Phase 5: UX and Conversion</h2>
 
-  <p>A full audit is incomplete without understanding your competitive landscape. Your rankings exist relative to competitors, and knowing their strengths and weaknesses informs your prioritisation decisions.</p>
-
-  <p>Identify your top five organic competitors — these may differ from your business competitors. Use Ahrefs or Semrush to find domains that rank for the most overlapping keywords with your site. Then compare across these dimensions:</p>
+  <p>SEO does not end at the search result. Phase 5 evaluates what happens after users click through to your site — whether they find what they need, whether the experience satisfies their intent, and whether they take the actions your business needs them to take.</p>
 
   <ul>
-    <li><strong>Keyword coverage</strong> — how many keywords do competitors rank for that you do not? These gaps represent content opportunities. Filter by commercial intent and search volume to prioritise the most valuable gaps.</li>
-    <li><strong>Content depth and format</strong> — compare the depth, structure, and format of competitor content for your shared target keywords. If competitors publish comprehensive guides with videos, infographics, and interactive tools while you publish 500-word articles, the content format gap may matter as much as the content itself.</li>
-    <li><strong>Domain authority</strong> — compare referring domain counts and quality. If competitors have significantly stronger backlink profiles, you need a realistic link-building strategy to close the gap. If your authority is comparable but their content is weaker, content investment offers the faster return.</li>
-    <li><strong>Technical advantages</strong> — check competitor site speed, mobile experience, and technical implementation. A competitor with perfect Core Web Vitals has an edge in tie-breaking situations where content and authority are similar.</li>
-    <li><strong>SERP features</strong> — identify which competitors appear in featured snippets, People Also Ask, Knowledge Panels, and other SERP features for your target queries. Optimise your content structure to compete for these high-visibility placements.</li>
+    <li><strong>Core Web Vitals</strong> — review CWV data in Search Console's Page Experience report. Identify URLs that fail LCP, FID/INP, or CLS thresholds. Group failing URLs by template to determine whether issues are page-specific or template-wide. Template-wide fixes yield the highest return because they improve every page built on that template.</li>
+    <li><strong>Mobile experience</strong> — test your site across multiple mobile devices and viewport sizes. Check for horizontal scrolling, tap targets that are too small, text that requires zooming, and interactive elements that overlap. Google's mobile-first indexing means your mobile experience is your primary ranking signal, not your desktop experience.</li>
+    <li><strong>Page engagement metrics</strong> — analyse bounce rate, average session duration, and pages per session for organic traffic segments. Identify pages with unusually high bounce rates (over 70% for informational content, over 40% for commercial pages) and investigate whether the issue is content quality, page speed, or intent mismatch.</li>
+    <li><strong>Conversion path analysis</strong> — trace the paths users take from organic landing pages to conversion pages (contact forms, demo requests, checkout). Identify where users drop off and which landing pages produce the highest conversion rates. Optimise the path from your highest-traffic pages to your highest-converting pages.</li>
+    <li><strong>Accessibility check</strong> — run an accessibility audit using Lighthouse or axe DevTools. Check for colour contrast failures, missing form labels, keyboard navigation issues, and missing ARIA landmarks. Accessibility issues affect both user experience scores and your exposure to legal compliance risk.</li>
+    <li><strong>Trust signals</strong> — evaluate the presence and placement of trust signals: SSL certificate indicators, privacy policy links, client logos, testimonials, certifications, and contact information. Trust signals are particularly important for sites in competitive or high-consideration verticals where users need reassurance before engaging.</li>
   </ul>
 
-  <h2 id="putting-it-together">Putting It Together</h2>
+  <h2 id="phase-6-competitive-benchmarking">Phase 6: Competitive Benchmarking</h2>
 
-  <p>The final and most important step in a full audit is synthesising findings from all six pillars into a single prioritised action plan. Raw findings without prioritisation overwhelm teams and lead to inaction. Your action plan should rank every recommendation by a combination of expected impact and implementation effort.</p>
+  <p>The final phase places your audit findings in competitive context. SEO is a relative game — your site does not rank in a vacuum but against every other page targeting the same keywords. Understanding where you stand relative to competitors determines which improvements will have the most impact on your rankings.</p>
 
-  <p>Structure your final deliverable as follows:</p>
+  <ul>
+    <li><strong>Keyword position comparison</strong> — for your top 50 target keywords, document your position alongside the top three competitors. Identify keywords where you are within striking distance of the top three (positions 4-10) versus keywords where you are far behind (positions 20+). Striking distance keywords represent the fastest ranking opportunities.</li>
+    <li><strong>Content depth comparison</strong> — for your top 20 keywords, compare the content on your ranking page against the top competitor's page. Assess word count, subtopic coverage, use of multimedia, freshness, and E-E-A-T signals. Document specific areas where competitor content exceeds yours and what you would need to do to match or exceed their quality.</li>
+    <li><strong>Backlink gap analysis</strong> — use Ahrefs or Semrush's link intersect tool to identify domains that link to competitors but not to you. Filter for high-authority, relevant domains. These represent the link building targets most likely to move the needle on your rankings because Google already trusts them as authorities in your topic area.</li>
+    <li><strong>SERP feature competition</strong> — for your target keywords, document which SERP features appear (featured snippets, People Also Ask, knowledge panels, image packs, video carousels) and who owns them. Identify features you could compete for with targeted content optimisation, particularly featured snippets where your content is well-positioned but not formatted optimally.</li>
+    <li><strong>Technical benchmark</strong> — compare your site's page speed, mobile usability score, and domain authority against the top three competitors. Identify any dimensions where competitors have a significant technical advantage (faster hosting, better CDN, newer platform) that contributes to their ranking superiority.</li>
+    <li><strong>Market positioning assessment</strong> — beyond individual keyword competition, assess your overall market positioning. Which topical areas do you own versus where are competitors dominant? Where are there gaps in the market that no one is serving well? This strategic view informs your content roadmap and link building priorities for the next six to twelve months.</li>
+  </ul>
 
-  <ol>
-    <li><strong>Executive summary</strong> — a one-page overview of the site's current SEO health, the most critical issues found, and the estimated traffic opportunity if those issues are resolved. This is for stakeholders who will not read the full report.</li>
-    <li><strong>Critical issues</strong> — problems that are actively costing traffic or revenue and should be fixed within two weeks. Examples: large sections of the site deindexed, server errors on high-traffic pages, or a manual action in Search Console.</li>
-    <li><strong>High-impact opportunities</strong> — changes expected to produce measurable traffic increases within one to three months. Content rewrites for underperforming pages, technical fixes affecting page templates, and internal linking restructures typically fall here.</li>
-    <li><strong>Medium-term improvements</strong> — optimisations that build long-term authority and require sustained effort. Link building campaigns, new content development for keyword gaps, and UX improvements that require design resources belong in this tier.</li>
-    <li><strong>Maintenance recommendations</strong> — ongoing processes to prevent issues from recurring. Monthly crawl checks, quarterly content freshness reviews, and continuous Core Web Vitals monitoring should be established as standard operating procedures.</li>
-  </ol>
+  <h2 id="putting-it-all-together">Putting It All Together</h2>
 
-  <p>A full SEO audit is not a one-time document that sits in a shared drive untouched. Schedule implementation reviews monthly to track progress against the action plan, measure the impact of changes already made, and adjust priorities based on new data. The audit is the starting point — execution is where the traffic growth happens.</p>
+  <p>The output of a full SEO audit is not a list of problems — it is a strategic roadmap. Synthesising findings across all six phases requires judgment about which issues matter most and in what order they should be addressed.</p>
+
+  <p>Organise your findings into a prioritised action plan using this framework:</p>
+
+  <ul>
+    <li><strong>Critical fixes (implement immediately)</strong> — issues that actively prevent crawling, indexing, or rendering. Broken redirects from a migration, accidental noindex tags on important pages, server errors, or security compromises. These block everything else from working.</li>
+    <li><strong>High-impact quick wins (implement within two weeks)</strong> — changes that require minimal effort but produce measurable results. Title tag rewrites on high-traffic pages, fixing broken internal links, adding schema markup to page templates, and resolving duplicate content issues. These generate early momentum and demonstrate audit value.</li>
+    <li><strong>Strategic improvements (implement within one to three months)</strong> — content creation to fill topical gaps, link building campaigns targeting competitor backlink gaps, page speed optimisation projects, and conversion path improvements. These require more resources but deliver the largest long-term results.</li>
+    <li><strong>Ongoing programmes (implement and maintain)</strong> — content refresh schedules, regular technical monitoring, continuous link earning, and quarterly competitive benchmarking. These programmes prevent the issues found in this audit from recurring and keep your site competitive as the market evolves.</li>
+  </ul>
+
+  <p>Present the action plan with estimated impact for each item. Quantify where possible: "Rewriting title tags on 25 pages with below-average CTR could increase organic clicks by 15-20% on those pages, equivalent to approximately X additional sessions per month." Business stakeholders need to understand not just what to fix but what the fix is worth.</p>
+
+  <p>Finally, establish the measurement framework for tracking the impact of your audit recommendations. Baseline all key metrics before implementation begins — organic sessions, keyword positions, lead volume, conversion rates, Core Web Vitals scores. Set review checkpoints at 30, 60, and 90 days post-implementation. A full audit is an investment, and demonstrating its return is essential for securing ongoing SEO resources and commitment from leadership.</p>
 </ContentLayout>
