@@ -16,12 +16,10 @@ const {
   <h3 class="text-xl font-bold mb-4">{heading}</h3>
   <form
     id={formId}
-    action="https://api.staticforms.xyz/submit"
+    action="https://emailit-worker.sunnypat81.workers.dev/"
     method="post"
     class="space-y-4"
   >
-  <input type="hidden" name="_site" value="auditweb.site" />
-    <input type="hidden" name="accessKey" value="sf_9e906eb6c00416b9d3354749" />
     <input type="hidden" name="subject" value="Audit Request (auditweb.site)" />
     <input type="hidden" name="redirectTo" value="https://auditweb.site/thank-you/" />
     <input type="text" name="honeypot" style="display:none" />
