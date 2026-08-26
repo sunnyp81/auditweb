@@ -1,0 +1,73 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit Services', href: '/seo-audit-services/' },
+  { label: 'Enterprise', href: '/seo-audit-services/enterprise/' },
+];
+
+const toc = [
+  { label: 'What Changes at Enterprise Scale', id: 'what-changes-at-enterprise-scale' },
+  { label: "What's Included", id: 'whats-included' },
+  { label: 'Stakeholder Reporting', id: 'stakeholder-reporting' },
+  { label: 'Pricing and Timeline', id: 'pricing-and-timeline' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Enterprise SEO Audit',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'Enterprise SEO audits for sites over 50,000 pages, covering log file analysis, JavaScript rendering, and multi-stakeholder reporting.',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="Enterprise SEO Audit"
+  description="Enterprise SEO audits for sites over 50,000 pages, covering crawl budget at scale, log file analysis, and stakeholder-ready reporting. Custom quoted."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>Enterprise sites break the assumptions a standard SEO audit relies on. Crawl budget, log file behaviour, and JavaScript rendering all become critical variables at 50,000+ pages that barely register on a 500-page site. This page covers what changes and how we scope it.</p>
+
+<h2 id="what-changes-at-enterprise-scale">What Changes at Enterprise Scale</h2>
+
+<p>Crawl budget becomes a real constraint rather than a checklist item. Googlebot cannot crawl every page on a large site every day. Which pages get crawled and how often directly affects revenue. Log file data replaces guesswork about actual Googlebot behaviour because Search Console only samples what log files show in full. JavaScript-rendered content needs explicit testing rather than assuming Google renders it correctly — this matters most on frameworks that hydrate content client-side.</p>
+
+<h2 id="whats-included">What's Included</h2>
+
+<p><strong>Log file analysis</strong> — real Googlebot crawl behaviour from your server logs: which pages get crawled, how often, and which sections are being ignored.</p>
+
+<p><strong>Crawl budget audit</strong> — identification of low-value pages consuming crawl budget that should be blocked, consolidated, or deprioritised.</p>
+
+<p><strong>JavaScript rendering audit</strong> — verification that critical content and links render correctly for Googlebot. We test this directly against your production framework rather than a generic simulation.</p>
+
+<p><strong>International and multi-domain review</strong> — hreflang implementation, duplicate content across regional sites, and domain-versus-subdirectory structure where relevant.</p>
+
+<h2 id="stakeholder-reporting">Stakeholder Reporting</h2>
+
+<p>Enterprise findings go to multiple audiences with different needs. Engineering gets a ticket-ready technical breakdown. Marketing gets a business-impact summary tied to revenue and traffic estimates. Leadership gets a one-page executive summary suitable for a board update. We build all three from the same underlying audit. The cost is priced into the engagement rather than billed as an add-on.</p>
+
+<h2 id="pricing-and-timeline">Pricing and Timeline</h2>
+
+<p>Enterprise engagements are custom quoted based on page count, technical complexity, and the number of stakeholder deliverables required. Typical timelines run 10-15 business days and include a live presentation to your team. Contact us with your site URL and rough page count for a quote within 24 hours.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>What counts as an enterprise site for this audit?</h3>
+<p>Generally 50,000+ pages, JavaScript-heavy architecture, or multiple regional domains. Sites below that threshold are usually better served by the <a href="/seo-audit-services/">standard SEO audit service</a> at a lower price point.</p>
+
+<h3>Do you need CMS or hosting access?</h3>
+<p>No. Read-only Search Console access and server log file access cover everything needed. We never require CMS or hosting credentials.</p>
+
+<h3>Can you present findings to our board or leadership team directly?</h3>
+<p>Yes. Enterprise engagements include a live presentation. We tailor the format to whoever is in the room — technical stakeholders get more detail, leadership gets the executive summary.</p>
+
+</ContentLayout>

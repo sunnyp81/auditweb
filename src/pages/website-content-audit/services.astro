@@ -1,0 +1,94 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Content Audit', href: '/website-content-audit/' },
+  { label: 'Content Audit Services', href: '/website-content-audit/services/' },
+];
+
+const toc = [
+  { label: "What's Included", id: 'whats-included' },
+  { label: 'When to Hire This Out', id: 'when-to-hire-this-out' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Content Audit Services',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'Done-for-you content audit services identifying thin, duplicate, and underperforming pages, with a prioritised action plan for each.',
+  priceRange: '$297+',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="Content Audit Services"
+  description="Done-for-you content audit services identifying thin, duplicate, and underperforming pages, with a keep, update, consolidate, or remove decision for every page. Pricing from $297."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>Content audit services deliver the same analysis our <a href="/website-content-audit/">content audit guide</a> teaches you to do yourself. An analyst runs it against your actual site. Every page gets a keep, update, consolidate, or remove decision instead of just a list of flagged issues.</p>
+
+<h2 id="whats-included">What's Included</h2>
+
+<p><strong>Full content inventory</strong> — every indexed page catalogued with word count and traffic pulled from Search Console. A full site crawl confirms what's actually live.</p>
+
+<p><strong>Quality scoring</strong> — each page scored against thinness, duplication (internal and cross-domain), and topical relevance to your core business.</p>
+
+<p><strong>Competitive gap analysis</strong> — topics your competitors rank for that you have no content covering. Each gap is ranked by opportunity size.</p>
+
+<p><strong>Action plan</strong> — a prioritised list marking every page as keep-as-is, update (with what to change), consolidate (with the merge target), or remove. The order follows expected traffic impact.</p>
+
+<h2 id="when-to-hire-this-out">When to Hire This Out</h2>
+
+<p>Sites with more than a few hundred pages usually benefit most because manual review at that scale takes days a small team doesn't have. Sites planning a redesign or CMS migration benefit from an audit beforehand — migrating thin or duplicate content just carries the problem to the new platform. Sites with a traffic plateau despite regular publishing often have a content-quality problem an audit surfaces quickly.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Price</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Standard</strong></td>
+      <td>$297</td>
+      <td>Sites under 200 pages</td>
+    </tr>
+    <tr>
+      <td><strong>Full Site</strong></td>
+      <td>$597</td>
+      <td>Sites 200-2,000 pages</td>
+    </tr>
+    <tr>
+      <td><strong>Large Site</strong></td>
+      <td>$797+</td>
+      <td>Sites over 2,000 pages, custom scoped</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Do you write the replacement content too?</h3>
+<p>No. The audit covers diagnosis and a per-page action plan. Content writing is available as a separate engagement once the audit defines what needs writing.</p>
+
+<h3>How long does a content audit take?</h3>
+<p>Standard and Full Site packages deliver within 7 business days. Large Site engagements are scoped individually based on page count.</p>
+
+<h3>What CMS access do you need?</h3>
+<p>None required for the audit itself. Read-only Search Console and Analytics access lets us correlate content quality with actual performance data.</p>
+
+</ContentLayout>
