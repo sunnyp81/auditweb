@@ -1,0 +1,93 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit Services', href: '/seo-audit-services/' },
+  { label: 'SEO Audit Consultant', href: '/seo-audit-services/consultant/' },
+];
+
+const toc = [
+  { label: 'What an SEO Audit Consultant Does', id: 'what-an-seo-audit-consultant-does' },
+  { label: 'When to Hire One', id: 'when-to-hire-one' },
+  { label: 'Consultant vs Agency vs Software', id: 'consultant-vs-agency-vs-software' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SEO Audit Consultant',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'A dedicated SEO audit consultant for businesses that need a single expert diagnosing organic search problems, not a generalist website review.',
+  priceRange: '$150-$897',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="SEO Audit Consultant: Hire a Dedicated Specialist"
+  description="An SEO audit consultant diagnoses organic search problems specifically — rankings, crawlability, content gaps. Hourly rates from $150/hr, project engagements from $897."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>An SEO audit consultant is one specialist assigned to your account. That's different from a team splitting the work across technical, content, and security specialists. This single-point-of-contact model suits businesses with a specific ranking problem who want one expert who knows the whole picture — a broader <a href="/website-audit-services/consultant/">website audit consultant</a> covers security and accessibility alongside SEO instead.</p>
+
+<h2 id="what-an-seo-audit-consultant-does">What an SEO Audit Consultant Does</h2>
+
+<p>The consultant runs the crawl, reviews Search Console data, benchmarks your competitors, and writes the findings personally rather than delegating to a production team. You get direct access to ask follow-up questions during and after the engagement. The same person handles any re-check after you've implemented fixes.</p>
+
+<h2 id="when-to-hire-one">When to Hire One</h2>
+
+<p>Three situations call for a dedicated consultant over a packaged audit product. A traffic drop with no obvious cause in Search Console needs someone who can work through hypotheses interactively instead of running a fixed checklist. A pre-migration review benefits from a consultant available for questions throughout the migration rather than a one-time report. An ongoing retainer relationship works better with continuity — the same person tracking your site over months notices patterns a fresh auditor each time would miss.</p>
+
+<h2 id="consultant-vs-agency-vs-software">Consultant vs Agency vs Software</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Best For</th>
+      <th>Trade-off</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dedicated consultant</td>
+      <td>Ongoing relationship, complex or unusual problems</td>
+      <td>Higher hourly cost than packaged audits</td>
+    </tr>
+    <tr>
+      <td>Full audit service</td>
+      <td>One-off diagnosis at a fixed price</td>
+      <td>No ongoing relationship with the same analyst</td>
+    </tr>
+    <tr>
+      <td>Software tools</td>
+      <td>Teams with in-house SEO expertise</td>
+      <td>You still need to interpret the output yourself</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pricing">Pricing</h2>
+
+<p>Hourly engagements run $150-$300 depending on scope and urgency. Project-based engagements start at $897 for a defined diagnosis-and-fix-list scope. Ongoing retainers are quoted after an initial project.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>How is an SEO audit consultant different from the SEO audit service?</h3>
+<p>The <a href="/seo-audit-services/">SEO audit service</a> is a fixed-scope, fixed-price product delivered by whoever is available. A consultant is one named specialist working with you directly. Pricing runs hourly or by project and suits ongoing or unusual engagements rather than a one-off diagnosis.</p>
+
+<h3>Do you offer a trial hour before committing to a project?</h3>
+<p>Yes. A single paid hour lets you assess fit before committing to a larger project or retainer.</p>
+
+<h3>Can the consultant also implement fixes?</h3>
+<p>Some consultants offer implementation at an agreed hourly rate. Confirm this during scoping since not every engagement includes it by default.</p>
+
+</ContentLayout>

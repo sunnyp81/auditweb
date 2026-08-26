@@ -1,0 +1,102 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit Services', href: '/seo-audit-services/' },
+  { label: 'For Agencies', href: '/seo-audit-services/agency/' },
+];
+
+const toc = [
+  { label: 'What Agencies Get', id: 'what-agencies-get' },
+  { label: 'Two Ways to Work With Us', id: 'two-ways-to-work-with-us' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'How White-Label Delivery Works', id: 'how-white-label-delivery-works' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SEO Audit Agency Services',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'SEO audit services for digital marketing agencies, delivered white-label or as overflow capacity, with volume pricing for multi-client accounts.',
+  priceRange: '$147-$397',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="SEO Audits for Agencies: White-Label & Overflow"
+  description="SEO audit services built for digital marketing agencies — white-label reports, overflow capacity, and volume pricing for agencies running audits across multiple client accounts."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>Agencies use this service two ways: as white-label capacity to resell under their own brand, or as a second opinion on audits their own team already ran. The output is an SEO-specific audit — technical, on-page, content, and backlinks — not a full website review padded with security and accessibility checks your clients didn't ask for.</p>
+
+<h2 id="what-agencies-get">What Agencies Get</h2>
+
+<p>Every agency engagement includes a report with no AuditWeb branding, editable findings so you can adjust language for your client's voice, a call with your account lead (not the client) to walk through findings before delivery, and volume pricing that drops per-audit cost as your monthly volume increases.</p>
+
+<p>Reports arrive as a branded PDF template you control. We never contact your clients directly. Nothing in the deliverable references AuditWeb.</p>
+
+<h2 id="two-ways-to-work-with-us">Two Ways to Work With Us</h2>
+
+<p><strong>Full white-label.</strong> You sell the audit under your own service name. We do the technical work — crawl, analysis, report writing — and deliver a document ready to forward. Most agencies use this for overflow during busy months or to offer audits without hiring an in-house SEO analyst.</p>
+
+<p><strong>Second opinion.</strong> Your team already ran an audit and wants an independent check before it goes to the client. We review your findings against our own crawl and flag anything missed, overstated, or under-prioritised. This costs less than a full audit and catches errors before a client sees them.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Volume</th>
+      <th>Price Per Audit</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1-4 audits/month</td>
+      <td>$397</td>
+      <td>Agencies testing the white-label model</td>
+    </tr>
+    <tr>
+      <td>5-14 audits/month</td>
+      <td>$247</td>
+      <td>Established agencies with regular audit volume</td>
+    </tr>
+    <tr>
+      <td>15+ audits/month</td>
+      <td>$147</td>
+      <td>Agencies offering audits as a standard onboarding step</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Second-opinion reviews are priced separately at $197 flat regardless of volume.</p>
+
+<h2 id="how-white-label-delivery-works">How White-Label Delivery Works</h2>
+
+<p>You submit the client's domain and your report template preferences once. Every subsequent audit uses that template automatically. Turnaround is 3 business days for standard requests. Rush delivery is available at a surcharge for client deadlines. You get a dashboard login to track every audit in progress across your client accounts.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Will my clients know AuditWeb was involved?</h3>
+<p>No. Reports carry no AuditWeb branding, watermarks, or references. The document is yours to present as your own work.</p>
+
+<h3>Can I get a volume discount without committing to a monthly minimum?</h3>
+<p>Yes. Pricing tiers are based on trailing 30-day volume rather than a contract commitment. Your rate adjusts automatically as your volume changes month to month.</p>
+
+<h3>Do you offer white-label tools instead of a done-for-you service?</h3>
+<p>Some agencies prefer running their own audits with software rather than outsourcing. See our <a href="/website-audit-tools/white-label/">white-label audit tools</a> comparison if that fits your workflow better.</p>
+
+<h3>What if I need the full website audit, not just SEO?</h3>
+<p>Our broader <a href="/website-audit-services/agencies/">website audit services for agencies</a> cover security and accessibility alongside SEO and are also available white-label.</p>
+
+</ContentLayout>
