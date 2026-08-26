@@ -23,12 +23,18 @@ interface ChildPage {
   description: string;
 }
 
+interface ChildGroup {
+  label: string;
+  pages: ChildPage[];
+}
+
 interface Props {
   title: string;
   description: string;
   breadcrumbs: BreadcrumbItem[];
   toc?: TocItem[];
   children?: ChildPage[];
+  childGroups?: ChildGroup[];
   schema?: object;
   showLeadForm?: boolean;
   showCTA?: boolean;
@@ -43,6 +49,7 @@ const {
   breadcrumbs,
   toc,
   children: childPages,
+  childGroups,
   schema,
   showLeadForm = false,
   showCTA = true,
@@ -100,6 +107,24 @@ const mergedSchema = schema || articleSchema;
                 <SeedCard title={page.title} href={page.href} description={page.description} />
               ))}
             </div>
+          </section>
+        )}
+
+        {childGroups && childGroups.length > 0 && (
+          <section class="mt-12 space-y-10">
+            {childGroups.map(group => (
+              <div>
+                <h3 class="text-lg font-bold mb-4 pb-2 border-b border-border flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  {group.label}
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {group.pages.map(page => (
+                    <SeedCard title={page.title} href={page.href} description={page.description} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </section>
         )}
       </div>

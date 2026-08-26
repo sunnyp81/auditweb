@@ -16,16 +16,34 @@ const toc = [
 ];
 
 const childPages = [
-  { title: 'Ahrefs Site Audit Guide', href: '/website-audit-tools/ahrefs/', description: 'Complete guide to using Ahrefs Site Audit feature.' },
-  { title: 'Semrush Site Audit Guide', href: '/website-audit-tools/semrush/', description: 'How to use Semrush Site Audit for website analysis.' },
   { title: 'Best Free Audit Tools', href: '/website-audit-tools/best-free/', description: '10 free website audit tools that actually work.' },
   { title: 'Site Audit Tool Comparison', href: '/website-audit-tools/comparison/', description: 'Side-by-side comparison of top audit tools.' },
-  { title: 'White Label Audit Tools', href: '/website-audit-tools/white-label/', description: 'Best white label audit tools for agencies.' },
-  { title: 'Best Audit Tools for Agencies', href: '/website-audit-tools/agencies/', description: 'Client reporting, white-label options, and multi-site management tools.' },
-  { title: 'Automated Audit Tools', href: '/website-audit-tools/automated/', description: 'Scheduled crawls and real-time monitoring for continuous SEO tracking.' },
-  { title: 'Best Audit Software', href: '/website-audit-tools/best-software/', description: 'Enterprise and agency options: Sitebulb, ContentKing, Lumar, DeepCrawl.' },
-  { title: 'SE Ranking Audit Review', href: '/website-audit-tools/se-ranking/', description: 'An affordable alternative to Ahrefs and Semrush, reviewed honestly.' },
-  { title: 'Woorank Audit Review', href: '/website-audit-tools/woorank/', description: "Woorank's marketing checklist and keyword tool, assessed honestly." },
+];
+
+const childGroups = [
+  {
+    label: 'Tool Reviews',
+    pages: [
+      { title: 'Ahrefs Site Audit Guide', href: '/website-audit-tools/ahrefs/', description: 'Complete guide to using Ahrefs Site Audit feature.' },
+      { title: 'Semrush Site Audit Guide', href: '/website-audit-tools/semrush/', description: 'How to use Semrush Site Audit for website analysis.' },
+      { title: 'SE Ranking Audit Review', href: '/website-audit-tools/se-ranking/', description: 'An affordable alternative to Ahrefs and Semrush, reviewed honestly.' },
+      { title: 'Woorank Audit Review', href: '/website-audit-tools/woorank/', description: "Woorank's marketing checklist and keyword tool, assessed honestly." },
+    ],
+  },
+  {
+    label: 'Roundups',
+    pages: [
+      { title: 'Best Audit Software', href: '/website-audit-tools/best-software/', description: 'Enterprise and agency options: Sitebulb, ContentKing, Lumar, DeepCrawl.' },
+      { title: 'Automated Audit Tools', href: '/website-audit-tools/automated/', description: 'Scheduled crawls and real-time monitoring for continuous SEO tracking.' },
+    ],
+  },
+  {
+    label: 'For Agencies',
+    pages: [
+      { title: 'White Label Audit Tools', href: '/website-audit-tools/white-label/', description: 'Best white label audit tools for agencies.' },
+      { title: 'Best Audit Tools for Agencies', href: '/website-audit-tools/agencies/', description: 'Client reporting, white-label options, and multi-site management tools.' },
+    ],
+  },
 ];
 ---
 
@@ -35,6 +53,7 @@ const childPages = [
   breadcrumbs={breadcrumbs}
   toc={toc}
   children={childPages}
+  childGroups={childGroups}
   publishDate="2026-03-28"
 >
 

@@ -26,20 +26,38 @@ const childPages = [
   { title: 'Content Audit', href: '/website-content-audit/', description: 'Evaluate every page on your site for quality, relevance, and performance. Prune, merge, or improve.' },
   { title: 'Security Audit', href: '/website-security-audit/', description: 'Identify vulnerabilities, misconfigurations, and compliance gaps that put your site and users at risk.' },
   { title: 'Accessibility Audit', href: '/website-accessibility-audit/', description: 'Ensure your site meets WCAG 2.2 standards and is usable by everyone, including people with disabilities.' },
-  { title: 'Competitor Website Audit', href: '/competitor-website-audit/', description: 'Learn the SEO strategies, content advantages, and backlink sources your rivals use to outrank you.' },
-  { title: 'CRO Website Audit', href: '/cro-website-audit/', description: 'Find conversion killers in your landing pages, CTAs, forms, and checkout flows.' },
-  { title: 'Website Analytics Audit', href: '/website-analytics-audit/', description: 'Verify your GA4 and GTM tracking is accurate and measuring what matters.' },
-  { title: 'Website Audit vs SEO Audit', href: '/website-audit-vs-seo-audit/', description: "What each type covers, when you need which, and whether you should get both." },
-  { title: 'Website Backlink Audit', href: '/website-backlink-audit/', description: 'Identify toxic links and build a plan for a healthier link profile.' },
-  { title: 'Website Conversion Audit', href: '/website-conversion-audit/', description: 'Find why visitors aren’t converting: CTAs, forms, and trust signals.' },
-  { title: 'Website Cookie Audit', href: '/website-cookie-audit/', description: 'Inventory every cookie your site sets and confirm GDPR and CCPA compliance.' },
-  { title: 'Website Design Audit', href: '/website-design-audit/', description: 'Evaluate visual design, brand consistency, and layout effectiveness.' },
-  { title: 'Website Tag Audit', href: '/website-tag-audit/', description: 'Clean up tracking scripts, pixels, and redundant tags slowing your site.' },
-  { title: 'Website Usability Audit', href: '/website-usability-audit/', description: 'Evaluate navigation, readability, forms, and task completion.' },
-  { title: 'What a Website Audit Includes', href: '/what-does-a-website-audit-include/', description: 'The full breakdown of every section a complete audit covers.' },
-  { title: 'What Is a Technical SEO Audit?', href: '/what-is-a-technical-seo-audit/', description: 'A complete explanation of scope, purpose, and when you need one.' },
-  { title: 'What Is an SEO Site Audit?', href: '/what-is-an-seo-site-audit/', description: 'Purpose, process, and benefits explained.' },
-  { title: 'Why Website Audits Matter', href: '/why-website-audit-is-important/', description: 'Seven data-backed reasons every business needs regular audits.' },
+];
+
+const childGroups = [
+  {
+    label: 'Conversion & Analytics',
+    pages: [
+      { title: 'CRO Website Audit', href: '/cro-website-audit/', description: 'Find conversion killers in your landing pages, CTAs, forms, and checkout flows.' },
+      { title: 'Website Conversion Audit', href: '/website-conversion-audit/', description: 'Find why visitors aren’t converting: CTAs, forms, and trust signals.' },
+      { title: 'Website Analytics Audit', href: '/website-analytics-audit/', description: 'Verify your GA4 and GTM tracking is accurate and measuring what matters.' },
+      { title: 'Website Tag Audit', href: '/website-tag-audit/', description: 'Clean up tracking scripts, pixels, and redundant tags slowing your site.' },
+      { title: 'Website Cookie Audit', href: '/website-cookie-audit/', description: 'Inventory every cookie your site sets and confirm GDPR and CCPA compliance.' },
+    ],
+  },
+  {
+    label: 'Trust, Design & Competition',
+    pages: [
+      { title: 'Competitor Website Audit', href: '/competitor-website-audit/', description: 'Learn the SEO strategies, content advantages, and backlink sources your rivals use to outrank you.' },
+      { title: 'Website Backlink Audit', href: '/website-backlink-audit/', description: 'Identify toxic links and build a plan for a healthier link profile.' },
+      { title: 'Website Design Audit', href: '/website-design-audit/', description: 'Evaluate visual design, brand consistency, and layout effectiveness.' },
+      { title: 'Website Usability Audit', href: '/website-usability-audit/', description: 'Evaluate navigation, readability, forms, and task completion.' },
+    ],
+  },
+  {
+    label: 'Understanding Audits',
+    pages: [
+      { title: 'Website Audit vs SEO Audit', href: '/website-audit-vs-seo-audit/', description: "What each type covers, when you need which, and whether you should get both." },
+      { title: 'What a Website Audit Includes', href: '/what-does-a-website-audit-include/', description: 'The full breakdown of every section a complete audit covers.' },
+      { title: 'What Is a Technical SEO Audit?', href: '/what-is-a-technical-seo-audit/', description: 'A complete explanation of scope, purpose, and when you need one.' },
+      { title: 'What Is an SEO Site Audit?', href: '/what-is-an-seo-site-audit/', description: 'Purpose, process, and benefits explained.' },
+      { title: 'Why Website Audits Matter', href: '/why-website-audit-is-important/', description: 'Seven data-backed reasons every business needs regular audits.' },
+    ],
+  },
 ];
 ---
 
@@ -49,6 +67,7 @@ const childPages = [
   breadcrumbs={breadcrumbs}
   toc={toc}
   children={childPages}
+  childGroups={childGroups}
   publishDate="2026-03-28"
 >
 
