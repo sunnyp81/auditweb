@@ -1,0 +1,167 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit Services', href: '/seo-audit-services/' },
+];
+
+const toc = [
+  { label: 'SEO Audit vs Website Audit', id: 'seo-audit-vs-website-audit' },
+  { label: "What's Included", id: 'whats-included' },
+  { label: 'Who This Is For', id: 'who-this-is-for' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'How We Work', id: 'how-we-work' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SEO Audit Services',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'Focused SEO audit services covering technical SEO, on-page optimisation, content, and backlink profile — for businesses, agencies, and in-house teams who need organic search fixed, not a general site review.',
+  priceRange: '$197-$897',
+  areaServed: ['US', 'GB'],
+};
+
+---
+
+<ContentLayout
+  title="SEO Audit Services: Focused Organic Search Audits"
+  description="SEO audit services for businesses and agencies who need organic search fixed — technical SEO, on-page, content, and backlinks reviewed by a senior analyst. Pricing from $197."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>A traffic problem that's specifically about <strong>organic search</strong> — rankings that won't move, a site Google seems reluctant to crawl, content that never gets found — doesn't need a full website audit covering security headers and colour contrast. It needs an <strong>SEO audit service</strong>: a focused review of the handful of things that actually move rankings, done properly.</p>
+
+<p>That's what this service is. No 72-point checklist padded with items that don't apply to you. Just technical SEO, on-page optimisation, content, and backlink health — reviewed by someone who has done this for hundreds of sites, with a fix list ranked by what will actually move the needle first.</p>
+
+<h2 id="seo-audit-vs-website-audit">SEO Audit vs Website Audit</h2>
+
+<p>These two terms get used interchangeably online, but they shouldn't be. Knowing the difference gets you the right scope instead of paying for checks that don't apply to your problem.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scope</th>
+      <th>SEO Audit Service (this page)</th>
+      <th><a href="/website-audit-services/">Website Audit Service</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Technical SEO, crawlability, indexation</td>
+      <td>✓ Core focus</td>
+      <td>✓ Included</td>
+    </tr>
+    <tr>
+      <td>On-page SEO, keyword targeting, content</td>
+      <td>✓ Core focus</td>
+      <td>✓ Included</td>
+    </tr>
+    <tr>
+      <td>Backlink profile and authority signals</td>
+      <td>✓ Core focus</td>
+      <td>Light overview only</td>
+    </tr>
+    <tr>
+      <td>Security (SSL, headers, exposed files)</td>
+      <td>Not covered</td>
+      <td>✓ Included</td>
+    </tr>
+    <tr>
+      <td>Performance and UX (Core Web Vitals, mobile)</td>
+      <td>Not covered</td>
+      <td>✓ Included</td>
+    </tr>
+    <tr>
+      <td>Best for</td>
+      <td>Rankings/traffic problems specifically</td>
+      <td>General site health check</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Start with our <a href="/free-website-audit/">free scanner</a> if you're not sure which you need. It flags whether your issues are SEO-specific or span into security and accessibility and points you to the right service.</p>
+
+<div class="glass rounded-2xl p-6 my-8">
+  <p class="text-sm text-text-muted mb-0"><strong class="text-text">Rule of thumb:</strong> get the SEO audit for "why isn't my site ranking." Get the full website audit for "is my site okay."</p>
+</div>
+
+<h2 id="whats-included">What's Included</h2>
+
+<p>Full Site and Full Site + Competitor Benchmark engagements cover four dimensions in depth. Single Page audits apply the technical and on-page dimensions to the one page in scope. Nothing here is templated — every finding is tied to your actual site.</p>
+
+<p><strong>Technical SEO</strong> — a full-site crawl at the Full Site tier, or a page-level technical check at Single Page. Covers indexation status against Google Search Console, sitemap accuracy, redirect chains, canonical implementation, crawl budget, and JavaScript rendering issues. This is where we find out why Google isn't finding or indexing your pages.</p>
+
+<p><strong>On-page SEO</strong> — title tags, meta descriptions, heading structure, internal linking, keyword-to-content match, and structured data, checked page by page against actual search intent, not against a generic template.</p>
+
+<p><strong>Content</strong> (Full Site engagements) — thin or duplicate content, topical gaps against competitors who outrank you, and which existing pages have the most upside if strengthened rather than replaced.</p>
+
+<p><strong>Backlink profile</strong> (Full Site engagements) — a link-authority overview flagging any toxic links worth disavowing and the realistic link-building opportunities available to you. Benchmarking against your named competitors is included at the Full Site + Competitor Benchmark tier.</p>
+
+<blockquote>Most SEO audits we're asked to review after the fact have the same problem: they list forty issues with no sense of which three actually matter. Ours ranks every finding by expected impact before it reaches you.</blockquote>
+
+<h2 id="who-this-is-for">Who This Is For</h2>
+
+<p><strong>Businesses with a specific ranking problem</strong> — a traffic drop, a stalled site that never broke through, or a migration that hurt rankings. You want a diagnosis and a fix list, not a general check-up.</p>
+
+<p><strong>SEO agencies</strong> needing a second opinion or overflow capacity. Delivered white-label with no AuditWeb branding — resell it as your own work. See our <a href="/website-audit-tools/white-label/">white-label audit tools</a> comparison if you're weighing build-vs-buy for this.</p>
+
+<p><strong>In-house marketers</strong> who want an external technical-SEO specialist to validate priorities before committing developer time to a fix list nobody's confident in.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Price</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Single Page</strong></td>
+      <td>$197</td>
+      <td>One landing page or a specific ranking problem</td>
+    </tr>
+    <tr>
+      <td><strong>Full Site</strong></td>
+      <td>$597</td>
+      <td>Sites under 500 pages, full technical + on-page + content + backlink review</td>
+    </tr>
+    <tr>
+      <td><strong>Full Site + Competitor Benchmark</strong></td>
+      <td>$897</td>
+      <td>Sites competing for specific keywords against known rivals</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Need broader coverage including security and performance? See the full <a href="/website-audit-services/">website audit service</a> instead.</p>
+
+<h2 id="how-we-work">How We Work</h2>
+
+<p>You grant read-only access to Google Search Console (Google Analytics optional but useful). We crawl the site and pull 16 months of Search Console history. Competitor Benchmark engagements additionally compare your findings against competitors you name. A senior analyst — not an automated tool alone — reviews every finding and writes the fix list. Full Site audits are delivered within 5 business days. A walkthrough call is included.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>What is an SEO audit service?</h3>
+<p>A focused review of the factors that affect your organic search rankings and traffic — technical SEO, on-page optimisation, content quality, and backlink profile. It does not cover security or broader performance and UX. See our <a href="/website-audit-services/">full website audit service</a> for that scope.</p>
+
+<h3>How much does an SEO audit service cost?</h3>
+<p>From $197 for a single-page or narrow-scope audit up to $897 for a full-site audit with competitor benchmarking. Enterprise and multi-site engagements are quoted individually.</p>
+
+<h3>Do you offer white-label SEO audit services for agencies?</h3>
+<p>Yes. Agencies can resell this service under their own brand with no AuditWeb branding on the report. Volume pricing is available for agencies running audits across multiple client accounts.</p>
+
+<h3>How is this different from your free scanner?</h3>
+<p>Our <a href="/free-website-audit/">free scanner</a> runs automated checks in 60 seconds and is a good first step. This service adds senior human analysis and a prioritised, written fix list — the difference between a warning list and a strategy.</p>
+
+</ContentLayout>

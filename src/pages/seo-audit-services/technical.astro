@@ -1,0 +1,113 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'SEO Audit Services', href: '/seo-audit-services/' },
+  { label: 'Technical SEO Audit Service', href: '/seo-audit-services/technical/' },
+];
+
+const toc = [
+  { label: "What's Included", id: 'whats-included' },
+  { label: 'Service vs Self-Serve', id: 'service-vs-self-serve' },
+  { label: 'Common Findings', id: 'common-findings' },
+  { label: 'Pricing', id: 'pricing' },
+  { label: 'Timeline', id: 'timeline' },
+  { label: 'FAQ', id: 'faq' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Technical SEO Audit Service',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'A technical SEO audit service covering crawlability, indexation, site speed, and structured data, delivered by a senior analyst with a prioritised fix list.',
+  priceRange: '$247+',
+  areaServed: ['US', 'GB'],
+};
+---
+
+<ContentLayout
+  title="Technical SEO Audit Service"
+  description="A technical SEO audit service that diagnoses crawlability, indexation, and site speed problems, delivered by a senior analyst with a prioritised fix list. Pricing from $247."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  showLeadForm={true}
+  publishDate="2026-08-26"
+>
+
+<p>A technical SEO audit service diagnoses why search engines struggle to crawl, index, or rank your site — the infrastructure problems that no amount of good content fixes on its own. This is the paid, done-for-you version. Our <a href="/technical-website-audit/">technical audit guide</a> covers the same ground if you want to run the checks yourself.</p>
+
+<h2 id="whats-included">What's Included</h2>
+
+<p>Every technical SEO audit service engagement covers four areas end to end.</p>
+
+<p><strong>Crawlability and indexation</strong> — full site crawl, robots.txt review, XML sitemap accuracy, redirect chains, canonical tag audit, and a Google Search Console indexation check against your actual page count.</p>
+
+<p><strong>Site architecture</strong> — internal linking structure, URL hierarchy, orphaned pages, and crawl depth to your most important content.</p>
+
+<p><strong>Speed and Core Web Vitals</strong> — LCP, INP, and CLS measured across your key templates, render-blocking resources, and mobile performance specifically. Google evaluates mobile speed separately from desktop.</p>
+
+<p><strong>Structured data</strong> — schema markup validation across every page type, checked for errors and missed opportunities like FAQ, Product, or Article schema.</p>
+
+<h2 id="service-vs-self-serve">Service vs Self-Serve</h2>
+
+<p>Self-serve tools like Screaming Frog or Ahrefs Site Audit surface the same raw data a technical audit uses. The service adds three things a tool alone doesn't: a senior analyst separating real problems from tool noise, root-cause diagnosis when three different issues combine to cause one symptom, and a fix list ordered by actual impact rather than alphabetical or by severity label.</p>
+
+<blockquote>A tool tells you 200 pages return a 4xx status. A technical SEO audit service tells you which 12 of those pages matter, why they broke, and which one to fix first.</blockquote>
+
+<h2 id="common-findings">Common Findings</h2>
+
+<p>Five issues recur most often across engagements. Crawl budget wasted on parameter-heavy URLs that should be blocked or canonicalised. Orphaned pages with no internal links pointing to them. Redirect chains three or four hops long instead of a single 301. Mobile Core Web Vitals failing while desktop passes. Sitemap entries that 404 or point to noindexed pages.</p>
+
+<h2 id="pricing">Pricing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Price</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Standard</strong></td>
+      <td>$247</td>
+      <td>Sites under 200 pages</td>
+    </tr>
+    <tr>
+      <td><strong>Full Crawl</strong></td>
+      <td>$597</td>
+      <td>Sites 200-5,000 pages, includes log file review</td>
+    </tr>
+    <tr>
+      <td><strong>Enterprise</strong></td>
+      <td>$797+</td>
+      <td>Sites over 5,000 pages or JavaScript-heavy frameworks</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Need on-page, content, and backlink review too? See the full <a href="/seo-audit-services/">SEO audit service</a> instead.</p>
+
+<h2 id="timeline">Timeline</h2>
+
+<p>Standard and Full Crawl audits are delivered within 4 business days. Enterprise audits take up to 10 business days on sites over 5,000 pages or JavaScript-heavy frameworks. The crawl and analysis simply take longer to run at that scale. Every engagement includes a walkthrough call to cover the fix list in priority order.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>What does a technical SEO audit service check?</h3>
+<p>Crawlability, indexation, site architecture, speed and Core Web Vitals, and structured data. On-page content and backlinks are covered separately in the full <a href="/seo-audit-services/">SEO audit service</a>.</p>
+
+<h3>Do I need a technical audit if my content is already good?</h3>
+<p>Yes. Technical problems block Google from crawling or indexing pages no matter how strong the content is — no amount of content improvement fixes a crawl blocker.</p>
+
+<h3>How is this different from an automated crawler tool?</h3>
+<p>An automated tool flags issues without judging their severity or root cause. This service adds a senior analyst who separates real problems from tool noise and orders the fix list by actual traffic impact.</p>
+
+<h3>Do you fix the issues you find?</h3>
+<p>No. The service covers diagnosis and a prioritised fix list written clearly enough for any developer to implement. Implementation is available as a separate engagement on request.</p>
+
+</ContentLayout>
