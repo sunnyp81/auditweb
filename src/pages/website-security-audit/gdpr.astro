@@ -25,9 +25,27 @@ const toc = [
   toc={toc}
   publishDate="2026-03-28"
 >
-  <p>The General Data Protection Regulation affects every website that collects data from individuals in the European Economic Area, regardless of where the website operator is based. If your site uses cookies, captures form submissions, tracks visitors with analytics, or processes any personal data from EU residents, GDPR applies to you. The penalties for non-compliance are severe — up to 20 million EUR or 4 percent of annual global turnover, whichever is higher.</p>
+  <p>The General Data Protection Regulation affects every website that collects data from individuals in the European Economic Area, regardless of where the website operator is based. If your site uses cookies, captures form submissions, tracks visitors with analytics, or processes any personal data from EU residents, GDPR applies to you.</p>
 
-  <p>A GDPR website audit systematically reviews how your site collects, processes, stores, and shares personal data, and checks whether those practices comply with GDPR requirements. Unlike a technical security audit that focuses on preventing unauthorised access, a GDPR audit focuses on whether your authorised data practices are lawful, transparent, and proportionate.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+    <div class="glass rounded-xl p-5 text-center">
+      <div class="text-3xl font-extrabold gradient-text mb-1">€20M</div>
+      <div class="text-xs text-text-dim">or 4% of global turnover — the maximum fine, whichever is higher</div>
+    </div>
+    <div class="glass rounded-xl p-5 text-center">
+      <div class="text-3xl font-extrabold gradient-text mb-1">22</div>
+      <div class="text-xs text-text-dim">checkpoints in the full audit checklist below</div>
+    </div>
+    <div class="glass rounded-xl p-5 text-center">
+      <div class="text-3xl font-extrabold gradient-text mb-1">72hrs</div>
+      <div class="text-xs text-text-dim">notification window to the supervisory authority for breaches risking individuals' rights</div>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-6 my-8 border-primary/20">
+    <h3 class="font-bold mb-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span>Key takeaway</h3>
+    <p class="text-sm text-text-muted mb-0">A GDPR audit is different from a technical security audit. Security asks whether unauthorised access is prevented. GDPR asks whether your <em>authorised</em> data practices — the things you deliberately do with visitor data — are lawful, transparent, and proportionate. Most sites fail on cookie consent and privacy policy gaps, not on anything technical.</p>
+  </div>
 
   <p>This guide walks through every area your GDPR audit should cover, from cookie consent mechanics to third-party data sharing agreements, with a complete checklist at the end.</p>
 
@@ -136,32 +154,37 @@ const toc = [
 
   <p>Use this checklist to score your website's GDPR compliance. Rate each item as compliant, partially compliant, or non-compliant. Non-compliant items are your priority fixes.</p>
 
-  <ul>
-    <li>Cookie consent banner appears before any non-essential cookies are set</li>
-    <li>Users can reject non-essential cookies with equal ease as accepting them</li>
-    <li>Cookie categories can be selected individually (granular consent)</li>
-    <li>Consent choices are recorded and can be evidenced</li>
-    <li>Consent can be withdrawn at any time via a persistent link or icon</li>
-    <li>Privacy policy is accessible from every page (typically via footer link)</li>
-    <li>Privacy policy names the data controller with contact details</li>
-    <li>Privacy policy lists all categories of personal data collected</li>
-    <li>Privacy policy states the legal basis for each processing activity</li>
-    <li>Privacy policy includes specific data retention periods</li>
-    <li>Privacy policy identifies third-party data recipients</li>
-    <li>Privacy policy explains international data transfers and safeguards</li>
-    <li>Privacy policy explains all user rights and how to exercise them</li>
-    <li>All forms collecting personal data include appropriate consent mechanisms</li>
-    <li>Marketing email opt-in uses double opt-in (not pre-ticked boxes)</li>
-    <li>A process exists to handle data subject access requests within 30 days</li>
-    <li>User data can be exported in a machine-readable format for portability</li>
-    <li>User data can be fully deleted across all systems for erasure requests</li>
-    <li>Data Processing Agreements are in place with all third-party processors</li>
-    <li>A record of processing activities is maintained and up to date</li>
-    <li>Data breach notification procedures are documented (72-hour reporting)</li>
-    <li>Staff with access to personal data have received data protection training</li>
-  </ul>
+  <div class="glass rounded-2xl p-6 my-8">
+    <ul class="space-y-3 list-none pl-0">
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Cookie consent banner appears before any non-essential cookies are set</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Users can reject non-essential cookies with equal ease as accepting them</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Cookie categories can be selected individually (granular consent)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Consent choices are recorded and can be evidenced</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Consent can be withdrawn at any time via a persistent link or icon</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy is accessible from every page (typically via footer link)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy names the data controller with contact details</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy lists all categories of personal data collected</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy states the legal basis for each processing activity</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy includes specific data retention periods</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy identifies third-party data recipients</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy explains international data transfers and safeguards</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy explains all user rights and how to exercise them</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">All forms collecting personal data include appropriate consent mechanisms</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Marketing email opt-in uses double opt-in (not pre-ticked boxes)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">A process exists to handle data subject access requests within 30 days</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">User data can be exported in a machine-readable format for portability</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">User data can be fully deleted across all systems for erasure requests</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Data Processing Agreements are in place with all third-party processors</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">A record of processing activities is maintained and up to date</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Data breach notification procedures are documented (72-hour reporting)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Staff with access to personal data have received data protection training</span></li>
+    </ul>
+  </div>
 
-  <p>Prioritise non-compliant items by risk exposure. Cookie consent violations and missing privacy policy elements are the most commonly enforced issues across EU jurisdictions. Data subject rights failures and missing DPAs create significant liability in the event of a complaint or breach investigation.</p>
+  <div class="glass rounded-2xl p-6 my-8 border-danger/20">
+    <h3 class="font-bold mb-3 flex items-center gap-2 text-danger"><span class="w-2 h-2 rounded-full bg-danger"></span>Priority order</h3>
+    <p class="text-sm text-text-muted mb-0">Cookie consent violations and missing privacy policy elements are the most commonly enforced issues across EU jurisdictions — fix these first. Data subject rights failures and missing DPAs create the most liability in an actual complaint or breach investigation — fix these second.</p>
+  </div>
 
   <p>GDPR compliance is not a one-time project. Revisit this audit whenever you add new features, install new third-party tools, or change your data processing practices. Quarterly reviews of your processing inventory and annual full GDPR audits keep you ahead of regulatory risk. If you need help running a GDPR audit or remediating the findings, <a href="/website-audit-services/">our compliance audit service</a> covers all 22 checkpoints with detailed remediation guidance.</p>
 </ContentLayout>
