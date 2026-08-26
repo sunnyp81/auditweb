@@ -25,6 +25,10 @@ const schema = {
   areaServed: ['US', 'GB'],
 };
 
+const childPages = [
+  { title: 'Technical SEO Audit Service', href: '/seo-audit-services/technical/', description: 'A technical-only audit covering crawlability, indexation, and site speed.' },
+];
+
 ---
 
 <ContentLayout
@@ -32,6 +36,7 @@ const schema = {
   description="SEO audit services for businesses and agencies who need organic search fixed — technical SEO, on-page, content, and backlinks reviewed by a senior analyst. Pricing from $197."
   breadcrumbs={breadcrumbs}
   toc={toc}
+  children={childPages}
   schema={schema}
   showLeadForm={true}
   publishDate="2026-08-26"
