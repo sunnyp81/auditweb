@@ -1,0 +1,55 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import cities from '../../data/cities.json';
+
+const breadcrumbs = [
+  { label: 'Website Audit', href: '/website-audit/' },
+  { label: 'Services', href: '/website-audit-services/' },
+  { label: 'Locations', href: '/website-audit-services/locations/' },
+];
+
+const toc = [
+  { label: 'UK Locations', id: 'uk-locations' },
+  { label: 'US Locations', id: 'us-locations' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Website Audit Services by Location',
+  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  description: 'Website audit services delivered locally across the UK and US, with city-specific market context for each location.',
+  areaServed: [...cities.uk.map(c => c.name), ...cities.us.map(c => c.name)],
+};
+---
+
+<ContentLayout
+  title="Website Audit Services by Location"
+  description="Find website audit services in your city, covering major UK and US locations from London to Los Angeles. Same audit, local market context."
+  breadcrumbs={breadcrumbs}
+  toc={toc}
+  schema={schema}
+  publishDate="2026-08-26"
+>
+
+<p>We deliver the same 72-checkpoint website audit everywhere. The one difference is local market context. Each city page below covers the specific competitive landscape, common issues, and search behaviour we see in that market.</p>
+
+<h2 id="uk-locations">UK Locations</h2>
+
+<ul>
+  {cities.uk.map(city => (
+    <li><a href={`/website-audit-services/${city.slug}/`}>{city.name}</a> — {city.region}</li>
+  ))}
+</ul>
+
+<h2 id="us-locations">US Locations</h2>
+
+<ul>
+  {cities.us.map(city => (
+    <li><a href={`/website-audit-services/${city.slug}/`}>{city.name}</a> — {city.region}</li>
+  ))}
+</ul>
+
+<p>Don't see your city listed? Our audit process works the same way anywhere — <a href="/website-audit-services/">get in touch via the main services page</a> and we'll confirm coverage for your location.</p>
+
+</ContentLayout>
