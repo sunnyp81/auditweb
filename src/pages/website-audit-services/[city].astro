@@ -28,7 +28,16 @@ const toc = [
   { label: 'Common Issues We Find', id: 'issues' },
   { label: 'Pricing', id: 'pricing' },
   { label: 'Get Started', id: 'get-started' },
+  { label: 'Also Serving', id: 'also-serving' },
 ];
+
+const allCities = [
+  ...cities.uk.map(c => ({ ...c, country: 'UK' })),
+  ...cities.us.map(c => ({ ...c, country: 'US' })),
+];
+const sameRegion = allCities.filter(c => c.region === city.region && c.slug !== city.slug);
+const sameCountry = allCities.filter(c => c.country === city.country && c.slug !== city.slug);
+const nearbyCities = (sameRegion.length >= 3 ? sameRegion : sameCountry).slice(0, 5);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -69,8 +78,8 @@ const schema = {
   <h2 id="covers">What Our Audit Covers</h2>
   <p>Our comprehensive 72-checkpoint audit examines every aspect of your website:</p>
   <ul>
-    <li><strong>SEO Analysis:</strong> Keyword targeting, title tags, meta descriptions, heading structure, internal linking, content quality, and schema markup. We check how well your site is optimised for the searches your {city.name} customers are making.</li>
-    <li><strong>Technical Review:</strong> Crawlability, indexation, site architecture, Core Web Vitals, mobile-friendliness, HTTPS configuration, and structured data validation.</li>
+    <li><strong><a href="/seo-website-audit/">SEO audit for {city.name} businesses</a>:</strong> Keyword targeting, title tags, meta descriptions, heading structure, internal linking, content quality, and schema markup. We check how well your site is optimised for the searches your {city.name} customers are making.</li>
+    <li><strong><a href="/technical-website-audit/">Technical audit for {city.name} websites</a>:</strong> Crawlability, indexation, site architecture, Core Web Vitals, mobile-friendliness, HTTPS configuration, and structured data validation.</li>
     <li><strong>Content Evaluation:</strong> Content quality, topical coverage, thin content identification, duplicate content, and content gap analysis against your competitors.</li>
     <li><strong>UX Assessment:</strong> Navigation usability, mobile experience, form functionality, conversion paths, and accessibility compliance.</li>
     <li><strong>Security Check:</strong> SSL configuration, security headers, software vulnerabilities, and data protection compliance.</li>
@@ -131,4 +140,13 @@ const schema = {
   <h2 id="get-started">Get Started</h2>
   <p>Ready to find out what's holding your {city.name} website back? Fill in the form to request your audit. We'll review your site and send your report within 48 hours.</p>
   <p>Alternatively, try our <a href="/free-website-audit/">free instant audit tool</a> for a quick health check before committing to a full professional audit.</p>
+  <p>Not sure which package fits {city.name}? See <a href="/website-audit-services/">our full range of audit services</a> for scope and pricing.</p>
+
+  <h2 id="also-serving">Also Serving</h2>
+  <p>We run the same 72-checkpoint audit process for businesses across the wider region. Explore audits in nearby cities:</p>
+  <ul>
+    {nearbyCities.map(c => (
+      <li><a href={`/website-audit-services/${c.slug}/`}>{c.name}</a></li>
+    ))}
+  </ul>
 </ContentLayout>
