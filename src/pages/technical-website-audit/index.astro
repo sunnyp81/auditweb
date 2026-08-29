@@ -16,7 +16,41 @@ const toc = [
   { label: 'HTTPS and Security Headers', id: 'https-and-security-headers' },
   { label: 'Structured Data and Schema', id: 'structured-data-and-schema' },
   { label: 'Technical Audit Tools', id: 'technical-audit-tools' },
+  { label: 'FAQs', id: 'faq' },
 ];
+
+const faqs = [
+  {
+    q: 'What is a technical website audit?',
+    a: 'A technical website audit is a systematic examination of the server-side and client-side factors that determine whether search engines can access, understand, and efficiently process your pages. It focuses exclusively on infrastructure such as crawlability, indexation, site speed, structured data, and security, rather than content or off-page authority.',
+  },
+  {
+    q: 'How long does a technical SEO audit take?',
+    a: 'A thorough technical audit on a site with 1,000 to 10,000 pages typically takes 6 to 12 hours of specialist time. Larger sites with complex architectures, such as faceted navigation or JavaScript rendering frameworks, can take 20 hours or more.',
+  },
+  {
+    q: 'What are the Core Web Vitals thresholds a site needs to pass?',
+    a: "A page needs a Largest Contentful Paint (LCP) under 2.5 seconds, an Interaction to Next Paint (INP) under 200 milliseconds, and a Cumulative Layout Shift (CLS) under 0.1. These three metrics are Google's confirmed ranking signals for real-world user experience.",
+  },
+  {
+    q: 'Why are technical SEO issues hard to spot without an audit?',
+    a: 'Technical issues are invisible to most stakeholders because they do not show up on the page itself. A broken canonical tag, a misconfigured robots.txt rule, or a crawl budget problem only reveals itself through gradually declining impressions in Search Console, often months after the damage began.',
+  },
+  {
+    q: 'What tools are used to run a technical SEO audit?',
+    a: 'Crawling tools like Screaming Frog and Sitebulb map the site, PageSpeed Insights and WebPageTest diagnose Core Web Vitals issues, Google Search Console and Bing Webmaster Tools confirm indexation status, and tools like Qualys SSL Labs and Mozilla Observatory test security configuration.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 
 const childPages = [
   { title: 'How to Conduct a Technical Audit', href: '/technical-website-audit/how-to/', description: 'Step-by-step guide to performing a technical SEO audit.' },
@@ -218,5 +252,16 @@ const childPages = [
 </ul>
 
 <p>For a detailed comparison of all available audit tools, including pricing and feature breakdowns, see our <a href="/website-audit-tools/">best website audit tools</a> guide. If you want a professional to handle the technical audit for you, explore our <a href="/website-audit-services/">website audit services</a> starting at $297.</p>
+
+<h2 id="faq">FAQs</h2>
+
+{faqs.map((item) => (
+  <>
+    <h3>{item.q}</h3>
+    <p>{item.a}</p>
+  </>
+))}
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 </ContentLayout>

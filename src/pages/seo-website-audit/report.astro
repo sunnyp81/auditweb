@@ -18,7 +18,41 @@ const toc = [
   { label: 'Competitor Benchmarking', id: 'competitor-benchmarking' },
   { label: 'Prioritised Action Plan', id: 'prioritised-action-plan' },
   { label: 'Presenting the Report to Stakeholders', id: 'presenting-the-report-to-stakeholders' },
+  { label: 'FAQs', id: 'faq' },
 ];
+
+const faqs = [
+  {
+    q: 'What should an SEO audit report include?',
+    a: 'A professional SEO audit report should include an executive summary, technical SEO findings, on-page analysis, content quality assessment, backlink profile review, Core Web Vitals data, competitor benchmarking, and a prioritised action plan. Each section should translate raw data into specific, actionable recommendations rather than just listing issues.',
+  },
+  {
+    q: 'How long should an SEO audit report be?',
+    a: 'A typical SEO audit report runs 15 to 50 pages depending on site complexity. Small business websites under 100 pages usually need only 15 to 20 pages, while enterprise sites can require 50 or more pages plus appendices with raw data exports.',
+  },
+  {
+    q: 'What should the executive summary of an SEO audit report cover?',
+    a: 'The executive summary should communicate three things: the current state (a health score or grading system), the three to five most impactful findings written in plain language, and the estimated traffic or revenue impact of fixing them. It should be kept to one page, since many stakeholders read only this section.',
+  },
+  {
+    q: 'How should you prioritise the action plan in an SEO audit report?',
+    a: 'List every recommendation with a priority level (Critical, High, Medium, or Low), the affected pages, the recommended fix, estimated effort, and expected impact. Sort by priority then by impact within each level, with critical items given deadlines within one week and lower-priority items within 60 days.',
+  },
+  {
+    q: 'Who should an SEO audit report be written for?',
+    a: 'A good report serves three audiences differently: technical teams need raw data and specific fix instructions, marketing teams need content gaps and keyword opportunities framed around traffic growth, and executives need the report led with business impact, revenue, and minimal jargon.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <ContentLayout
@@ -181,5 +215,16 @@ const toc = [
   <p><strong>Delivery format:</strong> PDF is the standard for client reports because it preserves formatting and branding. For internal reports, a shared Google Doc or Notion page works better because it allows comments and collaborative prioritisation. Some agencies deliver reports as interactive dashboards using Looker Studio or custom portals, which allow filtering by priority, category, and page.</p>
 
   <p>Regardless of format, schedule a walkthrough meeting to present the report in person or via video call. Reports delivered without explanation have significantly lower action rates. Use the meeting to answer questions, adjust priorities based on business constraints, and agree on timelines. End with clear next steps and a follow-up date.</p>
+
+  <h2 id="faq">FAQs</h2>
+
+  {faqs.map((item) => (
+    <>
+      <h3>{item.q}</h3>
+      <p>{item.a}</p>
+    </>
+  ))}
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 </ContentLayout>

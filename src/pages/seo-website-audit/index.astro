@@ -15,7 +15,41 @@ const toc = [
   { label: 'Off-Page SEO Checks', id: 'off-page-seo-checks' },
   { label: 'Tools for SEO Audits', id: 'tools-for-seo-audits' },
   { label: 'How to Prioritise Fixes', id: 'how-to-prioritise-fixes' },
+  { label: 'FAQs', id: 'faq' },
 ];
+
+const faqs = [
+  {
+    q: 'What is an SEO website audit?',
+    a: 'An SEO website audit is a detailed analysis of every factor that influences a site\'s search engine visibility, covering three core pillars: on-page SEO, technical SEO, and off-page SEO. It documents every issue found, explains why it matters, and recommends a specific fix.',
+  },
+  {
+    q: 'Why do you need an SEO audit?',
+    a: 'Organic search drives 53% of all website traffic, yet most sites have between 15 and 40 issues actively suppressing it that are invisible without a structured audit. Implementing the top recommendations from a comprehensive audit typically produces a 30-100% organic traffic increase within 90 days.',
+  },
+  {
+    q: 'What are the three pillars of an SEO audit?',
+    a: 'The three pillars are on-page SEO (content, keywords, title tags, headings, internal links, structured data), technical SEO (crawlability, indexation, rendering), and off-page SEO (backlinks and brand mentions). A complete audit examines all three, since focusing on just one can lead to misdiagnosing the root cause of ranking problems.',
+  },
+  {
+    q: 'What tools do you need for an SEO audit?',
+    a: 'Free essentials include Google Search Console, Google PageSpeed Insights, Screaming Frog (free up to 500 URLs), and Google Lighthouse. For larger or more complex sites, professional tools like Ahrefs, Semrush, and the paid version of Screaming Frog add deeper crawl and backlink analysis.',
+  },
+  {
+    q: 'How do you prioritise SEO audit fixes?',
+    a: 'Score every issue on impact and effort to create four quadrants: quick wins (high impact, low effort) should be fixed first, major projects scheduled for the medium term, fill-ins done when capacity allows, and low-impact, high-effort items deprioritised. Mapping dependencies, such as fixing crawlability before on-page content, ensures fixes are executed in the right order.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 
 const childPages = [
   { title: 'How to Do an SEO Audit', href: '/seo-website-audit/how-to/', description: 'Step-by-step walkthrough of the complete SEO audit process from crawl to action plan.' },
@@ -281,5 +315,16 @@ const childGroups = [
 <p>After implementing fixes, re-crawl your site to verify the issues are resolved. Monitor Google Search Console for improvements in indexation and traffic. Run a follow-up audit in 30-60 days to measure the impact and identify any new issues that have emerged.</p>
 
 <p>If you want professional help prioritising and implementing SEO audit fixes, our <a href="/website-audit-services/">audit services</a> include a prioritised action plan with revenue estimates for every recommendation.</p>
+
+<h2 id="faq">FAQs</h2>
+
+{faqs.map((item) => (
+  <>
+    <h3>{item.q}</h3>
+    <p>{item.a}</p>
+  </>
+))}
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 </ContentLayout>
