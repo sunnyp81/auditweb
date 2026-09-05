@@ -23,10 +23,10 @@ const industries = [
 ];
 
 const commonIssues = [
-  { icon: '⚡', color: 'warning', title: 'Slow Page Speed', desc: '47% of users expect pages to load in under 2 seconds. Slow sites lose $4 per visitor in wasted ad spend.', fix: 'Image compression, code minification, CDN setup' },
+  { icon: '⚡', color: 'warning', title: 'Slow Page Speed', desc: 'Slow pages make visitors wait. Measure field performance and investigate the resources delaying important content.', fix: 'Image compression, code minification, CDN setup' },
   { icon: '🔗', color: 'danger', title: 'Broken Internal Links', desc: 'Broken links waste crawl budget and create dead ends for users, hurting both SEO and conversions.', fix: 'Link audit, redirect mapping, 404 monitoring' },
-  { icon: '🏷️', color: 'primary', title: 'Missing Meta Tags', desc: 'Pages without optimised title tags and descriptions get 36% fewer clicks from search results.', fix: 'Title tag templates, description optimisation, schema markup' },
-  { icon: '📱', color: 'accent', title: 'Mobile Usability Issues', desc: '74% of mobile users abandon sites that aren\'t mobile-friendly. Google uses mobile-first indexing.', fix: 'Responsive design fixes, tap target sizing, viewport config' },
+  { icon: '🏷️', color: 'primary', title: 'Missing Meta Tags', desc: 'Missing or inaccurate titles and descriptions make the purpose of a search result harder to understand.', fix: 'Title tag templates, description optimisation, schema markup' },
+  { icon: '📱', color: 'accent', title: 'Mobile Usability Issues', desc: 'Small screens need readable content, usable controls and a clear path to the next action.', fix: 'Responsive design fixes, tap target sizing, viewport config' },
   { icon: '📄', color: 'warning', title: 'Thin Content', desc: 'Pages with insufficient content signal low quality to search engines, dragging down your entire site.', fix: 'Content gap analysis, page consolidation, topical depth' },
   { icon: '🔒', color: 'danger', title: 'Security Vulnerabilities', desc: 'Missing SSL, outdated plugins, and exposed admin panels put your data and rankings at risk.', fix: 'SSL enforcement, security headers, vulnerability scan' },
 ];
@@ -39,9 +39,9 @@ const issueColorMap = {
 };
 
 const steps = [
-  { num: '01', title: 'Submit Your URL', desc: 'Enter your website URL and we\'ll begin our 72-checkpoint analysis immediately.' },
-  { num: '02', title: 'We Audit Everything', desc: 'Our team examines technical SEO, content quality, UX, security, speed, and competitive positioning.' },
-  { num: '03', title: 'Get Your Action Plan', desc: 'Receive a prioritised report showing exactly what to fix, in what order, with expected ROI for each fix.' },
+  { num: '01', title: 'Submit Your URL', desc: 'Tell us which website and business problem you want reviewed. We confirm the scope before starting.' },
+  { num: '02', title: 'Review the Agreed Scope', desc: 'Our team examines technical SEO, content quality, UX, security, speed, and competitive positioning.' },
+  { num: '03', title: 'Get Your Action Plan', desc: 'Receive a prioritised report showing exactly what to fix, in what order, with evidence and a verification step for each fix.' },
 ];
 
 const pricing = [
@@ -80,7 +80,7 @@ const whyPoints = [
 
 <BaseLayout
   title="AuditWeb — Professional Website Audits That Drive Results"
-  description="Stop guessing what's wrong with your website. Our 72-checkpoint audit reveals exactly what's broken and shows you how to fix it. Free instant audit available."
+  description="Stop guessing what's wrong with your website. Our 72-checkpoint audit reveals exactly what's broken and shows you how to fix it. Free browser-based HTML checker available."
   schema={schema}
 >
   <!-- Hero -->
@@ -104,7 +104,7 @@ const whyPoints = [
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a href="/free-website-audit/" class="px-8 py-4 bg-primary hover:bg-primary-dark text-surface font-bold text-lg rounded-xl transition-colors animate-pulse-glow">
-            Get Your Free Audit
+            Open the Free HTML Checker
           </a>
           <a href="/website-audit-services/" class="px-8 py-4 border border-border hover:border-primary/50 text-text font-semibold text-lg rounded-xl transition-colors">
             View Pricing
@@ -142,8 +142,8 @@ const whyPoints = [
         </h3>
         <ul class="space-y-3 text-text-muted">
           <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> Hidden technical issues tank your rankings</li>
-          <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> $4 wasted per visitor on ads to a broken site</li>
-          <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> 74% of mobile users bounce from unfriendly sites</li>
+          <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> Paid visits can be wasted when the landing page does not work</li>
+          <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> Mobile layout problems can obstruct enquiries and purchases</li>
           <li class="flex items-start gap-2"><span class="text-danger mt-1">✕</span> Competitors outrank you with better site health</li>
         </ul>
       </div>
@@ -153,8 +153,8 @@ const whyPoints = [
           With an AuditWeb Report
         </h3>
         <ul class="space-y-3 text-text-muted">
-          <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Every issue found, categorised, and prioritised</li>
-          <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Clear ROI estimate for each fix</li>
+          <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Observed issues documented and prioritised</li>
+          <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Evidence and a verification step for each fix</li>
           <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Actionable steps your team can implement today</li>
           <li class="flex items-start gap-2"><span class="text-success mt-1">✓</span> Competitive edge with data-driven improvements</li>
         </ul>
@@ -188,7 +188,7 @@ const whyPoints = [
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {commonIssues.map(issue => (
-        <div class="glass rounded-2xl p-6 hover:border-primary/20 transition-all">
+        <div class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors">
           <div class={`w-11 h-11 rounded-xl ${issueColorMap[issue.color].bg} border ${issueColorMap[issue.color].border} flex items-center justify-center text-xl mb-4`}>
             {issue.icon}
           </div>
@@ -206,15 +206,15 @@ const whyPoints = [
       <h2 class="text-3xl font-bold mb-4">Explore Every <span class="gradient-text">Audit Type</span></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="/seo-website-audit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-all block">
+      <a href="/seo-website-audit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors block">
         <h3 class="font-semibold text-sm mb-3 text-primary">SEO website audit guide</h3>
         <p class="text-text-muted text-sm">A full walkthrough of how we assess rankings, technical SEO health, and on-page factors.</p>
       </a>
-      <a href="/technical-website-audit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-all block">
+      <a href="/technical-website-audit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors block">
         <h3 class="font-semibold text-sm mb-3 text-primary">Technical website audit guide</h3>
         <p class="text-text-muted text-sm">How we diagnose crawlability, indexing, site speed, and infrastructure issues.</p>
       </a>
-      <a href="/website-audit-checklist/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-all block">
+      <a href="/website-audit-checklist/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors block">
         <h3 class="font-semibold text-sm mb-3 text-primary">72-point audit checklist</h3>
         <p class="text-text-muted text-sm">The complete checklist behind every audit, broken down category by category.</p>
       </a>
@@ -228,7 +228,7 @@ const whyPoints = [
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       {industries.map(ind => (
-        <div class="glass rounded-xl p-4 text-center hover:border-primary/30 hover:-translate-y-0.5 transition-all">
+        <div class="glass rounded-xl p-4 text-center hover:border-primary/30 hover:-translate-y-0.5 transition-colors">
           <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-primary/15 to-accent/15 border border-primary/20 flex items-center justify-center text-2xl mb-3">
             {ind.icon}
           </div>
@@ -248,17 +248,17 @@ const whyPoints = [
     <div class="max-w-xl mx-auto glass rounded-2xl p-8">
       <div class="space-y-6">
         <div>
-          <label class="block text-sm font-medium text-text-muted mb-2">Monthly Visitors</label>
+          <label for="calc-visitors" class="block text-sm font-medium text-text-muted mb-2">Monthly Visitors</label>
           <input type="number" id="calc-visitors" value="10000" min="0"
             class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-text focus:outline-none focus:border-primary transition-colors" />
         </div>
         <div>
-          <label class="block text-sm font-medium text-text-muted mb-2">Current Conversion Rate (%)</label>
+          <label for="calc-cvr" class="block text-sm font-medium text-text-muted mb-2">Current Conversion Rate (%)</label>
           <input type="number" id="calc-cvr" value="2" min="0" max="100" step="0.1"
             class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-text focus:outline-none focus:border-primary transition-colors" />
         </div>
         <div>
-          <label class="block text-sm font-medium text-text-muted mb-2">Average Order Value ($)</label>
+          <label for="calc-aov" class="block text-sm font-medium text-text-muted mb-2">Average Order Value ($)</label>
           <input type="number" id="calc-aov" value="50" min="0"
             class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-text focus:outline-none focus:border-primary transition-colors" />
         </div>
@@ -266,7 +266,7 @@ const whyPoints = [
           <div class="text-center">
             <p class="text-sm text-text-dim mb-1">Potential Monthly Revenue Increase</p>
             <p id="calc-result" class="text-4xl font-extrabold gradient-text">$3,000</p>
-            <p class="text-xs text-text-dim mt-2">Based on a conservative 30% improvement in conversion rate from fixing audit issues</p>
+            <p class="text-xs text-text-dim mt-2">Illustrative scenario assuming a 30% relative conversion increase. This is not a forecast or guaranteed result.</p>
           </div>
         </div>
       </div>
@@ -307,13 +307,13 @@ const whyPoints = [
       <h2 class="text-3xl font-bold mb-4">See a Real <span class="gradient-text">Audit</span></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-      <a href="/seo-website-audit/report/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-all block">
-        <h3 class="font-semibold text-sm mb-3 text-primary">Real SEO audit report example</h3>
-        <p class="text-text-muted text-sm">See the exact structure and findings from a real SEO audit report, section by section.</p>
+      <a href="/case-studies/auditweb-self-audit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors block">
+        <h3 class="font-semibold text-sm mb-3 text-primary">Read our documented self-audit</h3>
+        <p class="text-text-muted text-sm">See what we found on our own site, the corrections and how to verify them.</p>
       </a>
-      <a href="/website-audit-services/report-example/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-all block">
-        <h3 class="font-semibold text-sm mb-3 text-primary">Sample audit report</h3>
-        <p class="text-text-muted text-sm">A full sample report showing how findings, priorities, and fixes are presented.</p>
+      <a href="/resources/agency-audit-toolkit/" class="glass rounded-2xl p-6 hover:border-primary/20 transition-colors block">
+        <h3 class="font-semibold text-sm mb-3 text-primary">Editable agency toolkit</h3>
+        <p class="text-text-muted text-sm">Download a report template, questionnaire, prioritisation worksheet and implementation tracker.</p>
       </a>
     </div>
   </section>
@@ -322,7 +322,7 @@ const whyPoints = [
   <section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
-      <p class="text-text-muted">Choose the audit depth that matches your needs. 100% money-back guarantee.</p>
+      <p class="text-text-muted">Choose the audit depth that matches your needs. Confirm deliverables and terms before commissioning work.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {pricing.map(plan => (
@@ -376,13 +376,13 @@ const whyPoints = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-website-audit/" class="px-8 py-4 bg-primary hover:bg-primary-dark text-surface font-bold text-lg rounded-xl transition-colors glow-primary">
-          Get Your Free Audit
+          Open the Free HTML Checker
         </a>
         <a href="/website-audit/" class="px-8 py-4 border border-border hover:border-primary/50 text-text font-semibold text-lg rounded-xl transition-colors">
           Read Our Audit Guide
         </a>
       </div>
-      <p class="mt-4 text-sm text-text-dim">No credit card required &bull; Results in 60 seconds &bull; 100% confidential</p>
+      <p class="mt-4 text-sm text-text-dim">No signup required &bull; Pasted HTML stays in your browser</p>
     </div>
   </section>
 </BaseLayout>

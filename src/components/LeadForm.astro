@@ -22,7 +22,7 @@ const {
   >
     <input type="hidden" name="subject" value="Audit Request (auditweb.site)" />
     <input type="hidden" name="redirectTo" value="https://auditweb.site/thank-you/" />
-    <input type="text" name="honeypot" style="display:none" />
+    <input type="text" name="honeypot" style="display:none" aria-label="Leave this field empty" tabindex="-1" autocomplete="off" />
 
     <div>
       <label for={`${formId}-name`} class="block text-sm font-medium text-text-muted mb-1">Name</label>

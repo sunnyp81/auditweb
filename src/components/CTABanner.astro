@@ -11,9 +11,9 @@ interface Props {
 }
 
 const {
-  headline = 'Get Your Free Website Audit',
-  description = 'Find out what\'s holding your website back. Our 72-checkpoint audit reveals exactly what to fix.',
-  buttonText = 'Start Free Audit',
+  headline = 'Check Your Page HTML',
+  description = 'Review titles, canonical links and other on-page signals from pasted HTML. Download your findings for follow-up.',
+  buttonText = 'Open HTML Checker',
   buttonHref = '/free-website-audit/',
   variant = 'primary',
   showSignup = true,
@@ -30,7 +30,7 @@ const gradientClass = variant === 'accent'
   <a href={buttonHref} class="inline-flex px-6 py-3 bg-primary hover:bg-primary-dark text-surface font-semibold rounded-lg transition-colors glow-primary">
     {buttonText}
   </a>
-  <p class="mt-3 text-xs text-text-dim">No credit card required &bull; Results in 60 seconds</p>
+  <p class="mt-3 text-xs text-text-dim">No signup required &bull; Pasted HTML stays in your browser</p>
 
   {showSignup && (
     <div class="mt-8 pt-6 border-t border-white/10">

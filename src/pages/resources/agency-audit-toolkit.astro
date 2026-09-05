@@ -1,0 +1,28 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+const breadcrumbs = [{ label: 'Audit Checklists', href: '/website-audit-checklist/' }, { label: 'Agency Toolkit', href: '/resources/agency-audit-toolkit/' }];
+const resources = [
+  ['Client questionnaire', 'client-questionnaire.md', 'Agree goals, scope, access and implementation constraints before the audit.'],
+  ['Audit report template', 'audit-report-template.md', 'Connect each finding to evidence, a recommendation and a verification step.'],
+  ['Prioritisation worksheet', 'prioritisation-worksheet.md', 'Assess impact, confidence, effort and dependencies before choosing the next actions.'],
+  ['Implementation tracker', 'implementation-tracker.md', 'Separate local work, releases and verified production outcomes.'],
+];
+---
+<ContentLayout title="Free Agency Website Audit Toolkit: Editable Templates" description="Download a client questionnaire, audit report template, prioritisation worksheet and implementation tracker. Editable Markdown files plus a 50-check PDF." breadcrumbs={breadcrumbs} publishDate="2026-09-05" showCTA={false}>
+  <p>The agency audit toolkit helps you turn a website review into work a client can approve and a developer can verify. It includes four editable Markdown templates, instructions and the printable 50-check checklist.</p>
+  <p><a class="download-action" href="/downloads/auditweb-agency-audit-toolkit.zip" download>Download the complete agency toolkit (ZIP)</a></p>
+  <p>No email or account is required. Open the Markdown files in a text editor or Markdown editor. Replace the bracketed prompts with your own evidence. The toolkit performs no scans or automatic calculations.</p>
+  <h2>Choose the Template for Your Next Task</h2>
+  <p>Use the files together for a complete workflow or download one template for a specific handoff.</p>
+  {resources.map(([title, file, description]) => <section class="resource-row"><h3>{title}</h3><p>{description}</p><a href={`/downloads/agency-audit-toolkit/${file}`} download>Download {title.toLowerCase()} (.md)</a></section>)}
+  <h2>How to Use the Toolkit</h2>
+  <p>Start with the questionnaire. Agree the site scope and the business question before collecting data. Record each finding in the report template with an affected URL and a reproducible observation.</p>
+  <p>Prioritise confirmed problems using impact, confidence and implementation effort. Assign owners in the tracker. Mark a task verified only after checking the released change against its acceptance criteria.</p>
+  <p>The <a href="/case-studies/auditweb-self-audit/">AuditWeb self-audit</a> demonstrates this evidence-to-action approach. The <a href="/free-website-audit/">free HTML checker</a> supplies source-level observations for part of an audit.</p>
+  <h2>What Can You Reuse?</h2>
+  <p>You may edit, rebrand and redistribute the templates for personal or commercial work. Attribution to AuditWeb is appreciated but optional. Client data and credentials do not belong in a public version of a completed report.</p>
+  <p>Version: 5 September 2026. The files are blank working templates, not evidence of a completed client audit. The <a href="/website-audit-checklist/template/">manual checklist page</a> explains the PDF's 50 checks and scoring limits.</p>
+  <h2>Need Help with the Findings?</h2>
+  <p>Professional review can help establish causes and an implementation order. Compare the scope and next steps on our <a href="/website-audit-services/">website audit services page</a>.</p>
+</ContentLayout>
+<style>.resource-row { padding: 1rem 0 1.5rem; border-bottom: 1px solid #64748b; }.resource-row h3 { margin-top: 0; }</style>

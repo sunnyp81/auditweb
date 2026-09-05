@@ -1,117 +1,67 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
-
 const breadcrumbs = [
   { label: 'Website Audit', href: '/website-audit/' },
   { label: 'Checklists', href: '/website-audit-checklist/' },
   { label: 'Template', href: '/website-audit-checklist/template/' },
 ];
-
 const toc = [
+  { label: 'Download the PDF', id: 'download' },
   { label: "What's Included", id: 'whats-included' },
   { label: 'How to Use It', id: 'how-to-use-it' },
-  { label: 'Customisation Tips', id: 'customisation-tips' },
   { label: 'Scoring Guide', id: 'scoring-guide' },
-  { label: 'Download', id: 'download' },
+  { label: 'Customisation Tips', id: 'customisation-tips' },
 ];
 ---
-
 <ContentLayout
-  title="Website Audit Template: Free Excel and PDF Download"
-  description="Download a free website audit template in Excel and PDF formats. Covers technical SEO, on-page optimisation, content quality, and off-page signals with a built-in scoring system."
+  title="Website Audit Template: Free 50-Check PDF Download"
+  description="Download a free printable website audit template with 50 checks, an evidence-based scoring guide and an action plan. No email required."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
 >
-  <p>A website audit template gives you a repeatable framework for evaluating any website's SEO health. Instead of starting from scratch each time, you work through a structured document that ensures every important factor is checked, scored, and documented. The best templates are flexible enough to work across different site types and industries while being specific enough to produce actionable findings.</p>
+  <p>This free <strong>website audit template</strong> provides 50 manual checks across technical SEO, on-page SEO, content quality and off-page signals. Use the printable PDF to record scores and connect findings to an action plan. No email or account is required.</p>
 
-  <p>The template available on this page is the same framework our team uses for professional audits. It covers four major categories — technical SEO, on-page optimisation, content quality, and off-page signals — with a total of 50 check items. Each item includes a clear description of what to evaluate, the expected standard, and a scoring system that translates qualitative assessments into a quantitative health score.</p>
+  <h2 id="download">Download the Website Audit Template</h2>
+  <p>The PDF includes a scoring guide, four checklists and an action-plan worksheet. It is a manual review aid. It does not scan your website or calculate scores automatically.</p>
+  <p><a href="/downloads/auditweb-website-audit-checklist.pdf" download>Download the 50-check website audit template (PDF)</a></p>
+  <p>Version: 5 September 2026. The template is free for personal and commercial use. You may adapt and redistribute it. Attribution to AuditWeb is appreciated.</p>
 
-  <p>The template is available in both Excel and PDF formats. The Excel version is interactive — enter your scores and the sheet automatically calculates section scores, an overall health percentage, and highlights critical findings with conditional formatting. The PDF version is a printable reference for use during manual site reviews or client meetings.</p>
-
-  <h2 id="whats-included">What's Included</h2>
-
-  <p>The template is organised into four tabs (in the Excel version) or four sections (in the PDF):</p>
-
+  <p>For editable working documents, download the <a href="/resources/agency-audit-toolkit/">agency report template and implementation tracker</a>.</p>
+  <h2 id="whats-included">What's Included?</h2>
+  <p>The template contains four sections. Each check has an ID, a description of the evidence to review, a suggested method and space for a score.</p>
   <ul>
-    <li><strong>Technical SEO (15 checks)</strong> — covers crawlability, indexation health, site speed, Core Web Vitals, HTTPS implementation, mobile usability, structured data, redirect health, XML sitemap accuracy, robots.txt configuration, JavaScript rendering, server performance, site architecture depth, duplicate URL handling, and international targeting. Each check specifies the tool to use (Search Console, Screaming Frog, PageSpeed Insights) and the threshold for a passing score.</li>
-    <li><strong>On-Page SEO (12 checks)</strong> — covers title tag uniqueness and optimisation, meta description presence and quality, heading structure, internal linking patterns, image optimisation (alt text, format, sizing), canonical tag implementation, URL structure, Open Graph tags, breadcrumb navigation, keyword targeting alignment, link depth analysis, and broken link identification.</li>
-    <li><strong>Content Quality (13 checks)</strong> — covers content depth relative to competitors, search intent alignment, keyword cannibalisation, content freshness, E-E-A-T signals (author credentials, citations, expertise demonstration), thin content identification, duplicate content across the site, content structure and readability, topical completeness, content gap analysis, multimedia usage, call-to-action presence, and user engagement metrics.</li>
-    <li><strong>Off-Page Signals (10 checks)</strong> — covers referring domain quantity and quality, anchor text distribution, toxic link identification, link velocity trends, competitor backlink comparison, brand mention auditing, local citation consistency (if applicable), review profile health, social profile presence, and domain authority trajectory.</li>
+    <li><strong>Technical SEO: 15 checks.</strong> Review crawl access, indexing, response codes, Core Web Vitals, HTTPS, mobile usability, structured data, redirects, sitemaps, robots directives, rendered content, server reliability, site architecture, duplicate URLs and international pages.</li>
+    <li><strong>On-page SEO: 12 checks.</strong> Review titles, descriptions, headings, internal links, images, canonical tags, URL structure, social previews, breadcrumbs, search intent, priority-page access and broken links.</li>
+    <li><strong>Content quality: 13 checks.</strong> Review answer completeness, search intent, competing pages, freshness, evidence, low-value pages, repeated content, readability, topic coverage, demand gaps, useful media, next actions and engagement measurement.</li>
+    <li><strong>Off-page signals: 10 checks.</strong> Review referring sites, anchor context, suspicious links, link changes, competitor sources, brand mentions, local information, reviews, official profiles and the limits of third-party authority scores.</li>
   </ul>
+  <p>The action-plan worksheet connects a check ID and affected URL to a finding, proposed fix, owner, deadline and verification step.</p>
 
-  <p>Each check item in the template includes five columns:</p>
-
+  <h2 id="how-to-use-it">How to Use the Template</h2>
+  <p>Define the review scope before scoring. Record the website, reviewer, review date and sampled URLs on the first page.</p>
   <ol>
-    <li><strong>Check name and description</strong> — what you are evaluating and why it matters for SEO.</li>
-    <li><strong>Expected standard</strong> — the specific, measurable criterion that defines a pass. For example, "All pages load in under 3 seconds on mobile" or "No more than 5% of pages have duplicate title tags."</li>
-    <li><strong>Tool/method</strong> — which tool or approach to use for this check. Includes both free options (Search Console, Screaming Frog free, PageSpeed Insights) and premium alternatives (Ahrefs, Semrush, Sitebulb).</li>
-    <li><strong>Score (0-3)</strong> — your assessment of how well the site meets the standard. The scoring rubric is detailed in the Scoring Guide section below.</li>
-    <li><strong>Notes and findings</strong> — space to document specific issues, affected URLs, and recommended actions. This is where the audit becomes actionable.</li>
+    <li><strong>Gather evidence.</strong> Use Search Console and a crawl where available. Inspect important pages and customer journeys in a browser.</li>
+    <li><strong>Work through the checks.</strong> Start with technical access. Continue through on-page SEO and content. Finish with off-page evidence.</li>
+    <li><strong>Record findings.</strong> Note each check ID alongside the affected URL and the observation that supports your score. Mark unavailable checks as not checked.</li>
+    <li><strong>Assign actions.</strong> Give each priority fix an owner and a verification step. Recheck the affected page after implementation.</li>
   </ol>
+  <p>Read additional context on individual checks in the <a href="/website-audit-checklist/seo/">SEO audit checklist</a>. Review a worked report structure in the <a href="/website-audit-services/report-example/">website audit report example</a>.</p>
 
-  <h2 id="how-to-use-it">How to Use It</h2>
-
-  <p>The template is designed to be completed in a single pass through the site, working from the Technical SEO section through to Off-Page Signals. This sequence matters because findings in earlier sections provide context for later sections. Here is the recommended workflow:</p>
-
-  <ol>
-    <li><strong>Set up your tools</strong> — before starting the audit, configure your crawl tool (Screaming Frog or equivalent), open Google Search Console for the site, and have PageSpeed Insights ready in a browser tab. If you have access to Ahrefs or Semrush, open the site's project or run a new audit. Having all data sources ready before you begin prevents workflow interruptions.</li>
-    <li><strong>Run the crawl first</strong> — start a full crawl of the site. While it runs (which may take minutes to hours depending on site size), begin reviewing Search Console data for the technical section. By the time you reach the on-page checks, the crawl data will be available.</li>
-    <li><strong>Work through sections sequentially</strong> — for each check item, evaluate the site against the expected standard, assign a score, and document your specific findings in the notes column. Be specific — "42 pages have missing H1 tags, primarily in the /blog/ section due to the blog post template" is more useful than "some pages missing H1."</li>
-    <li><strong>Review the dashboard</strong> — after completing all sections, review the summary dashboard (auto-generated in the Excel version) to see overall health score, section-by-section scores, and the distribution of scores across check items. Critical findings (score 0) should be highlighted automatically.</li>
-    <li><strong>Write the executive summary</strong> — use the dashboard data to write a brief summary of the site's SEO health, highlighting the most significant findings and the top three to five priority actions. The template includes an executive summary section with prompts to guide your writing.</li>
-    <li><strong>Create the action plan</strong> — extract all findings scored 0 or 1 and organise them into a prioritised action list. The template includes an action plan tab where you can assign priority (critical, high, medium, low), estimated effort, and recommended timeline for each fix.</li>
-  </ol>
-
-  <p>A complete audit using this template typically takes four to eight hours for a small to medium site (under 5,000 pages) and eight to twenty hours for larger sites. The time investment increases with site complexity rather than just size — a 1,000-page ecommerce site with faceted navigation may take longer than a 5,000-page blog with a simple structure.</p>
-
-  <h2 id="customisation-tips">Customisation Tips</h2>
-
-  <p>The template works well out of the box for most websites, but customising it for your specific needs makes it even more effective. Here are the most common and valuable customisations:</p>
-
+  <h2 id="scoring-guide">How Should You Score a Website Audit?</h2>
+  <p>Score each completed check from 0 to 3 using evidence from the reviewed scope. Leave untested checks blank and mark inapplicable checks N/A.</p>
   <ul>
-    <li><strong>Add industry-specific checks</strong> — different industries have unique SEO requirements. For ecommerce sites, add checks for product schema completeness, faceted navigation handling, and out-of-stock page management. For local businesses, add Google Business Profile consistency, local citation accuracy, and review profile health. For SaaS companies, add checks for JavaScript rendering, feature page coverage, and comparison content.</li>
-    <li><strong>Adjust scoring thresholds</strong> — the default thresholds represent general best practice, but your industry or client may have different standards. If your client's competitors all load in under one second, the default three-second threshold for page speed is too lenient. Adjust thresholds based on the competitive landscape for each site you audit.</li>
-    <li><strong>Weight sections differently</strong> — the default template weights all sections equally, but for some sites, certain sections matter more. A newly launched site with no backlinks should weight technical and content higher than off-page. An established site with strong content but poor technical health should weight technical checks higher. Modify the scoring formula to reflect these priorities.</li>
-    <li><strong>Add a local SEO section</strong> — the default template does not include a dedicated local SEO section because it does not apply to all sites. For businesses with a local presence, add a section covering Google Business Profile, NAP consistency, local schema, location pages, and review management. A local SEO section template with eight to ten checks is available as a separate tab that you can include when relevant.</li>
-    <li><strong>Create client-specific templates</strong> — if you audit the same client regularly, create a customised version of the template that includes their specific KPIs, historical data for comparison, and notes from previous audits. This turns the template into a longitudinal tracking tool that shows progress over time.</li>
-    <li><strong>Remove irrelevant checks</strong> — not every check applies to every site. A single-language website does not need hreflang checks. A blog does not need product schema checks. Remove checks that are not relevant to avoid confusion and keep the audit focused on what matters for the specific site.</li>
+    <li><strong>0: Critical failure.</strong> Evidence shows a serious problem requiring attention.</li>
+    <li><strong>1: Significant issue.</strong> A meaningful problem needs investigation or a fix.</li>
+    <li><strong>2: Improvement needed.</strong> A specific improvement remains.</li>
+    <li><strong>3: Meets the check.</strong> The reviewed scope meets the stated check.</li>
   </ul>
+  <p>Calculate the score as <strong>sum of numeric scores ÷ (3 × number of scored checks) × 100</strong>. Exclude N/A and untested checks from that calculation. Leave the score blank if no checks have been scored.</p>
+  <p>Report completion separately as <strong>scored checks ÷ applicable checks</strong>. Scoring 10 checks at 3 gives a score of 100%. Completion is only 20% when all 50 checks apply. That is a partial audit.</p>
+  <p>A high average score does not cancel a critical finding. These scores organise your review; they do not predict rankings, revenue or legal compliance.</p>
 
-  <h2 id="scoring-guide">Scoring Guide</h2>
-
-  <p>The template uses a four-point scoring system that balances simplicity with enough granularity to differentiate between severity levels:</p>
-
-  <ul>
-    <li><strong>Score 0 — Critical failure</strong> — the site fails this check in a way that is actively causing significant SEO damage. Examples: the site has no SSL certificate, large sections are blocked by robots.txt, Search Console shows a manual action, or Core Web Vitals fail on the majority of pages. Score 0 findings require immediate attention and should be at the top of the action plan.</li>
-    <li><strong>Score 1 — Significant issue</strong> — the site has meaningful problems in this area that are likely suppressing rankings. Examples: 30% or more of pages have duplicate title tags, page speed exceeds five seconds on mobile, content is thin across most pages, or the backlink profile has a high proportion of toxic links. Score 1 findings should be addressed within the first month.</li>
-    <li><strong>Score 2 — Room for improvement</strong> — the site meets basic standards but falls short of best practice. There is a clear opportunity to improve. Examples: title tags are unique but not keyword-optimised, page speed is acceptable but not competitive, content is adequate but not comprehensive, or the backlink profile is healthy but small relative to competitors. Score 2 findings are medium-priority improvements.</li>
-    <li><strong>Score 3 — Meets standard</strong> — the site meets or exceeds the expected standard for this check. No action is needed beyond ongoing maintenance. Scoring a 3 means this area is not holding back performance and resources are better allocated to lower-scoring areas.</li>
-  </ul>
-
-  <p>The overall health score is calculated as a percentage: total score divided by the maximum possible score (number of checks multiplied by 3), expressed as a percentage. Benchmarks for interpretation:</p>
-
-  <ul>
-    <li><strong>85-100%</strong> — excellent health. The site has no critical issues and minimal room for improvement. Focus on maintaining standards and pursuing competitive advantages.</li>
-    <li><strong>70-84%</strong> — good health with meaningful optimisation opportunities. Typically a few areas have significant issues while most are satisfactory. Targeted improvements in the weak areas can produce noticeable traffic gains.</li>
-    <li><strong>50-69%</strong> — moderate health. Multiple areas need attention and the site is likely underperforming relative to its potential. A structured improvement programme over three to six months is recommended.</li>
-    <li><strong>Below 50%</strong> — poor health. The site has fundamental issues across multiple areas that are severely limiting its search performance. Prioritise critical technical and on-page fixes before investing in content or link building.</li>
-  </ul>
-
-  <p>Track scores over time by saving completed templates with dates. Comparing scores from quarterly audits reveals whether your optimisation efforts are producing measurable improvements and which areas are improving fastest or most slowly.</p>
-
-  <h2 id="download">Download</h2>
-
-  <p>The website audit template is available in two formats:</p>
-
-  <ul>
-    <li><strong>Excel format (.xlsx)</strong> — the full interactive template with auto-calculating scores, conditional formatting, dashboard summary, and action plan tab. Works in Microsoft Excel, Google Sheets, and any compatible spreadsheet application. This is the recommended format for conducting audits.</li>
-    <li><strong>PDF format (.pdf)</strong> — a printable version of the checklist for reference during meetings, training sessions, or manual site reviews. Includes all check items, expected standards, and the scoring rubric. Does not include auto-calculation or conditional formatting.</li>
-  </ul>
-
-  <p>Both formats are free to use for personal and commercial purposes. You are welcome to modify, rebrand, and redistribute the template as part of your agency's service offering. No attribution is required, though a link back to this page is appreciated if you share the template publicly.</p>
-
-  <p>To get the most from the template, pair it with the detailed guidance in our <a href="/website-audit-checklist/seo/">SEO audit checklist</a>, which provides deeper context for each check item. The checklist explains why each factor matters and how to interpret your findings, while the template provides the structured framework for documenting those findings efficiently.</p>
-
-  <p>Update your template every six months to account for changes in search engine algorithms, new Core Web Vitals metrics, evolving structured data requirements, and shifts in best practice. SEO standards change, and an audit template that reflected best practice two years ago may miss factors that are critical today. We update this template regularly, so check back for the latest version before starting a new round of audits.</p>
+  <h2 id="customisation-tips">How Can You Adapt the Template?</h2>
+  <p>Adapt the scope to the website. Add checkout tests for an online shop or enquiry-form tests for a service business. Mark local and international checks N/A when they do not apply.</p>
+  <p>Verify time-sensitive standards before each review. The PDF links to primary guidance on SEO fundamentals, Core Web Vitals, robots.txt and canonical URLs.</p>
+  <p>Get help interpreting the evidence and deciding which fixes to commission through our <a href="/website-audit-services/">professional website audit services</a> for the available scope and next steps.</p>
 </ContentLayout>

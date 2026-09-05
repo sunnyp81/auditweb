@@ -17,7 +17,7 @@ const {
   title,
   description,
   canonical = Astro.url.href,
-  ogImage = '/images/og-default.jpg',
+  ogImage = '/images/og-default.png',
   schema,
   noindex = false,
 } = Astro.props;
@@ -67,14 +67,14 @@ const GA4_ID = 'G-V53FDBZLTW'; // Replace with actual GA4 ID
   <!-- GA4 -->
   <script is:inline define:vars={{ GA4_ID }}>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    window.gtag = function(){window.dataLayer.push(arguments);};
     if (localStorage.getItem('cookie-consent') === 'accepted') {
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
       document.head.appendChild(s);
-      gtag('js', new Date());
-      gtag('config', GA4_ID);
+      window.gtag('js', new Date());
+      window.gtag('config', GA4_ID);
     }
   </script>
 </head>
@@ -85,5 +85,23 @@ const GA4_ID = 'G-V53FDBZLTW'; // Replace with actual GA4 ID
   </main>
   <Footer />
   <CookieConsent />
+  <script is:inline>
+    // Only fixed event names and owned resource paths. Never send checker inputs.
+    function growthEvent(name, details) {
+      try {
+        if (localStorage.getItem('cookie-consent') === 'accepted' && typeof window.gtag === 'function') {
+          window.gtag('event', name, details || {});
+        }
+      } catch { /* Tracking must never block a resource or tool. */ }
+    }
+    window.addEventListener('auditweb:html-check-complete', () => growthEvent('html_check_complete'));
+    document.addEventListener('click', event => {
+      const link = event.target.closest?.('a[href]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (href?.startsWith('/downloads/')) growthEvent('resource_download', { resource_path: href.split(/[?#]/)[0] });
+      if (href === '/website-audit-services/') growthEvent('audit_service_click');
+    });
+  </script>
 </body>
 </html>

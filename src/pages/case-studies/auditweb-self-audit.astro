@@ -1,0 +1,31 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+const breadcrumbs = [{ label: 'Website Audit', href: '/website-audit/' }, { label: 'AuditWeb Self-Audit', href: '/case-studies/auditweb-self-audit/' }];
+---
+<ContentLayout title="AuditWeb Self-Audit: Three Website Problems and Their Fixes" description="A documented review of our own website: simulated scanner results, missing template downloads and missing-page responses. Evidence, fixes and verification limits." breadcrumbs={breadcrumbs} publishDate="2026-09-05" showCTA={false}>
+  <p>Our 5 September 2026 review found three problems on AuditWeb: a scanner that simulated results, a template page without its promised files and missing URLs returning homepage HTML. This self-audit records the evidence and the corrections prepared from it.</p>
+  <p><strong>Disclosure:</strong> AuditWeb is our own site. This is a review of our work, not an independent endorsement or a client success story. We have not measured a traffic or revenue uplift from these changes.</p>
+  <h2>What We Checked</h2>
+  <p>The review compared public HTTP responses with the Astro source at revision <code>da343a2</code>. We inspected the free audit page, the template page and an arbitrary missing URL. The review also checked the build output and available downloads.</p>
+  <p>The observations below were made before the corrections. Source and local build verification do not prove that a release is live. Follow the reproduction steps to check the current production state.</p>
+  <h2>Finding 1: The Scanner Did Not Inspect Websites</h2>
+  <p>The old scanner generated pass/fail outcomes from characters in the submitted URL. Its source called <code>simulateAudit</code> and used a seeded random calculation. The live page contained that implementation while its copy described fetching pages and checking technical issues.</p>
+  <p>This was a product defect: the displayed findings were not evidence about the submitted website. A convincing score cannot substitute for an actual check.</p>
+  <p><strong>Correction:</strong> replace the simulation with an HTML checker that examines supplied markup. It reports observed elements and review prompts. It makes no claim to fetch the website or measure speed, SSL or Google indexing.</p>
+  <p><strong>Verify it:</strong> load the checker example. It includes a noindex directive and an image without an alt attribute. Confirm those findings appear. Remove the noindex directive, run the check again and confirm the observation changes. Check that pasted scripts do not execute.</p>
+  <p>The <a href="/free-website-audit/">free HTML checker</a> explains its input, scope and limitations next to the tool.</p>
+  <h2>Finding 2: The Download Page Had No Downloads</h2>
+  <p>The template page promised Excel and PDF files. Its live HTML had no link to either file. The public asset folder contained no template. Visitors could read about the resource but could not obtain it.</p>
+  <p><strong>Correction:</strong> create a six-page PDF with 50 manual checks and revise the page to describe the file actually supplied. Add editable agency documents as a separate toolkit. Remove the unsupported Excel promise.</p>
+  <p><strong>Verify it:</strong> follow the PDF link, open the file and count the four sections: 15 technical, 12 on-page, 13 content and 10 off-page checks. Confirm the ZIP contains editable documents and the same checklist PDF.</p>
+  <p>The <a href="/website-audit-checklist/template/">printable template</a> and <a href="/resources/agency-audit-toolkit/">agency toolkit</a> now have dedicated download paths in the revised site.</p>
+  <h2>Finding 3: Missing URLs Looked Like Successful Pages</h2>
+  <p>A request to <code>/codex-growth-missing-20260905/</code> returned status 200 and the same HTML body as the homepage. Requests to <code>/.env</code> and <code>/.git/config</code> also returned homepage HTML. Those responses did not expose credentials, but they did hide the distinction between a real page and a missing one.</p>
+  <p><strong>Correction:</strong> add a dedicated 404 page to the static output. The final response code also depends on hosting behaviour and must be checked after release.</p>
+  <p><strong>Verify it:</strong> request a new, nonexistent path. Expect HTTP 404 and a helpful page-not-found message. A 404 file in the repository alone is not sufficient proof.</p>
+  <h2>What This Review Does Not Establish</h2>
+  <p>These findings do not explain every ranking movement. The review does not establish a causal traffic uplift, certify accessibility or replace a full security assessment. A separate release review must cover dependencies, browser interactions and production responses.</p>
+  <h2>Apply the Method to Your Website</h2>
+  <p>Record an observation, an affected URL, a correction and an observable verification step for every finding. Keep proposed benefits separate from measured outcomes. Make local, released and verified states explicit.</p>
+  <p>Use the <a href="/resources/agency-audit-toolkit/">editable report and implementation tracker</a> to document your review. For help investigating the underlying causes, review our <a href="/website-audit-services/">professional audit scope</a>.</p>
+</ContentLayout>

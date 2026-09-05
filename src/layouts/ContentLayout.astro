@@ -78,7 +78,7 @@ const mergedSchema = schema || articleSchema;
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       <!-- Main Content -->
-      <div class="lg:col-span-8">
+      <div class="lg:col-span-8 min-w-0">
         <header class="mb-10">
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">{title}</h1>
           <p class="text-lg text-text-muted">{description}</p>
@@ -130,16 +130,16 @@ const mergedSchema = schema || articleSchema;
       </div>
 
       <!-- Sidebar -->
-      <aside class="lg:col-span-4">
+      <aside class="lg:col-span-4 min-w-0">
         <div class="sticky top-20 space-y-6">
           {showLeadForm ? (
             <LeadForm />
           ) : (
             <div class="glass rounded-2xl p-6">
-              <h3 class="font-bold mb-3">Free Website Audit</h3>
-              <p class="text-sm text-text-muted mb-4">Get an instant analysis of your website's health with our free 72-checkpoint scanner.</p>
+              <h3 class="font-bold mb-3">Free HTML SEO Check</h3>
+              <p class="text-sm text-text-muted mb-4">Review pasted page HTML for titles, canonicals and other on-page signals. Runs locally in your browser.</p>
               <a href="/free-website-audit/" class="block text-center px-4 py-2.5 bg-primary hover:bg-primary-dark text-surface font-semibold text-sm rounded-lg transition-colors">
-                Run Free Audit
+                Check Page HTML
               </a>
             </div>
           )}
@@ -158,6 +158,8 @@ const mergedSchema = schema || articleSchema;
           <div class="glass rounded-2xl p-6">
             <h3 class="font-bold mb-3">Resources</h3>
             <ul class="space-y-2">
+              <li><a href="/resources/agency-audit-toolkit/" class="text-sm text-text-muted hover:text-primary transition-colors">Editable Agency Toolkit</a></li>
+              <li><a href="/case-studies/auditweb-self-audit/" class="text-sm text-text-muted hover:text-primary transition-colors">Our Documented Self-Audit</a></li>
               <li><a href="/website-audit-checklist/" class="text-sm text-text-muted hover:text-primary transition-colors">Audit Checklists</a></li>
               <li><a href="/website-audit-tools/" class="text-sm text-text-muted hover:text-primary transition-colors">Best Audit Tools</a></li>
               <li><a href="/what-is-a-website-audit/" class="text-sm text-text-muted hover:text-primary transition-colors">What Is a Website Audit?</a></li>
