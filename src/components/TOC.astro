@@ -13,6 +13,8 @@ const { items } = Astro.props;
 
 <nav class="glass rounded-xl p-5 mb-10" aria-label="Table of contents">
   <h2 class="text-sm font-semibold uppercase tracking-wider text-text-dim mb-3">Contents</h2>
+  <details>
+  <summary class="text-text font-semibold py-2">Jump to a section</summary>
   <ol class="space-y-1.5">
     {items.map((item, i) => (
       <li>
@@ -23,4 +25,5 @@ const { items } = Astro.props;
       </li>
     ))}
   </ol>
+  </details>
 </nav>

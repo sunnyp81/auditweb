@@ -2,7 +2,7 @@
 const navLinks = [
   { href: '/website-audit/', label: 'Audit Guide' },
   { href: '/website-audit-services/', label: 'Services' },
-  { href: '/free-website-audit/', label: 'HTML Checker' },
+  { href: '/resources/agency-audit-toolkit/', label: 'Free Toolkit' },
   { href: '/website-audit-tools/', label: 'Tools' },
   { href: '/website-audit-checklist/', label: 'Checklists' },
 ];
@@ -13,13 +13,13 @@ const navLinks = [
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 text-xl font-bold">
-        <span class="gradient-text">AuditWeb</span>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" aria-hidden="true"><path d="M9 3H3v6m13-6h6v6M3 16v6h6m13-6v6h-6" stroke="#63d5e4" stroke-width="2"/><path d="m7 12 4 4 7-8" stroke="#b8e6e6" stroke-width="2"/></svg><span>Audit<span class="text-primary-light">Web</span></span>
       </a>
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-6">
         {navLinks.map(link => (
-          <a href={link.href} class="text-sm text-text-muted hover:text-primary transition-colors">
+          <a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined} class="text-sm text-text-muted hover:text-primary transition-colors">
             {link.label}
           </a>
         ))}
@@ -40,7 +40,7 @@ const navLinks = [
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <div class="flex flex-col gap-3">
         {navLinks.map(link => (
-          <a href={link.href} class="text-text-muted hover:text-primary transition-colors py-1">
+          <a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined} class="text-text-muted hover:text-primary transition-colors py-1">
             {link.label}
           </a>
         ))}

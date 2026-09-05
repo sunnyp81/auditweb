@@ -1,0 +1,40 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<figure class:list={['finding-sheet', { 'finding-compact': compact }]}>
+  <div class="finding-mast"><span>AUDITWEB / FIELD NOTES</span><span>F–03</span></div>
+  <figcaption>Missing pages returned the homepage.</figcaption>
+  <p class="finding-context">An actual finding from our own website · 5 Sep 2026</p>
+  <div class="response-comparison" aria-label="Before: HTTP 200. After: HTTP 404.">
+    <div><span class="response-label">BEFORE · INCORRECT</span><strong>200</strong><span>Homepage returned</span></div>
+    <span class="response-arrow" aria-hidden="true">→</span>
+    <div><span class="response-label">AFTER · VERIFIED</span><strong>404</strong><span>Missing page identified</span></div>
+  </div>
+  <dl class="finding-record">
+    <div><dt>Evidence</dt><dd>A nonexistent URL returned the same HTML as the homepage.</dd></div>
+    <div><dt>Correction</dt><dd>Add a dedicated missing-page response.</dd></div>
+    <div><dt>Verification</dt><dd>Request the missing URL again. Confirm HTTP 404 and a helpful error page.</dd></div>
+  </dl>
+  <div class="finding-foot"><span class="verified-mark">✓ Response verified</span><span>Owned-site example</span></div>
+</figure>
+<style>
+  .finding-sheet { margin: 0; background: #f5f8fa; color: #162b3c; padding: clamp(20px, 3vw, 36px); border: 1px solid #c8d8df; border-radius: 3px; box-shadow: 12px 12px 0 #173345; }
+  .finding-mast { display: flex; justify-content: space-between; gap: 12px; border-bottom: 2px solid #16394b; padding-bottom: 16px; font: 600 11px/1.5 ui-monospace, monospace; letter-spacing: .06em; }
+  .finding-sheet figcaption { margin-top: 24px; font-size: clamp(21px, 2.2vw, 28px); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
+  .finding-sheet .finding-context { font-size: 12px; color: #4c6271; margin: 10px 0 22px; line-height: 1.6; }
+  .response-comparison { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding: 20px 0; border-block: 1px solid #c3d2da; }
+  .response-comparison > div { display: flex; flex-direction: column; gap: 6px; }
+  .response-comparison strong { font: 600 clamp(38px, 5vw, 64px)/1 ui-monospace, monospace; letter-spacing: -.06em; color: #805015; }
+  .response-comparison > div:last-child strong { color: #116345; }
+  .response-label { font: 600 10px/1.5 ui-monospace, monospace; color: #455b69; }
+  .response-comparison div > span:last-child { font-size: 11px; line-height: 1.5; color: #455b69; }
+  .response-arrow { font-size: 24px; color: #59717e; }
+  .finding-record { margin: 8px 0 0; }
+  .finding-record > div { display: grid; grid-template-columns: 94px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid #d5dfe4; font-size: 12px; line-height: 1.6; }
+  .finding-record dt { font-weight: 700; }.finding-record dd { margin: 0; color: #405563; }
+  .finding-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 20px; font-size: 10px; color: #4c6271; }
+  .verified-mark { font-weight: 600; color: #116345; }.finding-compact { box-shadow: none; margin: 24px 0 32px; }
+  @media(max-width: 420px) { .finding-record > div { grid-template-columns: 78px 1fr; gap: 8px; padding: 10px 0; }.finding-sheet { box-shadow: 6px 6px 0 #173345; }.finding-compact { box-shadow: none; } }
+  @media(max-width: 360px) { .finding-record > div { grid-template-columns: 1fr; gap: 3px; } }
+</style>

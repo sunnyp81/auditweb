@@ -5,7 +5,6 @@ import TOC from '../components/TOC.astro';
 import CTABanner from '../components/CTABanner.astro';
 import LeadForm from '../components/LeadForm.astro';
 import SeedCard from '../components/SeedCard.astro';
-import EmailSignup from '../components/EmailSignup.astro';
 
 interface BreadcrumbItem {
   label: string;
@@ -166,11 +165,6 @@ const mergedSchema = schema || articleSchema;
             </ul>
           </div>
 
-          <div class="glass rounded-2xl p-6">
-            <h3 class="font-bold mb-3">Free SEO Tips</h3>
-            <p class="text-sm text-text-muted mb-4">Weekly audit insights and optimisation strategies.</p>
-            <EmailSignup source="sidebar" heading="" description="" submitText="Subscribe" />
-          </div>
         </div>
       </aside>
     </div>

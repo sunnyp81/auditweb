@@ -1,5 +1,8 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import { readFileSync } from 'node:fs';
+const reportSource = readFileSync(new URL('../../../public/downloads/agency-audit-toolkit/audit-report-template.md', import.meta.url), 'utf8');
+const reportExcerpt = reportSource.split('### F-01:')[1].split('[Duplicate this finding')[0].trim();
 const breadcrumbs = [{ label: 'Audit Checklists', href: '/website-audit-checklist/' }, { label: 'Agency Toolkit', href: '/resources/agency-audit-toolkit/' }];
 const resources = [
   ['Client questionnaire', 'client-questionnaire.md', 'Agree goals, scope, access and implementation constraints before the audit.'],
@@ -9,9 +12,15 @@ const resources = [
 ];
 ---
 <ContentLayout title="Free Agency Website Audit Toolkit: Editable Templates" description="Download a client questionnaire, audit report template, prioritisation worksheet and implementation tracker. Editable Markdown files plus a 50-check PDF." breadcrumbs={breadcrumbs} publishDate="2026-09-05" showCTA={false}>
-  <p>The agency audit toolkit helps you turn a website review into work a client can approve and a developer can verify. It includes four editable Markdown templates, instructions and the printable 50-check checklist.</p>
+  <p>Use the toolkit to agree scope, record evidence and assign fixes.</p>
   <p><a class="download-action" href="/downloads/auditweb-agency-audit-toolkit.zip" download>Download the complete agency toolkit (ZIP)</a></p>
   <p>No email or account is required. Open the Markdown files in a text editor or Markdown editor. Replace the bracketed prompts with your own evidence. The toolkit performs no scans or automatic calculations.</p>
+  <h2>See What You Are Downloading</h2>
+  <p>The previews below show the actual checklist PDF and the finding fields from the editable report template. Blank prompts are for your own evidence.</p>
+  <div class="download-previews">
+    <figure class="pdf-preview"><a href="/downloads/auditweb-website-audit-checklist.pdf" aria-label="Open the complete 50-check PDF"><img src="/images/audit-checklist-preview.png" alt="Technical SEO checklist page with check names, guidance, tools and blank status columns." width="893" height="1263" loading="lazy" decoding="async" /></a><figcaption>Printable PDF · page 2 of 6. Select the preview to read the full-size file.</figcaption></figure>
+    <figure class="markdown-preview"><figcaption>Editable report · actual Markdown excerpt</figcaption><pre><code>{'### F-01: ' + reportExcerpt}</code></pre><a href="/downloads/agency-audit-toolkit/audit-report-template.md" download>Download this report template (.md)</a></figure>
+  </div>
   <h2>Choose the Template for Your Next Task</h2>
   <p>Use the files together for a complete workflow or download one template for a specific handoff.</p>
   {resources.map(([title, file, description]) => <section class="resource-row"><h3>{title}</h3><p>{description}</p><a href={`/downloads/agency-audit-toolkit/${file}`} download>Download {title.toLowerCase()} (.md)</a></section>)}
@@ -25,4 +34,12 @@ const resources = [
   <h2>Need Help with the Findings?</h2>
   <p>Professional review can help establish causes and an implementation order. Compare the scope and next steps on our <a href="/website-audit-services/">website audit services page</a>.</p>
 </ContentLayout>
-<style>.resource-row { padding: 1rem 0 1.5rem; border-bottom: 1px solid #64748b; }.resource-row h3 { margin-top: 0; }</style>
+<style>
+.resource-row { padding: 1rem 0 1.5rem; border-bottom: 1px solid #64748b; }.resource-row h3 { margin-top: 0; }
+.download-previews { display: grid; grid-template-columns: .85fr 1.15fr; align-items: start; gap: 24px; margin: 28px 0 36px; }
+.download-previews figure { min-width: 0; margin: 0; }.pdf-preview img { display: block; width: 100%; height: auto; margin: 0; border-radius: 2px; border: 1px solid #b4c7d1; }
+.download-previews figcaption { font-size: 12px; line-height: 1.7; color: #b4c7d1; margin-top: 12px; }
+.markdown-preview { background: #172c3c; border: 1px solid #3b5566; padding: 20px; }.markdown-preview figcaption { margin: 0; color: #dce9ef; font-weight: 600; }
+.markdown-preview pre { white-space: pre-wrap; overflow-wrap: anywhere; background: transparent; margin: 16px 0; padding: 0; line-height: 1.7; }.markdown-preview code { padding: 0; background: transparent; color: #c8dce5; font-size: 11px; }.markdown-preview a { font-size: 12px; }
+@media(max-width: 650px) { .download-previews { grid-template-columns: 1fr; }.pdf-preview { max-width: 400px; } }
+</style>

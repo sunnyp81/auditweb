@@ -1,0 +1,7 @@
+iteration	file	score	change	status
+review	src/pages/index.astro	89	Evidence-led service and free-tool scope; shortened mobile hierarchy	pass
+review	src/pages/resources/agency-audit-toolkit.astro	91	Actual previews and shorter introduction	pass
+review	src/pages/website-audit-services/index.astro	90	Unsupported guarantees/counts removed; clear scope and terms	pass
+review	src/pages/website-audit/index.astro additions	90	Direct introduction; actual finding and sourced search-stage diagram	pass
+review	src/components/AuditFinding.astro	93	Owned evidence, dated verification, no outcome promise	pass
+review	src/components/SearchJourney.astro	92	Distinct stages and explicit indexing/ranking limits	pass

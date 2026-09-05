@@ -185,6 +185,8 @@ body {
 .prose a.download-action:active { transform: translateY(1px); }
 html { scroll-padding-top: 6rem; }
 main { overflow-wrap: anywhere; }
+nav a[aria-current="page"] { color: #e1f5fa; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+summary { cursor: pointer; }
 input, textarea, select { max-width: 100%; }
 .prose ul { list-style: disc; }
 .prose ol { list-style: decimal; }

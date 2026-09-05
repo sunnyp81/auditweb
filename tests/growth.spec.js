@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs/promises';
 
-const paths = ['/free-website-audit/', '/resources/agency-audit-toolkit/', '/case-studies/auditweb-self-audit/', '/website-audit-checklist/template/', '/'];
+const paths = ['/free-website-audit/', '/resources/agency-audit-toolkit/', '/case-studies/auditweb-self-audit/', '/website-audit-checklist/template/', '/website-audit/', '/website-audit-services/', '/'];
 
 test('checker uses input evidence, resolves canonicals, exports and clears', async ({ page }) => {
   await page.goto('/free-website-audit/');
@@ -76,6 +76,7 @@ for (const width of [1440, 390, 320]) {
       expect(axe.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
       await fs.mkdir('qa-output', { recursive: true });
       await page.screenshot({ path: `qa-output/${width}-${path.replaceAll('/', '_') || 'home'}.png`, fullPage: true });
+      await page.screenshot({ path: `qa-output/${width}-${path.replaceAll('/', '_') || 'home'}-top.png` });
     }
     expect(errors).toEqual([]);
     if (width < 768) {

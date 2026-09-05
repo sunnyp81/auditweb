@@ -1,11 +1,14 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import AuditFinding from '../../components/AuditFinding.astro';
+import SearchJourney from '../../components/SearchJourney.astro';
 
 const breadcrumbs = [
   { label: 'Website Audit', href: '/website-audit/' },
 ];
 
 const toc = [
+  { label: 'An Actual Audit Finding', id: 'audit-finding-example' },
   { label: 'What Is a Website Audit', id: 'what-is-a-website-audit' },
   { label: 'Why Website Audits Matter', id: 'why-website-audits-matter' },
   { label: 'Types of Website Audits', id: 'types-of-website-audits' },
@@ -19,7 +22,7 @@ const toc = [
 const childPages = [
   { title: 'SEO Website Audit', href: '/seo-website-audit/', description: 'Find and fix every ranking issue with a comprehensive SEO audit covering on-page, technical, and off-page factors.' },
   { title: 'Technical Website Audit', href: '/technical-website-audit/', description: 'Check crawlability, indexation, Core Web Vitals, mobile-friendliness, and site architecture.' },
-  { title: 'Free Website Audit', href: '/free-website-audit/', description: 'Run an instant 72-checkpoint analysis of your website at no cost. Get actionable results in 60 seconds.' },
+  { title: 'Free HTML SEO Checker', href: '/free-website-audit/', description: 'Review pasted HTML for titles, canonicals, robots directives and other on-page signals. No website is fetched.' },
   { title: 'Website Audit Tools', href: '/website-audit-tools/', description: 'Compare the best website audit tools including Ahrefs, Semrush, Screaming Frog, and free alternatives.' },
   { title: 'Website Audit Services', href: '/website-audit-services/', description: 'Get a professional website audit from our expert team. 72-point analysis with prioritised action plan.' },
   { title: 'Website Audit Checklist', href: '/website-audit-checklist/', description: 'The ultimate 72-point checklist covering SEO, technical, content, UX, security, and performance.' },
@@ -71,11 +74,17 @@ const childGroups = [
   children={childPages}
   childGroups={childGroups}
   publishDate="2026-03-28"
+  updateDate="2026-09-05"
 >
 
-<p>Every website accumulates problems over time. Broken links pile up, page speed degrades, content goes stale, and security vulnerabilities creep in unnoticed. A <strong>website audit</strong> is the systematic process of finding all these issues, understanding their impact, and building a plan to fix them in order of priority.</p>
+<p>A <strong>website audit</strong> examines a site's technical setup, content and user experience. It records observed problems and turns them into prioritised actions.</p>
 
-<p>Whether you run a five-page brochure site or a 50,000-page e-commerce store, regular audits are the difference between a site that grows steadily and one that slowly declines. This guide covers everything you need to know about website audits: what they involve, how to run one, which tools to use, and when to call in a professional.</p>
+<p>This guide starts with a real finding, then explains the audit types, checks, tools and review process.</p>
+
+<h2 id="audit-finding-example">What an Audit Finding Looks Like</h2>
+<p>An audit finding connects an observed problem to a correction and a verification step. This example records a missing-page response on our own website. It demonstrates the method without claiming a client result or traffic uplift.</p>
+<AuditFinding compact />
+<p>Read the <a href="/case-studies/auditweb-self-audit/">documented AuditWeb self-audit</a> for the original evidence and reproduction steps.</p>
 
 <h2 id="what-is-a-website-audit">What Is a Website Audit</h2>
 
@@ -158,6 +167,9 @@ const childGroups = [
 <h2 id="what-a-website-audit-covers">What a Website Audit Covers</h2>
 
 <p>A comprehensive website audit — the kind we perform at AuditWeb — examines 72 individual checkpoints grouped into seven categories. Here is what each category includes.</p>
+
+<SearchJourney />
+<p>Source: <a href="https://developers.google.com/search/docs/fundamentals/how-search-works">Google’s explanation of crawling, indexing and serving results</a>.</p>
 
 <h3>Technical Infrastructure (12 Checkpoints)</h3>
 
@@ -387,8 +399,8 @@ const childGroups = [
 
 <h3>How to Choose an Audit Provider</h3>
 
-<p>Look for providers who show you a sample report before you buy, explain their methodology transparently, have case studies from sites similar to yours, and offer a money-back guarantee if they fail to find significant issues. Avoid anyone who promises specific ranking positions or uses scare tactics to pressure you into buying.</p>
+<p>Look for providers who show you a sample report before you buy, explain their methodology and state the scope and limitations clearly. Check the evidence behind any case study. Avoid specific ranking promises or pressure to buy.</p>
 
-<p>Our own <a href="/website-audit-services/">audit services</a> start at $297 for a basic audit and go up to $997 for a comprehensive 72-checkpoint analysis with a 30-minute strategy call. Every audit comes with a 100% money-back guarantee.</p>
+<p>Our <a href="/website-audit-services/">audit services</a> start at $297 for a basic audit and $997 for a comprehensive review. Confirm the scope, deliverables, call duration and terms before commissioning work.</p>
 
 </ContentLayout>

@@ -1,0 +1,19 @@
+<figure class="search-journey">
+  <figcaption>Three different questions in a technical SEO audit</figcaption>
+  <ol>
+    <li><span class="journey-stage">CRAWLING</span><strong>Can Google fetch it?</strong><p>Check crawl access and the response. A blocked request limits what Google can see.</p></li>
+    <li><span class="journey-stage">INDEXING</span><strong>Can it be included?</strong><p>Check directives, content and canonical signals. Crawling does not guarantee indexing.</p></li>
+    <li><span class="journey-stage">SERVING RESULTS</span><strong>Does it answer this search?</strong><p>Google selects relevant results for a query. Indexing does not guarantee a ranking.</p></li>
+  </ol>
+  <p class="journey-caption">Audit each stage separately. An HTML check alone cannot establish Google’s indexing or ranking decision.</p>
+</figure>
+<style>
+.search-journey { margin: 32px 0; padding: 24px; border: 1px solid #446070; background: #172c3c; }
+.search-journey figcaption { color: #e7f2f5; font-size: 16px; font-weight: 600; margin-bottom: 24px; }
+.search-journey ol { padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; list-style: none; counter-reset: stage; }
+.search-journey li { margin: 0; counter-increment: stage; border-top: 2px solid #64cad9; padding-top: 16px; }
+.journey-stage { display: block; font: 600 10px/1.6 ui-monospace,monospace; color: #88dce5; margin-bottom: 10px; }.journey-stage::before { content: counter(stage) ' / '; }
+.search-journey strong { display: block; font-size: 15px; line-height: 1.5; color: #e7f2f5; }.search-journey li p { font-size: 12px; line-height: 1.7; margin: 10px 0 0; color: #bacbd5; }
+.search-journey .journey-caption { font-size: 12px; color: #bacbd5; margin: 24px 0 0; line-height: 1.7; }
+@media(max-width: 600px) { .search-journey ol { grid-template-columns: 1fr; }.search-journey { padding: 20px; } }
+</style>
