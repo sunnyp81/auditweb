@@ -1,0 +1,4 @@
+iteration	file	score	change	status
+final	src/pages/index.astro	90	Shorter introduction and contextual directory route	pass
+final	src/components/EvidenceExplorer.astro	93	Recorded evidence with per-finding dates and direct verification instructions	pass
+final	src/pages/website-audit-tools/index.astro + src/data/audit-tools.ts	91	Category intent; publisher sources; clear scope limits; useful guide links	pass

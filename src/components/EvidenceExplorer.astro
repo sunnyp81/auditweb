@@ -1,0 +1,63 @@
+---
+const findings = [
+  { recorded: '2026-09-05', id: 'response', code: 'F–03', label: 'Missing pages', title: 'Missing pages returned the homepage.', before: '200', beforeLabel: 'Homepage returned', after: '404', afterLabel: 'Missing page identified', evidence: 'A nonexistent URL returned the same HTML as the homepage.', correction: 'Added a dedicated missing-page response.', verification: 'Request the missing URL again. Confirm HTTP 404 and a helpful error page.' },
+  { recorded: '2026-09-05', id: 'checker', code: 'F–01', label: 'HTML checker', title: 'The scanner showed simulated results.', before: 'Simulated', beforeLabel: 'No inspected page evidence', after: 'Source', afterLabel: 'Findings from supplied HTML', evidence: 'The old scanner generated results without inspecting the submitted website.', correction: 'Replaced it with browser-local checks of pasted HTML.', verification: 'Load the sample HTML. Confirm missing tags and a noindex directive are reported.' },
+  { recorded: '2026-09-05', id: 'files', code: 'F–02', label: 'Downloads', title: 'Promised downloads had no files.', before: 'Missing', beforeLabel: 'No downloadable deliverable', after: 'Files', afterLabel: 'PDF and editable templates', evidence: 'Pages promised downloadable audit resources without working files.', correction: 'Created a 50-check PDF and four editable Markdown templates.', verification: 'Download and open the PDF and ZIP. Confirm the checklist and templates are present.' },
+];
+---
+<div class="evidence-explorer" data-evidence-explorer>
+  <div class="evidence-tabs" aria-label="Explore our audit findings" hidden>{findings.map(finding => <button type="button" id={`tab-${finding.id}`} aria-controls={`finding-${finding.id}`} data-finding={finding.id}>{finding.label}</button>)}</div>
+  {findings.map(finding => <figure id={`finding-${finding.id}`} class="finding-sheet evidence-panel" data-panel={finding.id}>
+    <div class="finding-mast"><span>AUDITWEB / FIELD NOTES</span><span>{finding.code}</span></div>
+    <figcaption>{finding.title}</figcaption>
+    <p class="finding-context">Recorded on our own website · <time datetime={finding.recorded}>{new Date(finding.recorded + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time></p>
+    <div class="response-comparison"><div><span class="response-label">BEFORE · ISSUE</span><strong class:list={{ 'word-value': finding.before.length > 3 }}>{finding.before}</strong><span>{finding.beforeLabel}</span></div><span class="response-arrow" aria-hidden="true">→</span><div><span class="response-label">AFTER · CORRECTION</span><strong class:list={{ 'word-value': finding.after.length > 3 }}>{finding.after}</strong><span>{finding.afterLabel}</span></div></div>
+    <dl class="finding-record"><div><dt>Evidence</dt><dd>{finding.evidence}</dd></div><div><dt>Correction</dt><dd>{finding.correction}</dd></div><div><dt>Verification</dt><dd>{finding.verification}</dd></div></dl>
+    <div class="finding-foot"><span>Owned-site example · recorded evidence</span><a href="/case-studies/auditweb-self-audit/">Read the case study →</a></div>
+  </figure>)}
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-evidence-explorer]').forEach(root => {
+    const tablist = root.querySelector<HTMLElement>('.evidence-tabs')!;
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-finding]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-panel]'));
+    function select(index: number, focus = false) {
+      tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === index)); tab.tabIndex = i === index ? 0 : -1; });
+      panels.forEach((panel, i) => { panel.hidden = i !== index; });
+      if (focus) tabs[index].focus();
+    }
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('role', 'tab');
+      tab.addEventListener('click', () => select(index));
+      tab.addEventListener('keydown', event => {
+        let next: number;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault(); select(next, true);
+      });
+    });
+    panels.forEach((panel, i) => { panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', tabs[i].id); panel.tabIndex = 0; });
+    tablist.setAttribute('role', 'tablist'); select(0); tablist.hidden = false;
+  });
+</script>
+<style>
+  .evidence-tabs { display: flex; padding: 6px; gap: 4px; background: #203b4d; border: 1px solid #5c7c8e; border-bottom: 0; }
+  .evidence-tabs button { flex: 1; min-width: 0; min-height: 44px; padding: 8px; color: #dae6ed; font-size: 12px; line-height: 1.4; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; }
+  .evidence-tabs button:hover { background: #35556a; }.evidence-tabs button[aria-selected="true"] { background: #e6f1f5; color: #193a4f; border-color: #267185; }
+  .finding-sheet { margin: 0; background: #f5f8fa; color: #162b3c; padding: clamp(20px, 3vw, 32px); border: 1px solid #c8d8df; box-shadow: 10px 10px 0 #173345; }
+  .finding-sheet + .finding-sheet { margin-top: 24px; }.evidence-tabs:not([hidden]) ~ .finding-sheet { margin-top: 0; }
+  .finding-mast { display: flex; justify-content: space-between; gap: 12px; border-bottom: 2px solid #16394b; padding-bottom: 14px; font: 600 11px/1.5 ui-monospace, monospace; letter-spacing: .06em; }
+  figcaption { margin-top: 20px; min-height: 70px; font-size: clamp(23px, 2.2vw, 28px); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
+  .finding-context { font-size: 12px; color: #4c6271; margin: 10px 0 20px; line-height: 1.6; }
+  .response-comparison { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 20px 0; border-block: 1px solid #c3d2da; }
+  .response-comparison > div { display: flex; flex-direction: column; gap: 8px; }.response-comparison strong { display: flex; align-items: center; min-height: 56px; font: 600 clamp(40px, 5vw, 60px)/1 ui-monospace, monospace; letter-spacing: -.06em; color: #805015; }.response-comparison strong.word-value { font-size: clamp(20px, 2.4vw, 30px); letter-spacing: -.05em; }.response-comparison > div:last-child strong { color: #116345; }
+  .response-label { font: 600 10px/1.5 ui-monospace, monospace; color: #455b69; }.response-comparison div > span:last-child { font-size: 11px; line-height: 1.5; color: #455b69; min-height: 33px; }.response-arrow { font-size: 24px; color: #59717e; }
+  .finding-record { margin: 8px 0 0; }.finding-record > div { display: grid; grid-template-columns: 86px 1fr; gap: 12px; padding: 12px 0; min-height: 66px; border-bottom: 1px solid #d5dfe4; font-size: 12px; line-height: 1.6; }.finding-record dt { font-weight: 700; }.finding-record dd { margin: 0; color: #405563; }
+  .finding-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 16px; font-size: 11px; color: #4c6271; }.finding-foot a { color: #225d70; text-decoration: underline; text-underline-offset: 3px; padding-block: 4px; }
+  .finding-sheet:focus-visible, .finding-sheet :focus-visible { outline-color: #17657d; }
+  @media(max-width: 650px) { figcaption { min-height: 58px; }.finding-record > div { grid-template-columns: 75px 1fr; gap: 8px; min-height: 83px; }.finding-sheet { box-shadow: 6px 6px 0 #173345; }.response-comparison strong.word-value { font-size: 22px; }.evidence-tabs button { font-size: 11px; } }
+  @media(max-width: 360px) { .finding-sheet { padding: 16px; }.finding-record > div { grid-template-columns: 1fr; gap: 4px; min-height: 96px; }.response-comparison strong.word-value { font-size: 19px; } }
+</style>

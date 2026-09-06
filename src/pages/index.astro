@@ -1,6 +1,6 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AuditFinding from '../components/AuditFinding.astro';
+import EvidenceExplorer from '../components/EvidenceExplorer.astro';
 import '../styles/home.css';
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AuditWeb', url: 'https://auditweb.site', description: 'Website audits with documented findings, prioritised fixes and verification steps.' };
 const scopes = [
@@ -16,12 +16,12 @@ const scopes = [
       <div class="hero-copy">
         <p class="eyebrow">WEBSITE AUDITS / EVIDENCE TO ACTION</p>
         <h1 id="home-title">Know what’s wrong.<br /><span>Know what to fix.</span></h1>
-        <p class="hero-intro">A website audit should give you a clear next move. Get documented findings, prioritised fixes and a way to check the work.</p>
+        <p class="hero-intro">Get documented findings, prioritised fixes and a clear way to check the work.</p>
         <div class="hero-actions"><a class="action-primary" href="/website-audit-services/">Explore professional audits <span aria-hidden="true">↗</span></a><a class="action-secondary" href="/free-website-audit/">Try the free HTML checker <span aria-hidden="true">→</span></a></div>
         <p class="scope-note">Professional review: agreed site scope.<br />Free checker: pasted HTML, checked in your browser.</p>
         <a class="proof-jump" href="#our-self-audit">Start with the evidence <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="hero-evidence"><AuditFinding /></div>
+      <div class="hero-evidence"><EvidenceExplorer /></div>
     </section>
     <section id="our-self-audit" class="self-audit-band" aria-labelledby="proof-title">
       <div class="home-wrap proof-layout">
@@ -46,6 +46,7 @@ const scopes = [
         <div><div class="template-sample" aria-label="Fields in the actual audit report template"><span>EDITABLE REPORT / .MD</span><strong>F-01: [specific observed issue]</strong><div><span>Evidence</span><span>[response or source excerpt]</span></div><div><span>Change</span><span>[specific action]</span></div><div><span>Verification</span><span>[expected observable result]</span></div></div><h3>Turn findings into a handoff.</h3><p>Four editable Markdown templates and a printable 50-check PDF. No email or account required.</p><a class="text-link" href="/resources/agency-audit-toolkit/">Preview & download the toolkit →</a></div>
       </div>
       <a class="guide-route" href="/website-audit/"><div><span class="eyebrow">THE COMPLETE GUIDE</span><h3>Learn how to audit a website.</h3><p>What to check, how to record evidence and where to start.</p></div><span aria-hidden="true">↗</span></a>
+      <a class="guide-route" href="/website-audit-tools/"><div><span class="eyebrow">THE TOOL DIRECTORY</span><h3>Find the right tool for the job.</h3><p>Filter audit tools by task and compare their scope and limits.</p></div><span aria-hidden="true">↗</span></a>
     </div></section>
     <section class="home-wrap final-route"><div><p class="eyebrow">A CLEAR NEXT STEP</p><h2>Get an audit you can act on.</h2><p>Start with your website, your business question and the scope you need reviewed.</p></div><a class="action-primary" href="/website-audit-services/">Explore professional audits ↗</a></section>
   </div>

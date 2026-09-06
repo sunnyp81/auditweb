@@ -7,7 +7,7 @@ test('homepage separates service scope from HTML checker and brings evidence for
   await page.getByRole('button', { name: 'Reject', exact: true }).click();
   await expect(page.locator('.hero-actions a').first()).toHaveAttribute('href', '/website-audit-services/');
   await expect(page.locator('.scope-note')).toContainText('pasted HTML');
-  await expect(page.locator('.finding-sheet')).toContainText('Owned-site example');
+  await expect(page.locator('.finding-sheet:visible')).toContainText('Owned-site example');
   expect(await page.locator('#our-self-audit').evaluate(el => el.getBoundingClientRect().top)).toBeLessThan(1800);
   await expect(page.locator('main')).not.toContainText('Money-Back Guarantee');
   await expect(page.locator('main')).not.toContainText('Most Popular');

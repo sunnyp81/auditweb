@@ -33,3 +33,5 @@
 @media(max-width: 360px) { .audit-home .home-wrap { padding-inline: 16px; }.audit-home .action-primary,.audit-home .action-secondary { font-size: 13px; padding-inline: 12px; }.audit-home .template-sample > div { flex-direction: column; gap: 3px; } }
 @media(min-width: 761px) { .audit-home .source-sample,.audit-home .template-sample { height: 230px; } }
 @media(max-width: 760px) { .audit-home h1 { font-size: clamp(34px, 8.2vw, 48px); } }
+
+@media(min-width: 1100px) { .audit-home .hero-copy { align-self: start; padding-top: 32px; } }
