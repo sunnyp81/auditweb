@@ -24,8 +24,8 @@ const childPages = [
   { title: 'Technical Website Audit', href: '/technical-website-audit/', description: 'Check crawlability, indexation, Core Web Vitals, mobile-friendliness, and site architecture.' },
   { title: 'Free HTML SEO Checker', href: '/free-website-audit/', description: 'Review pasted HTML for titles, canonicals, robots directives and other on-page signals. No website is fetched.' },
   { title: 'Website Audit Tools', href: '/website-audit-tools/', description: 'Compare the best website audit tools including Ahrefs, Semrush, Screaming Frog, and free alternatives.' },
-  { title: 'Website Audit Services', href: '/website-audit-services/', description: 'Get a professional website audit from our expert team. 72-point analysis with prioritised action plan.' },
-  { title: 'Website Audit Checklist', href: '/website-audit-checklist/', description: 'The ultimate 72-point checklist covering SEO, technical, content, UX, security, and performance.' },
+  { title: 'Website Audit Services', href: '/website-audit-services/', description: 'Get a professional website audit from our team with a prioritised action plan.' },
+  { title: 'Website Audit Checklist', href: '/website-audit-checklist/', description: 'A 66-point checklist covering SEO, technical, content, UX, security, and performance.' },
   { title: 'Content Audit', href: '/website-content-audit/', description: 'Evaluate every page on your site for quality, relevance, and performance. Prune, merge, or improve.' },
   { title: 'Security Audit', href: '/website-security-audit/', description: 'Identify vulnerabilities, misconfigurations, and compliance gaps that put your site and users at risk.' },
   { title: 'Accessibility Audit', href: '/website-accessibility-audit/', description: 'Ensure your site meets WCAG 2.2 standards and is usable by everyone, including people with disabilities.' },
@@ -74,7 +74,7 @@ const childGroups = [
   children={childPages}
   childGroups={childGroups}
   publishDate="2026-03-28"
-  updateDate="2026-09-05"
+  updateDate="2026-09-11"
 >
 
 <p>A <strong>website audit</strong> examines a site's technical setup, content and user experience. It records observed problems and turns them into prioritised actions.</p>
@@ -85,10 +85,11 @@ const childGroups = [
 <p>An audit finding connects an observed problem to a correction and a verification step. This example records a missing-page response on our own website. It demonstrates the method without claiming a client result or traffic uplift.</p>
 <AuditFinding compact />
 <p>Read the <a href="/case-studies/auditweb-self-audit/">documented AuditWeb self-audit</a> for the original evidence and reproduction steps.</p>
+<p>To see how findings can be organised for a handoff, review the <a href="/website-audit-services/report-example/">website audit report example</a>.</p>
 
 <h2 id="what-is-a-website-audit">What Is a Website Audit</h2>
 
-<p>A website audit is a comprehensive examination of every factor that affects your site's ability to attract visitors, engage them, and convert them into customers. Think of it as a full health check for your online presence.</p>
+<p>A website audit reviews the technical setup, content and user experience factors that affect how a site attracts visitors, supports tasks and earns enquiries or sales.</p>
 
 <p>A thorough site audit examines your website across multiple dimensions:</p>
 
@@ -102,7 +103,7 @@ const childGroups = [
   <li><strong>Accessibility</strong> — Can people with disabilities use your site? Do you meet WCAG 2.2 requirements?</li>
 </ul>
 
-<p>The output of a website audit is typically a prioritised report that lists every issue found, explains its impact, and recommends a specific fix. Good audits also estimate the potential ROI of each fix so you can allocate resources where they will have the greatest effect.</p>
+<p>The output of a website audit is usually a prioritised report that records observed issues, explains their relevance and recommends a specific fix. Where the inputs support an estimate, the report can state the assumptions behind business impact.</p>
 
 <p>A site audit is not a one-time event. Websites are dynamic — content changes, plugins update, Google adjusts its algorithms, and competitors improve their own sites. Regular audits ensure you catch problems early and maintain the gains you have worked hard to achieve.</p>
 
@@ -112,13 +113,13 @@ const childGroups = [
 
 <h3>Protect and Grow Organic Traffic</h3>
 
-<p>Google uses hundreds of ranking factors, and many of them are technical. A single misconfigured robots.txt file can deindex your entire site. A slow server response can push you off page one. Duplicate content can dilute your authority across dozens of cannibalising pages. An audit catches these issues before they crater your traffic.</p>
+<p>Search engines use technical signals alongside content and external evidence. A misconfigured robots.txt file can block crawling, a slow server response can affect page experience and duplicate content can make preferred URLs harder to interpret. An audit helps identify these conditions for review.</p>
 
-<p>Data from our own audits shows that the average site has 17 issues that directly impact organic visibility. Fixing just the top five typically produces a 30-60% increase in organic traffic within three months.</p>
+<p>The number and severity of findings vary by site. Record the evidence for each issue and prioritise fixes by affected scope, confidence, impact and effort.</p>
 
 <h3>Improve Conversion Rates</h3>
 
-<p>Traffic means nothing if visitors do not convert. Audits reveal conversion killers that analytics alone cannot surface: confusing navigation, slow-loading product pages, broken forms, missing trust signals, and checkout friction. A site that loads one second faster can see a 7% improvement in conversions, according to research by Portent.</p>
+<p>Traffic does not guarantee conversions. Audits can reveal conversion barriers that analytics alone may not explain, such as confusing navigation, slow-loading product pages, broken forms, missing trust signals and checkout friction.</p>
 
 <h3>Reduce Wasted Ad Spend</h3>
 
@@ -130,7 +131,7 @@ const childGroups = [
 
 <h3>Mitigate Risk</h3>
 
-<p>Security vulnerabilities, accessibility lawsuits, and Google penalties can all have devastating consequences. Audits identify these risks before they materialise. An SSL misconfiguration, an exposed admin panel, or a failure to meet ADA requirements can each cost you thousands — or your entire business.</p>
+<p>Security vulnerabilities, accessibility obligations and search-engine actions can create legal, operational and financial risk. Audits can identify conditions such as SSL misconfiguration, exposed admin paths and accessibility barriers so the appropriate specialists can investigate them.</p>
 
 <h2 id="types-of-website-audits">Types of Website Audits</h2>
 
@@ -138,7 +139,7 @@ const childGroups = [
 
 <h3>SEO Audit</h3>
 
-<p>An <a href="/seo-website-audit/">SEO website audit</a> examines every factor that influences your search engine rankings. It covers on-page elements like title tags, headings, and internal links; technical factors like crawlability, site speed, and structured data; and off-page signals like backlink quality and anchor text distribution. This is the most common type of audit for sites that depend on organic traffic.</p>
+<p>An <a href="/seo-website-audit/">SEO website audit</a> reviews the on-page, technical and off-page signals relevant to search visibility. It covers elements like title tags, headings and internal links; crawlability, site speed and structured data; and backlink context. This is a focused choice for sites that depend on organic traffic.</p>
 
 <h3>Technical Audit</h3>
 
@@ -166,7 +167,7 @@ const childGroups = [
 
 <h2 id="what-a-website-audit-covers">What a Website Audit Covers</h2>
 
-<p>A comprehensive website audit — the kind we perform at AuditWeb — examines 72 individual checkpoints grouped into seven categories. Here is what each category includes.</p>
+<p>A comprehensive website audit examines a defined set of checkpoints across technical, search, content, experience, security and performance areas. The agreed scope determines the categories and depth.</p>
 
 <SearchJourney />
 <p>Source: <a href="https://developers.google.com/search/docs/fundamentals/how-search-works">Google’s explanation of crawling, indexing and serving results</a>.</p>
@@ -288,11 +289,11 @@ const childGroups = [
 
 <h3>Step 2: Crawl Your Site</h3>
 
-<p>Use a crawler like Screaming Frog, Sitebulb, or the site audit tool in Ahrefs or Semrush to crawl your entire site. This gives you a complete inventory of every URL, along with technical data like status codes, page titles, meta descriptions, word counts, and internal link counts. For most sites under 500 pages, a single crawl takes less than five minutes.</p>
+<p>Use a crawler like Screaming Frog, Sitebulb or the site audit tool in Ahrefs or Semrush to crawl the agreed scope. This gives you an inventory of URLs with technical data such as status codes, page titles, meta descriptions, word counts and internal link counts. Crawl time depends on site size, configuration and response speed.</p>
 
 <h3>Step 3: Check Google Search Console</h3>
 
-<p>Google Search Console is the single most important data source for an SEO audit. Check the Coverage report for indexation issues, the Core Web Vitals report for performance problems, the Mobile Usability report for responsive design issues, and the Manual Actions page for any penalties. Cross-reference GSC data with your crawl data to build a complete picture.</p>
+<p>Google Search Console provides useful evidence for an SEO audit. Check the Page indexing report for indexation issues, the Core Web Vitals report for performance problems, URL Inspection for page-level signals and the Manual actions and Security issues reports where relevant. Cross-reference Search Console data with crawl data to build a complete picture.</p>
 
 <h3>Step 4: Run a Speed Test</h3>
 
@@ -313,6 +314,7 @@ const childGroups = [
 <h3>Step 8: Prioritise and Plan</h3>
 
 <p>Compile all issues into a single spreadsheet. Score each issue by impact (how much it affects traffic, conversions, or risk) and effort (how long it takes to fix). Start with high-impact, low-effort fixes — these are your quick wins. Then work through the medium and long-term items in order of ROI.</p>
+<p>If you want a reusable way to capture evidence, priorities and owners, use the <a href="/resources/agency-audit-toolkit/">agency audit toolkit</a>.</p>
 
 <h2 id="website-audit-tools">Website Audit Tools</h2>
 
@@ -354,7 +356,7 @@ const childGroups = [
 
 <h3>Annually: Comprehensive Audit</h3>
 
-<p>Once a year, conduct a full 72-checkpoint audit that covers every dimension of your site. This is the time to benchmark against competitors, reassess your content strategy, and plan major improvements for the year ahead. A comprehensive audit takes 1-3 days depending on site size.</p>
+<p>Once a year, conduct a comprehensive audit that covers the agreed dimensions of your site. This is the time to benchmark against competitors, reassess your content strategy and plan improvements for the year ahead. The time required depends on site size and scope.</p>
 
 <h3>Event-Triggered Audits</h3>
 
@@ -391,7 +393,7 @@ const childGroups = [
 
 <ul>
   <li>A prioritised action plan with effort and impact scores for each recommendation</li>
-  <li>Revenue impact estimates for the top fixes</li>
+  <li>Business relevance notes or clearly labelled estimates where the inputs support them</li>
   <li>Competitor benchmarking to show where you stand relative to your market</li>
   <li>A strategy call to walk through the findings and answer questions</li>
   <li>Follow-up support to help with implementation</li>

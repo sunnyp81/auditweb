@@ -9,35 +9,27 @@ const breadcrumbs = [
 
 const toc = [
   { label: 'Report Overview', id: 'report-overview' },
-  { label: 'Executive Summary Sample', id: 'executive-summary-sample' },
+  { label: 'Executive Summary', id: 'executive-summary-sample' },
   { label: 'Technical Findings', id: 'technical-findings' },
-  { label: 'Content Analysis', id: 'content-analysis' },
-  { label: 'Competitive Insights', id: 'competitive-insights' },
+  { label: 'Content and Evidence', id: 'content-analysis' },
+  { label: 'Competitive Evidence', id: 'competitive-insights' },
   { label: 'Action Plan', id: 'action-plan' },
-  { label: 'How to Use Your Report', id: 'how-to-use-your-report' },
+  { label: 'Use the Template', id: 'how-to-use-your-report' },
   { label: 'FAQs', id: 'faq' },
 ];
 
 const faqs = [
   {
-    q: 'How long is a typical website audit report?',
-    a: 'A typical audit report runs 40 to 70 pages for a medium-size site, with larger sites producing longer reports because there is more to analyse and document. A condensed 15-20 slide presentation deck is also provided for stakeholder meetings.',
+    q: 'What is a website audit report?',
+    a: 'A website audit report records the scope, evidence, findings, fixes and verification steps for a website review. A useful report separates observed facts from impact estimates and untested areas.',
   },
   {
-    q: 'What sections does a website audit report include?',
-    a: 'A complete report includes an executive summary, technical audit, on-page analysis, content evaluation, off-page analysis, competitive benchmarking, and a prioritised action plan. Each section is written for both the strategic decision-maker who needs the headlines and the implementation team that needs the technical detail.',
+    q: 'What should each audit finding contain?',
+    a: 'Each finding should name the affected URL, dated evidence, reproduction steps, consequence, recommended fix, owner, status and an observable verification method.',
   },
   {
-    q: 'How is the action plan in an audit report prioritised?',
-    a: 'Recommendations are organised into four tiers: immediate (fix within two weeks), short-term (within one month), medium-term (within three months), and ongoing processes. Each item lists the affected pages, the exact change required, the responsible team, and the expected outcome.',
-  },
-  {
-    q: 'What deliverables come with a website audit besides the report?',
-    a: 'Alongside the main report, a full content inventory is delivered as a separate spreadsheet categorising every page as keep, refresh, consolidate, or remove, plus a condensed slide deck for stakeholder presentations.',
-  },
-  {
-    q: 'How should you use an audit report after receiving it?',
-    a: 'Share the executive summary with stakeholders to secure buy-in, convert every action plan item into a project management task with an owner and deadline, brief your development team directly from the technical section, and use the content inventory as an editorial calendar. Schedule a follow-up audit in six to twelve months to measure progress.',
+    q: 'Is this a client audit report?',
+    a: 'No. This worked example covers AuditWeb’s own site. It is an owned-site case study with public evidence and no private client or Search Console data.',
   },
 ];
 
@@ -53,134 +45,110 @@ const faqSchema = {
 ---
 
 <ContentLayout
-  title="Website Audit Report Example: See What You'll Get"
-  description="Preview an illustrative website audit report with technical findings, content analysis, competitive insights, and a prioritised action plan. See the quality before you buy."
+  title="Website Audit Report Example and Free Template"
+  description="Read a completed website audit report example with dated evidence, three real AuditWeb findings, fixes, verification steps and a free report template."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
   showLeadForm={true}
 >
-  <p>Choosing an audit provider is difficult when you cannot see the deliverable before committing. Every provider claims to deliver "comprehensive" and "actionable" reports, but the range in quality is enormous — from automated tool dumps repackaged with a logo to genuine strategic analyses that change how a business approaches SEO. This page shows you exactly what our audit reports contain, how findings are structured, and what the action plan looks like so you can evaluate the quality before making a decision.</p>
+  <div slot="header-actions" class="report-actions" aria-label="Report downloads">
+    <a class="report-actions__primary" href="/downloads/agency-audit-toolkit/audit-report-template.md" download>Download blank template (.md)</a>
+    <a class="report-actions__secondary" href="/downloads/auditweb-completed-report-example.md" download>Download completed report (.md)</a>
+  </div>
 
-  <p>The examples below are illustrative. Their sample numbers explain report structure and are not evidence of a client result. For actual observations and reproduction steps, read our <a href="/case-studies/auditweb-self-audit/">documented AuditWeb self-audit</a>. Download the <a href="/resources/agency-audit-toolkit/">editable report template</a> to record your own evidence.</p>
+  <p>A website audit report should show what was checked, what the evidence showed, what changed and how another person can verify the result. This page gives you a completed owned-site example and a blank template you can adapt for a client or internal review.</p>
 
-  <h2 id="report-overview">Report Overview</h2>
+  <p>Compare the worked example with the <a href="/case-studies/auditweb-self-audit/">public AuditWeb self-audit</a>. The example covers AuditWeb’s own site and contains no client information or private measurement data.</p>
 
-  <p>Every audit report follows a consistent structure designed for two audiences: the strategic decision-maker who needs the headlines and priorities, and the implementation team that needs the technical details and specific instructions.</p>
+  <h2 id="report-overview">What is in this website audit report example?</h2>
+  <p>This example contains an executive summary, method and exclusions, three dated findings, a prioritised action plan and follow-up limits. It shows the evidence format rather than pretending that one small review covers every SEO or security question.</p>
 
-  <p>The report structure is as follows:</p>
+  <p>The worked scope is the public AuditWeb site review recorded on 5 September 2026. It compared public responses with the Astro source at revision <code>da343a2</code> and checked the free audit page, the template page, an arbitrary missing URL, build output and available downloads. The 11 September 2026 date on this page records content modification. It is not a blanket test date for every item.</p>
 
-  <ol>
-    <li><strong>Executive summary</strong> — a one-to-two page overview of the site's current SEO health, the most significant findings, and the top three to five priority actions. This section is written for stakeholders who will not read the full report but need to understand the situation and approve resources for fixes.</li>
-    <li><strong>Technical audit</strong> — detailed findings on crawlability, indexation, site speed, Core Web Vitals, mobile usability, security, and structured data. Each finding includes the specific pages affected, the severity of the issue, and the recommended fix with implementation instructions.</li>
-    <li><strong>On-page analysis</strong> — title tags, meta descriptions, heading structure, internal linking, URL architecture, and image optimisation reviewed across every page template on the site.</li>
-    <li><strong>Content evaluation</strong> — quality assessment of key pages, identification of thin and underperforming content, keyword cannibalisation analysis, and content gap identification relative to competitors.</li>
-    <li><strong>Off-page analysis</strong> — backlink profile quality, referring domain diversity, anchor text distribution, toxic link identification, and comparison against competitor link profiles.</li>
-    <li><strong>Competitive benchmarking</strong> — side-by-side comparison of your site against three to five organic competitors across all audit dimensions.</li>
-    <li><strong>Prioritised action plan</strong> — every recommendation ranked by expected impact and implementation effort, organised into immediate, short-term, medium-term, and ongoing categories.</li>
+  <p>A client version should name the domain, URL sample, systems reviewed, evidence period, reviewer and status. Keep confidential source material in the client’s controlled workspace.</p>
+
+  <h2 id="executive-summary-sample">What did the executive summary record?</h2>
+  <p>The 5 September self-audit recorded three concrete defects: a simulated scanner, missing promised downloads and missing URLs that returned homepage HTML with a 200 response.</p>
+
+  <p>The first action was to replace simulation with a checker that reads supplied HTML. The second was to publish the files that the resource page actually describes. The third was to add a dedicated 404 document and verify the response after release. No traffic, ranking or revenue improvement was claimed.</p>
+
+  <p>This is the useful shape of an executive summary: state the observation, name the affected route, give the first correction and identify what remains unmeasured. Avoid invented sample rankings, forecast traffic or generic “comprehensive” claims.</p>
+
+  <h2 id="technical-findings">What technical findings were recorded?</h2>
+  <p>The technical section used the same fields for every issue: affected URL, dated evidence, consequence, correction, status and a reproducible verification step.</p>
+
+  <ol class="finding-list">
+    <li class="finding">
+      <h3>F–01: The scanner generated simulated results</h3>
+      <dl class="finding-details">
+        <div><dt>Affected URL</dt><dd><code>/free-website-audit/</code></dd></div>
+        <div><dt>Evidence recorded 5 September 2026</dt><dd>The old source called <code>simulateAudit</code> and used a seeded random calculation instead of inspecting a submitted page.</dd></div>
+        <div><dt>Consequence</dt><dd>A visitor could receive a convincing result that did not come from the page submitted.</dd></div>
+        <div><dt>Correction</dt><dd>Replace the simulation with the HTML checker in <code>src/lib/html-audit.js</code>. State that it reads pasted HTML only.</dd></div>
+        <div><dt>Status and owner</dt><dd>Resolved. Live checker cases were re-run on 11 September 2026. Owner: product and engineering.</dd></div>
+        <div><dt>Verification</dt><dd>Live checks covered input-dependent findings, canonical resolution, export and clear behaviour, inert pasted markup, duplicate metadata, <code>noindex</code> and untested images. These checks verify the documented checker cases and do not certify the wider site.</dd></div>
+      </dl>
+    </li>
+    <li class="finding">
+      <h3>F–02: The download page had no promised files</h3>
+      <dl class="finding-details">
+        <div><dt>Affected URL</dt><dd><code>/website-audit-checklist/template/</code></dd></div>
+        <div><dt>Evidence recorded 5 September 2026</dt><dd>The page promised Excel and PDF files but supplied no working file links. The public asset folder had no template at the time.</dd></div>
+        <div><dt>Consequence</dt><dd>Visitors could read about a resource but could not obtain the promised deliverable.</dd></div>
+        <div><dt>Correction</dt><dd>Publish the 50-check PDF and editable Markdown toolkit. Remove the unsupported Excel promise. Add the direct Markdown report-template path.</dd></div>
+        <div><dt>Status and owner</dt><dd>Resolved. Existing PDF and ZIP download responses passed live signature checks on 11 September 2026. Owner: content and engineering.</dd></div>
+        <div><dt>Verification</dt><dd>Live checks confirmed the existing PDF and ZIP routes and signatures. Earlier evidence inspected the PDF contents and toolkit files. This report does not claim that the PDF was reopened on 11 September.</dd></div>
+      </dl>
+    </li>
+    <li class="finding">
+      <h3>F–03: Missing URLs returned homepage HTML</h3>
+      <dl class="finding-details">
+        <div><dt>Affected URL</dt><dd><code>/codex-growth-missing-20260905/</code>. Historical probes also included <code>/.env</code> and <code>/.git/config</code>.</dd></div>
+        <div><dt>Evidence recorded 5 September 2026</dt><dd>The missing path returned homepage HTML with status 200. The additional probes also returned homepage HTML. No credentials were observed in the returned body.</dd></div>
+        <div><dt>Consequence</dt><dd>Monitoring and crawlers could not reliably distinguish an existing page from a missing route.</dd></div>
+        <div><dt>Correction</dt><dd>Add a dedicated 404 document and verify the hosting layer’s final response code. A repository 404 file alone does not prove the deployed response.</dd></div>
+        <div><dt>Status and owner</dt><dd>Resolved. The missing-path response returned 404 in the live check on 11 September 2026. Owner: engineering and hosting.</dd></div>
+        <div><dt>Verification</dt><dd>Live check requested a genuinely missing route and confirmed the 404 response and page marker. Recheck after future hosting changes.</dd></div>
+      </dl>
+    </li>
   </ol>
 
-  <p>The typical report runs 40-70 pages for a medium-size site. Larger sites produce longer reports because there are more pages to analyse and more findings to document. We also provide a condensed presentation deck of 15-20 slides for stakeholder meetings.</p>
+  <p>The replacement checker makes narrower claims than the old product copy. It parses supplied markup in an inert template and reports title, meta description, canonical, indexing directives, H1, image alt and viewport observations. It does not fetch a site or measure speed, SSL or Google indexing. That boundary belongs in the report and beside the tool.</p>
 
-  <p>For a full breakdown of what drives pricing, see our <a href="/website-audit-services/cost/">audit pricing and cost breakdown</a>.</p>
+  <h2 id="content-analysis">What did the content and evidence review cover?</h2>
+  <p>The content review checked whether public pages described the implemented product and whether promised resources existed. It did not score client content or private measurement data.</p>
 
-  <h2 id="executive-summary-sample">Executive Summary Sample</h2>
+  <p>The report therefore records a content correction rather than a ranking diagnosis. The resource page now points to actual Markdown files and the toolkit page describes the supplied PDF and editable documents. A client report can add a page inventory with keep, refresh, consolidate or remove decisions when the source data supports those decisions.</p>
 
-  <p>Here is how an executive summary reads in practice (illustrative sample data):</p>
+  <p>Read the <a href="/free-website-audit/">free HTML checker scope</a> before reusing the method. A pasted-HTML observation is evidence about the supplied markup. It is not proof that a live page is indexable or accessible to every user.</p>
 
-  <blockquote>
-    <p>"The site currently ranks for 2,340 keywords in the top 100, with 187 keywords in the top 10. Organic traffic has declined 23% over the past six months, primarily driven by losses on the blog — which accounts for 68% of total organic traffic.</p>
-    <p>The audit identified three critical issues: (1) a JavaScript rendering problem that prevents Google from indexing content on 34% of product pages, (2) keyword cannibalisation across 18 blog posts that splits authority for your highest-value keywords, and (3) Core Web Vitals failures on mobile that affect 72% of page loads.</p>
-    <p>Resolving these three issues alone is estimated to recover 15-25% of lost traffic within 90 days. The full action plan contains 47 recommendations prioritised by impact. The top ten recommendations address 80% of the identified opportunity."</p>
-  </blockquote>
+  <h2 id="competitive-insights">What competitive evidence was available?</h2>
+  <p>No competitor crawl, backlink comparison or SERP benchmark belongs in this completed example because none was part of the documented 5 September scope.</p>
 
-  <p>The executive summary is deliberately concise. It quantifies the current situation, identifies the headline issues, and provides a realistic estimate of the opportunity. Decision-makers can read it in two minutes and understand what needs to happen and why. The specificity — exact percentages, page counts, keyword numbers — demonstrates that the analysis is data-driven rather than based on general impressions.</p>
+  <p>A client report can add competitive evidence when it names the comparison set, date, source and selection rule. Keep that section separate from owned-site findings. Do not turn an unrun comparison into a claim about market position.</p>
 
-  <h2 id="technical-findings">Technical Findings</h2>
+  <h2 id="action-plan">What action plan followed the findings?</h2>
+  <p>The action plan follows evidence and verification order: correct the misleading checker, publish the promised files and confirm that missing routes return 404 responses.</p>
 
-  <p>Technical findings in our reports go beyond listing errors. Each finding includes the context needed to understand why it matters and exactly how to fix it. Here is an example of how a technical finding is documented:</p>
+  <ol>
+    <li><strong>Immediate:</strong> keep the HTML checker’s scope beside its input and verify a known noindex and missing-alt example.</li>
+    <li><strong>Short term:</strong> check both Markdown downloads after deployment. Confirm content type, non-empty body and the expected headings.</li>
+    <li><strong>Release follow-up:</strong> request a new missing path and confirm status 404 with a page-not-found body. Review sensitive-path probes as part of hosting hardening.</li>
+    <li><strong>Measurement:</strong> compare later observations using the same URLs and definitions. Treat download events or enquiries as usage signals rather than proof of business outcome.</li>
+  </ol>
 
-  <p><strong>Finding: JavaScript rendering blocks content on product pages</strong></p>
+  <p>Assign each action to a role and attach the evidence needed to close it. A status such as “resolved and verified” requires the recorded check. “Correction prepared” describes source or local work that still needs a production check.</p>
 
-  <ul>
-    <li><strong>Severity:</strong> Critical</li>
-    <li><strong>Pages affected:</strong> 847 product pages (34% of total product inventory)</li>
-    <li><strong>Description:</strong> Product descriptions, pricing, and review content are loaded via client-side JavaScript after the initial page load. Google's URL Inspection tool confirms that these elements are not present in the rendered HTML for the affected page template. The product grid template (template B) correctly implements server-side rendering, but the individual product page template (template A) relies entirely on client-side React rendering for below-the-fold content.</li>
-    <li><strong>Impact:</strong> Google cannot index the product descriptions, pricing, or reviews on these 847 pages. Without this content, the pages are effectively thin content from Google's perspective, limiting their ability to rank for product-specific keywords. This is the primary cause of the 40% decline in product page organic traffic over the past quarter.</li>
-    <li><strong>Recommended fix:</strong> Implement server-side rendering (SSR) for the product page template using Next.js <code>getServerSideProps</code> or switch to static generation with <code>getStaticProps</code> for product content that does not change frequently. The product description, pricing, specifications, and review summary should all be present in the initial HTML response. Client-side hydration can enhance interactivity after the initial render.</li>
-    <li><strong>Estimated effort:</strong> 2-3 days of developer time.</li>
-    <li><strong>Expected impact:</strong> Recovery of indexation for 847 product pages. Based on historical performance of similar pages that are correctly rendered, estimated traffic recovery of 3,000-5,000 organic sessions per month within 60-90 days of implementation.</li>
-  </ul>
+  <h2 id="how-to-use-your-report">How should you use the website audit report template?</h2>
+  <p>Start with the scope and exclusions. Then write one finding per issue and finish each finding with an observable verification step.</p>
 
-  <p>This level of detail enables the development team to understand the problem, verify it independently, and implement the fix without further clarification. Every technical finding in the report follows this same structure — severity, scope, explanation, impact, fix, effort, and expected outcome.</p>
+  <p>For a client audit, replace the bracketed prompts with the client domain, exact URLs, evidence dates, tools and access limits. Add only measurements you can reproduce. Link to stable public sources where possible and keep confidential exports outside the public report.</p>
 
-  <h2 id="content-analysis">Content Analysis</h2>
+  <p>Use the completed example as a format reference. Use the <a href="/resources/agency-audit-toolkit/">agency toolkit</a> when you also need a prioritisation worksheet, client questionnaire or implementation tracker. Use the <a href="/website-audit-services/">professional audit service</a> page for scope and commercial details.</p>
 
-  <p>The content analysis section evaluates the quality and performance of your content library. Here is an example of how we present content findings:</p>
-
-  <p><strong>Finding: Keyword cannibalisation on "project management" cluster</strong></p>
-
-  <ul>
-    <li><strong>Severity:</strong> High</li>
-    <li><strong>Affected pages:</strong> 6 blog posts and 1 product page all targeting variations of "project management software"</li>
-    <li><strong>Description:</strong> Search Console data shows that Google rotates between four different pages from your site for the query "project management software," with none consistently appearing in the top 20. The query generates 18,000 monthly impressions but only 45 clicks (0.25% CTR) because Google cannot determine which page to rank and cycles between candidates, each appearing briefly before being replaced.</li>
-    <li><strong>Current performance:</strong> Average position 34.2 across all fluctuating pages. If consolidated into a single authoritative page, competitive analysis suggests a realistic target of position 8-12, which would yield an estimated 800-1,200 clicks per month based on the keyword's CTR curve.</li>
-    <li><strong>Recommended fix:</strong> Consolidate the six blog posts into a single comprehensive guide. The product page should remain separate with a focus on commercial/transactional intent. Redirect the five retired blog post URLs to the consolidated guide using 301 redirects. Update internal links across the site to point to the consolidated page.</li>
-  </ul>
-
-  <p>The content analysis also includes a full content inventory categorising every page as keep (performing well), refresh (declining or outdated), consolidate (cannibalising or duplicative), or remove (no traffic, no potential). This inventory is delivered as a separate spreadsheet alongside the main report, providing a complete content action plan.</p>
-
-  <p>We also evaluate content quality on a per-page basis for your top 30 organic landing pages, comparing content depth, structure, freshness, and E-E-A-T signals against the current top-ranking competitors for each page's primary keyword. This competitive content comparison reveals exactly what your pages need to do differently to improve or maintain their positions.</p>
-
-  <h2 id="competitive-insights">Competitive Insights</h2>
-
-  <p>The competitive analysis section benchmarks your site against three to five direct organic competitors. We identify competitors based on keyword overlap rather than business rivalry — the sites that actually compete with you in search results, which may differ from the competitors you think about in business strategy meetings.</p>
-
-  <p>The competitive comparison covers:</p>
-
-  <ul>
-    <li><strong>Authority comparison</strong> — referring domain counts, domain rating, and the quality distribution of each competitor's backlink profile. This reveals whether your ranking challenges are primarily an authority problem (competitors have significantly stronger link profiles) or a content/technical problem (authority is comparable but other factors differ).</li>
-    <li><strong>Content coverage gap</strong> — keywords that competitors rank for and you do not. These gaps are filtered by search volume and commercial intent, then categorised by topic to reveal which content areas you are missing entirely. For example, if three competitors rank for dozens of keywords related to "project management for remote teams" and you have no content on this topic, that is a high-value content gap.</li>
-    <li><strong>Technical comparison</strong> — side-by-side Core Web Vitals scores, mobile usability assessment, structured data implementation, and site architecture comparison. This helps quantify whether competitors have technical advantages that contribute to their rankings.</li>
-    <li><strong>SERP feature ownership</strong> — which competitors appear in featured snippets, People Also Ask, Knowledge Panels, and image/video results for your target keywords. SERP features increasingly dominate the results page, and competitors who win them capture disproportionate click share.</li>
-  </ul>
-
-  <p>The competitive section concludes with a gap analysis that quantifies your position relative to the market leader and estimates what it would take — in content, links, and technical improvements — to close the gap. This provides a realistic foundation for strategic planning.</p>
-
-  <h2 id="action-plan">Action Plan</h2>
-
-  <p>The action plan is the most important section of the report. It takes every finding from the audit and organises it into a sequenced, prioritised roadmap. Each recommendation is categorised by timeframe and scored by expected impact and implementation effort.</p>
-
-  <p>The action plan uses four priority tiers:</p>
-
-  <ul>
-    <li><strong>Immediate (fix within two weeks)</strong> — critical issues that are actively costing traffic or revenue. These are typically technical problems that prevent indexation, server errors on high-traffic pages, or security vulnerabilities. In our example audit, the JavaScript rendering issue and a robots.txt misconfiguration blocking the entire resources section fell into this tier.</li>
-    <li><strong>Short-term (complete within one month)</strong> — high-impact improvements that deliver measurable results quickly. Title tag optimisations, meta description rewrites for high-impression pages, broken link fixes, and Core Web Vitals improvements on key templates. These are the quick wins that build momentum.</li>
-    <li><strong>Medium-term (complete within three months)</strong> — content rewrites for underperforming pages, cannibalisation resolution, new content development for identified gaps, and internal linking restructures. These require more effort but produce the largest sustained traffic gains.</li>
-    <li><strong>Ongoing (establish as continuous processes)</strong> — monitoring routines, content refresh schedules, regular technical crawl checks, and link-building activities that maintain and build on the improvements from the first three tiers.</li>
-  </ul>
-
-  <p>Every action item includes the specific pages affected, the exact change required, the team or role responsible (development, content, SEO), and the expected outcome. This level of specificity means the action plan can be converted directly into project management tickets without further interpretation.</p>
-
-  <h2 id="how-to-use-your-report">How to Use Your Report</h2>
-
-  <p>The report is designed to be used actively over six to twelve months, not read once and filed away. Here is how to extract maximum value:</p>
-
-  <ul>
-    <li><strong>Start with the executive summary</strong> — share it with every stakeholder who needs to understand the SEO situation. Use it to secure buy-in and resources for implementation. The summary is written to be compelling without requiring technical knowledge.</li>
-    <li><strong>Convert the action plan into tasks</strong> — each item in the action plan should become a task in your project management system. Assign owners, set deadlines based on the priority tiers, and track completion. The audit's value is zero if the recommendations are not implemented.</li>
-    <li><strong>Brief your development team</strong> — technical findings are written with developers in mind. Share the technical section directly with your development team and schedule a working session to discuss implementation approaches and timeline.</li>
-    <li><strong>Use the content inventory as an editorial calendar</strong> — the content analysis spreadsheet identifies exactly which pages to refresh, which to consolidate, and which new content to create. Map these into your editorial calendar over the next quarter.</li>
-    <li><strong>Measure and iterate</strong> — establish baseline metrics from the report data. After implementing changes, measure the same metrics to quantify improvement. Revisit the action plan monthly to reprioritise based on results and any new data.</li>
-    <li><strong>Schedule a follow-up audit</strong> — a follow-up audit six to twelve months later measures the impact of your implementation, identifies new issues that have emerged, and provides the next set of priorities. Sites that audit regularly maintain their gains and continue improving, while sites that audit once eventually regress.</li>
-  </ul>
-
-  <p>The report you receive is not a grade — it is a map. It shows you where you are, where you need to go, and the fastest route to get there. The businesses that achieve the best results are those that treat the report as a working document, implementing recommendations systematically and measuring outcomes at every stage.</p>
-
-  <p>Ready to get your own report? See <a href="/website-audit-services/">our website audit services</a> for pricing and scope.</p>
-
-  <h2 id="faq">FAQs</h2>
-
+  <h2 id="faq">What questions does this report example answer?</h2>
   {faqs.map((item) => (
     <>
       <h3>{item.q}</h3>
@@ -190,3 +158,21 @@ const faqSchema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </ContentLayout>
+
+<style>
+  .report-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+  .report-actions a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.65rem 0.9rem; font-weight: 700; text-decoration: none; }
+  .report-actions__primary { color: #08202d; background: #9ed9ea; }
+  .report-actions__secondary { color: #b9f1ff; border: 1px solid rgb(158 217 234 / 0.75); }
+  .report-actions a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .report-actions a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .report-actions a:active { outline: 2px solid #fff; outline-offset: 1px; }
+  .finding-list { margin: 1.5rem 0 0; padding-left: 1.35rem; }
+  .finding { margin: 0 0 1.6rem; padding-left: 0.45rem; }
+  .finding h3 { margin: 0 0 0.8rem; }
+  .finding-details { margin: 0; border-left: 2px solid rgb(73 105 125 / 0.65); }
+  .finding-details > div { padding: 0.65rem 0.85rem; border-bottom: 1px solid rgb(73 105 125 / 0.35); }
+  .finding-details > div:last-child { border-bottom: 0; }
+  .finding-details dt { color: #9ed9ea; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .finding-details dd { margin: 0.2rem 0 0; }
+</style>

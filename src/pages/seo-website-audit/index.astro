@@ -21,11 +21,11 @@ const toc = [
 const faqs = [
   {
     q: 'What is an SEO website audit?',
-    a: 'An SEO website audit is a detailed analysis of every factor that influences a site\'s search engine visibility, covering three core pillars: on-page SEO, technical SEO, and off-page SEO. It documents every issue found, explains why it matters, and recommends a specific fix.',
+    a: 'An SEO website audit reviews the on-page, technical, and off-page signals included in the agreed scope. It documents observed issues, explains why they matter, and recommends a specific fix.',
   },
   {
     q: 'Why do you need an SEO audit?',
-    a: 'Organic search drives 53% of all website traffic, yet most sites have between 15 and 40 issues actively suppressing it that are invisible without a structured audit. Implementing the top recommendations from a comprehensive audit typically produces a 30-100% organic traffic increase within 90 days.',
+    a: 'An SEO audit helps surface search visibility issues that are difficult to identify by browsing a site. It gives owners a dated record of observations, priorities and verification steps.',
   },
   {
     q: 'What are the three pillars of an SEO audit?',
@@ -54,7 +54,7 @@ const faqSchema = {
 const childPages = [
   { title: 'How to Do an SEO Audit', href: '/seo-website-audit/how-to/', description: 'Step-by-step walkthrough of the complete SEO audit process from crawl to action plan.' },
   { title: 'SEO Audit Report', href: '/seo-website-audit/report/', description: 'What a professional SEO audit report includes and how to interpret the findings.' },
-  { title: 'SEO Audit Template', href: '/seo-website-audit/template/', description: 'Download our free SEO audit template spreadsheet with pre-built checks and scoring.' },
+  { title: 'SEO Audit Template Guide', href: '/seo-website-audit/template/', description: 'Review the fields and sections used to organise an SEO audit.' },
 ];
 
 const childGroups = [
@@ -92,26 +92,28 @@ const childGroups = [
 ---
 
 <ContentLayout
-  title="SEO Website Audit: How to Find & Fix Every Ranking Issue"
-  description="A complete guide to SEO website audits. Learn what to check, which tools to use, and how to prioritise fixes for maximum organic traffic growth."
+  title="SEO Website Audit: What to Check and How to Prioritise Fixes"
+  description="A complete guide to SEO website audits. Learn what to check, which tools to use, and how to prioritise fixes with dated evidence."
   breadcrumbs={breadcrumbs}
   toc={toc}
   children={childPages}
   childGroups={childGroups}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>An <strong>SEO website audit</strong> is the single most effective way to understand why your site is not ranking as well as it should. It systematically examines every factor that search engines use to evaluate and rank your pages — from the technical foundations that determine whether Google can crawl your content, to the on-page signals that determine relevance, to the off-page authority signals that determine trust.</p>
+<p>An <strong>SEO website audit</strong> is a structured way to investigate why a site may not be visible for its target searches. It reviews the technical foundations that affect crawling and indexation, the on-page signals that describe relevance and the off-page evidence included in the agreed scope.</p>
 
-<p>Most sites we audit have between 15 and 40 SEO issues that are actively suppressing their organic traffic. Many of these issues are invisible to the naked eye. You cannot see a missing canonical tag, a crawl budget problem, or keyword cannibalisation by browsing your own site. You need a structured audit process to surface them.</p>
+<p>Many SEO issues are invisible to the naked eye. You cannot see a missing canonical tag, a crawl budget problem or keyword cannibalisation by browsing your own site. A structured audit process helps surface and document those observations.</p>
 
 <p>This guide walks you through every component of an SEO site audit, the tools you need, and how to prioritise fixes for maximum impact.</p>
 
 <h2 id="what-is-an-seo-website-audit">What Is an SEO Website Audit</h2>
 
-<p>An SEO website audit is a detailed analysis of all the factors that influence your site's search engine visibility. Unlike a general <a href="/website-audit/">website audit</a> that covers UX, security, and accessibility, an SEO audit focuses specifically on the signals that Google, Bing, and other search engines use to rank pages.</p>
+<p>An SEO website audit reviews the search visibility signals included in the agreed scope. Unlike a general <a href="/website-audit/">website audit</a> that covers UX, security and accessibility, an SEO audit focuses on the on-page, technical and off-page signals used by search engines.</p>
 
-<p>The audit produces a comprehensive report that documents every issue found, explains why it matters, and recommends a specific fix. The best SEO audits also estimate the potential traffic impact of each fix, so you can make data-driven decisions about where to invest your resources.</p>
+<p>The audit produces a report that documents observed issues, explains why they matter and recommends a specific fix. Where the inputs support it, the report can include a transparent impact estimate with its assumptions.</p>
+<p>See the <a href="/seo-website-audit/report/">SEO audit report guide</a> for the structure and interpretation of that deliverable.</p>
 
 <p>There are three core pillars of an SEO audit:</p>
 
@@ -125,7 +127,7 @@ const childGroups = [
 
 <h2 id="why-you-need-one">Why You Need One</h2>
 
-<p>Organic search remains the largest single traffic channel for most websites, driving 53% of all website traffic according to BrightEdge research. Yet most sites are leaving a significant portion of that traffic on the table due to SEO issues they do not know about.</p>
+<p>Organic search can be an important acquisition channel, but visibility depends on technical access, page relevance, content quality and external signals. An audit helps identify which of those areas needs investigation.</p>
 
 <h3>You Cannot Fix What You Cannot See</h3>
 
@@ -143,21 +145,23 @@ const childGroups = [
 
 <p>Every plugin update, CMS migration, content management change, and developer deployment can introduce SEO issues. Redirect chains grow longer. Orphaned pages multiply. Internal link equity gets diluted. Without regular audits, technical debt compounds until it becomes a serious drag on performance.</p>
 
-<h3>The ROI Is Exceptional</h3>
+<h3>How Should You Value Audit Fixes?</h3>
 
-<p>SEO audit fixes often produce outsized returns because you are removing barriers to traffic you should already be getting. We consistently see 30-100% organic traffic increases within 90 days of implementing the top recommendations from a comprehensive SEO audit. For a site generating $10,000/month in organic revenue, even a 30% improvement represents $3,000/month in recurring value.</p>
+<p>SEO audit findings can reveal barriers to search visibility and help teams choose a defensible order for implementation. Any traffic or revenue effect requires a dated comparison after the changes and should be reported as measured or estimated.</p>
+
+<p>If the reason for the audit is a sudden visibility change, start with the <a href="/seo-website-audit/rankings-drop/">rankings-drop diagnosis guide</a> before treating every issue as a general optimisation task.</p>
 
 <h2 id="key-areas-to-check">Key Areas to Check</h2>
 
 <p>Before diving into the specifics of each check, here is an overview of the major areas an SEO audit should cover and why each one matters.</p>
 
 <ul>
-  <li><strong>Crawlability</strong> — If Google cannot crawl your pages, they cannot rank. Check robots.txt, XML sitemaps, crawl errors, and JavaScript rendering.</li>
+  <li><strong>Crawlability</strong> — Crawl access affects what Google can fetch and process. Check robots.txt, XML sitemaps, crawl errors, and JavaScript rendering.</li>
   <li><strong>Indexation</strong> — Crawled pages are not automatically indexed. Check for noindex tags, canonical issues, duplicate content, and index coverage in Google Search Console.</li>
   <li><strong>Site architecture</strong> — How your pages link to each other determines how link equity flows and how easily users and search engines can discover content. Check click depth, orphan pages, and hub-spoke structures.</li>
   <li><strong>On-page optimisation</strong> — Each page needs a unique, optimised title tag, meta description, heading structure, and content that matches search intent for its target keywords.</li>
-  <li><strong>Content quality</strong> — Google's helpful content system rewards content that demonstrates experience, expertise, authoritativeness, and trustworthiness (E-E-A-T). Thin, duplicated, or unhelpful content can drag down your entire site.</li>
-  <li><strong>Page speed</strong> — Core Web Vitals are a confirmed ranking factor. Slow pages lose rankings and conversions.</li>
+  <li><strong>Content quality</strong> — Review whether content is helpful, reliable and people-first, and record relevant evidence of experience, expertise, authoritativeness and trustworthiness. These are assessment dimensions rather than a standalone E-E-A-T score.</li>
+  <li><strong>Page speed</strong> — Review Core Web Vitals as user-experience evidence. Slow pages can affect usability and conversions, but a performance threshold miss is not proof of ranking loss.</li>
   <li><strong>Mobile experience</strong> — Google uses mobile-first indexing, meaning it evaluates the mobile version of your site for ranking purposes.</li>
   <li><strong>Backlink profile</strong> — The quantity, quality, relevance, and diversity of your backlinks remain one of the strongest ranking factors.</li>
 </ul>
@@ -168,7 +172,7 @@ const childGroups = [
 
 <h3>Title Tags</h3>
 
-<p>The title tag is the single most impactful on-page element for rankings and click-through rate. Every page should have a unique title tag that includes the primary keyword near the beginning, stays under 60 characters to avoid truncation in search results, and is compelling enough to earn the click.</p>
+<p>A title tag should be unique, concise, descriptive and aligned with the page's intent. Include important terms naturally and remember that Google may truncate or rewrite the displayed title, so character counts are practical guides rather than hard limits.</p>
 
 <p>Common title tag issues we find in audits:</p>
 <ul>
@@ -181,7 +185,7 @@ const childGroups = [
 
 <h3>Meta Descriptions</h3>
 
-<p>While not a direct ranking factor, meta descriptions significantly affect click-through rate, which does influence rankings. Each page should have a unique description under 155 characters that includes the target keyword naturally, communicates a clear benefit, and includes a call to action.</p>
+<p>Meta descriptions are not a direct ranking factor. Write a unique, accurate summary that represents the page content; Google may use other text for the snippet and displayed length varies by result.</p>
 
 <h3>Heading Structure</h3>
 
@@ -193,11 +197,11 @@ const childGroups = [
 
 <h3>Image Optimisation</h3>
 
-<p>Every image should have descriptive alt text that includes relevant keywords naturally, a descriptive file name (not IMG_4532.jpg), proper sizing to avoid layout shifts, and modern format encoding (WebP or AVIF) for optimal file size.</p>
+<p>Provide descriptive alt text for informative images and use an empty alt value for decorative images. Use descriptive file names, explicit dimensions to reduce layout shifts, and modern formats such as WebP or AVIF where they suit the asset.</p>
 
 <h3>Structured Data</h3>
 
-<p>Schema markup helps search engines understand your content and can earn rich results in search. Check for proper implementation of relevant schema types: Article, Product, FAQ, HowTo, LocalBusiness, BreadcrumbList, and others. Validate all markup with Google's Rich Results Test.</p>
+<p>Structured data can help Google understand eligible content, but valid markup does not guarantee a rich result or a particular appearance. Check relevant types such as Article, Product, FAQ, HowTo, LocalBusiness and BreadcrumbList, then validate the markup with Google's Rich Results Test.</p>
 
 <h3>Content Quality and Depth</h3>
 
@@ -205,7 +209,7 @@ const childGroups = [
 
 <h3>Keyword Cannibalisation</h3>
 
-<p>Keyword cannibalisation occurs when multiple pages on your site compete for the same keyword. This splits link equity and confuses search engines about which page to rank. Use Search Console to identify queries where multiple URLs appear, then consolidate content or differentiate targeting.</p>
+<p>Multiple URLs appearing for one query is a signal to investigate, not proof of cannibalisation. Compare intent, content, canonical signals and page performance in Search Console before consolidating or differentiating targeting.</p>
 
 <h2 id="technical-seo-checks">Technical SEO Checks</h2>
 
@@ -217,7 +221,7 @@ const childGroups = [
 
 <h3>Indexation</h3>
 
-<p>Use the <code>site:</code> operator in Google to get an approximate page count, then compare with the number of pages in your sitemap and the Indexation report in Search Console. Large discrepancies indicate problems. Common indexation issues include accidental noindex tags, canonical tags pointing to the wrong URL, and soft 404 pages that return a 200 status code but have no content.</p>
+<p>Use Google Search Console's <a href="https://support.google.com/webmasters/answer/7440203">Page indexing report</a> to review indexed and excluded URLs. For a specific page, use <a href="https://support.google.com/webmasters/answer/9012289">URL Inspection</a> to compare Google's indexed view with a live test. The live test does not check every indexing condition and cannot guarantee inclusion. Compare sitemap URLs with the intended indexable URL set as an implementation check rather than as a direct indexed-page count.</p>
 
 <h3>Site Speed</h3>
 
@@ -225,7 +229,7 @@ const childGroups = [
 
 <h3>Mobile Usability</h3>
 
-<p>With mobile-first indexing, the mobile version of your site is what Google evaluates. Check for tap targets that are too small (minimum 48x48 pixels), text that requires zooming to read, horizontal scrolling, and interactive elements hidden behind hover states that do not work on touch devices.</p>
+<p>With mobile-first indexing, review the mobile version of your site. As a practical guide, provide touch targets around 44–48 CSS pixels with enough spacing, then test text, scrolling and interaction on a real device.</p>
 
 <h3>HTTPS and Security</h3>
 
@@ -233,11 +237,11 @@ const childGroups = [
 
 <h3>Redirect Chains</h3>
 
-<p>Redirect chains occur when URL A redirects to URL B, which redirects to URL C. Each hop adds latency and can lose link equity. Audit for chains longer than one redirect and update internal links and sitemaps to point directly to the final destination URL.</p>
+<p>Redirect chains occur when URL A redirects to URL B, which redirects to URL C. Each hop adds latency and complicates crawling and debugging. Audit for chains longer than one redirect and update internal links and sitemaps to point directly to the final destination URL.</p>
 
 <h3>Duplicate Content</h3>
 
-<p>Duplicate content can arise from URL parameters, www vs non-www versions, HTTP vs HTTPS, trailing slashes, and CMS-generated variations. Ensure canonical tags are correctly implemented on every page, and that only one version of each URL is accessible.</p>
+<p>Duplicate content can arise from URL parameters, www vs non-www versions, HTTP vs HTTPS, trailing slashes, and CMS-generated variations. Where duplicates exist, ensure canonical signals accurately identify the preferred version and check which canonical Google selected.</p>
 
 <h2 id="off-page-seo-checks">Off-Page SEO Checks</h2>
 
@@ -245,19 +249,19 @@ const childGroups = [
 
 <h3>Backlink Quality</h3>
 
-<p>Not all backlinks are equal. A single link from a high-authority, topically relevant site is worth more than hundreds of links from low-quality directories. Use Ahrefs or Semrush to review your backlink profile and flag any links that are spammy, irrelevant, or from link schemes that could trigger a penalty.</p>
+<p>Backlinks differ in relevance and context. Review referring pages and domains for unrelated patterns, paid or manipulative schemes and links that need investigation. A third-party toxicity score is not by itself evidence of a search penalty.</p>
 
 <h3>Anchor Text Distribution</h3>
 
-<p>A natural backlink profile has a diverse mix of anchor text types: branded anchors (your company name), naked URLs, generic phrases ("click here"), and keyword-rich anchors. If more than 10-15% of your anchors are exact-match keywords, it can appear manipulative to Google.</p>
+<p>Review the mix and context of anchor text, including branded terms, URLs, generic phrases and descriptive terms. Interpret patterns alongside the linking pages and acquisition history instead of applying an arbitrary percentage threshold.</p>
 
 <h3>Referring Domain Diversity</h3>
 
-<p>Rankings correlate more strongly with the number of unique referring domains than with total backlink count. Audit your referring domain profile for diversity across different domain extensions, industries, and geographies. A healthy profile grows steadily over time rather than spiking from a single campaign.</p>
+<p>Record unique referring domains alongside the linking pages, context, industries and geographies represented. Do not infer a ranking effect from the count alone; interpret changes with the site's search and link history.</p>
 
 <h3>Lost and Broken Backlinks</h3>
 
-<p>Check for backlinks pointing to pages that return 404 errors. These are wasted opportunities — set up 301 redirects to capture the link equity. Also monitor for recently lost backlinks, which could indicate that referring sites have removed your links or changed their content.</p>
+<p>Check for backlinks pointing to pages that return 404 errors. Fix the referring link or redirect it only when a relevant replacement exists. Also monitor recently lost backlinks and record whether the referring site removed the link or changed its content.</p>
 
 <h3>Competitor Backlink Gap</h3>
 
@@ -279,8 +283,8 @@ const childGroups = [
 <h3>Professional Tools (Paid)</h3>
 
 <ul>
-  <li><strong>Ahrefs</strong> — Best all-in-one platform for site audits, keyword research, backlink analysis, and rank tracking. The Site Audit tool crawls your site and categorises issues by severity.</li>
-  <li><strong>Semrush</strong> — Strong alternative to Ahrefs with excellent site audit capabilities, particularly for larger sites.</li>
+  <li><strong>Ahrefs</strong> — Paid platform for site audits, keyword research, backlink analysis, and rank tracking. Its Site Audit tool crawls a site and categorises issues by severity.</li>
+  <li><strong>Semrush</strong> — Paid platform with site audit, keyword research, backlink and rank-tracking features. Compare coverage and workflow against your scope.</li>
   <li><strong>Screaming Frog (paid)</strong> — Removes the 500 URL limit and adds features like custom extraction, Google Analytics integration, and crawl comparison.</li>
   <li><strong>Sitebulb</strong> — Visual site audit tool that excels at identifying site architecture issues and presenting data in an intuitive way.</li>
 </ul>
@@ -304,7 +308,7 @@ const childGroups = [
 
 <h3>Revenue-First Prioritisation</h3>
 
-<p>For each fix, estimate the potential traffic increase and multiply by your average revenue per visitor. A fix that takes two hours and could increase traffic by 500 visits per month at $2 per visit is worth $1,000/month — that is a clear priority over a fix that takes 20 hours for a potential 50-visit increase.</p>
+<p>Use business relevance when the required inputs are available. Document the baseline, assumptions and confidence for any traffic or revenue estimate, and keep measured outcomes separate from forecasts.</p>
 
 <h3>Dependency Mapping</h3>
 
@@ -314,7 +318,7 @@ const childGroups = [
 
 <p>After implementing fixes, re-crawl your site to verify the issues are resolved. Monitor Google Search Console for improvements in indexation and traffic. Run a follow-up audit in 30-60 days to measure the impact and identify any new issues that have emerged.</p>
 
-<p>If you want professional help prioritising and implementing SEO audit fixes, our <a href="/website-audit-services/">audit services</a> include a prioritised action plan with revenue estimates for every recommendation.</p>
+<p>Use the <a href="/resources/agency-audit-toolkit/">agency audit toolkit</a> to record evidence, owners and verification criteria. If you want professional help prioritising and implementing SEO audit fixes, our <a href="/website-audit-services/">audit services</a> include a prioritised action plan for the agreed scope.</p>
 
 <h2 id="faq">FAQs</h2>
 
