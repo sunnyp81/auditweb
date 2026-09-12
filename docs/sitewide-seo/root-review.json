@@ -1,0 +1,243 @@
+{
+  "owner": "root",
+  "review_date": "2026-09-11",
+  "source_count": 26,
+  "method": "Full source review plus evidence-led semantic checks: task focus, direct answers, distinct section purpose, claim consistency, source support, useful internal links and accurate CTA scope. Numerical semantic scores are not invented; arbitrary comma, word-count and link-position rules are not presented as search requirements. Integrated output/browser evidence is recorded separately.",
+  "pages": [
+    {
+      "file": "src/pages/404.astro",
+      "status": "edited",
+      "review": "Preserved noindex and recovery links; canonical now identifies the actual static 404 file. Missing-path status requires production readback.",
+      "source_sha256": "28a44a29635c696c1a3abcb5e8c9e4b98b0e7c84698bad9bd2b0844a6e034445",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/case-studies/auditweb-self-audit.astro",
+      "status": "reviewed without source change",
+      "review": "Read and retained historical September 5 observations, revision reference, reproduction steps and explicit owned-site/measurement limits. Shared publisher schema and byline apply; original publication date preserved.",
+      "source_sha256": "c19a89de0af1b944e6f2dc58060406c14eb5c51b3b3e9d667f765c405682608d",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/competitor-website-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt around dated query/task comparisons, public evidence limits, content-gap decisions and verifiable actions. Removed ranking-cause guesses, word-count and authority targets, retired rich-result claims and fabricated competitive certainty.",
+      "source_sha256": "fc37e8001994f86bcdf4738d382497947a2d62b453f3d49ca43add2c7dd7fb1e",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+      ]
+    },
+    {
+      "file": "src/pages/cro-website-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt as conversion measurement and experiment planning. Correct denominator and percentage-point arithmetic, illustrative example, event verification, sample uncertainty and guardrails. Links to separate journey/UX tasks.",
+      "source_sha256": "002b2ed7d27b8d793548eec7b1e403958dedc4ec9bb1ecf2df525372578ea6c1",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/crawling-indexing/website-testing",
+        "https://support.google.com/analytics/answer/12571843"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/ai.astro",
+      "status": "edited",
+      "review": "Replaced fictional AI product abilities and forecasts with an evidence-to-review workflow, deterministic versus model distinction, input privacy and verification, and separate AI-search observation task.",
+      "source_sha256": "7f5dea1155e782905ac5dac2600499063e0ee9caca92d3ac610b02c4d2e3fd77",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/index.astro",
+      "status": "edited",
+      "review": "Preserved the working local HTML checker and disclosures. Added crawlable links to all six interpretation/workflow siblings and activated the existing table of contents.",
+      "source_sha256": "0eb47c82c155c96ddef991d64a72cc90f6f87844a1a1f7985434d381d47be37a",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/appearance/title-link",
+        "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+        "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/instant.astro",
+      "status": "edited",
+      "review": "Clarified immediate source observations and a concrete noindex follow-up; explains what needs separate indexing evidence.",
+      "source_sha256": "16747b450104d33a6654f37ab5e1926e3781df826d5339dcf444ee61be37fdba",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/online.astro",
+      "status": "edited",
+      "review": "Clarified browser-local versus remote checks and source versus rendered DOM. Links to JavaScript SEO guidance and a report workflow.",
+      "source_sha256": "b94e26208c6269297edd77370f5d5862e0255d907e789e69312360977a6700d2",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/report.astro",
+      "status": "edited",
+      "review": "Clarified exported findings versus a complete review; added a missing-title observation, correction and retest example and the completed report route.",
+      "source_sha256": "d2f0f2dd4c657fa8d3cb49782e63534bc6d3d6d1faa18b2761a7ec6464f06153",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/free-website-audit/seo.astro",
+      "status": "edited",
+      "review": "Clarified title, canonical and robots interpretation without implying Google status or ranking effects; preserved working checker destination.",
+      "source_sha256": "f52036083f55140b4991913573e1ded2a5c88b7ec95441266547f52d41e63ffa",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+        "https://support.google.com/webmasters/answer/9012289"
+      ]
+    },
+    {
+      "file": "src/pages/free-website-audit/small-business.astro",
+      "status": "edited",
+      "review": "Rebuilt a small-site scope and customer-task workflow. Distinguishes HTML checks, Search Console, speed, Business Profile and agreed form tests. Removed invented audit history and outcome claims.",
+      "source_sha256": "75f40ce658578e509363d0402f756b5b086316d67221e8c3eb8bcc94c9a1fd9f",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/appearance/title-link",
+        "https://pagespeed.web.dev/",
+        "https://support.google.com/business/answer/3038177",
+        "https://support.google.com/webmasters/answer/9012289"
+      ]
+    },
+    {
+      "file": "src/pages/index.astro",
+      "status": "edited",
+      "review": "Reviewed existing evidence-led homepage and working destinations. Made the opening proposition explicitly identify AuditWeb and website audits; preserved documented self-audit, real resources and USD pricing.",
+      "source_sha256": "6f35374c53196c027beec2e38a05e4f4354f8aa26ab228ed10215494c33bc800",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/privacy.astro",
+      "status": "edited",
+      "review": "Reviewed policy and added the actual local checker and consented completion-event behaviour. Corrected the obsolete form-processor reference to the observed Cloudflare endpoints and submitted fields; added persistent cookie controls matching the implementation. Existing legal rights, retention and contact provisions preserved.",
+      "source_sha256": "d326a4d31b891ece939423fa4cf8679f2240a9e4330b63969c4c296467d52b49",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/resources/agency-audit-toolkit.astro",
+      "status": "reviewed without source change",
+      "review": "Read and retained accurate file inventory, real previews, Markdown/ZIP/PDF routes, reuse permission and September 5 file version. Shared attribution/schema added; no false spreadsheet, scoring or fresh-file claims.",
+      "source_sha256": "17018e6b65b868f3a594f60d6b75c180c90c9f236ae848d5dd57fbcd10611f87",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/subscribed.astro",
+      "status": "reviewed without source change",
+      "review": "Read and retained subscription confirmation purpose and noindex. Excluded from sitemap; no keyword expansion. Shared site/entity schema applies. Delivery is not verified by this page.",
+      "source_sha256": "535f60d2d5a49375409479ea6aa2ddd43b6846694cffe65809a020254df6f06d",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/terms.astro",
+      "status": "edited",
+      "review": "Updated the free-tool description to actual browser-local HTML scope and current editorial date. Preserved the existing refund commitment pending the owner policy clarification; did not invent or silently remove commercial terms.",
+      "source_sha256": "096d8be358b7045937c61999c27ea202df306fa8cb7ca34962ee0f728d65ec10",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/thank-you.astro",
+      "status": "edited",
+      "review": "Removed unverified automatic 24-hour report-delivery promise. Clarified scoping and quote next steps; preserved noindex and utility purpose.",
+      "source_sha256": "114a227f0255436da60236fdc99d91bdee97d0e268c1d0089940e33a967c2239",
+      "primary_sources": []
+    },
+    {
+      "file": "src/pages/website-analytics-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt around GA4 configuration, key events, actual event delivery, consent, retention/report distinctions and reconciliation limits. Removed arbitrary tolerance and automatic attribution assumptions.",
+      "source_sha256": "ac248f6d7deb9feb3d8cc83bb99a13fe90e70cdf7031211563cc658020382fbd",
+      "primary_sources": [
+        "https://developers.google.com/tag-platform/security/concepts/consent-mode",
+        "https://support.google.com/analytics/answer/12229528",
+        "https://support.google.com/analytics/answer/13888627",
+        "https://support.google.com/analytics/answer/7201382",
+        "https://support.google.com/analytics/answer/9356034"
+      ]
+    },
+    {
+      "file": "src/pages/website-audit/index.astro",
+      "status": "edited",
+      "review": "Retained broad task hierarchy and actual finding example; corrected child-card promises, mandatory security/legal claims, word-count/AI-detector rules, cannibalisation diagnosis, field/lab confusion and vendor superlatives. Added practical AI-search scope and methods link; clarified sampled content-audit deliverables and specialist security scope after independent review.",
+      "source_sha256": "c5e092ac40b54c87d09f4d17927b3e85f4ed5fddcf3994a1882e6da871daa5c7",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+        "https://developers.google.com/search/docs/fundamentals/how-search-works"
+      ]
+    },
+    {
+      "file": "src/pages/website-backlink-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt around traceable referring-page evidence, destination repair and documented link-scheme risk. Corrected disavow criteria, removed language/traffic/authority proxies and causal ranking claims. Preserved historic anchors with accurate headings.",
+      "source_sha256": "e2cbebac1bb109a7c5cd0b113facae9bc3ea5bb83af6903a5760b7afb3f975c4",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/essentials/spam-policies#link-spam",
+        "https://support.google.com/webmasters/answer/2648487",
+        "https://support.google.com/webmasters/answer/9049606"
+      ]
+    },
+    {
+      "file": "src/pages/website-conversion-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt the actual landing-page/form/checkout inspection task separately from CRO measurement. Covers error recovery, reliable completion and truthful decision evidence without invented field penalties or conversion lifts.",
+      "source_sha256": "f4581a3b780ace95077ae258906c0e532b272f2855bd4c090b124b80188a8a60",
+      "primary_sources": [
+        "https://developers.google.com/search/docs/crawling-indexing/website-testing",
+        "https://www.w3.org/WAI/tutorials/forms/"
+      ]
+    },
+    {
+      "file": "src/pages/website-design-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt hierarchy, typography, brand consistency and responsive checks. Correct WCAG contrast, 320 CSS-pixel reflow and 24-pixel target context; separates visual preference from observed failures.",
+      "source_sha256": "7b000737d7404cccd221ab16b4a0fad5bd833469efac418b383adfd185226895",
+      "primary_sources": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+        "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "file": "src/pages/website-tag-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt script ownership, trigger and destination inventory; tests consent states, duplicate event causes and performance rather than script-count heuristics. No universal tag-manager or server-side compliance claims.",
+      "source_sha256": "e352f22df1eaef5d8666a94e24beca3857a3bdec4b84361630041b0d5392beb9",
+      "primary_sources": [
+        "https://developers.google.com/tag-platform/security/concepts/consent-mode",
+        "https://tagassistant.google.com/"
+      ]
+    },
+    {
+      "file": "src/pages/website-usability-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt task success, errors, recovery and appropriate research methods. Removed universal three-click and fixed-participant claims; includes forms and accessibility boundaries.",
+      "source_sha256": "8cfc7dfb7797ab9cbe660a9d0624fc84dd6526dd363160dc15a0d8444a402542",
+      "primary_sources": [
+        "https://www.nngroup.com/articles/ten-usability-heuristics/",
+        "https://www.w3.org/WAI/tutorials/forms/"
+      ]
+    },
+    {
+      "file": "src/pages/website-ux-audit.astro",
+      "status": "edited",
+      "review": "Rebuilt broader audience comprehension and journey evidence. Distinguishes observations, interpretations and outcomes, with links to usability, design, CRO and architecture specialists.",
+      "source_sha256": "e8e0d796a52677d25558e0d655eeafefefe65c236124446aab17aecbca49f93d",
+      "primary_sources": [
+        "https://www.nngroup.com/articles/ten-usability-heuristics/",
+        "https://www.w3.org/WAI/tutorials/forms/"
+      ]
+    },
+    {
+      "file": "src/pages/about.astro",
+      "status": "new",
+      "review": "Added an entity home explaining offerings, methods, source and date interpretation, owned-site evidence, AI-assisted drafting and corrections. No invented person, office, credential or client evidence.",
+      "source_sha256": "acd00da00ab9e7d90321c56cf0f348c23151b60f6b7169ec8c61f6c47decd6f8",
+      "primary_sources": []
+    }
+  ]
+}

@@ -30,6 +30,7 @@ interface ChildGroup {
 interface Props {
   title: string;
   description: string;
+  canonical?: string;
   breadcrumbs: BreadcrumbItem[];
   toc?: TocItem[];
   children?: ChildPage[];
@@ -45,6 +46,7 @@ interface Props {
 const {
   title,
   description,
+  canonical,
   breadcrumbs,
   toc,
   children: childPages,
@@ -62,8 +64,11 @@ const articleSchema = {
   '@type': 'Article',
   headline: title,
   description: description,
-  author: { '@type': 'Organization', name: 'AuditWeb' },
-  publisher: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
+  '@id': `${new URL(Astro.url.pathname, Astro.site).href}#article`,
+  mainEntityOfPage: { '@id': `${new URL(Astro.url.pathname, Astro.site).href}#webpage` },
+  author: { '@type': 'Organization', '@id': 'https://auditweb.site/#organization', name: 'AuditWeb', url: 'https://auditweb.site/about/' },
+  publisher: { '@id': 'https://auditweb.site/#organization' },
+  inLanguage: 'en',
   ...(publishDate && { datePublished: publishDate }),
   ...(updateDate && { dateModified: updateDate }),
 };
@@ -71,7 +76,7 @@ const articleSchema = {
 const mergedSchema = schema || articleSchema;
 ---
 
-<BaseLayout title={title} description={description} schema={mergedSchema}>
+<BaseLayout title={title} description={description} canonical={canonical} schema={mergedSchema}>
   <Breadcrumbs items={breadcrumbs} />
 
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -84,9 +89,10 @@ const mergedSchema = schema || articleSchema;
           <slot name="header-actions" />
           {(publishDate || updateDate) && (
             <div class="mt-4 text-sm text-text-dim">
-              {updateDate ? `Updated ${updateDate}` : `Published ${publishDate}`}
+              {updateDate ? 'Updated ' : 'Published '}<time datetime={updateDate || publishDate}>{updateDate || publishDate}</time>
             </div>
           )}
+          <p class="mt-2 text-sm text-text-dim">Published by <a href="/about/" class="underline hover:text-text-muted">AuditWeb</a></p>
         </header>
 
         {toc && toc.length > 0 && <TOC items={toc} />}

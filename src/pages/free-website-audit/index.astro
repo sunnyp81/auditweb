@@ -3,8 +3,16 @@ import ContentLayout from '../../layouts/ContentLayout.astro';
 import ScannerTool from '../../components/ScannerTool.astro';
 const breadcrumbs = [{ label: 'Website Audit', href: '/website-audit/' }, { label: 'Free HTML Check', href: '/free-website-audit/' }];
 const toc = [{label:'How to use the checker',id:'how-to-use'}, {label:'What it checks',id:'what-it-checks'}, {label:'Limits and next steps',id:'limits'}];
+const childPages = [
+  { title: 'Interpret the SEO signals', href: '/free-website-audit/seo/', description: 'Distinguish a markup observation from an indexing or ranking diagnosis.' },
+  { title: 'Download and use the report', href: '/free-website-audit/report/', description: 'Turn an exported Markdown finding into an assigned correction and retest.' },
+  { title: 'How the online check handles source', href: '/free-website-audit/online/', description: 'Understand local processing, partial HTML and the privacy boundary.' },
+  { title: 'What an instant check can establish', href: '/free-website-audit/instant/', description: 'Choose the follow-up evidence an immediate source result cannot provide.' },
+  { title: 'A small-business audit workflow', href: '/free-website-audit/small-business/', description: 'Start with the pages and customer tasks that matter to your business.' },
+  { title: 'Using AI in an audit', href: '/free-website-audit/ai/', description: 'Separate model suggestions from verified website evidence.' },
+];
 ---
-<ContentLayout title="Free HTML SEO Checker" description="Check pasted page HTML for eight on-page SEO signals. Inspect real markup, review findings and download an editable report. No signup or upload." breadcrumbs={breadcrumbs} publishDate="2026-03-28" updateDate="2026-09-05" showCTA={false}>
+<ContentLayout title="Free HTML SEO Checker" description="Check pasted page HTML for eight on-page SEO signals. Inspect real markup, review findings and download an editable report. No signup or upload." breadcrumbs={breadcrumbs} toc={toc} children={childPages} publishDate="2026-03-28" updateDate="2026-09-11" showCTA={false}>
 <p>The free HTML SEO checker examines the source you paste into this page. It identifies titles, descriptions, canonical links, indexing directives, headings, image alt attributes, viewport metadata and a social preview image. It runs locally in your browser.</p>
 <ScannerTool />
 <h2 id="how-to-use">How to Use the HTML Checker</h2>

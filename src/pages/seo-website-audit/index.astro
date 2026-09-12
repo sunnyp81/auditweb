@@ -52,7 +52,7 @@ const faqSchema = {
 };
 
 const childPages = [
-  { title: 'How to Do an SEO Audit', href: '/seo-website-audit/how-to/', description: 'Step-by-step walkthrough of the complete SEO audit process from crawl to action plan.' },
+  { title: 'How to Do a DIY SEO Audit', href: '/seo-website-audit/how-to/', description: 'An executable ten-step procedure from scoped crawl and index evidence to an owned action plan.' },
   { title: 'SEO Audit Report', href: '/seo-website-audit/report/', description: 'What a professional SEO audit report includes and how to interpret the findings.' },
   { title: 'SEO Audit Template Guide', href: '/seo-website-audit/template/', description: 'Review the fields and sections used to organise an SEO audit.' },
 ];
@@ -62,7 +62,7 @@ const childGroups = [
     label: 'Guides & Diagnostics',
     pages: [
       { title: 'On-Site SEO Audit', href: '/seo-website-audit/on-site/', description: 'Deep dive into on-page SEO factors: title tags, headings, content, internal links, and schema.' },
-      { title: 'Full SEO Audit', href: '/seo-website-audit/full-audit/', description: 'The complete SEO audit covering every on-page, technical, and off-page ranking factor.' },
+      { title: 'Full SEO Audit', href: '/seo-website-audit/full-audit/', description: 'A professional six-phase scope that connects technical, page, content, link and experience evidence.' },
       { title: 'Rankings Drop Diagnosis', href: '/seo-website-audit/rankings-drop/', description: 'How to diagnose and recover from sudden organic traffic and ranking drops.' },
       { title: 'How Often to SEO Audit', href: '/seo-website-audit/how-often/', description: 'The right SEO audit frequency for your site based on size, industry, and competition.' },
     ],
@@ -92,8 +92,8 @@ const childGroups = [
 ---
 
 <ContentLayout
-  title="SEO Website Audit: What to Check and How to Prioritise Fixes"
-  description="A complete guide to SEO website audits. Learn what to check, which tools to use, and how to prioritise fixes with dated evidence."
+  title="SEO Website Audit Guide and Topic Hub"
+  description="Use this SEO audit hub to identify the right diagnostic, platform, industry, DIY process or professional audit scope for your current task."
   breadcrumbs={breadcrumbs}
   toc={toc}
   children={childPages}
@@ -102,11 +102,11 @@ const childGroups = [
   updateDate="2026-09-11"
 >
 
-<p>An <strong>SEO website audit</strong> is a structured way to investigate why a site may not be visible for its target searches. It reviews the technical foundations that affect crawling and indexation, the on-page signals that describe relevance and the off-page evidence included in the agreed scope.</p>
+<p>An <strong>SEO website audit</strong> is a structured way to investigate why a site may not be visible for its target searches. Use this hub to choose the relevant diagnostic or sector guide; use the <a href="/seo-website-audit/how-to/">DIY procedure</a> for execution and the <a href="/seo-website-audit/full-audit/">full-audit guide</a> to define a professional deliverable.</p>
 
 <p>Many SEO issues are invisible to the naked eye. You cannot see a missing canonical tag, a crawl budget problem or keyword cannibalisation by browsing your own site. A structured audit process helps surface and document those observations.</p>
 
-<p>This guide walks you through every component of an SEO site audit, the tools you need, and how to prioritise fixes for maximum impact.</p>
+<p>The sections below give a concise orientation to scope, evidence and prioritisation. Follow the linked specialist pages when you need platform detail, a diagnostic sequence or an implementation-ready workflow.</p>
 
 <h2 id="what-is-an-seo-website-audit">What Is an SEO Website Audit</h2>
 
@@ -135,7 +135,7 @@ const childGroups = [
 
 <h3>Google's Algorithm Changes Constantly</h3>
 
-<p>Google makes thousands of algorithm changes every year, including several major core updates. Each update can shift what matters for rankings. An SEO audit calibrated to current ranking factors ensures your site is aligned with what Google rewards today, not what worked three years ago.</p>
+<p>Google changes its search systems over time and publishes major ranking updates on its <a href="https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history">Search Status Dashboard</a>. When performance changes, compare dates and affected queries or pages before attributing the change to an update.</p>
 
 <h3>Competitors Are Not Standing Still</h3>
 
@@ -163,7 +163,7 @@ const childGroups = [
   <li><strong>Content quality</strong> — Review whether content is helpful, reliable and people-first, and record relevant evidence of experience, expertise, authoritativeness and trustworthiness. These are assessment dimensions rather than a standalone E-E-A-T score.</li>
   <li><strong>Page speed</strong> — Review Core Web Vitals as user-experience evidence. Slow pages can affect usability and conversions, but a performance threshold miss is not proof of ranking loss.</li>
   <li><strong>Mobile experience</strong> — Google uses mobile-first indexing, meaning it evaluates the mobile version of your site for ranking purposes.</li>
-  <li><strong>Backlink profile</strong> — The quantity, quality, relevance, and diversity of your backlinks remain one of the strongest ranking factors.</li>
+  <li><strong>Backlink profile</strong> — Review referring pages and domains, context, acquisition history and lost links. Counts alone do not establish authority or explain a ranking change.</li>
 </ul>
 
 <h2 id="on-page-seo-checks">On-Page SEO Checks</h2>
@@ -201,11 +201,11 @@ const childGroups = [
 
 <h3>Structured Data</h3>
 
-<p>Structured data can help Google understand eligible content, but valid markup does not guarantee a rich result or a particular appearance. Check relevant types such as Article, Product, FAQ, HowTo, LocalBusiness and BreadcrumbList, then validate the markup with Google's Rich Results Test.</p>
+<p>Structured data can identify visible content for machine consumers, but valid markup does not guarantee a Google rich result. Validate general Schema.org vocabulary with the Schema Markup Validator and use Google's Rich Results Test only for types Google currently supports; HowTo has no Google rich-result benefit and FAQ results are largely limited to authoritative government and health sites.</p>
 
 <h3>Content Quality and Depth</h3>
 
-<p>For each target keyword, compare your content against the top-ranking pages. Your content should be at least as comprehensive as the best result on page one, provide unique value through original data, expert insights, or practical examples, and match the search intent perfectly — informational queries need guides, transactional queries need product pages.</p>
+<p>For each target search task, review current results to understand likely intent and required evidence, then create the clearest accurate answer your audience needs. Do not copy competitor length or structure: add first-party evidence, expert explanation or practical examples where they improve the answer.</p>
 
 <h3>Keyword Cannibalisation</h3>
 
@@ -245,7 +245,7 @@ const childGroups = [
 
 <h2 id="off-page-seo-checks">Off-Page SEO Checks</h2>
 
-<p>Off-page factors — primarily your backlink profile — remain one of the strongest ranking signals. An SEO audit should evaluate the health and quality of your external link profile.</p>
+<p>An off-page scope can review external links and brand mentions as discovery and authority evidence. Interpret referring pages, context and acquisition history rather than treating a domain count as a ranking score.</p>
 
 <h3>Backlink Quality</h3>
 
@@ -316,7 +316,7 @@ const childGroups = [
 
 <h3>Track Progress</h3>
 
-<p>After implementing fixes, re-crawl your site to verify the issues are resolved. Monitor Google Search Console for improvements in indexation and traffic. Run a follow-up audit in 30-60 days to measure the impact and identify any new issues that have emerged.</p>
+<p>After implementing fixes, re-crawl the affected scope and repeat the finding's verification check. Monitor Search Console and business outcomes from the implementation date, allowing for recrawling and normal variance. Schedule the next review from release rate and risk rather than a fixed 30–60-day rule.</p>
 
 <p>Use the <a href="/resources/agency-audit-toolkit/">agency audit toolkit</a> to record evidence, owners and verification criteria. If you want professional help prioritising and implementing SEO audit fixes, our <a href="/website-audit-services/">audit services</a> include a prioritised action plan for the agreed scope.</p>
 

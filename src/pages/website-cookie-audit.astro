@@ -3,77 +3,82 @@ import ContentLayout from '../layouts/ContentLayout.astro';
 
 const toc = [
   { label: 'What Is a Cookie Audit', id: 'what-is' },
-  { label: 'Why Cookie Compliance Matters', id: 'why' },
-  { label: 'Types of Cookies', id: 'types' },
-  { label: 'How to Audit Your Cookies', id: 'how-to' },
-  { label: 'GDPR Cookie Requirements', id: 'gdpr' },
-  { label: 'Cookie Consent Implementation', id: 'consent' },
-  { label: 'Cookie Audit Tools', id: 'tools' },
+  { label: 'Why Cookie Evidence Matters', id: 'why' },
+  { label: 'How to Classify Technologies', id: 'types' },
+  { label: 'How to Audit Cookies', id: 'how-to' },
+  { label: 'Jurisdiction Boundaries', id: 'gdpr' },
+  { label: 'How to Test Consent and Opt-Outs', id: 'consent' },
+  { label: 'Cookie Audit Tools and Limits', id: 'tools' },
 ];
 ---
 
 <ContentLayout
-  title="Website Cookie Audit: Ensure GDPR and Privacy Compliance"
-  description="A cookie audit inventories every cookie your website sets, categorises them by purpose, and ensures your consent mechanism complies with GDPR, CCPA, and ePrivacy regulations."
+  title="Website Cookie Audit: Inventory, Consent and Opt-Out Tests"
+  description="Audit cookies, pixels, local storage and similar technologies across page states, then test UK/EU consent or California opt-out behaviour within the correct scope."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Cookie Audit', href: '/website-cookie-audit/' },
   ]}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
   <h2 id="what-is">What Is a Cookie Audit</h2>
-  <p>A cookie audit is a systematic inventory of every cookie and tracking technology your website uses. It documents what each cookie does, who sets it, how long it lasts, and whether it requires user consent. The audit ensures your website complies with privacy regulations like GDPR, CCPA, and the ePrivacy Directive.</p>
-  <p>Most website owners have no idea how many cookies their site sets. Third-party tools, analytics platforms, advertising pixels, chat widgets, and social media embeds all drop cookies — often without your knowledge. A cookie audit brings transparency to this hidden tracking.</p>
+  <p>A cookie audit records each storage or access technology, its provider, purpose, data, duration, recipients and behaviour before and after a user's choice. It includes cookies, local storage, pixels, tags, SDKs and device fingerprinting where applicable.</p>
+  <p>The output is a dated technical inventory plus test evidence. Legal counsel or the responsible privacy team must decide which laws apply and whether the observed behaviour complies with them.</p>
 
-  <h2 id="why">Why Cookie Compliance Matters</h2>
+  <h2 id="why">Why Cookie Evidence Matters</h2>
   <ul>
-    <li><strong>Legal fines:</strong> GDPR fines for cookie violations have reached millions of euros. French regulators fined Google €150M and Facebook €60M for cookie consent failures. Smaller businesses face proportional penalties.</li>
-    <li><strong>User trust:</strong> Privacy-conscious users check cookie policies. A transparent, compliant approach builds trust. Dismissive or deceptive cookie practices damage your brand.</li>
-    <li><strong>Browser changes:</strong> Safari and Firefox already block third-party cookies by default. Chrome is depreciating third-party cookies. Your tracking strategy needs to adapt.</li>
-    <li><strong>Legal exposure:</strong> Privacy lawsuits from individuals and advocacy groups are increasing. Non-compliant cookie practices create unnecessary legal risk.</li>
+    <li><strong>Notices:</strong> Compare the live technologies and recipients with the cookie and privacy information shown to users.</li>
+    <li><strong>Choice:</strong> Verify that accept, reject, category and withdrawal controls change actual network and storage behaviour.</li>
+    <li><strong>Change control:</strong> Detect new tags or vendors introduced through a tag manager, plugin, embed or deployment.</li>
+    <li><strong>Jurisdiction:</strong> Separate UK PECR or EU ePrivacy consent questions from California sale-or-sharing opt-outs and from personal-data processing under GDPR.</li>
   </ul>
 
-  <h2 id="types">Types of Cookies</h2>
+  <h2 id="types">How to Classify Technologies</h2>
+  <p>Classify from the technology's actual purpose and operation rather than its vendor label. A tool may create several identifiers with different purposes and retention periods.</p>
   <ul>
-    <li><strong>Strictly necessary:</strong> Essential for the website to function — session cookies, authentication, shopping cart, security tokens. These don't require consent under GDPR.</li>
-    <li><strong>Functional:</strong> Remember user preferences like language, region, or display settings. Generally considered low-risk but technically require consent.</li>
-    <li><strong>Analytics:</strong> Track user behaviour for site improvement — Google Analytics, Hotjar, Mixpanel. Require consent in most jurisdictions.</li>
-    <li><strong>Marketing/advertising:</strong> Track users across websites for targeted advertising — Facebook Pixel, Google Ads, retargeting cookies. Always require explicit consent.</li>
+    <li><strong>Service delivery:</strong> Record whether the technology is essential to a service the user requested. Convenience to the operator does not by itself make a technology strictly necessary.</li>
+    <li><strong>Preferences:</strong> Record the requested feature, identifier, expiry and whether the relevant regulator treats that use as exempt.</li>
+    <li><strong>Measurement:</strong> Record data fields, identifiability, recipients and configuration. Do not assume every analytics implementation has the same consent status.</li>
+    <li><strong>Advertising:</strong> Record profiling, cross-site or cross-context use, sale or sharing, and downstream recipients. Assess consent and opt-out duties separately by jurisdiction.</li>
   </ul>
 
-  <h2 id="how-to">How to Audit Your Cookies</h2>
+  <h2 id="how-to">How to Audit Cookies</h2>
   <ol>
-    <li><strong>Scan your website:</strong> Use a cookie scanning tool (Cookiebot, CookieYes, or browser DevTools) to detect all cookies set on every page of your site.</li>
-    <li><strong>Document each cookie:</strong> For every cookie found, record: name, provider, purpose, type (first-party or third-party), duration, and category (necessary, functional, analytics, marketing).</li>
-    <li><strong>Identify unknowns:</strong> Some cookies come from third-party scripts you didn't intentionally add. Investigate every unknown cookie and determine if it's still needed.</li>
-    <li><strong>Check third-party scripts:</strong> Review every embedded script, widget, and plugin. Each one may set cookies or use other tracking technologies (localStorage, fingerprinting).</li>
-    <li><strong>Update your cookie policy:</strong> Your cookie policy must list every cookie with its purpose and duration. Vague descriptions like "we use cookies to improve your experience" are insufficient.</li>
-    <li><strong>Test your consent mechanism:</strong> Verify that non-essential cookies are only set AFTER the user gives consent. Test by rejecting cookies and checking that analytics and marketing scripts don't fire.</li>
+    <li><strong>Define the sample:</strong> Include the home page, landing pages, account and checkout flows, embedded media, logged-in states and routes with different tag-manager rules.</li>
+    <li><strong>Capture a clean visit:</strong> Clear site data or use a fresh browser profile. Save cookies, local and session storage, IndexedDB entries and network requests before interacting with a banner.</li>
+    <li><strong>Exercise every choice:</strong> Repeat the same routes after accept all, reject all, category choices, withdrawal and any recognised browser privacy signal.</li>
+    <li><strong>Trace each item:</strong> Record name, domain, first or third party, setter request, purpose, data, expiry, recipients and the code or tag that created it.</li>
+    <li><strong>Reconcile documents:</strong> Compare the evidence with the consent interface, privacy notice, cookie information, vendor contracts and internal processing record.</li>
+    <li><strong>Retest changes:</strong> Verify the original requests no longer fire when blocked and that essential user tasks still work.</li>
   </ol>
 
-  <h2 id="gdpr">GDPR Cookie Requirements</h2>
+  <h2 id="gdpr">Jurisdiction Boundaries</h2>
+  <p>Cookie law is not one global rule. Identify the user's location, the operator, the technology and the processing purpose before interpreting a result.</p>
   <ul>
-    <li><strong>Prior consent:</strong> Non-essential cookies must not be set until the user explicitly consents. Pre-ticked boxes or "by continuing to browse you accept" banners are not valid consent.</li>
-    <li><strong>Granular choice:</strong> Users must be able to accept or reject cookies by category. An all-or-nothing approach doesn't satisfy GDPR requirements.</li>
-    <li><strong>Easy withdrawal:</strong> Users must be able to change their cookie preferences at any time, as easily as they gave consent.</li>
-    <li><strong>No cookie walls:</strong> You generally cannot deny access to your website if users reject non-essential cookies (with some exceptions for paid content).</li>
-    <li><strong>Consent records:</strong> You must be able to demonstrate that consent was given — store consent records including timestamp, version of the policy, and choices made.</li>
+    <li><strong>United Kingdom:</strong> PECR regulates storing information on or accessing information from a device. The ICO's April 2026 guidance describes current exceptions and how UK GDPR consent relates to PECR.</li>
+    <li><strong>European Union:</strong> National laws implement the ePrivacy rules and GDPR may govern related personal-data processing. Check the relevant member-state authority and current EU law.</li>
+    <li><strong>California:</strong> CCPA is not a general prior-cookie-consent regime. Covered businesses must provide required notices and honour rights such as opting out of sale or sharing, including qualifying Global Privacy Control signals.</li>
+    <li><strong>Other locations:</strong> State and national privacy laws differ in scope, thresholds, definitions and signals. Do not copy an EU banner and label the site globally compliant.</li>
   </ul>
 
-  <h2 id="consent">Cookie Consent Implementation</h2>
+  <h2 id="consent">How to Test Consent and Opt-Outs</h2>
   <ul>
-    <li><strong>Consent Management Platform (CMP):</strong> Use a dedicated CMP like Cookiebot, OneTrust, CookieYes, or Osano. These handle scanning, categorisation, consent collection, and blocking automatically.</li>
-    <li><strong>Script blocking:</strong> Non-essential scripts must be blocked until consent. Most CMPs do this by changing script types to text/plain until the user consents, then rewriting them to text/javascript.</li>
-    <li><strong>Google Consent Mode:</strong> If you use Google Analytics or Google Ads, implement Consent Mode v2. This allows Google to model conversions even when users decline cookies.</li>
-    <li><strong>Server-side tracking:</strong> For analytics accuracy, consider server-side tracking through Google Tag Manager server-side or similar solutions. This reduces dependence on client-side cookies.</li>
+    <li><strong>Interface:</strong> Check that required information appears before the choice and that labels describe the result without pre-ticked controls or misleading emphasis.</li>
+    <li><strong>Blocking:</strong> Inspect network requests and storage before consent. A consent-mode signal or server-side tag does not remove the need to assess the underlying collection and disclosure.</li>
+    <li><strong>Rejection and withdrawal:</strong> Confirm that rejecting or withdrawing stops the covered processing and removes identifiers where the implementation promises removal.</li>
+    <li><strong>Opt-out signals:</strong> Send Global Privacy Control and confirm that a covered California sale or sharing flow changes as required.</li>
+    <li><strong>Records:</strong> Check that the organisation can show the notice version and choice without storing more personal data than needed.</li>
   </ul>
 
-  <h2 id="tools">Cookie Audit Tools</h2>
+  <h2 id="tools">Cookie Audit Tools and Limits</h2>
   <ul>
-    <li><strong>Cookiebot:</strong> Scans your entire site monthly, categorises cookies, generates a compliant consent banner and cookie policy. Free for small sites (under 100 pages).</li>
-    <li><strong>CookieYes:</strong> Similar to Cookiebot with a free tier. Good for WordPress sites with a dedicated plugin.</li>
-    <li><strong>Chrome DevTools:</strong> Application → Cookies shows all cookies for the current page. Network tab shows which requests set cookies. Free and always available.</li>
-    <li><strong>BuiltWith:</strong> Shows what technologies a website uses, including tracking and analytics tools. Useful for identifying what might be setting cookies.</li>
+    <li><strong>Browser developer tools:</strong> Use Application or Storage panels and the Network panel to trace a specific state. Preserve a HAR only after checking that it does not expose personal data or secrets.</li>
+    <li><strong>Automated crawlers:</strong> Use a scanner to widen route coverage. Dynamic tags, geolocation, login states and delayed interactions can escape a crawl.</li>
+    <li><strong>Consent platforms:</strong> A CMP can manage choices and scripts but cannot guarantee correct categorisation, legal scope or vendor behaviour. Test the live result.</li>
+    <li><strong>Tag-manager preview:</strong> Trace triggers and consent conditions in a controlled environment. Compare preview output with actual browser requests.</li>
   </ul>
+
+  <p>Use the ICO's current <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/">storage and access technologies guidance</a> for UK checks and the California Attorney General's <a href="https://www.oag.ca.gov/privacy/ccpa">CCPA guidance</a> for sale, sharing and Global Privacy Control. The <a href="/website-security-audit/gdpr/">GDPR website audit</a> covers the wider personal-data map.</p>
 </ContentLayout>

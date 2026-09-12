@@ -19,6 +19,7 @@ const resources = [
 ];
 
 const company = [
+  { href: '/about/', label: 'About AuditWeb & Our Methods' },
   { href: '/website-audit-services/', label: 'Our Services' },
   { href: '/website-audit-services/cost/', label: 'Pricing' },
   { href: '/case-studies/auditweb-self-audit/', label: 'Our Documented Self-Audit' },
@@ -78,9 +79,10 @@ const year = new Date().getFullYear();
 
     <div class="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-sm text-text-dim">&copy; {year} AuditWeb. All rights reserved.</p>
-      <div class="flex gap-6">
+      <div class="flex flex-wrap justify-center gap-6">
         <a href="/privacy/" class="text-sm text-text-dim hover:text-text-muted transition-colors">Privacy</a>
         <a href="/terms/" class="text-sm text-text-dim hover:text-text-muted transition-colors">Terms</a>
+        <button type="button" data-cookie-settings class="text-sm text-text-dim hover:text-text-muted transition-colors">Cookie settings</button>
       </div>
     </div>
   </div>

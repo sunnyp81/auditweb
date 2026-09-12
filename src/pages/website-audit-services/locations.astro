@@ -9,49 +9,51 @@ const breadcrumbs = [
 ];
 
 const toc = [
-  { label: 'UK Locations', id: 'uk-locations' },
-  { label: 'US Locations', id: 'us-locations' },
+  { label: 'How Remote Audits Work', id: 'remote-audits' },
+  { label: 'UK Service Areas', id: 'uk-locations' },
+  { label: 'US Service Areas', id: 'us-locations' },
 ];
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Website Audit Services by Location',
-  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
-  description: 'Website audit services delivered locally across the UK and US, with city-specific market context for each location.',
+  name: 'Remote Website Audit Services by Location',
+  provider: { '@type': 'Organization', '@id': 'https://auditweb.site/#organization', name: 'AuditWeb', url: 'https://auditweb.site/' },
+  description: 'Remote website audit services available to organisations across listed UK and US locations.',
   areaServed: [...cities.uk.map(c => c.name), ...cities.us.map(c => c.name)],
 };
 ---
 
 <ContentLayout
-  title="Website Audit Services by Location"
-  description="Find website audit services in your city, covering major UK and US locations from London to Los Angeles. Same audit, local market context."
+  title="Remote Website Audit Services by Location"
+  description="Browse UK and US service areas for AuditWeb's remote website audits. Each engagement uses a written scope, dated evidence and USD pricing from $297."
   breadcrumbs={breadcrumbs}
   toc={toc}
   schema={schema}
   publishDate="2026-08-26"
+  updateDate="2026-09-11"
 >
 
-<p>We deliver the same 72-checkpoint website audit everywhere. The one difference is local market context. Each city page below covers the specific competitive landscape, common issues, and search behaviour we see in that market.</p>
+<p>AuditWeb delivers website audits remotely to organisations in the UK and US service areas listed below. The city pages describe availability and scoping. They do not represent local offices or claim local audit evidence.</p>
 
-<p>Every city below gets the same audit — see our <a href="/website-audit-services/">full range of audit services</a> for scope and pricing.</p>
+<h2 id="remote-audits">How do remote website audits work?</h2>
+<p>Each engagement starts with the website, business question, priority pages and available data. A city can define which landing pages and named competitors enter the scope. Findings still require dated evidence from the site or agreed data sources.</p>
+<p>Basic audits start at $297 USD and comprehensive audits start at $997 USD. Read the <a href="/website-audit-services/">website audit service</a> page for deliverables, scope limits and custom-quote cases.</p>
 
-<h2 id="uk-locations">UK Locations</h2>
-
+<h2 id="uk-locations">Which UK locations can request a remote audit?</h2>
 <ul>
   {cities.uk.map(city => (
     <li><a href={`/website-audit-services/${city.slug}/`}>{city.name}</a> — {city.region}</li>
   ))}
 </ul>
 
-<h2 id="us-locations">US Locations</h2>
-
+<h2 id="us-locations">Which US locations can request a remote audit?</h2>
 <ul>
   {cities.us.map(city => (
     <li><a href={`/website-audit-services/${city.slug}/`}>{city.name}</a> — {city.region}</li>
   ))}
 </ul>
 
-<p>Don't see your city listed? Our audit process works the same way anywhere — <a href="/website-audit-services/">get in touch via the main services page</a> and we'll confirm coverage for your location.</p>
+<p>Do not see your city listed? Use the main service enquiry to ask about remote coverage. Include your site URL, location, priority pages and audit question so AuditWeb can confirm scope.</p>
 
 </ContentLayout>

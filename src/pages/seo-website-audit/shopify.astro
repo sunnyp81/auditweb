@@ -13,8 +13,8 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Shopify SEO Audit: Fix Platform-Specific Issues Hurting Your Store"
-  description="Shopify has unique SEO challenges — duplicate URLs, limited URL control, and app bloat. Learn how to audit your Shopify store and fix the issues that matter."
+  title="Shopify SEO Audit: URLs, Product Data, Themes and Apps"
+  description="Audit Shopify SEO across product and collection URLs, canonicals, faceted navigation, product data, theme output and app performance."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'SEO Audit', href: '/seo-website-audit/' },
@@ -23,8 +23,9 @@ const toc = [
   toc={toc}
   showLeadForm={true}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>Shopify powers over 4 million online stores, but its SEO capabilities come with known limitations. Some issues are platform-level and can't be fully fixed — they can only be mitigated. A Shopify-specific audit knows which battles to fight and which to work around.</p>
+  <p>A Shopify SEO audit checks product and collection URL variants, canonical signals, faceted navigation, product data, theme output and app overhead. Verify the storefront's rendered HTML and Search Console evidence because theme and app behaviour varies between stores.</p>
 
   <h2 id="limitations">Shopify SEO Limitations</h2>
   <p>Before auditing, understand what Shopify restricts:</p>
@@ -47,37 +48,37 @@ const toc = [
 
   <h2 id="products">Product Page Optimisation</h2>
   <ul>
-    <li><strong>Title tags:</strong> Shopify defaults to "Product Name — Store Name". Customise the title tag template in your theme's product.liquid or use an SEO app for more control.</li>
-    <li><strong>Meta descriptions:</strong> Many stores leave these blank, letting Google auto-generate them. Write unique descriptions for at least your top 50 revenue-generating products.</li>
-    <li><strong>Product descriptions:</strong> Thin product descriptions (under 100 words) are a ranking killer. Add detailed descriptions covering features, benefits, specifications, use cases, and FAQs.</li>
-    <li><strong>Image alt text:</strong> Shopify makes it easy to add alt text in the product image editor. Audit all product images and add descriptive alt text including the product name.</li>
+    <li><strong>Title tags:</strong> review the search engine listing for priority products in Shopify Admin and inspect the rendered title from each relevant theme template. Online Store 2.0 themes commonly use JSON templates and sections, so identify the active source before changing theme code.</li>
+    <li><strong>Meta descriptions:</strong> review products with meaningful impressions, weak or inaccurate snippets, material revenue or recurring support questions. Write an accurate description where it can improve the search preview, then measure the affected page-query set; there is no universal top-50 quota and Google may select other page text.</li>
+    <li><strong>Product information:</strong> check whether the page answers material questions about features, compatibility, dimensions, delivery and returns. Word count alone does not define thin content.</li>
+    <li><strong>Image alternatives:</strong> give informative product images concise alt text that communicates their purpose. Use empty alt text for decorative or redundant images instead of repeating the product name on every image.</li>
     <li><strong>Product schema:</strong> Shopify themes typically include basic Product schema. Verify it includes price, availability, rating (if you have reviews), and brand. Test with Google's Rich Results Test.</li>
-    <li><strong>Reviews:</strong> Product reviews add unique content to each product page and enable review stars in search results. If you don't have a review app, install one — Judge.me and Loox are popular options.</li>
+    <li><strong>Reviews:</strong> if the store collects genuine product reviews, verify that visible ratings and Product markup agree and follow Google's review-snippet policies. A review app or valid markup does not guarantee stars in search, so choose a vendor from operational, privacy and moderation requirements.</li>
   </ul>
 
   <h2 id="collections">Collection Page SEO</h2>
   <ul>
-    <li><strong>Collection descriptions:</strong> Many stores leave collection pages as just product grids with no text. Add 200-500 words of unique content above or below the product grid explaining the collection.</li>
-    <li><strong>Filtering and faceted navigation:</strong> If your theme supports product filtering (size, colour, price), check that filter combinations don't create thousands of indexable URLs. Filter URLs should be noindexed or use canonical tags pointing to the base collection URL.</li>
+    <li><strong>Collection guidance:</strong> add unique comparison or selection information when shoppers and queries require it. Keep product discovery usable and avoid a fixed word target.</li>
+    <li><strong>Filtering and faceted navigation:</strong> inventory the URL combinations the theme exposes and decide which filters have a genuine search task. Keep useful, distinct facets crawlable and internally supported; prevent crawling of unwanted combinations where practical, and use a canonical only when the filtered page is genuinely a duplicate of the selected canonical.</li>
     <li><strong>Sorting parameters:</strong> Verify that ?sort_by= parameters are handled with canonicals. Sorted versions of collection pages are duplicates.</li>
-    <li><strong>Collection hierarchy:</strong> Use nested collections where logical (e.g., /collections/mens → /collections/mens-shoes). This creates a clear topical structure.</li>
+    <li><strong>Collection relationships:</strong> Shopify collection handles are flat beneath <code>/collections/</code>. Express useful parent-child relationships through navigation, breadcrumbs, collection copy and contextual links rather than implying that one collection route is nested beneath another.</li>
   </ul>
 
   <h2 id="speed">Speed and Performance</h2>
-  <p>Shopify speed is largely determined by three factors: your theme, your apps, and your images.</p>
+  <p>Shopify performance can be affected by theme code, apps, media, fonts, third-party services and the page's actual content. Use field data and a reproducible lab trace to identify the material bottleneck before choosing a fix.</p>
   <ul>
-    <li><strong>Theme speed audit:</strong> Test your homepage and a product page in PageSpeed Insights. Scores below 50 on mobile indicate theme-level issues. Consider switching to a faster theme like Dawn (Shopify's default) or a speed-optimised premium theme.</li>
+    <li><strong>Theme speed audit:</strong> test representative home, collection, product and cart journeys. A Lighthouse score describes that run and cannot assign the cause to the theme; inspect the trace, compare field data and isolate theme, app, media and third-party work before considering a theme change.</li>
     <li><strong>App audit:</strong> Each installed app can inject CSS and JavaScript into every page. Audit your apps: uninstall unused ones, and check if removed apps left behind code in your theme. Some apps inject scripts even after uninstallation.</li>
-    <li><strong>Image compression:</strong> Shopify auto-compresses images but doesn't convert to WebP by default in all contexts. Use Shopify's built-in image_url filter with format: 'webp' in Liquid templates.</li>
+    <li><strong>Responsive images:</strong> use Shopify's <code>image_url</code> and <code>image_tag</code> filters with appropriate dimensions and <code>sizes</code>. Shopify's CDN can negotiate modern formats such as WebP and AVIF; avoid forcing one format or manually constructing CDN URLs.</li>
     <li><strong>Lazy loading:</strong> Ensure below-fold images use loading="lazy". Many older themes don't implement this.</li>
-    <li><strong>Third-party scripts:</strong> Chat widgets, review apps, analytics tools, and social proof popups all add JavaScript. Load non-critical scripts after page interaction using Shopify's Script Tag API or defer attributes.</li>
+    <li><strong>Third-party scripts:</strong> attribute script cost to the responsible theme or app and remove unused functionality through the supported owner interface. Deferral depends on how the script is loaded and whether delaying it breaks consent, analytics or the customer journey; the ScriptTag API is an app integration surface, not a universal merchant-side fix.</li>
   </ul>
 
   <h2 id="theme">Theme and App Audit</h2>
   <ul>
-    <li><strong>Check heading structure:</strong> Many Shopify themes misuse H1 tags — some put the store name as H1 on every page, or use H3 for product titles. Each page should have exactly one H1 containing the primary keyword.</li>
+    <li><strong>Check heading structure:</strong> verify that each template exposes a clear page heading and logical subordinate sections. Multiple H1 elements are valid HTML; focus on an understandable rendered outline rather than keyword placement.</li>
     <li><strong>Check for JavaScript SEO issues:</strong> Some themes render product information with JavaScript. Use Google's URL Inspection tool to verify Googlebot can see your product details.</li>
-    <li><strong>Structured data completeness:</strong> Test every page type (homepage, collection, product, blog post, page) in the Rich Results Test. Many themes have incomplete or missing schema for some page types.</li>
+    <li><strong>Structured data:</strong> test representative eligible page types and verify that markup matches visible content. Rich Results Test support varies by schema type and a valid result is not a display guarantee.</li>
     <li><strong>Mobile usability:</strong> Test your theme at 375px width. Check that product images zoom correctly, the cart is accessible, and the checkout flow works on mobile.</li>
   </ul>
 
@@ -88,10 +89,10 @@ const toc = [
     <li><strong>Add unique content to collection pages</strong> — transforms thin category pages into ranking assets</li>
     <li><strong>Optimise product descriptions</strong> for your top 50 products by revenue</li>
     <li><strong>Remove unused apps</strong> and clean up leftover code from uninstalled apps</li>
-    <li><strong>Add image alt text</strong> to all product images</li>
+    <li><strong>Review image alternatives</strong> for informative, decorative and redundant product images</li>
     <li><strong>Customise title tag templates</strong> in your theme for better click-through rates</li>
     <li><strong>Submit sitemap</strong> to both Google Search Console and Bing Webmaster Tools</li>
   </ol>
 
-  <p>Need a professional audit of your Shopify store? Our <a href="/website-audit-services/">comprehensive audit</a> includes Shopify-specific checks alongside our standard 72-point review.</p>
+  <p>Need a professional audit of your Shopify store? Ask our <a href="/website-audit-services/">audit service</a> to confirm the storefront, product, collection, app and Search Console scope in the proposal.</p>
 </ContentLayout>

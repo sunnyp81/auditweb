@@ -1,0 +1,32 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+const breadcrumbs = [{ label: 'About AuditWeb', href: '/about/' }];
+const toc = [{ label: 'What AuditWeb provides', id: 'what-we-provide' }, { label: 'Evidence and editorial methods', id: 'editorial-method' }, { label: 'Commercial relationships', id: 'commercial-relationships' }, { label: 'Questions and corrections', id: 'corrections' }];
+---
+<ContentLayout title="About AuditWeb: Website Audit Resources and Methods" description="Learn what AuditWeb provides, how our guides distinguish observations from estimates, and the limits of our HTML checker and owned-site examples." breadcrumbs={breadcrumbs} toc={toc} publishDate="2026-09-11" showCTA={false}>
+<p>AuditWeb publishes website audit guides, provides a free browser-local HTML checker and shares editable audit resources. Our service pages describe commissioned reviews with an agreed scope. The common purpose is to connect an observed website condition to a specific action and a way to verify it.</p>
+
+<h2 id="what-we-provide">What does AuditWeb provide?</h2>
+<ul>
+  <li><strong>Guides:</strong> explanations of technical, search, content, accessibility, security and user-experience reviews, including the evidence each task needs.</li>
+  <li><strong>HTML checker:</strong> a tool that inspects supplied page markup in the current browser tab. It does not fetch the entered URL or perform a complete site audit.</li>
+  <li><strong>Working resources:</strong> a 50-check PDF, blank Markdown documents and a completed owned-site report example.</li>
+  <li><strong>Scoped services:</strong> an enquiry route for agreeing the pages, systems, deliverables and commercial terms of a professional review.</li>
+</ul>
+<p>Start with the <a href="/website-audit/">complete audit guide</a>, try the <a href="/free-website-audit/">HTML checker</a> or inspect the <a href="/resources/agency-audit-toolkit/">actual downloadable files</a>.</p>
+
+<h2 id="editorial-method">How should you interpret our evidence and dates?</h2>
+<p>An observation describes what a named source or test showed at a recorded time. An interpretation explains why that observation may matter. An estimate needs stated assumptions. An untested area remains a limitation.</p>
+<p>Our <a href="/case-studies/auditweb-self-audit/">documented self-audit</a> records defects found on AuditWeb itself. It is owned-site evidence, not a client testimonial or proof of a traffic or revenue result. The <a href="/website-audit-services/report-example/">completed report example</a> shows how those findings can be organised for implementation.</p>
+<p>Content update dates identify editorial changes. They do not mean that every named tool, legal obligation or website condition was independently retested on that day. Product documentation links identify the vendor as the source; a directory listing is not an endorsement based on a benchmark unless a published method says so.</p>
+<p>AI-assisted drafting and automated checks support this site's content work. A generated explanation does not replace source verification or a browser test. Readers should assess cited evidence, the scope of each example and the applicability of instructions to their own site.</p>
+<p>Search and AI-search guidance is not a promise of inclusion, citations or ranking improvements. Technical accessibility checks do not by themselves determine legal compliance, and a public-page security review is not a penetration test.</p>
+
+<h2 id="commercial-relationships">Which resources and services are ours?</h2>
+<p>The AuditWeb checker, toolkit and commissioned audit service are our own offerings. A link to our service is an owned commercial route. Other tools in the directory belong to their respective providers; consult their current documentation, prices and terms before choosing one.</p>
+<p>Service availability is described as remote coverage where location pages are used. A named service area is not evidence of a local office. Confirm the scope and quote through the <a href="/website-audit-services/">service enquiry page</a>.</p>
+
+<h2 id="corrections">How can you question a finding or request a correction?</h2>
+<p>Send the page URL, the passage concerned and the evidence supporting a correction to <a href="mailto:hello@auditweb.site">hello@auditweb.site</a>. Avoid sending credentials or private customer records. A reproducible example helps distinguish a factual correction from a difference in scope.</p>
+<p>The <a href="/privacy/">privacy policy</a> explains the site's data handling and the <a href="/terms/">terms of service</a> describe its published commercial conditions.</p>
+</ContentLayout>

@@ -21,15 +21,16 @@ const toc = [
 
 <ContentLayout
   title="Website Accessibility Audit Checklist"
-  description="A practical accessibility audit checklist covering colour contrast, keyboard navigation, alt text, forms, headings, links, media, and ARIA. Based on WCAG 2.1 AA requirements."
+  description="Check contrast, keyboard access, text alternatives, forms, headings, links, media and ARIA against current WCAG requirements and user tasks."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your website. Beyond the ethical imperative, accessibility has direct SEO benefits: many accessibility best practices (proper heading structure, descriptive alt text, semantic HTML) are also ranking factors. And in many jurisdictions, accessibility is a legal requirement. The European Accessibility Act, the Americans with Disabilities Act, and the UK Equality Act all have implications for website operators.</p>
+<p>This website accessibility checklist finds common barriers in colour, keyboard operation, images, forms, headings, links, media and ARIA. Test complete user journeys on representative pages and record the browser, assistive technology, state and reproduction steps.</p>
 
-<p>This checklist is based on WCAG 2.1 Level AA, which is the standard most legal frameworks reference and the level most organisations should target. It covers the most common and impactful accessibility issues rather than every possible criterion. Fix everything on this list and you will have addressed the barriers that affect the largest number of users.</p>
+<p>The list draws on WCAG 2.2 but is not a complete conformance evaluation or legal opinion. Confirm the WCAG version incorporated by any applicable law, regulation or contract.</p>
 
 <h2 id="colour-and-contrast">Colour and Contrast</h2>
 
@@ -50,7 +51,7 @@ const toc = [
 <ul>
   <li><strong>All interactive elements are reachable by Tab key.</strong> Press Tab repeatedly from the top of the page and verify that every link, button, form field, and interactive control receives focus. Elements that are visible and interactive but not reachable by keyboard are inaccessible to keyboard users. Common failures include custom dropdown menus, modal dialogs, and JavaScript-powered interactive elements that use div or span instead of button or a elements.</li>
   <li><strong>Tab order follows visual order.</strong> The order in which elements receive focus when pressing Tab should match the visual layout of the page. If focus jumps unexpectedly from the header to the footer, or from the right column to the left, the tab order is incorrect. This usually indicates a mismatch between DOM order and visual presentation caused by CSS positioning or flexbox order properties.</li>
-  <li><strong>Skip navigation link is present.</strong> The first focusable element on each page should be a "Skip to main content" link that bypasses the navigation menu. This lets keyboard users jump directly to the page content without Tabbing through every navigation link on every page visit. The skip link can be visually hidden until focused.</li>
+  <li><strong>Repeated blocks can be bypassed.</strong> Test for a mechanism to bypass repeated content. A first-focusable skip link that becomes visible on focus is one sufficient technique; suitable headings, landmarks or another conforming mechanism may also satisfy WCAG 2.4.1.</li>
   <li><strong>No keyboard traps.</strong> Navigate through the entire page using only the keyboard and verify that you can always move past every element. Keyboard traps occur when focus enters an element (commonly modal dialogs, embedded videos, or custom widgets) and cannot exit using Tab, Shift+Tab, or Escape. Every element that captures focus must provide a keyboard mechanism to release it.</li>
   <li><strong>Modal dialogs are keyboard accessible.</strong> When a modal dialog opens, focus should move to the dialog. Tab should cycle through the dialog's interactive elements without moving behind the modal to the underlying page. Pressing Escape should close the dialog and return focus to the element that triggered it.</li>
   <li><strong>Dropdown menus work with keyboard.</strong> Navigation dropdown menus should open when the parent item receives focus or is activated with Enter/Space, allow navigation through submenu items with arrow keys, and close when focus leaves the menu or Escape is pressed. Many CSS-only hover menus are completely inaccessible to keyboard users.</li>
@@ -86,7 +87,7 @@ const toc = [
 <p>Headings provide structural navigation for screen reader users, who rely on heading levels to understand page organisation and jump between sections.</p>
 
 <ul>
-  <li><strong>One H1 per page.</strong> Each page should have exactly one H1 element that describes the page's main topic. Multiple H1 elements confuse the hierarchical structure. Check every page template for duplicate H1s, which commonly appear when logos, widget titles, or sidebar elements use H1 tags.</li>
+  <li><strong>Headings form a useful hierarchy.</strong> The main heading should describe the page and subordinate headings should reflect the content structure. HTML permits more than one H1, so report multiple H1s only when they make the outline or navigation confusing.</li>
   <li><strong>Heading levels do not skip.</strong> The heading hierarchy should progress logically: H1 followed by H2, then H3 under the relevant H2, and so on. Do not skip from H2 to H4. Skipped heading levels create gaps in the document outline that confuse screen reader users navigating by headings. Heading levels should reflect content hierarchy, not visual styling.</li>
   <li><strong>Headings describe the following content.</strong> Each heading should accurately describe the content that follows it. Generic headings like "More information" or "Details" do not help screen reader users who scan headings to find the section they need. Headings should be specific enough to be useful out of context.</li>
   <li><strong>No headings used purely for styling.</strong> Do not use heading elements to make text appear large or bold. If text needs to be visually prominent but is not structurally a heading, use CSS classes instead of heading tags. Screen reader users encounter these false headings in their heading navigation and are misled about the page structure.</li>
@@ -95,7 +96,7 @@ const toc = [
 <h2 id="links">Links</h2>
 
 <ul>
-  <li><strong>Link text is descriptive.</strong> Every link should have text that describes its destination or purpose. "Click here", "Read more", and "Learn more" are meaningless to screen reader users who navigate by listing all links on a page. Instead of "Click here to download our guide", use "Download our SEO audit guide". The link text should make sense when read in isolation.</li>
+  <li><strong>Link purpose is determinable.</strong> At Level A, test whether purpose can be determined from the link text or its programmatically determined context, except where ambiguous to users generally. Descriptive link text remains the clearest option and supports the stricter Level AAA criterion.</li>
   <li><strong>Links are visually distinguishable from surrounding text.</strong> Links within text content must be visually distinct from non-linked text through a combination of colour and another indicator (underline, bold, or icon). Colour alone is insufficient because colour-blind users may not perceive the difference. The most reliable approach is keeping the traditional underline on text links.</li>
   <li><strong>Links that open new windows are indicated.</strong> If a link opens in a new browser tab or window (target="_blank"), the link text or an adjacent indicator should inform the user. Screen reader users need to know that activating the link will change their context. Add "(opens in new tab)" to the link text or use an aria-label that includes this information.</li>
   <li><strong>Adjacent links are separated.</strong> When multiple links appear next to each other (such as an image link and a text link to the same destination), they should either be combined into a single link or separated with non-linked content. Adjacent links without separation create confusion because screen readers announce them as separate items pointing to the same destination.</li>
@@ -123,5 +124,7 @@ const toc = [
   <li><strong>aria-hidden is used appropriately.</strong> Elements with aria-hidden="true" are invisible to screen readers. Verify that aria-hidden is only applied to content that is genuinely decorative or duplicated elsewhere accessibly. Do not apply aria-hidden to visible interactive elements or content that provides unique information. A common error is hiding elements visually with CSS display:none while leaving them accessible to screen readers, or the reverse: making elements visible but hidden from screen readers with aria-hidden.</li>
   <li><strong>Landmark regions are defined.</strong> Use ARIA landmark roles or HTML5 landmark elements (header/banner, nav/navigation, main, footer/contentinfo, aside/complementary) to define the major regions of each page. Screen reader users navigate by landmarks to jump between page sections. Every page should have at least a main landmark, and navigation should be in a nav element or region with role="navigation".</li>
 </ul>
+
+<p>Check each result against the normative <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 Recommendation</a> and use the <a href="/website-accessibility-audit/tools/">accessibility tools guide</a> to combine automated and manual evidence.</p>
 
 </ContentLayout>

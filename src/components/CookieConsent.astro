@@ -1,10 +1,10 @@
 ---
 ---
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden">
+<div id="cookie-banner" role="region" aria-label="Analytics cookie choices" class="fixed bottom-0 left-0 right-0 z-50 hidden">
   <div class="max-w-7xl mx-auto px-4 py-4">
     <div class="glass-strong rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-text-muted">
-        We use cookies to analyse traffic and improve your experience.
+        Optional analytics cookies help us understand site usage. You can change your choice using Cookie settings in the footer.{' '}
         <a href="/privacy/" class="text-primary underline">Privacy Policy</a>
       </p>
       <div class="flex gap-3">
@@ -21,18 +21,39 @@
 
 <script is:inline>
   (function() {
+    const banner = document.getElementById('cookie-banner');
+    let trigger;
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
-      document.getElementById('cookie-banner')?.classList.remove('hidden');
+      banner?.classList.remove('hidden');
     }
+    document.querySelectorAll('[data-cookie-settings]').forEach(button => {
+      button.addEventListener('click', function() {
+        trigger = button;
+        banner?.classList.remove('hidden');
+        document.getElementById('cookie-reject')?.focus();
+      });
+    });
     document.getElementById('cookie-accept')?.addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'accepted');
       document.getElementById('cookie-banner')?.classList.add('hidden');
       window.location.reload();
     });
     document.getElementById('cookie-reject')?.addEventListener('click', function() {
+      const wasAccepted = localStorage.getItem('cookie-consent') === 'accepted';
       localStorage.setItem('cookie-consent', 'rejected');
-      document.getElementById('cookie-banner')?.classList.add('hidden');
+      window['ga-disable-G-V53FDBZLTW'] = true;
+      const hostParts = location.hostname.split('.');
+      const domains = ['', ...hostParts.map((_, index) => '; domain=' + hostParts.slice(index).join('.'))];
+      document.cookie.split(';').forEach(cookie => {
+        const name = cookie.split('=')[0].trim();
+        if (/^(_ga(?:_|$)|_gid$|_gat(?:_|$))/.test(name)) {
+          domains.forEach(domain => { document.cookie = name + '=; Max-Age=0; path=/' + domain; });
+        }
+      });
+      banner?.classList.add('hidden');
+      trigger?.focus();
+      if (wasAccepted) window.location.reload();
     });
   })();
 </script>

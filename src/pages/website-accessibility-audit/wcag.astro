@@ -18,15 +18,16 @@ const toc = [
 ---
 
 <ContentLayout
-  title="WCAG Website Audit: Meeting AA Conformance"
-  description="Understand WCAG 2.1 conformance levels A, AA, and AAA. Learn how to audit your website against each success criterion and produce a formal conformance statement for accessibility compliance."
+  title="WCAG 2.2 Website Audit: Test AA Conformance"
+  description="Plan a WCAG 2.2 audit, test applicable success criteria across complete processes and document the scope, methods, results and limitations."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>The Web Content Accessibility Guidelines are the global technical standard for web accessibility. Published by the World Wide Web Consortium's Web Accessibility Initiative, WCAG provides a framework of testable success criteria that determine whether web content is accessible to people with disabilities. WCAG is referenced by legislation in the European Union, United Kingdom, United States, Canada, Australia, Japan, and dozens of other countries. If you are required to make your website accessible — by law, by contract, or by ethical commitment — WCAG is the standard you need to meet.</p>
+  <p>A WCAG website audit tests a defined set of pages, states and complete processes against every applicable success criterion at the claimed level. Record the WCAG version, conformance target, technologies relied upon, test methods and known limitations.</p>
 
-  <p>This guide explains how WCAG is structured, what each conformance level requires, and how to audit your website against the standard to produce a meaningful conformance statement. We focus on WCAG 2.1, which is the version most widely referenced by current legislation and regulation, while noting where WCAG 2.2 adds additional requirements.</p>
+  <p>WCAG 2.2 is the current W3C Recommendation and adds nine criteria to WCAG 2.1 while removing 4.1.1 Parsing. A law or contract may still incorporate WCAG 2.0 or 2.1, so identify that boundary before testing.</p>
 
   <h2 id="wcag-structure-explained">WCAG Structure Explained</h2>
 
@@ -36,11 +37,11 @@ const toc = [
 
   <p><strong>Thirteen guidelines:</strong> Under the four principles sit thirteen guidelines that provide the framework for each area of accessibility. For example, under the Perceivable principle, Guideline 1.1 addresses text alternatives, Guideline 1.2 addresses time-based media, Guideline 1.3 addresses adaptable content, and Guideline 1.4 addresses distinguishable content. Guidelines are not testable themselves — they provide the context for the success criteria beneath them.</p>
 
-  <p><strong>Success criteria:</strong> Each guideline contains specific, testable success criteria. These are the individual requirements your website must meet. Each success criterion is assigned a conformance level: A (minimum), AA (recommended), or AAA (highest). WCAG 2.1 contains 78 success criteria in total — 30 at Level A, 20 at Level AA, and 28 at Level AAA.</p>
+  <p><strong>Success criteria:</strong> Each guideline contains testable requirements at Level A, AA or AAA. WCAG 2.2 contains 86 success criteria after 4.1.1 Parsing was removed. Use the normative standard rather than relying on a remembered count.</p>
 
-  <p><strong>Three conformance levels:</strong> Level A is the minimum level of accessibility. Failing Level A criteria means your site has fundamental barriers that completely prevent some users from accessing content. Level AA is the standard most legislation references and most organisations target. It addresses the most common and serious barriers for the widest range of disabilities. Level AAA is the highest standard and is not typically required as a blanket target because some criteria are difficult to meet for all content types. However, meeting Level AAA criteria where feasible improves accessibility further.</p>
+  <p><strong>Three conformance levels:</strong> Level A contains the baseline criteria, Level AA includes every applicable Level A and AA criterion, and Level AAA includes all three levels. Legal and contractual targets vary: for example, the US Department of Justice's Title II web rule names WCAG 2.1 Level AA, while W3C recommends using WCAG 2.2 for current work.</p>
 
-  <p>Conformance at a given level requires meeting all success criteria at that level and all levels below it. AA conformance means meeting all Level A and Level AA criteria — 50 criteria in total for WCAG 2.1.</p>
+  <p>Conformance at a given level requires meeting all criteria at that level and below for full pages and complete processes. A sample audit can identify defects but cannot establish whole-site conformance outside its scope.</p>
 
   <h2 id="level-a-requirements">Level A Requirements</h2>
 
@@ -57,11 +58,11 @@ const toc = [
     <li><strong>4.1.2 Name, Role, Value</strong> — for all user interface components, the name and role must be programmatically determinable, states and properties must be set correctly, and changes to these must be available to user agents including assistive technologies. This is the criterion that governs ARIA implementation on custom widgets.</li>
   </ul>
 
-  <p>Level A also includes criteria for captions on pre-recorded audio (1.2.1), audio descriptions or media alternatives for video (1.2.3), meaningful page sequence (1.3.2), sensory characteristics not relied upon solely (1.3.3), no use of colour alone (1.4.1), audio control (1.4.2), timing adjustability (2.2.1), pause/stop/hide for moving content (2.2.2), three flashes threshold (2.3.1), bypass blocks / skip navigation (2.4.1), page titles (2.4.2), focus order (2.4.3), link purpose in context (2.4.4), page language (3.1.1), predictable focus behaviour (3.2.1), predictable input behaviour (3.2.2), error identification (3.3.1), and labels or instructions (3.3.2).</p>
+  <p>Level A also includes alternatives for prerecorded audio-only and video-only media (1.2.1), captions for prerecorded synchronised media (1.2.2), audio description or a media alternative (1.2.3), meaningful sequence (1.3.2), sensory characteristics (1.3.3), use of colour (1.4.1), audio control (1.4.2), timing adjustability (2.2.1), pause/stop/hide (2.2.2), three flashes threshold (2.3.1), bypass blocks (2.4.1), page titles (2.4.2), focus order (2.4.3), link purpose in context (2.4.4), page language (3.1.1), predictable focus and input behaviour (3.2.1 and 3.2.2), error identification (3.3.1), and labels or instructions (3.3.2).</p>
 
   <h2 id="level-aa-requirements">Level AA Requirements</h2>
 
-  <p>Level AA criteria address barriers that significantly affect a broader range of users and situations. This is the conformance level required by most legislation and the target for most organisations. Meeting Level AA means addressing 50 success criteria in total (30 Level A plus 20 Level AA).</p>
+  <p>Level AA adds criteria concerning contrast, reflow, navigation, input and other barriers. Test the criteria listed for the selected WCAG version rather than carrying a WCAG 2.1 count into a WCAG 2.2 audit.</p>
 
   <p>Key Level AA criteria include:</p>
 
@@ -98,11 +99,11 @@ const toc = [
 
   <p>A WCAG audit involves testing every applicable success criterion on every unique page template and interactive component in your site. Here is a practical approach to structuring the testing process.</p>
 
-  <p><strong>Create a test matrix.</strong> List all WCAG 2.1 AA success criteria in rows (50 criteria for AA conformance). List your page templates and components in columns. Each cell in the matrix will receive a status: Supports, Partially Supports, Does Not Support, or Not Applicable.</p>
+  <p><strong>Create a test matrix.</strong> List the applicable success criteria in rows and representative pages, components, states and complete processes in columns. Record pass, fail, not present or not tested with evidence. Reserve VPAT support terms for an Accessibility Conformance Report.</p>
 
   <p><strong>Group criteria by testing method.</strong> Some criteria can be tested with automated tools. Others require keyboard testing. Others require screen reader testing. Others require visual inspection. Group your testing by method to avoid switching contexts constantly. Run all automated tests first, then do all keyboard testing, then all screen reader testing, then all visual checks.</p>
 
-  <p><strong>Automated testing covers:</strong> 1.1.1 (missing alt attributes, not quality), 1.3.1 (heading structure, table headers, form labels), 1.4.3 and 1.4.11 (contrast ratios), 2.4.2 (page titles), 3.1.1 (page language), 4.1.1 (HTML validation), and several others. Approximately 20 of the 50 AA criteria have at least some automated test coverage.</p>
+  <p><strong>Automated testing contributes evidence for:</strong> 1.1.1 (whether an alt attribute exists, not whether its text is appropriate), parts of 1.3.1, some contrast cases, 2.4.2 and 3.1.1. Tool rules, coverage and confidence differ, and a passing scan is not a WCAG conformance result. Validate findings and test the remaining criteria manually.</p>
 
   <p><strong>Keyboard testing covers:</strong> 2.1.1 (keyboard operability), 2.1.2 (no keyboard trap), 2.4.3 (focus order), 2.4.7 (focus visible), 3.2.1 (focus behaviour). Tab through every interactive element on each page template and document any failures.</p>
 
@@ -114,9 +115,9 @@ const toc = [
 
   <h2 id="conformance-statement">Conformance Statement</h2>
 
-  <p>A conformance statement (also called an Accessibility Conformance Report or ACR) is the formal output of a WCAG audit. It documents your site's conformance status against every applicable success criterion and is the document that procurement officers, legal teams, and regulatory bodies review to evaluate your accessibility compliance.</p>
+  <p>A WCAG conformance claim is optional and must include the items W3C specifies, including the date, guideline version, conformance level, pages covered and technologies relied upon. An Accessibility Conformance Report (ACR) is a separate product report, often created from a VPAT template, that procurement teams may request.</p>
 
-  <p>The standard format for conformance statements is the Voluntary Product Accessibility Template (VPAT), originally created by the US Information Technology Industry Council. The VPAT format is widely recognised and accepted globally. Version 2.5 of the VPAT includes sections for WCAG 2.x, the US Section 508 standard, and the European EN 301 549 standard.</p>
+  <p>The Information Technology Industry Council publishes the Voluntary Product Accessibility Template (VPAT). An organisation can use the appropriate edition to prepare an ACR covering WCAG, US Section 508, European EN 301 549 or more than one of those standards. Follow the current template instructions rather than copying an old report.</p>
 
   <p>For each success criterion, the conformance statement includes a conformance level indicator using one of these standardised terms:</p>
 
@@ -129,9 +130,9 @@ const toc = [
 
   <p>Each entry also includes a "Remarks and Explanations" column where you describe what works, what does not work, and what your plans are for remediation. This column is where the practical detail lives and where reviewers spend most of their time.</p>
 
-  <p>A good conformance statement is honest. Claiming "Supports" for criteria that are only partially met undermines credibility and creates legal risk. If an auditor tests your site and finds failures where your conformance statement claims full support, it demonstrates either negligence or deception — neither of which helps your legal position.</p>
+  <p>Base each reported term on the tested product and explain exceptions in the remarks. Do not turn a sampled website review into a claim about untested pages, states, documents or third-party content.</p>
 
-  <p>Update your conformance statement after every significant remediation effort and after annual re-audits. Publish a summary version on your website's accessibility page so users know the current status. Make the full statement available on request for procurement and compliance purposes.</p>
+  <p>Review a claim or ACR after material product changes, remediation or a change in the required standard. State its date and scope so readers can judge whether it still represents the current product.</p>
 
-  <p>Producing a formal conformance statement requires expertise in WCAG interpretation and testing methodology. If you need a professional WCAG audit with a formal ACR deliverable, <a href="/website-audit-services/">our accessibility audit service</a> covers all 50 WCAG 2.1 AA criteria with a full conformance report and remediation roadmap.</p>
+  <p>Use the normative <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 Recommendation</a>, W3C's <a href="https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/">WCAG-EM evaluation method</a> and the current <a href="https://www.itic.org/policy/accessibility/vpat">VPAT instructions</a>. The <a href="/website-accessibility-audit/checklist/">practical checklist</a> helps with initial defect discovery.</p>
 </ContentLayout>

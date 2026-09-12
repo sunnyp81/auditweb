@@ -1,0 +1,264 @@
+{
+  "owner": "technical_access",
+  "reviewDate": "2026-09-11",
+  "scope": "Full semantic, factual and source review of the 32 assigned technical, accessibility, checklist, security and cookie-audit sources.",
+  "followUpResolutions": [
+    {
+      "source": "src/pages/technical-website-audit/checklist.astro",
+      "findingsResolved": ["Missing robots.txt is no longer an automatic failure", "Thin or empty pages require a purpose decision before noindex or removal", "Rich Results Test is limited to Google-supported features and Schema.org Validator covers general vocabulary", "16px and 1.5 line height are labelled design starting points rather than WCAG requirements", "Reflow wording includes the WCAG exception for content requiring two-dimensional layout", "CDN use is conditional on measured traffic and asset needs"]
+    },
+    {
+      "source": "src/pages/website-security-audit/gdpr.astro",
+      "findingsResolved": ["Transparency checks accept a retention period or the criteria used to determine it", "Data-portability export is expressly conditional on Article 20 applying"]
+    },
+    {
+      "source": "root final readback across four owned pages",
+      "findingsResolved": ["Report-template summaries and metrics no longer contradict the warning against unexplained aggregate scores", "Robots and sitemap findings require tested scope and evidence instead of universal severity or copy-paste configuration", "Security checklist file permissions are environment-specific", "Accessibility checklist removes a fabricated implementation time and universal-user claim", "Code audit recognises that Core Web Vitals fixes can involve assets, delivery configuration, servers or content as well as code"]
+    }
+  ],
+  "independentReviewResolution": {
+    "review": "docs/sitewide-seo/independent-technical-review.md",
+    "status": "All material findings in the owned slice resolved; website-security-audit/index.astro excluded after transfer to root.",
+    "resolvedBySource": {
+      "src/pages/website-audit-checklist/security.astro": ["Removed deprecated X-XSS-Protection implementation advice", "Replaced universal configuration-file modes with host- and process-aware access checks"],
+      "src/pages/website-accessibility-audit/checklist.astro": ["Corrected bypass-block technique and AA versus AAA target sizing", "Removed a fabricated skip-link implementation time and universal-user claim"],
+      "src/pages/website-audit-checklist/accessibility.astro": ["Presented skip links as one sufficient bypass-block technique"],
+      "src/pages/website-accessibility-audit/wcag.astro": ["Corrected prerecorded media criteria 1.2.1 and 1.2.2"],
+      "src/pages/technical-website-audit/index.astro": ["Removed unsupported ranking and recovery claims", "Corrected robots-blocked indexing, pagination, Page Indexing and orphan-page interpretations"],
+      "src/pages/website-security-audit/web-app.astro": ["Reframed OWASP Top 10 as awareness material and used ASVS plus WSTG for test planning", "Removed fabricated prevalence and first-hand experience"],
+      "src/pages/technical-website-audit/report-template.astro": ["Removed proven-format and fear framing", "Made exposure severity and CMS vulnerability findings evidence-based", "Removed generic copy-paste server configuration", "Reconciled executive and metric guidance with the warning against unexplained aggregate scores", "Made robots and sitemap recommendations evidence- and scope-dependent"],
+      "src/pages/website-audit-checklist/wordpress.astro": ["Separated WP_DEBUG display and logging", "Made update and permissions checks environment-aware", "Corrected WordPress 6.4 attachment-page default"],
+      "src/pages/website-audit-checklist/redesign.astro": ["Renamed Page Indexing report", "Removed fixed content-removal and search-recovery thresholds"],
+      "src/pages/technical-website-audit/speed.astro": ["Removed HTTP/2 server push and universal Lighthouse lab targets", "Converted implementation mandates to trace-based checks"],
+      "src/pages/technical-website-audit/code.astro": ["Separated HTML validity from accessibility", "Corrected media-query transfer claims", "Removed arbitrary regression thresholds", "Recognised asset, content, delivery and server changes as possible Core Web Vitals fixes"],
+      "src/pages/website-audit-checklist/ecommerce.astro": ["Replaced universal checkout, search, sticky-control and wallet conversion promises with measurable hypotheses"],
+      "src/pages/website-accessibility-audit/tools.astro": ["Removed zero-false-positive and fixed keyboard-testing-time promises"]
+    }
+  },
+  "pages": [
+    {
+      "source": "src/pages/technical-website-audit/checklist.astro",
+      "task": "Provide a count-accurate technical SEO checklist with reproducible checks.",
+      "changes": ["Corrected the page to 54 checks", "Replaced fixed title, click-depth, TTFB and target-size rules with current evidence", "Bound structured-data advice to Google feature eligibility"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing", "https://developers.google.com/search/docs/appearance/structured-data/sd-policies", "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum"],
+      "checks": ["Full source read", "Checklist item count checked", "Retired and unsupported claim scan"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/code.astro",
+      "task": "Explain how to audit HTML, CSS and JavaScript without invented size thresholds.",
+      "changes": ["Added rendered-versus-source inputs and observable outputs", "Removed universal CSS, JavaScript and DOM budgets", "Separated validation, accessibility and rendering effects"],
+      "primarySources": ["https://html.spec.whatwg.org/", "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"],
+      "checks": ["Full source read", "Threshold and ranking-claim review"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/core-web-vitals.astro",
+      "task": "Show how to measure and interpret LCP, INP and CLS with field and lab data.",
+      "changes": ["Made the 75th-percentile CrUX assessment explicit", "Separated diagnostic lab results from field status", "Removed fixed ranking-weight and business-impact claims"],
+      "primarySources": ["https://developers.google.com/search/docs/appearance/core-web-vitals", "https://web.dev/articles/vitals"],
+      "checks": ["Full source read", "Metric names and thresholds checked", "Field-versus-lab wording checked"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/how-to.astro",
+      "task": "Give a nine-step technical SEO audit method with evidence and interpretation.",
+      "changes": ["Defined crawl scope and representative testing", "Stopped treating site: counts as an index total", "Replaced retired mobile reports and generic priority scores"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing", "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview", "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing"],
+      "checks": ["Full source read", "Nine-step structure retained", "Retired-tool scan"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/index.astro",
+      "task": "Define a technical website audit and the evidence needed for each major system.",
+      "changes": ["Added a direct definition and input set", "Removed fabricated duration, traffic and crawl conclusions", "Corrected mobile indexing, HTTPS, HSTS and structured-data boundaries"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing", "https://support.google.com/webmasters/answer/7440203?hl=en", "https://developers.google.com/search/docs/crawling-indexing/robots/intro", "https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading", "https://developers.google.com/search/docs/appearance/core-web-vitals", "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"],
+      "checks": ["Full source and FAQ read", "FAQ claims reconciled with body", "Schema and security language checked"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/mobile.astro",
+      "task": "Audit responsive tasks and the content available to Google's smartphone crawler.",
+      "changes": ["Removed the retired Mobile-Friendly Test and Mobile Usability report", "Corrected target sizing to WCAG 2.2", "Reframed interstitials and viewport testing around current guidance"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing", "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials", "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum"],
+      "checks": ["Full source read", "Mobile-tool retirement scan", "Fixed-device-rule scan"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/performance.astro",
+      "task": "Measure origin, database, cache and third-party performance under a defined workload.",
+      "changes": ["Separated workload inputs from results", "Removed universal memory, cache-hit and server-saving percentages", "Required repeatable before-and-after evidence"],
+      "primarySources": ["https://web.dev/articles/vitals", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching"],
+      "checks": ["Full source read", "Unsupported percentage scan", "Monitoring interpretation checked"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/report-template.astro",
+      "task": "Provide an on-page report framework with scope, evidence, ownership and verification.",
+      "changes": ["Removed the false downloadable-template promise", "Replaced invented traffic, timing and savings projections", "Separated technical observations from authorised security testing"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing", "https://owasp.org/www-project-web-security-testing-guide/", "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/"],
+      "checks": ["Full source read", "Download-claim check", "Projection and fixed-score scan"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/speed.astro",
+      "task": "Diagnose page delay from field data and repeatable lab traces.",
+      "changes": ["Defined field and lab inputs", "Removed generic compression and image-saving percentages", "Replaced arbitrary request, payload and response thresholds with measured budgets"],
+      "primarySources": ["https://developers.google.com/search/docs/appearance/core-web-vitals", "https://web.dev/articles/vitals", "https://developer.chrome.com/blog/removing-push", "https://developer.chrome.com/docs/lighthouse/overview", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Compression"],
+      "checks": ["Full source read", "Threshold scan", "Core Web Vitals interpretation checked"]
+    },
+    {
+      "source": "src/pages/technical-website-audit/structure.astro",
+      "task": "Audit navigation, click paths, internal links, breadcrumbs and URL groups.",
+      "changes": ["Separated URL-directory depth from click depth", "Removed equal link-equity and fixed three-level models", "Made breadcrumb use dependent on a useful hierarchy"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing/url-structure", "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"],
+      "checks": ["Full source read", "Depth and link-equity claim scan"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/ada-compliance.astro",
+      "task": "Explain US ADA website-audit boundaries and the evidence a WCAG review supplies.",
+      "changes": ["Separated the DOJ Title II rule from variable Title III law", "Removed lawsuit statistics, fixed remediation dates and immunity implications", "Clarified that samples, overlays and statements do not prove compliance"],
+      "primarySources": ["https://www.ada.gov/resources/2024-03-08-web-rule/", "https://www.w3.org/TR/WCAG22/"],
+      "checks": ["Full source read", "Legal and jurisdiction claim review", "Fixed deadline and guarantee scan"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/checklist.astro",
+      "task": "Organise initial WCAG 2.2 evidence by POUR without claiming full conformance.",
+      "changes": ["Named WCAG 2.2 and complete-process limits", "Removed automated coverage percentages", "Added normative W3C interpretation source"],
+      "primarySources": ["https://www.w3.org/TR/WCAG22/", "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html", "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/"],
+      "checks": ["Full source read", "WCAG version and conformance boundary checked"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/cost.astro",
+      "task": "Explain accessibility audit cost drivers and compare like-for-like scopes.",
+      "changes": ["Removed unsupported vendor and market price ranges", "Separated automated monitoring, conformance evaluation, ACR and disabled-user research", "Limited AuditWeb claims to published $297, $997 and custom pricing"],
+      "primarySources": ["https://www.w3.org/WAI/test-evaluate/tools/selecting/", "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/", "https://www.itic.org/policy/accessibility/vpat"],
+      "checks": ["Full source read", "Price-claim scan", "Deliverable terminology checked"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/index.astro",
+      "task": "Define an accessibility audit across tools, manual tests and complete tasks.",
+      "changes": ["Added a task-specific direct answer", "Replaced stale WebAIM percentages with a link to the current study", "Removed universal automated coverage and legal-conclusion claims"],
+      "primarySources": ["https://www.w3.org/TR/WCAG22/", "https://webaim.org/projects/million/", "https://www.ada.gov/resources/2024-03-08-web-rule/"],
+      "checks": ["Full source read", "Statistics and automation scan", "Jurisdiction list checked"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/tools.astro",
+      "task": "Choose accessibility tools by the evidence each can and cannot provide.",
+      "changes": ["Removed stale WAVE pricing and universal coverage figures", "Clarified CI rule limits", "Required recorded browser, assistive-technology and tool versions"],
+      "primarySources": ["https://www.w3.org/WAI/test-evaluate/tools/selecting/", "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/"],
+      "checks": ["Full source read", "Vendor pricing and automated-guarantee scan"]
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/wcag.astro",
+      "task": "Plan a WCAG 2.2 AA conformance evaluation while identifying older incorporated versions.",
+      "changes": ["Reconciled WCAG 2.1 and 2.2 counts and Parsing status", "Separated WCAG claims from ACR and VPAT reporting", "Removed automated-coverage counts and generic re-audit cadence"],
+      "primarySources": ["https://www.w3.org/TR/WCAG22/", "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/", "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/", "https://www.itic.org/policy/accessibility/vpat"],
+      "checks": ["Full source read", "WCAG 2.2 criterion arithmetic checked", "Conformance terminology checked"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/accessibility.astro",
+      "task": "Provide practical contrast, keyboard, alternative-text, form, link, media and ARIA checks.",
+      "changes": ["Bound the list to WCAG 2.2 and user tasks", "Corrected target sizing and link-purpose interpretation", "Removed legal and ranking guarantees"],
+      "primarySources": ["https://www.w3.org/TR/WCAG22/", "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html", "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum"],
+      "checks": ["Full source read", "Criterion boundary and fixed-size scan"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/content-template.astro",
+      "task": "Teach readers to build a content audit inventory with defined decision fields.",
+      "changes": ["Removed the false Excel download implication", "Removed fabricated portfolio outcome percentages", "Rewrote keep, update, merge, redirect and remove decisions around evidence"],
+      "primarySources": ["https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "https://developers.google.com/search/docs/crawling-indexing/http-network-errors"],
+      "checks": ["Full source read", "Download-format check", "Unsupported outcome percentage scan"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/ecommerce.astro",
+      "task": "Audit product, category, checkout, structured-data, mobile, payment and privacy evidence.",
+      "changes": ["Corrected Product and FAQ structured-data eligibility", "Removed invented mobile and review-ranking claims", "Bound PCI DSS and privacy conclusions to actual scope"],
+      "primarySources": ["https://developers.google.com/search/docs/appearance/structured-data/product", "https://developers.google.com/search/docs/appearance/structured-data/sd-policies", "https://www.pcisecuritystandards.org/standards/pci-dss/"],
+      "checks": ["Full source read", "Schema and payment-scope review", "Retired SEO claim scan"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/index.astro",
+      "task": "Present the actual 66-point sitewide checklist and distinguish its companion assets.",
+      "changes": ["Kept the source checklist at 66 items", "Distinguished the separate 50-check PDF and four blank Markdown toolkit files", "Removed fixed content, link, performance and accessibility thresholds"],
+      "primarySources": ["https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "https://www.w3.org/TR/WCAG22/", "https://owasp.org/www-project-web-security-testing-guide/"],
+      "checks": ["Full source read", "66 source checks reconciled", "PDF 50 and toolkit four-file claims checked"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/redesign.astro",
+      "task": "Protect a redesign or URL migration with baseline, mapping, launch and monitoring evidence.",
+      "changes": ["Corrected permanent and temporary redirect use", "Removed one-week indexing and fixed recovery forecasts", "Added Google's recommendation to retain redirects for at least one year"],
+      "primarySources": ["https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes", "https://developers.google.com/search/docs/crawling-indexing/301-redirects"],
+      "checks": ["Full source read", "Redirect and recovery-timeline claims checked"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/security.astro",
+      "task": "Provide authorised configuration, authentication, backup and monitoring checks.",
+      "changes": ["Added written-authorisation boundary", "Replaced password composition and generic file modes with current risk-based guidance", "Removed mandatory daily, monthly and annual backup retention"],
+      "primarySources": ["https://owasp.org/www-project-web-security-testing-guide/", "https://pages.nist.gov/800-63-4/sp800-63b.html", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-XSS-Protection"],
+      "checks": ["Full source read", "Active-test authorisation check", "Password and backup threshold scan"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/seo.astro",
+      "task": "Provide 44 reproducible on-page, technical, content, off-page and local checks.",
+      "changes": ["Kept the 44-check structure", "Removed title, word-count, link-velocity, anchor-ratio and review-recency rules", "Corrected schema, disavow, field-data and heading guidance"],
+      "primarySources": ["https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "https://developers.google.com/search/docs/crawling-indexing/links-crawlable", "https://developers.google.com/search/docs/essentials/spam-policies#link-spam"],
+      "checks": ["Full source read", "44 check count retained", "Unsupported ranking-rule scan"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/template.astro",
+      "task": "Explain the real printable 50-check PDF and its scoring formula.",
+      "changes": ["Verified and stated the PDF has 50 checks", "Explained score versus completion", "Clarified that the separate toolkit contains four blank Markdown files and no Excel workbook"],
+      "primarySources": [],
+      "checks": ["Full source read", "Local PDF count reconciled", "Toolkit archive contents reconciled"]
+    },
+    {
+      "source": "src/pages/website-audit-checklist/wordpress.astro",
+      "task": "Audit supported WordPress, PHP, plugin, database, security and performance configuration.",
+      "changes": ["Linked version decisions to live WordPress requirements", "Replaced universal DOM, TTFB, CDN and autoload rules with measured investigation", "Added backup and staging boundaries"],
+      "primarySources": ["https://wordpress.org/about/requirements/", "https://developer.wordpress.org/reference/functions/wp_debug_mode/", "https://developer.wordpress.org/advanced-administration/security/hardening/", "https://developer.wordpress.org/advanced-administration/performance/optimization/", "https://make.wordpress.org/core/2023/10/16/changes-to-attachment-pages/"],
+      "checks": ["Full source read", "Version and fixed-threshold scan"]
+    },
+    {
+      "source": "src/pages/website-security-audit/checklist.astro",
+      "task": "Provide 45 authorised security checks with reproducible evidence.",
+      "changes": ["Kept the checklist at 45 items", "Added active scanning and SQL injection safety limits", "Replaced universal backup schedules with recovery objectives and controlled restore tests"],
+      "primarySources": ["https://owasp.org/www-project-web-security-testing-guide/", "https://pages.nist.gov/800-63-4/sp800-63b.html"],
+      "checks": ["Full source read", "45 check count retained", "Authorisation and backup-rule scan"]
+    },
+    {
+      "source": "src/pages/website-security-audit/cost.astro",
+      "task": "Explain security assessment cost from authorised assets, methods and outputs.",
+      "changes": ["Removed unsupported market price bands and breach ROI", "Separated scans, reviewed assessments and penetration tests", "Limited AuditWeb claims to $297, $997 and explicitly scoped custom work"],
+      "primarySources": ["https://owasp.org/www-project-web-security-testing-guide/"],
+      "checks": ["Full source read", "Price and fabricated ROI scan", "Service-scope claim check"]
+    },
+    {
+      "source": "src/pages/website-security-audit/gdpr.astro",
+      "task": "Map EU or UK GDPR processing evidence without issuing a legal compliance certificate.",
+      "changes": ["Separated GDPR, UK PECR and EU ePrivacy questions", "Corrected legal bases, rights, transparency, processors, transfers, records and conditional deadlines", "Removed blanket cookie, double-opt-in, deletion and DPA rules"],
+      "primarySources": ["https://eur-lex.europa.eu/eli/reg/2016/679/oj", "https://commission.europa.eu/law/law-topic/data-protection/data-protection-eu_en", "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/", "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/"],
+      "checks": ["Full source read", "Rights and deadline reconciliation", "Consent, processor and transfer claim review"]
+    },
+    {
+      "source": "src/pages/website-security-audit/index.astro",
+      "task": "Define an authorised website security audit and distinguish it from the HTML checker.",
+      "changes": ["Added assets, accounts, methods and safety inputs", "Removed fabricated plugin prevalence and strongest-action claims", "Clarified that the pasted-HTML checker does not scan security"],
+      "primarySources": ["https://owasp.org/www-project-web-security-testing-guide/", "https://developers.google.com/search/docs/monitor-debug/security/social-engineering"],
+      "checks": ["Full source read", "Unsupported prevalence scan", "Checker-capability boundary checked"]
+    },
+    {
+      "source": "src/pages/website-security-audit/tools.astro",
+      "task": "Compare security tools by input, output, limits and active-test risk.",
+      "changes": ["Removed stale vendor prices, database counts and score prevalence", "Rewrote every tool around evidence and validation", "Required written authorisation and safety controls for active ZAP and enumeration tests"],
+      "primarySources": ["https://www.ssllabs.com/projects/documentation/", "https://www.zaproxy.org/docs/", "https://owasp.org/www-project-web-security-testing-guide/"],
+      "checks": ["Full source read", "Vendor-number and pricing scan", "Active-scan safety check"]
+    },
+    {
+      "source": "src/pages/website-security-audit/web-app.astro",
+      "task": "Plan an authorised web-application assessment using the current OWASP risk categories and WSTG coverage.",
+      "changes": ["Updated the page from OWASP Top 10:2021 to 2025", "Removed generic phase percentages", "Added written rules of engagement and least-harm validation for SQLMap, ZAP and exploitation"],
+      "primarySources": ["https://owasp.org/Top10/2025/0x00_2025-Introduction/", "https://owasp.org/Top10/2025/0x03_2025-Establishing_a_Modern_Application_Security_Program/", "https://owasp.org/www-project-application-security-verification-standard/", "https://owasp.org/www-project-web-security-testing-guide/"],
+      "checks": ["Full source read", "OWASP 2025 category list checked", "Active-test authorisation scan"]
+    },
+    {
+      "source": "src/pages/website-cookie-audit.astro",
+      "task": "Audit storage, access, consent and opt-out behaviour within the correct jurisdiction.",
+      "changes": ["Rebuilt the page around a clean-profile evidence method", "Separated UK PECR, EU ePrivacy/GDPR and California CCPA boundaries", "Removed Chrome phase-out, CMP pricing, blanket analytics-consent and global-compliance claims"],
+      "primarySources": ["https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/", "https://www.oag.ca.gov/privacy/ccpa"],
+      "checks": ["Full source read", "Consent and opt-out state model checked", "Jurisdiction and legal-guarantee scan"]
+    }
+  ]
+}

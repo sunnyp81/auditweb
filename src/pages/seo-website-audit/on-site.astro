@@ -21,26 +21,27 @@ const toc = [
 ---
 
 <ContentLayout
-  title="On-Site SEO Audit: Check Every On-Page Factor"
-  description="An on-site SEO audit examines every on-page element — titles, headings, content, internal links, images, and schema — to maximise your organic visibility."
+  title="On-Site SEO Audit: Page-by-Page Review Guide"
+  description="Audit page titles, descriptions, headings, content, internal links, images and structured data against each page's intended search task."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
   showLeadForm={true}
 >
-  <p>On-site SEO is everything that happens on the pages you control. While technical SEO determines whether search engines can access your content and off-page SEO influences how authoritative your site appears, on-site SEO is the layer that tells search engines what each page is about and why it deserves to rank. It is also the area where you have the most direct control — every on-page element can be changed, tested, and improved without waiting for external factors.</p>
+  <p>An on-site SEO audit checks how each indexable page describes and supports its intended search task. Review titles, descriptions, headings, main content, internal links, images and structured data by page type instead of applying one universal length or keyword-density rule.</p>
 
-  <p>An on-site SEO audit systematically reviews every element on your pages that communicates relevance to search engines and value to users. From title tags and headings to internal links and schema markup, each element either supports or undermines your ranking potential. The cumulative effect of getting all these elements right is substantial — sites that optimise on-page factors consistently outrank those that focus on any single element in isolation.</p>
+  <p>Review page elements as a connected system. A descriptive title cannot compensate for inaccessible content, and valid structured data cannot make an unsupported page eligible for every search appearance. Record changes and test the result.</p>
 
   <h2 id="what-is-an-on-site-seo-audit">What Is an On-Site SEO Audit</h2>
 
   <p>An on-site SEO audit is a page-by-page examination of the elements that search engines use to understand and evaluate your content. Unlike a technical audit (which focuses on crawling and indexing infrastructure) or an off-page audit (which focuses on external signals), an on-site audit looks at what is on the page itself — the text users read, the tags search engines parse, the links that connect your pages, and the structured data that enriches your search listings.</p>
 
-  <p>The scope of an on-site audit includes every HTML element that carries SEO weight: title tags, meta descriptions, heading tags, body content, internal and external links, image elements, schema markup, Open Graph tags, and URL structure. For a small site, you can audit every page individually. For larger sites, you audit by template — checking the product page template, the category page template, the blog post template — because pages built on the same template share the same structural characteristics.</p>
+  <p>Define the on-site scope as an intended URL set or representative templates, then review titles, descriptions, headings, body content, links, images, structured data and URL signals. Open Graph tags can matter for social sharing but are not Google ranking fields.</p>
 
   <p>On-site optimisation is not about gaming algorithms. It is about clarity. When your title tag accurately describes the page content, your headings create a logical structure, your content comprehensively addresses the user's query, and your internal links connect related topics, you are making it easy for both users and search engines to understand and value your content. The audit identifies where that clarity breaks down and what needs to be fixed.</p>
 
-  <p>The impact of on-site improvements compounds over time. Fixing title tags on 200 pages improves click-through rates across all of them. Improving heading structure on your blog template improves every blog post. Adding schema markup to your service pages enhances every service listing in search results. Small improvements applied at scale produce significant aggregate results.</p>
+  <p>Template-level changes can affect many URLs at once. Sample each affected page type before release and re-crawl after deployment because a shared improvement or regression can propagate across the same set.</p>
 
   <h2 id="title-tag-optimisation">Title Tag Optimisation</h2>
 
@@ -51,22 +52,22 @@ const toc = [
   <ul>
     <li><strong>Missing titles</strong> — every indexable page must have a title tag. Pages without titles are displayed in search results with whatever text Google decides to use, which is rarely optimal.</li>
     <li><strong>Duplicate titles</strong> — no two pages should share the same title. Duplicates indicate either duplicate content or lazy templating. Each page targets a unique topic and needs a unique title reflecting that topic.</li>
-    <li><strong>Length issues</strong> — Google displays approximately 50-60 characters of a title tag before truncating. Titles under 30 characters miss an opportunity to include descriptive keywords. Titles over 60 characters get cut off, potentially losing their most important elements. Check your title display using a SERP preview tool rather than relying on character count alone, since Google measures by pixel width.</li>
-    <li><strong>Keyword placement</strong> — the primary keyword should appear near the beginning of the title tag. Eye-tracking studies and click-through rate data consistently show that searchers focus on the first few words. "SEO Audit Services for Ecommerce | Brand" outperforms "Brand | Ecommerce SEO Audit Services" because the most relevant terms appear first.</li>
+    <li><strong>Displayed title links</strong> — review truncation and accuracy on representative results. Google uses device-dependent display width and may form title links from several page signals, so character counts are diagnostics rather than pass/fail rules.</li>
+    <li><strong>Topic clarity</strong> — make the page topic clear in a concise, descriptive title. Place useful distinguishing information where it reads naturally, and test title changes with Search Console; no word order universally outperforms another.</li>
     <li><strong>Click-through rate appeal</strong> — titles should compel clicks, not just include keywords. Compare your titles against the actual search results for your target keywords. If competitor titles include numbers ("7 Steps"), power words ("Complete Guide"), or specificity ("2026 Update"), your generic title may be losing clicks to more compelling alternatives. Review Search Console CTR data to identify pages with strong positions but low click-through rates — these are prime candidates for title tag improvements.</li>
-    <li><strong>Brand consistency</strong> — decide on a brand suffix format and apply it consistently. Common patterns include "| Brand Name" or "- Brand Name" at the end of every title. The brand portion should not consume more than 15 characters of your available title length.</li>
+    <li><strong>Brand use</strong> — use the brand when it helps people identify the source. Check representative results for duplication or truncation instead of reserving a fixed character allowance.</li>
   </ul>
 
   <h2 id="meta-descriptions">Meta Descriptions</h2>
 
-  <p>Meta descriptions do not directly influence rankings, but they significantly affect click-through rates, which indirectly influence how Google perceives the quality and relevance of your page. A compelling meta description acts as advertising copy — it convinces the searcher that your page has the answer they need.</p>
+  <p>Meta descriptions are not a direct ranking factor. Google may use a page's description or other text for the search snippet, so write an accurate summary and measure click behaviour after changes.</p>
 
   <ul>
-    <li><strong>Presence and uniqueness</strong> — every important page should have a custom meta description. Google may override your description with content from the page, but providing a well-crafted description gives you the best chance of controlling your search listing. Ensure no two pages share the same description.</li>
+    <li><strong>Presence and accuracy</strong> — provide useful descriptions for important pages but expect Google to select other page text when it better matches a query. Remove duplicated or misleading summaries.</li>
     <li><strong>Length optimisation</strong> — meta descriptions should be between 120 and 155 characters. Shorter descriptions do not utilise the available space. Longer descriptions get truncated, potentially cutting off your call to action or most compelling selling point.</li>
     <li><strong>Search intent matching</strong> — the description should match the intent behind the target keyword. For informational queries, promise the answer. For commercial queries, highlight benefits and differentiation. For transactional queries, include price, availability, or a clear action statement.</li>
-    <li><strong>Call to action</strong> — include a CTA or value proposition in every description. "Learn how to audit your site in 10 steps" is more compelling than "This page covers SEO auditing." Active language that promises a specific outcome drives higher click-through rates.</li>
-    <li><strong>Keyword inclusion</strong> — while meta descriptions are not a ranking factor, Google bolds matching keywords in the description when displaying search results. Including the target keyword naturally helps your listing stand out visually in the SERP.</li>
+    <li><strong>Next step</strong> — describe the page's value or action accurately. Avoid promises the page or evidence cannot support.</li>
+    <li><strong>Query language</strong> — use the terms readers need to recognise the answer. Snippet presentation varies and keyword repetition is not required.</li>
   </ul>
 
   <h2 id="heading-structure">Heading Structure</h2>
@@ -74,10 +75,10 @@ const toc = [
   <p>Heading tags (H1 through H6) create the structural hierarchy of your content. They tell search engines which topics a page covers, how those topics relate to each other, and which elements are most important. A well-structured heading hierarchy also improves accessibility for screen reader users and helps sighted users scan content quickly.</p>
 
   <ul>
-    <li><strong>Single H1 per page</strong> — every page should have exactly one H1 tag that clearly states the page's primary topic. The H1 should contain the primary keyword and match the user's search intent. Multiple H1 tags dilute the signal about what the page is fundamentally about.</li>
+    <li><strong>Primary heading</strong> — use a clear H1 that states the page topic. Multiple H1 elements are valid in HTML but often make editorial hierarchy harder to scan; review the rendered outline rather than claiming automatic ranking dilution.</li>
     <li><strong>Logical hierarchy</strong> — headings should follow a sequential order without skipping levels. An H2 should not be followed by an H4. Each H2 represents a major section, H3s represent subsections within an H2, and so on. Inspect the heading structure of your top page templates using a browser extension or crawl tool.</li>
     <li><strong>Descriptive headings</strong> — headings should describe the content of their section, not just serve as labels. "Benefits" is a weak heading. "How SEO Audits Increase Organic Traffic and Revenue" is descriptive and keyword-relevant. Each heading should give both users and search engines a clear understanding of what the following section covers.</li>
-    <li><strong>Keyword distribution</strong> — your primary keyword belongs in the H1. Related keywords and semantic variations belong in H2s and H3s. This natural distribution signals topical breadth without the repetitive keyword stuffing that characterised outdated SEO practices.</li>
+    <li><strong>Heading meaning</strong> — use a descriptive H1 for the page and subordinate headings that organise its questions and steps. Do not insert keyword variants merely to fill heading levels.</li>
     <li><strong>Sidebar and widget headings</strong> — check that sidebar widgets, footer sections, and non-content elements do not use heading tags that break the main content hierarchy. A widget title using an H2 in the sidebar creates a structural anomaly that can confuse search engines about the page's topic hierarchy. Use div, span, or lower-priority headings for non-content elements.</li>
   </ul>
 
@@ -86,10 +87,10 @@ const toc = [
   <p>On-site content quality signals tell search engines whether your content satisfies the user's query. These signals go beyond keyword presence to encompass depth, accuracy, freshness, and the overall user experience of consuming your content.</p>
 
   <ul>
-    <li><strong>Content depth relative to competition</strong> — for your top 20 target keywords, compare your content length and depth against the top three ranking pages. If competitors provide 2,500-word comprehensive guides and your page offers 500 words, you are unlikely to compete on depth. Note that depth is not simply word count — it is comprehensive coverage of the topic's subtopics, questions, and nuances.</li>
+    <li><strong>Task completeness</strong> — review current results to understand likely intent and evidence needs, then judge whether the page completes the task accurately. Competitor length and word count are observations, not targets.</li>
     <li><strong>Search intent satisfaction</strong> — for each page, check whether the content format matches what Google is showing in search results. If the SERP for your target keyword shows comparison tables and your page offers a narrative essay, there is a format mismatch regardless of content quality. Align your content format with the format that search engines have identified as satisfying user intent.</li>
     <li><strong>Above-the-fold content</strong> — check what appears before the first scroll on each page template. If users see nothing but a hero image, navigation, and a vague tagline before they need to scroll, they may bounce before reaching your actual content. The first screen should immediately confirm that the page addresses their query.</li>
-    <li><strong>Readability</strong> — assess paragraph length, sentence complexity, and vocabulary level. Long paragraphs without visual breaks cause users to lose their place. Complex sentences with nested clauses reduce comprehension. Use short paragraphs (2-4 sentences), varied sentence lengths, and vocabulary appropriate to your audience.</li>
+    <li><strong>Readability</strong> — assess paragraph length, sentence complexity and vocabulary for the intended reader. Break up text when testing shows that scanning or comprehension suffers; no universal sentence count applies.</li>
     <li><strong>Supporting media</strong> — check whether content pages include relevant images, diagrams, tables, or videos that support the text. Visual content breaks up text, illustrates complex concepts, and provides additional value that pure text pages cannot. Pages with no visual elements often have lower engagement metrics.</li>
     <li><strong>Freshness indicators</strong> — verify that publication dates and "last updated" dates are displayed and accurate. Content that shows a recent update date can earn a freshness boost in competitive SERPs. Ensure that updating the date reflects genuine content improvements, not cosmetic edits.</li>
   </ul>
@@ -111,7 +112,7 @@ const toc = [
   <p>Images affect page speed, accessibility, user engagement, and search visibility through Google Images. An image optimisation audit ensures that your images contribute to rather than detract from your on-site SEO.</p>
 
   <ul>
-    <li><strong>Alt text audit</strong> — every content image should have a descriptive alt attribute that explains what the image shows. Alt text serves visually impaired users via screen readers and provides context to search engines that cannot see images. Audit alt text for missing attributes, generic text ("image1.jpg"), and keyword-stuffed text. Good alt text describes the image accurately: "Screaming Frog crawl results showing 404 errors" not "SEO audit tool best SEO audit crawler."</li>
+    <li><strong>Text alternatives</strong> — meaningful images need alternatives that communicate their purpose in context; decorative images should normally use an empty <code>alt=""</code>. Flag missing, filename-only and keyword-stuffed alternatives.</li>
     <li><strong>File format and compression</strong> — check that images are served in modern formats (WebP or AVIF for browsers that support them, with JPEG/PNG fallbacks). Verify that images are compressed to reduce file size without visible quality loss. Uncompressed images are often the single largest contributor to slow page load times.</li>
     <li><strong>Responsive sizing</strong> — images should use the srcset attribute to serve appropriately sized versions based on the user's viewport. Serving a 2400px image to a 375px mobile screen wastes bandwidth and slows loading. Check that your image delivery system generates multiple sizes and serves the most appropriate one.</li>
     <li><strong>Lazy loading</strong> — below-the-fold images should use native lazy loading (loading="lazy") or a JavaScript-based lazy loading solution to defer loading until the user scrolls near them. Above-the-fold images, particularly the largest contentful paint (LCP) element, should load eagerly.</li>
@@ -121,13 +122,13 @@ const toc = [
 
   <h2 id="schema-markup">Schema Markup</h2>
 
-  <p>Schema markup (structured data) translates your page content into a machine-readable format that search engines use to generate rich results. Rich results — star ratings, FAQ dropdowns, breadcrumb trails, how-to steps — make your search listings more visually prominent and informative, driving higher click-through rates.</p>
+  <p>Structured data describes eligible visible content in a machine-readable form. Google states that valid markup does not guarantee a rich result; supported appearances and requirements differ by content type.</p>
 
   <ul>
     <li><strong>Schema presence by page type</strong> — verify that each page type on your site has appropriate schema markup. Service pages should have Service schema. Blog posts should have Article or BlogPosting schema. Product pages should have Product schema. FAQ sections should have FAQPage schema. Your homepage should have Organisation or WebSite schema.</li>
-    <li><strong>Validation</strong> — run representative pages through Google's Rich Results Test to confirm your schema is valid and eligible for rich results. Common errors include missing required fields, incorrect data types, and malformed JSON-LD syntax. A single syntax error can invalidate an entire schema block.</li>
+    <li><strong>Validation</strong> — test supported page types with Google's Rich Results Test and check required properties. A passing test confirms syntax and detected eligibility conditions, not that Google will show the result.</li>
     <li><strong>Schema accuracy</strong> — verify that the data in your schema markup matches the visible content on the page. If your Product schema shows a price of 29.99 but the page displays 39.99, this mismatch can result in a manual action and loss of rich result eligibility. Schema data must be a faithful representation of on-page content, not aspirational or manipulative.</li>
-    <li><strong>Breadcrumb schema</strong> — check that BreadcrumbList schema is implemented on every page below the homepage and accurately reflects your navigation hierarchy. Breadcrumb rich results replace raw URLs in search listings, improving both appearance and click-through rates.</li>
+    <li><strong>Breadcrumb schema</strong> — check that BreadcrumbList markup matches visible navigation and the intended hierarchy. Google may use breadcrumb information in results but does not guarantee a particular display.</li>
     <li><strong>No conflicting schema</strong> — verify that only one source of schema exists per type per page. Conflicts arise when a CMS, an SEO plugin, and a theme all output their own version of Article schema. Multiple conflicting schema blocks of the same type confuse search engines and can invalidate all of them.</li>
   </ul>
 
@@ -138,11 +139,11 @@ const toc = [
   <ul>
     <li><strong>Descriptive slugs</strong> — URLs should contain words that describe the page content. <code>/seo-website-audit/ecommerce/</code> is descriptive. <code>/p?id=4827</code> is not. Review your URL patterns and identify any dynamically generated URLs that lack descriptive slugs.</li>
     <li><strong>Consistent structure</strong> — your URL hierarchy should reflect your site structure consistently. If service pages follow the pattern <code>/services/service-name/</code>, all service pages should follow this pattern. Inconsistent structures make it harder for search engines to understand your site architecture and for users to navigate by URL.</li>
-    <li><strong>URL length</strong> — shorter URLs tend to perform better in search results and are easier for users to share and remember. Aim for URLs under 75 characters. Avoid unnecessary words ("a," "the," "and") and redundant path elements.</li>
+    <li><strong>URL clarity</strong> — prefer stable, descriptive paths that users and systems can interpret. Do not change working URLs to meet a character threshold without migration value and a redirect plan.</li>
     <li><strong>Lowercase and hyphens</strong> — all URLs should use lowercase letters and hyphens as word separators. Underscores, spaces (encoded as %20), camelCase, and mixed case create usability issues and can lead to duplicate content if your server treats <code>/Page</code> and <code>/page</code> as different URLs.</li>
     <li><strong>Trailing slash consistency</strong> — decide whether your URLs end with a trailing slash or not, and enforce that choice consistently across the entire site. <code>/about/</code> and <code>/about</code> should not both resolve to content — one should redirect to the other. Inconsistency creates duplicate content signals.</li>
-    <li><strong>No URL parameters for content pages</strong> — content pages should have static, clean URLs. URL parameters should be reserved for sorting, filtering, and session management, and these parameterised URLs should be handled appropriately (noindex, canonical to the clean version, or robots.txt blocked) to prevent index bloat.</li>
+    <li><strong>Parameter handling</strong> — inventory parameters and decide which combinations need crawlable, indexable URLs. Use crawlable internal links, canonicals, redirects or other controls according to the desired behaviour; do not apply blanket noindex or robots blocking to every parameter.</li>
   </ul>
 
-  <p>An on-site SEO audit is the most actionable type of audit because every finding is something you can fix directly. Unlike off-page issues that require earning external signals, on-site elements are within your complete control. Prioritise fixes by their expected impact — title tag improvements on high-traffic pages, heading fixes on templates that affect hundreds of pages, and internal linking improvements that connect orphaned content to the rest of your site. Then schedule a follow-up audit in 90 days to measure the impact and catch any new issues that have developed.</p>
+  <p>Prioritise on-site fixes by affected scope, evidence confidence, business value and change risk. Re-crawl after release and choose the performance review window from expected recrawl timing and available comparable data.</p>
 </ContentLayout>

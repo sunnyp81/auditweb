@@ -14,21 +14,18 @@ export function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const isUK = city.country === 'UK';
-const currency = isUK ? '£' : '$';
-const currencyWord = isUK ? 'GBP' : 'USD';
 
-const title = `Website Audit Services in ${city.name} | Professional SEO Audit`;
-const description = `Get a professional website audit in ${city.name}, ${city.region}. Our 72-checkpoint analysis covers SEO, technical, content, UX, and security. Pricing from ${currency}297.`;
+const title = `Remote Website Audit Services for ${city.name} Businesses`;
+const description = `Remote website audits for ${city.name}, ${city.region}. Compare $297 and $997 USD scopes and confirm pages, evidence and deliverables before work begins.`;
 
 const toc = [
-  { label: `Why ${city.name} Businesses Need Website Audits`, id: 'why' },
-  { label: 'What Our Audit Covers', id: 'covers' },
-  { label: 'Our Audit Process', id: 'process' },
-  { label: 'Common Issues We Find', id: 'issues' },
+  { label: `Remote Service for ${city.name}`, id: 'remote-service' },
+  { label: 'What the Audit Can Cover', id: 'covers' },
+  { label: `How ${city.name} Changes the Scope`, id: 'local-scope' },
+  { label: 'Evidence and Deliverables', id: 'deliverables' },
   { label: 'Pricing', id: 'pricing' },
-  { label: 'Get Started', id: 'get-started' },
-  { label: 'Also Serving', id: 'also-serving' },
+  { label: 'Before You Enquire', id: 'get-started' },
+  { label: 'Other Service Areas', id: 'also-serving' },
 ];
 
 const allCities = [
@@ -42,18 +39,16 @@ const nearbyCities = (sameRegion.length >= 3 ? sameRegion : sameCountry).slice(0
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: `Website Audit Service in ${city.name}`,
+  name: 'Website Audit Service',
   provider: {
     '@type': 'Organization',
+    '@id': 'https://auditweb.site/#organization',
     name: 'AuditWeb',
-    url: 'https://auditweb.site',
+    url: 'https://auditweb.site/',
   },
-  areaServed: {
-    '@type': 'City',
-    name: city.name,
-  },
-  description: description,
-  priceRange: `${currency}297-${currency}997`,
+  areaServed: ['US', 'GB'],
+  description: 'Professional website audits covering SEO, technical, content, UX, and security across an agreed scope.',
+
 };
 ---
 
@@ -67,86 +62,70 @@ const schema = {
   ]}
   toc={toc}
   schema={schema}
+  canonical="https://auditweb.site/website-audit-services/"
   showLeadForm={true}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <h2 id="why">Why {city.name} Businesses Need Website Audits</h2>
-  <p>{city.intro}</p>
-  <p>Whether you're a local service business, an e-commerce store, or a growing startup, your website is your most important marketing asset. A professional audit reveals the hidden issues that prevent your site from ranking, converting, and generating revenue.</p>
-  <p>Businesses in {city.name} face competition from both local rivals and national brands targeting the {city.region} market. A website audit gives you the data-driven insights to outperform them both — identifying exactly what to fix, in what order, for maximum impact.</p>
+  <p>AuditWeb provides website audits remotely to organisations based in or targeting {city.name}, {city.region}. AuditWeb does not claim a local office or in-person auditor in {city.name}.</p>
+  <p>The city affects the pages and competitors selected for review. It does not change the evidence standard or the USD price shown on the main service.</p>
 
-  <h2 id="covers">What Our Audit Covers</h2>
-  <p>Our comprehensive 72-checkpoint audit examines every aspect of your website:</p>
+  <span id="process" aria-hidden="true"></span>
+  <h2 id="remote-service">How does the remote service work for {city.name}?</h2>
+  <p>The remote service starts with a written scope. Share the website, the business question, the important {city.name} pages and any markets outside {city.region} that the review must consider.</p>
+  <p>Public pages can be reviewed without an account. Read-only Google Search Console or analytics access can add search and journey evidence when available. Agree access before work starts and do not send passwords through the enquiry form.</p>
+
+  <span id="issues" aria-hidden="true"></span>
+  <h2 id="covers">What can the website audit cover?</h2>
+  <p>The audit can cover technical SEO, on-page content, performance, mobile experience and agreed public security checks. The final scope depends on the question and the page sample.</p>
   <ul>
-    <li><strong><a href="/seo-website-audit/">SEO audit for {city.name} businesses</a>:</strong> Keyword targeting, title tags, meta descriptions, heading structure, internal linking, content quality, and schema markup. We check how well your site is optimised for the searches your {city.name} customers are making.</li>
-    <li><strong><a href="/technical-website-audit/">Technical audit for {city.name} websites</a>:</strong> Crawlability, indexation, site architecture, Core Web Vitals, mobile-friendliness, HTTPS configuration, and structured data validation.</li>
-    <li><strong>Content Evaluation:</strong> Content quality, topical coverage, thin content identification, duplicate content, and content gap analysis against your competitors.</li>
-    <li><strong>UX Assessment:</strong> Navigation usability, mobile experience, form functionality, conversion paths, and accessibility compliance.</li>
-    <li><strong>Security Check:</strong> SSL configuration, security headers, software vulnerabilities, and data protection compliance.</li>
-    <li><strong>Performance Analysis:</strong> Page speed, server response time, image optimisation, code efficiency, and third-party script impact.</li>
-    <li><strong>Competitive Benchmarking:</strong> How your website compares to your top {city.name} competitors across all these dimensions.</li>
+    <li><strong>Technical SEO:</strong> crawl access, response codes, canonical signals, internal links and indexing evidence.</li>
+    <li><strong>Content:</strong> titles, descriptions, headings, intent, duplication and content gaps across the agreed pages.</li>
+    <li><strong>Performance and mobile:</strong> key templates, loading behaviour and important visitor journeys.</li>
+    <li><strong>Security observations:</strong> public HTTPS and response-header checks. Active testing requires explicit authorisation and separate scope.</li>
+  </ul>
+  <p>Google explains that crawling, canonicalisation, sitemaps and JavaScript rendering are separate parts of search access in its <a href="https://developers.google.com/search/docs/crawling-indexing">crawling and indexing documentation</a>. A report should record which part was checked and what evidence supports the finding.</p>
+
+  <span id="why" aria-hidden="true"></span>
+  <h2 id="local-scope">How does {city.name} change the audit scope?</h2>
+  <p>A {city.name} scope changes the comparison set. It can prioritise pages aimed at people in {city.name}, local landing-page duplication, location information and competitors that the client names.</p>
+  <p>AuditWeb does not infer local search behaviour from the city name. Supply target services, customer locations and known competitors during scoping. Competitive conclusions require a dated comparison rather than a generic city claim.</p>
+  <ul>
+    <li>List the {city.name} landing pages or store pages that matter.</li>
+    <li>Name the services and search journeys the audit should investigate.</li>
+    <li>Identify other regions that share content or templates with {city.name}.</li>
+    <li>Provide read-only measurement access when search or conversion evidence is part of the question.</li>
   </ul>
 
-  <h2 id="process">Our Audit Process</h2>
-  <ol>
-    <li><strong>Discovery:</strong> You share your website URL, business goals, and target audience. We configure our audit tools specifically for your site.</li>
-    <li><strong>Analysis:</strong> Our team runs the full 72-checkpoint audit using industry-leading tools including Screaming Frog, Ahrefs, Google Search Console data, and PageSpeed Insights.</li>
-    <li><strong>Report:</strong> We compile findings into a clear, prioritised report with specific fix instructions for each issue. Every recommendation includes expected impact and implementation difficulty.</li>
-    <li><strong>Strategy Call:</strong> For Comprehensive and Enterprise audits, we walk you through the findings in a 30-minute video call, answer questions, and help you plan implementation.</li>
-    <li><strong>Support:</strong> We're available for follow-up questions as you implement the recommendations. Our reports are designed to be actionable whether your team implements internally or you hire developers.</li>
-  </ol>
+  <h2 id="deliverables">What evidence and deliverables do you receive?</h2>
+  <p>The report records the agreed scope, observed evidence, affected URLs, recommended fixes and verification steps. Findings distinguish confirmed problems from questions that need more access or testing.</p>
+  <p>Review the <a href="/website-audit-services/report-example/">completed website audit report example</a> before commissioning work. The example shows AuditWeb's own dated evidence and does not present invented client results.</p>
 
-  <h2 id="issues">Common Issues We Find in {city.name}</h2>
-  <p>Across hundreds of audits for {city.region} businesses, these are the most common issues we discover:</p>
-  <ul>
-    <li><strong>Slow page speed:</strong> Many {city.name} business websites score below 50 on Google's mobile speed test, losing visitors who won't wait more than 3 seconds for a page to load.</li>
-    <li><strong>Poor mobile experience:</strong> With over 60% of local searches happening on mobile, a site that doesn't work well on phones is losing the majority of potential customers.</li>
-    <li><strong>Missing local SEO signals:</strong> No Google Business Profile optimisation, inconsistent NAP (Name, Address, Phone) across directories, and missing local schema markup.</li>
-    <li><strong>Thin service pages:</strong> Service pages with 100-200 words of generic content that don't demonstrate expertise or address customer questions.</li>
-    <li><strong>No conversion optimisation:</strong> Websites that get traffic but don't convert because CTAs are buried, forms are too long, or trust signals are missing.</li>
-    <li><strong>Outdated security:</strong> Missing SSL certificates, outdated CMS versions, and no security headers — putting both data and rankings at risk.</li>
-  </ul>
-
-  <h2 id="pricing">Pricing</h2>
-  <p>Our audit packages for {city.name} businesses:</p>
+  <h2 id="pricing">How much does a {city.name} website audit cost?</h2>
+  <p>Basic audits start at $297 USD. Comprehensive audits start at $997 USD. Large sites, migrations, multiple languages and complex architectures use a custom quote.</p>
+  <div class="overflow-x-auto" tabindex="0" role="region" aria-label={`${city.name} website audit prices`}>
   <table>
     <thead>
-      <tr>
-        <th>Package</th>
-        <th>Price</th>
-        <th>Best For</th>
-      </tr>
+      <tr><th>Scope</th><th>Price</th><th>Suitable use</th></tr>
     </thead>
     <tbody>
-      <tr>
-        <td><strong>Basic Audit</strong></td>
-        <td>{currency}297</td>
-        <td>Small sites under 50 pages</td>
-      </tr>
-      <tr>
-        <td><strong>Comprehensive Audit</strong></td>
-        <td>{currency}997</td>
-        <td>Growing businesses, e-commerce stores</td>
-      </tr>
-      <tr>
-        <td><strong>Enterprise</strong></td>
-        <td>Custom</td>
-        <td>Large sites, multi-location businesses</td>
-      </tr>
+      <tr><td><strong>Basic</strong></td><td>$297 USD</td><td>A focused review of a smaller site or a defined question</td></tr>
+      <tr><td><strong>Comprehensive</strong></td><td>$997 USD</td><td>A broader technical, content, competitive and experience review</td></tr>
+      <tr><td><strong>Custom</strong></td><td>Quoted</td><td>Large sites, migrations or complex architectures</td></tr>
     </tbody>
   </table>
-  <p>All packages include our 100% money-back guarantee: if we don't identify at least {currency}10,000 in potential revenue improvements, you pay nothing.</p>
+  </div>
+  <p>Confirm the page sample, deliverables, access, delivery date and any follow-up support in writing. Rankings and revenue outcomes are not guaranteed.</p>
 
-  <h2 id="get-started">Get Started</h2>
-  <p>Ready to find out what's holding your {city.name} website back? Fill in the form to request your audit. We'll review your site and send your report within 48 hours.</p>
-  <p>Alternatively, try our <a href="/free-website-audit/">free instant audit tool</a> for a quick health check before committing to a full professional audit.</p>
-  <p>Not sure which package fits {city.name}? See <a href="/website-audit-services/">our full range of audit services</a> for scope and pricing.</p>
+  <h2 id="get-started">What should you prepare before enquiring?</h2>
+  <p>Prepare the site URL, the main business question, priority {city.name} pages and any deadlines or access limits. AuditWeb can then confirm an appropriate scope and price.</p>
+  <p>Use the <a href="/free-website-audit/">free pasted-HTML checker</a> for an initial markup review. The checker does not crawl a website or measure live speed, security or indexation. Read the <a href="/website-audit-services/">main service page</a> for the full commercial terms.</p>
 
-  <h2 id="also-serving">Also Serving</h2>
-  <p>We run the same 72-checkpoint audit process for businesses across the wider region. Explore audits in nearby cities:</p>
+  <h2 id="also-serving">Which other service areas are listed?</h2>
+  <p>AuditWeb also offers the same remote scoping process to organisations in other listed areas. These links describe service availability and do not represent office locations.</p>
   <ul>
     {nearbyCities.map(c => (
-      <li><a href={`/website-audit-services/${c.slug}/`}>{c.name}</a></li>
+      <li><a href={`/website-audit-services/${c.slug}/`}>{c.name}, {c.region}</a></li>
     ))}
   </ul>
 </ContentLayout>

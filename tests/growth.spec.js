@@ -99,7 +99,7 @@ test('download routes serve real assets and missing routes return 404', async ({
 });
 
 test('growth events respect consent and contain no supplied page data', async ({ page }) => {
-  await page.route('**/googletagmanager.com/**', route => route.fulfill({ status: 200, body: '' }));
+  await page.route('https://www.googletagmanager.com/**', route => route.fulfill({ status: 200, body: '' }));
   await page.goto('/free-website-audit/');
   await page.getByRole('button', { name: 'Reject', exact: true }).click();
   await page.getByRole('button', { name: 'Load example' }).click();

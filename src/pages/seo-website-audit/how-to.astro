@@ -23,18 +23,18 @@ const toc = [
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Do an SEO Website Audit: Step-by-Step Guide',
-  description: 'Learn how to perform a complete SEO website audit in 10 steps. Covers keyword analysis, on-page SEO, technical checks, backlinks, and content quality.',
-  totalTime: 'PT4H',
+  name: 'How to Do a DIY SEO Website Audit in 10 Steps',
+  description: 'A scoped DIY process for collecting crawl, index, page, link and performance evidence and assigning verified actions.',
+
   step: [
     { '@type': 'HowToStep', name: 'Set Up Your Audit Tools', text: 'Choose and configure crawling software, Google Search Console, and analytics platforms before you begin.' },
-    { '@type': 'HowToStep', name: 'Crawl Your Website', text: 'Run a full site crawl using Screaming Frog, Sitebulb, or a similar crawler to discover every URL and its HTTP status.' },
-    { '@type': 'HowToStep', name: 'Check Indexation Status', text: 'Compare crawled URLs against Google Search Console index coverage to identify pages that are not indexed or are incorrectly excluded.' },
-    { '@type': 'HowToStep', name: 'Analyse On-Page SEO', text: 'Review title tags, meta descriptions, heading hierarchy, keyword usage, and internal links on every important page.' },
+    { '@type': 'HowToStep', name: 'Crawl Your Website', text: 'Crawl from declared seeds and settings, then reconcile discovered URLs with sitemaps, Search Console and known platform URLs.' },
+    { '@type': 'HowToStep', name: 'Check Indexation Status', text: 'Compare the intended URL set with Search Console labels and inspect representative URLs before assigning a cause.' },
+    { '@type': 'HowToStep', name: 'Analyse On-Page SEO', text: 'Review whether important page titles, descriptions, headings and internal links accurately support each page task.' },
     { '@type': 'HowToStep', name: 'Review Technical SEO', text: 'Check robots.txt, XML sitemaps, canonical tags, hreflang, structured data, and crawl directives for errors.' },
-    { '@type': 'HowToStep', name: 'Evaluate Content Quality', text: 'Assess thin content, duplicate pages, keyword cannibalisation, and topical coverage gaps across the site.' },
-    { '@type': 'HowToStep', name: 'Audit Your Backlink Profile', text: 'Export your backlink data from Ahrefs, Semrush, or Moz. Identify toxic links, anchor text distribution, and link velocity trends.' },
-    { '@type': 'HowToStep', name: 'Check Site Speed', text: 'Run PageSpeed Insights and WebPageTest to measure Core Web Vitals, largest contentful paint, and total blocking time.' },
+    { '@type': 'HowToStep', name: 'Evaluate Content Quality', text: 'Review task completion, accuracy, duplication and query overlap without treating word count or multiple ranking URLs as automatic defects.' },
+    { '@type': 'HowToStep', name: 'Audit Your Backlink Profile', text: 'Export backlink data from a chosen provider. Review important referring pages, lost links and evidence of deliberate link spam.' },
+    { '@type': 'HowToStep', name: 'Check Site Speed', text: 'Separate Core Web Vitals field data from reproducible lab diagnostics and identify the responsible template or resource.' },
     { '@type': 'HowToStep', name: 'Assess Mobile Experience', text: 'Test responsive design, tap target sizes, font readability, and mobile-specific usability issues across devices.' },
     { '@type': 'HowToStep', name: 'Create Your Action Plan', text: 'Prioritise findings by impact and effort, assign owners, set deadlines, and schedule a follow-up audit.' },
   ],
@@ -42,16 +42,17 @@ const howToSchema = {
 ---
 
 <ContentLayout
-  title="How to Do an SEO Website Audit: Step-by-Step Guide"
-  description="Learn how to perform a complete SEO website audit in 10 steps. Covers keyword analysis, on-page SEO, technical checks, backlinks, and content quality."
+  title="How to Do a DIY SEO Website Audit in 10 Steps"
+  description="Follow a practical DIY SEO audit procedure from scoped crawl and index evidence to content, links, performance, mobile checks and an owned action plan."
   breadcrumbs={breadcrumbs}
   toc={toc}
   schema={howToSchema}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>Running an SEO website audit is the single most valuable exercise you can perform to understand why your site ranks where it does and what you need to change. Whether you are an in-house marketer, a freelance consultant, or a business owner doing it yourself, this guide walks you through every step from setting up your tools to producing a prioritised action plan.</p>
+  <p>Perform an SEO website audit by defining scope, collecting crawl and Search Console evidence, reviewing representative pages and turning confirmed findings into a prioritised action plan. Keep observations, hypotheses and expected outcomes separate so each fix can be retested.</p>
 
-  <p>A thorough SEO audit typically takes between two and six hours depending on site size. Small sites under 100 pages can be audited in an afternoon. Enterprise sites with tens of thousands of URLs may need a week. The process below works for sites of any scale.</p>
+  <p>Audit time depends on scope, access, crawl size and the number of templates or markets sampled. Record those limits before collecting data so the final report does not imply full coverage when the review used a sample.</p>
 
   <h2 id="set-up-your-audit-tools">Step 1: Set Up Your Audit Tools</h2>
 
@@ -59,7 +60,7 @@ const howToSchema = {
 
   <ul>
     <li><strong>Google Search Console</strong> — free, essential. Gives you real indexation data, search queries, click-through rates, and Core Web Vitals from Google's perspective.</li>
-    <li><strong>A site crawler</strong> — Screaming Frog (free up to 500 URLs), Sitebulb, or Lumar. Crawlers discover every page, flag broken links, missing tags, and redirect chains.</li>
+    <li><strong>A site crawler</strong> — Screaming Frog (free mode currently up to 500 URLs), Sitebulb, or Lumar. Crawlers inventory URLs reachable from their seeds and configuration; reconcile results with sitemaps, Search Console and known platform URLs.</li>
     <li><strong>Google Analytics or equivalent</strong> — for traffic trends, bounce rates, and conversion data that add context to ranking data.</li>
     <li><strong>A backlink tool</strong> — Ahrefs, Semrush, or Moz. You need one to analyse your link profile and compare against competitors.</li>
     <li><strong>PageSpeed Insights</strong> — free from Google. Tests Core Web Vitals with both lab and field data.</li>
@@ -74,7 +75,7 @@ const howToSchema = {
   <p>Pay attention to these crawler outputs:</p>
 
   <ul>
-    <li><strong>HTTP status codes</strong> — 200 is healthy. Look for 301/302 redirect chains (more than two hops waste crawl budget), 404 errors (broken pages), and 500 server errors.</li>
+    <li><strong>HTTP status codes</strong> — confirm successful pages, redirects, client errors and server errors. Trace chains and loops to their final response; prioritise them by affected links and user impact rather than a fixed hop threshold.</li>
     <li><strong>Redirect chains and loops</strong> — a common problem after site migrations. Every chain should resolve in a single hop.</li>
     <li><strong>Orphan pages</strong> — URLs in your sitemap or Google index that have zero internal links pointing to them. These pages are almost invisible to search engines.</li>
     <li><strong>Duplicate content</strong> — pages with identical or near-identical content, often caused by URL parameters, trailing slashes, or HTTP/HTTPS variants.</li>
@@ -90,8 +91,8 @@ const howToSchema = {
   <p>Compare the number of indexed pages in GSC against the total URLs found by your crawler. A large gap means Google is choosing not to index a significant portion of your site. Common reasons include:</p>
 
   <ul>
-    <li><strong>Crawled, currently not indexed</strong> — Google found the page but decided it was not worth indexing. Usually a content quality signal.</li>
-    <li><strong>Discovered, not currently indexed</strong> — Google knows the URL exists but has not bothered to crawl it yet. Often a crawl budget issue.</li>
+    <li><strong>Crawled, currently not indexed</strong> — Google reports a crawl but no current index inclusion. The label does not by itself prove a content-quality decision.</li>
+    <li><strong>Discovered, currently not indexed</strong> — Google knows about the URL but has not indexed it. Inspect representative URLs and related crawl evidence before assigning a cause.</li>
     <li><strong>Blocked by robots.txt</strong> — you are accidentally preventing Google from accessing important pages.</li>
     <li><strong>Noindex tag</strong> — a meta robots noindex directive is present. Sometimes added intentionally, sometimes left over from a staging environment.</li>
     <li><strong>Duplicate, Google chose a different canonical</strong> — Google thinks another URL is the primary version and has ignored your stated canonical.</li>
@@ -101,14 +102,14 @@ const howToSchema = {
 
   <h2 id="analyse-on-page-seo">Step 4: Analyse On-Page SEO</h2>
 
-  <p>On-page SEO is where most ranking improvements come from. Review every page that targets a keyword you care about. Check the following elements systematically:</p>
+  <p>Review the intended landing pages for important search tasks and sample shared templates. On-page changes can clarify relevance and improve snippets, but their effect depends on the query and competing results.</p>
 
   <ul>
-    <li><strong>Title tags</strong> — should include the primary keyword, be under 60 characters, and be unique across the site. Duplicate titles cause cannibalisation.</li>
-    <li><strong>Meta descriptions</strong> — not a ranking factor, but directly affect click-through rate. Keep under 155 characters. Include a call to action.</li>
-    <li><strong>H1 tags</strong> — every page needs exactly one H1 that matches the search intent. Missing or duplicate H1s are a common finding.</li>
+    <li><strong>Title tags</strong> — check that each title is accurate, descriptive and distinct for its page. Review actual title links because Google can generate them from several on-page sources and displayed length varies.</li>
+    <li><strong>Meta descriptions</strong> — write an accurate page summary for likely visitors. Google may use the description or other page text for the snippet, so a fixed length or call to action is not a ranking requirement.</li>
+    <li><strong>H1 and headings</strong> — use a clear primary heading and a logical hierarchy. Multiple H1 elements are valid HTML; flag them only when they make structure or page purpose unclear.</li>
     <li><strong>Heading hierarchy</strong> — H2s, H3s, and H4s should follow a logical outline. Skipping levels (H1 straight to H3) signals poor content structure.</li>
-    <li><strong>Keyword placement</strong> — the primary keyword should appear in the first 100 words, in at least one subheading, and naturally throughout the body. Do not force it.</li>
+    <li><strong>Query alignment</strong> — confirm that the page answers its intended search task in the opening and subordinate sections. Avoid fixed keyword placement or density rules.</li>
     <li><strong>Internal links</strong> — every important page should receive internal links from related content. Check anchor text distribution. Generic anchors like "click here" waste link equity.</li>
     <li><strong>Image alt text</strong> — descriptive, keyword-relevant alt attributes help with image search and accessibility. Missing alt text is one of the most common audit findings.</li>
   </ul>
@@ -125,7 +126,7 @@ const howToSchema = {
 
   <p><strong>Canonical tags:</strong> Every page should have a self-referencing canonical tag unless it is a duplicate that points to a primary version. Inspect your canonical tags for common errors: relative URLs instead of absolute, HTTP instead of HTTPS, or pointing to a non-existent page.</p>
 
-  <p><strong>Structured data:</strong> Test your pages with Google's Rich Results Test. Common schema types include Article, FAQ, HowTo, Product, and LocalBusiness. Invalid or incomplete structured data can lose you rich snippets in search results.</p>
+  <p><strong>Structured data:</strong> select markup that represents visible page content and validate Google-supported types with the Rich Results Test. This page retains HowTo vocabulary so other consumers can identify the visible ten-step procedure, but Google no longer shows HowTo rich results and limits FAQ rich results mainly to well-known government and health sites.</p>
 
   <p><strong>HTTPS:</strong> Every page should load over HTTPS. Mixed content warnings (loading HTTP resources on an HTTPS page) can break trust signals and display browser warnings to users.</p>
 
@@ -133,11 +134,11 @@ const howToSchema = {
 
   <h2 id="evaluate-content-quality">Step 6: Evaluate Content Quality</h2>
 
-  <p>Google's helpful content system rewards pages that demonstrate first-hand experience, expertise, and genuine usefulness. Evaluating content quality means looking beyond keywords at the substance of what you have published.</p>
+  <p>Google's <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">people-first content guidance</a> asks whether content is useful, reliable and made primarily for people. Evaluate the answer, evidence and trust in context rather than assigning a generic quality score.</p>
 
-  <p>Start by identifying <strong>thin content</strong> — pages with fewer than 300 words that attempt to rank for competitive queries. These pages rarely satisfy search intent and can drag down your entire site's quality signals. Either expand them with genuinely useful information or consolidate them into a stronger page.</p>
+  <p>Identify content that is inaccurate, duplicative or unable to complete its intended task. Word count alone does not define thin content. Expand, combine or remove a page only after reviewing its purpose, links, demand and required redirects.</p>
 
-  <p>Next, look for <strong>keyword cannibalisation</strong>. This happens when multiple pages target the same keyword, forcing Google to choose between them. Pull a list of your top keywords from Search Console and check if more than one URL ranks for the same query. If so, decide which page should be the canonical target and either redirect or merge the others.</p>
+  <p>Next, investigate possible <strong>query overlap</strong>. Multiple URLs for one query can be legitimate when they serve different intents. Compare page purpose, query variants, trends, canonicals, links and conversions before deciding whether to differentiate, consolidate or leave them alone.</p>
 
   <p>Check for <strong>content freshness</strong>. Pages with outdated statistics, broken outbound links, or references to past years (like "best tools for 2023") signal neglect. Update them or add a visible "last updated" date.</p>
 
@@ -145,24 +146,24 @@ const howToSchema = {
 
   <h2 id="audit-your-backlink-profile">Step 7: Audit Your Backlink Profile</h2>
 
-  <p>Backlinks remain one of the strongest ranking factors. A backlink audit reveals the health of your off-page SEO and identifies risks before they become penalties.</p>
+  <p>External links can help discovery and are one source of authority evidence. Review referring pages, context, acquisition history and lost links without treating a domain count or third-party toxicity label as a ranking score.</p>
 
   <p>Export your full backlink profile from Ahrefs, Semrush, or Moz. Analyse the following:</p>
 
   <ul>
     <li><strong>Total referring domains</strong> — more important than total backlinks. One link from 100 different sites is stronger than 100 links from one site.</li>
     <li><strong>Domain authority distribution</strong> — a natural profile has links from sites of varying authority. An unnatural spike of high-DR links can trigger scrutiny.</li>
-    <li><strong>Anchor text distribution</strong> — should be diverse. If 70% of your anchors are exact-match keywords, it looks manipulative. Natural profiles have branded anchors, URL anchors, and generic phrases.</li>
-    <li><strong>Toxic links</strong> — links from spammy directories, link farms, foreign-language gambling sites, or PBNs. Use your tool's toxicity score as a starting point, then manually review flagged domains.</li>
+    <li><strong>Anchor context</strong> — review repeated commercial anchors and the pages that created them. Do not use a universal percentage to label a profile manipulative.</li>
+    <li><strong>Link risk</strong> — investigate backlinks connected to deliberate spam or a manual action. Treat vendor toxicity scores as leads for review rather than Google's assessment.</li>
     <li><strong>Lost links</strong> — valuable backlinks that have disappeared. If a high-authority site removed your link, investigate whether you can reclaim it through outreach.</li>
     <li><strong>Competitor comparison</strong> — compare your link profile against the top three competitors for your primary keywords. Identify domains that link to them but not to you. These become outreach targets.</li>
   </ul>
 
-  <p>If you find genuinely toxic links, consider using Google's Disavow Tool. However, use it sparingly. Most "toxic" links are simply low-quality and do not require disavowal unless you have a manual penalty.</p>
+  <p>Use Google's <a href="https://support.google.com/webmasters/answer/2648487">disavow tool</a> only when a substantial pattern of artificial links and a manual action or likely manual action justify it. Make reasonable removal efforts first.</p>
 
   <h2 id="check-site-speed">Step 8: Check Site Speed</h2>
 
-  <p>Site speed directly affects both rankings and user experience. Google uses Core Web Vitals as a ranking signal, and slow pages have measurably higher bounce rates.</p>
+  <p>Performance can affect page experience and task completion, while Core Web Vitals are one input among many search signals. Use the site's field data and analytics to test whether a measured delay is associated with abandonment; do not infer a bounce-rate change from a lab score alone.</p>
 
   <p>Run your homepage and five to ten key landing pages through <strong>PageSpeed Insights</strong>. Record these metrics:</p>
 
@@ -170,7 +171,7 @@ const howToSchema = {
     <li><strong>Largest Contentful Paint (LCP)</strong> — should be under 2.5 seconds. This measures when the main content finishes loading. Common causes of poor LCP: unoptimised hero images, slow server response times, render-blocking CSS or JavaScript.</li>
     <li><strong>Interaction to Next Paint (INP)</strong> — should be under 200 milliseconds. Measures responsiveness when users interact with the page. Heavy JavaScript frameworks and long-running tasks are the usual culprits.</li>
     <li><strong>Cumulative Layout Shift (CLS)</strong> — should be under 0.1. Measures visual stability. Ads, images without dimensions, and dynamically injected content cause layout shifts.</li>
-    <li><strong>Total Blocking Time (TBT)</strong> — a lab metric that correlates with INP. Aim for under 200ms. Reduce by deferring non-critical JavaScript and breaking up long tasks.</li>
+    <li><strong>Total Blocking Time (TBT)</strong> — use this lab diagnostic to find main-thread blocking. Interpret the score against the current tool version, then profile long tasks before changing JavaScript.</li>
   </ul>
 
   <p>Use <strong>WebPageTest</strong> for deeper diagnostics. It shows a waterfall chart of every resource request, making it easy to identify the specific files slowing your page. Common fixes include enabling compression, setting cache headers, lazy-loading below-the-fold images, and removing unused CSS and JavaScript.</p>
@@ -183,9 +184,9 @@ const howToSchema = {
 
   <ul>
     <li><strong>Responsive layout</strong> — does the design adapt properly at 375px, 414px, and 768px widths? Content should not overflow horizontally.</li>
-    <li><strong>Tap target sizes</strong> — buttons and links should be at least 48x48 pixels with adequate spacing. Small, closely-packed links frustrate mobile users and Google flags them.</li>
-    <li><strong>Font readability</strong> — body text should be at least 16px on mobile. Users should not need to pinch-zoom to read your content.</li>
-    <li><strong>Intrusive interstitials</strong> — full-screen popups that block content on mobile can result in a ranking penalty. Cookie consent banners are exempt, but newsletter modals and app install prompts are not.</li>
+    <li><strong>Tap targets</strong> — test whether controls are distinguishable and operable without accidental activation. Use the accessibility standard selected for the audit rather than a claimed Google ranking threshold.</li>
+    <li><strong>Text readability</strong> — test readable sizing, spacing, contrast and zoom on supported viewports. A fixed 16 px value cannot account for typeface, spacing and user settings.</li>
+    <li><strong>Interstitials and overlays</strong> — test whether mobile users can immediately access the main content and complete the page task. Google's guidance allows some legally required notices and discourages intrusive promotions, but eligibility depends on implementation; do not label every consent banner exempt or every modal a penalty.</li>
     <li><strong>Viewport configuration</strong> — ensure your pages include a proper viewport meta tag. Without it, mobile browsers render the page at desktop width and shrink it.</li>
     <li><strong>Mobile content parity</strong> — the mobile version should contain the same content as desktop. Hidden tabs, accordions that collapse content, or "read more" truncation can cause Google to miss important text.</li>
   </ul>
@@ -199,14 +200,14 @@ const howToSchema = {
   <p>Sort every finding into one of four priority levels:</p>
 
   <ul>
-    <li><strong>Critical</strong> — issues that actively prevent indexing or cause security vulnerabilities. Fix within one week. Examples: entire sections blocked by robots.txt, sitewide noindex tag, expired SSL certificate, 500 errors on key pages.</li>
-    <li><strong>High</strong> — issues that significantly harm rankings or user experience. Fix within two weeks. Examples: slow LCP on landing pages, missing canonical tags causing duplicate content, keyword cannibalisation on your top five pages.</li>
-    <li><strong>Medium</strong> — issues that represent missed opportunities. Fix within 30 days. Examples: missing structured data, thin content on secondary pages, suboptimal title tags, images without alt text.</li>
-    <li><strong>Low</strong> — minor optimisations and best-practice improvements. Fix within 60 days. Examples: redirect chains with three hops, minor CLS on blog posts, meta descriptions over 155 characters.</li>
+    <li><strong>Critical</strong> — confirmed issues that block intended indexing, break primary journeys or create an urgent security risk. Assign an owner and deadline based on business impact.</li>
+    <li><strong>High</strong> — confirmed issues with material reach or user impact. Document dependencies and choose a deadline the delivery team can meet.</li>
+    <li><strong>Medium</strong> — useful improvements with lower reach, confidence or urgency. Schedule them after higher-impact work.</li>
+    <li><strong>Low</strong> — observations with limited impact or optional refinements. Monitor or batch them when efficient.</li>
   </ul>
 
-  <p>For each issue, document the <strong>affected URLs</strong>, the <strong>specific fix required</strong>, and the <strong>expected impact</strong>. Assign an owner if you are working in a team. Set realistic deadlines and schedule a follow-up audit in 90 days to measure progress.</p>
+  <p>For each issue, document the <strong>affected URLs</strong>, the <strong>specific fix required</strong>, the evidence and the verification method. Assign an owner and review date based on severity, release timing and how long the relevant system needs to process the change.</p>
 
-  <p>The best SEO audits are not one-off events. They are recurring checkpoints that keep your site aligned with search engine expectations and user needs. Aim to run a full audit quarterly and a lighter technical check monthly. Your rankings, traffic, and revenue will reflect the discipline.</p>
+  <p>Repeat the checks when releases, migrations, unexplained search changes or the site's risk profile justify them. Use the <a href="/seo-website-audit/how-often/">audit frequency guide</a> to define owners and triggers, then remeasure the same evidence after implementation.</p>
 
 </ContentLayout>

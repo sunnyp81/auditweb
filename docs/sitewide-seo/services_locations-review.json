@@ -1,0 +1,358 @@
+{
+  "owner": "services_locations",
+  "review_date": "2026-09-11",
+  "scope": {
+    "owned_source_count": 16,
+    "edited_source_count": 14,
+    "reviewed_without_content_change_count": 2,
+    "dynamic_route": {
+      "source": "src/pages/website-audit-services/[city].astro",
+      "generated_routes": 60,
+      "uk_routes": 30,
+      "us_routes": 30,
+      "disposition": "Routes remain available and describe one remote service. Each city route points its canonical to https://auditweb.site/website-audit-services/. No noindex or redirect was added.",
+      "rationale": "The city pages are close variants of the same remote offer and do not contain evidence for a distinct local offer. Canonical consolidation preserves the URLs while identifying the main service page as representative.",
+      "limitations": "City name, region and country support scoping and navigation only. The pages do not claim an office, local audit history, city-specific performance data or local market expertise."
+    }
+  },
+  "primary_sources": [
+    {
+      "id": "google-crawling-indexing",
+      "name": "Google Search Central: Overview of crawling and indexing topics",
+      "url": "https://developers.google.com/search/docs/crawling-indexing",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-javascript-seo",
+      "name": "Google Search Central: JavaScript SEO basics",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-site-moves",
+      "name": "Google Search Central: Site moves and migrations",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-crawl-budget",
+      "name": "Google: Crawl budget management",
+      "url": "https://developers.google.com/crawling/docs/crawl-budget",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-sitemaps",
+      "name": "Google Search Central: Build and submit a sitemap",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-ai-features",
+      "name": "Google Search Central: Optimizing for generative AI features",
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-faceted-navigation",
+      "name": "Google: Managing crawling of faceted navigation URLs",
+      "url": "https://developers.google.com/crawling/docs/faceted-navigation",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-core-web-vitals",
+      "name": "Google Search Central: Understanding Core Web Vitals",
+      "url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-product-data",
+      "name": "Google Search Central: Product structured data",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/product",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "google-indexing-faq",
+      "name": "Google Search Central: Crawling and indexing FAQ",
+      "url": "https://developers.google.com/search/help/crawling-index-faq",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "wordpress-security",
+      "name": "WordPress Developer Resources: Security",
+      "url": "https://developer.wordpress.org/advanced-administration/security/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "wordpress-hardening",
+      "name": "WordPress Developer Resources: Hardening WordPress",
+      "url": "https://developer.wordpress.org/advanced-administration/security/hardening/",
+      "checked": "2026-09-11"
+    }
+  ],
+  "pages": [
+    {
+      "source": "src/pages/seo-audit-services/agency.astro",
+      "task": "Help an agency scope remote SEO audit capacity and delivery arrangements.",
+      "changes": [
+        "Replaced unverified white-label, volume, dashboard and turnaround promises with terms to confirm",
+        "Aligned starting prices to $297 and $997 USD",
+        "Added evidence and data-handling requirements",
+        "Added updateDate"
+      ],
+      "sources": [
+        "google-javascript-seo"
+      ]
+    },
+    {
+      "source": "src/pages/seo-audit-services/consultant.astro",
+      "task": "Help a buyer choose consultation for a complex SEO diagnosis.",
+      "changes": [
+        "Separated consultation, fixed-service and software tasks",
+        "Defined evidence and handoff requirements",
+        "Removed unverified named-specialist and hourly-price promises",
+        "Aligned AuditWeb pricing and added updateDate"
+      ],
+      "sources": [
+        "google-site-moves"
+      ]
+    },
+    {
+      "source": "src/pages/seo-audit-services/enterprise.astro",
+      "task": "Help a large-site team define segments, samples, access and stakeholder outputs.",
+      "changes": [
+        "Removed arbitrary enterprise thresholds and fixed turnaround claims",
+        "Added segment, rendering and data-scope guidance",
+        "Set enterprise pricing to custom quote",
+        "Added updateDate"
+      ],
+      "sources": [
+        "google-crawl-budget",
+        "google-javascript-seo"
+      ]
+    },
+    {
+      "source": "src/pages/seo-audit-services/index.astro",
+      "task": "Help a buyer choose an SEO audit scope and distinguish it from a broader website audit.",
+      "changes": [
+        "Rebuilt the comparison around user questions and evidence",
+        "Removed invented experience and tool claims",
+        "Aligned packages to $297, $997 and custom",
+        "Clarified the pasted-HTML checker boundary",
+        "Added updateDate"
+      ],
+      "sources": [
+        "google-crawling-indexing",
+        "google-ai-features"
+      ]
+    },
+    {
+      "source": "src/pages/seo-audit-services/technical.astro",
+      "task": "Help a buyer commission a technical SEO audit with defined evidence and limits.",
+      "changes": [
+        "Defined crawling, indexation, rendering and performance evidence separately",
+        "Removed fixed URL tiers and turnaround claims",
+        "Aligned pricing and implementation boundaries",
+        "Added updateDate"
+      ],
+      "sources": [
+        "google-core-web-vitals",
+        "google-sitemaps"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/[city].astro",
+      "task": "Explain remote service availability and city-specific scoping without implying local presence or evidence.",
+      "changes": [
+        "Removed city marketing intros, local audit counts, performance statistics, universal check counts, guarantees and fixed turnaround",
+        "Removed GBP conversion and kept $297 and $997 USD prices",
+        "Added direct remote-service and no-local-office disclosure",
+        "Added canonical to the main service page",
+        "Preserved route generation and regional navigation",
+        "Added updateDate"
+      ],
+      "sources": [
+        "google-crawling-indexing"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/agencies.astro",
+      "task": "Help an agency define broader website audit capacity, branding and handoff.",
+      "changes": [
+        "Removed invented margins, audit volumes, team practices, discounts and delivery promises",
+        "Made white-label and editable formats scoped options",
+        "Aligned pricing and added authorisation requirements",
+        "Added updateDate"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-services/comprehensive.astro",
+      "task": "Explain what a comprehensive multi-area audit covers and delivers.",
+      "changes": [
+        "Replaced the unsupported universal 72-checkpoint methodology",
+        "Defined seven review areas with evidence limits",
+        "Removed invented report lengths, timelines, guarantees and results",
+        "Aligned comprehensive pricing to $997 USD and added updateDate"
+      ],
+      "sources": [
+        "google-core-web-vitals"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/consultant.astro",
+      "task": "Help a buyer evaluate and scope a website audit consultant.",
+      "changes": [
+        "Focused on samples, method, evidence and handoff",
+        "Removed invented consultant experience, outcomes and market price ranges",
+        "Added freelancer-versus-agency decision table",
+        "Aligned AuditWeb prices and added updateDate"
+      ],
+      "sources": [
+        "google-crawling-indexing",
+        "google-indexing-faq"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/cost.astro",
+      "task": "Explain AuditWeb's current prices and help buyers compare audit quotes.",
+      "changes": [
+        "Removed unsupported market price bands and ROI scenarios",
+        "Made $297, $997 and custom scope the primary answer",
+        "Corrected the free checker description",
+        "Added quote and measurement checklists",
+        "Added updateDate"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-services/ecommerce.astro",
+      "task": "Help a store define an ecommerce audit across discovery, templates, checkout and product data.",
+      "changes": [
+        "Removed invented revenue claims, catalogue multiples, speed thresholds and package prices",
+        "Added sample and checkout-authorisation requirements",
+        "Grounded faceted navigation, Core Web Vitals and Product data guidance in Google documentation",
+        "Set pricing to custom quote and added updateDate"
+      ],
+      "sources": [
+        "google-faceted-navigation",
+        "google-core-web-vitals",
+        "google-product-data"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/index.astro",
+      "task": "Present AuditWeb's main website audit offer, process, deliverables and prices.",
+      "changes": [
+        "Reviewed without further content change because the page already gives direct scope, truthful checker limits, $297 and $997 USD prices, custom scope, terms and evidence-based deliverables",
+        "Existing updateDate retained"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-services/locations.astro",
+      "task": "Provide useful UK and US remote service-area navigation.",
+      "changes": [
+        "Removed claims of local delivery, market insight and a universal audit",
+        "Added direct remote-service and no-office disclosure",
+        "Explained how location changes the agreed sample",
+        "Preserved all city links and added updateDate"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-services/professional.astro",
+      "task": "Help a buyer recognise and compare a professional website audit.",
+      "changes": [
+        "Reframed professional quality around scope, evidence, priority and handoff",
+        "Removed invented hours, report length, provider experience and outcome claims",
+        "Added provider and report checklists",
+        "Aligned pricing and added updateDate"
+      ],
+      "sources": [
+        "google-crawling-indexing",
+        "google-indexing-faq"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-services/report-example.astro",
+      "task": "Provide a completed owned-site report example and working blank and completed downloads.",
+      "changes": [
+        "Reviewed without change to preserve the established dated findings, download actions and verification record",
+        "Existing updateDate retained"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-services/wordpress.astro",
+      "task": "Help a WordPress owner scope component, security and performance evidence.",
+      "changes": [
+        "Removed invented plugin counts, security superlatives, performance estimates and GBP packages",
+        "Added access and active-test authorisation limits",
+        "Grounded update, hardening and Core Web Vitals claims in primary documentation",
+        "Aligned standard prices and added updateDate"
+      ],
+      "sources": [
+        "wordpress-security",
+        "wordpress-hardening",
+        "google-core-web-vitals"
+      ]
+    }
+  ],
+  "supporting_data": {
+    "source": "src/data/cities.json",
+    "review": "Read all 60 entries. Slugs are unique. Existing marketing intros are no longer used by the dynamic page.",
+    "change": "No edit was required because route identity still uses slug, name and region."
+  },
+  "checks": [
+    {
+      "check": "Owned-source inventory and full source review",
+      "result": "pass",
+      "evidence": "All 16 paths in ownership.json and src/data/cities.json were read."
+    },
+    {
+      "check": "City generation and stale-claim source scan",
+      "result": "pass",
+      "evidence": "cities.json contains 30 UK and 30 US entries with unique slugs. The dynamic source no longer contains currency switching, city.intro, 72-check, guarantee, fixed-turnaround or claimed local-audit text."
+    },
+    {
+      "check": "Semantic content source review",
+      "result": "pass",
+      "evidence": "Edited pages use direct openings, distinct user tasks, question-led sections, short paragraphs, concrete scope and no prohibited LLM-fluff phrases. No numeric SEO or AI-readiness score was assigned."
+    },
+    {
+      "check": "Metadata and update dates",
+      "result": "pass",
+      "evidence": "All owned pages have task-specific titles and descriptions. All 16 ContentLayout calls contain updateDate=2026-09-11. Literal title and description length checks passed after shortening the enterprise description; dynamic metadata was checked against the longest city name."
+    },
+    {
+      "check": "TOC and source IDs",
+      "result": "pass",
+      "evidence": "Every static TOC id has a matching body id and no duplicate body ids were found."
+    },
+    {
+      "check": "Static internal links and downloads",
+      "result": "pass",
+      "evidence": "37 literal internal href references across the owned sources resolved to an Astro page or public download path. Dynamic city href expressions were reviewed separately against unique city slugs."
+    },
+    {
+      "check": "Primary source links",
+      "result": "pass",
+      "evidence": "All 12 Google and WordPress documentation destinations were opened on 2026-09-11. Two legacy Google Search paths redirect to current Google Crawling Infrastructure documentation."
+    },
+    {
+      "check": "Encoding, placeholders and whitespace",
+      "result": "pass",
+      "evidence": "No U+FFFD, common mojibake sequence or draft placeholder was found. git diff --check reported no whitespace errors."
+    },
+    {
+      "check": "Integrated Astro build and rendered desktop/mobile browser QA",
+      "result": "pending_root",
+      "evidence": "Not run in this slice because the assignment reserves integrated builds, shared layout validation and browser QA for the root agent. The city canonical depends on root's ContentLayout canonical-prop support."
+    }
+  ],
+  "root_integration": [
+    "Aligned Service and WebPage identities with the canonical main service URL; removed unsupported Service priceRange.",
+    "Preserved nine historical service/location anchor IDs.",
+    "Connected the focused SEO service hub from the main service body so its cluster is reachable from the homepage through contextual links."
+  ]
+}

@@ -1,0 +1,790 @@
+{
+    "owner":  "search_content",
+    "date":  "2026-09-11",
+    "scope_count":  32,
+    "summary":  "Reviewed all owned search and content pages; 30 edited and 2 retained after substantive review. A subsequent independent cross-review produced 17 material findings, all resolved across 19 affected sources.",
+    "sources_frozen":  true,
+    "pages":  [
+                  {
+                      "file":  "src/pages/seo-website-audit/b2b.astro",
+                      "task":  "B2B buyer-journey, lead-page, technical and conversion evidence",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "B2B buyer-journey, lead-page, technical and conversion evidence; removed universal word, form, click-depth, schema and ROI claims.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/dental.astro",
+                      "task":  "Dental local-discovery and treatment-page review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Dental local-discovery and treatment-page review; corrected review response, business-detail, schema, pricing and medical-review claims.",
+                      "primary_sources_checked":  [
+                                                      "https://support.google.com/business/answer/7091",
+                                                      "https://support.google.com/business/answer/3038177",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/ecommerce.astro",
+                      "task":  "Product, category, facet, inventory and template audit",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Product, category, facet, inventory and template audit; corrected crawl-budget, duplicate-content, product-data and revenue causality claims.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/crawling/docs/faceted-navigation",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/product-snippet",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/full-audit.astro",
+                      "task":  "Six-phase SEO audit workflow",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Six-phase SEO audit workflow; replaced fixed thresholds, ranking forecasts and routine disavow advice with evidence and verification.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/healthcare.astro",
+                      "task":  "Healthcare search, medical-content and privacy-sensitive tracking review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Healthcare search, medical-content and privacy-sensitive tracking review; added clinical/legal boundaries and primary guidance.",
+                      "primary_sources_checked":  [
+                                                      "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/hipaa-online-tracking/index.html",
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/how-often.astro",
+                      "task":  "Risk- and change-based audit cadence",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Risk- and change-based audit cadence; replaced page-count calendars, fixed alert thresholds and unsupported timing claims.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/how-to.astro",
+                      "task":  "End-to-end SEO audit procedure",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "End-to-end SEO audit procedure; corrected Search Console labels, heading rules, content/link thresholds and rich-result claims.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/index.astro",
+                      "task":  "SEO audit hub and prioritisation guide",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "SEO audit hub and prioritisation guide; retained improved structure and corrected algorithm, link and follow-up assertions.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/law-firms.astro",
+                      "task":  "Law-firm technical, local, practice-area and trust review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Law-firm technical, local, practice-area and trust review; added jurisdiction boundary and corrected NAP, review and outcome claims.",
+                      "primary_sources_checked":  [
+                                                      "https://support.google.com/business/answer/7091",
+                                                      "https://support.google.com/business/answer/3038177",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/local-seo.astro",
+                      "task":  "Local visibility audit using relevance, distance and prominence",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Local visibility audit using relevance, distance and prominence; removed invented review, citation, radius and ranking thresholds.",
+                      "primary_sources_checked":  [
+                                                      "https://support.google.com/business/answer/7091",
+                                                      "https://support.google.com/business/answer/3038177"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/nonprofits.astro",
+                      "task":  "Nonprofit SEO and Ad Grants review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Nonprofit SEO and Ad Grants review; linked current programme policy and removed stale hard-coded compliance thresholds.",
+                      "primary_sources_checked":  [
+                                                      "https://www.google.com/grants/faq/",
+                                                      "https://support.google.com/nonprofits/answer/1657899",
+                                                      "https://support.google.com/nonprofits/answer/9314402"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/on-site.astro",
+                      "task":  "On-site titles, headings, content, links, images, schema and URLs",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "On-site titles, headings, content, links, images, schema and URLs; corrected word-count, H1, title-order and parameter rules.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/rankings-drop.astro",
+                      "task":  "Traffic and ranking-drop diagnostic workflow",
+                      "disposition":  "reviewed-no-change",
+                      "changes_or_reason":  "Traffic and ranking-drop diagnostic workflow; reviewed unchanged because it already segments evidence, cites Google guidance and states data limits.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/real-estate.astro",
+                      "task":  "Real-estate listing, location, local and trust review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Real-estate listing, location, local and trust review; corrected default noindex, review-keyword and school-claim advice.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/report.astro",
+                      "task":  "SEO audit report interpretation",
+                      "disposition":  "reviewed-no-change",
+                      "changes_or_reason":  "SEO audit report interpretation; reviewed unchanged because it already defines evidence, confidence, baselines and non-guaranteed estimates.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/saas.astro",
+                      "task":  "SaaS rendering, feature/use-case, content and conversion-path review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "SaaS rendering, feature/use-case, content and conversion-path review; corrected indexing, ageing-content and pipeline causality claims.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/shopify.astro",
+                      "task":  "Shopify URL, product, collection, app and structured-data review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Shopify URL, product, collection, app and structured-data review; corrected content thresholds and service checklist mismatch.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/crawling/docs/faceted-navigation",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/product-snippet",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/template.astro",
+                      "task":  "Real downloadable resource guide",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Real downloadable resource guide; replaced nonexistent spreadsheet/automatic-score promises with the actual PDF and blank Markdown files.",
+                      "primary_sources_checked":  [
+                                                      "https://www.screamingfrog.co.uk/seo-spider/pricing/"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/seo-website-audit/wordpress.astro",
+                      "task":  "WordPress plugin, theme, settings, database and performance review",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "WordPress plugin, theme, settings, database and performance review; corrected plugin, heading and performance thresholds.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-audit-vs-seo-audit.astro",
+                      "task":  "Scope and deliverable comparison",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Scope and deliverable comparison; removed invented overlap/cost percentages and separated SEO, accessibility, security and UX evidence.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/copy.astro",
+                      "task":  "Copy audit for clarity, claims, CTAs, voice and trust evidence",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Copy audit for clarity, claims, CTAs, voice and trust evidence; removed invented conversion lifts and added FTC endorsement guidance.",
+                      "primary_sources_checked":  [
+                                                      "https://www.ftc.gov/news-events/topics/truth-advertising/advertisement-endorsements"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/frequency.astro",
+                      "task":  "Content-review cadence by accuracy risk and change rate",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Content-review cadence by accuracy risk and change rate; replaced universal monthly/quarterly thresholds and age-based refresh rules.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/how-to.astro",
+                      "task":  "Content inventory, evidence joining, decision and implementation workflow",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Content inventory, evidence joining, decision and implementation workflow; corrected fixed scoring, redirect and timing rules.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/index.astro",
+                      "task":  "Content-audit hub and evidence matrix",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Content-audit hub and evidence matrix; replaced traffic/link cutoffs, corrected toolkit description and added an accessible table region.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/services.astro",
+                      "task":  "Content audit service scope and pricing",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Content audit service scope and pricing; aligned visible prices to USD 297/USD 997/custom and connected Service provider to the shared entity.",
+                      "primary_sources_checked":  [
+
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/template.astro",
+                      "task":  "Content-audit working-file guide",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Content-audit working-file guide; replaced nonexistent spreadsheet claims with actual blank Markdown worksheets and limitations.",
+                      "primary_sources_checked":  [
+                                                      "https://www.screamingfrog.co.uk/seo-spider/pricing/"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/website-content-audit/tools.astro",
+                      "task":  "Tool-by-task comparison",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Tool-by-task comparison; removed invented hands-on ratings/prices and explained crawler, Search Console, analytics and proprietary-score limits.",
+                      "primary_sources_checked":  [
+                                                      "https://www.screamingfrog.co.uk/seo-spider/pricing/"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/what-does-a-website-audit-include.astro",
+                      "task":  "Seven-part website-audit scope",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Seven-part website-audit scope; corrected rich-result, disavow, engagement, security-authorisation, TTFB and score claims.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/what-is-a-technical-seo-audit.astro",
+                      "task":  "Technical SEO definition, scope and output",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Technical SEO definition, scope and output; corrected rendering, Core Web Vitals, migration, traffic-trigger and free-checker claims.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/what-is-a-website-audit.astro",
+                      "task":  "Website-audit definition and selection guide",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Website-audit definition and selection guide; corrected universal coverage, fixed cadence/counts, legal scope and checker/service promises.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/what-is-an-seo-site-audit.astro",
+                      "task":  "SEO site-audit definition, evidence and workflow",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "SEO site-audit definition, evidence and workflow; corrected performance causality, GSC terminology, duration and execution-result claims.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  },
+                  {
+                      "file":  "src/pages/why-website-audit-is-important.astro",
+                      "task":  "Decision-led explanation of audit value",
+                      "disposition":  "edited",
+                      "changes_or_reason":  "Decision-led explanation of audit value; replaced unsupported ranking, conversion, security, schema and ROI numbers with measurable methods.",
+                      "primary_sources_checked":  [
+                                                      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+                                                      "https://developers.google.com/search/docs/appearance/page-experience",
+                                                      "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops",
+                                                      "https://support.google.com/webmasters/answer/7440203",
+                                                      "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+                                                      "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+                                                  ],
+                      "checks":  [
+                                     "Full source read and final source readback",
+                                     "Title, description and updateDate source check",
+                                     "TOC target-to-heading source check",
+                                     "Encoding, placeholder and empty-href scan",
+                                     "Owned-file diff whitespace check"
+                                 ],
+                      "remaining_limitations":  [
+                                                    "Integrated Astro build, rendered desktop/mobile QA and live link/interaction checks are assigned to root",
+                                                    "Search visibility and AI citation outcomes require post-release measurement"
+                                                ]
+                  }
+              ],
+    "independent_review_resolution":  {
+                                            "review":  "docs/sitewide-seo/independent-search-review.md",
+                                            "status":  "implemented_pending_independent_signoff",
+                                            "residual_readback":  "Corrected WordPress storage and TTFB causality, indexing-setting and permalink mandates, and Shopify's fixed top-50 meta-description quota before final freeze.",
+                                            "findings_resolved":  17,
+                                            "affected_source_count":  19,
+                                            "affected_sources":  [
+                                                                     "src/pages/seo-website-audit/b2b.astro",
+                                                                     "src/pages/seo-website-audit/dental.astro",
+                                                                     "src/pages/seo-website-audit/ecommerce.astro",
+                                                                     "src/pages/seo-website-audit/full-audit.astro",
+                                                                     "src/pages/seo-website-audit/healthcare.astro",
+                                                                     "src/pages/seo-website-audit/how-to.astro",
+                                                                     "src/pages/seo-website-audit/index.astro",
+                                                                     "src/pages/seo-website-audit/law-firms.astro",
+                                                                     "src/pages/seo-website-audit/local-seo.astro",
+                                                                     "src/pages/seo-website-audit/real-estate.astro",
+                                                                     "src/pages/seo-website-audit/saas.astro",
+                                                                     "src/pages/seo-website-audit/shopify.astro",
+                                                                     "src/pages/seo-website-audit/wordpress.astro",
+                                                                     "src/pages/website-content-audit/frequency.astro",
+                                                                     "src/pages/website-content-audit/how-to.astro",
+                                                                     "src/pages/website-content-audit/index.astro",
+                                                                     "src/pages/website-content-audit/services.astro",
+                                                                     "src/pages/what-is-an-seo-site-audit.astro",
+                                                                     "src/pages/why-website-audit-is-important.astro"
+                                                                 ],
+                                            "resolution_scope":  [
+                                                                      "Corrected current Shopify and WordPress implementation guidance",
+                                                                      "Added safe manual gates for pruning, redirects, consolidation and query overlap",
+                                                                      "Removed unsupported local review, directory, location-page and conversion thresholds",
+                                                                      "Aligned structured-data claims with visible content and current Google feature support while retaining valid HowTo vocabulary",
+                                                                      "Bound healthcare and legal audit CTAs to AuditWeb's actual non-clinical, non-legal scope",
+                                                                      "Separated hub, definition, DIY procedure and professional audit tasks",
+                                                                      "Aligned paid content-audit deliverables with the evidence used for page decisions"
+                                                                  ],
+                                            "primary_sources_checked":  [
+                                                                              "https://shopify.dev/docs/storefronts/themes/best-practices/performance/use-shopify-cdn",
+                                                                              "https://shopify.dev/docs/storefronts/themes/best-practices/performance/use-shopify-image-filters-efficiently",
+                                                                              "https://developers.google.com/crawling/docs/faceted-navigation",
+                                                                              "https://developer.wordpress.org/advanced-administration/security/hardening/",
+                                                                              "https://www.php.net/supported-versions.php",
+                                                                              "https://www.php.net/eol.php",
+                                                                              "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+                                                                              "https://developers.google.com/search/blog/2019/09/making-review-rich-results-more-helpful",
+                                                                              "https://developers.google.com/search/blog/2023/08/howto-faq-changes"
+                                                                          ],
+                                            "source_checks":  [
+                                                                  "All 32 manifest sources exist with title, description, 2026-09-11 updateDate and declared TOC targets",
+                                                                  "HowTo vocabulary retained with 10 HowToStep objects aligned to the visible procedure",
+                                                                  "Reviewed defect phrase scan passed",
+                                                                  "Placeholder, empty href, replacement-character and literal mojibake scan passed",
+                                                                  "Owned-source and review-report git diff whitespace check passed",
+                                                                  "No build run per owner assignment; root owns final integrated build and rendered QA"
+                                                              ]
+                                        },
+    "aggregate_checks":  {
+                             "files_read":  32,
+                             "changed_files":  30,
+                             "reviewed_no_change":  2,
+                             "missing_files":  0,
+                             "missing_titles":  0,
+                             "missing_descriptions":  0,
+                             "missing_update_dates":  0,
+                             "missing_toc_targets":  0,
+                             "encoding_or_placeholder_markers":  0,
+                             "required_download_assets_present":  4,
+                             "git_diff_check":  "pass after EOF whitespace repair",
+                             "build":  "not run per owner assignment; root owns integrated build"
+                         }
+}

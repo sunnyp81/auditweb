@@ -14,92 +14,39 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Website Usability Audit: Make Your Site Intuitive and Efficient"
-  description="A website usability audit evaluates how easily users can accomplish tasks on your site. Covers navigation, readability, forms, error handling, and task completion."
+  title="Website Usability Audit: Task Completion and Error Recovery"
+  description="Run a usability audit with realistic tasks, representative participants, navigation checks and reproducible findings. Separate observation from interpretation."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Usability Audit', href: '/website-usability-audit/' },
   ]}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <h2 id="what-is">What Is a Usability Audit</h2>
-  <p>A website usability audit evaluates how efficiently and effectively users can accomplish their goals on your website. While a UX audit examines the broader user experience including emotional responses and design aesthetics, a usability audit focuses specifically on task completion — can users find what they need, understand the interface, and complete actions without confusion or frustration?</p>
-  <p>Usability problems are conversion killers. Users don't complain about usability issues — they simply leave. A usability audit identifies these invisible barriers before they cost you revenue.</p>
-
-  <h2 id="vs-ux">Usability vs UX Audit</h2>
-  <p>These terms are related but distinct:</p>
-  <ul>
-    <li><strong>Usability audit:</strong> Focused on efficiency and effectiveness. Can users complete tasks? How many clicks does it take? Where do they get confused? This is measurable and task-oriented.</li>
-    <li><strong>UX audit:</strong> Broader scope including emotional response, visual design, brand perception, and overall satisfaction. Includes usability but also covers how users feel about the experience.</li>
-  </ul>
-  <p>A usability audit is a subset of a UX audit. If you can only do one, start with usability — the findings are more actionable and the ROI is more immediate.</p>
-
-  <h2 id="principles">Key Usability Principles</h2>
-  <p>Jakob Nielsen's 10 usability heuristics remain the gold standard for evaluating website usability:</p>
-  <ul>
-    <li><strong>Visibility of system status:</strong> Users should always know where they are and what's happening. Progress indicators, loading states, and confirmation messages are essential.</li>
-    <li><strong>Match between system and real world:</strong> Use language your users understand, not internal jargon. If your audience calls it a "quote" don't label the button "RFP."</li>
-    <li><strong>User control and freedom:</strong> Users make mistakes. Provide clear undo, back navigation, and exit paths for every flow.</li>
-    <li><strong>Consistency and standards:</strong> Similar elements should look and behave the same way throughout your site. Don't use blue underlined text for links in one section and green buttons in another.</li>
-    <li><strong>Error prevention:</strong> Design forms and interfaces to prevent errors before they happen. Use input masks, validation, and sensible defaults.</li>
-    <li><strong>Recognition rather than recall:</strong> Users shouldn't have to remember information from one page to use on another. Show options, provide context, and use visual cues.</li>
-    <li><strong>Flexibility and efficiency:</strong> Support both novice and expert users. Provide shortcuts for experienced users while maintaining clear paths for newcomers.</li>
-    <li><strong>Aesthetic and minimalist design:</strong> Every extra element on the page competes with the important elements. Remove what isn't essential.</li>
-    <li><strong>Help users recognise and recover from errors:</strong> Error messages should explain what went wrong in plain language and suggest how to fix it.</li>
-    <li><strong>Help and documentation:</strong> While good design shouldn't need instructions, provide help for complex tasks. FAQs, tooltips, and contextual help reduce friction.</li>
-  </ul>
-
-  <h2 id="navigation">Navigation Assessment</h2>
-  <ul>
-    <li><strong>Can users find what they need in 3 clicks or less?</strong> Map the most common user tasks and count how many clicks each requires. If key actions take more than 3 clicks, your navigation needs restructuring.</li>
-    <li><strong>Is the main navigation clear and logical?</strong> Menu labels should describe what users will find, not what your team calls it internally. Test with actual users — ask them where they'd click to find specific information.</li>
-    <li><strong>Does search work well?</strong> If you have a search function, test it with common queries. Does it return relevant results? Can users filter and sort results?</li>
-    <li><strong>Are breadcrumbs provided?</strong> On content-heavy sites, breadcrumbs help users understand their location and navigate back without using the browser's back button.</li>
-    <li><strong>Is the mobile menu usable?</strong> Test the hamburger menu — is it discoverable, easy to tap, and does it provide access to all important sections?</li>
-  </ul>
-
-  <h2 id="readability">Content Readability</h2>
-  <ul>
-    <li><strong>Reading level:</strong> For consumer websites, aim for 8th-grade reading level. Use the Hemingway App or Flesch-Kincaid readability test to check.</li>
-    <li><strong>Scanability:</strong> Users scan before they read. Use clear headings, short paragraphs (3-4 sentences max), bullet points, and bold key phrases.</li>
-    <li><strong>Typography:</strong> Body text should be at least 16px with 1.5 line height. Contrast ratio should be at least 4.5:1 between text and background.</li>
-    <li><strong>Content hierarchy:</strong> The most important information should be first (inverted pyramid). Don't make users scroll to find what they came for.</li>
-    <li><strong>Call to action clarity:</strong> Users should always know what to do next. CTAs should use action verbs and stand out visually from surrounding content.</li>
-  </ul>
-
-  <h2 id="forms">Form and Input Usability</h2>
-  <ul>
-    <li><strong>Field count:</strong> Every additional form field reduces completion rates. Only ask for information you actually need. Name and email might be enough for a lead form.</li>
-    <li><strong>Labels and placeholders:</strong> Every field must have a visible label (not just a placeholder). Labels should be above the field, not beside it on mobile.</li>
-    <li><strong>Input types:</strong> Use email, tel, number, and date input types to trigger the correct mobile keyboard.</li>
-    <li><strong>Error handling:</strong> Show errors inline next to the relevant field (not just at the top of the form). Use red for errors but also include a text description — don't rely on colour alone.</li>
-    <li><strong>Progress indication:</strong> Multi-step forms should show progress (Step 2 of 4). Long forms should have a save/continue-later option.</li>
-    <li><strong>Confirmation:</strong> After submission, clearly confirm success and tell the user what happens next.</li>
-  </ul>
-
-  <h2 id="testing">Usability Testing Methods</h2>
-  <ul>
-    <li><strong>Heuristic evaluation:</strong> A usability expert reviews the site against Nielsen's 10 heuristics. Fast, cheap, and catches 50-75% of usability issues.</li>
-    <li><strong>Task-based testing:</strong> Give 5-8 users specific tasks ("Find the pricing page", "Submit a contact form") and observe where they struggle. Even 5 users uncover 85% of usability problems.</li>
-    <li><strong>Session recording:</strong> Tools like Hotjar and FullStory record real user sessions. Watch how users actually interact with your site versus how you assume they do.</li>
-    <li><strong>Click heatmaps:</strong> Heatmaps show where users click, scroll, and hover. They reveal whether users are clicking what you want them to click.</li>
-    <li><strong>A/B testing:</strong> Once you've identified usability issues, use A/B tests to validate your proposed fixes before implementing them site-wide.</li>
-  </ul>
-
-  <h2 id="checklist">Usability Checklist</h2>
-  <ul>
-    <li><strong>Key tasks completable in 3 clicks or fewer</strong></li>
-    <li><strong>Navigation labels are user-centric</strong>, not internal jargon</li>
-    <li><strong>Search returns relevant results</strong></li>
-    <li><strong>Body text 16px minimum</strong> with adequate contrast</li>
-    <li><strong>Content is scannable</strong> with headings, bullets, and short paragraphs</li>
-    <li><strong>Forms have the minimum required fields</strong></li>
-    <li><strong>All form fields have visible labels</strong></li>
-    <li><strong>Error messages are inline</strong> and describe the fix</li>
-    <li><strong>Success states clearly confirm</strong> what happened</li>
-    <li><strong>Mobile navigation is easy to use</strong></li>
-    <li><strong>Loading states are shown</strong> for all async actions</li>
-    <li><strong>Back navigation works</strong> as expected throughout</li>
-  </ul>
+<p>A website usability audit checks whether people can complete defined tasks effectively and with understandable feedback. Select realistic tasks, record the test conditions and distinguish observed failures from an expert's prediction of difficulty.</p>
+<h2 id="what-is">What should a usability audit measure?</h2>
+<p>Record task completion, errors, assistance, detours and recovery. Time on task can be useful when the task and conditions are comparable. A faster task is not necessarily better if the participant misunderstood the result.</p>
+<p>Define success before testing. For a service enquiry, success may include finding the scope, understanding the commitment and completing an agreed test submission. A click on the form button is only one step.</p>
+<h2 id="vs-ux">How does usability differ from UX?</h2>
+<p>Usability focuses on completing tasks. A <a href="/website-ux-audit/">UX audit</a> also considers broader expectations, comprehension, satisfaction and the overall journey. Neither guarantees a commercial outcome.</p>
+<h2 id="principles">Which principles guide an expert review?</h2>
+<p><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Jakob Nielsen's ten usability heuristics</a> provide a framework for inspection. Apply them to concrete tasks rather than awarding a site a score without evidence.</p>
+<ul><li>Show the current state and the result of an action.</li><li>Use language familiar to the audience.</li><li>Provide safe ways to cancel, go back and recover.</li><li>Keep similar controls and conventions consistent.</li><li>Prevent foreseeable input mistakes.</li><li>Make needed information visible instead of requiring memory.</li><li>Support efficient use without hiding the basic path.</li><li>Remove information that distracts from the task.</li><li>Explain errors and the action needed to correct them.</li><li>Provide relevant help when the task requires it.</li></ul>
+<h2 id="navigation">How should navigation be tested?</h2>
+<p>Ask a participant to find something they genuinely need, without repeating the exact menu label in the task instruction. Record the first choice, mistaken routes and whether they recover.</p>
+<p>Check the mobile menu, breadcrumbs, search results and return path. There is no universal three-click rule: a clear longer route can work better than a short ambiguous one. Judge the route against observed task success.</p>
+<h2 id="readability">What makes content usable?</h2>
+<p>Content is usable when the audience can locate, understand and act on it. Define unfamiliar terms, put prerequisites before instructions and use headings that describe the information beneath them.</p>
+<p>Test real content at narrow widths and zoom. Readability formulas can flag complex writing but cannot determine whether a specialist explanation is accurate or useful. The <a href="/website-design-audit/">design audit</a> covers typography, contrast and responsive presentation.</p>
+<h2 id="forms">How should form usability be reviewed?</h2>
+<p>Test expected input, missing required input, invalid input, correction and successful completion. Check that instructions and labels remain available while typing and that useful values survive an error.</p>
+<p>Use suitable input types and autocomplete. Explain requirements before they cause a failure. W3C's <a href="https://www.w3.org/WAI/tutorials/forms/">forms tutorial</a> covers labels, instructions and feedback. Do not use colour alone to identify a problem.</p>
+<p>Coordinate test submissions and use test data. Record confirmation and delivery separately; a success message does not prove that the business received the request.</p>
+<h2 id="testing">Which testing method fits the question?</h2>
+<ul><li><strong>Expert inspection:</strong> identify likely barriers against a declared framework.</li><li><strong>Task testing:</strong> observe relevant participants working through realistic goals.</li><li><strong>Tree testing:</strong> test labels and hierarchy with less influence from visual design.</li><li><strong>Recorded-session review:</strong> inspect permitted recordings for interactions that need investigation.</li><li><strong>Controlled experiments:</strong> compare uncertain variants when measurement and sample size support the decision.</li></ul>
+<p>Participant numbers depend on the audience groups, tasks and research aim. A small qualitative round can reveal useful issues but does not guarantee a fixed percentage of all problems or a statistically representative result.</p>
+<h2 id="checklist">What should the usability handoff include?</h2>
+<ul><li>Audience, tasks, conditions and success definitions.</li><li>Observed behaviour with relevant screenshots or notes.</li><li>Separate interpretation, severity and confidence.</li><li>A proposed correction and accountable owner.</li><li>Keyboard, mobile and error-recovery checks where applicable.</li><li>A retest that repeats the original task and records remaining limits.</li></ul>
+<p>The <a href="/resources/agency-audit-toolkit/">audit toolkit</a> provides an implementation tracker. Use a <a href="/website-accessibility-audit/">dedicated accessibility assessment</a> when the scope requires broader standards-based evaluation.</p>
 </ContentLayout>

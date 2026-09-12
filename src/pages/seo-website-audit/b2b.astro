@@ -20,14 +20,15 @@ const toc = [
 ---
 
 <ContentLayout
-  title="B2B Website Audit: Fix What's Blocking Your Pipeline"
-  description="B2B websites face unique SEO challenges — long sales cycles, complex buyer journeys, and thin content. Learn what to audit to drive more qualified leads."
+  title="B2B SEO Website Audit: Pages, Search Demand and Enquiry Paths"
+  description="A B2B SEO audit checks whether search visibility supports the full buying journey, from research pages to qualified enquiry paths, with evidence for technical, content and conversion findings."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
   showLeadForm={true}
 >
-  <p>B2B websites operate under fundamentally different conditions than B2C or ecommerce sites, yet most SEO audits treat them identically. The buyer journey is longer, involving multiple stakeholders and decision stages that can span weeks or months. The search volume for B2B keywords is typically lower but far more valuable — a single conversion might be worth thousands or tens of thousands of pounds. And the content requirements are different, demanding depth, expertise, and trust signals that consumer-focused sites rarely need.</p>
+  <p>A B2B website audit checks whether search engines can access the site and whether each organic landing page helps a business buyer complete the next research or enquiry task. Review technical access, query-to-page mapping, evidence for product claims and the path from informational content to a qualified enquiry.</p>
 
   <p>A B2B website audit must account for these differences. It is not enough to check technical health and keyword placement. You need to evaluate whether your site supports the complete buyer journey from initial research through evaluation to purchase decision, whether your content demonstrates the expertise that B2B buyers require, and whether your conversion paths are designed for how business purchasing actually works — with multiple stakeholders, long consideration periods, and high-stakes decision-making.</p>
 
@@ -51,15 +52,15 @@ const toc = [
 
   <ul>
     <li><strong>Keyword targeting</strong> — verify that each lead generation page targets a specific commercial keyword cluster. Many B2B sites have generic service pages that target broad terms without addressing the specific queries their ideal customers use. Map each page to its target keywords using Search Console data and check whether the page actually ranks for its intended terms.</li>
-    <li><strong>Content depth</strong> — B2B lead generation pages need significantly more content than B2C equivalents. A 300-word service page that lists features and includes a contact button is not competitive against a 2,000-word page that explains the problem, presents the solution, demonstrates expertise through detail, addresses common objections, and provides evidence through case studies and data.</li>
+    <li><strong>Content completeness</strong> — check whether the page answers the questions needed to evaluate the offer. Judge usefulness against the query and competing results; a word count alone does not establish quality.</li>
     <li><strong>Social proof placement</strong> — check where and how social proof appears on lead generation pages. Client logos, testimonials, case study excerpts, and industry certifications should be visible without scrolling. B2B buyers are actively looking for evidence that companies like theirs have succeeded with your solution.</li>
     <li><strong>Call-to-action clarity</strong> — evaluate the primary CTA on each lead generation page. Is it clear what happens when the visitor clicks? "Get Started" is vague. "Book a 30-Minute Strategy Call" is specific and sets expectations. Check that CTAs are visible above the fold and repeated naturally throughout longer pages.</li>
-    <li><strong>Form length and fields</strong> — audit every form on lead generation pages. B2B forms need to collect enough information to qualify leads (company name, company size, budget range) without creating so much friction that visitors abandon the form. Forms with more than seven fields see significant drop-off. Test whether reducing fields improves submission rates.</li>
+    <li><strong>Form fields</strong> — record which fields are necessary for qualification and which create avoidable effort. Use field-level completion data or a controlled test before attributing abandonment to form length.</li>
   </ul>
 
   <h2 id="content-strategy-review">Content Strategy Review</h2>
 
-  <p>B2B content strategy must serve the entire buyer journey — from awareness through consideration to decision. Many B2B sites have blog content that drives traffic but never converts, because it targets top-of-funnel informational queries without creating a path to commercial pages. Others have commercial pages that do not rank because there is no supporting content establishing topical authority.</p>
+  <p>B2B content strategy should connect research, evaluation and decision tasks without assuming one universal funnel. Map each important query and landing page to the next useful step, then verify the path with internal links and analytics evidence.</p>
 
   <p>Audit your content strategy across these dimensions:</p>
 
@@ -110,29 +111,29 @@ const toc = [
 
   <h2 id="b2b-schema-and-structured-data">B2B Schema and Structured Data</h2>
 
-  <p>B2B websites have specific structured data opportunities that support both search visibility and entity recognition. Your schema audit should verify implementation of these types:</p>
+  <p>Structured data can identify entities and visible page facts in a machine-readable form. Select a type only when it accurately represents the page and a known consumer can use it; markup does not create authority or guarantee search visibility.</p>
 
   <ul>
-    <li><strong>Organisation schema</strong> — your homepage should include complete Organisation schema with name, url, logo, contactPoint, sameAs (linking to social profiles), address, and description. This establishes your business entity in Google's knowledge graph.</li>
-    <li><strong>Service schema</strong> — each service or solution page should use Service schema describing what you offer, who it serves, and how it is delivered. Include serviceType, provider, areaServed, and description.</li>
-    <li><strong>FAQ schema</strong> — if your service or product pages include frequently asked questions sections, mark them up with FAQPage schema. These can earn expanded SERP real estate that pushes competitors further down the page.</li>
-    <li><strong>Article schema for blog content</strong> — ensure that blog posts and thought leadership content use proper Article or BlogPosting schema with author information, publication date, and publisher details. Author markup is increasingly important for E-E-A-T signals.</li>
-    <li><strong>BreadcrumbList schema</strong> — verify that breadcrumb navigation is marked up as structured data on every page. This helps Google understand your site hierarchy and can display breadcrumb trails in search results instead of raw URLs.</li>
-    <li><strong>Event schema</strong> — if you host webinars, conferences, or training events, mark them up with Event schema. This can earn dedicated event rich results in Google.</li>
+    <li><strong>Organisation schema</strong> — use one consistent organisation identity and mark up visible, accurate facts such as name, URL and logo where appropriate. Do not add an address, contact point or social profile that is not current and verifiable.</li>
+    <li><strong>Service descriptions</strong> — make provider, offer, audience, delivery and service area clear in visible copy. Use Service vocabulary only when it represents those facts for a defined consumer; generic Service markup has no Google rich result.</li>
+    <li><strong>FAQ markup</strong> — use FAQPage only when the page contains visible questions and answers that meet Google's guidelines. Google limits FAQ rich results mainly to well-known government and health sites, so do not present the markup as a B2B visibility tactic.</li>
+    <li><strong>Article identity</strong> — when Article or BlogPosting markup fits the page, keep author, publication date and publisher facts consistent with visible content. Author markup does not substitute for accurate sourcing, first-hand evidence or demonstrable expertise.</li>
+    <li><strong>BreadcrumbList schema</strong> — where visible breadcrumb navigation exists, verify that the markup follows the same hierarchy. Google may use valid breadcrumbs in search, but not every page requires them.</li>
+    <li><strong>Event schema</strong> — eligible event pages can use Event markup when the visible dates, location, organiser and offer details match the structured data. Validate the specific type against Google's current documentation.</li>
     <li><strong>SoftwareApplication schema</strong> — if you sell software, use SoftwareApplication schema with applicationCategory, operatingSystem, offers, and aggregateRating where applicable.</li>
   </ul>
 
   <h2 id="measuring-audit-roi">Measuring Audit ROI</h2>
 
-  <p>A B2B SEO audit is only valuable if you can measure the business impact of the changes it recommends. Unlike ecommerce where revenue attribution is straightforward, B2B requires a more sophisticated measurement framework that accounts for long sales cycles and multi-touch buyer journeys.</p>
+  <p>A B2B SEO audit is only valuable if you can measure the business impact of the changes it recommends. Account for the sales cycle, multiple touchpoints and attribution gaps. Both B2B and ecommerce measurement require verified events and stated limitations.</p>
 
   <ul>
     <li><strong>Baseline your metrics before implementing changes</strong> — record your current organic traffic, keyword rankings for target terms, lead form submission rates, and pipeline value from organic leads. Without a clear baseline, you cannot measure improvement.</li>
     <li><strong>Track leading indicators weekly</strong> — organic traffic, keyword positions, indexed page count, and crawl errors are leading indicators that respond to changes within days or weeks. Monitor these to confirm that your technical and on-page fixes are taking effect.</li>
-    <li><strong>Track lagging indicators monthly</strong> — lead volume, lead quality (MQL and SQL rates), pipeline value, and revenue from organic leads are lagging indicators that reflect the cumulative impact of your SEO improvements over time. In B2B, expect a three to six month lag between implementing changes and seeing revenue impact.</li>
-    <li><strong>Calculate cost per lead by channel</strong> — compare the cost per organic lead (audit cost plus implementation time) against paid search cost per lead for the same keywords. This comparison almost always favours SEO once the initial improvements are in place, because organic leads continue flowing without incremental spend.</li>
-    <li><strong>Report in business terms</strong> — stakeholders in B2B organisations do not care about keyword rankings or organic sessions. They care about pipeline and revenue. Frame your audit results in terms of "pages fixed that now generate X leads per month worth Y in pipeline value" rather than "improved rankings for 47 keywords."</li>
+    <li><strong>Track business outcomes on their natural cycle</strong> — compare qualified leads, pipeline and revenue using the organisation's actual sales-cycle window. State attribution limits and avoid assigning a fixed lag without historical evidence.</li>
+    <li><strong>Calculate cost per qualified lead by channel</strong> — include audit and implementation costs, define attribution and compare like-for-like periods. Report the result from the site's own data rather than assuming organic search will be cheaper.</li>
+    <li><strong>Report the complete evidence chain</strong> — show technical and search measures alongside qualified leads, pipeline definitions and attribution limits. Claim revenue or pipeline impact only when the organisation's data supports it; do not backfill an illustrative X or Y after the fact.</li>
   </ul>
 
-  <p>Set a six-month review date when you complete your audit. At that point, compare your baseline metrics against current performance to quantify the ROI of every change implemented. This data justifies ongoing SEO investment and informs the scope of your next audit cycle.</p>
+  <p>Choose a review date that matches the sales cycle and expected recrawl or release timing. Compare the same metric definitions and annotate other changes before attributing an outcome to the audit work.</p>
 </ContentLayout>

@@ -1,0 +1,861 @@
+{
+  "summary": {
+    "source_pages": 121,
+    "rendered_routes": 180,
+    "source_dispositions": {
+      "edited": 113,
+      "new": 1,
+      "reviewed without page-source change": 7
+    },
+    "errors": []
+  },
+  "pages": [
+    {
+      "source": "src/pages/seo-website-audit/b2b.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "43c0737d4b24151f1362bfd7e58eda7c22f1d17ea88c73f71f6ea4717708b345"
+    },
+    {
+      "source": "src/pages/seo-website-audit/dental.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "c57a6cb0693d8b88e151dc2d5e8c61ba1af48b8b487188c32be0dd9aa4d5f788"
+    },
+    {
+      "source": "src/pages/seo-website-audit/ecommerce.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b1496af9d24f30f4975e0a0adc6982a6d925616498eb0a2a04467df9649e204b"
+    },
+    {
+      "source": "src/pages/seo-website-audit/full-audit.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "56bdfb74ff161669dbb4ca8669a1815dc65817ff15de9c6c17d0110d864e15de"
+    },
+    {
+      "source": "src/pages/seo-website-audit/healthcare.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "bd626c9955b4c5ba816394abe5d844ba0c9b46fcdbc40a1ba5f92288be177726"
+    },
+    {
+      "source": "src/pages/seo-website-audit/how-often.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "819ee991a1b39f837a19c1af64014d10b1823def1578af2d789a16a02235eaf5"
+    },
+    {
+      "source": "src/pages/seo-website-audit/how-to.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "2ae2f24809b440db33ff4326cb44a264e8e7f2ed2e3a1bca58c2b5a986d6c8e9"
+    },
+    {
+      "source": "src/pages/seo-website-audit/index.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "781e9dbe35695e4f74153ea521fc379d734ce61d502831d4c10f4567b6e15da9"
+    },
+    {
+      "source": "src/pages/seo-website-audit/law-firms.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "f41ed9eed49095ad11b234fd187c22d5418da35dedfde006be76cd8e2bafbced"
+    },
+    {
+      "source": "src/pages/seo-website-audit/local-seo.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "313b52573330d28269b1b56ac5d1647b9742aa05b405725752c54f1d18efce32"
+    },
+    {
+      "source": "src/pages/seo-website-audit/nonprofits.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "43222e62cf3063a4975267b4a1b9f884fce5dfd86f3238c69fd6f0db037d9083"
+    },
+    {
+      "source": "src/pages/seo-website-audit/on-site.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "44b4dc744904824ceab8d261cdc220c2ca8404ec3c3a6ee1e0292bb154706344"
+    },
+    {
+      "source": "src/pages/seo-website-audit/rankings-drop.astro",
+      "group": "search_content",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "5ea412a9ad507466e2b30aad5b0d0d06bafe3072a6bf2f72531fbca15b9454b2"
+    },
+    {
+      "source": "src/pages/seo-website-audit/real-estate.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "a73c1f453da395822faf3353dd3cd5a3788adc0343d5319cdca4e2bf54cf826a"
+    },
+    {
+      "source": "src/pages/seo-website-audit/report.astro",
+      "group": "search_content",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "262a194de9735895f6a05eb5baaa75cb9b3be5d1f10a96f1e379821a5a2abbe6"
+    },
+    {
+      "source": "src/pages/seo-website-audit/saas.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "8282a99095a3cf1e67055d5f555f872ed3697f48e6416707bd935b107c7e5c61"
+    },
+    {
+      "source": "src/pages/seo-website-audit/shopify.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "bde7a78a5480b76eaa0e969c9284849d32eac1a720bf0ce6b037a7c313e6c569"
+    },
+    {
+      "source": "src/pages/seo-website-audit/template.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "68f3b065d3970c0a5bb0eb770830654ca3d0c5cf34ab6b54272760fcefd9d269"
+    },
+    {
+      "source": "src/pages/seo-website-audit/wordpress.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "a548e97e3fecceba62dfc50cb0b4ba74cee707662adf2c4938dc0293376ccbcb"
+    },
+    {
+      "source": "src/pages/website-audit-vs-seo-audit.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e1bdedfefeaada187665be756be0a9316b6afe657f695cf729512fa6de58dc26"
+    },
+    {
+      "source": "src/pages/website-content-audit/copy.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b7b5b5f58edfe925762b53ae7a8a462affcdb88c03ce7d9bd528cf64ca45f6e5"
+    },
+    {
+      "source": "src/pages/website-content-audit/frequency.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e3b8b0d8dc56ee380e9537113adce9822ea4598eecb937d3762acae8814c9b6b"
+    },
+    {
+      "source": "src/pages/website-content-audit/how-to.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "f0d357a3c29cb66b74b9311de83261a559dca185a9f82e80d2a42cc778caa42d"
+    },
+    {
+      "source": "src/pages/website-content-audit/index.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "09e1c16ce5432d7f638fa98ff1a8b99d751757431db1d9ccdc2d4955d0ee791d"
+    },
+    {
+      "source": "src/pages/website-content-audit/services.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "542399cb648fd63bf80178a58fa2e15e2e2a99c2d7a992b080ccb36983a2b696"
+    },
+    {
+      "source": "src/pages/website-content-audit/template.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "f8e321ac695dc56eccc8625115f66fdb7b6ed1e1f35669a9c2af0b42158ca82a"
+    },
+    {
+      "source": "src/pages/website-content-audit/tools.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "17e52889caa8ca31484a0fdbd970a7d6c6caced3243056ede553068df62f6824"
+    },
+    {
+      "source": "src/pages/what-does-a-website-audit-include.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "21a141e19311f6265388dec4b462cbe7a028c04684765ee1921736570d9dcd8d"
+    },
+    {
+      "source": "src/pages/what-is-a-technical-seo-audit.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "8ca13f7a20616504b8606b9dedbc1ae4b96a4631343ce4f6d69b59e9ce8d78dd"
+    },
+    {
+      "source": "src/pages/what-is-a-website-audit.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "a653e46a5fe279c7604bf8c1fb6d801ed962ec629b65a4ef9e8faae4d9b0358c"
+    },
+    {
+      "source": "src/pages/what-is-an-seo-site-audit.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "4dba7a0ee61130639780dbb58db35148fd7a31d1c6d5e1c5f716f6db3330a977"
+    },
+    {
+      "source": "src/pages/why-website-audit-is-important.astro",
+      "group": "search_content",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "2fcfa190e107bd7bb6fc03526858947bf9a0bdd11606aef929be8ad6026c8eca"
+    },
+    {
+      "source": "src/pages/technical-website-audit/checklist.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "3ca47bab2fd6df6614a6e0d8ce0a90bc521711fb2633043eabe12d59c197b358"
+    },
+    {
+      "source": "src/pages/technical-website-audit/code.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e4b8abeeac1a1427c7db99a52c6c380b8689588e2476f3985c87c54c44b43281"
+    },
+    {
+      "source": "src/pages/technical-website-audit/core-web-vitals.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "76b99c3cc4f4871d9a6afd3951a043e795fdd98a66754833cddfa9b00f4c55f6"
+    },
+    {
+      "source": "src/pages/technical-website-audit/how-to.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "030337bed0938413c96a7d663f92950a73954b16320969bea73e7fc0c47c3168"
+    },
+    {
+      "source": "src/pages/technical-website-audit/index.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "db5161476932b69dd9e567863e4751612a6e913c32e73b42da780ebf4ae20717"
+    },
+    {
+      "source": "src/pages/technical-website-audit/mobile.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "25c7524f0ae5e263fa3c14e2f40fc74af8e295bad1847450fa75b2a8798a0e9b"
+    },
+    {
+      "source": "src/pages/technical-website-audit/performance.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "54243cf37cbada9a2b1d23eb4b11de472eedcbb73771767bdf9b1f99e3580c6f"
+    },
+    {
+      "source": "src/pages/technical-website-audit/report-template.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "da60c654afdb79dab8a8d5aa9668c663dc64e696cef141b893b95f2e0ba8fba4"
+    },
+    {
+      "source": "src/pages/technical-website-audit/speed.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "5a3dccab894a2a1424ef9a354366c1927f71ff65e5724201c0703c035ba4f882"
+    },
+    {
+      "source": "src/pages/technical-website-audit/structure.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "611a903c4b012af4095425cc423fb8ab92e2ff731a906040d445898985d8920a"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/ada-compliance.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "45626547193342a6afee3fdb057653397b793096c9e8cb2150e5ee4df1b5bd86"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/checklist.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "0d2e409ddb5fb9cc7eb0a3f876798e55d1b6794af8ee785e391079ec477a63d8"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/cost.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "28acb7089b9bb00a168781752b7e18ce47871cf8f3582577dfbd8050237703b1"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/index.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "16b2056c0137f4e2cd5b66030553ccf8d4c7f5c05e7e1af0c096eb09f461427c"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/tools.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "5c48764c11b28ee220c0288450b9d8130f611696dd8bc2c3137f370388cd8157"
+    },
+    {
+      "source": "src/pages/website-accessibility-audit/wcag.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "048caa7645b9738b27aef1dbd319161e5b245714a2f77ca56779f0adbf9f2621"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/accessibility.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "01497c7e9499246dbc50fc10fceab43bad7cc98ae0c8b64afd84095cde89de71"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/content-template.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "213d5cf76c4dd3414e907a208b7307dcf3acf7199ec5863e9defaa5c3364b9fd"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/ecommerce.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "fcb58c47e008543d3b8f41340d6200417f03fc8052ec6e15ac70f77b3f8fbd4c"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/index.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "7e6e483c6ab60e1254c7d0d948c883730c50b79121a133d13607c88592c12052"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/redesign.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "d0b399916cc4cc0a00f594c3072e1c0d08c9cf4faa1f14826fa15b0e42fc3b69"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/security.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "6a7f4912f25148e664d80b881e9483771aefd1a74016d282b01e876accf3ac8c"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/seo.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "68a7b0cae16dee85e0ad4d0e92db8edb3c7d90afc74f603b0ebdc69268211b4d"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/template.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "17031325a69becdb4e73d48701997b620d4b3f062ea7bec17c1417bb5bc96017"
+    },
+    {
+      "source": "src/pages/website-audit-checklist/wordpress.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "69b775ed6cdb3aa803c945bb0a60a4fd0d54350ed6b2994658dd5fe5c71e2f7f"
+    },
+    {
+      "source": "src/pages/website-security-audit/checklist.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "dfecb1f40a97261c00c5b51d626d7d46614617775ba948ddbbf87d3db040eb5b"
+    },
+    {
+      "source": "src/pages/website-security-audit/cost.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "2d54d713256c4f77061dd9c081f45eb212a5121796caf2b4b18159c319b1f80f"
+    },
+    {
+      "source": "src/pages/website-security-audit/gdpr.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "7bbdbab28283a8be7f54bd1b806348bc2c3ae894e3e8f7543b10d479d156e90c"
+    },
+    {
+      "source": "src/pages/website-security-audit/index.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "5d1edb4b0d3a3cd97bd46bb10c61e2f7e208d4f109342a3365eee38f4cc20e23"
+    },
+    {
+      "source": "src/pages/website-security-audit/tools.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "0d9b4eb5fd8486f3638e1217c2e4f618d6ab08d4e971f25cd4ae1e7c4ecc3165"
+    },
+    {
+      "source": "src/pages/website-security-audit/web-app.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "39b1f4d76e0c0dc3f8ab31a485b521038c3237e4ed924bd2185fd81f39a71a69"
+    },
+    {
+      "source": "src/pages/website-cookie-audit.astro",
+      "group": "technical_access",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "db0de6298dcfdf3f4f6f6d16e0342965b686c815aa326ec74c8adda92a919700"
+    },
+    {
+      "source": "src/pages/seo-audit-services/agency.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "d062dfde8e7a4bc0f08fc5099026827969ed689afda41522eadc2aa1b1fbcdf3"
+    },
+    {
+      "source": "src/pages/seo-audit-services/consultant.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "df93c71a6654a313fea49deef1e2ef7a6c4a8012bc615e367cab6f69d35d868b"
+    },
+    {
+      "source": "src/pages/seo-audit-services/enterprise.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b18fe7f250dc62013937e56056816389d7b1332db628145f70efa1d80ca7e9e2"
+    },
+    {
+      "source": "src/pages/seo-audit-services/index.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "3f443f0525b6b4657088fb99442c5e7c4610ddd5c49e6ce30052e027828e5d24"
+    },
+    {
+      "source": "src/pages/seo-audit-services/technical.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "225e42ef27230770fdce41cc2ccdb75b9d9f7e2cfad5a79add039852750a35d3"
+    },
+    {
+      "source": "src/pages/website-audit-services/[city].astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 60,
+      "sha256": "731fbb0968b56d298567e6f2e2228781ffb0241577c990c0285506c01604d240"
+    },
+    {
+      "source": "src/pages/website-audit-services/agencies.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "38aab07a042209f78d14a337082128869070535d7ae8b1a88a5a4a0b356f5ad2"
+    },
+    {
+      "source": "src/pages/website-audit-services/comprehensive.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "3f69cdeaf4b24df541a96d30934fa79971f129fabb3874c05dbd15336c994a7a"
+    },
+    {
+      "source": "src/pages/website-audit-services/consultant.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "47eb5bfe9706c609a9f012a67de6c69bc14090e99c2dec94b59a28b94b73d23e"
+    },
+    {
+      "source": "src/pages/website-audit-services/cost.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "a1e2ad1ac878dc5736a58cd69f92da2efd0f80bfd87a0fadff08a86ee8455cbc"
+    },
+    {
+      "source": "src/pages/website-audit-services/ecommerce.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "98d514aec12fee37ab294ff11201cf41387211b3a9d4b2a793a1612d16cfb1e8"
+    },
+    {
+      "source": "src/pages/website-audit-services/index.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "705ffe93d4b3e8dc95c8b6ae05bb8eac002d427469f621fd97257d94fa2fb7e7"
+    },
+    {
+      "source": "src/pages/website-audit-services/locations.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b1f3732babf373e870fed89e7aaa7f6bbed284d82ec60a62a3f4fd97b501576d"
+    },
+    {
+      "source": "src/pages/website-audit-services/professional.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "79cf2a24c9cd4cca8ceb1b7202164686c05392dddca61c892ceef1d5b1424b96"
+    },
+    {
+      "source": "src/pages/website-audit-services/report-example.astro",
+      "group": "services_locations",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "4df0921fe93bc51fe771c43b8beb62559166535678f938b89cd5ff66a2afaf24"
+    },
+    {
+      "source": "src/pages/website-audit-services/wordpress.astro",
+      "group": "services_locations",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "85fbc0c5a6be9eda0a8501e4fd37a7c2c9fb26cb0c46fe4342e747d95e90699a"
+    },
+    {
+      "source": "src/pages/404.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "28a44a29635c696c1a3abcb5e8c9e4b98b0e7c84698bad9bd2b0844a6e034445"
+    },
+    {
+      "source": "src/pages/case-studies/auditweb-self-audit.astro",
+      "group": "root",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "c19a89de0af1b944e6f2dc58060406c14eb5c51b3b3e9d667f765c405682608d"
+    },
+    {
+      "source": "src/pages/competitor-website-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "fc37e8001994f86bcdf4738d382497947a2d62b453f3d49ca43add2c7dd7fb1e"
+    },
+    {
+      "source": "src/pages/cro-website-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "002b2ed7d27b8d793548eec7b1e403958dedc4ec9bb1ecf2df525372578ea6c1"
+    },
+    {
+      "source": "src/pages/free-website-audit/ai.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "7f5dea1155e782905ac5dac2600499063e0ee9caca92d3ac610b02c4d2e3fd77"
+    },
+    {
+      "source": "src/pages/free-website-audit/index.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "0eb47c82c155c96ddef991d64a72cc90f6f87844a1a1f7985434d381d47be37a"
+    },
+    {
+      "source": "src/pages/free-website-audit/instant.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "16747b450104d33a6654f37ab5e1926e3781df826d5339dcf444ee61be37fdba"
+    },
+    {
+      "source": "src/pages/free-website-audit/online.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b94e26208c6269297edd77370f5d5862e0255d907e789e69312360977a6700d2"
+    },
+    {
+      "source": "src/pages/free-website-audit/report.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "d2f0f2dd4c657fa8d3cb49782e63534bc6d3d6d1faa18b2761a7ec6464f06153"
+    },
+    {
+      "source": "src/pages/free-website-audit/seo.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "f52036083f55140b4991913573e1ded2a5c88b7ec95441266547f52d41e63ffa"
+    },
+    {
+      "source": "src/pages/free-website-audit/small-business.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "75f40ce658578e509363d0402f756b5b086316d67221e8c3eb8bcc94c9a1fd9f"
+    },
+    {
+      "source": "src/pages/index.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "6f35374c53196c027beec2e38a05e4f4354f8aa26ab228ed10215494c33bc800"
+    },
+    {
+      "source": "src/pages/privacy.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "d326a4d31b891ece939423fa4cf8679f2240a9e4330b63969c4c296467d52b49"
+    },
+    {
+      "source": "src/pages/resources/agency-audit-toolkit.astro",
+      "group": "root",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "17018e6b65b868f3a594f60d6b75c180c90c9f236ae848d5dd57fbcd10611f87"
+    },
+    {
+      "source": "src/pages/subscribed.astro",
+      "group": "root",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "535f60d2d5a49375409479ea6aa2ddd43b6846694cffe65809a020254df6f06d"
+    },
+    {
+      "source": "src/pages/terms.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "096d8be358b7045937c61999c27ea202df306fa8cb7ca34962ee0f728d65ec10"
+    },
+    {
+      "source": "src/pages/thank-you.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "114a227f0255436da60236fdc99d91bdee97d0e268c1d0089940e33a967c2239"
+    },
+    {
+      "source": "src/pages/website-analytics-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "ac248f6d7deb9feb3d8cc83bb99a13fe90e70cdf7031211563cc658020382fbd"
+    },
+    {
+      "source": "src/pages/website-audit/index.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "c5e092ac40b54c87d09f4d17927b3e85f4ed5fddcf3994a1882e6da871daa5c7"
+    },
+    {
+      "source": "src/pages/website-backlink-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e2cbebac1bb109a7c5cd0b113facae9bc3ea5bb83af6903a5760b7afb3f975c4"
+    },
+    {
+      "source": "src/pages/website-conversion-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "f4581a3b780ace95077ae258906c0e532b272f2855bd4c090b124b80188a8a60"
+    },
+    {
+      "source": "src/pages/website-design-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "7b000737d7404cccd221ab16b4a0fad5bd833469efac418b383adfd185226895"
+    },
+    {
+      "source": "src/pages/website-tag-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e352f22df1eaef5d8666a94e24beca3857a3bdec4b84361630041b0d5392beb9"
+    },
+    {
+      "source": "src/pages/website-usability-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "8cfc7dfb7797ab9cbe660a9d0624fc84dd6526dd363160dc15a0d8444a402542"
+    },
+    {
+      "source": "src/pages/website-ux-audit.astro",
+      "group": "root",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e8e0d796a52677d25558e0d655eeafefefe65c236124446aab17aecbca49f93d"
+    },
+    {
+      "source": "src/pages/about.astro",
+      "group": "root",
+      "status": "new",
+      "generated_routes": 1,
+      "sha256": "acd00da00ab9e7d90321c56cf0f348c23151b60f6b7169ec8c61f6c47decd6f8"
+    },
+    {
+      "source": "src/pages/website-audit-tools/agencies.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b8a7c3c702954c816457b7010d60f043b447cabc6eaf0f3f19eed19b81058141"
+    },
+    {
+      "source": "src/pages/website-audit-tools/ahrefs.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "9e334791253c9e8cbb8b7ce92f20cd8786bc09591f21bfc4fc30eeafccd502cb"
+    },
+    {
+      "source": "src/pages/website-audit-tools/automated.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "0ace3d3e06e5ca0903cd43b97e784d08856d7fc3f4bba6a9cd23a44efb16af78"
+    },
+    {
+      "source": "src/pages/website-audit-tools/best-free.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "1b9a77dc4db55484a719269cd86b99521901cc06d5bfbc53c055699abb2995fd"
+    },
+    {
+      "source": "src/pages/website-audit-tools/best-software.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "6b281cc88a6d61f17e4d9e0083b544d899f1c7a87b660c822a834f5f213e8f07"
+    },
+    {
+      "source": "src/pages/website-audit-tools/comparison.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "d3ecf925db51ccc5ea353a90b9dadcae5096b7d1ec9445c8501e522f7b6d8da5"
+    },
+    {
+      "source": "src/pages/website-audit-tools/index.astro",
+      "group": "tools",
+      "status": "reviewed without page-source change",
+      "generated_routes": 1,
+      "sha256": "a3ad3391d1e38a14333ef652d60f74c0f17d74a6559dc48355ec5e2354b63897"
+    },
+    {
+      "source": "src/pages/website-audit-tools/lighthouse.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "b1640a1b646f5e20dd7643bc3c8880e1380511973c08270e12d50d1315ab5ff9"
+    },
+    {
+      "source": "src/pages/website-audit-tools/moz.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "312773345eb1624dd5fda814dc97f23fd1e847eaca1afd2b19e0d1fe40edd153"
+    },
+    {
+      "source": "src/pages/website-audit-tools/screaming-frog.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "6f86f3296fb1fe10dc9d8c5f97d5597722ed954fa0640279430844b83253a629"
+    },
+    {
+      "source": "src/pages/website-audit-tools/se-ranking.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "e46a9ae63a50df6b1b8b3372208c7ba1c33e3ea82f4ea874a2b5e7d7c8c436aa"
+    },
+    {
+      "source": "src/pages/website-audit-tools/semrush.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "981d8b573006971cb8d6396a7d48f36ee8c876b41dfc224379fda313d16b3878"
+    },
+    {
+      "source": "src/pages/website-audit-tools/ubersuggest.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "817e833f82a5fe49459e7835d920e265eb5b77b46ee9faf52de2b5954f7052bd"
+    },
+    {
+      "source": "src/pages/website-audit-tools/white-label.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "2f7941e51e6cbb243864590ef6515545f9dd79253486236b5a381eb35fef9db0"
+    },
+    {
+      "source": "src/pages/website-audit-tools/woorank.astro",
+      "group": "tools",
+      "status": "edited",
+      "generated_routes": 1,
+      "sha256": "58ba8982f6f056bda997ca77af430f50d03a077f9d4cf2386bfacd1e218d9905"
+    }
+  ]
+}

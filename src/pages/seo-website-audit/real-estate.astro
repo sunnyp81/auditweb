@@ -13,8 +13,8 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Real Estate Website SEO Audit: Rank for Listings and Local Searches"
-  description="Real estate websites face unique SEO challenges with IDX listings, thin content, and intense local competition. Learn how to audit and optimise your real estate site."
+  title="Real Estate SEO Audit: Listings, Area Pages and Local Search"
+  description="Audit real estate SEO across listing feeds, canonical URLs, area pages, agent evidence, local profiles and lead paths without promising rankings."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'SEO Audit', href: '/seo-website-audit/' },
@@ -23,14 +23,15 @@ const toc = [
   toc={toc}
   showLeadForm={true}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
   <h2 id="challenges">Real Estate SEO Challenges</h2>
-  <p>Real estate websites have distinct SEO problems that don't exist in other industries. The biggest challenge is competing with portal giants like Zillow, Realtor.com, and Rightmove that dominate organic search for property-related queries. Individual agents and brokerages can't outrank these portals for generic searches — but they can win for hyper-local, long-tail queries.</p>
+  <p>A real estate SEO audit checks listing-feed URLs, index controls, area-page usefulness, agent evidence, local profiles and enquiry paths. Separate portal-feed limitations from changes the agency controls and test representative listing states such as active, sold, withdrawn and expired.</p>
   <p>Other common challenges include thin IDX listing pages, duplicate content across agents using the same MLS data, and sites built on proprietary platforms with limited SEO control.</p>
 
   <h2 id="idx">IDX and Listing Page SEO</h2>
   <ul>
-    <li><strong>Index or noindex IDX pages:</strong> This is the critical decision. IDX listing pages pulled from the MLS are duplicate content — the same listing appears on hundreds of agent websites. If you index them, you risk thin content penalties. If you noindex them, you lose potential long-tail traffic. The best approach: noindex individual listing pages but allow indexing of search results pages that you've enriched with unique neighbourhood content.</li>
+    <li><strong>Index strategy for listing URLs:</strong> decide which active, sold, expired, filtered and search-result pages offer unique value and stable canonical URLs. Do not noindex all listings by default; test platform behaviour and preserve pages with demand or links.</li>
     <li><strong>Unique content on listing pages:</strong> If you choose to index listing pages, add unique value — agent commentary, neighbourhood descriptions, school information, or market analysis. The MLS description alone isn't enough.</li>
     <li><strong>Canonical tags:</strong> Ensure IDX pages have proper canonical tags to avoid duplicate content issues from filtered and sorted views.</li>
     <li><strong>Sold listings:</strong> Handle sold listings carefully. Either redirect to the area page, noindex them, or keep them with "sold" status and market data — this can build valuable historical content.</li>
@@ -40,8 +41,8 @@ const toc = [
   <h2 id="area-pages">Neighbourhood and Area Pages</h2>
   <p>This is where individual agents can compete. The portals can't create authentic, detailed neighbourhood content for every area — but a local agent can:</p>
   <ul>
-    <li><strong>Create pages for every neighbourhood you serve:</strong> "Homes for sale in [Neighbourhood], [City]" — with unique content about the area, schools, amenities, market trends, and lifestyle.</li>
-    <li><strong>Include real data:</strong> Average home prices, days on market, price trends, school ratings, and walkability scores. Updated data signals freshness to Google.</li>
+    <li><strong>Create useful area pages:</strong> publish a location page when the agency has accurate local information and a real service relationship. Avoid near-duplicate pages that merely swap place names.</li>
+    <li><strong>Include verified data when useful:</strong> publish market, school or accessibility data only when the source, date, geography and permitted use are clear. Current data can help users make a decision; it does not create a generic freshness ranking signal.</li>
     <li><strong>Embed neighbourhood maps:</strong> Interactive maps showing the area boundaries, nearby amenities, and current listings add genuine value.</li>
     <li><strong>Link to relevant listings:</strong> Connect area pages to filtered IDX results for that neighbourhood. This creates a useful hub for buyers researching the area.</li>
     <li><strong>Market update content:</strong> Monthly or quarterly market updates for each area provide recurring fresh content and establish you as the local market expert.</li>
@@ -58,7 +59,7 @@ const toc = [
   <h2 id="local">Local SEO for Agents</h2>
   <ul>
     <li><strong>Google Business Profile:</strong> Essential for real estate. Use the "Real estate agent" category. Add photos of properties you've sold, your office, and your team.</li>
-    <li><strong>Reviews:</strong> Ask every closing client for a Google review. Include specific details in your review request template: "Would you mind mentioning [neighbourhood] and [type of transaction]?"</li>
+    <li><strong>Reviews:</strong> request honest reviews without scripting sentiment or asking clients to insert ranking keywords. Follow the platform's rules and disclose material connections.</li>
     <li><strong>Local citations:</strong> List on Zillow, Realtor.com, Yelp, and local real estate directories. Ensure NAP consistency across all platforms.</li>
     <li><strong>Event and community involvement:</strong> Content about local events, community sponsorships, and market commentary builds local authority.</li>
   </ul>
@@ -67,7 +68,7 @@ const toc = [
   <ul>
     <li><strong>Buyer guides:</strong> "First-time homebuyer guide for [City]", "How to buy a house in [Area]" — these capture high-intent searches from active buyers.</li>
     <li><strong>Seller guides:</strong> "How to sell your home in [City]", "What's my home worth in [Neighbourhood]" — captures sellers who are your listing opportunities.</li>
-    <li><strong>School guides:</strong> "Best schools in [Area]" — families are one of the largest buyer segments and school quality drives location decisions.</li>
+    <li><strong>School information:</strong> link to current official school and admissions sources. Avoid unsupported rankings or fair-housing-sensitive targeting and have local compliance guidance reviewed.</li>
     <li><strong>Relocation guides:</strong> "Moving to [City]: Everything you need to know" — captures relocating buyers early in their journey.</li>
     <li><strong>Market reports:</strong> Monthly market data for your area positions you as the local expert. Include charts, comparisons, and your professional analysis.</li>
   </ul>
@@ -75,7 +76,7 @@ const toc = [
   <h2 id="checklist">Real Estate Audit Checklist</h2>
   <ul>
     <li><strong>IDX pages handled correctly</strong> (indexed with unique content or noindexed)</li>
-    <li><strong>Neighbourhood pages created</strong> for all served areas</li>
+    <li><strong>Neighbourhood pages justified</strong> by real coverage, distinct user tasks and sourceable local evidence</li>
     <li><strong>Area pages include real data</strong> — prices, trends, schools</li>
     <li><strong>Agent profiles detailed</strong> with schema markup</li>
     <li><strong>GBP optimised</strong> with photos and reviews</li>
@@ -84,7 +85,7 @@ const toc = [
     <li><strong>Page speed acceptable</strong> despite IDX integration</li>
     <li><strong>Buyer and seller guides</strong> targeting local keywords</li>
     <li><strong>Market reports published</strong> regularly</li>
-    <li><strong>Testimonials displayed</strong> with review schema</li>
+    <li><strong>Testimonials displayed accurately</strong>; no self-serving LocalBusiness review-rich-result promise</li>
     <li><strong>SSL active</strong> and security headers configured</li>
   </ul>
 </ContentLayout>

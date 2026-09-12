@@ -1,93 +1,63 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
-
 const breadcrumbs = [
   { label: 'Website Audit', href: '/website-audit/' },
   { label: 'SEO Audit Services', href: '/seo-audit-services/' },
   { label: 'SEO Audit Consultant', href: '/seo-audit-services/consultant/' },
 ];
-
 const toc = [
-  { label: 'What an SEO Audit Consultant Does', id: 'what-an-seo-audit-consultant-does' },
-  { label: 'When to Hire One', id: 'when-to-hire-one' },
-  { label: 'Consultant vs Agency vs Software', id: 'consultant-vs-agency-vs-software' },
+  { label: 'When a Consultant Helps', id: 'when-to-hire-one' },
+  { label: 'Consultant Deliverables', id: 'what-an-seo-audit-consultant-does' },
+  { label: 'Consultant vs Service vs Tools', id: 'consultant-vs-agency-vs-software' },
   { label: 'Pricing', id: 'pricing' },
   { label: 'FAQ', id: 'faq' },
 ];
-
 const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'SEO Audit Consultant',
-  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
-  description: 'A dedicated SEO audit consultant for businesses that need a single expert diagnosing organic search problems, not a generalist website review.',
-  priceRange: '$150-$897',
-  areaServed: ['US', 'GB'],
+  '@context': 'https://schema.org', '@type': 'Service', name: 'SEO Audit Consultant',
+  provider: { '@type': 'Organization', '@id': 'https://auditweb.site/#organization', name: 'AuditWeb', url: 'https://auditweb.site/' },
+  description: 'A scoped SEO audit consultation for search diagnosis, evidence review and implementation planning.',
+areaServed: ['US', 'GB'],
 };
 ---
-
 <ContentLayout
-  title="SEO Audit Consultant: Hire a Dedicated Specialist"
-  description="An SEO audit consultant diagnoses organic search problems specifically — rankings, crawlability, content gaps. Hourly rates from $150/hr, project engagements from $897."
-  breadcrumbs={breadcrumbs}
-  toc={toc}
-  schema={schema}
-  showLeadForm={true}
-  publishDate="2026-08-26"
+  title="SEO Audit Consultant: Scope, Evidence and Pricing"
+  description="Choose an SEO audit consultant for a complex search diagnosis or expert review. See the evidence, deliverables and pricing questions to agree before work starts."
+  breadcrumbs={breadcrumbs} toc={toc} schema={schema} showLeadForm={true}
+  publishDate="2026-08-26" updateDate="2026-09-11"
 >
+<p>An SEO audit consultant investigates a defined organic-search problem and explains what the evidence supports. The engagement should name the consultant or review team, scope, access, deliverables and decision that the report must inform.</p>
+<p>Choose consultation when the problem needs discussion and iteration. Choose a fixed audit service when the question and output are already clear.</p>
 
-<p>An SEO audit consultant is one specialist assigned to your account. That's different from a team splitting the work across technical, content, and security specialists. This single-point-of-contact model suits businesses with a specific ranking problem who want one expert who knows the whole picture — a broader <a href="/website-audit-services/consultant/">website audit consultant</a> covers security and accessibility alongside SEO instead.</p>
+<h2 id="when-to-hire-one">When does an SEO audit consultant help?</h2>
+<p>A consultant helps when the site has an unexplained search decline, a planned migration, complex rendering or conflicting recommendations. The consultant should form hypotheses, collect relevant evidence and state which causes remain unproven.</p>
+<p>Google's <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes">site-move guidance</a> calls for URL mapping, redirects, canonical checks and updated sitemaps. A migration consultation can turn those requirements into a site-specific review plan.</p>
 
-<h2 id="what-an-seo-audit-consultant-does">What an SEO Audit Consultant Does</h2>
+<h2 id="what-an-seo-audit-consultant-does">What should the consultant deliver?</h2>
+<p>The consultant should deliver a scope record, evidence log, prioritised findings and verification plan. Each finding should name the affected URLs and separate observation from likely impact.</p>
+<ul>
+  <li><strong>Diagnosis:</strong> test agreed causes against crawl, indexation and performance evidence.</li>
+  <li><strong>Priorities:</strong> rank actions by evidence, dependency, effort and business importance.</li>
+  <li><strong>Handoff:</strong> describe the change and the observable check that closes the finding.</li>
+  <li><strong>Limits:</strong> record missing access, incomplete samples and questions outside scope.</li>
+</ul>
+<p>Review the <a href="/website-audit-services/report-example/">website audit report example</a> to see a dated evidence format.</p>
 
-<p>The consultant runs the crawl, reviews Search Console data, benchmarks your competitors, and writes the findings personally rather than delegating to a production team. You get direct access to ask follow-up questions during and after the engagement. The same person handles any re-check after you've implemented fixes.</p>
+<h2 id="consultant-vs-agency-vs-software">Should you choose a consultant, fixed service or software?</h2>
+<p>Choose by the decision you need to make. Software collects repeatable data.</p>
+<p>A fixed service interprets an agreed scope. A consultant supports an investigation that may change as evidence appears.</p>
+<div class="overflow-x-auto" tabindex="0" role="region" aria-label="Comparison of SEO audit options">
+<table><thead><tr><th>Option</th><th>Best use</th><th>Buyer must confirm</th></tr></thead><tbody>
+<tr><td>Consultant</td><td>Complex diagnosis or migration planning</td><td>Named contact, time, outputs and follow-up</td></tr>
+<tr><td>Fixed audit service</td><td>Defined one-off review</td><td>Page sample, checks, report and delivery date</td></tr>
+<tr><td>Software</td><td>Repeatable in-house data collection</td><td>Who validates and prioritises the output</td></tr>
+</tbody></table></div>
 
-<h2 id="when-to-hire-one">When to Hire One</h2>
+<h2 id="pricing">How much does AuditWeb's audit support cost?</h2>
+<p>AuditWeb's basic audit starts at $297 USD and its comprehensive audit starts at $997 USD. Consultation, migration support, large sites and ongoing work use a custom quote based on time and deliverables.</p>
+<p>Confirm whether the quote covers investigation only, a written report, meetings, implementation advice and later verification. Rankings and recovery dates cannot be guaranteed.</p>
 
-<p>Three situations call for a dedicated consultant over a packaged audit product. A traffic drop with no obvious cause in Search Console needs someone who can work through hypotheses interactively instead of running a fixed checklist. A pre-migration review benefits from a consultant available for questions throughout the migration rather than a one-time report. An ongoing retainer relationship works better with continuity — the same person tracking your site over months notices patterns a fresh auditor each time would miss.</p>
-
-<h2 id="consultant-vs-agency-vs-software">Consultant vs Agency vs Software</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Option</th>
-      <th>Best For</th>
-      <th>Trade-off</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Dedicated consultant</td>
-      <td>Ongoing relationship, complex or unusual problems</td>
-      <td>Higher hourly cost than packaged audits</td>
-    </tr>
-    <tr>
-      <td>Full audit service</td>
-      <td>One-off diagnosis at a fixed price</td>
-      <td>No ongoing relationship with the same analyst</td>
-    </tr>
-    <tr>
-      <td>Software tools</td>
-      <td>Teams with in-house SEO expertise</td>
-      <td>You still need to interpret the output yourself</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="pricing">Pricing</h2>
-
-<p>Hourly engagements run $150-$300 depending on scope and urgency. Project-based engagements start at $897 for a defined diagnosis-and-fix-list scope. Ongoing retainers are quoted after an initial project.</p>
-
-<h2 id="faq">FAQ</h2>
-
-<h3>How is an SEO audit consultant different from the SEO audit service?</h3>
-<p>The <a href="/seo-audit-services/">SEO audit service</a> is a fixed-scope, fixed-price product delivered by whoever is available. A consultant is one named specialist working with you directly. Pricing runs hourly or by project and suits ongoing or unusual engagements rather than a one-off diagnosis.</p>
-
-<h3>Do you offer a trial hour before committing to a project?</h3>
-<p>Yes. A single paid hour lets you assess fit before committing to a larger project or retainer.</p>
-
-<h3>Can the consultant also implement fixes?</h3>
-<p>Some consultants offer implementation at an agreed hourly rate. Confirm this during scoping since not every engagement includes it by default.</p>
-
+<h2 id="faq">What should you ask before hiring?</h2>
+<h3>Will one named person do the work?</h3><p>Ask the provider to identify who investigates, reviews and presents the findings. AuditWeb confirms the delivery arrangement during scoping.</p>
+<h3>Does Search Console access matter?</h3><p>Read-only Search Console access can add indexing and performance evidence. Public-page checks remain possible without it. The scope should state the limitation.</p>
+<h3>Does consultation include implementation?</h3><p>Implementation is separate unless the written quote includes it.</p>
 </ContentLayout>

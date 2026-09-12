@@ -18,15 +18,16 @@ const toc = [
 
 <ContentLayout
   title="Website Content Audit Template"
-  description="A practical content audit template with spreadsheet columns, scoring system, and action categories. Everything you need to systematically evaluate and improve your website's content."
+  description="Build a content audit inventory with defined spreadsheet columns, evidence fields, decision rules, owners and verification dates."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>A content audit is the process of cataloguing, evaluating, and making decisions about every piece of content on your website. Unlike a <a href="/technical-website-audit/">technical audit</a> that examines how your site works, a content audit examines what your site says and whether it serves your audience and business goals effectively. The output is a complete inventory of your content with clear decisions about what to keep, improve, merge, or remove.</p>
+<p>A content audit template records one URL per row with evidence, purpose, performance, quality observations, a decision, an owner and a verification date. This page defines the columns for a spreadsheet you create; it does not provide an Excel download.</p>
 
-<p>The template described in this guide has been refined through hundreds of content audits across different industries and site sizes. It is designed to be practical rather than academic. Every column exists because it drives a decision. Every scoring criterion connects to a measurable outcome. The goal is not to create a beautiful spreadsheet but to produce a prioritised action list that improves your content's performance.</p>
+<p>Use only fields that change a decision. Keep observed metrics separate from reviewer judgement so another person can understand why a page was marked Keep, Update, Merge or Remove.</p>
 
 <h2 id="what-to-track">What to Track</h2>
 
@@ -98,15 +99,15 @@ const toc = [
 
 <p>Each piece of content should be assigned one of five actions. Clear action definitions prevent ambiguity during implementation.</p>
 
-<p><strong>Keep.</strong> No changes required. The content is performing well, scoring 4-5 on quality, and serving its intended purpose. Keep pages should still be reviewed periodically (every 6-12 months) for freshness but do not require immediate work. Approximately 10-20% of pages typically fall into this category.</p>
+<p><strong>Keep.</strong> The page is accurate, useful and serving its intended purpose. Set the next review from how quickly its claims or offer can change.</p>
 
-<p><strong>Update.</strong> The content has value but needs improvement. This could range from a light refresh (updating statistics, fixing broken links, adding a new section) to a significant rewrite (restructuring the content, expanding thin sections, improving keyword targeting). The URL stays the same. The content gets better. Typically 30-40% of pages need updating.</p>
+<p><strong>Update.</strong> The page still serves a distinct task but contains stale facts, broken references, missing evidence or a weak answer. Preserve the useful URL and revise the specific deficiencies.</p>
 
-<p><strong>Merge.</strong> Two or more pages cover overlapping topics and compete with each other for the same keywords (cannibalisation). Merge the best elements of each page into a single comprehensive page on the strongest URL, then redirect the other URLs to it. Merging concentrates the ranking signals from multiple weak pages into one strong page. Typically 10-15% of pages are merge candidates.</p>
+<p><strong>Merge.</strong> Two or more pages serve the same task without a useful distinction. Choose the destination from user need, links, search history and URL fit, combine unique value, update internal links and redirect retired URLs where the replacement is relevant.</p>
 
-<p><strong>Redirect.</strong> The page does not warrant its own existence but has backlinks or residual traffic that should be preserved. Redirect it to the most relevant existing page. This is different from merging because no content from the redirected page is incorporated into the destination. The redirected page simply disappears, with its authority flowing to a related page. Typically 10-20% of pages are redirect candidates.</p>
+<p><strong>Redirect.</strong> The page is retired and a closely relevant replacement satisfies the same user need. Map it to that destination and update owned links; do not redirect unrelated removals merely to retain supposed authority.</p>
 
-<p><strong>Remove.</strong> The page has no traffic, no backlinks, no ranking keywords, and no relevance to your current business. Remove it and return a 410 (Gone) status code. Removing genuinely worthless content improves your site's overall quality signals by eliminating dead weight that search engines crawl and evaluate. Typically 15-25% of pages qualify for removal, though this varies widely by site age and content history.</p>
+<p><strong>Remove.</strong> The page has no continuing user, legal, product or search purpose and no relevant replacement. Remove internal links and return 404 or 410; Google treats both as a signal that the URL is unavailable.</p>
 
 <h2 id="using-the-template">Using the Template</h2>
 
@@ -122,8 +123,8 @@ const toc = [
 
 <p><strong>Step 5: Execute in phases.</strong> Do not try to implement everything at once. Work in monthly sprints: month one handles all high-priority updates and critical merges, month two handles medium-priority updates and redirects, month three handles removals and lower-priority improvements. This phased approach makes the project manageable and lets you measure the impact of changes incrementally.</p>
 
-<p><strong>Step 6: Repeat quarterly.</strong> A content audit is not a one-time exercise. Your content ages, search intent evolves, competitors publish new content, and your business changes. Re-run the template quarterly, updating the performance data and reassessing quality scores. Each subsequent audit is faster than the first because you are reviewing changes since the last audit rather than evaluating everything from scratch.</p>
+<p><strong>Step 6: Set the next review.</strong> Choose a cadence from publishing frequency, risk and observed decay. Recheck sooner after migrations, major updates or a measured decline.</p>
 
-<p>The template works best when it is treated as a living document rather than a static report. Keep it updated, reference it when planning new content (to avoid creating pages that overlap with existing content), and use it as the central record of your content strategy decisions and their outcomes.</p>
+<p>Keep the inventory as the record of content decisions and measured outcomes. For blank Markdown working files use the <a href="/resources/agency-audit-toolkit/">agency audit toolkit</a>. The <a href="/website-content-audit/how-to/">content audit method</a> explains evidence collection in context.</p>
 
 </ContentLayout>

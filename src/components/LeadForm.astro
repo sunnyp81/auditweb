@@ -8,7 +8,7 @@ interface Props {
 const {
   formId = 'lead-form',
   heading = 'Request Your Professional Audit',
-  submitText = 'Get My Audit',
+  submitText = 'Request an Audit Quote',
 } = Astro.props;
 ---
 
@@ -67,6 +67,6 @@ const {
       {submitText}
     </button>
 
-    <p class="text-xs text-text-dim text-center">100% confidential &bull; No spam, ever</p>
+    <p class="text-xs text-text-dim text-center">Request a scope and quote. Do not include passwords. <a href="/privacy/" class="underline">How we use your details</a></p>
   </form>
 </div>

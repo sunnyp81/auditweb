@@ -14,8 +14,8 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Technical SEO Audit Checklist: 60+ Points to Review"
-  description="A comprehensive technical SEO audit checklist covering crawlability, indexation, site architecture, Core Web Vitals, mobile-friendliness, security, and structured data."
+  title="Technical SEO Audit Checklist: 54 Checks"
+  description="Run 54 technical SEO checks across crawling, indexing, architecture, Core Web Vitals, mobile rendering, security, structured data and hosting."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Technical Audit', href: '/technical-website-audit/' },
@@ -23,15 +23,16 @@ const toc = [
   ]}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>This checklist covers every technical aspect of your website that affects search engine crawling, indexation, and ranking. Work through each section systematically, documenting issues and their severity as you go.</p>
+  <p>A technical SEO checklist records whether search engines can fetch, render and index the intended URLs and whether users receive stable, secure pages. Run these 54 checks by page template and record the URL, observed result, evidence, owner and priority for every failure.</p>
 
   <h2 id="crawlability">Crawlability Checks</h2>
   <ul>
-    <li><strong>Robots.txt exists and is accessible:</strong> Visit yoursite.com/robots.txt. Verify it loads correctly and doesn't accidentally block important sections.</li>
+    <li><strong>Robots controls are understood:</strong> Request <code>/robots.txt</code> and record the response. A missing file generally means no robots.txt crawl restrictions; where a file exists, parse it for the relevant crawler.</li>
     <li><strong>No critical pages blocked by robots.txt:</strong> Check that Disallow rules don't prevent search engines from accessing key content, CSS, or JavaScript files.</li>
     <li><strong>XML sitemap exists and is valid:</strong> Verify your sitemap at yoursite.com/sitemap.xml. It should list all indexable URLs and return a 200 status.</li>
-    <li><strong>Sitemap submitted to GSC and Bing:</strong> Check both Google Search Console and Bing Webmaster Tools to confirm sitemap submission and processing.</li>
+    <li><strong>Sitemap discovery is verified when used:</strong> Check robots.txt references and the relevant search-engine reports for submitted and processed sitemap files.</li>
     <li><strong>Sitemap URLs match canonical URLs:</strong> Every URL in the sitemap should be the canonical version — no redirects, no non-canonical variants.</li>
     <li><strong>Crawl budget isn't wasted:</strong> Check for excessive parameter URLs, infinite scroll pagination, calendar pages, or faceted navigation generating thousands of crawlable URLs.</li>
     <li><strong>No orphan pages:</strong> Every indexable page should be reachable through at least one internal link. Use Screaming Frog to find pages in the sitemap but not in the crawl.</li>
@@ -41,45 +42,45 @@ const toc = [
 
   <h2 id="indexation">Indexation Checks</h2>
   <ul>
-    <li><strong>Important pages are indexed:</strong> Run site:yoursite.com in Google. Compare the indexed count with the number of pages in your sitemap.</li>
+    <li><strong>Important pages are indexed:</strong> Inspect representative URLs and the Page indexing report in Google Search Console. A <code>site:</code> search can help discovery but its result count is not a reliable index total.</li>
     <li><strong>No accidental noindex tags:</strong> Crawl your site and check for meta robots noindex tags on pages that should be indexed.</li>
-    <li><strong>Canonical tags are correct:</strong> Every page should have a self-referencing canonical tag. Cross-domain canonicals should only point to the original source.</li>
+    <li><strong>Canonical signals are coherent:</strong> For duplicate or near-duplicate URL sets, compare redirects, <code>rel="canonical"</code>, sitemap inclusion and internal links. Self-referencing canonicals can help, but are not mandatory on every page.</li>
     <li><strong>No duplicate content issues:</strong> Check for www vs non-www, HTTP vs HTTPS, trailing slash vs non-trailing slash variants all serving the same content.</li>
-    <li><strong>Pagination is handled correctly:</strong> Paginated content should use rel="next" and rel="prev" or load-more patterns. Each paginated page should have a unique canonical.</li>
+    <li><strong>Pagination exposes crawlable URLs:</strong> Give each component page a unique URL and link pages sequentially with ordinary <code>&lt;a href&gt;</code> links. Google no longer uses <code>rel="next"</code> or <code>rel="prev"</code> as indexing signals.</li>
     <li><strong>Hreflang tags are correct (if multilingual):</strong> Each language version should reference all other versions including itself. X-default should point to the language selector or default version.</li>
-    <li><strong>Thin/empty pages are noindexed or removed:</strong> Pages with little or no content dilute your site's quality signals. Either add content or noindex them.</li>
+    <li><strong>Low-value or empty pages are reviewed by purpose:</strong> Determine whether each page completes a useful task, needs missing content, duplicates another URL or represents an intentional empty state. Keep, improve, consolidate, noindex or remove it only after that decision.</li>
   </ul>
 
   <h2 id="architecture">Site Architecture Checks</h2>
   <ul>
-    <li><strong>Click depth is under 4:</strong> Important pages should be reachable within 3 clicks from the homepage. Check with Screaming Frog's crawl depth report.</li>
+    <li><strong>Priority pages are easy to reach:</strong> Measure click depth from the crawl start URL and investigate important pages buried behind many links. Treat depth as a diagnostic value rather than a universal three-click rule.</li>
     <li><strong>URL structure is logical and flat:</strong> URLs should follow a clear hierarchy (domain.com/category/page/) without unnecessary depth or parameters.</li>
     <li><strong>URLs are clean and descriptive:</strong> No session IDs, excessive parameters, or meaningless strings. URLs should contain relevant keywords.</li>
     <li><strong>Internal linking is strategic:</strong> Important pages should have the most internal links pointing to them. Check with Screaming Frog's inlinks report.</li>
     <li><strong>Breadcrumbs are implemented:</strong> Breadcrumb navigation helps users and search engines understand your site hierarchy. Add BreadcrumbList schema.</li>
-    <li><strong>No redirect chains:</strong> A links to B which redirects to C which redirects to D. Each hop loses PageRank. Fix chains so links point directly to the final destination.</li>
+    <li><strong>No unnecessary redirect chains:</strong> A link from A to B to C adds requests and can delay users and crawlers. Update internal links and redirect rules to point to the final intended URL.</li>
     <li><strong>No broken internal links:</strong> Crawl your site and fix any links returning 404 status codes. These waste crawl budget and create poor user experience.</li>
     <li><strong>404 page is helpful:</strong> Your 404 page should return a proper 404 status code (not 200) and help users find what they were looking for.</li>
   </ul>
 
   <h2 id="cwv">Core Web Vitals Checks</h2>
   <ul>
-    <li><strong>LCP (Largest Contentful Paint) under 2.5s:</strong> Check in PageSpeed Insights. Common fixes: optimise images, preload hero image, reduce server response time.</li>
-    <li><strong>INP (Interaction to Next Paint) under 200ms:</strong> Measures responsiveness. Fix: reduce JavaScript execution time, break up long tasks, use web workers.</li>
-    <li><strong>CLS (Cumulative Layout Shift) under 0.1:</strong> Prevent layout shifts by setting explicit width/height on images and embeds, avoiding late-loading content above the fold.</li>
+    <li><strong>LCP within 2.5 seconds:</strong> Check 75th-percentile field data where available and use a lab trace to identify the LCP element and subparts.</li>
+    <li><strong>INP at most 200 milliseconds:</strong> Use field attribution and interaction traces to separate input delay, processing and presentation delay.</li>
+    <li><strong>CLS at most 0.1:</strong> Inspect shift clusters and responsible elements; reserve space or adjust font and dynamic-content behaviour according to the evidence.</li>
     <li><strong>Field data passes in GSC:</strong> Lab data (Lighthouse) is simulated. Check real-user data in GSC's Core Web Vitals report for actual pass/fail status.</li>
-    <li><strong>No render-blocking resources:</strong> Defer non-critical CSS and JavaScript. Inline critical CSS for above-the-fold content.</li>
+    <li><strong>Render-blocking resources are traced:</strong> Identify CSS or scripts that delay the measured render, then test safe delivery changes against later states and interactions.</li>
     <li><strong>Images are optimised:</strong> Use modern formats (WebP/AVIF), appropriate sizing, lazy loading for below-fold images, and responsive srcset attributes.</li>
   </ul>
 
   <h2 id="mobile">Mobile Checks</h2>
   <ul>
     <li><strong>Viewport meta tag is set:</strong> Every page needs <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>.</li>
-    <li><strong>Text is readable without zooming:</strong> Base font size should be at least 16px. Line height should be at least 1.5.</li>
-    <li><strong>Tap targets are properly sized:</strong> Buttons and links should be at least 48x48px with adequate spacing between them.</li>
-    <li><strong>No horizontal scrolling:</strong> Content should fit within the viewport width. No elements overflowing the screen.</li>
+    <li><strong>Text is readable and adaptable:</strong> Test the chosen font size, spacing and measure on representative devices and at zoom. A 16px base and 1.5 line height can be useful design starting points, but WCAG does not prescribe those values for all text.</li>
+    <li><strong>Tap targets have sufficient size or spacing:</strong> For WCAG 2.2 AA, test the 24 by 24 CSS pixel target-size rule and its spacing and inline exceptions. Larger controls can still improve touch usability.</li>
+    <li><strong>Reflow is tested:</strong> At the WCAG 2.2 AA reflow conditions, check for loss of content or function and avoid two-dimensional scrolling except for parts that require a two-dimensional layout for meaning or use.</li>
     <li><strong>Mobile menu works correctly:</strong> Navigation should be accessible and usable on mobile devices. Test on actual devices, not just browser emulation.</li>
-    <li><strong>No intrusive interstitials:</strong> Pop-ups that cover the main content on mobile can trigger Google's intrusive interstitial penalty.</li>
+    <li><strong>Interstitials preserve access:</strong> Check mobile pages against Google's intrusive-interstitial guidance and verify that required notices do not obscure more content than necessary.</li>
     <li><strong>Mobile page speed is fast:</strong> Test mobile-specific speed in PageSpeed Insights. Mobile often has different issues than desktop (network latency, CPU constraints).</li>
   </ul>
 
@@ -87,30 +88,30 @@ const toc = [
   <ul>
     <li><strong>HTTPS is enforced:</strong> All HTTP URLs should 301 redirect to HTTPS. No mixed content warnings.</li>
     <li><strong>SSL certificate is valid:</strong> Check expiration date, certificate chain, and protocol versions with SSL Labs.</li>
-    <li><strong>HSTS header is set:</strong> Strict-Transport-Security header tells browsers to always use HTTPS. Include max-age of at least 31536000.</li>
+    <li><strong>HSTS is evaluated:</strong> Enable it only after required hosts and subdomains support HTTPS. Choose duration, subdomain scope and preload through security change control.</li>
     <li><strong>Security headers are configured:</strong> Check Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy with securityheaders.com.</li>
     <li><strong>No mixed content:</strong> All resources (images, scripts, stylesheets, fonts) must load over HTTPS when the page is served over HTTPS.</li>
   </ul>
 
   <h2 id="structured-data">Structured Data Checks</h2>
   <ul>
-    <li><strong>Schema markup is implemented:</strong> Use JSON-LD format. At minimum, add Organization schema on the homepage and Article schema on content pages.</li>
-    <li><strong>Schema validates without errors:</strong> Test every schema type with Google's Rich Results Test. Fix all errors; warnings are lower priority.</li>
+    <li><strong>Relevant structured data is implemented:</strong> Use a Google-supported type only where it describes the visible content. There is no minimum set that every site or page must carry.</li>
+    <li><strong>Structured data is validated with the right tool:</strong> Use Google's Rich Results Test for Google-supported search features and Schema.org's validator for general vocabulary. Interpret errors and warnings against the applicable feature and visible content.</li>
     <li><strong>BreadcrumbList schema matches visible breadcrumbs:</strong> The structured data should mirror what users see on the page.</li>
-    <li><strong>Product/Service schema is used where applicable:</strong> If you sell products or services, add the relevant schema to enable rich snippets.</li>
-    <li><strong>FAQ schema is used for FAQ content:</strong> FAQ pages or sections with question-answer format should use FAQPage schema.</li>
+    <li><strong>Product structured data matches products:</strong> Add supported properties only when the page and business model meet Google's eligibility rules. Markup enables eligibility and does not guarantee a rich result.</li>
+    <li><strong>FAQ markup is assessed against current eligibility:</strong> Google normally limits FAQ rich results to authoritative government and health sites. Do not add FAQPage solely to seek a search enhancement.</li>
     <li><strong>No spammy or misleading schema:</strong> Only mark up content that's actually visible on the page. Don't add review schema for self-reviews or FAQ schema for content that isn't in Q&A format.</li>
   </ul>
 
   <h2 id="server">Server and Hosting Checks</h2>
   <ul>
-    <li><strong>Server response time (TTFB) under 600ms:</strong> Time to First Byte measures how fast your server responds. Slow TTFB affects every other speed metric.</li>
+    <li><strong>Server response time is measured in context:</strong> Compare TTFB across target locations and cached and uncached requests. Use the result to separate network delay from origin processing rather than treating 600ms as a universal pass line.</li>
     <li><strong>Gzip/Brotli compression is enabled:</strong> Text-based resources should be compressed. Check with PageSpeed Insights or browser DevTools Network tab.</li>
     <li><strong>Browser caching is configured:</strong> Static assets should have Cache-Control headers with appropriate max-age values. Check with Lighthouse.</li>
-    <li><strong>CDN is in use:</strong> A Content Delivery Network serves assets from edge locations closer to users, reducing latency globally.</li>
+    <li><strong>Edge delivery is evaluated where relevant:</strong> Compare latency, cache behaviour and origin load by audience location. A CDN is useful for some traffic and asset patterns, not a universal requirement.</li>
     <li><strong>Server returns correct status codes:</strong> 200 for found pages, 301 for permanent redirects, 404 for missing pages. No soft 404s (404 content with 200 status).</li>
     <li><strong>Error pages return proper status codes:</strong> Your custom 404 page must return HTTP 404, not 200. Your server error page should return 503 during maintenance.</li>
   </ul>
 
-  <p>Use this checklist alongside our <a href="/technical-website-audit/">technical audit guide</a> for detailed explanations of each check and how to fix common issues. For a comprehensive audit that covers all these points and more, see our <a href="/website-audit-services/">professional audit services</a>.</p>
+  <p>Google documents the current <a href="https://developers.google.com/search/docs/crawling-indexing">crawling and indexing topics</a>, <a href="https://developers.google.com/search/docs/appearance/core-web-vitals">Core Web Vitals thresholds</a> and <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies">structured data rules</a>. Use this checklist with our <a href="/technical-website-audit/">technical audit guide</a> and retain dated exports or screenshots as evidence.</p>
 </ContentLayout>

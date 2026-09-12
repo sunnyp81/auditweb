@@ -20,13 +20,14 @@ const toc = [
 
 <ContentLayout
   title="WordPress Website Audit Checklist"
-  description="A WordPress-specific audit checklist covering core updates, plugins, themes, database health, security, SEO configuration, and speed optimisation. Practical checks for every WordPress site."
+  description="Audit a WordPress site across supported core and PHP versions, plugins, themes, database work, security controls, search settings and performance."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>WordPress powers a massive share of the web, but its flexibility is also its weakness. Themes, plugins, and configuration options create countless opportunities for things to go wrong in ways that are invisible to site owners but perfectly visible to search engines and attackers. This checklist covers the WordPress-specific audit items that a <a href="/website-audit-checklist/">generic website audit</a> does not address.</p>
+<p>A WordPress audit checks supported core and runtime versions, maintained extensions, theme output, database behaviour, account controls, search settings and performance. Back up the site and use a staging environment before changing plugins, themes or database records.</p>
 
 <p>You do not need expensive tools for most of these checks. WordPress admin access, a browser, and a few free online tools cover the majority. Work through each section systematically and document your findings. The goal is a clear picture of your WordPress installation's health and a prioritised list of fixes.</p>
 
@@ -35,21 +36,21 @@ const toc = [
 <p>WordPress core updates include security patches, bug fixes, and new features. Running outdated versions exposes your site to known vulnerabilities.</p>
 
 <ul>
-  <li><strong>WordPress version is current.</strong> Check Dashboard > Updates. Your WordPress installation should be running the latest stable release. Minor security releases (6.4.1 to 6.4.2) should be applied immediately. Major version updates (6.4 to 6.5) should be applied within a week of release after checking plugin compatibility.</li>
+  <li><strong>WordPress version is supported.</strong> Record the installed release, security advisories and available updates. Prioritise known vulnerabilities and unsupported branches, then test updates against the site's theme, plugins and recovery plan.</li>
   <li><strong>Automatic updates are enabled for minor releases.</strong> Navigate to wp-config.php and verify that automatic background updates are not disabled. WordPress enables minor version auto-updates by default, but plugins or hosting configurations can override this. The constant WP_AUTO_UPDATE_CORE should be set to true or minor.</li>
-  <li><strong>PHP version is current.</strong> Check your hosting control panel or use a PHP info page to verify your PHP version. WordPress requires PHP 7.4 minimum but recommends PHP 8.2 or higher. Older PHP versions are slower, lack security support, and may be incompatible with current plugins.</li>
-  <li><strong>MySQL/MariaDB version is adequate.</strong> WordPress requires MySQL 5.7 or MariaDB 10.4 minimum. Older database server versions lack performance optimisations and security patches. Check via your hosting panel or phpMyAdmin.</li>
-  <li><strong>Debug mode is disabled in production.</strong> Check wp-config.php for WP_DEBUG. This must be set to false on your live site. Debug mode displays error messages to visitors, exposing server paths and internal information that attackers can exploit.</li>
+  <li><strong>PHP version is supported.</strong> Compare the production version with current WordPress hosting requirements and PHP's supported-version table. Test theme and plugin compatibility in staging before upgrading.</li>
+  <li><strong>MySQL or MariaDB version is supported.</strong> Compare the server with current WordPress requirements and the database vendor's support policy. Avoid exposing a public PHP information page.</li>
+  <li><strong>Debug output and logging are configured safely.</strong> Check <code>WP_DEBUG</code>, <code>WP_DEBUG_DISPLAY</code>, <code>WP_DEBUG_LOG</code> and PHP display/log settings together. Production can retain controlled logging while preventing errors and sensitive paths from being shown to visitors.</li>
   <li><strong>File editing is disabled.</strong> The DISALLOW_FILE_EDIT constant in wp-config.php should be set to true. This prevents anyone with admin access from editing theme and plugin files directly through the WordPress dashboard, reducing the damage potential if an admin account is compromised.</li>
 </ul>
 
 <h2 id="plugins">Plugins</h2>
 
-<p>Plugins are the most common source of security vulnerabilities, performance problems, and SEO issues on WordPress sites.</p>
+<p>Plugins extend the site's code and can affect security, performance and generated markup. Audit the components actually installed and exposed.</p>
 
 <ul>
-  <li><strong>All plugins are updated.</strong> Check Dashboard > Updates for plugin updates. Update all plugins, testing your site after each update (or in a staging environment first). Outdated plugins with known vulnerabilities are the primary attack vector for WordPress sites.</li>
-  <li><strong>No abandoned plugins.</strong> Check the WordPress.org plugin page for each installed plugin. If a plugin has not been updated in over two years, it may be incompatible with current WordPress versions and is unlikely to receive security patches. Find actively maintained alternatives.</li>
+  <li><strong>Plugin update risk is assessed.</strong> Record installed versions, known vulnerabilities, support status, exposure and compatibility. Test supported updates before deployment and prioritise fixes from verified risk rather than age alone.</li>
+  <li><strong>Unmaintained plugins are reviewed.</strong> Check vendor notices, repository activity, compatibility and security advisories. A long update interval is an investigation signal, not proof that a component is unsafe.</li>
   <li><strong>No redundant plugins.</strong> Review your plugin list for overlapping functionality. Common redundancies include multiple caching plugins, multiple SEO plugins, multiple security plugins, and image optimisation plugins that duplicate functionality in your CDN or hosting. Each redundant plugin adds code execution time and potential conflicts.</li>
   <li><strong>Deactivated plugins are deleted.</strong> Deactivated plugins still exist on your server and can contain exploitable vulnerabilities. If you are not using a plugin, delete it entirely rather than leaving it deactivated.</li>
   <li><strong>Only one SEO plugin is active.</strong> Running Yoast SEO alongside Rank Math, All in One SEO, or any other SEO plugin creates conflicting meta tags, duplicate sitemaps, and contradictory robot directives. Choose one SEO plugin and remove the others completely.</li>
@@ -65,24 +66,24 @@ const toc = [
   <li><strong>Theme is updated.</strong> Check for available theme updates. Outdated themes can contain security vulnerabilities and compatibility issues with current WordPress versions.</li>
   <li><strong>Child theme is used for customisations.</strong> If you have modified any theme files, check whether changes were made in a child theme or directly in the parent theme. Direct parent theme modifications are overwritten during updates. If customisations exist in the parent theme, migrate them to a child theme before the next update.</li>
   <li><strong>Clean heading hierarchy.</strong> Use a browser extension or online tool to check the heading structure of your key page templates. There should be exactly one H1 per page, followed by a logical H2-H6 hierarchy. Some themes, particularly those with widget areas and complex footers, output additional H1 or H2 tags in sidebars or footers.</li>
-  <li><strong>Minimal DOM depth.</strong> Inspect the HTML output of your pages. Page builder themes (Elementor, Divi, WPBakery) often generate excessive wrapper divs, resulting in DOM trees with 1,500+ nodes. High DOM complexity slows rendering and JavaScript execution. If your DOM node count exceeds 1,500, investigate whether the theme or page builder is generating unnecessary markup.</li>
+  <li><strong>DOM work is measured.</strong> Inspect representative templates with browser performance tools. Investigate costly style recalculation or layout work instead of treating a fixed node count as a universal failure.</li>
   <li><strong>Responsive design verification.</strong> Test your site on actual mobile devices, not just browser dev tools. Check for horizontal scrolling, text that requires zooming, touch targets that are too small, and images that overflow their containers. Browser emulation does not always reproduce real device behaviour accurately.</li>
   <li><strong>No hardcoded SEO elements.</strong> Check whether the theme hardcodes meta tags, canonical URLs, or structured data that conflict with your SEO plugin output. Common offenders include themes that add their own Open Graph tags alongside Yoast's, or themes that output Article schema that duplicates the SEO plugin's schema.</li>
-  <li><strong>Font loading efficiency.</strong> Check how your theme loads web fonts. Fonts should use font-display: swap to prevent invisible text during loading. Self-hosted fonts are faster than Google Fonts requests. Check that you are only loading the font weights and character sets actually used in your design.</li>
+  <li><strong>Font loading efficiency.</strong> Check how your theme loads web fonts. Choose and test a font-display strategy against readable fallback text, layout shifts and loading conditions. Compare self-hosted and third-party delivery with actual request evidence. Check that you are only loading the font weights and character sets actually used in your design.</li>
 </ul>
 
 <h2 id="database">Database</h2>
 
-<p>WordPress databases accumulate bloat over time that directly affects page generation speed.</p>
+<p>Measure database work before planning maintenance. Row counts and storage size alone do not establish a page-speed problem; preserve editorial history and plugin data needed by the site.</p>
 
 <ul>
-  <li><strong>Post revisions are limited.</strong> WordPress stores every saved version of every post by default, with no limit. A post edited 100 times has 100 revisions stored in the database. Add define('WP_POST_REVISIONS', 5); to wp-config.php to limit stored revisions to the most recent five.</li>
-  <li><strong>Expired transients are cleaned.</strong> WordPress uses transients (temporary cached data) that should be deleted when they expire, but expired transients sometimes persist. Use WP-CLI (wp transient delete --expired) or a database optimisation plugin to clean expired transients regularly.</li>
-  <li><strong>Spam and trashed comments are purged.</strong> Navigate to Comments and delete all spam and trashed comments. Large comment spam tables slow database queries even though the comments are not displayed. Set up regular automated cleanup.</li>
-  <li><strong>Orphaned post meta is cleaned.</strong> When posts are deleted, their associated metadata sometimes remains in the wp_postmeta table. Over time, this orphaned data accumulates. Use a database cleanup tool to identify and remove metadata that no longer corresponds to existing posts.</li>
-  <li><strong>Database tables are optimised.</strong> WordPress database tables fragment over time as data is added, modified, and deleted. Run OPTIMIZE TABLE on all WordPress tables periodically (monthly is sufficient for most sites). Most database management plugins include a one-click optimisation feature.</li>
-  <li><strong>Unused plugin tables are removed.</strong> When you delete a plugin, WordPress removes the plugin files but does not delete the database tables the plugin created. Over time, deactivated and deleted plugins leave behind dozens of unused tables. Identify and remove these using phpMyAdmin or a cleanup plugin. Back up your database before deleting any tables.</li>
-  <li><strong>Autoloaded options are reasonable.</strong> The wp_options table includes an autoload flag. Data marked as autoload is loaded into memory on every single page request. Check the total size of autoloaded options using a query: SELECT SUM(LENGTH(option_value)) FROM wp_options WHERE autoload = 'yes'. If this exceeds 1MB, investigate which options are contributing and whether any can be set to not autoload.</li>
+  <li><strong>Revision retention fits the workflow.</strong> Check current settings, editorial recovery needs and measured storage or query impact. Agree any retention change and test cleanup on a backed-up staging copy rather than imposing a fixed revision count.</li>
+  <li><strong>Transient expiry is investigated when relevant.</strong> Check the responsible plugin, object-cache behaviour and measured database cost. Use supported maintenance procedures only when needed, with a tested backup and rollback plan.</li>
+  <li><strong>Comment retention is intentional.</strong> Review spam and trashed comments against moderation, recovery and retention needs. Confirm a measured operational reason before scheduling destructive cleanup.</li>
+  <li><strong>Metadata ownership is verified.</strong> Investigate apparent orphan rows with the owning plugin and data model. Do not delete records solely because a generic cleanup tool labels them unused.</li>
+  <li><strong>Database work is measured before maintenance.</strong> Inspect slow queries, table size and engine behaviour. Back up and test any optimisation on staging rather than running a universal monthly command.</li>
+  <li><strong>Retired plugin data has an owner decision.</strong> Uninstall behaviour varies by plugin. Confirm whether retained tables support another integration, recovery or an obligation before removing them through a backed-up and tested procedure.</li>
+  <li><strong>Autoload cost is measured.</strong> Use current WordPress diagnostics and profiling to identify large or unnecessary options. Autoload values and behaviour vary by WordPress version; do not rely on a fixed size threshold or change a plugin's options without checking its requirements.</li>
 </ul>
 
 <h2 id="security">Security</h2>
@@ -90,11 +91,11 @@ const toc = [
 <ul>
   <li><strong>Login URL is protected.</strong> The default wp-login.php URL is targeted by automated brute force attacks. Implement at least one protective measure: a login limiting plugin (Limit Login Attempts Reloaded), server-level password protection on wp-admin, or a URL change plugin. Two-factor authentication provides the strongest protection.</li>
   <li><strong>Admin username is not "admin".</strong> The default "admin" username is the first one automated attack tools try. If your administrator account uses "admin", create a new admin account with a different username, transfer content ownership, and delete the original account.</li>
-  <li><strong>File permissions are correct.</strong> Verify directory permissions are set to 755 and file permissions to 644. wp-config.php should be 400 or 440. Permissions of 777 on any file or directory are a critical security risk that must be fixed immediately.</li>
-  <li><strong>wp-config.php is protected.</strong> Verify that wp-config.php is not accessible via a browser by navigating to yourdomain.com/wp-config.php. The server should return a 403 Forbidden or redirect, not display or download the file. Some hosting configurations also support moving wp-config.php one directory above the WordPress root.</li>
+  <li><strong>File permissions follow least privilege.</strong> Compare ownership and permissions with the host, deployment model and WordPress hardening guidance. Confirm that the web process cannot modify code or read secrets it does not need; do not apply 755, 644 or 400 blindly across every installation.</li>
+  <li><strong>wp-config.php content is not exposed.</strong> Inspect server configuration and an authorised response for disclosure or download of the file. A PHP-handled request can return an empty 200 without exposing content, so status alone is not the test.</li>
   <li><strong>XML-RPC is disabled if not needed.</strong> XML-RPC (xmlrpc.php) enables remote publishing and is sometimes exploited for brute force attacks and DDoS amplification. If you do not use remote publishing tools, the Jetpack app, or pingbacks, disable XML-RPC via a security plugin or .htaccess rule.</li>
-  <li><strong>Security plugin is active and configured.</strong> A security plugin (Wordfence, Sucuri Security, or iThemes Security) should be installed and configured with file integrity monitoring, login attempt limiting, and malware scanning enabled. Review the security log weekly for suspicious activity.</li>
-  <li><strong>Backups are automated and tested.</strong> Automated backups should run daily and be stored offsite (not on the same server as your website). Verify that you can actually restore from a backup by testing the process in a staging environment. Backups you cannot restore from provide false confidence.</li>
+  <li><strong>Security monitoring covers the risks.</strong> Verify rate limiting, change detection, vulnerability alerts and incident logging at the appropriate plugin, host or external service. A security plugin is one option, not a universal requirement.</li>
+  <li><strong>Backups meet recovery objectives.</strong> Check automated jobs, isolated copies, retention and restore tests against documented recovery-point and recovery-time objectives.</li>
 </ul>
 
 <h2 id="seo-settings">SEO Settings</h2>
@@ -105,20 +106,22 @@ const toc = [
   <li><strong>XML sitemap is generated and submitted.</strong> Verify that your SEO plugin generates an XML sitemap (usually at /sitemap.xml or /sitemap_index.xml). Check that the sitemap is submitted in Google Search Console and Bing Webmaster Tools. Open the sitemap URL in a browser to confirm it loads correctly and includes your important pages.</li>
   <li><strong>Category and tag archive handling.</strong> Check your SEO plugin's settings for category and tag archives. If you have thin tag archives (tags used on only one or two posts), consider noindexing tags entirely. Category archives should be indexed if they contain unique descriptive content; noindexed if they are just post listings with no added value.</li>
   <li><strong>Author archives are handled correctly.</strong> On single-author sites, author archives duplicate the main blog listing and should be noindexed or redirected to the main blog page. On multi-author sites, author archives can be valuable if they include author bios and unique content.</li>
-  <li><strong>Attachment pages are disabled or redirected.</strong> WordPress creates a separate page for every uploaded media file by default. These attachment pages contain only the media file with no additional content, creating thousands of thin pages. Your SEO plugin should redirect attachment pages to the parent post or the media file itself.</li>
+  <li><strong>Attachment-page behaviour is intentional.</strong> New WordPress 6.4 installations disable attachment pages by default, while older or changed sites may retain them. Inspect the live behaviour and keep, redirect or disable pages according to their user value and existing signals.</li>
   <li><strong>Open Graph and social meta tags.</strong> Verify that social sharing meta tags are generated by your SEO plugin and that each page has a relevant og:image. Share a test page on Facebook and Twitter (using their debug tools) to confirm that the correct title, description, and image appear in the share preview.</li>
 </ul>
 
 <h2 id="speed">Speed</h2>
 
 <ul>
-  <li><strong>Page caching is active.</strong> Verify that full-page caching is enabled for logged-out visitors. Test by checking response headers for cache indicators or by measuring TTFB (cached pages typically respond in under 200ms, uncached WordPress pages often take 500ms-2000ms). WP Super Cache, W3 Total Cache, WP Rocket, or hosting-level caching are common solutions.</li>
+  <li><strong>Page caching matches content behaviour.</strong> Inspect cache headers and repeated requests for cacheable logged-out pages. Exclude personalised and sensitive responses and measure the actual change.</li>
   <li><strong>Object caching is configured.</strong> For sites on hosting that supports Redis or Memcached, verify that object caching is enabled. Object caching stores database query results in memory, reducing database load on every page request. This is particularly impactful on WooCommerce sites and membership sites with many logged-in users.</li>
   <li><strong>Images are optimised on upload.</strong> Check whether an image optimisation plugin (ShortPixel, Imagify, Smush) is active and configured to compress and convert images automatically on upload. Verify that existing images in the media library have been bulk-optimised. Check that WebP versions are being generated and served.</li>
   <li><strong>CSS and JavaScript are minified.</strong> Verify that your caching or optimisation plugin minifies CSS and JavaScript files. Check by viewing the page source and confirming that stylesheet and script files are minified (no whitespace, single-line format). Also check whether CSS and JS files are combined to reduce HTTP requests, though this is less important with HTTP/2.</li>
   <li><strong>Render-blocking resources are deferred.</strong> Use Lighthouse or PageSpeed Insights to identify render-blocking CSS and JavaScript. Non-critical CSS should be loaded asynchronously. Non-essential JavaScript should use defer or async attributes. Your optimisation plugin may handle this automatically, but verify the implementation.</li>
-  <li><strong>Hosting is adequate.</strong> Run a simple load test (GTmetrix, Pingdom, or WebPageTest from multiple locations) during peak hours. If TTFB exceeds 600ms consistently, your hosting may be the bottleneck. Shared hosting plans that worked for a small site often become inadequate as traffic and complexity grow. Consider managed WordPress hosting if performance is consistently poor.</li>
-  <li><strong>CDN is configured.</strong> A Content Delivery Network serves static assets (images, CSS, JavaScript) from edge servers close to your visitors. Verify that your CDN (Cloudflare, StackPath, KeyCDN, or similar) is active and serving assets correctly. Check that CDN caching headers are set appropriately and that cache hit rates are high (above 90% for static assets).</li>
+  <li><strong>Hosting is measured under a defined workload.</strong> Compare cached and uncached response time, capacity and error rate from target locations. Attribute delays before changing providers.</li>
+  <li><strong>CDN behaviour is verified when used.</strong> Inspect cache headers and cache status for versioned static assets. Set a project target from traffic and asset patterns rather than assuming every site needs a CDN or a 90% hit rate.</li>
 </ul>
+
+<p>Check version requirements in the official <a href="https://wordpress.org/about/requirements/">WordPress requirements</a> and use the <a href="https://developer.wordpress.org/advanced-administration/security/hardening/">WordPress hardening guide</a>. Continue with the <a href="/technical-website-audit/performance/">performance audit</a> when a WordPress finding needs runtime evidence.</p>
 
 </ContentLayout>

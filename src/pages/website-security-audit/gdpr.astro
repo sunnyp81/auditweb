@@ -19,18 +19,19 @@ const toc = [
 ---
 
 <ContentLayout
-  title="GDPR Website Audit: Ensure Data Protection Compliance"
-  description="Audit your website for GDPR compliance. Covers cookie consent, privacy policies, data collection practices, user rights, third-party data sharing, and a complete GDPR audit checklist."
+  title="GDPR Website Audit: Scope, Data Flows and Evidence"
+  description="Map website personal-data flows, purposes, legal bases, notices, processors, transfers, rights and security for an EU or UK GDPR legal review."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>The General Data Protection Regulation affects every website that collects data from individuals in the European Economic Area, regardless of where the website operator is based. If your site uses cookies, captures form submissions, tracks visitors with analytics, or processes any personal data from EU residents, GDPR applies to you.</p>
+  <p>A GDPR website audit maps personal-data flows and collects evidence about purpose, legal basis, transparency, retention, recipients, transfers, rights and security. It supports a legal review but does not certify compliance. EU GDPR and UK GDPR scope must be assessed separately.</p>
 
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
     <div class="glass rounded-xl p-5 text-center">
       <div class="text-3xl font-extrabold gradient-text mb-1">€20M</div>
-      <div class="text-xs text-text-dim">or 4% of global turnover — the maximum fine, whichever is higher</div>
+      <div class="text-xs text-text-dim">upper-tier maximum: up to €20m or 4% under EU GDPR Article 83, subject to its conditions</div>
     </div>
     <div class="glass rounded-xl p-5 text-center">
       <div class="text-3xl font-extrabold gradient-text mb-1">22</div>
@@ -38,13 +39,13 @@ const toc = [
     </div>
     <div class="glass rounded-xl p-5 text-center">
       <div class="text-3xl font-extrabold gradient-text mb-1">72hrs</div>
-      <div class="text-xs text-text-dim">notification window to the supervisory authority for breaches risking individuals' rights</div>
+      <div class="text-xs text-text-dim">supervisory-authority notice where required: without undue delay and, where feasible, within 72 hours</div>
     </div>
   </div>
 
   <div class="glass rounded-2xl p-6 my-8 border-primary/20">
     <h3 class="font-bold mb-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span>Key takeaway</h3>
-    <p class="text-sm text-text-muted mb-0">A GDPR audit is different from a technical security audit. Security asks whether unauthorised access is prevented. GDPR asks whether your <em>authorised</em> data practices — the things you deliberately do with visitor data — are lawful, transparent, and proportionate. Most sites fail on cookie consent and privacy policy gaps, not on anything technical.</p>
+    <p class="text-sm text-text-muted mb-0">A data-protection review covers both governance and technical evidence. Website security is one part of that review. Cookie rules can also arise from the EU ePrivacy framework or the UK's PECR rather than GDPR alone.</p>
   </div>
 
   <p>This guide walks through every area your GDPR audit should cover, from cookie consent mechanics to third-party data sharing agreements, with a complete checklist at the end.</p>
@@ -53,54 +54,54 @@ const toc = [
 
   <p>GDPR establishes several core principles that apply directly to website operations. Understanding these principles is essential before diving into specific audit checks because they provide the reasoning behind each requirement.</p>
 
-  <p><strong>Lawfulness, fairness, and transparency:</strong> You must have a legal basis for every piece of personal data you collect. The most common legal bases for websites are consent (the user actively agrees) and legitimate interest (you have a valid business reason that does not override the individual's rights). You must be transparent about what data you collect and why.</p>
+  <p><strong>Lawfulness, fairness, and transparency:</strong> Identify an Article 6 basis for each processing purpose and any additional condition required for special-category or criminal-offence data. Consent and legitimate interests are two possible bases, not defaults. Give the information required by Articles 13 or 14.</p>
 
-  <p><strong>Purpose limitation:</strong> Data collected for one purpose cannot be used for another purpose without additional consent. If you collect email addresses for order confirmations, you cannot add them to your marketing list without separate opt-in consent.</p>
+  <p><strong>Purpose limitation:</strong> Specify purposes before collection and assess any later purpose for compatibility or another lawful route. Direct marketing also has separate ePrivacy or PECR rules; do not assume a transactional address can be added to marketing.</p>
 
-  <p><strong>Data minimisation:</strong> Collect only the data you actually need for the stated purpose. If you run a contact form, do you really need the visitor's phone number, company name, and job title, or would name and email suffice? Every unnecessary data field increases your compliance burden and your liability in case of a breach.</p>
+  <p><strong>Data minimisation:</strong> Check that each collected field is adequate, relevant and limited to what is necessary for the stated purpose. Record the justification rather than assuming a standard contact-form schema.</p>
 
   <p><strong>Accuracy:</strong> Personal data must be kept accurate and up to date. Provide mechanisms for users to review and correct their data.</p>
 
   <p><strong>Storage limitation:</strong> Do not keep personal data longer than necessary for its original purpose. Define and enforce retention periods for every category of personal data you hold.</p>
 
-  <p><strong>Integrity and confidentiality:</strong> Personal data must be processed securely. This is where GDPR overlaps with technical security — encryption, access controls, and breach prevention are GDPR requirements, not just best practices.</p>
+  <p><strong>Integrity and confidentiality:</strong> Evaluate technical and organisational measures appropriate to risk. Encryption and access controls may form part of that assessment; GDPR does not promise that every breach can be prevented.</p>
 
   <h2 id="cookie-consent">Cookie Consent</h2>
 
-  <p>Cookie consent is the most visible GDPR-related feature on any website and the area where most sites fail their audit. The requirements are stricter than many site operators realise, and common implementations that look compliant on the surface often violate the regulation.</p>
+  <p>Cookie and similar-technology rules depend on jurisdiction and purpose. In the UK, PECR generally requires information and consent before storing or accessing information unless an exemption applies; UK GDPR defines the standard for valid consent and governs related personal-data processing.</p>
 
-  <p>The key requirements for GDPR-compliant cookie consent are:</p>
+  <p>For UK sites, test these consent characteristics when PECR requires consent:</p>
 
   <ul>
-    <li><strong>Prior consent for non-essential cookies</strong> — analytics cookies, advertising cookies, social media tracking cookies, and any other cookies that are not strictly necessary for the site to function must not be set until the user has actively consented. Many sites set Google Analytics cookies on page load before consent is given. This violates GDPR.</li>
-    <li><strong>Freely given consent</strong> — the user must have a genuine choice. Cookie walls that block access to the site unless cookies are accepted do not constitute free consent in most EU jurisdictions. The user must be able to decline non-essential cookies and still access the content.</li>
+    <li><strong>Prior consent where the cookie rule requires it</strong> — test whether storage or access occurs before a valid choice. Document any statutory exemption instead of assuming a category name decides the result.</li>
+    <li><strong>Freely given consent</strong> — check whether the user has genuine choice and control. Conditional access, power imbalance, detriment and whether processing is necessary to a service are fact-specific; apply current regulator guidance for the jurisdiction.</li>
     <li><strong>Informed consent</strong> — the consent request must clearly explain what cookies are used, what they do, and which third parties receive data. Vague statements like "we use cookies to improve your experience" are insufficient.</li>
-    <li><strong>Granular consent</strong> — users should be able to consent to different categories of cookies independently. A single "accept all" button without the option to selectively accept or reject cookie categories does not provide granular consent.</li>
-    <li><strong>Easy withdrawal</strong> — withdrawing consent must be as easy as giving it. If consent is given with one click, it should be revocable with one click. Provide a persistent link in the footer or a floating icon that reopens the consent manager.</li>
-    <li><strong>Documented consent</strong> — you must be able to prove that consent was obtained, when it was obtained, and what was consented to. Your consent management platform should log consent records.</li>
+    <li><strong>Specific and granular consent</strong> — separate distinct purposes where appropriate and avoid bundling a required service with optional processing. Test the actual vendor and purpose mapping behind each control.</li>
+    <li><strong>Easy withdrawal</strong> — withdrawing consent must be as easy as giving it. Verify that the control remains findable and that withdrawal stops future storage, access and consent-based processing as configured.</li>
+    <li><strong>Consent evidence</strong> — where processing relies on consent, record enough evidence to demonstrate the choice and information presented. A particular consent-management platform is not mandatory.</li>
   </ul>
 
   <p>Audit your cookie consent by clearing all cookies and visiting your site. Check whether any non-essential cookies are set before you interact with the consent banner. Use browser developer tools to monitor network requests — are analytics or advertising scripts firing before consent is given? Test the reject flow — does clicking "reject" or "necessary only" actually prevent non-essential cookies from being set?</p>
 
   <h2 id="privacy-policy">Privacy Policy</h2>
 
-  <p>Your privacy policy is the primary document through which you fulfill GDPR's transparency requirements. It must be clear, accessible, and comprehensive. A privacy policy that is hidden behind multiple clicks, written in dense legal language, or missing key information fails the audit.</p>
+  <p>Transparency information may appear in a privacy notice and at relevant collection points. Check that required information is concise, transparent, intelligible, easily accessible and written in clear language for the intended audience.</p>
 
-  <p>A GDPR-compliant privacy policy must include the following elements:</p>
+  <p>Articles 13 and 14 require specified information in applicable circumstances. Check these common notice fields against the actual processing:</p>
 
   <ul>
     <li><strong>Identity and contact details of the data controller</strong> — who is responsible for the data processing. Include your company name, registered address, and a contact method for data protection queries.</li>
-    <li><strong>Data Protection Officer contact</strong> — if you are required to appoint a DPO (organisations processing data at scale or handling special category data), their contact details must be in the privacy policy.</li>
-    <li><strong>What personal data you collect</strong> — list every category of personal data: names, email addresses, IP addresses, cookie identifiers, payment details, location data, and anything else.</li>
+    <li><strong>Data Protection Officer contact</strong> — include DPO contact details where Article 37 requires a DPO; assess the controller or processor's activities against the Article's specific tests.</li>
+    <li><strong>Categories of personal data</strong> — describe the categories actually processed and, for indirectly obtained data, the categories and sources required by Article 14.</li>
     <li><strong>Legal basis for each processing activity</strong> — for each type of data you collect, state whether you rely on consent, legitimate interest, contractual necessity, or another legal basis. Generic statements are not sufficient.</li>
-    <li><strong>How long you retain data</strong> — state specific retention periods for each data category. "As long as necessary" is not specific enough.</li>
+    <li><strong>How long you retain data</strong> — state the retention period or, where that is not possible, the criteria used to determine it.</li>
     <li><strong>Who you share data with</strong> — list categories of recipients and, where practical, name specific third parties. If you use Google Analytics, Mailchimp, Stripe, or any other service that receives user data, it should be mentioned.</li>
-    <li><strong>International transfers</strong> — if data is transferred outside the EEA (to US-based services, for example), explain the legal mechanism used to protect the data (Standard Contractual Clauses, adequacy decision, etc.).</li>
+    <li><strong>International transfers</strong> — identify actual restricted transfers, destination and the applicable adequacy decision, safeguard or derogation, with the required information about obtaining a copy.</li>
     <li><strong>User rights</strong> — clearly explain each right (access, rectification, erasure, portability, objection) and how to exercise them.</li>
     <li><strong>Right to complain</strong> — inform users of their right to lodge a complaint with their national supervisory authority.</li>
   </ul>
 
-  <p>Review your privacy policy against this list. Most policies we audit are missing at least three or four of these elements. Update the policy and date-stamp it with the revision date.</p>
+  <p>Compare the notice with the data map, contracts and live requests. Date the reviewed notice and retain evidence of the version presented at relevant collection points.</p>
 
   <h2 id="data-collection-audit">Data Collection Audit</h2>
 
@@ -110,30 +111,30 @@ const toc = [
 
   <ul>
     <li><strong>Forms</strong> — contact forms, newsletter signups, account registration, checkout, quote requests, survey forms, comment forms. For each form, note what fields are collected, where the data is stored, and whether consent language is present.</li>
-    <li><strong>Analytics tracking</strong> — Google Analytics, Hotjar, Microsoft Clarity, and similar tools collect IP addresses, device information, browsing behaviour, and sometimes user identifiers. List every analytics tool and what data it captures.</li>
+    <li><strong>Analytics tracking</strong> — list each analytics product and configuration, then verify the events, identifiers, device or network data and recipients observed in the tested states.</li>
     <li><strong>Advertising pixels</strong> — Facebook Pixel, Google Ads conversion tracking, LinkedIn Insight Tag, and other advertising scripts track user activity and share data with advertising platforms.</li>
     <li><strong>Live chat and support widgets</strong> — Intercom, Drift, Zendesk, and similar tools collect visitor information and conversation data.</li>
     <li><strong>Embedded third-party content</strong> — YouTube videos, Google Maps, social media feeds, and other embeds can set cookies and collect data from your visitors.</li>
-    <li><strong>Server logs</strong> — your web server automatically logs IP addresses, user agents, and request details for every visitor. These logs contain personal data under GDPR.</li>
+    <li><strong>Server and edge logs</strong> — inspect which request data the actual server, CDN and security services retain. IP addresses, identifiers and request details may be personal data depending on the controller's means and context.</li>
     <li><strong>Email marketing integration</strong> — if your forms feed into email marketing platforms, data flows from your site to a third party.</li>
   </ul>
 
-  <p>For each data collection point, verify that a legal basis exists, that the user is informed (via the privacy policy or point-of-collection notice), that consent is obtained where required, and that the data is transmitted securely (HTTPS, not sent in plain text via email).</p>
+  <p>For each processing purpose, record the controller, data, source, recipients, Article 6 basis, any additional condition, notice, retention, transfer and security controls. Record consent only where the controller actually relies on it.</p>
 
   <h2 id="user-rights">User Rights</h2>
 
   <p>GDPR grants individuals specific rights over their personal data. Your website must facilitate the exercise of these rights. An audit checks whether each right can actually be exercised in practice, not just whether it is mentioned in your privacy policy.</p>
 
   <ul>
-    <li><strong>Right of access</strong> — users can request a copy of all personal data you hold about them. You must respond within one month. Audit check: is there a clear process for users to submit access requests? Can you actually locate and compile all data held about a specific individual across your systems?</li>
+    <li><strong>Right of access</strong> — test intake, identity handling, search, exemptions and the response process. The controller generally responds without undue delay and within one month, subject to the GDPR's extension and notice rules.</li>
     <li><strong>Right to rectification</strong> — users can request correction of inaccurate data. Audit check: can users update their own information through account settings? Is there a process for handling rectification requests for data users cannot self-service?</li>
-    <li><strong>Right to erasure (right to be forgotten)</strong> — users can request deletion of their personal data in certain circumstances. Audit check: can you actually delete a user's data from all systems, including backups and third-party platforms? How long does the process take?</li>
-    <li><strong>Right to data portability</strong> — users can request their data in a commonly used, machine-readable format. Audit check: can you export user data as CSV or JSON? Is there a documented process for portability requests?</li>
-    <li><strong>Right to object</strong> — users can object to processing based on legitimate interest, including direct marketing. Audit check: do your marketing emails include unsubscribe links? Can users opt out of profiling or targeted advertising?</li>
+    <li><strong>Right to erasure</strong> — test whether the organisation can evaluate the Article 17 conditions and exceptions, propagate a valid outcome to relevant systems and processors, and handle protected backups under its retention and restoration controls.</li>
+    <li><strong>Right to data portability</strong> — where processing is automated and based on consent or contract, test export of data the person provided in a structured, commonly used, machine-readable format.</li>
+    <li><strong>Right to object</strong> — distinguish the absolute objection to direct marketing from objections that require the controller to assess compelling legitimate grounds or legal claims.</li>
     <li><strong>Right to restrict processing</strong> — users can request that their data be stored but not actively processed in certain situations. Audit check: can your systems flag a record for restricted processing without deleting it?</li>
   </ul>
 
-  <p>Test each right by submitting a request yourself. Time how long it takes to fulfill. Identify any data stores that would be difficult to search or delete from. These operational gaps are often the most critical findings in a GDPR audit because they represent risks that cannot be fixed with a policy update — they require process and sometimes technical changes.</p>
+  <p>Use an approved synthetic record or controlled exercise to test rights workflows without exposing another person's data. Record intake, identity checks, system searches, decisions, communications and completion time.</p>
 
   <h2 id="third-party-data-sharing">Third-Party Data Sharing</h2>
 
@@ -142,49 +143,49 @@ const toc = [
   <p>For every third party that receives personal data from your website, verify the following:</p>
 
   <ul>
-    <li><strong>A Data Processing Agreement (DPA) is in place</strong> — GDPR requires a written contract between the data controller (you) and each data processor (the third party). Most major platforms offer standard DPAs — Google, Meta, Stripe, Mailchimp, and others have DPAs available in their account settings. Download and store each one.</li>
+    <li><strong>The relationship and contract are classified</strong> — where a vendor processes personal data on the controller's behalf, verify an Article 28 contract. Separate controller-to-controller sharing requires a different analysis.</li>
     <li><strong>The third party's privacy practices are adequate</strong> — you are responsible for choosing processors that provide sufficient security guarantees. Review their security certifications, data handling policies, and breach notification procedures.</li>
-    <li><strong>International transfers are lawful</strong> — if data flows to a country outside the EEA without an adequacy decision from the European Commission, additional safeguards are required. For US-based processors, check whether they are certified under the EU-US Data Privacy Framework. If not, Standard Contractual Clauses must be in place.</li>
+    <li><strong>International transfer mechanism is recorded</strong> — identify the destination, adequacy decision or other Chapter V mechanism and any required supplementary assessment. US certification and Standard Contractual Clauses are possible mechanisms, not the only universal outcomes.</li>
     <li><strong>Data sharing is disclosed in your privacy policy</strong> — every third party that receives personal data should be named or categorised in your privacy policy. Users must know who has access to their information.</li>
   </ul>
 
-  <p>Create an inventory of all third-party data recipients. For each one, document the type of data shared, the purpose of sharing, the legal basis, the DPA status, and the data transfer mechanism for international transfers. This inventory is a required GDPR record of processing activities and is one of the first things a supervisory authority will request during an investigation.</p>
+  <p>Create a recipient inventory with data, purpose, role, basis, contract and any transfer mechanism. Assess separately whether Article 30 requires a record of processing activities and ensure that record contains the Article's required fields.</p>
 
   <h2 id="gdpr-audit-checklist">GDPR Audit Checklist</h2>
 
-  <p>Use this checklist to score your website's GDPR compliance. Rate each item as compliant, partially compliant, or non-compliant. Non-compliant items are your priority fixes.</p>
+  <p>Use this checklist to collect evidence for a GDPR review. Record confirmed, partial, failed, not applicable or not tested. Ask the controller and qualified counsel to determine legal compliance and priority.</p>
 
   <div class="glass rounded-2xl p-6 my-8">
     <ul class="space-y-3 list-none pl-0">
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Cookie consent banner appears before any non-essential cookies are set</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Where UK PECR consent is required, storage or access is blocked until a valid choice</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Users can reject non-essential cookies with equal ease as accepting them</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Cookie categories can be selected individually (granular consent)</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Consent choices are recorded and can be evidenced</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Consent can be withdrawn at any time via a persistent link or icon</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy is accessible from every page (typically via footer link)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Required privacy information is easily accessible at relevant collection points</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy names the data controller with contact details</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy lists all categories of personal data collected</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy states the legal basis for each processing activity</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy includes specific data retention periods</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy information gives retention periods or the criteria used to determine them</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy identifies third-party data recipients</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy explains international data transfers and safeguards</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Privacy policy explains all user rights and how to exercise them</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">All forms collecting personal data include appropriate consent mechanisms</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Marketing email opt-in uses double opt-in (not pre-ticked boxes)</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">A process exists to handle data subject access requests within 30 days</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">User data can be exported in a machine-readable format for portability</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">User data can be fully deleted across all systems for erasure requests</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Data Processing Agreements are in place with all third-party processors</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">A record of processing activities is maintained and up to date</span></li>
-      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Data breach notification procedures are documented (72-hour reporting)</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Each form has the required notice and a recorded legal basis for each purpose</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Marketing choices follow the applicable ePrivacy or PECR rule and use no pre-ticked consent box</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">A process records and handles rights requests within the applicable one-month GDPR period, including any valid extension and notice</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Where Article 20 applies, in-scope data can be exported in a structured, commonly used, machine-readable format</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Erasure decisions and valid exceptions can be applied across active systems and processors</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Article 28 contracts are in place for vendors acting as processors</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Any required Article 30 record is maintained with the applicable fields</span></li>
+      <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Breach assessment and notice procedures apply the risk test and conditional 72-hour rule</span></li>
       <li class="flex items-start gap-3"><span class="mt-0.5 w-5 h-5 shrink-0 rounded border border-primary/40 flex items-center justify-center text-primary text-xs" aria-hidden="true">✓</span><span class="text-text-muted">Staff with access to personal data have received data protection training</span></li>
     </ul>
   </div>
 
   <div class="glass rounded-2xl p-6 my-8 border-danger/20">
     <h3 class="font-bold mb-3 flex items-center gap-2 text-danger"><span class="w-2 h-2 rounded-full bg-danger"></span>Priority order</h3>
-    <p class="text-sm text-text-muted mb-0">Cookie consent violations and missing privacy policy elements are the most commonly enforced issues across EU jurisdictions — fix these first. Data subject rights failures and missing DPAs create the most liability in an actual complaint or breach investigation — fix these second.</p>
+    <p class="text-sm text-text-muted mb-0">Prioritise an active unlawful disclosure, exposed special-category data or a broken rights process from verified risk and regulator guidance. Do not apply one enforcement order to every organisation.</p>
   </div>
 
-  <p>GDPR compliance is not a one-time project. Revisit this audit whenever you add new features, install new third-party tools, or change your data processing practices. Quarterly reviews of your processing inventory and annual full GDPR audits keep you ahead of regulatory risk. If you need help running a GDPR audit or remediating the findings, <a href="/website-audit-services/">our compliance audit service</a> covers all 22 checkpoints with detailed remediation guidance.</p>
+  <p>Revisit the data map when processing, vendors or purposes change. Use the European Commission's <a href="https://commission.europa.eu/law/law-topic/data-protection/data-protection-eu_en">EU data-protection guidance</a> or the ICO's <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/">UK GDPR guidance</a> for the applicable regime. The <a href="/website-cookie-audit/">cookie audit</a> covers browser evidence in more detail.</p>
 </ContentLayout>

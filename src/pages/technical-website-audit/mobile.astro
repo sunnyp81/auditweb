@@ -14,8 +14,8 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Mobile Website Audit: Ensure Your Site Works Perfectly on Every Device"
-  description="A mobile website audit checks responsive design, touch usability, mobile speed, and content parity. With mobile-first indexing, your mobile experience determines your rankings."
+  title="Mobile Website Audit: Responsive and Indexing Checks"
+  description="Audit mobile rendering, content parity, links, structured data, touch input and performance on representative devices and network conditions."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Technical Audit', href: '/technical-website-audit/' },
@@ -23,9 +23,10 @@ const toc = [
   ]}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
   <h2 id="why">Why Mobile Audits Matter</h2>
-  <p>Over 60% of web traffic now comes from mobile devices. More importantly, Google uses mobile-first indexing for all websites — meaning the mobile version of your site is what Google crawls, indexes, and uses for ranking. If your mobile experience is poor, your desktop rankings suffer too.</p>
+  <p>A mobile website audit checks whether the same primary content, metadata, structured data and crawlable links are available to users and Google on the mobile render. Test real devices as well as emulation because viewport size alone cannot reproduce browser and input differences.</p>
   <p>A mobile audit evaluates your site on the devices your users actually use, under the network conditions they actually experience. What looks and works great on a desktop with fibre broadband may be broken on a phone with a 4G connection.</p>
 
   <h2 id="mobile-first">Mobile-First Indexing</h2>
@@ -42,7 +43,7 @@ const toc = [
     <li><strong>Viewport meta tag:</strong> Every page must include <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>. Without it, mobile browsers render the page at desktop width.</li>
     <li><strong>No horizontal scrolling:</strong> Content should never overflow the viewport width. Check for fixed-width elements, wide tables, or oversized images that force horizontal scrolling.</li>
     <li><strong>Readable text without zooming:</strong> Body text should be at least 16px. Users shouldn't need to pinch-zoom to read your content.</li>
-    <li><strong>Flexible layouts:</strong> Use CSS flexbox or grid with relative units (%, rem, vw) instead of fixed pixel widths. Test at every common viewport width: 320px, 375px, 414px, 768px.</li>
+    <li><strong>Flexible layouts:</strong> Use layout methods and units that adapt to available space. Test boundary widths derived from the design, content and analytics, including narrow mobile and zoomed states.</li>
     <li><strong>Images scale correctly:</strong> Images should have max-width: 100% and height: auto to prevent overflow. Use the picture element or srcset for different viewport sizes.</li>
     <li><strong>Tables are readable:</strong> Data tables often break on mobile. Use responsive table patterns — horizontal scrolling wrappers, stacked layouts, or simplified mobile versions.</li>
   </ul>
@@ -54,17 +55,17 @@ const toc = [
     <li><strong>Reduce JavaScript payload:</strong> Mobile CPUs are 3-5x slower than desktop at parsing and executing JavaScript. Every KB of JS matters more on mobile.</li>
     <li><strong>Optimise for high-latency connections:</strong> Each HTTP request adds 100-300ms of latency on mobile. Reduce the number of requests and use HTTP/2 multiplexing.</li>
     <li><strong>Preconnect to critical origins:</strong> Use <code>&lt;link rel="preconnect"&gt;</code> for external domains that serve critical resources (fonts, APIs, CDNs).</li>
-    <li><strong>Target mobile LCP under 2.5s:</strong> Mobile LCP is typically 1-2 seconds slower than desktop. Preload the mobile hero image and minimise server response time.</li>
+    <li><strong>Target LCP within 2.5 seconds:</strong> Use 75th-percentile field data where available and trace representative mobile loads to find the responsible element and subparts.</li>
   </ul>
 
   <h2 id="touch">Touch and Navigation</h2>
   <ul>
-    <li><strong>Tap targets are at least 48x48px:</strong> Buttons, links, and form fields must be large enough to tap accurately with a finger. Google flags tap targets under 48px as a mobile usability issue.</li>
+    <li><strong>Tap targets have sufficient size or spacing:</strong> WCAG 2.2 AA sets a 24 by 24 CSS pixel criterion with spacing and inline exceptions. Test larger controls where the audience or task needs them.</li>
     <li><strong>Adequate spacing between tap targets:</strong> At least 8px of spacing between clickable elements to prevent accidental taps.</li>
     <li><strong>No hover-dependent interactions:</strong> Dropdown menus, tooltips, and hover effects don't work on touch screens. Ensure all interactive elements are accessible via tap.</li>
     <li><strong>Mobile menu is usable:</strong> Hamburger menus should be easy to open and close, menu items should be large enough to tap, and the menu shouldn't cover the entire viewport.</li>
     <li><strong>Forms are mobile-friendly:</strong> Use appropriate input types (email, tel, number) to trigger the right mobile keyboard. Labels should be above fields, not beside them.</li>
-    <li><strong>No interstitials covering content:</strong> Full-screen pop-ups that block content on mobile trigger Google's intrusive interstitial penalty. Use banners instead of modals.</li>
+    <li><strong>Interstitials preserve access:</strong> Check pages against Google's intrusive-interstitial guidance. Keep legally required notices proportionate and verify that users can reach the main content.</li>
   </ul>
 
   <h2 id="content-parity">Mobile Content Parity</h2>
@@ -79,11 +80,11 @@ const toc = [
 
   <h2 id="tools">Testing Tools</h2>
   <ul>
-    <li><strong>Google's Mobile-Friendly Test:</strong> Quick pass/fail check for individual URLs. Shows rendering issues and specific mobile usability problems.</li>
-    <li><strong>Google Search Console Mobile Usability report:</strong> Shows mobile usability issues across your entire site, grouped by error type.</li>
+    <li><strong>Google URL Inspection:</strong> Inspect Google's indexed and live-test render for a representative URL. Use the result with browser testing rather than as a full usability verdict.</li>
+    <li><strong>Responsive browser testing:</strong> Use current Chrome, Safari and Firefox with zoom, portrait and landscape checks. Google's Mobile-Friendly Test and Search Console Mobile Usability report are retired.</li>
     <li><strong>Chrome DevTools Device Mode:</strong> Emulate any mobile device with responsive design mode. Toggle the device toolbar with Ctrl+Shift+M.</li>
     <li><strong>BrowserStack or LambdaTest:</strong> Test on real devices remotely. Essential for catching issues that emulators miss — especially iOS-specific rendering bugs.</li>
-    <li><strong>PageSpeed Insights (mobile):</strong> Always test the mobile version specifically. Mobile scores are typically 20-40 points lower than desktop due to CPU and network throttling.</li>
+    <li><strong>PageSpeed Insights (mobile):</strong> Compare field data with its collection window and use the mobile lab run to diagnose a reproducible problem. Do not compare raw Lighthouse scores from different test conditions.</li>
   </ul>
 
   <h2 id="checklist">Mobile Audit Checklist</h2>
@@ -91,17 +92,17 @@ const toc = [
     <li><strong>Viewport meta tag present</strong> on all pages</li>
     <li><strong>No horizontal scrolling</strong> at any viewport width</li>
     <li><strong>Text readable at 16px+</strong> without zooming</li>
-    <li><strong>Tap targets 48x48px minimum</strong> with adequate spacing</li>
+    <li><strong>Target size and spacing checked</strong> against WCAG 2.2 AA and the needs of touch users</li>
     <li><strong>Mobile menu functional</strong> and easy to use</li>
     <li><strong>No hover-dependent interactions</strong></li>
     <li><strong>Forms use correct input types</strong></li>
     <li><strong>No intrusive interstitials</strong></li>
     <li><strong>Content parity</strong> with desktop version</li>
-    <li><strong>Mobile LCP under 2.5 seconds</strong></li>
+    <li><strong>Mobile LCP within 2.5 seconds at the 75th percentile</strong></li>
     <li><strong>Images responsive</strong> with srcset</li>
     <li><strong>Third-party scripts deferred</strong> on mobile</li>
     <li><strong>Structured data present</strong> on mobile version</li>
   </ul>
 
-  <p>For a complete mobile audit alongside our 72-checkpoint review, see our <a href="/website-audit-services/">professional audit services</a>.</p>
+  <p>Google's <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing">mobile-first indexing guidance</a> explains content and metadata parity. W3C documents the <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum">WCAG 2.2 target-size criterion</a>. Continue with the <a href="/technical-website-audit/core-web-vitals/">Core Web Vitals audit</a> for field-data interpretation.</p>
 </ContentLayout>

@@ -20,15 +20,16 @@ const toc = [
 
 <ContentLayout
   title="Website Security Audit Checklist"
-  description="A practical website security audit checklist covering SSL, security headers, software updates, authentication, file permissions, backups, and monitoring. Protect your site from common threats."
+  description="Run authorised website security checks across TLS, headers, updates, authentication, permissions, backups and monitoring with reproducible evidence."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>Website security is not just an IT concern. It directly affects your search rankings, user trust, and business continuity. Google explicitly uses HTTPS as a ranking signal, flags insecure sites in Chrome with visible warnings, and can deindex sites that distribute malware. Beyond SEO, a security breach exposes you to data protection fines, customer lawsuits, and reputational damage that takes years to repair.</p>
+<p>A website security checklist verifies transport, browser defences, maintained software, account controls, permissions, recovery and detection. Obtain written authorisation and define allowed hosts and test types before any active scan.</p>
 
-<p>This checklist covers the security audit items that every website should verify regularly. It is not exhaustive enough for a full penetration test or compliance audit, but it covers the vulnerabilities that account for the vast majority of website compromises. If your site passes every check on this list, you have addressed the most common and most dangerous attack vectors.</p>
+<p>This list is a configuration review rather than a penetration test or compliance assessment. A pass does not establish that the application is secure. Record tool version, request, response, timestamp and affected asset for each result.</p>
 
 <h2 id="ssl-and-https">SSL and HTTPS</h2>
 
@@ -39,7 +40,7 @@ const toc = [
   <li><strong>All pages are served over HTTPS.</strong> Navigate to several pages across your site using HTTP (not HTTPS) and verify that each one redirects to the HTTPS version. Check the homepage, a deep content page, a category page, and any login or form pages. Some sites have HTTPS on the homepage but serve internal pages over HTTP.</li>
   <li><strong>No mixed content.</strong> Mixed content occurs when an HTTPS page loads resources (images, scripts, stylesheets) over HTTP. Browsers may block these resources or display warnings. Use the browser developer console (F12 > Console) to check for mixed content warnings. Common culprits are hardcoded image URLs in content, third-party widgets loaded over HTTP, and legacy CSS files referencing HTTP asset paths.</li>
   <li><strong>HTTP redirects to HTTPS.</strong> Verify that HTTP versions of your URLs return a 301 redirect to the HTTPS version, not a 302. Use a tool like httpstatus.io or curl to check the redirect type. 302 redirects do not consolidate ranking signals to the HTTPS version.</li>
-  <li><strong>HSTS header is set.</strong> The Strict-Transport-Security header tells browsers to always use HTTPS for your domain, even if a user types HTTP or clicks an HTTP link. Check for this header using your browser's developer tools (Network tab > response headers) or SecurityHeaders.com. A good HSTS configuration is: Strict-Transport-Security: max-age=31536000; includeSubDomains.</li>
+  <li><strong>HSTS is assessed safely.</strong> Check whether every required host and subdomain supports HTTPS before enabling or expanding Strict-Transport-Security. Choose <code>max-age</code>, <code>includeSubDomains</code> and preload through change control because a copied policy can make unsupported hosts unreachable.</li>
   <li><strong>SSL configuration grade.</strong> Test your SSL configuration at ssllabs.com/ssltest. Aim for an A grade. Common issues that lower the grade include support for outdated TLS versions (TLS 1.0 and 1.1 should be disabled), weak cipher suites, and missing certificate chain intermediates.</li>
 </ul>
 
@@ -53,7 +54,7 @@ const toc = [
   <li><strong>X-Frame-Options.</strong> This header controls whether your pages can be embedded in iframes on other sites. Set to DENY (no framing allowed) or SAMEORIGIN (only your own domain can frame your pages). This prevents clickjacking attacks where attackers overlay your site with invisible elements to trick users into clicking unintended targets.</li>
   <li><strong>Referrer-Policy.</strong> This header controls how much referrer information is sent when users click links on your site. Set to "strict-origin-when-cross-origin" to share only the origin (domain) with external sites while sharing the full URL with same-origin requests. This prevents URL-embedded sensitive data from leaking to third-party sites.</li>
   <li><strong>Permissions-Policy.</strong> This header (formerly Feature-Policy) controls which browser features your site can use: camera, microphone, geolocation, payment, and others. Restrict features you do not use. For example: Permissions-Policy: camera=(), microphone=(), geolocation=() disables these features entirely, preventing any injected script from accessing them.</li>
-  <li><strong>X-XSS-Protection.</strong> While largely superseded by CSP in modern browsers, this header provides an additional layer of XSS protection in older browsers. Set to "1; mode=block" to enable XSS filtering and block the page rather than attempting to sanitise the malicious content.</li>
+  <li><strong>Deprecated X-XSS-Protection is not treated as a control.</strong> The non-standard header is deprecated and legacy filters could introduce vulnerabilities. Use context-aware output encoding and a tested Content Security Policy instead; follow current browser guidance if an old client creates a documented exception.</li>
 </ul>
 
 <h2 id="software-updates">Software Updates</h2>
@@ -73,7 +74,7 @@ const toc = [
 <p>Weak authentication is the most common way attackers gain access to website administration panels.</p>
 
 <ul>
-  <li><strong>Strong password requirements.</strong> All admin accounts should use passwords of at least 16 characters, combining uppercase, lowercase, numbers, and symbols. Ideally, use a password manager to generate and store unique passwords for each account. Check that your CMS enforces minimum password complexity for new accounts.</li>
+  <li><strong>Password controls follow current identity guidance.</strong> Check minimum length, compromised-password blocklists, rate limiting, password-manager support and secure reset. Do not require arbitrary mixtures of character types; use NIST SP 800-63B's current rules and the assurance level in scope.</li>
   <li><strong>Two-factor authentication is enabled.</strong> Every administrator and editor account should use two-factor authentication (2FA). This typically means a time-based one-time password (TOTP) app like Google Authenticator or Authy. SMS-based 2FA is better than nothing but vulnerable to SIM-swapping attacks. Hardware keys (YubiKey) provide the strongest protection.</li>
   <li><strong>Login attempt limiting.</strong> Verify that your site limits failed login attempts. After 5-10 failed attempts, the account or IP address should be temporarily locked. This prevents brute force attacks from systematically trying password combinations. Most CMS platforms have plugins or built-in settings for this.</li>
   <li><strong>Default credentials are changed.</strong> Check that no accounts use default usernames (admin, administrator, root) or default passwords. Automated attack tools try default credentials first. Change any default accounts immediately.</li>
@@ -86,11 +87,11 @@ const toc = [
 <p>Incorrect file permissions allow attackers to read sensitive files, modify code, or upload malicious files to your server.</p>
 
 <ul>
-  <li><strong>Configuration files are protected.</strong> Your CMS configuration file (wp-config.php for WordPress, settings.php for Drupal, configuration.php for Joomla) contains database credentials and security keys. Verify that this file is not accessible via browser by requesting its URL directly. Set permissions to 400 (read only, owner only) or 440 (read only, owner and group).</li>
+  <li><strong>Configuration files are protected.</strong> CMS configuration files can contain database credentials and security keys. Verify from an authorised test that they cannot be downloaded over the web. Set filesystem ownership and permissions according to the CMS, host, deployment process and web-server user, then confirm the application still works and only the required process accounts can read the file.</li>
   <li><strong>Directory listing is disabled.</strong> Navigate to a directory URL (like yourdomain.com/images/) and verify that you see a 403 Forbidden or your site's 404 page, not a listing of files in the directory. Directory listing exposes your file structure to attackers and can reveal sensitive files.</li>
   <li><strong>Upload directory restrictions.</strong> The directory where users can upload files (typically /uploads/ or /media/) should not execute scripts. Configure your server to treat all files in the upload directory as static files, regardless of their extension. This prevents an attacker who uploads a disguised PHP file from executing server-side code.</li>
-  <li><strong>Sensitive files are excluded from web root.</strong> Files like database backups, configuration backups, .git directories, .env files, and deployment scripts should not be accessible from the web. Check for common sensitive file paths: /.git/, /.env, /backup.sql, /wp-config.php.bak. Any of these returning a 200 response is a critical vulnerability.</li>
-  <li><strong>Standard permission scheme.</strong> For most CMS installations, directories should be 755 (owner can read/write/execute, others can read/execute) and files should be 644 (owner can read/write, others can read only). Never use 777 permissions on any file or directory. If an application requires 777 to function, the underlying problem is incorrect ownership, not permission levels.</li>
+  <li><strong>Sensitive files are excluded from web root.</strong> Check authorised paths for exposed database backups, configuration, repositories and credentials. Inspect the response content: a 200 response may be a generic fallback and does not prove disclosure. Record confirmed exposure without copying secrets into a public report, then assess severity from the data and access revealed.</li>
+  <li><strong>Least-privilege file permissions.</strong> Compare ownership and permissions with the host, deployment model and CMS guidance. Confirm that the web process cannot write application code or secrets it only needs to read; investigate world-writable paths.</li>
 </ul>
 
 <h2 id="backups">Backups</h2>
@@ -101,8 +102,8 @@ const toc = [
   <li><strong>Automated backups run daily.</strong> Verify that automated backups are configured, running daily, and completing successfully. Check backup logs for errors. A backup system that silently fails provides false confidence. Test that backups are actually being created by checking the most recent backup file date.</li>
   <li><strong>Backups are stored offsite.</strong> Backups on the same server as your website are destroyed when the server is compromised or fails. Store backups on a separate server, cloud storage (AWS S3, Google Cloud Storage), or a dedicated backup service. At least one copy should be in a different geographic region.</li>
   <li><strong>Database and files are both backed up.</strong> A complete backup includes both the database (all content, settings, and user data) and the file system (code, uploads, configuration files). Some backup solutions only cover one or the other. Verify that both are included in your backup routine.</li>
-  <li><strong>Backup retention covers 30 days.</strong> Retain at least 30 days of daily backups. Some security compromises are not discovered for weeks, and you may need to restore from a backup that predates the compromise. Monthly backups should be retained for at least 12 months for compliance and disaster recovery purposes.</li>
-  <li><strong>Restore process is tested.</strong> A backup you have never tested is a backup you cannot trust. At least once per quarter, restore a backup to a staging environment and verify that the site functions correctly. Document the restore process so that anyone on your team can perform it, not just the person who configured the backup system.</li>
+  <li><strong>Backup retention matches recovery needs.</strong> Set backup frequency and retention from recovery-point objectives, recovery-time objectives, compromise-detection time, legal retention and deletion duties. Document why the selected generations cover plausible recovery points.</li>
+  <li><strong>Restore process is tested.</strong> Restore representative backups in an isolated environment on a risk-based schedule and verify data, files, configuration and application function against the recovery objectives. Record the test and resolve failures.</li>
   <li><strong>Backups are encrypted.</strong> Backup files contain your entire site, including database credentials, user data, and potentially payment information. Encrypt backup files at rest and in transit. Most cloud backup services support encryption by default, but verify that it is actually enabled.</li>
 </ul>
 
@@ -119,5 +120,7 @@ const toc = [
   <li><strong>DNS monitoring.</strong> Monitor your domain's DNS records for unauthorised changes. DNS hijacking redirects your visitors to attacker-controlled servers without changing any files on your actual server. Use a DNS monitoring service to alert you if your A records, MX records, or NS records change unexpectedly.</li>
   <li><strong>SSL certificate monitoring.</strong> In addition to tracking your certificate's expiry date, monitor for unauthorised certificates issued for your domain using Certificate Transparency logs. Services like crt.sh or Cert Spotter alert you when new certificates are issued for your domain, which could indicate an attacker preparing a phishing site.</li>
 </ul>
+
+<p>Use the <a href="https://owasp.org/www-project-web-security-testing-guide/">OWASP Web Security Testing Guide</a> for scoped testing and NIST's <a href="https://pages.nist.gov/800-63-4/sp800-63b.html">digital identity guidance</a> for authentication decisions. Continue with the <a href="/website-security-audit/checklist/">detailed security audit checklist</a>.</p>
 
 </ContentLayout>

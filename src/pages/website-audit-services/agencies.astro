@@ -1,118 +1,58 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
-
 const breadcrumbs = [
   { label: 'Website Audit', href: '/website-audit/' },
   { label: 'Services', href: '/website-audit-services/' },
   { label: 'Agencies', href: '/website-audit-services/agencies/' },
 ];
-
 const toc = [
-  { label: 'Why Agencies Need Audit Partners', id: 'why-agencies-need-audit-partners' },
-  { label: 'White-Label Reports', id: 'white-label-reports' },
-  { label: 'Wholesale Pricing', id: 'wholesale-pricing' },
-  { label: 'How It Works', id: 'how-it-works' },
-  { label: 'Volume Discounts', id: 'volume-discounts' },
-  { label: 'Getting Started', id: 'getting-started' },
+  { label: 'Agency Use Cases', id: 'why-agencies-need-audit-partners' },
+  { label: 'Branding and Handoff', id: 'white-label-reports' },
+  { label: 'Scope and Pricing', id: 'wholesale-pricing' },
+  { label: 'Process', id: 'how-it-works' },
+  { label: 'Recurring Work', id: 'volume-discounts' },
+  { label: 'Before Enquiring', id: 'getting-started' },
 ];
 ---
-
 <ContentLayout
-  title="Website Audit Services for Digital Agencies"
-  description="White-label website audit services designed for digital agencies. Deliver expert-level audit reports to your clients under your brand, with wholesale pricing and volume discounts."
-  breadcrumbs={breadcrumbs}
-  toc={toc}
-  publishDate="2026-03-28"
-  showLeadForm={true}
+  title="Website Audit Services for Agencies: Scope and Handoff"
+  description="Add remote website audit capacity for an agreed client scope. Confirm branding, evidence, deliverables, communication and pricing before work begins."
+  breadcrumbs={breadcrumbs} toc={toc} publishDate="2026-03-28" updateDate="2026-09-11" showLeadForm={true}
 >
-  <p>Digital agencies face a persistent operational challenge: clients expect comprehensive website audits as part of onboarding, contract renewals, and quarterly business reviews, but conducting thorough audits in-house is time-intensive and requires specialist expertise that many agencies do not have on staff full-time. A junior account manager running Screaming Frog and copying the results into a presentation is not the same as a seasoned SEO professional analysing data across six dimensions and producing a strategic action plan.</p>
+<p>AuditWeb can provide remote website audit capacity for an agency's defined client project. The written scope should name the pages, questions, data sources, report format, branding and communication boundaries.</p>
+<p>The service delivers investigation and recommendations. White-label files, editable formats, presentations, client contact and implementation are included only when the quote says so.</p>
 
-  <p>The result is a quality gap. Agencies either deliver superficial audits that fail to impress clients, or they invest senior analyst time that could be spent on higher-value activities like strategy development and implementation. Neither outcome is good for profitability or client retention.</p>
+<h2 id="why-agencies-need-audit-partners">When should an agency use an audit partner?</h2>
+<p>Use an audit partner when the agency needs temporary review capacity, specialist evidence or an independent check. Keep strategy ownership with the agency and define the decision that the report must support.</p>
+<ul>
+  <li><strong>Overflow review:</strong> assign a complete audit with a fixed page and system scope.</li>
+  <li><strong>Second opinion:</strong> provide the existing findings and request evidence checks.</li>
+  <li><strong>Specialist question:</strong> isolate rendering, migration, accessibility or another agreed area.</li>
+</ul>
 
-  <p>Our agency audit service eliminates this gap. We conduct the deep analysis, produce the comprehensive report, and deliver it to you under your brand. Your client sees a thorough, professional audit from their agency. You maintain the relationship and the margin without burning senior resources on repetitive analytical work.</p>
+<h2 id="white-label-reports">How do branding and handoff work?</h2>
+<p>Branding and handoff are scoping decisions. Provide the approved template, tone rules, file format and attribution requirements before work starts.</p>
+<p>A useful handoff includes affected URLs, dated evidence, recommended fixes, dependencies and verification steps. Review AuditWeb's <a href="/website-audit-services/report-example/">completed report example</a> before approving a format.</p>
 
-  <h2 id="why-agencies-need-audit-partners">Why Agencies Need Audit Partners</h2>
+<h2 id="wholesale-pricing">How are agency scope and pricing set?</h2>
+<p>A basic audit starts at $297 USD and a comprehensive audit starts at $997 USD. Multi-site, recurring, enterprise and custom-branded work is quoted after scope review.</p>
+<p>Price should follow the number of sites, template sample, review dimensions, data preparation and deliverables. AuditWeb does not publish unverified wholesale margins or promise automatic discounts.</p>
 
-  <p>The economics of audit work within an agency often do not add up. A comprehensive website audit takes 20-40 hours of skilled analyst time. At an agency's internal cost rate for a senior SEO specialist, that represents a significant investment — often more than the client is willing to pay for audit work alone. Agencies typically absorb this cost as part of a broader retainer, which compresses margins on the entire engagement.</p>
+<h2 id="how-it-works">What is the agency audit process?</h2>
+<p>The agency submits an authorised brief. AuditWeb confirms scope and access, records evidence, drafts findings and delivers the agreed files to the agency contact.</p>
+<ol>
+  <li>Define the client question, affected properties and exclusions.</li>
+  <li>Confirm permitted data access and handling requirements.</li>
+  <li>Review evidence and distinguish confirmed findings from open questions.</li>
+  <li>Deliver the report with priorities and verification criteria.</li>
+</ol>
+<p>Search Console or analytics access should be read-only where possible. Do not send passwords in the public form.</p>
 
-  <p>Beyond the economics, there are practical reasons why agencies benefit from outsourcing audit work:</p>
+<h2 id="volume-discounts">How is recurring agency work agreed?</h2>
+<p>Recurring work needs a custom agreement for volume, capacity, delivery dates, report formats and revision rules. A previous audit does not automatically set terms for the next client.</p>
+<p>Ask for a quote using realistic quarterly volume and site complexity. AuditWeb confirms any discount in writing.</p>
 
-  <ul>
-    <li><strong>Capacity constraints</strong> — most agencies experience uneven demand for audits. New business pitches, contract renewals, and client requests cluster around certain times. During peak periods, your team cannot deliver ten comprehensive audits in two weeks without quality suffering. An external partner provides elastic capacity that scales with demand.</li>
-    <li><strong>Specialist depth</strong> — a generalist SEO professional can identify common issues, but may miss the nuanced technical problems that require deep specialist knowledge. Client sites running headless CMS architectures, complex JavaScript frameworks, or enterprise ecommerce platforms present challenges that require experience with those specific technologies. An audit partner who conducts hundreds of audits per year has seen every platform and every problem.</li>
-    <li><strong>Consistency</strong> — when multiple team members conduct audits using different approaches, the quality and format varies. Clients who receive three audits over 18 months from the same agency should see a consistent methodology and report format. An external partner applies the same systematic process to every audit, ensuring consistent quality regardless of volume.</li>
-    <li><strong>Objectivity</strong> — an external auditor brings fresh eyes to a site that your team may have been working on for months or years. Familiarity breeds blind spots. A team that implemented a site migration may overlook issues introduced during that migration because they are too close to the project. External perspective catches what internal teams miss.</li>
-    <li><strong>Competitive intelligence</strong> — we audit sites across hundreds of industries and verticals. This cross-industry experience means we recognise patterns and opportunities that single-vertical agencies might not. We know what is working in adjacent markets and can bring those insights to your client reports.</li>
-  </ul>
-
-  <h2 id="white-label-reports">White-Label Reports</h2>
-
-  <p>Every audit report we deliver is fully white-labelled. Your client never sees our brand, our name, or any indication that the work was performed externally. The report is presented as your work, reinforcing your agency's expertise and the value of your retainer.</p>
-
-  <p>Our white-label service includes:</p>
-
-  <ul>
-    <li><strong>Your branding throughout</strong> — every report is delivered with your agency's logo, colour scheme, contact information, and brand elements. We use your report template if you have one, or we provide a clean, professional template that you can customise with your branding. Cover page, headers, footers, and any client-facing element carries your identity.</li>
-    <li><strong>Custom executive summary</strong> — the executive summary is written in your agency's voice and can reference your ongoing work with the client. If you provide context about the client relationship and current initiatives, we incorporate that context so the report reads as a natural extension of your engagement, not a standalone document from an outsider.</li>
-    <li><strong>Editable deliverable</strong> — reports are delivered in an editable format (Google Docs, Word, or Google Slides) so you can review, adjust, and add your own commentary before presenting to the client. You have full control over the final version. Some agencies present the report as-is. Others add a strategic layer on top. The choice is yours.</li>
-    <li><strong>Presentation-ready format</strong> — in addition to the detailed report, we provide a condensed slide deck suitable for client meetings. The deck highlights key findings, critical issues, and priority recommendations in a format that works for stakeholder presentations where a 60-page report is too dense.</li>
-    <li><strong>Confidentiality</strong> — we operate under strict NDAs. We do not reference your agency or your clients in our own marketing, portfolio, or case studies. Your client data is handled with the same confidentiality standards you would apply internally.</li>
-  </ul>
-
-  <h2 id="wholesale-pricing">Wholesale Pricing</h2>
-
-  <p>Our pricing is structured to give agencies a healthy margin when reselling audits to clients. The typical client-facing price for a professional audit ranges from $1,500 to $5,000 depending on site complexity. Our wholesale pricing is designed to leave you with 40-60% gross margin at typical client rates.</p>
-
-  <p>Pricing is based on site complexity rather than flat rates, because a 50-page brochure site and a 50,000-page ecommerce store require fundamentally different levels of analysis:</p>
-
-  <ul>
-    <li><strong>Tier 1: Small sites (under 500 pages)</strong> — brochure sites, small blogs, local business websites. These require a focused audit that covers all six dimensions but does not need to account for enterprise-scale technical challenges like crawl budget management or complex faceted navigation.</li>
-    <li><strong>Tier 2: Medium sites (500-5,000 pages)</strong> — growing businesses, mid-size ecommerce stores, content-heavy blogs. These sites have enough complexity to surface cannibalisation issues, internal linking problems, and content quality variations that require detailed analysis.</li>
-    <li><strong>Tier 3: Large sites (5,000-50,000 pages)</strong> — enterprise ecommerce, large publishers, multi-location businesses. These require extensive crawl analysis, segment-by-segment content evaluation, and architecture review that significantly increases the analytical scope.</li>
-    <li><strong>Tier 4: Enterprise (50,000+ pages)</strong> — major ecommerce platforms, international sites, large media properties. These require specialised analysis including log file review, crawl budget optimisation, international SEO assessment, and often coordination with the client's development team.</li>
-  </ul>
-
-  <p>We provide transparent per-audit pricing for each tier so you can quote your clients with confidence. There are no hidden fees, no per-page surcharges, and no surprise costs for additional analysis. The price you are quoted is the price you pay.</p>
-
-  <h2 id="how-it-works">How It Works</h2>
-
-  <p>Our agency workflow is designed to minimise your team's involvement while maximising the quality and relevance of the deliverable. Here is the process from start to finish:</p>
-
-  <ol>
-    <li><strong>You submit the request</strong> — send us the client's website URL, any specific concerns or focus areas, and the branding assets to use in the report. If you have Search Console and Analytics access to share, provide read-only credentials. If not, we work from external data sources. A brief about the client's business, competitors, and goals helps us tailor the analysis.</li>
-    <li><strong>We conduct the audit</strong> — our team runs a comprehensive crawl, collects data from all available sources, performs competitive analysis, evaluates content quality, and synthesises findings into a prioritised action plan. This typically takes five to ten business days depending on site complexity and current queue depth.</li>
-    <li><strong>Internal review</strong> — every audit passes through an internal quality review before delivery. A second analyst reviews the findings, checks data accuracy, and validates recommendations. This peer review ensures consistency and catches any oversights.</li>
-    <li><strong>Delivery to your team</strong> — we deliver the white-labelled report to your designated contact in editable format. We include a brief internal summary highlighting the most important findings and suggested talking points for your client presentation.</li>
-    <li><strong>Optional briefing call</strong> — if your team wants a walkthrough before presenting to the client, we schedule a call to explain the findings, answer questions, and provide context that helps your team present with confidence. This call is between our team and yours — never involving the client directly.</li>
-    <li><strong>Revisions if needed</strong> — if you want adjustments to tone, emphasis, or recommendations based on your knowledge of the client relationship, we make those revisions promptly. We understand that you know your client better than we do, and the report should reflect that knowledge.</li>
-  </ol>
-
-  <h2 id="volume-discounts">Volume Discounts</h2>
-
-  <p>Agencies that commit to regular audit volume receive progressively better pricing. Our volume discount structure rewards consistent partnership and enables you to offer audits as a standard part of your service packages rather than an occasional add-on.</p>
-
-  <ul>
-    <li><strong>5-9 audits per quarter</strong> — 10% discount off standard wholesale pricing. Suitable for agencies that include an audit in every new client onboarding.</li>
-    <li><strong>10-19 audits per quarter</strong> — 15% discount. Typical for mid-size agencies with active new business pipelines and quarterly client reviews that include fresh audit data.</li>
-    <li><strong>20-49 audits per quarter</strong> — 20% discount. Designed for larger agencies or agency groups where audits are a standardised part of the service delivery across multiple teams or offices.</li>
-    <li><strong>50+ audits per quarter</strong> — custom pricing. At this volume, we discuss dedicated capacity, priority turnaround, custom report formats, and other arrangements that fit your specific operational needs.</li>
-  </ul>
-
-  <p>Volume commitments are assessed quarterly with no long-term contracts required. If your volume fluctuates seasonally, you receive the discount for the tier you hit each quarter rather than being locked into a commitment that does not match your actual demand.</p>
-
-  <p>Some agencies use our audit service as a lead generation tool — offering a "free website audit" to prospective clients and using our report as the deliverable in the sales process. At volume pricing, the cost per audit makes this an extremely efficient new business strategy. The audit demonstrates expertise, identifies pain points, and creates urgency — all of which help convert prospects into retainer clients.</p>
-
-  <h2 id="getting-started">Getting Started</h2>
-
-  <p>Starting a partnership is straightforward and involves no long-term commitment. Here is what we need to get the first audit underway:</p>
-
-  <ul>
-    <li><strong>Initial consultation</strong> — a 30-minute call to understand your agency's service model, typical client profile, reporting preferences, and branding requirements. We use this to customise our deliverable format and communication process for your team.</li>
-    <li><strong>Branding assets</strong> — your logo in high resolution, brand colours (hex codes), preferred fonts, and any report templates you want us to match. We set these up once and apply them to every subsequent audit.</li>
-    <li><strong>First audit brief</strong> — submit your first client site with any relevant context. We typically deliver the first audit within seven to ten business days. The first audit serves as a proof of concept — if the quality and process meet your standards, we proceed to a regular cadence.</li>
-    <li><strong>Feedback and refinement</strong> — after the first audit, we schedule a feedback call to discuss what worked, what needs adjustment, and how to optimise the process for future audits. By the second or third audit, the process is streamlined and requires minimal input from your team.</li>
-    <li><strong>Ongoing workflow</strong> — once the process is established, submitting new audit requests typically takes five minutes. We handle everything from there and deliver the finished, branded report on schedule. Most agencies integrate our service into their project management workflow with a simple task template.</li>
-  </ul>
-
-  <p>The audit partnership model works because it aligns incentives. You need high-quality audit deliverables that impress your clients and justify your retainer fees. We need consistent volume that keeps our analytical team engaged. The result is a service where both parties benefit — your clients receive better audits than they would from an overworked junior analyst, your agency maintains its margin, and our team gets to do the deep analytical work they are trained for. Reach out to discuss how this can work for your agency.</p>
+<h2 id="getting-started">What should an agency prepare before enquiring?</h2>
+<p>Prepare the client URL, business question, priority templates, known changes, required outputs and deadline. State whether the client authorised external review and data sharing.</p>
+<p>Use the <a href="/seo-audit-services/agency/">agency SEO audit service</a> when the scope is limited to organic search. Use this broader service when experience, accessibility or public security observations also belong in scope.</p>
 </ContentLayout>

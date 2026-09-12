@@ -18,13 +18,14 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Website Accessibility Audit Checklist: WCAG 2.1 AA"
-  description="A complete website accessibility audit checklist based on WCAG 2.1 AA. Covers perceivable, operable, understandable, and robust criteria with quick wins and priority fixes for immediate improvement."
+  title="Website Accessibility Audit Checklist: WCAG 2.2"
+  description="Test representative pages and components against WCAG 2.2 with automated, keyboard, zoom and screen-reader checks organised by POUR."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your website. The Web Content Accessibility Guidelines (WCAG) 2.1 at the AA conformance level is the internationally recognised standard, referenced by legislation in the EU, UK, US, Canada, Australia, and many other jurisdictions. Meeting WCAG 2.1 AA is not optional for most organisations — it is a legal requirement.</p>
+  <p>An accessibility checklist finds barriers across representative pages, states and components. This practical list follows WCAG's perceivable, operable, understandable and robust principles. It does not cover every success criterion or establish legal compliance.</p>
 
   <p>This checklist organises accessibility checks under WCAG's four foundational principles: perceivable, operable, understandable, and robust. Each principle contains specific success criteria that your website must meet. We have translated the technical WCAG language into practical checks you can perform, with clear pass and fail criteria for each.</p>
 
@@ -54,10 +55,10 @@ const toc = [
     <li><strong>Focus order is logical</strong> — the tab order should follow the visual reading order of the page (left to right, top to bottom in left-to-right languages). If the focus jumps erratically around the page, the tabindex attributes or DOM order need correcting.</li>
     <li><strong>Focus is visible</strong> — when an element receives keyboard focus, it must be visually obvious. The default browser focus outline should not be removed with CSS (outline: none) without providing an equally visible replacement. Focus indicators should have a contrast ratio of at least 3:1 against adjacent colours.</li>
     <li><strong>No keyboard traps exist</strong> — users must be able to navigate away from every interactive element using standard keyboard controls. Modal dialogs are common keyboard trap sources — the focus should be contained within the modal while it is open and returned to the triggering element when it closes.</li>
-    <li><strong>Skip navigation link is present</strong> — the first focusable element on the page should be a "Skip to main content" link that allows keyboard users to bypass the navigation menu on every page load. This link can be visually hidden until it receives focus.</li>
+    <li><strong>Repeated blocks can be bypassed</strong> — test for a mechanism that lets users bypass repeated content. A skip link that becomes visible on focus is one sufficient technique; suitable headings, landmarks or another conforming mechanism may also satisfy 2.4.1.</li>
     <li><strong>No content flashes more than three times per second</strong> — flashing content can trigger seizures in people with photosensitive epilepsy. Avoid animations that flash rapidly. If flashing content exists, it must be below the three-flashes threshold or below the general flash area threshold.</li>
     <li><strong>Time limits can be extended or disabled</strong> — if any functionality has a time limit (session timeouts, form submission deadlines, auto-advancing carousels), users must be able to turn off, adjust, or extend the time. Session timeouts should warn users at least 20 seconds before expiry and allow extension.</li>
-    <li><strong>Touch targets are at least 44 by 44 CSS pixels</strong> — on touch devices, interactive elements must be large enough to tap accurately. Small links, tiny close buttons, and cramped form controls fail this criterion.</li>
+    <li><strong>Target size meets the selected level</strong> — WCAG 2.2 AA criterion 2.5.8 uses 24 by 24 CSS pixels or sufficient spacing, with stated exceptions. The 44 by 44 CSS pixel requirement belongs to Level AAA criterion 2.5.5 and can be used as an enhancement.</li>
   </ul>
 
   <h2 id="understandable-checks">Understandable Checks</h2>
@@ -94,7 +95,7 @@ const toc = [
     <li><strong>Add missing alt text to images</strong> — this is the single most common WCAG failure. Audit every image tag and add descriptive alt text. Most CMS platforms let you add alt text when uploading images. The fix takes seconds per image and immediately helps screen reader users.</li>
     <li><strong>Fix colour contrast</strong> — use a contrast checking tool to identify low-contrast text. Adjusting text or background colours to meet the 4.5:1 ratio usually requires only CSS changes. Focus on body text, link text, and form labels first.</li>
     <li><strong>Add form labels</strong> — ensure every form input has an associated label. This is often a simple HTML fix: add a label element with a for attribute matching the input's id. This helps screen readers, improves usability for all users, and increases click targets on mobile.</li>
-    <li><strong>Add a skip navigation link</strong> — a single HTML link at the top of the page that jumps to the main content area. Hidden by default, visible on keyboard focus. Takes 15 minutes to implement and helps every keyboard user.</li>
+    <li><strong>Provide a way to bypass repeated navigation</strong> — a skip link that becomes visible on keyboard focus is one common technique. Point it to the main content, test the destination and focus behaviour on each template, and account for persistent headers. Existing heading structure or landmark-based mechanisms may also satisfy different users and technologies.</li>
     <li><strong>Declare the page language</strong> — add lang="en" (or your language code) to the html element. A one-line change that affects every page and is required for screen reader pronunciation accuracy.</li>
     <li><strong>Restore focus outlines</strong> — if your CSS removes the default browser focus indicator, either remove the outline:none rule or replace it with a custom focus style that is equally visible.</li>
   </ul>
@@ -113,7 +114,7 @@ const toc = [
 
   <p><strong>Priority 5 — Content reflow at 400% zoom:</strong> Test your site at 400% zoom and fix layout issues that cause horizontal scrolling, overlapping text, or hidden content. This typically requires responsive CSS adjustments and may involve redesigning fixed-width components.</p>
 
-  <p>Track your progress by retesting with automated tools (axe DevTools, WAVE, Lighthouse) after each round of fixes. Automated tools catch approximately 30 to 40 percent of WCAG issues. The remaining issues require manual testing with keyboard navigation and screen readers. Schedule manual testing quarterly at minimum, and test every new feature or content type before it goes live.</p>
+  <p>Track progress by repeating the same automated and manual tests after each fix. Rule coverage differs by tool and page content, so do not convert an automated result into a percentage of WCAG conformance. Re-test changed components before release.</p>
 
-  <p>If you need help running an accessibility audit or remediating the issues found, <a href="/website-audit-services/">our accessibility audit service</a> covers all WCAG 2.1 AA criteria with prioritised remediation guidance and optional retesting.</p>
+  <p>Use the normative <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 Recommendation</a> and linked Understanding documents to judge each criterion. Record the browser, assistive technology, viewport, page state and reproduction steps. The <a href="/website-accessibility-audit/wcag/">WCAG audit guide</a> explains conformance scope.</p>
 </ContentLayout>

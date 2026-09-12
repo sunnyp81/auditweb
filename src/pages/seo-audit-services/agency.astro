@@ -6,97 +6,67 @@ const breadcrumbs = [
   { label: 'SEO Audit Services', href: '/seo-audit-services/' },
   { label: 'For Agencies', href: '/seo-audit-services/agency/' },
 ];
-
 const toc = [
-  { label: 'What Agencies Get', id: 'what-agencies-get' },
-  { label: 'Two Ways to Work With Us', id: 'two-ways-to-work-with-us' },
+  { label: 'Agency Scope', id: 'agency-scope' },
+  { label: 'Delivery Options', id: 'delivery-options' },
+  { label: 'Required Inputs', id: 'required-inputs' },
   { label: 'Pricing', id: 'pricing' },
-  { label: 'How White-Label Delivery Works', id: 'how-white-label-delivery-works' },
   { label: 'FAQ', id: 'faq' },
 ];
-
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'SEO Audit Agency Services',
-  provider: { '@type': 'Organization', name: 'AuditWeb', url: 'https://auditweb.site' },
-  description: 'SEO audit services for digital marketing agencies, delivered white-label or as overflow capacity, with volume pricing for multi-client accounts.',
-  priceRange: '$147-$397',
+  name: 'SEO Audit Services for Agencies',
+  provider: { '@type': 'Organization', '@id': 'https://auditweb.site/#organization', name: 'AuditWeb', url: 'https://auditweb.site/' },
+  description: 'Remote SEO audit capacity for agencies with scope, branding, evidence and delivery terms agreed before work begins.',
+
   areaServed: ['US', 'GB'],
 };
 ---
 
 <ContentLayout
-  title="SEO Audits for Agencies: White-Label & Overflow"
-  description="SEO audit services built for digital marketing agencies — white-label reports, overflow capacity, and volume pricing for agencies running audits across multiple client accounts."
+  title="SEO Audit Services for Agencies: Scope and Delivery"
+  description="Add remote SEO audit capacity for a defined client scope. Confirm branding, evidence, deliverables and timing before work begins. Audits start at $297 USD."
   breadcrumbs={breadcrumbs}
   toc={toc}
   schema={schema}
   showLeadForm={true}
   publishDate="2026-08-26"
+  updateDate="2026-09-11"
 >
+<p>AuditWeb can provide remote SEO audit capacity for an agency's defined client project. The agreement must state the pages, search questions, available data, report format, branding and communication boundaries.</p>
+<p>This service covers diagnosis and recommendations. White-label presentation, implementation support, client contact and recurring capacity are options to confirm during scoping rather than automatic inclusions.</p>
 
-<p>Agencies use this service two ways: as white-label capacity to resell under their own brand, or as a second opinion on audits their own team already ran. The output is an SEO-specific audit — technical, on-page, content, and backlinks — not a full website review padded with security and accessibility checks your clients didn't ask for.</p>
+<span id="what-agencies-get" aria-hidden="true"></span>
+<h2 id="agency-scope">What does an agency SEO audit cover?</h2>
+<p>An agency SEO audit can examine crawl access, indexing evidence, internal links, on-page targeting, content duplication and agreed competitive questions. The report records affected URLs, evidence, recommended changes and verification steps.</p>
+<p>Google separates crawling, rendering and indexing in its <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics">JavaScript SEO documentation</a>. Agency reports should identify the observed stage instead of treating every crawl warning as an indexing failure.</p>
+<p>Choose the broader <a href="/website-audit-services/agencies/">website audit service for agencies</a> when the client also needs experience, accessibility or public security checks.</p>
 
-<h2 id="what-agencies-get">What Agencies Get</h2>
+<span id="two-ways-to-work-with-us" aria-hidden="true"></span>
+<span id="how-white-label-delivery-works" aria-hidden="true"></span>
+<h2 id="delivery-options">Which delivery model fits the agency?</h2>
+<p>Choose a full audit when the agency needs an independent investigation. Choose a review when the agency already has findings and wants evidence, scope and priorities checked before client delivery.</p>
+<ul>
+  <li><strong>Agency-branded report:</strong> provide the approved template and wording rules. Confirm editable format and attribution in writing.</li>
+  <li><strong>Internal technical report:</strong> keep source notes and limitations for the agency team to adapt.</li>
+  <li><strong>Second review:</strong> supply the existing report, source exports and questions that need verification.</li>
+</ul>
+<p>AuditWeb does not contact a client or present work as the agency unless the engagement explicitly authorises that arrangement.</p>
 
-<p>Every agency engagement includes a report with no AuditWeb branding, editable findings so you can adjust language for your client's voice, a call with your account lead (not the client) to walk through findings before delivery, and volume pricing that drops per-audit cost as your monthly volume increases.</p>
+<h2 id="required-inputs">What should the agency provide?</h2>
+<p>Provide the client domain, business question, priority templates, known changes and named search competitors. Add read-only Search Console or analytics access only when the client has authorised it.</p>
+<p>State confidentiality requirements and data-retention rules before sharing exports. Keep passwords and private credentials out of the enquiry form.</p>
 
-<p>Reports arrive as a branded PDF template you control. We never contact your clients directly. Nothing in the deliverable references AuditWeb.</p>
+<h2 id="pricing">How is an agency engagement priced?</h2>
+<p>Basic audits start at $297 USD. Comprehensive audits start at $997 USD. Multi-site, enterprise, recurring and custom-branded work is quoted after scope review.</p>
+<p>The quote should name the number of sites, page sample, data sources, deliverable format, revision terms and delivery date. AuditWeb does not publish unverified volume discounts or guaranteed turnaround times.</p>
 
-<h2 id="two-ways-to-work-with-us">Two Ways to Work With Us</h2>
-
-<p><strong>Full white-label.</strong> You sell the audit under your own service name. We do the technical work — crawl, analysis, report writing — and deliver a document ready to forward. Most agencies use this for overflow during busy months or to offer audits without hiring an in-house SEO analyst.</p>
-
-<p><strong>Second opinion.</strong> Your team already ran an audit and wants an independent check before it goes to the client. We review your findings against our own crawl and flag anything missed, overstated, or under-prioritised. This costs less than a full audit and catches errors before a client sees them.</p>
-
-<h2 id="pricing">Pricing</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Volume</th>
-      <th>Price Per Audit</th>
-      <th>Best For</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1-4 audits/month</td>
-      <td>$397</td>
-      <td>Agencies testing the white-label model</td>
-    </tr>
-    <tr>
-      <td>5-14 audits/month</td>
-      <td>$247</td>
-      <td>Established agencies with regular audit volume</td>
-    </tr>
-    <tr>
-      <td>15+ audits/month</td>
-      <td>$147</td>
-      <td>Agencies offering audits as a standard onboarding step</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Second-opinion reviews are priced separately at $197 flat regardless of volume.</p>
-
-<h2 id="how-white-label-delivery-works">How White-Label Delivery Works</h2>
-
-<p>You submit the client's domain and your report template preferences once. Every subsequent audit uses that template automatically. Turnaround is 3 business days for standard requests. Rush delivery is available at a surcharge for client deadlines. You get a dashboard login to track every audit in progress across your client accounts.</p>
-
-<h2 id="faq">FAQ</h2>
-
-<h3>Will my clients know AuditWeb was involved?</h3>
-<p>No. Reports carry no AuditWeb branding, watermarks, or references. The document is yours to present as your own work.</p>
-
-<h3>Can I get a volume discount without committing to a monthly minimum?</h3>
-<p>Yes. Pricing tiers are based on trailing 30-day volume rather than a contract commitment. Your rate adjusts automatically as your volume changes month to month.</p>
-
-<h3>Do you offer white-label tools instead of a done-for-you service?</h3>
-<p>Some agencies prefer running their own audits with software rather than outsourcing. See our <a href="/website-audit-tools/white-label/">white-label audit tools</a> comparison if that fits your workflow better.</p>
-
-<h3>What if I need the full website audit, not just SEO?</h3>
-<p>Our broader <a href="/website-audit-services/agencies/">website audit services for agencies</a> cover security and accessibility alongside SEO and are also available white-label.</p>
-
+<h2 id="faq">What should agencies confirm before ordering?</h2>
+<h3>Is every report white-label?</h3>
+<p>No. White-label delivery is available only when branding and format are agreed in the scope.</p>
+<h3>Can AuditWeb review an existing agency audit?</h3>
+<p>Yes. Supply the report and supporting evidence. AuditWeb can check whether conclusions follow from that evidence and identify gaps within an agreed review scope.</p>
+<h3>Does the service include implementation?</h3>
+<p>No. Implementation and follow-up verification require a separate written scope.</p>
 </ContentLayout>

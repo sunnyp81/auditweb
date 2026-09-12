@@ -18,7 +18,7 @@ const toc = [
 
 const childPages = [
   { title: 'SEO Audit Checklist', href: '/website-audit-checklist/seo/', description: 'Detailed SEO-specific audit checklist.' },
-  { title: 'Audit Template', href: '/website-audit-checklist/template/', description: 'Free Excel/PDF template for your website audit.' },
+  { title: 'Audit Template', href: '/website-audit-checklist/template/', description: 'Free 50-check PDF template for a manual website audit.' },
   { title: 'Ecommerce Audit Checklist', href: '/website-audit-checklist/ecommerce/', description: 'Audit checklist tailored for online stores.' },
   { title: 'WordPress Audit Checklist', href: '/website-audit-checklist/wordpress/', description: 'WordPress-specific audit checklist.' },
   { title: 'Content Audit Template', href: '/website-audit-checklist/content-template/', description: 'Spreadsheet columns, scoring system, and action categories for content audits.' },
@@ -30,7 +30,7 @@ const childPages = [
 
 <ContentLayout
   title="Website Audit Checklist: 66 Points to Check in 2026"
-  description="Work through 66 website audit checks covering SEO, technical, content, UX, security and performance. Get the separate 50-check PDF and editable toolkit."
+  description="Work through 66 website audit checks covering SEO, technical, content, UX, security and performance, with a separate 50-check PDF and four blank Markdown templates."
   breadcrumbs={breadcrumbs}
   toc={toc}
   children={childPages}
@@ -47,15 +47,15 @@ const childPages = [
 <h2 id="seo-checklist">SEO Checklist</h2>
 
 <ul>
-  <li><strong>Every page has a unique title tag under 60 characters</strong> — Title tags are the strongest on-page ranking signal. Duplicate or missing titles dilute relevance and waste crawl budget on functionally identical pages. Check with Screaming Frog's Page Titles report.</li>
-  <li><strong>Every page has a unique meta description under 160 characters</strong> — While not a direct ranking factor, meta descriptions influence click-through rate. Pages without descriptions get auto-generated snippets from Google, which are rarely optimal.</li>
+  <li><strong>Each indexable page has a descriptive title</strong> — Inspect distinctive page purpose and rendered results. Google truncates titles by available display width rather than a fixed character count and may generate title links from other page signals.</li>
+  <li><strong>Important pages have useful meta descriptions</strong> — Write concise page-specific summaries but verify actual snippets because Google may select page text that better matches a query.</li>
   <li><strong>Every page has exactly one H1 tag</strong> — The H1 should clearly state what the page is about. Multiple H1s confuse the content hierarchy. Zero H1s leave search engines guessing about your primary topic.</li>
   <li><strong>Heading hierarchy is logical (H1 then H2 then H3)</strong> — Skipping heading levels (H1 to H3 with no H2) creates a broken content outline. Search engines use heading structure to understand topic relationships within the page.</li>
   <li><strong>Target keyword appears in URL, title, H1, and first 100 words</strong> — These four placements signal strong topical relevance. Missing any one of them weakens the page's ability to rank for its target term.</li>
-  <li><strong>Every image has descriptive alt text</strong> — Alt text helps search engines understand image content and is critical for accessibility. Missing alt text is a ranking opportunity wasted and an accessibility compliance failure.</li>
+  <li><strong>Images have appropriate text alternatives</strong> — Meaningful images need alternatives that serve their purpose; decorative images normally use an empty <code>alt</code>. Judge the page context instead of filling every attribute with keywords.</li>
   <li><strong>Internal links use descriptive anchor text</strong> — Anchor text tells search engines what the linked page is about. Generic anchors like "click here" or "read more" pass less topical relevance than descriptive phrases.</li>
-  <li><strong>No orphan pages (pages with zero internal links)</strong> — Orphan pages receive no internal link equity and are often ignored by crawlers. Every page you want ranked needs at least one contextual internal link pointing to it.</li>
-  <li><strong>Canonical tags are correctly implemented</strong> — Every page should have a self-referencing canonical tag unless it is intentionally pointing to a different preferred URL. Incorrect canonicals can deindex important pages.</li>
+  <li><strong>Intended pages have crawlable internal paths</strong> — Compare crawl URLs with sitemaps, analytics and search reports to find pages that lack internal links. Add a relevant user-facing path where the page belongs in the site.</li>
+  <li><strong>Canonical signals are correctly implemented</strong> — For duplicate or near-duplicate URL groups, compare redirects, canonical elements, sitemap inclusion and internal links. Inspect Google's selected canonical on representative URLs.</li>
   <li><strong>XML sitemap exists, is valid, and is submitted to Search Console</strong> — Your sitemap should list only indexable, 200-status, canonical URLs. Verify it is referenced in robots.txt and submitted in both Google Search Console and Bing Webmaster Tools.</li>
   <li><strong>Robots.txt is correctly configured</strong> — Verify that no important pages or resources are blocked. Test with the robots.txt tester in Search Console.</li>
   <li><strong>Structured data is implemented and validates without errors</strong> — Test every schema type on your site with the Rich Results Test. Fix missing required properties, incorrect data types, and deprecated markup.</li>
@@ -67,14 +67,14 @@ const childPages = [
 <h2 id="technical-checklist">Technical Checklist</h2>
 
 <ul>
-  <li><strong>All pages return a 200 status code or appropriate redirect</strong> — Crawl your entire site and flag any 4xx or 5xx errors. Every page that users or search engines can reach should return a clean 200 response or a 301 redirect to the correct destination.</li>
-  <li><strong>No redirect chains longer than two hops</strong> — Each redirect in a chain adds latency and loses a small amount of link equity. Google follows up to 10 redirects but recommends keeping chains as short as possible. Ideally, every redirect should go directly to the final destination.</li>
+  <li><strong>HTTP status matches URL intent</strong> — Classify 2xx, redirects, 4xx and 5xx responses. A removed URL without a relevant replacement can correctly return 404 or 410; a permanent move should reach its relevant destination.</li>
+  <li><strong>Avoidable redirect chains are removed</strong> — Trace every hop and fix loops. Update owned internal links and rules to the final destination while preserving redirects needed for migrations and external requests.</li>
   <li><strong>No redirect loops</strong> — A redirect loop (page A redirects to B, which redirects back to A) creates an infinite loop that makes the page inaccessible. Crawl tools flag these automatically.</li>
   <li><strong>HTTPS is enforced sitewide with 301 redirects from HTTP</strong> — Every HTTP URL should redirect to its HTTPS equivalent. Test the four variations of your homepage (http, https, www, non-www) and verify they all resolve to one canonical URL.</li>
   <li><strong>SSL certificate is valid and covers all subdomains</strong> — An expired or misconfigured certificate triggers browser warnings that destroy user trust and may trigger Google Safe Browsing flags. Test with Qualys SSL Labs.</li>
   <li><strong>No mixed content (HTTP resources on HTTPS pages)</strong> — Loading images, scripts, or stylesheets over HTTP on an HTTPS page triggers browser security warnings. Scan for mixed content using Screaming Frog's Insecure Content report.</li>
-  <li><strong>Server response time (TTFB) is under 200ms</strong> — Time to First Byte measures how quickly your server responds to a request. Anything over 200ms indicates a server, database, or caching issue that affects every page on the site.</li>
-  <li><strong>Crawl depth is 3 clicks or fewer for important pages</strong> — Run a crawl with depth analysis and verify that revenue-generating and high-traffic pages are within 3 clicks of the homepage.</li>
+  <li><strong>Server response time is measured by location and cache state</strong> — TTFB includes connection and origin delay. Trace the timing before assigning a server, database or caching cause.</li>
+  <li><strong>Priority pages have clear crawlable paths</strong> — Run a crawl with depth analysis and investigate deep or orphaned pages in the context of the site's navigation. No universal click count guarantees indexing.</li>
   <li><strong>No duplicate content across URLs</strong> — Parameter-based URLs, www vs non-www, trailing slash vs non-trailing slash, and HTTP vs HTTPS can all create duplicate versions. Canonicals and redirects should consolidate them.</li>
   <li><strong>Hreflang tags are correct (multi-language sites)</strong> — Every hreflang tag must have a reciprocal tag on the target page. Language and country codes must use the correct ISO format. Self-referencing hreflang tags must be present.</li>
   <li><strong>Pagination is handled correctly</strong> — Paginated series should use self-referencing canonical tags on each page (not canonical to page 1) and include clear navigation links between pages.</li>
@@ -86,13 +86,13 @@ const childPages = [
 
 <ul>
   <li><strong>No thin pages (under 300 words with no other value)</strong> — Pages with minimal content that do not serve a clear user intent drag down your site's overall quality signal. Either expand them with useful content or consolidate them into a more comprehensive page.</li>
-  <li><strong>No duplicate or near-duplicate content within the site</strong> — Use Siteliner or Screaming Frog's near-duplicate detection to find pages with 80 percent or more content overlap. Consolidate them with redirects or differentiate them with unique content.</li>
-  <li><strong>Content matches the search intent for target keywords</strong> — Check the top-ranking pages for each target keyword. If Google ranks how-to guides and your page is a product listing, you have an intent mismatch that no amount of optimisation will fix.</li>
+  <li><strong>Duplicate and near-duplicate page groups are resolved</strong> — Cluster similar pages with crawl hashes and content comparison, then inspect purpose, canonical signals and search demand. Consolidate, canonicalise or differentiate only after deciding which URLs users need.</li>
+  <li><strong>Content matches the user's search task</strong> — Compare the page with relevant queries and current results, then check whether it supplies the expected answer, evidence and next step. Treat result formats as evidence, not a rule that one format can never rank.</li>
   <li><strong>E-E-A-T signals are present on important pages</strong> — Author bios, credentials, editorial policies, source citations, and publication dates build Experience, Expertise, Authoritativeness, and Trustworthiness. Critical for YMYL content.</li>
   <li><strong>Content is up to date</strong> — Pages referencing outdated statistics, discontinued products, or past events signal neglect. Review your most important pages and update anything that has become stale.</li>
   <li><strong>No keyword stuffing or over-optimisation</strong> — Unnatural keyword repetition can trigger spam filters. If the content reads awkwardly because of forced keyword placement, rewrite it naturally.</li>
   <li><strong>Above-the-fold content is useful (not just ads or CTAs)</strong> — Pages that push the main content below the fold in favour of ads or interstitials violate page experience guidelines.</li>
-  <li><strong>Content depth covers the topic comprehensively</strong> — Compare your content against the top 10 ranking pages. If competitors cover subtopics that you do not, you have a content gap that may be costing you rankings.</li>
+  <li><strong>Content covers the necessary decisions</strong> — Identify missing questions from user research, search data, first-party expertise and authoritative sources. Add material that belongs on this page and link to separate tasks.</li>
   <li><strong>No auto-generated content published without human review</strong> — Google penalises unhelpful content regardless of how it was produced. Every published page should be reviewed by a subject-matter expert.</li>
   <li><strong>Blog posts link to relevant pillar pages</strong> — Supporting content should link to and reinforce your main topic pages, building topical authority through a hub-and-spoke internal linking model.</li>
 </ul>
@@ -102,11 +102,11 @@ const childPages = [
 <ul>
   <li><strong>Site is fully responsive across mobile, tablet, and desktop</strong> — Test on physical devices, not just browser resizing. Emulators miss touch-target issues, font rendering differences, and viewport-specific layout bugs.</li>
   <li><strong>Navigation is intuitive with a clear hierarchy</strong> — Users should be able to find any major section within two clicks from the homepage. Menu labels should be descriptive and standard.</li>
-  <li><strong>Touch targets are at least 48x48px on mobile</strong> — Buttons, links and interactive elements that are too small cause frustration and accidental taps. Test their size and spacing with a browser or accessibility audit.</li>
+  <li><strong>Touch targets meet size or spacing needs</strong> — Test WCAG 2.2 AA's 24 by 24 CSS pixel criterion and its exceptions. Consider larger controls for frequent or high-risk actions.</li>
   <li><strong>Forms are easy to complete on mobile</strong> — Input fields should use the correct input type (email, tel, number) to trigger the appropriate mobile keyboard. Labels should be persistent, not placeholder-only.</li>
   <li><strong>404 page is helpful with navigation options</strong> — A custom 404 page with a search box, links to popular pages, and a friendly message recovers users who land on broken URLs instead of bouncing them.</li>
   <li><strong>No intrusive interstitials or pop-ups on mobile</strong> — Page experience guidelines penalise mobile interstitials that cover the main content. Cookie consent banners are exempt; marketing pop-ups are not.</li>
-  <li><strong>Font size is readable without zooming (16px+ base)</strong> — Small text on mobile drives users away. Set your base font size to at least 16px and ensure body text never renders below 14px on any viewport.</li>
+  <li><strong>Text remains readable and resizable</strong> — Test representative text at browser zoom and narrow widths for clipping, overlap and loss of function. Choose size, line height and measure from the typeface and context rather than a single pixel minimum.</li>
   <li><strong>Color contrast meets WCAG AA standards (4.5:1 for text)</strong> — Insufficient contrast makes text hard to read for users with visual impairments. Test with the WAVE accessibility checker.</li>
   <li><strong>Breadcrumb navigation is present and functional</strong> — Breadcrumbs help users understand their location within the site hierarchy and generate breadcrumb rich results when marked up with schema.</li>
   <li><strong>Call-to-action buttons are clear and consistent</strong> — Every page should have a clear next step. CTAs should stand out visually, use action-oriented language, and be consistent in style across the site.</li>
@@ -115,7 +115,7 @@ const childPages = [
 <h2 id="security-checklist">Security Checklist</h2>
 
 <ul>
-  <li><strong>HSTS header is set with max-age of at least one year</strong> — HTTP Strict Transport Security tells browsers to only connect via HTTPS. Set max-age to 31536000 and include includeSubDomains.</li>
+  <li><strong>HSTS is evaluated before rollout</strong> — Confirm HTTPS on required hosts and subdomains, then choose duration, subdomain scope and preload through security change control.</li>
   <li><strong>Content-Security-Policy header is configured</strong> — CSP prevents cross-site scripting attacks by restricting which resources can be loaded. Start with a report-only policy and tighten it over time.</li>
   <li><strong>X-Content-Type-Options is set to nosniff</strong> — Prevents browsers from MIME-sniffing responses away from the declared content type, blocking a common attack vector.</li>
   <li><strong>X-Frame-Options is set to DENY or SAMEORIGIN</strong> — Prevents your pages from being embedded in iframes on other sites, protecting against clickjacking attacks.</li>
@@ -123,22 +123,22 @@ const childPages = [
   <li><strong>CMS and plugins are updated to latest versions</strong> — Outdated WordPress cores, plugins, and themes are the primary attack vector for website compromises. Check for updates at least monthly.</li>
   <li><strong>Admin login pages are not at default URLs</strong> — Default login paths like /wp-admin are targeted by brute-force bots. Use a security plugin to change the login URL and implement rate limiting.</li>
   <li><strong>No Google Safe Browsing warnings</strong> — Check your site in the Transparency Report. A warning flag devastates traffic and trust. If flagged, clean the malware and request a review immediately.</li>
-  <li><strong>Backup system is in place and tested</strong> — Having backups is not enough — verify that restoring from backup actually works. Test a restore quarterly. Ensure backups are stored off-server.</li>
+  <li><strong>Backup system is in place and tested</strong> — Verify isolated copies, job alerts, retention and a documented restore against recovery objectives. Set the restore-test cadence from service risk and change frequency.</li>
   <li><strong>Permissions-Policy header restricts unnecessary browser APIs</strong> — Limit access to camera, microphone, geolocation, and other browser features your site does not need.</li>
 </ul>
 
 <h2 id="performance-checklist">Performance Checklist</h2>
 
 <ul>
-  <li><strong>Largest Contentful Paint (LCP) under 2.5 seconds</strong> — The single most important speed metric. Test on both mobile and desktop with PageSpeed Insights. If failing, check image sizes, server response time, and render-blocking resources first.</li>
-  <li><strong>Interaction to Next Paint (INP) under 200 milliseconds</strong> — Measures responsiveness to user interactions. If failing, profile JavaScript execution in Chrome DevTools to find long-running tasks and heavy event handlers.</li>
-  <li><strong>Cumulative Layout Shift (CLS) under 0.1</strong> — Measures visual stability. If failing, add width and height attributes to all images and videos, preload fonts, and reserve space for dynamically injected elements.</li>
+  <li><strong>Largest Contentful Paint (LCP) within 2.5 seconds</strong> — Check the 75th-percentile field value and trace the responsible element and LCP subparts.</li>
+  <li><strong>Interaction to Next Paint (INP) at most 200 milliseconds</strong> — Trace affected interactions to separate input delay, event processing and presentation delay.</li>
+  <li><strong>Cumulative Layout Shift (CLS) at most 0.1</strong> — Inspect shift clusters and the responsible images, fonts, embeds or injected content before choosing a fix.</li>
   <li><strong>Images are optimised (WebP/AVIF, responsive srcset)</strong> — Images are typically the largest payload on any page. Convert to modern formats, implement responsive images, and lazy-load below-fold images.</li>
   <li><strong>CSS and JavaScript are minified</strong> — Remove unnecessary whitespace, comments, and dead code from production assets. Most build tools handle this automatically.</li>
   <li><strong>Non-critical CSS and JS are deferred</strong> — Render-blocking resources delay the initial paint. Inline critical CSS for above-fold content, defer everything else, and load third-party scripts with async or defer.</li>
   <li><strong>Browser caching is configured with appropriate max-age</strong> — Static assets should have Cache-Control headers with max-age of at least one year. Use content hashing in filenames for cache busting.</li>
-  <li><strong>CDN is configured for static assets</strong> — A content delivery network serves assets from edge locations near the user, reducing latency by 40 to 60 percent for geographically distributed audiences.</li>
-  <li><strong>Gzip or Brotli compression is enabled</strong> — Text-based resources should be compressed in transit. Brotli offers 15 to 25 percent better compression than Gzip and is supported by all modern browsers.</li>
+  <li><strong>Edge delivery is evaluated where useful</strong> — Measure latency, cache status, hit ratio and origin load by location. Use a CDN when the audience and workload justify it, then verify actual improvement.</li>
+  <li><strong>Text responses use suitable content encoding</strong> — Check Brotli or gzip negotiation and transferred bytes for HTML, CSS, JavaScript and other compressible responses.</li>
   <li><strong>No unnecessary third-party scripts</strong> — Every third-party script adds latency and main thread blocking. Audit every script for necessity and defer or remove the ones that do not justify their performance cost.</li>
 </ul>
 

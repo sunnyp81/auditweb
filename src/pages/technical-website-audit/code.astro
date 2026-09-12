@@ -19,26 +19,27 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Website Code Audit: Clean Up Technical Debt"
-  description="How to audit your website's code for SEO impact. Covers HTML validation, CSS efficiency, JavaScript performance, accessibility, and eliminating code bloat that hurts search visibility."
+  title="Website Code Audit: HTML, CSS and JavaScript Checks"
+  description="Audit rendered HTML, CSS and JavaScript for validation errors, accessibility barriers, unused code, main-thread work and rendering failures."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
 
-<p>The code that builds your web pages is the foundation everything else sits on. Poor HTML prevents search engines from understanding your content. Bloated CSS slows rendering. Excessive JavaScript blocks interactivity. Yet most website audits focus exclusively on the output, checking what the page looks like and what meta tags are present, while ignoring the code quality underneath. A code audit examines the source itself, identifying technical debt, inefficiencies, and errors that affect search performance, page speed, and accessibility.</p>
+<p>A website code audit compares source and rendered HTML then profiles the CSS and JavaScript that a browser downloads and executes. The audit should identify a reproducible defect and affected templates before recommending a change.</p>
 
-<p>This is not a software engineering code review. It is a focused examination of the client-side code that search engines and browsers must process when they visit your pages. Every inefficiency in your code is multiplied by every page view and every crawl request, making even small improvements significant at scale.</p>
+<p>This client-side review is narrower than an application code review. Capture the tested URL, browser, device profile, cache state and build version so another developer can reproduce each finding.</p>
 
 <h2 id="why-code-quality-matters-for-seo">Why Code Quality Matters for SEO</h2>
 
 <p>Search engines process your HTML to understand your content, your CSS to understand visual structure, and (increasingly) your JavaScript to discover dynamically rendered content. Code quality affects this processing in several direct ways.</p>
 
-<p><strong>Crawl efficiency.</strong> Google allocates a finite crawl budget to each site. Pages with cleaner, lighter code are crawled faster, meaning more of your pages get crawled within the same budget. A page that takes 500ms to download and parse is crawled twice as efficiently as a page that takes 1 second. Across a site with thousands of pages, this difference determines whether your deep pages get crawled weekly or monthly.</p>
+<p><strong>Fetch and render evidence.</strong> Google may fetch supporting resources and render JavaScript before processing the final page. Smaller payloads can help users and renderers, but a download-time ratio does not predict crawl frequency.</p>
 
 <p><strong>Rendering accuracy.</strong> Googlebot renders pages using a version of Chrome to process JavaScript and understand the final page state. Complex, error-prone JavaScript can cause rendering failures where Googlebot sees different content than users do. These rendering gaps mean that content you intend to be indexed may be invisible to Google. Clean, well-structured code renders predictably and consistently.</p>
 
-<p><strong>Core Web Vitals.</strong> LCP, INP, and CLS are directly affected by code quality. Render-blocking CSS delays LCP. Long-running JavaScript tasks degrade INP. Dynamically injected content without dimension reservations causes CLS. Improving these metrics requires changes to the code, not just to the content or configuration.</p>
+<p><strong>Core Web Vitals.</strong> Code, content assets and delivery configuration can all affect LCP, INP and CLS. Render-blocking CSS can delay LCP, long-running JavaScript tasks can degrade INP, and dynamically injected content without reserved space can cause CLS. Diagnose field and trace data first; the appropriate fix may be an asset, template, script, cache, server or content change.</p>
 
 <p><strong>Semantic understanding.</strong> Valid, semantic HTML provides explicit signals about content structure and meaning. A properly marked-up article with semantic elements (article, header, nav, main, section, aside, footer) communicates structure more clearly to search engines than a div-soup layout where structure is implied only by CSS styling.</p>
 
@@ -52,7 +53,7 @@ const toc = [
   <li><strong>Duplicate IDs.</strong> HTML IDs must be unique within a page. Duplicate IDs cause JavaScript targeting failures and invalidate fragment links (anchor links). When search engines encounter duplicate IDs, the table of contents and jump-link functionality that enhances user engagement may not work correctly.</li>
   <li><strong>Unclosed elements.</strong> Tags that are opened but never closed can cause the parser to include unintended content within elements, changing the document structure. An unclosed div before your main content could nest the entire page content within that div, altering the perceived structure.</li>
   <li><strong>Incorrect nesting.</strong> Block-level elements inside inline elements (a div inside a span, for example) create undefined behaviour. Browsers handle this by auto-correcting, but the correction may not match your intent. Search engines parsing the raw HTML may interpret the structure differently than the browser renders it.</li>
-  <li><strong>Missing required attributes.</strong> Images without alt attributes, links without href attributes, and form fields without labels are both validation errors and accessibility failures. The validator catches these systematically across the entire page.</li>
+  <li><strong>Validity and accessibility are separate.</strong> Validate attributes against the element's HTML requirements, then run accessibility tests for appropriate text alternatives and accessible names. An <code>a</code> element may omit <code>href</code>, and a missing form label is not equivalent to every validator error.</li>
   <li><strong>Deprecated elements and attributes.</strong> HTML elements like center, font, and strike, and attributes like align, bgcolor, and border are deprecated. While browsers still support them, they indicate outdated code that is likely associated with other quality issues. Replace deprecated markup with CSS equivalents.</li>
 </ul>
 
@@ -62,21 +63,21 @@ const toc = [
 
 <p>CSS affects performance through file size, render-blocking behaviour, and the complexity of style calculations the browser must perform.</p>
 
-<p><strong>Total CSS weight.</strong> Measure the total size of all CSS files loaded on your key page templates. Modern sites should aim for under 100KB of CSS (compressed). Sites using CSS frameworks like Bootstrap or Tailwind without purging unused styles often ship 200-500KB of CSS, the majority of which applies to elements not present on the current page.</p>
+<p><strong>Total CSS weight.</strong> Measure transferred and decoded CSS by template. Set a project performance budget from current user conditions and page goals. A universal 100KB threshold cannot show whether critical CSS arrives in time or unused rules affect rendering.</p>
 
-<p><strong>Unused CSS.</strong> Chrome DevTools Coverage tab (Ctrl+Shift+P > "Coverage") shows how much of each CSS file is actually used on the current page. On most sites, 50-80% of loaded CSS is unused on any given page. Remove unused CSS using PurgeCSS, UnCSS, or your build tool's tree-shaking capabilities. This reduces file size, reduces parsing time, and eliminates the browser's need to evaluate styles that never apply.</p>
+<p><strong>Unused CSS.</strong> Chrome DevTools Coverage shows which bytes a single interaction path uses. Repeat the capture across states and breakpoints before removing rules because deferred components may need code absent from the first trace.</p>
 
 <p><strong>Render-blocking CSS.</strong> CSS files in the document head block rendering until they are fully downloaded and parsed. The browser cannot display anything until it has processed all render-blocking CSS. Identify CSS that is critical (needed for above-the-fold content) versus non-critical (needed only for below-the-fold elements or interactive states). Inline critical CSS in the document head and load non-critical CSS asynchronously.</p>
 
 <p><strong>CSS specificity issues.</strong> High-specificity selectors (long chains of IDs and classes, !important declarations) indicate CSS that has grown through overrides rather than being maintained with a clear architecture. High specificity makes styles harder to maintain and often leads to additional CSS being added to override existing rules, compounding the bloat problem. If your stylesheets contain many !important declarations, the CSS architecture needs restructuring.</p>
 
-<p><strong>Media query efficiency.</strong> Check that responsive styles use mobile-first media queries (min-width) rather than desktop-first (max-width) where possible. Mobile-first CSS means mobile devices load only the styles they need, with larger screens progressively loading additional styles. Desktop-first CSS forces mobile devices to load all desktop styles and then override them, wasting bandwidth on the devices least able to afford it.</p>
+<p><strong>Media query efficiency.</strong> Inspect which stylesheet bytes are transferred and which rules match across representative widths. Mobile-first and desktop-first media queries affect the cascade, but query direction alone does not determine transfer size; delivery, bundling and conditional loading are separate decisions.</p>
 
 <h2 id="javascript-audit">JavaScript Audit</h2>
 
 <p>JavaScript has the largest potential impact on performance because it blocks the main thread, delays interactivity, and can prevent content from being visible until execution completes.</p>
 
-<p><strong>Total JavaScript weight.</strong> Measure the total size of all JavaScript files loaded on your key pages. Aim for under 300KB compressed for content sites, with higher tolerances for interactive applications. Sites loading more than 1MB of JavaScript are almost certainly loading libraries and features that are not needed on every page.</p>
+<p><strong>Total JavaScript weight.</strong> Measure transfer size, parsed code and execution time on representative devices. Define a per-template budget from user needs. Bundle size alone does not reveal main-thread cost or whether an interactive feature is necessary.</p>
 
 <p><strong>Main thread blocking time.</strong> Use Lighthouse or Chrome DevTools Performance tab to measure Total Blocking Time (TBT): the total time the main thread is blocked by long JavaScript tasks (tasks taking more than 50ms). High TBT directly correlates with poor Interaction to Next Paint scores. Identify the specific scripts and functions responsible for long tasks and optimise or defer them.</p>
 
@@ -84,7 +85,7 @@ const toc = [
 
 <p><strong>Third-party JavaScript impact.</strong> Third-party scripts (analytics, chat, advertising, social widgets) frequently dominate JavaScript execution time. Audit each third-party script's execution time using the Performance tab. Defer non-essential scripts to load after the page is interactive. Replace heavy third-party widgets with lighter alternatives where possible.</p>
 
-<p><strong>JavaScript rendering dependencies.</strong> Content that relies on JavaScript to render is invisible until the JavaScript executes. This means Googlebot must render the page (rather than just parsing HTML) to discover the content, which uses more crawl budget and introduces rendering failure risk. Audit your pages by disabling JavaScript (Chrome DevTools > Settings > Debugger > Disable JavaScript) and checking what content is visible. Critical content (headings, body text, links) should be present in the initial HTML, not injected by JavaScript.</p>
+<p><strong>JavaScript rendering dependencies.</strong> Compare initial and rendered HTML then inspect the URL with Search Console. Google can render JavaScript, but blocked resources, errors and delayed content can change what is processed. Server rendering or static generation reduces that dependency for essential content and links.</p>
 
 <p><strong>Error monitoring.</strong> JavaScript errors break functionality and can prevent content from rendering. Check the browser console for errors on your key page templates. Common issues include references to undefined variables, failed API calls, and library version conflicts. Each error potentially affects the page's behaviour for both users and search engine renderers.</p>
 
@@ -104,7 +105,7 @@ const toc = [
 
 <p>Code bloat refers to unnecessary code that increases page weight and processing time without contributing to functionality or user experience.</p>
 
-<p><strong>DOM size.</strong> The Document Object Model (DOM) represents every element on the page. Large DOMs (more than 1,500 nodes) slow down JavaScript operations, style calculations, and layout reflows. Check your DOM node count using Lighthouse (which flags DOMs exceeding 1,500 nodes) or DevTools (document.querySelectorAll('*').length in the console). Page builder tools are the most common cause of excessive DOM size, generating five to ten wrapper elements for every visible content element.</p>
+<p><strong>DOM size.</strong> The Document Object Model represents every element on the page. Use the Performance panel and <code>document.querySelectorAll('*').length</code> to investigate expensive style or layout work. Treat Lighthouse diagnostics as leads rather than universal failure thresholds.</p>
 
 <p><strong>Inline styles.</strong> Pages with extensive inline styles (style attributes on individual elements) indicate code generated by visual editors or email-to-web conversions rather than properly architected CSS. Inline styles increase page weight, prevent caching of style information, and make maintenance difficult. Extract inline styles into stylesheet rules.</p>
 
@@ -120,12 +121,14 @@ const toc = [
 
 <p><strong>Linting in development.</strong> Configure HTML, CSS, and JavaScript linters (HTMLHint, Stylelint, ESLint) in your development environment and CI/CD pipeline. Linters catch errors and style violations before code reaches production. Run linters on every commit and block merges that introduce new violations.</p>
 
-<p><strong>Build process optimisation.</strong> Your build process should automatically minify HTML, CSS, and JavaScript; purge unused CSS; compress images; and generate modern asset formats (WebP, AVIF). These optimisations should happen automatically during deployment, not manually before each release. Tools like Vite, Webpack, and Astro handle most of this with appropriate configuration.</p>
+<p><strong>Build process optimisation.</strong> Automate transformations that are safe for the stack, such as minification, selected asset encoding and tested code removal. Verify output because aggressive CSS purging or format conversion can remove dynamic states or degrade required media.</p>
 
 <p><strong>Component-based architecture.</strong> Organise your front-end code into reusable components with encapsulated styles and scripts. Component-based architectures (React, Vue, Svelte, Astro, or even simple HTML includes) reduce duplication, make maintenance easier, and enable more efficient code-splitting. When a component is changed, only the pages that use it are affected.</p>
 
-<p><strong>Performance regression testing.</strong> Include performance assertions in your test suite. If a change causes JavaScript bundle size to increase by more than 10KB, CSS size to increase by more than 5KB, or DOM node count to increase by more than 100, flag it for review. Automated regression testing prevents the gradual performance degradation that accumulates when changes are evaluated individually but not in aggregate.</p>
+<p><strong>Performance regression testing.</strong> Set per-template assertions from representative baselines, user conditions and product budgets. Review changes in transfer size, execution, rendering and DOM complexity together; no universal byte or node delta defines a regression.</p>
 
-<p><strong>Regular code audits.</strong> Schedule a code audit quarterly, focusing on the areas most likely to degrade: third-party script accumulation, unused CSS growth, JavaScript bundle size increases, and DOM complexity creep. Prevention is less expensive than remediation. A quarterly check catches problems while they are small and fixable, rather than waiting until the site's performance has degraded noticeably.</p>
+<p><strong>Regular code audits.</strong> Re-run the audit after template, dependency or third-party tag changes and on a cadence suited to release frequency. Compare like-for-like traces against the recorded baseline.</p>
+
+<p>The <a href="https://html.spec.whatwg.org/">HTML Living Standard</a>, <a href="https://developer.chrome.com/docs/devtools/coverage">Chrome DevTools Coverage guidance</a> and <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a> provide primary references for interpreting code findings. Continue with the <a href="/technical-website-audit/performance/">performance audit method</a> when a code issue affects runtime behaviour.</p>
 
 </ContentLayout>

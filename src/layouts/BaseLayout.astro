@@ -23,8 +23,43 @@ const {
 } = Astro.props;
 
 const siteName = 'AuditWeb';
-const fullTitle = title === 'AuditWeb' ? title : `${title} | ${siteName}`;
-const GA4_ID = 'G-V53FDBZLTW'; // Replace with actual GA4 ID
+const fullTitle = title === siteName || title.startsWith(`${siteName} —`) || title.endsWith(`| ${siteName}`) ? title : `${title} | ${siteName}`;
+const GA4_ID = 'G-V53FDBZLTW';
+const siteUrl = 'https://auditweb.site';
+const pageUrl = new URL(canonical, siteUrl).href;
+const suppliedSchema = schema as Record<string, unknown> | undefined;
+const organizationId = `${siteUrl}/#organization`;
+const websiteId = `${siteUrl}/#website`;
+const primaryId = suppliedSchema?.['@id'] || `${pageUrl}#main-content`;
+const websiteSchema = {
+  '@type': 'WebSite',
+  ...(suppliedSchema?.['@type'] === 'WebSite' ? suppliedSchema : {}),
+  '@id': websiteId,
+  name: siteName,
+  url: `${siteUrl}/`,
+  publisher: { '@id': organizationId },
+};
+const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization', '@id': organizationId, name: siteName,
+      url: `${siteUrl}/`, logo: `${siteUrl}/favicon.svg`,
+      description: 'Website audit guides, a browser-local HTML checker, editable report resources and scoped audit services.',
+    },
+    websiteSchema,
+    {
+      '@type': Astro.url.pathname === '/about/' ? 'AboutPage' : 'WebPage',
+      '@id': `${pageUrl}#webpage`, url: pageUrl, name: title, description,
+      inLanguage: 'en', isPartOf: { '@id': websiteId },
+      ...(suppliedSchema?.datePublished ? { datePublished: suppliedSchema.datePublished } : {}),
+      ...(suppliedSchema?.dateModified ? { dateModified: suppliedSchema.dateModified } : {}),
+      ...(suppliedSchema && suppliedSchema['@type'] !== 'WebSite' ? { mainEntity: { '@id': primaryId } } : {}),
+      ...(Astro.url.pathname === '/about/' ? { about: { '@id': organizationId } } : {}),
+    },
+    ...(suppliedSchema && suppliedSchema['@type'] !== 'WebSite' ? [{ ...suppliedSchema, '@id': primaryId }] : []),
+  ],
+};
 ---
 
 <!DOCTYPE html>
@@ -60,9 +95,7 @@ const GA4_ID = 'G-V53FDBZLTW'; // Replace with actual GA4 ID
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet" />
 
   <!-- Schema -->
-  {schema && (
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  )}
+  <script type="application/ld+json" set:html={JSON.stringify(schemaGraph).replace(/</g, '\\u003c')} />
 
   <!-- GA4 -->
   <script is:inline define:vars={{ GA4_ID }}>

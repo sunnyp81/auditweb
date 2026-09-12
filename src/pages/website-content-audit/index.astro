@@ -13,7 +13,7 @@ const toc = [
 
 const children = [
   { title: 'How to Do a Website Content Audit', href: '/website-content-audit/how-to/', description: 'Step-by-step process for auditing your website content.' },
-  { title: 'Content Audit Template', href: '/website-content-audit/template/', description: 'Free spreadsheet template to organise your content audit.' },
+  { title: 'Content Audit Template', href: '/website-content-audit/template/', description: 'Blank Markdown worksheets for prioritisation and implementation tracking.' },
   { title: 'Content Audit Tools', href: '/website-content-audit/tools/', description: 'Best tools for crawling, analysing, and scoring your content.' },
   { title: 'Website Copy Audit', href: '/website-content-audit/copy/', description: 'How to audit your website copy for clarity and conversions.' },
   { title: 'How Often to Audit Content', href: '/website-content-audit/frequency/', description: 'The right cadence for content audits based on your site size.' },
@@ -22,8 +22,8 @@ const children = [
 ---
 
 <ContentLayout
-  title="Website Content Audit: Find What to Keep, Fix, and Remove"
-  description="A website content audit evaluates every page on your site for quality, relevance, and performance. Learn how to audit your content and make data-driven decisions about what to keep, update, or delete."
+  title="Website Content Audit: Keep, Update, Combine or Remove"
+  description="Use a website content audit to decide what to keep, update, combine, redirect or remove based on page purpose, current accuracy and comparable evidence."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Content Audit', href: '/website-content-audit/' },
@@ -31,28 +31,29 @@ const children = [
   toc={toc}
   children={children}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
   <h2 id="what-is">What Is a Website Content Audit</h2>
-  <p>A website content audit is a systematic review of every piece of content on your site. It evaluates each page against metrics like organic traffic, keyword rankings, engagement, backlinks, and conversion contribution to determine whether that content is helping or hurting your site's performance.</p>
-  <p>Unlike a technical audit that examines your site's infrastructure, a content audit focuses on the substance — the words, images, and media that make up your pages. The goal is to create a complete inventory of your content and make data-driven decisions about what to keep as-is, what to update, what to consolidate, and what to remove entirely.</p>
+  <p>A website content audit evaluates each page against its intended task, current accuracy, search visibility, user behaviour, conversions and earned links. The output is a decision log that explains whether to keep, update, combine, redirect or remove each URL.</p>
+  <p>Unlike a technical audit that examines infrastructure, a content audit focuses on the purpose, accuracy and measured value of words, images and media. Its inventory is limited by the sources and settings used, so reconcile crawl, sitemap, platform and search data before making page decisions.</p>
   <p>Most websites accumulate content over years without ever reviewing it. Pages become outdated, topics overlap, and thin content dilutes your site's topical authority. A content audit brings order to this chaos.</p>
 
   <h2 id="why-matters">Why Content Audits Matter</h2>
-  <p>Content is the primary reason people visit your website and the primary signal Google uses to rank it. Yet most businesses treat content creation as a one-way street — they publish and move on without ever evaluating performance.</p>
+  <p>A content audit tests whether each page has a useful current purpose and evidence that supports keeping or changing it. Search and analytics metrics inform the decision but do not replace editorial or business context.</p>
   <p>Here's what a content audit reveals:</p>
   <ul>
-    <li><strong>Underperforming pages:</strong> Content that gets no traffic and no conversions is dead weight. It wastes crawl budget and dilutes your site's quality signals.</li>
-    <li><strong>Cannibalisation:</strong> Multiple pages targeting the same keyword compete against each other in search results. An audit identifies these conflicts so you can consolidate.</li>
+    <li><strong>Pages without measured activity:</strong> verify index status, tracking, seasonality, conversion role, legal need and backlinks before choosing an action. No traffic alone does not justify removal.</li>
+    <li><strong>Query overlap:</strong> several URLs can appear for related queries without harming each other. Investigate whether pages duplicate the same task or swap positions before consolidating.</li>
     <li><strong>Content gaps:</strong> Topics your audience searches for but you haven't covered. These are opportunities to create new content that fills a genuine need.</li>
-    <li><strong>Decay:</strong> Content that once performed well but is losing traffic over time. Early detection means you can refresh it before it drops off page one.</li>
-    <li><strong>Conversion opportunities:</strong> Pages with high traffic but low conversions — these are your biggest quick wins for revenue growth.</li>
+    <li><strong>Change over time:</strong> compare clicks and impressions across equivalent periods. Investigate demand, result layout, technical changes and content accuracy before calling a decline content decay.</li>
+    <li><strong>Conversion opportunities:</strong> review high-traffic pages with weak task completion or conversion evidence. Estimate value from the site's own data and test the proposed change.</li>
   </ul>
 
   <h2 id="what-to-evaluate">What to Evaluate</h2>
   <p>A thorough content audit examines each page across several dimensions:</p>
   <ul>
     <li><strong>Traffic:</strong> How much organic and total traffic does the page receive? Is it trending up or down?</li>
-    <li><strong>Rankings:</strong> What keywords does the page rank for? What position? Is it in striking distance of page one?</li>
+    <li><strong>Search visibility:</strong> which queries produce impressions and clicks for the page, and how has the pattern changed across equivalent periods?</li>
     <li><strong>Engagement:</strong> Bounce rate, time on page, scroll depth. Are visitors actually reading the content?</li>
     <li><strong>Backlinks:</strong> How many external sites link to this page? High-value backlink pages should be preserved even if traffic is low.</li>
     <li><strong>Conversions:</strong> Does the page contribute to your goals — leads, sales, signups?</li>
@@ -62,47 +63,44 @@ const children = [
   </ul>
 
   <h2 id="process">Content Audit Process</h2>
-  <p>Follow these steps for a systematic content audit:</p>
+  <p>Use this decision map to scope the work. The <a href="/website-content-audit/how-to/">six-step content audit guide</a> contains the operational spreadsheet and execution procedure.</p>
   <ol>
-    <li><strong>Crawl your site:</strong> Use Screaming Frog or Sitebulb to generate a complete list of every URL. Export to a spreadsheet.</li>
-    <li><strong>Pull performance data:</strong> Connect Google Analytics and Google Search Console data for each URL — traffic, impressions, clicks, rankings, bounce rate.</li>
-    <li><strong>Pull backlink data:</strong> Use Ahrefs or Semrush to identify pages with external links pointing to them.</li>
-    <li><strong>Categorise content:</strong> Tag each page by content type (blog, product, landing page), topic cluster, and funnel stage.</li>
-    <li><strong>Score each page:</strong> Use a scoring framework (see below) to objectively rate each page's performance.</li>
-    <li><strong>Assign actions:</strong> Based on the score, decide: keep, update, consolidate, redirect, or delete.</li>
-    <li><strong>Prioritise:</strong> Rank actions by potential impact. High-traffic pages that need updates come first. Zero-traffic pages with no backlinks get deleted.</li>
-    <li><strong>Execute:</strong> Work through your prioritised list, starting with the highest-impact updates.</li>
+    <li><strong>Define the inventory:</strong> reconcile reachable, submitted, known and search-visible URLs and document gaps.</li>
+    <li><strong>Attach evidence:</strong> join available search, analytics, conversion, link, accuracy and ownership evidence using declared periods.</li>
+    <li><strong>Review purpose:</strong> decide whether each page still supports a distinct user and business task before applying a score.</li>
+    <li><strong>Assign and verify:</strong> record the action, rationale, owner, dependencies and success check; require manual review before deletion, consolidation or redirect.</li>
   </ol>
 
   <h2 id="scoring">Content Scoring Framework</h2>
-  <p>We use a simple 1-5 scoring system across four dimensions:</p>
+  <p>A useful score must be calibrated to the site's scale and goals. The example matrix describes evidence states rather than universal traffic or link thresholds:</p>
+  <div role="region" aria-label="Content audit evidence matrix" tabindex="0">
   <table>
     <thead>
       <tr>
         <th>Dimension</th>
-        <th>1 (Poor)</th>
-        <th>3 (Average)</th>
-        <th>5 (Excellent)</th>
+        <th>Limited evidence</th>
+        <th>Mixed evidence</th>
+        <th>Strong evidence</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Traffic</td>
-        <td>0 sessions/month</td>
-        <td>50-200 sessions</td>
-        <td>500+ sessions</td>
+        <td>No comparable data</td>
+        <td>Below site baseline</td>
+        <td>Supports the page's goal</td>
       </tr>
       <tr>
         <td>Quality</td>
-        <td>Thin, outdated</td>
-        <td>Adequate, needs refresh</td>
-        <td>Comprehensive, current</td>
+        <td>Task or accuracy unclear</td>
+        <td>Useful with known gaps</td>
+        <td>Current and task-complete</td>
       </tr>
       <tr>
         <td>Backlinks</td>
-        <td>0 referring domains</td>
-        <td>3-10 referring domains</td>
-        <td>20+ referring domains</td>
+        <td>Link data unavailable</td>
+        <td>Some relevant links</td>
+        <td>Important relevant links</td>
       </tr>
       <tr>
         <td>Conversions</td>
@@ -112,26 +110,27 @@ const children = [
       </tr>
     </tbody>
   </table>
-  <p>Pages scoring 16-20 are your stars — protect and amplify them. Pages scoring 8-15 are candidates for updating. Pages scoring below 8 should be evaluated for consolidation or removal.</p>
+  </div>
+  <p>Document how each dimension is weighted and why. A low composite score should trigger review rather than automatically trigger removal.</p>
 
   <h2 id="tools">Tools for Content Audits</h2>
   <ul>
-    <li><strong>Screaming Frog:</strong> Crawls your entire site and exports a URL inventory with metadata. The foundation of any content audit.</li>
+    <li><strong>Screaming Frog:</strong> exports metadata for URLs reached through its configured seeds, links, sitemaps and settings. Reconcile the crawl with other sources rather than treating it as the entire site.</li>
     <li><strong>Google Search Console:</strong> Provides real keyword data — what queries bring traffic to each page, click-through rates, and average positions.</li>
     <li><strong>Google Analytics:</strong> Traffic, engagement metrics, and conversion data per page. Essential for scoring content performance.</li>
     <li><strong>Ahrefs Content Explorer:</strong> Shows backlink data and content performance metrics. Useful for identifying high-value pages worth preserving.</li>
     <li><strong>Semrush Content Audit Tool:</strong> Automates much of the process by pulling data from multiple sources into a single dashboard.</li>
-    <li><strong>Google Sheets:</strong> The simplest way to organise your audit data, score pages, and assign actions. Use our <a href="/website-content-audit/template/">free template</a> to get started.</li>
+    <li><strong>Spreadsheet software:</strong> Organise raw URL evidence and assigned actions in a structure your team can maintain. Our <a href="/website-content-audit/template/">template page</a> provides blank Markdown worksheets, not a prebuilt spreadsheet.</li>
   </ul>
 
   <h2 id="actions">What to Do With Your Findings</h2>
-  <p>Every page in your audit should get one of five actions:</p>
+  <p>The action field records the reviewed decision; the score is supporting triage evidence, not the decision rule. Use the <a href="/website-content-audit/how-to/#assign-actions">operational guide</a> to execute and monitor each action.</p>
   <ul>
     <li><strong>Keep:</strong> High-performing content that's accurate and current. No changes needed beyond routine monitoring.</li>
     <li><strong>Update:</strong> Content with potential that needs refreshing — new data, better examples, expanded sections, improved formatting.</li>
     <li><strong>Consolidate:</strong> Multiple thin pages on the same topic merged into one comprehensive resource. Redirect the old URLs to the new page.</li>
-    <li><strong>Redirect:</strong> Pages with backlinks but no traffic value. 301 redirect to the most relevant remaining page to preserve link equity.</li>
-    <li><strong>Delete:</strong> Zero-traffic, zero-backlink, low-quality content that adds nothing. Remove and let Google drop it from the index.</li>
+    <li><strong>Redirect:</strong> use when a page has a clear relevant successor and the old URL should no longer stand alone. Preserve useful content and links in the destination.</li>
+    <li><strong>Remove:</strong> use when the page has no continuing user, business, legal or search purpose. Return an appropriate status or redirect only when a relevant destination exists.</li>
   </ul>
-  <p>The most common mistake is being too conservative — keeping mediocre content because "it might help." In practice, removing weak content often improves the performance of your remaining pages by concentrating your site's quality signals.</p>
+  <p>The safest decision is evidence-led and reversible where possible. Record why a URL changes, preserve material content and links and monitor the intended destination after release.</p>
 </ContentLayout>

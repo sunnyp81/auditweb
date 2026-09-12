@@ -1,0 +1,427 @@
+{
+  "owner": "services_locations_all",
+  "review_date": "2026-09-11",
+  "scope": {
+    "page_source_count": 15,
+    "supporting_data_source_count": 1,
+    "edited_page_source_count": 14,
+    "reviewed_without_change_count": 2,
+    "disposition": "Fourteen editorial guides were rewritten. The interactive directory source and its evidence-backed data model were preserved after review."
+  },
+  "primary_sources": [
+    {
+      "id": "ahrefs-site-audit",
+      "name": "Ahrefs Site Audit",
+      "url": "https://ahrefs.com/site-audit",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "ahrefs-free",
+      "name": "Ahrefs Free (formerly Ahrefs Webmaster Tools)",
+      "url": "https://ahrefs.com/webmaster-tools",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "semrush-site-audit",
+      "name": "Semrush Site Audit knowledge base",
+      "url": "https://www.semrush.com/kb/31-site-audit",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "semrush-reports",
+      "name": "Semrush My Reports knowledge base",
+      "url": "https://www.semrush.com/kb/34-my-reports",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "screaming-frog",
+      "name": "Screaming Frog SEO Spider",
+      "url": "https://www.screamingfrog.co.uk/seo-spider/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "screaming-frog-log",
+      "name": "Screaming Frog Log File Analyser",
+      "url": "https://www.screamingfrog.co.uk/log-file-analyser/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "lighthouse",
+      "name": "Chrome for Developers: Introduction to Lighthouse",
+      "url": "https://developer.chrome.com/docs/lighthouse/overview/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "web-vitals",
+      "name": "web.dev: Web Vitals",
+      "url": "https://web.dev/articles/vitals",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "search-console",
+      "name": "Google Search Console",
+      "url": "https://search.google.com/search-console/about",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "moz-pro",
+      "name": "Moz Pro",
+      "url": "https://moz.com/products/pro",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "moz-domain-authority",
+      "name": "Moz: Domain Authority",
+      "url": "https://moz.com/learn/seo/domain-authority",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "se-ranking-audit",
+      "name": "SE Ranking Website Audit",
+      "url": "https://seranking.com/website-audit.html",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "se-ranking-white-label",
+      "name": "SE Ranking White Label",
+      "url": "https://seranking.com/white-label.html",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "ubersuggest",
+      "name": "Ubersuggest",
+      "url": "https://neilpatel.com/ubersuggest/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "woorank",
+      "name": "WooRank",
+      "url": "https://www.woorank.com/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "sitebulb",
+      "name": "Sitebulb",
+      "url": "https://sitebulb.com/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "conductor",
+      "name": "Conductor",
+      "url": "https://www.conductor.com/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "lumar-technical",
+      "name": "Lumar technical SEO platform",
+      "url": "https://www.lumar.io/platform/technical-seo-metrics/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "lumar-rebrand",
+      "name": "Deepcrawl is now Lumar",
+      "url": "https://www.lumar.io/meet-lumar-our-new-brand/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "wave",
+      "name": "WAVE Web Accessibility Evaluation Tool",
+      "url": "https://wave.webaim.org/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "ssl-labs",
+      "name": "Qualys SSL Labs Server Test",
+      "url": "https://www.ssllabs.com/ssltest/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "security-headers",
+      "name": "Security Headers",
+      "url": "https://securityheaders.com/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "gtmetrix",
+      "name": "GTmetrix",
+      "url": "https://gtmetrix.com/",
+      "checked": "2026-09-11"
+    },
+    {
+      "id": "webpagetest",
+      "name": "WebPageTest",
+      "url": "https://www.webpagetest.org/",
+      "checked": "2026-09-11"
+    }
+  ],
+  "pages": [
+    {
+      "source": "src/pages/website-audit-tools/index.astro",
+      "task": "Let users filter and compare audit tools by the evidence task and access model they need.",
+      "changes": [
+        "Reviewed without change",
+        "Preserved working directory filters, search, compare state, query parameters, keyboard handling and disclosure",
+        "Preserved the explicit boundary for AuditWeb's pasted-HTML checker"
+      ],
+      "sources": []
+    },
+    {
+      "source": "src/pages/website-audit-tools/agencies.astro",
+      "task": "Help an agency choose a repeatable crawl, reporting and monitoring stack.",
+      "changes": [
+        "Replaced unsupported rankings, workflow claims and stale prices",
+        "Added agency acceptance criteria, evidence handoff and cost model",
+        "Added current official white-label references and updateDate"
+      ],
+      "sources": [
+        "screaming-frog",
+        "se-ranking-white-label",
+        "woorank",
+        "lighthouse"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/ahrefs.astro",
+      "task": "Help a user configure Ahrefs Site Audit and verify its URL-level findings.",
+      "changes": [
+        "Removed fabricated project experience, arbitrary score targets and stale plan claims",
+        "Added setup, discovery reconciliation, report interpretation and implementer handoff",
+        "Clarified Ahrefs Free access and updateDate"
+      ],
+      "sources": [
+        "ahrefs-site-audit",
+        "ahrefs-free"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/automated.astro",
+      "task": "Help a team create scheduled checks and alerts that have owners and responses.",
+      "changes": [
+        "Separated scheduled crawl, monitoring and CI patterns",
+        "Removed arbitrary alert thresholds and unsupported timing claims",
+        "Added baseline, alert-routing and retest workflow with updateDate"
+      ],
+      "sources": [
+        "screaming-frog",
+        "se-ranking-audit",
+        "lighthouse",
+        "lumar-technical"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/best-free.astro",
+      "task": "Help a site owner assemble free tools for distinct audit evidence types.",
+      "changes": [
+        "Removed subjective superlatives, stale allowances and unsupported testing claims",
+        "Distinguished crawl, Google-observed, lab, field, accessibility, TLS and header evidence",
+        "Linked every tool to its official service and added updateDate"
+      ],
+      "sources": [
+        "search-console",
+        "lighthouse",
+        "web-vitals",
+        "screaming-frog",
+        "ahrefs-free",
+        "wave",
+        "ssl-labs",
+        "security-headers",
+        "gtmetrix",
+        "webpagetest"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/best-software.astro",
+      "task": "Help a team shortlist audit software through a representative trial script.",
+      "changes": [
+        "Replaced universal rankings with workflow and evidence criteria",
+        "Corrected ContentKing to Conductor Website Monitoring and Deepcrawl to Lumar",
+        "Removed stale vendor counts and prices and added updateDate"
+      ],
+      "sources": [
+        "ahrefs-site-audit",
+        "semrush-site-audit",
+        "sitebulb",
+        "conductor",
+        "lumar-technical",
+        "lumar-rebrand"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/comparison.astro",
+      "task": "Compare Ahrefs, Semrush and Screaming Frog by deployment, evidence and operating constraints.",
+      "changes": [
+        "Replaced inaccurate feature and price comparisons",
+        "Corrected Log File Analyser separation and plan-dependent rendering",
+        "Added an accessible comparison table, trial script and updateDate"
+      ],
+      "sources": [
+        "ahrefs-site-audit",
+        "ahrefs-free",
+        "semrush-site-audit",
+        "screaming-frog",
+        "screaming-frog-log"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/lighthouse.astro",
+      "task": "Help a user run and interpret a Lighthouse page audit without confusing lab and field evidence.",
+      "changes": [
+        "Corrected Core Web Vitals interpretation: Lighthouse cannot measure INP in a lab run",
+        "Removed outdated weights, arbitrary score advice and incomplete category claims",
+        "Added reproducibility, manual accessibility limits and CI guidance with updateDate"
+      ],
+      "sources": [
+        "lighthouse",
+        "web-vitals"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/moz.astro",
+      "task": "Help a Moz Pro user configure a campaign crawl and turn findings into tasks.",
+      "changes": [
+        "Removed unsupported rendering, issue-count and pricing claims",
+        "Separated Domain Authority from technical crawl evidence",
+        "Added scope, verification, plan-check and updateDate"
+      ],
+      "sources": [
+        "moz-pro",
+        "moz-domain-authority"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/screaming-frog.astro",
+      "task": "Help an analyst run a reproducible Screaming Frog crawl and export evidence.",
+      "changes": [
+        "Corrected current 500-URL free limit and £199 annual licence evidence",
+        "Clarified paid-only configuration and separate Log File Analyser product",
+        "Added discovery reconciliation, custom extraction validation and updateDate"
+      ],
+      "sources": [
+        "screaming-frog",
+        "screaming-frog-log"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/semrush.astro",
+      "task": "Help a user configure Semrush Site Audit, prioritise patterns and compare like-for-like runs.",
+      "changes": [
+        "Removed stale issue totals, plan prices and score targets",
+        "Added scope, rendering, thematic-report and validation guidance",
+        "Made access plan-dependent and added updateDate"
+      ],
+      "sources": [
+        "semrush-site-audit",
+        "web-vitals"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/se-ranking.astro",
+      "task": "Help a user configure SE Ranking Website Audit and assess its reporting workflow.",
+      "changes": [
+        "Removed fabricated testing outcomes, comparative percentages and stale prices",
+        "Added crawl discovery, score limits and issue validation",
+        "Linked official audit and white-label documentation and added updateDate"
+      ],
+      "sources": [
+        "se-ranking-audit",
+        "se-ranking-white-label"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/ubersuggest.astro",
+      "task": "Help a site owner use Ubersuggest for a first technical check and know when more evidence is needed.",
+      "changes": [
+        "Removed stale issue totals, Core Web Vitals claims, price points and comparative claims",
+        "Added discovery and URL verification workflow",
+        "Linked current official product and pricing destinations and added updateDate"
+      ],
+      "sources": [
+        "ubersuggest",
+        "search-console"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/white-label.astro",
+      "task": "Help an agency test the actual branded client deliverable before buying a plan.",
+      "changes": [
+        "Defined distinct PDF, template, portal and custom-domain requirements",
+        "Removed vendor rankings, stale prices and sales-outcome claims",
+        "Added accessible acceptance table, scope guidance and updateDate"
+      ],
+      "sources": [
+        "se-ranking-white-label",
+        "woorank",
+        "semrush-reports"
+      ]
+    },
+    {
+      "source": "src/pages/website-audit-tools/woorank.astro",
+      "task": "Help a user turn WooRank reviews and checklists into verified implementation tasks.",
+      "changes": [
+        "Removed unsupported feature counts, subjective verdicts and stale prices",
+        "Separated instant review, site crawl and keyword evidence",
+        "Added reporting acceptance and updateDate"
+      ],
+      "sources": [
+        "woorank"
+      ]
+    }
+  ],
+  "supporting_data": {
+    "source": "src/data/audit-tools.ts",
+    "task": "Supply factual, source-dated entries to the interactive directory.",
+    "review": "Read all ten entries and preserved the accurate 6 September 2026 evidence, source links, scope boundaries, task mappings and stable data contract.",
+    "change": "No edit required."
+  },
+  "checks": [
+    {
+      "check": "Source inventory and coverage",
+      "result": "pass",
+      "evidence": "All 15 Astro sources and src/data/audit-tools.ts were read; the ledger contains 15 page outcomes plus one data outcome."
+    },
+    {
+      "check": "Directory interaction preservation",
+      "result": "pass",
+      "evidence": "index.astro and audit-tools.ts were unchanged, preserving filter, search, comparison, query-state and keyboard contracts."
+    },
+    {
+      "check": "Semantic and factual source review",
+      "result": "pass",
+      "evidence": "Fourteen guides now open with direct task answers, separate evidence types and link material vendor claims to official sources. Fabricated experience, blanket superlatives, stale vendor prices and arbitrary score targets were removed."
+    },
+    {
+      "check": "Metadata and update dates",
+      "result": "pass",
+      "evidence": "All 14 edited ContentLayout pages have task-specific title and description values and updateDate=2026-09-11."
+    },
+    {
+      "check": "TOC and heading anchors",
+      "result": "pass",
+      "evidence": "Every TOC id on the 14 edited guides has exactly one matching h2 id; established anchors were preserved."
+    },
+    {
+      "check": "Accessible wide tables",
+      "result": "pass",
+      "evidence": "The comparison and white-label tables have focusable labelled overflow regions and a horizontal-scroll cue."
+    },
+    {
+      "check": "Internal links",
+      "result": "pass",
+      "evidence": "Literal internal links in the edited guides were checked against existing Astro routes; incorrect draft report and checklist paths were corrected."
+    },
+    {
+      "check": "Encoding, placeholders and whitespace",
+      "result": "pass",
+      "evidence": "No common mojibake sequence or draft placeholder was found; git diff --check reported no whitespace errors."
+    },
+    {
+      "check": "Integrated build and rendered desktop/mobile QA",
+      "result": "pending_root",
+      "evidence": "Not run in this slice because the root agent is already performing the integrated scan, build and render checks."
+    }
+  ],
+  "root_integration": [
+    "Added contextual links to Moz and Ubersuggest guides to resolve body-link orphans.",
+    "Corrected Lighthouse CI and WooRank pricing source destinations; verified WebPageTest capabilities through official GitHub documentation when its homepage returned automated-access 403."
+  ]
+}

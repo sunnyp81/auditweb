@@ -19,185 +19,68 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Website Audit Tool Comparison: Ahrefs vs Semrush vs Screaming Frog"
-  description="Side-by-side comparison of the three most popular website audit tools — Ahrefs, Semrush, and Screaming Frog — covering features, pricing, strengths, and which is best for your situation."
+  title="Ahrefs vs Semrush vs Screaming Frog for Site Audits"
+  description="Compare Ahrefs, Semrush and Screaming Frog by deployment, crawl control, evidence, automation, free access and current commercial limits."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>Ahrefs, Semrush, and Screaming Frog are the three tools that appear in nearly every SEO professional's stack, yet they approach website auditing from fundamentally different angles. Ahrefs and Semrush are cloud-based platforms that combine site auditing with keyword research, rank tracking, and backlink analysis in an all-in-one subscription. Screaming Frog is a desktop crawler that does one thing — crawl websites — with a depth and configurability that the cloud platforms cannot match.</p>
 
-  <p>Choosing between them is not a matter of which is "best" in the abstract. Each tool has clear strengths for specific use cases, and the right choice depends on your site size, budget, technical requirements, and whether you need an audit-only tool or a broader SEO platform. Many professionals use two or even all three because their capabilities are complementary rather than overlapping.</p>
+<p>Ahrefs and Semrush are cloud audit tools inside broader search platforms. Screaming Frog is a desktop crawler with deeper local configuration and extraction. Choose between them by the audit evidence and operating model you need, then test the same representative URL set in each finalist.</p>
 
-  <p>This comparison evaluates each tool on the criteria that matter for website auditing specifically, not for their broader SEO capabilities. We cover features, pricing, ease of use, and the specific scenarios where each tool outperforms the others.</p>
+<h2 id="comparison-criteria">Comparison Criteria</h2>
 
-  <h2 id="comparison-criteria">Comparison Criteria</h2>
+<p>Define required scope, rendering, URL sources, exports, history, scheduling, team access and integrations before comparing plans. Do not compare vendor issue counts or health scores as if they used the same rules.</p>
 
-  <p>We evaluate each tool across seven dimensions that determine its effectiveness for website auditing:</p>
+<h2 id="feature-table">Feature Table</h2>
 
-  <ul>
-    <li><strong>Crawl depth and accuracy</strong> — how thoroughly the tool crawls a website, whether it discovers all pages, how it handles JavaScript rendering, and whether the crawl data matches what search engines see.</li>
-    <li><strong>Issue detection</strong> — the range of technical, on-page, and content issues the tool identifies, and whether it catches nuanced problems or only surface-level errors.</li>
-    <li><strong>Reporting and export</strong> — how easily you can generate reports, export data for further analysis, and present findings to clients or stakeholders.</li>
-    <li><strong>Customisation</strong> — whether you can configure the crawl parameters, create custom checks, and tailor the audit to your specific requirements.</li>
-    <li><strong>Integration with other data</strong> — how well the audit tool connects with Search Console, Analytics, and backlink data to provide a complete picture.</li>
-    <li><strong>Scalability</strong> — how the tool performs on sites of different sizes, from 50 pages to 500,000 pages.</li>
-    <li><strong>Value for money</strong> — the cost relative to the audit capabilities delivered, considering that Ahrefs and Semrush include many features beyond auditing.</li>
-  </ul>
+<div class="overflow-x-auto" tabindex="0" role="region" aria-label="Ahrefs, Semrush and Screaming Frog audit workflow comparison">
+  <table>
+    <thead>
+      <tr><th>Decision</th><th>Ahrefs Site Audit</th><th>Semrush Site Audit</th><th>Screaming Frog SEO Spider</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Deployment</td><td>Cloud project</td><td>Cloud project</td><td>Windows, macOS or Linux desktop app</td></tr>
+      <tr><td>Best-fit workflow</td><td>Stored crawl alongside Ahrefs search data</td><td>Stored crawl inside a Semrush project</td><td>Analyst-led crawl, custom extraction and local exports</td></tr>
+      <tr><td>JavaScript</td><td>Documented; configure when needed</td><td>Available under applicable access and settings</td><td>Paid-version feature</td></tr>
+      <tr><td>Raw evidence</td><td>Page and Link Explorer plus exports</td><td>Issue and crawled-page reports plus exports</td><td>Detailed tabs and bulk exports</td></tr>
+      <tr><td>Repeat runs</td><td>Stored crawl history</td><td>Crawl comparison</td><td>Scheduling and crawl comparison in paid version</td></tr>
+      <tr><td>Free access</td><td>Ahrefs Free for verified sites, within allowance</td><td>Limited access; verify current entitlement</td><td>500 URLs per crawl</td></tr>
+      <tr><td>Main constraint to test</td><td>Credits, project access and wider subscription fit</td><td>Page, project and rendering allowances</td><td>Machine resources, local operation and licence features</td></tr>
+    </tbody>
+  </table>
+</div>
+<p><small>Swipe or scroll horizontally to view the full table on smaller screens.</small></p>
 
-  <h2 id="feature-table">Feature Table</h2>
+<h2 id="pricing-comparison">Pricing Comparison</h2>
 
-  <p>The following table provides a direct feature comparison across the core auditing capabilities of each tool:</p>
+<p>Screaming Frog listed a paid licence at £199 per year on 11 September 2026 and a 500-URL free crawl. Ahrefs Free listed 5,000 crawl credits per verified project per month. Semrush described limited Site Audit access and plan-dependent features. These terms can change; compare the <a href="https://ahrefs.com/pricing" rel="noopener noreferrer">Ahrefs</a>, <a href="https://www.semrush.com/pricing/" rel="noopener noreferrer">Semrush</a> and <a href="https://www.screamingfrog.co.uk/seo-spider/" rel="noopener noreferrer">Screaming Frog</a> official pages on the purchase date.</p>
 
-  <div class="overflow-x-auto">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="border-b-2 border-border">
-          <th class="text-left py-3 px-4 font-semibold">Feature</th>
-          <th class="text-left py-3 px-4 font-semibold">Ahrefs Site Audit</th>
-          <th class="text-left py-3 px-4 font-semibold">Semrush Site Audit</th>
-          <th class="text-left py-3 px-4 font-semibold">Screaming Frog</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Crawl Type</td>
-          <td class="py-3 px-4">Cloud-based</td>
-          <td class="py-3 px-4">Cloud-based</td>
-          <td class="py-3 px-4">Desktop (local)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Max Pages per Crawl</td>
-          <td class="py-3 px-4">Up to 1M (plan dependent)</td>
-          <td class="py-3 px-4">Up to 100K (plan dependent)</td>
-          <td class="py-3 px-4">Unlimited (hardware dependent)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">JavaScript Rendering</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Yes (Chrome-based)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Scheduled Crawls</td>
-          <td class="py-3 px-4">Yes (daily/weekly/monthly)</td>
-          <td class="py-3 px-4">Yes (daily/weekly)</td>
-          <td class="py-3 px-4">No (manual or via CLI)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Custom Extraction</td>
-          <td class="py-3 px-4">Limited</td>
-          <td class="py-3 px-4">Limited</td>
-          <td class="py-3 px-4">Extensive (CSS/XPath/regex)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Search Console Integration</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Yes</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Analytics Integration</td>
-          <td class="py-3 px-4">No</td>
-          <td class="py-3 px-4">Yes (GA4)</td>
-          <td class="py-3 px-4">Yes (GA4)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Backlink Data Included</td>
-          <td class="py-3 px-4">Yes (industry-leading)</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Via API integration only</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">White-Label Reports</td>
-          <td class="py-3 px-4">No</td>
-          <td class="py-3 px-4">Yes (Agency plan)</td>
-          <td class="py-3 px-4">No (export data to own reports)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Issue Categorisation</td>
-          <td class="py-3 px-4">Errors, Warnings, Notices</td>
-          <td class="py-3 px-4">Errors, Warnings, Notices</td>
-          <td class="py-3 px-4">Manual (full data provided)</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Historical Crawl Data</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Yes</td>
-          <td class="py-3 px-4">Manual comparison only</td>
-        </tr>
-        <tr class="border-b border-border">
-          <td class="py-3 px-4 font-medium">Log File Analysis</td>
-          <td class="py-3 px-4">No</td>
-          <td class="py-3 px-4">Yes (separate tool)</td>
-          <td class="py-3 px-4">Yes (built-in)</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<p>Calculate total cost from pages × crawl frequency, plus projects, users, rendering, API needs and analyst time. Cloud credits and desktop machine capacity are different constraints.</p>
 
-  <h2 id="pricing-comparison">Pricing Comparison</h2>
+<h2 id="best-for-small-sites">For Small Sites</h2>
 
-  <p>Pricing is where the comparison becomes nuanced because Ahrefs and Semrush bundle auditing with their broader SEO platforms, while Screaming Frog is a standalone crawling tool.</p>
+<p>Start with Screaming Frog's free crawl when the site stays within 500 URLs and you need a local inventory. Use Ahrefs Free when you can verify ownership and want a recurring cloud crawl. Pair either with <a href="https://search.google.com/search-console/about" rel="noopener noreferrer">Google Search Console</a> for Google's own search and indexing data.</p>
 
-  <ul>
-    <li><strong>Ahrefs</strong> — plans start at $99/month (Lite) with limited audit capabilities and scale to $999/month (Enterprise) for the full feature set. The Standard plan at $199/month is the minimum for serious audit work, offering crawl limits of 25,000 pages per project. Audit functionality is included in every plan but with different crawl limits and project caps.</li>
-    <li><strong>Semrush</strong> — plans start at $139.95/month (Pro) with audits limited to 100,000 pages across all projects. The Guru plan at $249.95/month increases limits and adds historical data. The Business plan at $499.95/month provides the highest crawl limits and white-label reporting. Like Ahrefs, audit is one feature among many.</li>
-    <li><strong>Screaming Frog</strong> — the free version crawls up to 500 pages per site with limited features. The paid licence costs $259/year (approximately $22/month) and removes all page limits and enables every feature including JavaScript rendering, custom extraction, and integrations. This makes it by far the cheapest per-crawl option for audit-specific work.</li>
-  </ul>
+<h2 id="best-for-agencies">For Agencies</h2>
 
-  <p>If you only need a crawling tool for audits, Screaming Frog at $259/year is an order of magnitude cheaper than Ahrefs or Semrush. However, if you also need keyword research, rank tracking, and backlink analysis, the all-in-one platforms offer better total value than buying separate tools for each function.</p>
+<p>Test client separation, seats, reusable settings, exports, report branding and scheduled delivery. Ahrefs or Semrush may reduce tool switching when the agency already uses that platform. Screaming Frog can provide highly configurable crawl evidence for an independently produced report. See the <a href="/website-audit-tools/agencies/">agency selection workflow</a>.</p>
 
-  <h2 id="best-for-small-sites">Best for Small Sites</h2>
+<h2 id="best-for-enterprise">For Enterprise Sites</h2>
 
-  <p>For small websites under 500 pages, the differences between tools are less pronounced because all three can handle the crawl size without breaking a sweat. The decision comes down to workflow preference and budget.</p>
+<p>Proof-test segmentation, authentication, rendered pages, crawl safeguards, data retention, APIs and role controls on a representative section. Enterprise requirements may also justify evaluating platforms such as Lumar; vendor category alone does not establish fit.</p>
 
-  <p><strong>Our recommendation: Screaming Frog (free version) for auditing, paired with Ahrefs Lite or Semrush Pro if you need the broader SEO toolkit.</strong></p>
+<h2 id="our-pick">Make the Choice</h2>
 
-  <p>The free version of Screaming Frog crawls up to 500 pages — sufficient for most small business websites, blogs, and portfolio sites. It provides all the technical data you need: response codes, title tags, meta descriptions, headings, canonical tags, hreflang, and more. The limitation is that advanced features like JavaScript rendering, custom extraction, and Search Console integration require the paid licence.</p>
+<ol>
+  <li>Crawl the same controlled URL set with comparable settings.</li>
+  <li>Find a known broken link, canonical condition and JavaScript-dependent element.</li>
+  <li>Export the affected URLs and hand one finding to an implementer.</li>
+  <li>Repeat after a known change and compare how each product shows it.</li>
+  <li>Choose the workflow with sufficient evidence and the lowest sustainable total cost.</li>
+</ol>
 
-  <p>For small sites where budget is a primary constraint, the free Screaming Frog crawl plus the free version of Google Search Console provides a surprisingly thorough audit dataset. Add in Google PageSpeed Insights for Core Web Vitals data and you have a credible audit toolkit at zero cost.</p>
+<p>Read the detailed guides for <a href="/website-audit-tools/ahrefs/">Ahrefs</a>, <a href="/website-audit-tools/semrush/">Semrush</a> and <a href="/website-audit-tools/screaming-frog/">Screaming Frog</a>. <small>Product facts checked against official documentation on 11 September 2026.</small></p>
 
-  <p>If you are willing to invest in a paid tool, Ahrefs Lite at $99/month gives you the best combination of audit capability and keyword/backlink data at the lowest price point among the all-in-one platforms.</p>
-
-  <h2 id="best-for-agencies">Best for Agencies</h2>
-
-  <p>Agencies need tools that handle multiple client sites efficiently, produce client-ready reports, and scale with growing client lists. The requirements are different from individual site owners.</p>
-
-  <p><strong>Our recommendation: Semrush Guru or Business for client reporting, plus Screaming Frog paid licence for deep technical analysis.</strong></p>
-
-  <p>Semrush edges ahead for agencies because of its white-label reporting capabilities on the Business plan. You can generate branded PDF reports that look professional and can be sent directly to clients. The agency toolkit includes client management features, automated report scheduling, and the ability to manage multiple projects under separate client profiles.</p>
-
-  <p>However, Semrush's crawl engine, while competent, does not match Screaming Frog's depth for complex technical audits. Agencies that take technical SEO seriously use both — Semrush for the client-facing reports and ongoing monitoring, Screaming Frog for the deep-dive technical crawl that catches the issues cloud crawlers miss.</p>
-
-  <p>Ahrefs is a strong alternative if your agency prioritises backlink analysis and competitive research over white-label reporting. Its link database is widely considered the most comprehensive, and its content gap analysis tools are excellent. The lack of white-label reports is the main drawback for client-facing agency work.</p>
-
-  <h2 id="best-for-enterprise">Best for Enterprise</h2>
-
-  <p>Enterprise sites with 50,000 to millions of pages have requirements that push beyond what cloud-based tools handle comfortably. Crawl limits, processing time, and the need for custom analysis become critical factors.</p>
-
-  <p><strong>Our recommendation: Screaming Frog paid licence as the primary crawl tool, supplemented by Ahrefs or Semrush for their unique datasets.</strong></p>
-
-  <p>Screaming Frog is the clear winner for enterprise-scale technical audits because it has no inherent page limit — the only constraint is your hardware. With a machine that has 16GB or more of RAM, Screaming Frog can crawl sites with hundreds of thousands of pages, providing granular data that cloud tools either cannot reach or charge premium prices to access.</p>
-
-  <p>For enterprise, Screaming Frog's advantages compound:</p>
-
-  <ul>
-    <li><strong>Custom extraction</strong> — extract any data from the page using CSS selectors, XPath, or regex. Need to audit every product price, stock status, or author name across 100,000 pages? Custom extraction handles it. Cloud tools do not offer this capability.</li>
-    <li><strong>Log file analysis</strong> — Screaming Frog's built-in log file analyser lets you overlay Googlebot crawl data with your crawl data to identify pages Google crawls excessively, pages it ignores, and patterns in crawl behaviour that affect indexation.</li>
-    <li><strong>API integrations</strong> — connect to Ahrefs, Semrush, Moz, Majestic, and Google APIs to pull backlink data, keyword data, and performance metrics directly into your crawl dataset. This creates a single unified dataset for analysis without switching between tools.</li>
-    <li><strong>Automation via CLI</strong> — schedule crawls via the command-line interface for regular automated auditing. Enterprise sites that need weekly or daily crawl monitoring can set up Screaming Frog to run automatically and output the results for review.</li>
-  </ul>
-
-  <p>Enterprise teams should budget for both Screaming Frog (for crawl depth and customisation) and one cloud platform (for backlink data, keyword intelligence, and ongoing monitoring). The combination provides complete coverage.</p>
-
-  <h2 id="our-pick">Our Pick</h2>
-
-  <p>If we could only use one tool for website auditing, it would be Screaming Frog. The paid licence at $259/year offers unmatched depth, flexibility, and value. No cloud-based tool can match its crawl thoroughness, custom extraction capability, or configurability for complex audit scenarios. Its integration with Search Console, Analytics, and third-party APIs means you can build a comprehensive audit dataset within a single tool.</p>
-
-  <p>The caveat is that Screaming Frog requires more technical expertise than Ahrefs or Semrush. It does not categorise findings into neat error/warning/notice buckets or generate polished reports. You need to know what to look for in the data and how to interpret it. For SEO professionals who have that knowledge, this is an advantage — you are not constrained by the tool's interpretation of what matters. For beginners who need guidance on what the data means, Ahrefs or Semrush provide a more structured audit experience.</p>
-
-  <p>In practice, the best audit setup combines tools based on their strengths. Screaming Frog for the technical crawl, Ahrefs for backlink analysis and competitive intelligence, and Google Search Console for the ground truth on how Google sees your site. This combination costs under $360/month and provides audit capabilities that rival what enterprise tools costing ten times that amount deliver.</p>
-
-  <p>Ultimately, the tool does not make the audit — the auditor does. A skilled analyst with Screaming Frog's free version and Google Search Console will produce a better audit than an untrained person with every premium tool available. Invest in expertise first, then in tools that amplify that expertise.</p>
 </ContentLayout>

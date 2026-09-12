@@ -16,13 +16,13 @@ const children = [
   { title: 'Security Audit Tools', href: '/website-security-audit/tools/', description: 'Best tools for scanning and testing website security.' },
   { title: 'Security Audit Cost', href: '/website-security-audit/cost/', description: 'What to expect to pay for a professional security audit.' },
   { title: 'Web Application Security Audit', href: '/website-security-audit/web-app/', description: 'How to audit web applications for security vulnerabilities.' },
-  { title: 'GDPR Website Audit', href: '/website-security-audit/gdpr/', description: 'Ensure your website complies with GDPR data protection rules.' },
+  { title: 'GDPR Website Audit', href: '/website-security-audit/gdpr/', description: 'Collect technical evidence for an EU or UK GDPR review.' },
 ];
 ---
 
 <ContentLayout
-  title="Website Security Audit: Protect Your Site, Data, and Rankings"
-  description="A website security audit identifies vulnerabilities that put your data, users, and search rankings at risk. Learn what to check and how to fix common security issues."
+  title="Website Security Audit: Scope, Tests and Evidence"
+  description="Define an authorised website security audit, verify controls, validate findings, rank risk and record remediation and retest evidence."
   breadcrumbs={[
     { label: 'Website Audit', href: '/website-audit/' },
     { label: 'Security Audit', href: '/website-security-audit/' },
@@ -30,27 +30,28 @@ const children = [
   toc={toc}
   children={children}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
   <h2 id="what-is">What Is a Website Security Audit</h2>
-  <p>A website security audit is a systematic examination of your website's defences against cyber threats. It evaluates your SSL configuration, server settings, software versions, access controls, data handling practices, and vulnerability to common attack vectors like SQL injection, cross-site scripting (XSS), and brute force attacks.</p>
+  <p>A website security audit tests an authorised set of hosts, applications and controls for reproducible weaknesses. Define the scope, accounts, active techniques, safety limits and evidence handling before testing.</p>
   <p>The goal is to identify weaknesses before attackers do. A security audit produces a report of vulnerabilities ranked by severity, along with specific remediation steps for each issue.</p>
 
   <h2 id="seo-impact">Why Security Audits Matter for SEO</h2>
-  <p>Security and SEO are directly connected. Google has used HTTPS as a ranking signal since 2014, and the impact has only grown. But security goes far beyond SSL certificates:</p>
+  <p>Security incidents can affect search access and visitors' ability to use a site. Check the observed problem and Google's reports instead of treating a scanner score as a ranking signal:</p>
   <ul>
-    <li><strong>Malware penalties:</strong> If Google detects malware on your site, it will show a "This site may be hacked" warning in search results — devastating for click-through rates and trust.</li>
+    <li><strong>Search warnings:</strong> Review <a href="https://support.google.com/webmasters/answer/9044101">Search Console's Security Issues report</a> for hacked content, malware, unwanted software or social-engineering findings, and follow Google's review process after remediation.</li>
     <li><strong>Deindexation:</strong> Severe security issues can lead to pages being removed from Google's index entirely.</li>
-    <li><strong>Spam injection:</strong> Hackers often inject hidden links or pages into compromised sites, diluting your SEO and potentially triggering manual actions.</li>
-    <li><strong>User trust:</strong> Browser warnings about insecure connections cause visitors to leave immediately, increasing bounce rate and reducing engagement signals.</li>
-    <li><strong>Core Web Vitals:</strong> Some security measures like outdated plugins or unpatched software can slow your site, hurting performance scores.</li>
+    <li><strong>Spam injection:</strong> Investigate unauthorised pages, links or redirects and remove the underlying compromise. Check both security findings and any separate manual-action notice.</li>
+    <li><strong>Connection warnings:</strong> Reproduce certificate and mixed-content errors in the browser, identify the affected resources and verify the correction.</li>
+    <li><strong>Performance:</strong> Investigate unexpected scripts, redirects and resource usage after a compromise. Measure their effect; an outdated plugin alone does not establish a performance problem.</li>
   </ul>
 
   <h2 id="key-areas">Key Areas to Check</h2>
-  <p>A comprehensive website security audit covers these areas:</p>
+  <p>Choose the following areas according to the written scope and access. Public configuration checks cannot verify private server settings, account controls or application code:</p>
   <ul>
     <li><strong>SSL/TLS configuration:</strong> Certificate validity, protocol versions, cipher suites, mixed content issues, HSTS headers.</li>
     <li><strong>HTTP security headers:</strong> Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.</li>
-    <li><strong>Software versions:</strong> CMS version, plugin versions, server software. Outdated software is the number one attack vector.</li>
+    <li><strong>Software versions:</strong> Inventory the CMS, plugins, dependencies and server software, then compare affected versions with authoritative advisories and support status.</li>
     <li><strong>Authentication:</strong> Password policies, two-factor authentication, admin panel exposure, login attempt limiting.</li>
     <li><strong>File permissions:</strong> Writable directories, exposed configuration files, directory listing enabled.</li>
     <li><strong>Input validation:</strong> Protection against SQL injection, XSS, CSRF, and file upload vulnerabilities.</li>
@@ -59,13 +60,13 @@ const children = [
   </ul>
 
   <h2 id="vulnerabilities">Common Vulnerabilities</h2>
-  <p>Based on our audit experience, these are the most frequent security issues we find:</p>
+  <p>Use these examples to form testable checks. Record the affected asset, evidence and practical impact before classifying a vulnerability:</p>
   <ol>
-    <li><strong>Outdated WordPress plugins:</strong> Over 50% of WordPress sites we audit have at least one plugin with a known vulnerability. Updating plugins is the single most impactful security action for WordPress sites.</li>
-    <li><strong>Missing security headers:</strong> Most websites lack proper HTTP security headers. Adding Content-Security-Policy and other headers takes minutes but blocks entire categories of attacks.</li>
-    <li><strong>Exposed admin panels:</strong> Default login URLs (like /wp-admin) without IP restriction or rate limiting are invitations for brute force attacks.</li>
+    <li><strong>WordPress components:</strong> Match installed core, plugin and theme versions to authoritative advisories. Confirm exposure, remove unused code and test supported updates before deployment.</li>
+    <li><strong>Security header configuration:</strong> Evaluate headers against the application. Test a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy-Report-Only">Content Security Policy in report-only mode</a> before enforcing it; an incorrect policy can break legitimate scripts, embeds or forms.</li>
+    <li><strong>Administration access:</strong> Verify strong authentication, appropriate multi-factor authentication and resistance to repeated login attempts. A familiar login URL alone is not proof of a vulnerability.</li>
     <li><strong>Mixed content:</strong> Pages served over HTTPS that load resources over HTTP. This triggers browser warnings and undermines your SSL protection.</li>
-    <li><strong>No backup strategy:</strong> Surprisingly common — sites with no automated backups or backups stored on the same server as the site.</li>
+    <li><strong>Recovery gaps:</strong> Check backup separation, access controls and a documented restore test against the organisation's recovery requirements.</li>
     <li><strong>Weak passwords:</strong> Admin accounts with simple passwords and no two-factor authentication.</li>
   </ol>
 
@@ -75,20 +76,20 @@ const children = [
     <li><strong>Security Headers (securityheaders.com):</strong> Free scanner that checks your HTTP security headers and grades your configuration.</li>
     <li><strong>Sucuri SiteCheck:</strong> Free malware and blocklist scanner. Checks if your site has been flagged by Google, Norton, or other security services.</li>
     <li><strong>WPScan:</strong> Specifically for WordPress sites. Scans for known plugin and theme vulnerabilities against a comprehensive database.</li>
-    <li><strong>OWASP ZAP:</strong> Open-source web application security scanner. More technical but thorough for finding injection and XSS vulnerabilities.</li>
+    <li><strong><a href="https://www.zaproxy.org/docs/desktop/start/features/ascan/">ZAP</a>:</strong> Open-source web application testing software. Active scans require explicit permission and safe limits; validate alerts and record coverage gaps.</li>
     <li><strong>Google Search Console:</strong> Security Issues report shows if Google has detected malware, hacking, or social engineering on your site.</li>
   </ul>
 
   <h2 id="frequency">How Often to Audit</h2>
   <p>Security audit frequency depends on your site's risk profile:</p>
   <ul>
-    <li><strong>E-commerce sites handling payments:</strong> Monthly automated scans, quarterly manual audits.</li>
-    <li><strong>Sites with user data (forms, accounts):</strong> Quarterly automated scans, annual manual audit.</li>
-    <li><strong>Content-only sites:</strong> Annual audit plus automated monitoring for uptime and malware.</li>
+    <li><strong>E-commerce and payment systems:</strong> Agree checks from the payment architecture, applicable obligations, release schedule and exposure. A generic scan schedule does not establish compliance.</li>
+    <li><strong>Sites with user data:</strong> Review account, form and data-handling controls after relevant changes and at a risk-based interval agreed with the responsible owner.</li>
+    <li><strong>Content-only sites:</strong> Set review and monitoring frequency from software changes, exposure, incident history and recovery needs.</li>
     <li><strong>After any major change:</strong> Always run a security check after updating your CMS, adding plugins, changing hosting, or launching new features.</li>
   </ul>
 
   <h2 id="professional">Getting Professional Help</h2>
-  <p>While basic security checks can be done with free tools, a professional security audit provides deeper analysis — penetration testing, code review, and server configuration assessment that automated tools cannot replicate.</p>
-  <p>Our <a href="/website-audit-services/">comprehensive audit</a> includes a full security assessment as part of the 72-checkpoint review. If you need a standalone security audit, <a href="/website-audit-services/">contact our team</a> for a custom quote.</p>
+  <p>A specialist engagement may include authorised penetration testing, code review or server configuration assessment when these are explicitly commissioned. AuditWeb's website audit covers agreed public configuration checks; it does not provide penetration testing or security certification.</p>
+  <p>Use the <a href="https://owasp.org/www-project-web-security-testing-guide/">OWASP Web Security Testing Guide</a> to define a test plan and the <a href="/website-security-audit/checklist/">45-check configuration checklist</a> for initial evidence. Confirm the security depth included in any <a href="/website-audit-services/">AuditWeb service</a>; the pasted-HTML checker does not scan security.</p>
 </ContentLayout>

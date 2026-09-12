@@ -61,7 +61,8 @@ test('category and evidence remain useful without JavaScript', async ({ browser 
   await expect(page.locator('.guide-index a')).toHaveCount(6);
   await expect(page.locator('.record-guide')).toHaveCount(6);
   const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
-  const collection = schemas.map(JSON.parse).find(s => s['@type'] === 'CollectionPage');
+  const collection = schemas.map(JSON.parse).flatMap(s => s['@graph'] || [s]).find(s => s['@type'] === 'CollectionPage');
+  expect(collection).toBeDefined();
   expect(collection.mainEntity.numberOfItems).toBe(10);
   await page.goto('/'); await expect(page.locator('.evidence-panel:visible')).toHaveCount(3);
   await expect(page.locator('.evidence-tabs')).toBeHidden(); await context.close();

@@ -20,15 +20,16 @@ const toc = [
 ---
 
 <ContentLayout
-  title="Website Security Audit Checklist: 30+ Points"
-  description="A comprehensive website security audit checklist covering SSL, security headers, authentication, software updates, file permissions, input validation, backups, and monitoring. Over 30 actionable checks."
+  title="Website Security Audit Checklist: 45 Checks"
+  description="Run 45 authorised checks across TLS, headers, authentication, updates, permissions, input handling, backups and monitoring with recorded evidence."
   breadcrumbs={breadcrumbs}
   toc={toc}
   publishDate="2026-03-28"
+  updateDate="2026-09-11"
 >
-  <p>A website security audit is a structured examination of your site's defences against cyberattacks, data breaches, and unauthorised access. The consequences of skipping it are severe: data theft, ransomware, defacement, SEO spam injection, regulatory fines, and permanent loss of customer trust. The average cost of a data breach reached 4.88 million USD globally in 2024 according to IBM, and small to medium businesses are increasingly targeted because attackers know their defences are weaker.</p>
+  <p>A website security audit checks defined assets and controls for evidence of exploitable weaknesses, unsafe configuration and failed detection or recovery. Obtain written authorisation before scanning and specify allowed hosts, accounts, methods, rate limits and test windows.</p>
 
-  <p>This checklist covers over 30 security checks organised into eight categories. It is designed to be practical — each item is something you can test and fix without a computer science degree. Some checks require technical skills or server access, but many can be verified using free online tools in minutes. Work through the checklist systematically, document your findings, and prioritise fixes by severity.</p>
+  <p>These 45 checks form a configuration and control review rather than a penetration test. Record the request, response, timestamp, tool version, affected asset and validation method for every finding. A clean result does not prove that the site is secure.</p>
 
   <h2 id="ssl-and-https">SSL and HTTPS</h2>
 
@@ -36,9 +37,9 @@ const toc = [
 
   <ul>
     <li><strong>SSL certificate is installed and valid</strong> — visit your site and check for the padlock icon. Click it to verify the certificate details including expiry date and issuing authority.</li>
-    <li><strong>Certificate is not expired or expiring within 30 days</strong> — expired certificates trigger browser security warnings that will immediately drive visitors away. Set up expiry monitoring with a tool like SSL Labs or UptimeRobot.</li>
+    <li><strong>Certificate validity is monitored</strong> — verify names, chain, validity period and renewal automation for each required endpoint. Set alert lead time from the renewal process and recovery window.</li>
     <li><strong>All pages load over HTTPS</strong> — check that HTTP URLs redirect to HTTPS with a 301. Mixed content warnings occur when a page loads over HTTPS but includes resources (images, scripts, stylesheets) loaded over HTTP.</li>
-    <li><strong>HSTS header is enabled</strong> — HTTP Strict Transport Security tells browsers to always connect via HTTPS, preventing protocol downgrade attacks. The header should include a max-age of at least 31536000 seconds (one year).</li>
+    <li><strong>HSTS is assessed safely</strong> — enable or expand Strict-Transport-Security only after required hosts and subdomains support HTTPS. Choose duration, subdomain scope and preload through security change control.</li>
     <li><strong>TLS version is 1.2 or higher</strong> — TLS 1.0 and 1.1 are deprecated and contain known vulnerabilities. Your server should only accept TLS 1.2 and 1.3 connections. Test with SSL Labs Server Test.</li>
     <li><strong>Weak cipher suites are disabled</strong> — older cipher suites like RC4, DES, and 3DES are vulnerable to attack. Your server configuration should only offer strong ciphers. SSL Labs grades your cipher suite configuration as part of its test.</li>
   </ul>
@@ -100,7 +101,7 @@ const toc = [
 
   <ul>
     <li><strong>All form inputs are validated server-side</strong> — client-side validation (JavaScript) is easily bypassed. Server-side validation is the real security boundary. Validate data type, length, format, and range for every input.</li>
-    <li><strong>SQL injection is prevented</strong> — use parameterised queries or prepared statements for all database interactions. Never concatenate user input directly into SQL queries. Test with tools like SQLMap.</li>
+    <li><strong>SQL injection controls are verified</strong> — use parameterised queries or prepared statements and review code paths that construct queries. Run active injection tools only within the written authorisation and safety limits.</li>
     <li><strong>Cross-site scripting (XSS) is prevented</strong> — encode all user-supplied output displayed on pages. Use context-appropriate encoding — HTML encoding for HTML contexts, JavaScript encoding for script contexts, URL encoding for URLs.</li>
     <li><strong>File uploads are restricted</strong> — if your site accepts file uploads, validate file type by checking the actual file content (magic bytes), not just the extension. Restrict allowed types to only what is needed. Limit file sizes. Store uploads outside the web root.</li>
     <li><strong>CSRF protection is implemented</strong> — cross-site request forgery tokens should be included in every form that performs a state-changing action (creating, updating, or deleting data). Verify the token on the server before processing the request.</li>
@@ -112,10 +113,10 @@ const toc = [
   <p>Backups are your last line of defence. When everything else fails — when an attacker bypasses your security measures, when a server fails, when someone accidentally deletes the database — backups are what bring your site back. A security audit must verify that backups exist, work, and can be restored.</p>
 
   <ul>
-    <li><strong>Automated backups run daily</strong> — manual backups are forgotten. Set up automated daily backups of both files and the database.</li>
+    <li><strong>Automated backups meet the recovery point</strong> — schedule file, data and configuration backups frequently enough to meet the documented recovery-point objective, then alert on missed or failed jobs.</li>
     <li><strong>Backups are stored off-site</strong> — backups stored on the same server as your website are destroyed if the server is compromised or fails. Store backups in a separate location: a different server, cloud storage (S3, Google Cloud Storage), or a dedicated backup service.</li>
-    <li><strong>Backup retention covers at least 30 days</strong> — keep daily backups for 30 days and weekly backups for 90 days at minimum. If a compromise goes undetected for a week, you need clean backups from before the breach.</li>
-    <li><strong>Restore process has been tested</strong> — a backup that cannot be restored is not a backup. Test your restore process on a staging environment at least quarterly. Document the exact steps so anyone on the team can perform a restore in an emergency.</li>
+    <li><strong>Backup retention covers plausible recovery points</strong> — derive retention from recovery objectives, compromise-detection time and applicable data-retention duties. Preserve enough isolated generations to recover from accidental deletion and delayed compromise.</li>
+    <li><strong>Restore process has been tested</strong> — run isolated restore tests often enough for the service's risk and change rate. Verify the recovered service against recovery objectives and document the steps and result.</li>
     <li><strong>Database and files are backed up separately</strong> — this allows you to restore one without the other if needed. Database corruption does not always coincide with file system compromise.</li>
   </ul>
 
@@ -135,5 +136,5 @@ const toc = [
 
   <p>Work through this checklist systematically and document your findings in a spreadsheet with columns for the check item, current status (pass, fail, partial), severity (critical, high, medium, low), and planned fix date. Address critical and high-severity items immediately. Schedule medium and low items for the next maintenance window. Then set a calendar reminder to re-run the checklist quarterly.</p>
 
-  <p>If you need help running a security audit or fixing the issues this checklist reveals, <a href="/website-audit-services/">our security audit service</a> covers all 30+ checks and delivers a prioritised remediation plan.</p>
+  <p>Use the <a href="https://owasp.org/www-project-web-security-testing-guide/">OWASP Web Security Testing Guide</a> and current <a href="https://pages.nist.gov/800-63-4/sp800-63b.html">NIST authentication guidance</a> when interpreting results. Confirm the exact security scope of <a href="/website-audit-services/">professional audit services</a> before testing.</p>
 </ContentLayout>
