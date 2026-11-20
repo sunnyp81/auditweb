@@ -18,6 +18,7 @@ const {
   action="https://auditweb-drip-worker.sunnypat81.workers.dev/"
   method="post"
   class="max-w-md mx-auto"
+  data-signup
 >
   <input type="hidden" name="redirectTo" value="https://auditweb.site/subscribed/" />
   <input type="hidden" name="source" value={source} />
@@ -40,5 +41,57 @@ const {
       {submitText}
     </button>
   </div>
-  <p class="text-xs text-text-dim mt-2 text-center">Free &bull; No spam &bull; Unsubscribe anytime</p>
+  <div class="mt-3 flex justify-center" data-turnstile></div>
+  <p class="text-xs text-text-muted mt-2 text-center" data-signup-msg role="status" hidden></p>
+  <p class="text-xs text-text-dim mt-2 text-center">Free &bull; No spam &bull; Confirm by email &bull; Unsubscribe anytime</p>
 </form>
+
+<script>
+  const SITEKEY = '0x4AAAAAAGK3li1BaMzjm8Hz';
+  let apiLoading: Promise<void> | null = null;
+  const loadApi = () =>
+    (apiLoading ??= new Promise<void>((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('turnstile failed to load'));
+      document.head.appendChild(s);
+    }));
+
+  document.querySelectorAll<HTMLFormElement>('form[data-signup]').forEach((form) => {
+    const slot = form.querySelector<HTMLElement>('[data-turnstile]')!;
+    const msg = form.querySelector<HTMLElement>('[data-signup-msg]')!;
+    let rendered = false;
+    const say = (text: string) => {
+      msg.textContent = text;
+      msg.hidden = !text;
+    };
+    const render = () => {
+      if (rendered) return;
+      rendered = true;
+      loadApi()
+        .then(() => {
+          (window as any).turnstile.render(slot, {
+            sitekey: SITEKEY,
+            action: 'signup',
+            theme: 'dark',
+            callback: () => say(''),
+          });
+        })
+        .catch(() => {
+          rendered = false;
+          say('The security check could not load. Please refresh and try again.');
+        });
+    };
+    form.addEventListener('focusin', render);
+    form.addEventListener('submit', (e) => {
+      const token = form.querySelector<HTMLInputElement>('[name="cf-turnstile-response"]')?.value;
+      if (!token) {
+        e.preventDefault();
+        render();
+        say('One quick check first. When it shows a tick, press the button again.');
+      }
+    });
+  });
+</script>

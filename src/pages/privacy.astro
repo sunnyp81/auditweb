@@ -36,7 +36,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Third-Party Services</h2>
     <ul>
       <li><strong>Google Analytics:</strong> website analytics (with consent)</li>
-      <li><strong>Cloudflare:</strong> hosts the website and the form-processing endpoints. The audit enquiry sends your name, email and website URL; the newsletter signup sends your email and signup source.</li>
+      <li><strong>Cloudflare:</strong> hosts the website and the form-processing endpoints. The audit enquiry sends your name, email and website URL; the newsletter signup sends your email and signup source. The newsletter form also loads Cloudflare Turnstile when you use it, which checks the signup comes from a person and not a bot.</li>
       <li><strong>EmailIt:</strong> sends the audit-enquiry notification and newsletter emails after a form or newsletter signup.</li>
     </ul>
 
